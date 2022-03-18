@@ -1,2 +1,3 @@
-# docs
-host documentation and site contents in a single distinct GitHub repo names 'docs'
+# CiviForm documentation
+
+Welcome to the documentation for [CiviForm](https://github.com/seattle-uat/civiform).

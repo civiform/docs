@@ -41,7 +41,6 @@
   * [Getting started with Windows](developers/developer-guide/getting-started-with-windows.md)
   * [Technology overview](developers/developer-guide/technology-overview.md)
   * [Dependencies](developers/developer-guide/dependencies.md)
-  * [Guide for the main project on call engineer](developers/developer-guide/guide-for-the-main-project-on-call-engineer.md)
   * [Data Dictionary](developers/developer-guide/data-dictionary.md)
   * [Data Versioning model](developers/developer-guide/data-versioning-model.md)
   * [Editing a previously deployed Evolution](developers/developer-guide/editing-a-previously-deployed-evolution.md)

@@ -1,7 +1,3 @@
-# Adding a new question type
-
-# Adding a new question type
-
 ## 1. Add the new type and type definition
 1. Add a new enum to [`QuestionType`](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/services/question/types/QuestionType.java). Please maintain alphabetical ordering
 1. Add a new question type definition class that extends [`QuestionDefinition`](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/services/question/types/QuestionDefinition.java)

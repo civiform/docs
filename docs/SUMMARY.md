@@ -78,7 +78,7 @@
     * [On Call Journal](governance-and-management/project-management/on-call-guide/on-call-journal.md)
   * [Product Management](governance-and-management/project-management/product-management/README.md)
     * [Background research](governance-and-management/project-management/product-management/background-research.md)
-    * [Infrastrucutre Requirements](governance-and-management/project-management/product-management/infrastrucutre-requirements.md)
+    * [Infrastructure Requirements](governance-and-management/project-management/product-management/infrastrucutre-requirements.md)
     * [Long-term product vision](governance-and-management/project-management/product-management/long-term-product-vision.md)
     * [Testing resources](governance-and-management/project-management/product-management/testing-resources.md)
   * [Civic entity staffing overview](governance-and-management/project-management/civic-entity-staffing-overview.md)

@@ -1,7 +1,11 @@
 ---
-description: Overview of CiviForm documentation.
+description: Documentation for Civiform users and the developer community.
 ---
 
-# CiviForm documentation
+# 🧑💻 CiviForm documentation
 
-Welcome to the CiviForm documentation!
+### Welcome to the CiviForm docs!
+
+Use the navigation on the left to find the right information for you.
+
+![](<.gitbook/assets/Landing page of programs.png>)

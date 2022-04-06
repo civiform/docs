@@ -21,7 +21,7 @@ When an application needs to be updated, a new version will be created with all 
 
 When a CiviForm Admin creates a new question for an application, it is saved in a global, shared question bank. This shared repository removes the need to recreate questions for applications such as date of birth or social security number.
 
-![Questions are stored in a shared question bank and can be added to any future or existing application.](<../.gitbook/assets/Question bank.png>)
+![Questions are stored in a shared question bank and can be added to any future or existing application.](<../.gitbook/assets/Question bank (1).png>)
 
 ### Show or hide relevant information to applicants&#x20;
 

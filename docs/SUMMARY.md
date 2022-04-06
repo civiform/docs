@@ -1,6 +1,6 @@
 # Table of contents
 
-* [CiviForm documentation](README.md)
+* [🧑💻 CiviForm documentation](README.md)
 
 ## Overview
 

@@ -15,7 +15,7 @@ For example, if a CiviForm Admin wants addresses to be inputted in a consistent 
 
 When an application needs to be updated, a new version will be created with all past versions stored in the tool for future reference.&#x20;
 
-![Create, edit, publish, and manage benefits applications with the unified application builder.](<../.gitbook/assets/Screenshot 2022-03-29 12.13.30 PM.png>)
+![Create, edit, publish, and manage benefits applications with the unified application builder.](broken-reference)
 
 ### Reuse questions from a shared question bank&#x20;
 

@@ -35,8 +35,8 @@
 
 ## Developers
 
-* [Technical contribution guide](developers/technical-contribution-guide.md)
 * [Developer Guide](developers/developer-guide/README.md)
+  * [Technical contribution guide](developers/developer-guide/technical-contribution-guide.md)
   * [Getting started](developers/developer-guide/getting-started.md)
   * [Getting started with Windows](developers/developer-guide/getting-started-with-windows.md)
   * [Technology overview](developers/developer-guide/technology-overview.md)

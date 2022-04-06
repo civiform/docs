@@ -10,7 +10,7 @@ Our team knows that residents often turn to local community-based organizations 
 
 From their own accounts, trusted intermediaries can create, update, and manage applications on behalf of their clients.
 
-![A Civiform Admin can create a new profile for an organization that applies on behalf of residents.](broken-reference)
+![Community-based organizations can be added as trusted intermediaries to apply on behalf of residents.](<../.gitbook/assets/Adding a new trusted intermediary.png>)
 
 ### Manage applications from the Trusted Intermediary Dashboard&#x20;
 

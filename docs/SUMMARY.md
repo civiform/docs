@@ -8,31 +8,6 @@
 * [How does CiviForm work?](overview/how-does-civiform-work.md)
 * [Glossary](overview/glossary.md)
 
-## CiviForm Administrators
-
-* [Overview](civiform-administrators/overview.md)
-* [Civiform Admin Guide](civiform-administrators/civiform-admin-guide/README.md)
-  * [Manage Programs](civiform-administrators/civiform-admin-guide/manage-programs.md)
-  * [Manage Questions](civiform-administrators/civiform-admin-guide/manage-questions.md)
-  * [Add or remove questions & screens in a program](civiform-administrators/civiform-admin-guide/add-or-remove-questions-and-screens-in-a-program.md)
-  * [Using enumerator questions & screens in a program](civiform-administrators/civiform-admin-guide/using-enumerator-questions-and-screens-in-a-program.md)
-  * [Manage translations for programs & questions](civiform-administrators/civiform-admin-guide/manage-translations-for-programs-and-questions.md)
-  * [Manage versions for programs & questions](civiform-administrators/civiform-admin-guide/manage-versions-for-programs-and-questions.md)
-  * [Show or hide questions based on inputs](civiform-administrators/civiform-admin-guide/show-or-hide-questions-based-on-inputs.md)
-  * [Manage Trusted Intermediaries](civiform-administrators/civiform-admin-guide/manage-trusted-intermediaries.md)
-
-## Program Administrators
-
-* [Overview](program-administrators/overview.md)
-* [Program Admin Guide](program-administrators/program-admin-guide/README.md)
-  * [Review completed applications](program-administrators/program-admin-guide/review-completed-applications.md)
-
-## Trusted Intermediaries
-
-* [Overview](trusted-intermediaries/overview.md)
-* [Trusted Intermediary Guide](trusted-intermediaries/trusted-intermediary-guide/README.md)
-  * [Apply to a program](trusted-intermediaries/trusted-intermediary-guide/apply-to-a-program.md)
-
 ## Developers
 
 * [Developer Guide](developers/developer-guide/README.md)
@@ -69,6 +44,31 @@
   * [Troubleshooting Production](developers/sre-playbook/troubleshooting-production.md)
   * [Breaking Glass on Database](developers/sre-playbook/breaking-glass-on-database.md)
   * [Look For Missing Questions](developers/sre-playbook/look-for-missing-questions.md)
+
+## CiviForm Administrators
+
+* [Overview](civiform-administrators/overview.md)
+* [Civiform Admin Guide](civiform-administrators/civiform-admin-guide/README.md)
+  * [Manage Programs](civiform-administrators/civiform-admin-guide/manage-programs.md)
+  * [Manage Questions](civiform-administrators/civiform-admin-guide/manage-questions.md)
+  * [Add or remove questions & screens in a program](civiform-administrators/civiform-admin-guide/add-or-remove-questions-and-screens-in-a-program.md)
+  * [Using enumerator questions & screens in a program](civiform-administrators/civiform-admin-guide/using-enumerator-questions-and-screens-in-a-program.md)
+  * [Manage translations for programs & questions](civiform-administrators/civiform-admin-guide/manage-translations-for-programs-and-questions.md)
+  * [Manage versions for programs & questions](civiform-administrators/civiform-admin-guide/manage-versions-for-programs-and-questions.md)
+  * [Show or hide questions based on inputs](civiform-administrators/civiform-admin-guide/show-or-hide-questions-based-on-inputs.md)
+  * [Manage Trusted Intermediaries](civiform-administrators/civiform-admin-guide/manage-trusted-intermediaries.md)
+
+## Program Administrators
+
+* [Overview](program-administrators/overview.md)
+* [Program Admin Guide](program-administrators/program-admin-guide/README.md)
+  * [Review completed applications](program-administrators/program-admin-guide/review-completed-applications.md)
+
+## Trusted Intermediaries
+
+* [Overview](trusted-intermediaries/overview.md)
+* [Trusted Intermediary Guide](trusted-intermediaries/trusted-intermediary-guide/README.md)
+  * [Apply to a program](trusted-intermediaries/trusted-intermediary-guide/apply-to-a-program.md)
 
 ## Governance & Management
 

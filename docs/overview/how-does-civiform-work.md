@@ -1,17 +1,12 @@
 ---
-description: Overview of the different roles for CiviForm users.
+description: Overview of Civiform users and how the product serves them.
 ---
 
 # How does CiviForm work?
 
-CiviForm is a universal application tool that lets people in need easily access and apply for essential benefits and services.
+In the below graphic, you will find who CiviForm serves and what each user can accomplish through the platform.
 
-There are 4 roles associated with the use of CiviForm:
-
-* **CiviForm Admins**—Government staff that administer the tool. They set up CiviForm, create application questions, build program forms, and manage permissions for Trusted Intermediaries and Program Admins.
-* **Program Admins**—Government staff that administer benefit programs and handle applications for these programs.
-* **Trusted Intermediaries**—Community-Based Organization (CBO) staff that help Applicants apply for government benefit programs.
-* **Applicants**—Residents seeking to apply for government benefit programs.
+![CiviForm streamlines the application experience for four primary users. This matrix was developed by Google.org Fellows through research with the City of Seattle.](<../.gitbook/assets/Civiform User Types.png>)
 
 Once CiviForm is deployed within a jurisdiction, the CiviForm Admin can start creating basic questions that will live in the global question bank. For example, name, address, and age questions. Once the questions are created, the CiviForm Admin can create programs residents can apply to. Programs are made up of either new questions or previously created ones selected from the deployment’s global question bank.
 

@@ -35,6 +35,7 @@
   * [Troubleshooting](developers/developer-guide/troubleshooting.md)
   * [Updating caniuse-lite](developers/developer-guide/updating-caniuse-lite.md)
   * [Production](developers/developer-guide/production.md)
+  * [Terraform deploy system](developers/developer-guide/terraform-deploy-system.md)
 * [SRE Playbook](developers/sre-playbook/README.md)
   * [Initial Deployment](developers/sre-playbook/initial-deployment.md)
   * [Azure Deployment via Terraform](developers/sre-playbook/azure-deployment-via-terraform.md)

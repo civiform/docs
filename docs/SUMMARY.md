@@ -11,6 +11,7 @@
 ## Developers
 
 * [Developer Guide](developers/developer-guide/README.md)
+  * [New full-time SWE onboarding materials](developers/developer-guide/new-full-time-swe-onboarding-materials.md)
   * [Technical contribution guide](developers/developer-guide/technical-contribution-guide.md)
   * [Getting started](developers/developer-guide/getting-started.md)
   * [Getting started with Windows](developers/developer-guide/getting-started-with-windows.md)

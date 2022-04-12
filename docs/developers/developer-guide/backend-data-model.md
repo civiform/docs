@@ -1,5 +1,6 @@
 # Backend data model
-# CiviForm backend applicant data model
+
+## CiviForm backend applicant data model
 
 Applicant data, i.e. data provided by applicants for applying to programs, is structured according to question definitions and stored in JSON.
 
@@ -53,4 +54,3 @@ For an enumerator question with the canonical name `"Vehicles in household"` and
   ]
 }
 ```
-

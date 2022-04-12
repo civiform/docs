@@ -41,8 +41,11 @@
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
   * [Breaking Glass on Database](it-manual/sre-playbook/breaking-glass-on-database.md)
   * [Look For Missing Questions](it-manual/sre-playbook/look-for-missing-questions.md)
+  * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
 * [Infrastructure Requirements](it-manual/infrastrucutre-requirements.md)
-* [Testing resources](it-manual/testing-resources.md)
+* [Testing & QA](it-manual/testing-and-qa/README.md)
+  * [Testing resources](it-manual/testing-and-qa/testing-resources.md)
+  * [SQL queries to look for missing questions](it-manual/testing-and-qa/sql-queries-to-look-for-missing-questions.md)
 
 ## Contributor Guide
 
@@ -72,8 +75,6 @@
   * [Troubleshooting](contributor-guide/developer-guide/troubleshooting.md)
   * [Updating caniuse-lite](contributor-guide/developer-guide/updating-caniuse-lite.md)
   * [Production](contributor-guide/developer-guide/production.md)
-  * [Terraform deploy system](contributor-guide/developer-guide/terraform-deploy-system.md)
-  * [SQL queries to look for missing questions](contributor-guide/developer-guide/sql-queries-to-look-for-missing-questions.md)
 * [UI/UX Guide](contributor-guide/ui-ux-guide/README.md)
   * [UI contribution guide (HTML/CSS)](contributor-guide/ui-ux-guide/ui-contribution-guide-html-css.md)
   * [UX contribution guide (mockups)](contributor-guide/ui-ux-guide/ux-contribution-guide-mockups.md)

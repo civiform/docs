@@ -11,7 +11,6 @@
 ## User Manual
 
 * [Civiform Admin Guide](user-manual/civiform-admin-guide/README.md)
-  * [Overview](user-manual/civiform-admin-guide/overview.md)
   * [Manage Programs](user-manual/civiform-admin-guide/manage-programs.md)
   * [Manage Questions](user-manual/civiform-admin-guide/manage-questions.md)
   * [Add or remove questions & screens in a program](user-manual/civiform-admin-guide/add-or-remove-questions-and-screens-in-a-program.md)

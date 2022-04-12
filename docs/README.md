@@ -1,11 +1,18 @@
 ---
-description: Documentation for Civiform users and the developer community.
+description: Documentation for the Civiform open-source community.
 ---
 
-# 🧑💻 CiviForm documentation
+# CiviForm Docs
 
-### Welcome to the CiviForm Docs
+CiviForm is an open-source platform that streamlines the way residents find and sign up for public assistance. This self-service tool also enables public servants to manage forms for public benefits programs without ever needing to go into the backend code.
 
-Use the navigation on the left to find the technical and user documentation you need.
+In the Civiform docs, you can find:
 
-![](<.gitbook/assets/Landing page of programs.png>)
+* [Overview of Civiform](overview/what-is-civiform.md) for a high-level summary and how Civiform works
+* [User Manuals](broken-reference) for how to set up and use Civiform in your organization or program
+* [IT Manuals](broken-reference) for how to deploy CiviForm on your technical infrastructure
+* [Contributor Guides](broken-reference) for how to contribute product improvements&#x20;
+* [Governance & Management Documentation](broken-reference) for information on how CiviForm is being collaboratively managed and developed
+
+To learn more or get started, reach out to [civic-fellowships@google.com](mailto:civic-fellowships@google.org).
+

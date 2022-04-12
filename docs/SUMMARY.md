@@ -20,6 +20,7 @@
   * [Manage versions for programs & questions](user-manual/civiform-admin-guide/manage-versions-for-programs-and-questions.md)
   * [Show or hide questions based on inputs](user-manual/civiform-admin-guide/show-or-hide-questions-based-on-inputs.md)
   * [Manage Trusted Intermediaries](user-manual/civiform-admin-guide/manage-trusted-intermediaries.md)
+  * [Question type requirements notes](user-manual/civiform-admin-guide/question-type-requirements-notes.md)
 * [Program Admin Guide](user-manual/program-admin-guide/README.md)
   * [Overview](user-manual/program-admin-guide/overview.md)
   * [Review completed applications](user-manual/program-admin-guide/review-completed-applications.md)
@@ -86,5 +87,4 @@
   * [Civic entity staffing overview](governance-and-management/project-management/civic-entity-staffing-overview.md)
   * [Weekly demo days](governance-and-management/project-management/weekly-demo-days.md)
   * [Civiform Google Drive](governance-and-management/project-management/civiform-google-drive.md)
-  * [Question type requirements notes](governance-and-management/project-management/question-type-requirements-notes.md)
 * [Governance](governance-and-management/governance.md)

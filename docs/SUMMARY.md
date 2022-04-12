@@ -27,6 +27,8 @@
 * [Trusted Intermediary Guide](user-manual/trusted-intermediary-guide/README.md)
   * [Overview](user-manual/trusted-intermediary-guide/overview.md)
   * [Apply to a program](user-manual/trusted-intermediary-guide/apply-to-a-program.md)
+* [Operational Resources](user-manual/operational-resources/README.md)
+  * [Civic entity staffing overview](user-manual/operational-resources/civic-entity-staffing-overview.md)
 
 ## IT Manual
 
@@ -81,5 +83,4 @@
 * [Project Management](governance-and-management/project-management/README.md)
   * [On Call Guide](governance-and-management/project-management/on-call-guide/README.md)
     * [On Call Journal](governance-and-management/project-management/on-call-guide/on-call-journal.md)
-  * [Civic entity staffing overview](governance-and-management/project-management/civic-entity-staffing-overview.md)
 * [Governance](governance-and-management/governance.md)

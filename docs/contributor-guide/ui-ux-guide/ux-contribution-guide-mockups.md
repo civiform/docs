@@ -2,7 +2,11 @@
 
 This is a collection of docs, links and design resources for UX as it relates to the CiviForm project.
 
-If you haven't already, please start on our [Contributing](https://github.com/seattle-uat/civiform/wiki/Contributing) page, and **read our** [**code of conduct**](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md)**.**
+If you haven't already, please **read our** [**code of conduct**](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md)**.**
+
+{% hint style="info" %}
+Join the conversation in the [Civiform Slack Workspace.](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E)
+{% endhint %}
 
 ### Background and research
 

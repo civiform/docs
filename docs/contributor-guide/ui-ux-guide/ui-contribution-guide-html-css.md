@@ -8,7 +8,7 @@ One way you can contribute to the UI effort is to create high-fidelity, (mostly)
 
 To get started:
 
-* See instructions on the [UX guide](https://github.com/seattle-uat/civiform/wiki/UX-contribution-guide), especially those around the Miro board.
+* See instructions on the [UX guide](ux-contribution-guide-mockups.md), especially those around the Miro board.
 * On our [tracking spreadsheet](http://tiny.cc/cvf-ux-tracker), find a row that doesn't have an entry in the "Hi-fi mock" column.
 * Create a mockup for it in our Miro board: [tiny.cc/cvf-flow](http://tiny.cc/cvf-flow)
 * [Copy the link to the mockup](https://help.miro.com/hc/en-us/articles/360017572354-Internal-and-External-Linking) and paste it in that column.

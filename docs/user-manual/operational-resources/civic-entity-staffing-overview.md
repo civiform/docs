@@ -1,20 +1,6 @@
 # Civic entity staffing overview
 
-
-
-
-
 This document describes long-term CiviForm staffing needs for a deploying civic entity. Those needs include a non-technical administrative role, and technical roles to support the functioning of the software system.
-
-### Background
-
-CiviForm is an open-source web application that aims to simplify the application process for benefits programs by re-using applicant data for multiple benefits applications.
-
-**Links**
-
-* [Open source code repository](https://github.com/seattle-uat/civiform/)
-* [Project wiki](https://github.com/seattle-uat/civiform/wiki)
-* Slide deck overview of the project
 
 ### CiviForm administrator
 

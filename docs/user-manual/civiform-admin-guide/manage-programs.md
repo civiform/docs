@@ -17,7 +17,7 @@ A CiviForm program is a benefits program built by CiviForm Admins. It’s essent
 
 ### Edit a program
 
-You can edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions](https://github.com/seattle-uat/documents/wiki/Manage-versions-for-programs-&-questions).
+You can edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions.](manage-versions-for-programs-and-questions.md)
 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click **Programs** on the navigation bar and select a program you created.
@@ -29,7 +29,7 @@ You can edit both unpublished and published programs. To edit published programs
 
 Once a program is created or a new version is launched, the program remains in draft until published. When published, it’s available to both Trusted Intermediaries and Applicants.
 
-There can only be one unpublished version in the system at a time and once a version is published, it’s locked and cannot be modified. For more details on versioning, go to [Manage versions for programs & questions](https://github.com/seattle-uat/documents/wiki/Manage-versions-for-programs-&-questions).
+There can only be one unpublished version in the system at a time and once a version is published, it’s locked and cannot be modified. For more details on versioning, go to [Manage versions for programs & questions.](manage-versions-for-programs-and-questions.md)
 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click **Programs** on the navigation bar.

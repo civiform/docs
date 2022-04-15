@@ -6,7 +6,7 @@ To account for this use case, CiviForm allows versioning of programs and questio
 
 When you publish all drafts, all changes to programs and questions are published together. The versioning and change publishing system bundles the entire set of configuration objects together in a versioned configuration set using a version number. A given version includes its own question set and program definition set including the program application and data export configuration. This means a version can only reference questions in the same versioned configuration set.
 
-[Technical docs on this](https://github.com/seattle-uat/civiform/wiki/Data-versioning-model)
+Read more about the [data versioning model](../../contributor-guide/developer-guide/system-design/data-versioning-model.md).
 
 ### Update program version
 
@@ -47,5 +47,3 @@ The following rules apply when trying to understand versioning:
 * Applicants are pinned to the version they began their first program application with. They remain on that program version until it’s been submitted.
 * When a CiviForm Admin modifies a question, CiviForm displays a list of programs using the question.
 * A new draft is created when an existing draft is published.
-
-_Last updated: June 2021_

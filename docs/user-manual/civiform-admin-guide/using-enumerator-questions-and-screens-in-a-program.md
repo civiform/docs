@@ -10,7 +10,7 @@ Enumerators do not store question data. Instead, each repeated question of the e
 
 A screen can only contain an enumerator when it’s the only question on the screen. Repeated screens are created from enumerator screens. An enumerator screen can be a repeated screen of another enumerator. An enumerator screen's repeated screen appears below the enumerator screen and is indented in the tree. Repeated screens display a label showing the screen they were copied from. When adding repeated screens, the enumerator question in the enumerator screen isn’t copied to the repeated screens.
 
-![](https://github.com/seattle-uat/documents/blob/main/EnumeratorQuestion.png)
+![](../../.gitbook/assets/EnumeratorQuestion.png)
 
 ### Create an enumerator question
 

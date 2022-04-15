@@ -4,7 +4,7 @@ CiviForm programs are made up of one or more questions housed in screens. Each p
 
 A program can hold multiple screens and each screen should contain a logically themed set of questions (for example, all employment-related questions). Each screen equates to a new page when applying to a program.
 
-You edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions](https://github.com/seattle-uat/documents/wiki/Manage-versions-for-programs-&-questions).
+You edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions](manage-versions-for-programs-and-questions.md).
 
 ### Add a question to a screen
 
@@ -51,5 +51,3 @@ If you have more than one screen in your program, you can organize the screens w
    The screen is removed from the program and the questions return to the question bank.
 
 **Note**: You cannot delete all screens from a program as a program must have at least one screen. Only once your program has more than one screen can you delete the default screen.
-
-_Last updated: June 2021_

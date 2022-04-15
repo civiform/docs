@@ -1,14 +1,16 @@
 # Technical contribution guide
 
+This is a guide for making technical contributions to CiviForm. ****&#x20;
 
+If you haven't already, please **read our** [**code of conduct**](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md)**.**
 
-This is a guide for making technical contributions to CiviForm.
-
-If you haven't already, please start on our [Contributing](https://github.com/seattle-uat/civiform/wiki/Contributing) page, and **read our** [**code of conduct**](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md)**.**
+{% hint style="info" %}
+Join the conversation in the [Civiform Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
+{% endhint %}
 
 ### Getting started
 
-To set up your environment and learn how to run a local CiviForm server and tests, see [Getting started](https://github.com/seattle-uat/civiform/wiki/Getting-started).
+To set up your environment and learn how to run a local CiviForm server and tests, see [Getting started.](getting-started.md)
 
 ### Issue tracking
 
@@ -32,12 +34,22 @@ If the pull request does not require additional changes, the reviewer should mer
 
 Want to get up to speed on this project? Awesome! Please see the following:
 
-1. Read the [code of conduct](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md).
-2. Join our [Slack workgroup](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q).
-3. Check out the [Google Drive](https://drive.google.com/drive/folders/1\_uVkq1uOD14p19DvQzbXs2s0XhSOQjgF?usp=sharing) containing our design docs.
-4. Read through our Developer guide wikis in the right nav. Here are some good wikis to get you started:
-   1. [Getting started](https://github.com/seattle-uat/civiform/wiki/Getting-started)
-   2. [Technology overview](https://github.com/seattle-uat/civiform/wiki/Technology-overview)
-   3. [Development standards](https://github.com/seattle-uat/civiform/wiki/Development-standards)
-5. Work on at least one issue tagged with [`good first issue`](https://github.com/seattle-uat/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) before moving to others. Feel free to ask for task recommendations in Slack.
-6. Pair program with one of the project's main engineers. Reach out on Slack - we're happy to help!
+* Read the [code of conduct](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md).
+* Join our [Slack workgroup](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q).
+* Check out the [Google Drive](https://drive.google.com/drive/folders/1\_uVkq1uOD14p19DvQzbXs2s0XhSOQjgF?usp=sharing) containing our design docs.
+* Read through our Developer guide docs in the right nav. Here are some good docs to get you started:
+
+{% content-ref url="getting-started.md" %}
+[getting-started.md](getting-started.md)
+{% endcontent-ref %}
+
+{% content-ref url="technology-overview.md" %}
+[technology-overview.md](technology-overview.md)
+{% endcontent-ref %}
+
+{% content-ref url="development-standards.md" %}
+[development-standards.md](development-standards.md)
+{% endcontent-ref %}
+
+* Work on at least one issue tagged with [`good first issue`](https://github.com/seattle-uat/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) before moving to others. Feel free to ask for task recommendations in Slack.
+* Pair program with one of the project's main engineers. Reach out on Slack - we're happy to help!

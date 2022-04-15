@@ -1,29 +1,30 @@
 # Data Dictionary
-## public.accounts
-                                       
-|       Column        |        Type         | Nullable | Description
-|---------------------|---------------------|----------|------------
-| id                  | bigint              | not null | Primary key
-| email_address       | character varying   |          | Account email address
-| member_of_group_id  | bigint              |          | Foreign key to ti_organizations
-| managed_by_group_id | bigint              |          | Foreign key to ti_organizations
-| admin_of            | character varying[] |          | Administrator of specified programs
-| global_admin        | boolean             |          | Global system administrator
-| authority_id        | character varying   |          | ???
 
+## public.accounts
+
+| Column                 | Type                 | Nullable | Description                         |
+| ---------------------- | -------------------- | -------- | ----------------------------------- |
+| id                     | bigint               | not null | Primary key                         |
+| email\_address         | character varying    |          | Account email address               |
+| member\_of\_group\_id  | bigint               |          | Foreign key to ti\_organizations    |
+| managed\_by\_group\_id | bigint               |          | Foreign key to ti\_organizations    |
+| admin\_of              | character varying\[] |          | Administrator of specified programs |
+| global\_admin          | boolean              |          | Global system administrator         |
+| authority\_id          | character varying    |          | ???                                 |
 
 ## public.applicants
 
-| Column           |            Type             | Nullable | Description 
-|------------------|-----------------------------|----------|------------
-| id               | bigint                      | not null | Primary key
-| preferred_locale | character varying           |          | Applicant selected default locale
-| object           | jsonb                       | not null | ???
-| account_id       | bigint                      |          | Foreign key to accounts
-| when_created     | timestamp without time zone |          | Date applicant record was created
+| Column            | Type                        | Nullable | Description                       |
+| ----------------- | --------------------------- | -------- | --------------------------------- |
+| id                | bigint                      | not null | Primary key                       |
+| preferred\_locale | character varying           |          | Applicant selected default locale |
+| object            | jsonb                       | not null | ???                               |
+| account\_id       | bigint                      |          | Foreign key to accounts           |
+| when\_created     | timestamp without time zone |          | Date applicant record was created |
 
 <details>
-    <summary>Sample JSON of the <code>object</code> column</summary>
+
+<summary>Sample JSON of the <code>object</code> column</summary>
 
 For more information view the [backend data model page](https://github.com/seattle-uat/civiform/wiki/Backend-data-model)
 
@@ -54,24 +55,26 @@ For more information view the [backend data model page](https://github.com/seatt
   }
 }
 ```
+
 </details>
 
 ## public.applications
 
-|      Column      |            Type             | Nullable | Description
-|------------------|-----------------------------|----------|------------
-| id               | bigint                      | not null | Primary key
-| applicant_id     | bigint                      |          | Foreign key to applicants table
-| program_id       | bigint                      |          | Foreign key to programs table
-| object           | jsonb                       | not null | ???
-| lifecycle_stage  | character varying           |          | Status of the application (draft or active)
-| submit_time      | timestamp without time zone |          | Date application record was submitted
-| submitter_email  | character varying(255)      |          | ??? is this assumed to be null if done by applicant?
-| create_time      | timestamp without time zone |          | Date application record was created
-| preferred_locale | character varying           |          | ??? Applicant selected default locale. Why here and applicants?
+| Column            | Type                        | Nullable | Description                                                     |
+| ----------------- | --------------------------- | -------- | --------------------------------------------------------------- |
+| id                | bigint                      | not null | Primary key                                                     |
+| applicant\_id     | bigint                      |          | Foreign key to applicants table                                 |
+| program\_id       | bigint                      |          | Foreign key to programs table                                   |
+| object            | jsonb                       | not null | ???                                                             |
+| lifecycle\_stage  | character varying           |          | Status of the application (draft or active)                     |
+| submit\_time      | timestamp without time zone |          | Date application record was submitted                           |
+| submitter\_email  | character varying(255)      |          | ??? is this assumed to be null if done by applicant?            |
+| create\_time      | timestamp without time zone |          | Date application record was created                             |
+| preferred\_locale | character varying           |          | ??? Applicant selected default locale. Why here and applicants? |
 
 <details>
-    <summary>Sample JSON of the <code>object</code> column</summary>
+
+<summary>Sample JSON of the <code>object</code> column</summary>
 
 For more information view the [backend data model page](https://github.com/seattle-uat/civiform/wiki/Backend-data-model)
 
@@ -102,36 +105,37 @@ For more information view the [backend data model page](https://github.com/seatt
   }
 }
 ```
+
 </details>
 
 ## public.files
 
-|      Column        |          Type          | Nullable | Description 
-|--------------------|------------------------|----------|------------
-| id                 | bigint                 | not null | Primary key
-| name               | character varying(255) |          | ???
-| original_file_name | character varying      |          | Name of the file uploaded by the applicant
-
+| Column               | Type                   | Nullable | Description                                |
+| -------------------- | ---------------------- | -------- | ------------------------------------------ |
+| id                   | bigint                 | not null | Primary key                                |
+| name                 | character varying(255) |          | ???                                        |
+| original\_file\_name | character varying      |          | Name of the file uploaded by the applicant |
 
 ## public.programs
 
-|            Column            |       Type        | Nullable | Description
-|------------------------------|-------------------|----------|------------
-| id                           | bigint            | not null | Primary key
-| name                         | character varying |          | Name of the program
-| description                  | character varying |          | Description of the program
-| block_definitions            | jsonb             | not null | Screens are defined here along with linking questions to screens
-| export_definitions           | jsonb             |          | ??? Settings for exporting program data. Doesn't seem to get saved
-| legacy_localized_name        | jsonb             |          | ???
-| legacy_localized_description | jsonb             |          | ???
-| slug                         | character varying |          | Used when creating a permalink to the new application of a program
-| localized_name               | jsonb             |          | Translated versions of the program name
-| localized_description        | jsonb             |          | Translated versions of the program description
-| external_link                | character varying |          | URL to a resource outside of the application
-| display_mode                 | character varying | not null | Determines whether the program is visible to the public or not (options are: HIDDEN_IN_INDEX and PUBLIC)
+| Column                         | Type              | Nullable | Description                                                                                                |
+| ------------------------------ | ----------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| id                             | bigint            | not null | Primary key                                                                                                |
+| name                           | character varying |          | Name of the program                                                                                        |
+| description                    | character varying |          | Description of the program                                                                                 |
+| block\_definitions             | jsonb             | not null | Screens are defined here along with linking questions to screens                                           |
+| export\_definitions            | jsonb             |          | ??? Settings for exporting program data. Doesn't seem to get saved                                         |
+| legacy\_localized\_name        | jsonb             |          | ???                                                                                                        |
+| legacy\_localized\_description | jsonb             |          | ???                                                                                                        |
+| slug                           | character varying |          | Used when creating a permalink to the new application of a program                                         |
+| localized\_name                | jsonb             |          | Translated versions of the program name                                                                    |
+| localized\_description         | jsonb             |          | Translated versions of the program description                                                             |
+| external\_link                 | character varying |          | URL to a resource outside of the application                                                               |
+| display\_mode                  | character varying | not null | Determines whether the program is visible to the public or not (options are: HIDDEN\_IN\_INDEX and PUBLIC) |
 
 <details>
-    <summary>Sample JSON of the <code>block_definitions</code> column</summary>
+
+<summary>Sample JSON of the <code>block_definitions</code> column</summary>
 
 ```json
 [
@@ -215,18 +219,22 @@ For more information view the [backend data model page](https://github.com/seatt
   }
 ]
 ```
+
 </details>
 
-
 <details>
-    <summary>Sample JSON of the <code>export_definitions</code> column</summary>
 
-    Sample not yet available
+<summary>Sample JSON of the <code>export_definitions</code> column</summary>
+
+```
+Sample not yet available
+```
+
 </details>
 
-
 <details>
-    <summary>Sample JSON of the <code>localized_name</code> and <code>localized_description</code> columns</summary>
+
+<summary>Sample JSON of the <code>localized_name</code> and <code>localized_description</code> columns</summary>
 
 ```json
 {
@@ -237,42 +245,44 @@ For more information view the [backend data model page](https://github.com/seatt
   }
 }
 ```
-</details>
 
+</details>
 
 ## public.questions
 
-|          Column           |        Type         | Nullable | Description 
-|---------------------------|---------------------|----------|------------
-| id                        | bigint              | not null | Primary key
-| name                      | character varying   |          | Name of the question
-| description               | character varying   |          | Description of the question
-| question_type             | character varying   |          | Type of question (options are: ADDRESS, CHECKBOX, CURRENCY, DATE, DROPDOWN, EMAIL, ENUMERATOR, FILEUPLOAD, ID, NAME, NUMBER, RADIO_BUTTON, STATIC, TEXT)
-| legacy_question_text      | jsonb               |          | ???
-| legacy_question_help_text | jsonb               |          | ???
-| validation_predicates     | jsonb               |          | Configuration for question validation requirements
-| legacy_question_options   | jsonb               |          | ???
-| enumerator_id             | bigint              |          | This is a questions id of an ENUMERATOR question_type. It signifies that this questions is part of the enumerator and repeats for each entry.
-| question_options          | jsonb               |          | The list of valid options for questions that have pre-defined answers (e.g. CHECKBOX, DROPDOWN)
-| question_text             | jsonb               |          | Text of the question presented to the applicant in their preferred language
-| question_help_text        | jsonb               |          | Help Text of the question presented to the applicant in their preferred language
-| enumerator_entity_type    | jsonb               |          | ??? Enumerator text presented to the applicant in their preferred language
-| question_tags             | character varying[] |          | ???
+| Column                       | Type                 | Nullable | Description                                                                                                                                               |
+| ---------------------------- | -------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                           | bigint               | not null | Primary key                                                                                                                                               |
+| name                         | character varying    |          | Name of the question                                                                                                                                      |
+| description                  | character varying    |          | Description of the question                                                                                                                               |
+| question\_type               | character varying    |          | Type of question (options are: ADDRESS, CHECKBOX, CURRENCY, DATE, DROPDOWN, EMAIL, ENUMERATOR, FILEUPLOAD, ID, NAME, NUMBER, RADIO\_BUTTON, STATIC, TEXT) |
+| legacy\_question\_text       | jsonb                |          | ???                                                                                                                                                       |
+| legacy\_question\_help\_text | jsonb                |          | ???                                                                                                                                                       |
+| validation\_predicates       | jsonb                |          | Configuration for question validation requirements                                                                                                        |
+| legacy\_question\_options    | jsonb                |          | ???                                                                                                                                                       |
+| enumerator\_id               | bigint               |          | This is a questions id of an ENUMERATOR question\_type. It signifies that this questions is part of the enumerator and repeats for each entry.            |
+| question\_options            | jsonb                |          | The list of valid options for questions that have pre-defined answers (e.g. CHECKBOX, DROPDOWN)                                                           |
+| question\_text               | jsonb                |          | Text of the question presented to the applicant in their preferred language                                                                               |
+| question\_help\_text         | jsonb                |          | Help Text of the question presented to the applicant in their preferred language                                                                          |
+| enumerator\_entity\_type     | jsonb                |          | ??? Enumerator text presented to the applicant in their preferred language                                                                                |
+| question\_tags               | character varying\[] |          | ???                                                                                                                                                       |
 
-For information on versioning questions and programs see the [data versioning model page](https://github.com/seattle-uat/civiform/wiki/Data-versioning-model).
-
+For information on versioning questions and programs see the [data versioning model page.](system-design/data-versioning-model.md)
 
 <details>
-    <summary>Sample JSON of the <code>validation_predicates </code>column</summary>
 
-#### Question Type: `ADDRESS`
+<summary>Sample JSON of the <code>validation_predicates</code> column</summary>
+
+**Question Type: `ADDRESS`**
+
 ```json
 {
     "disallowPoBox": false
 }
 ```
 
-#### Question Type: `CHECKBOX`, `DROPDOWN`, & `RADIO_BUTTON`
+**Question Type: `CHECKBOX`, `DROPDOWN`, & `RADIO_BUTTON`**
+
 ```json
 {
     "maxChoicesAllowed": 2,
@@ -280,7 +290,8 @@ For information on versioning questions and programs see the [data versioning mo
 }
 ```
 
-#### Question Type: `ID` & `TEXT`
+**Question Type: `ID` & `TEXT`**
+
 ```json
 {
     "maxLength": 9,
@@ -288,7 +299,8 @@ For information on versioning questions and programs see the [data versioning mo
 }
 ```
 
-#### Question Type: `NUMBER`
+**Question Type: `NUMBER`**
+
 ```json
 {
     "max": 200,
@@ -298,9 +310,9 @@ For information on versioning questions and programs see the [data versioning mo
 
 </details>
 
-
 <details>
-    <summary>Sample JSON of the <code>question_options</code> column</summary>
+
+<summary>Sample JSON of the <code>question_options</code> column</summary>
 
 ```json
 [
@@ -317,10 +329,12 @@ For information on versioning questions and programs see the [data versioning mo
   }
 ]
 ```
+
 </details>
 
 <details>
-    <summary>Sample JSON of the <code>question_text</code>, <code>question_help_text</code>, and <code>enumerator_entity_type</code> columns</summary>
+
+<summary>Sample JSON of the <code>question_text</code>, <code>question_help_text</code>, and <code>enumerator_entity_type</code> columns</summary>
 
 ```json
 {
@@ -331,49 +345,39 @@ For information on versioning questions and programs see the [data versioning mo
   }
 }
 ```
+
 </details>
 
+## public.ti\_organizations
 
- ## public.ti_organizations
- 
-|   Column    |       Type        | Nullable | Description
-|-------------|-------------------|----------|------------
-| id          | bigint            | not null | Primary key 
-| name        | character varying | not null | Name of the organization
-| description | character varying |          | Description of the organization
-
+| Column      | Type              | Nullable | Description                     |
+| ----------- | ----------------- | -------- | ------------------------------- |
+| id          | bigint            | not null | Primary key                     |
+| name        | character varying | not null | Name of the organization        |
+| description | character varying |          | Description of the organization |
 
 ## public.versions
 
-|          Column           |            Type             | Nullable | Description
-|---------------------------|-----------------------------|----------|------------
-| id                        | bigint                      | not null | Primary key
-| lifecycle_stage           | character varying           | not null | Defines which versions are active, draft, or obsolete.
-| submit_time               | timestamp without time zone |          | Date when last saved ???
-| tombstoned_question_names | character varying[]         |          | ???
-| tombstoned_program_names  | character varying[]         |          | ???
+| Column                      | Type                        | Nullable | Description                                            |
+| --------------------------- | --------------------------- | -------- | ------------------------------------------------------ |
+| id                          | bigint                      | not null | Primary key                                            |
+| lifecycle\_stage            | character varying           | not null | Defines which versions are active, draft, or obsolete. |
+| submit\_time                | timestamp without time zone |          | Date when last saved ???                               |
+| tombstoned\_question\_names | character varying\[]        |          | ???                                                    |
+| tombstoned\_program\_names  | character varying\[]        |          | ???                                                    |
 
 For information on versioning `questions` and `programs` see the [data versioning model page](https://github.com/seattle-uat/civiform/wiki/Data-versioning-model).
 
+## public.versions\_programs
 
-## public.versions_programs
+| Column       | Type   | Nullable | Description                                                                |
+| ------------ | ------ | -------- | -------------------------------------------------------------------------- |
+| programs\_id | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `programs` table |
+| versions\_id | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `versions` table |
 
-|   Column    |  Type  | Nullable | Description
-|-------------|--------|----------|------------
-| programs_id | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `programs` table
-| versions_id | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `versions` table
+## public.versions\_questions
 
-
-## public.versions_questions
-
-|    Column    |  Type  | Nullable | Description
-|--------------|--------|----------|------------
-| questions_id | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `questions` table
-| versions_id  | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `versions` table
-          
-
-
-
-
-
-
+| Column        | Type   | Nullable | Description                                                                 |
+| ------------- | ------ | -------- | --------------------------------------------------------------------------- |
+| questions\_id | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `questions` table |
+| versions\_id  | bigint | not null | !!! No actual foreign key reference in db. Foreign key to `versions` table  |

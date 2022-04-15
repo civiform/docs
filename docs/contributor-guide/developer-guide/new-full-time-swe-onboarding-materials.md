@@ -1,7 +1,5 @@
 # New full-time SWE onboarding materials
 
-
-
 Links
 
 * Seattle Staging: [https://staging.seattle.civiform.com](https://staging.seattle.civiform.com/loginForm)
@@ -18,9 +16,9 @@ Links
 * [terraform framework tutorial](https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code)
 * [ebean](https://ebean.io)
 
-### Recommended Wiki Starters
+### Recommended Starting Points
 
-* [Getting Started Guide](https://github.com/seattle-uat/civiform/wiki/Getting-started)
+* [Getting Started Guide](getting-started.md)
 * [Good First Issues](https://github.com/seattle-uat/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
 ### Accounts

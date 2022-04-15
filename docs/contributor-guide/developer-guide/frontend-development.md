@@ -16,7 +16,7 @@ If you already know Java, you're probably going to be pretty comfortable. If you
 
 Pick your preferred tools and craft beautiful experiences. Then, hand off your mocks to a developer who wants to take the next step of the process, or try your hand at creating some prototypes.
 
-View some of our mocks on our [Miro board](../../developers/developer-guide/tiny.cc/cvf-flow/) or obtain more UX resources and tips [here](https://github.com/seattle-uat/civiform/wiki/UX-contribution-guide).
+View some of our mocks on our [Miro board](../../developers/developer-guide/tiny.cc/cvf-flow/) or obtain more UX resources in our [UX Contribution Guide](../ui-ux-guide/ux-contribution-guide-mockups.md).
 
 ### Prototypes (HTML and Tailwind CSS)
 

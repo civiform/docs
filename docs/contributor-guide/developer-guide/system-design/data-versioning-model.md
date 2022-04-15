@@ -1,6 +1,6 @@
 # Data Versioning model
 
-User created data (Questions, Programs) are all versioned and this doc discusses the versioning mechanism and the data life cycle that drives it. Related [product usage docs](https://github.com/seattle-uat/civiform/wiki/Manage-versions-for-programs-&-questions) also exist.
+User created data (Questions, Programs) are all versioned and this doc discusses the versioning mechanism and the data life cycle that drives it. Related[ user docs on managing versions](../../../user-manual/civiform-admin-guide/manage-versions-for-programs-and-questions.md) also exist.
 
 Note: Applications are also affected by versioning, but are largely a separate concern. The key thing is that once an applicant starts filling out a particular revision of an application, they will continue with that revision of it regardless of anything discussed here.
 

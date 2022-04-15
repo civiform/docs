@@ -31,7 +31,7 @@ Things to do before each on-call shift starts.
 
 #### Setup dev environment
 
-Ensure your CiviForm development environment is set up and working. Pull in the latest changes to the `main` branch if yours is out of date. Follow instructions for getting started with a dev environment in the [CiviForm wiki](https://github.com/seattle-uat/civiform/wiki).
+Ensure your CiviForm development environment is set up and working. Pull in the latest changes to the `main` branch if yours is out of date. Follow instructions for [getting started](../../../contributor-guide/developer-guide/getting-started.md) with a dev environment.
 
 #### Review current bug triage list
 

@@ -11,7 +11,7 @@
 
 #### Setting up auth providers
 
-Follow documentation for setting up the [Authentication Providers](https://github.com/seattle-uat/civiform/wiki/Authentication-Providers).
+Follow documentation for setting up the [Authentication Providers](../../contributor-guide/developer-guide/authentication-providers.md).
 
 #### Setting up Azure AD
 

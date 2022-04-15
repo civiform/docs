@@ -15,5 +15,5 @@ In the Civiform docs, you can find:
 * [Governance & Management Documentation](broken-reference/) for information on how CiviForm is being collaboratively managed and developed
 
 {% hint style="info" %}
-To learn more, join the [Civiform Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
+Join the conversation in the [Civiform Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
 {% endhint %}

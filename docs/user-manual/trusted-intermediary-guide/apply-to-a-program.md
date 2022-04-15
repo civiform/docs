@@ -4,7 +4,7 @@ Trusted Intermediaries can help residents apply to services or they can alert in
 
 CiviForm also allows Trusted Intermediaries to manage multiple clients through the application process. Trusted Intermediary Groups can also view the Applicant data their staff have entered.
 
-**Note**: Before a Trusted Intermediary can sign in, they must be added to a Trusted Intermediary Group by the CiviForm Admin. For more details, go to [Manage Trusted Intermediaries](https://github.com/seattle-uat/documents/wiki/Manage-Trusted-Intermediaries).
+**Note**: Before a Trusted Intermediary can sign in, they must be added to a Trusted Intermediary Group by the CiviForm Admin. For more details, go to [Manage Trusted Intermediaries](../civiform-admin-guide/manage-trusted-intermediaries.md).
 
 ### Add clients
 

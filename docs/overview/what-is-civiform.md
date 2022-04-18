@@ -1,6 +1,12 @@
+---
+description: Background on the problem and the CiviForm solution.
+---
+
 # What is CiviForm?
 
 CiviForm is free, open-source software that was built with support from Google.org Fellows and will be managed by a product steward outside of Google. CiviForm is deployed and maintained by civic entities themselves.&#x20;
+
+![](<../.gitbook/assets/Landing page of programs (1).png>)
 
 ### The Problem
 

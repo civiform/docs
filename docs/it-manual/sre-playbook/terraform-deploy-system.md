@@ -37,6 +37,23 @@ The setup scrip prompts you to set up Azure AD. There are a few additional steps
 2. cd checkout
 3. cloud/azure/bin/pg-restore -g sgdev -d civiform-artistic-halibut -v sgdev-civiform-kv -f /mnt/c/pg\_dump.dump -b testData.dump
 
+### Clear data from the database
+1. cd checkout 
+2. cloud/azure/bin/db-connection
+3. Wait for the application to say you can run sql (try running \dt to make sure you can see the data) 
+4. Run the following command (has to be in order)
+```
+DELETE FROM applications;
+DELETE FROM applicants;
+DELETE FROM accounts;
+DELETE FROM programs;
+DELETE FROM questions;
+DELETE FROM ti_organizations;
+DELETE FROM versions;
+DELETE FROM versions_programs;
+DELETE FROM versions_questions;
+```
+
 ### Troubleshooting
 
 #### Terraform fails

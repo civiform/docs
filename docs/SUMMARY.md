@@ -70,7 +70,7 @@
   * [Adding a new question type](contributor-guide/developer-guide/adding-a-new-question-type.md)
   * [Testing](contributor-guide/developer-guide/testing.md)
   * [Troubleshooting](contributor-guide/developer-guide/troubleshooting.md)
-  * [Updating caniuse-lite](contributor-guide/developer-guide/updating-caniuse-lite.md)
+  * [Running Dev Code in Azure](contributor-guide/developer-guide/dev-azure.md)
 * [UI/UX Guide](contributor-guide/ui-ux-guide/README.md)
   * [UI contribution guide (HTML/CSS)](contributor-guide/ui-ux-guide/ui-contribution-guide-html-css.md)
   * [UX contribution guide (mockups)](contributor-guide/ui-ux-guide/ux-contribution-guide-mockups.md)

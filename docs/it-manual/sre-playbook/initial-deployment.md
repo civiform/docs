@@ -35,27 +35,3 @@ The messages for tickets or production failures are sent to SNS queues which are
 Our logs are processed by [this Lambda function](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/prod-log-processor?tab=code), which is also managed by the console. You'll need to be signed in to the Civiform AWS account, which you can reach [here](https://seattle-commercial.awsapps.com/start#/).
 
 The logging input is configured in [this panel](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/prod-log-processor?tab=configure), and you can read more about how to work with Lambda and CloudWatch logs [here](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) and [here](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchlogs.html).
-
-## Deploying into Azure
-
-### Forking the Deployment Repository
-
-### Setting up LoginRadius
-
-### Setting up Azure Active Directory
-
-### Running the Terraform Deployment Scripts
-
-#### Filling in all the config variables
-
-### Kicking the Tires
-
-#### Testing authentication
-
-#### Testing form-construction
-
-#### Testing form submission & file uploads
-
-#### Testing program admin views
-
-#### Testing outgoing email

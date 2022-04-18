@@ -1,5 +1,5 @@
 ---
-description: An introduction to the problem and the CiviForm solution..
+description: An introduction to the problem and the CiviForm solution.
 ---
 
 # What is CiviForm?

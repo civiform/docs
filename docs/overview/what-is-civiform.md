@@ -6,8 +6,6 @@ description: An introduction to the problem and the CiviForm solution..
 
 CiviForm is free, open-source software that was built with support from Google.org Fellows and will be managed by a product steward outside of Google. CiviForm is deployed and maintained by civic entities themselves.&#x20;
 
-![Example of the CiviForm landing page where residents can find public benefits programs in one place.](<../.gitbook/assets/Landing page of programs (1).png>)
-
 ### The Problem
 
 Signing up for critical government services often requires reentering the same information on each application. Our research shows that the need to repeatedly navigate complex requirements and re-enter sensitive personal information can feel dehumanizing. Moreover, people seeking to help residents apply for programs, such as local administrators or community-based organizations, must spend valuable time and resources to work through duplicative data.&#x20;
@@ -17,6 +15,8 @@ In times of crisis, these problems can be particularly acute (e.g. during a publ
 ### Our Solution
 
 CiviForm supports a more human-centered approach to public benefits applications. When someone applies to a program, their data is stored in a centralized program database so that they see questions and programs that are most relevant to their needs. Applicants can then choose to re-use that data for other applications as they see fit.&#x20;
+
+![Example of the CiviForm landing page where residents can find public benefits programs in one place.](<../.gitbook/assets/Landing page of programs (1).png>)
 
 For applicants and their trusted intermediaries, this means that once you enter personal information for one program, you won’t need to re-enter it for future assistance. For government program administrators and local staff, this means less time collecting and sorting through redundant data across programs.
 

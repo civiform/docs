@@ -10,8 +10,6 @@ In the docs, you will find:
 * [Contributor Guides](broken-reference/) to contribute product improvements
 * [Governance & Management Documentation](broken-reference/) with information on how CiviForm is being collaboratively managed and developed
 
-![](<.gitbook/assets/Get benefits.png>)
-
 ### Getting Started
 
 Below are good docs to start learning about CiviForm:

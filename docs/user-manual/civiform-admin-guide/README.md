@@ -14,5 +14,5 @@ In this Guide, you will find how-to:
 * [Question type requirements notes](question-type-requirements-notes.md)
 
 {% hint style="success" %}
-To learn more about features for CiviForm Admin, read [how CiviForm works.](../../overview/how-does-civiform-work.md#civiform-admins)
+To learn more about features for CiviForm Admin, read [how CiviForm works](../../overview/how-does-civiform-work.md#civiform-admin-experience).
 {% endhint %}

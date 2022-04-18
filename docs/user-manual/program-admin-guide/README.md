@@ -7,5 +7,5 @@ In this Guide, you will find how-to:
 * [Review completed applications](review-completed-applications.md)
 
 {% hint style="success" %}
-To learn more about features for Program Admin, read [how CiviForm works](../../overview/how-does-civiform-work.md#program-admins).
+To learn more about features for Program Admin, read [how CiviForm works](../../overview/how-does-civiform-work.md#program-admin-experience).
 {% endhint %}

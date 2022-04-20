@@ -85,3 +85,18 @@ For SAML, which is the protocol format we are using with LoginRadius, the NameID
 ### SamlCiviformProfileAdapter
 
 The SamlCiviformProfileAdapter is used to augment the [CiviformProfile](https://github.com/seattle-uat/civiform/blob/6ac723af1498edf61390507e24e7168ba272ce68/universal-application-tool-0.0.1/app/auth/CiviFormProfile.java) with information that is found in a user’s [SAML2Profile](http://www.pac4j.org/apidocs/pac4j/3.1.0/org/pac4j/saml/profile/SAML2Profile.html). The SAML2Profile is returned by the [SAML2Client](http://www.pac4j.org/apidocs/pac4j/3.1.0/org/pac4j/saml/client/SAML2Client.html) after a user successfully authenticates using SSO. The SamlCiviformProfileAdapter extends the [AuthenticatorProfileCreator](http://www.pac4j.org/apidocs/pac4j/1.9.1/org/pac4j/core/profile/creator/AuthenticatorProfileCreator.html) and therefore inherits the create() method, which creates a profile based on credentials. In this case, the created profile will be a SAML2Profile, because the user is authenticating using LoginRadius configured for SAML2. When the SAML2Profile is returned, we check for authority ID (used to identify each user), email, locale, first name, middle name and last name. Any information that is present is then added to the CiviformProfile. If the user doesn't have a corresponding authority\_id, we should throw an exception. We then set the corresponding [Roles](https://github.com/seattle-uat/civiform/blob/6ac723af1498edf61390507e24e7168ba272ce68/universal-application-tool-0.0.1/app/auth/Roles.java) for this user. Because LoginRadius with SAML is currently only supported for applicants, we only have to add the applicant and sometimes the trusted intermediary role– this user will never be an admin.
+
+## Testing
+
+OIDC for the IDCS applicant flow can be tested locally.  Out of the box, `bin/run-dev` runs a dev-oidc container and Civiform allows you to log in using it.
+
+The logged out landing page has a Log In button that will redirect to the dev OIDC server.  Enter any user/pass you like and accept the subsequent claims page.  You'll then be redirected back to your civiform.
+
+Logging out from this state is a little tricky, you'll need to logout then clear the local login site cookie, you can do this through an extension, or other means.
+
+Note:
+* You need to have a local IP route for the 'dev-oidc' hostname in your /etc/hosts file so your browser can find the container: EG `127.0.0.1 dev-oidc`
+* You may need to disable any proxy setup in your browser if you can't access the login page when you click 'Log In'
+* The Login page will ask for an artbitrary userid and email, enter anything you like.  The User Id will be used as your Account id though.
+* The second page in the login is confirming the Claims, just accept the request.
+

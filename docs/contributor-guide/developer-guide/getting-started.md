@@ -80,7 +80,7 @@ This will start up a dev instance of the application that uses Azurite, the Azur
 
 2. Once you see "Server started" in your terminal (it will take some time for the server to start up), you can access the app in a browser at http://localhost:9000. Be patient on the initial page load since it will take some time for all the sources to compile.
 
-If you want to use the Log In flow see [those instructions](contributor-guide/developer-guide/authentication-providers.md#testing) which include a one-time setup too.
+If you want to use the Log In flow see [those instructions](authentication-providers.md#testing) which include a one-time setup too.
 
 The `bin/run-dev` script uses `docker-compose` (see [`docker-compose.yaml`](https://github.com/seattle-uat/civiform/blob/main/docker-compose.yml)). It enables Java and Javascript hot-reloading: when you modify most files, the server will recompile and restart. This is pretty time-consuming on first page load, but after that, it's not so bad.
 

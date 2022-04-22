@@ -1,9 +1,5 @@
 # Infrastructure Requirements
 
-
-
-_**Bion Johnson, Ben Collins-Sussman, Shane McDaniel -- November 2021**_
-
 This document describes the infrastructure required to deploy CiviForm into a new jurisdiction.
 
 CiviForm is a classic web-based client-server architecture which stores applicant data in a database. The application server typically runs in a Docker container, a type of virtualized environment which contains most of the pieces described below.

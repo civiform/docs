@@ -39,7 +39,8 @@ The setup scrip prompts you to set up Azure AD. There are a few additional steps
 
 ### Clear data from the database
 1. cd checkout 
-2. cloud/azure/bin/db-connection
+2. From checkout directory run `cloud/azure/bin/db-connection -d <database_name> -g <resource_group> -v <keyvault>`
+Note that the database_name does not include the .postgres.database 
 3. Wait for the application to say you can run sql (try running \dt to make sure you can see the data) 
 4. Run the following command (has to be in order)
 ```
@@ -61,3 +62,12 @@ DELETE FROM versions_questions;
 The deploy command is idempotent so if it fails try running it again. The setup command can also be re-reun but it does re-set a lot of variables which are kind of a pain to continually set up.
 
 If changes were made upstream, you can change the code in the checkout env, but will need to commit PRs to fix in the main repo
+
+#### No such file or directory
+
+If you see error like no such file or directory 
+```
+./db-connection: line 2: cloud/azure/bin/lib.sh: No such file or directory
+./db-connection: line 21: out::error: command not found
+```
+The scripts expect you to be in specific directories. You probably need to cd into the checkout directory or the top level directory. If you are running setup/deploy/revert you will need to be in the top level directory if you are running a script like db-connection you need to be in the checkout directory!

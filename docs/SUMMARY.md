@@ -39,7 +39,7 @@
   * [Breaking Glass on Database](it-manual/sre-playbook/breaking-glass-on-database.md)
   * [Look For Missing Questions](it-manual/sre-playbook/look-for-missing-questions.md)
   * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
-* [Infrastructure Requirements](it-manual/infrastrucutre-requirements.md)
+* [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
 * [Testing & QA](it-manual/testing-and-qa/README.md)
   * [Testing resources](it-manual/testing-and-qa/testing-resources.md)
   * [SQL queries to look for missing questions](it-manual/testing-and-qa/sql-queries-to-look-for-missing-questions.md)

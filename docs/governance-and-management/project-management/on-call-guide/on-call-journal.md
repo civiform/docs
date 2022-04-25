@@ -1,6 +1,12 @@
 # On Call Journal
 
 ## Journal of on-call tasks and incidents
+### 4/20/2022 - 4/27/2022 Swathi M.
+* RenovateBot
+  * Merged
+    * org.mockito:mockito-core to 4.5.0 -> 4.5.1
+    * org.apache.pdfbox:pdfbox to 2.0.25 -> 2.0.26
+    * autoprefixer to	10.4.4 -> 10.4.5
 
 ### 4/13/2022 - 4/20/2022 Gwen G.
 * RenovateBot

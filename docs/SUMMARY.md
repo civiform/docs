@@ -61,7 +61,7 @@
   * [Database](contributor-guide/developer-guide/database/README.md)
     * [DB Schema](contributor-guide/developer-guide/database/db-schema.md) 
     * [Data dictionary](contributor-guide/developer-guide/database/data-dictionary.md)
-    * [Cookbook](contributor-guide/developer-guide/database/cookbook.md)
+    * [Cookbook](contributor-guide/developer-guide/database/sql-cookbook.md)
   * [File storage backend](contributor-guide/developer-guide/file-storage-backend.md)
   * [Authentication Providers](contributor-guide/developer-guide/authentication-providers.md)
   * [Development standards](contributor-guide/developer-guide/development-standards.md)

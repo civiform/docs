@@ -13,7 +13,7 @@ For Java, classes generally have their own unit tests. The unit test file should
 
 Tests that require a Play application should either use `extends play.test.WithApplication`, or `extends repository.WithPostgresContainer` if a database is required. By default, using `extends play.test.WithApplication` will produce an application with a binding to an in-memory postgres database that is incompatible with everything and is pretty much useless.
 
-To run the unit tests (includes all tests under [`test/`](https://github.com/seattle-uat/civiform/tree/main/universal-application-tool-0.0.1/test)), run the following:
+To run the unit tests (includes all tests under [`test/`](https://github.com/seattle-uat/civiform/tree/main/server/test)), run the following:
 
 ```
 bin/run-test
@@ -41,7 +41,7 @@ See [AdminProgramControllerTest.java ](https://github.com/seattle-uat/civiform/p
 
 ### View tests
 
-[`BaseHtmlView`](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/views/BaseHtmlView.java) provides a number of HTML tag-producing methods, for example [`Tag submitButton(String textContents)`](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/views/BaseHtmlView.java#L53). These methods tend to be fairly simple, with unit tests that are brittle to small, inconsequential changes. Whether or not to test these types of methods is at the discretion of the implementer and code reviewer(s).
+[`BaseHtmlView`](https://github.com/seattle-uat/civiform/blob/main/server/app/views/BaseHtmlView.java) provides a number of HTML tag-producing methods, for example [`Tag submitButton(String textContents)`](https://github.com/seattle-uat/civiform/blob/main/server/app/views/BaseHtmlView.java#L53). These methods tend to be fairly simple, with unit tests that are brittle to small, inconsequential changes. Whether or not to test these types of methods is at the discretion of the implementer and code reviewer(s).
 
 View classes that render a complete page should not be unit tested, but instead should have corresponding [browser test(s)](#functional-browser-tests) that assert the key interactions for a user on that page.
 

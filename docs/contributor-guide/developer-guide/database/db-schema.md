@@ -1,8 +1,8 @@
 # DB Schema
 
-The database schema is derived by combining all of the [evolution SQL files](https://github.com/seattle-uat/civiform/tree/main/universal-application-tool-0.0.1/conf/evolutions/default) in sequential order. It's current state as of #36 follows.  This can be generated using `pg_dump -s postgres` and then `\d tableName` on the table of interest.
+The database schema is derived by combining all of the [evolution SQL files](https://github.com/seattle-uat/civiform/tree/main/server/conf/evolutions/default) in sequential order. It's current state as of #36 follows.  This can be generated using `pg_dump -s postgres` and then `\d tableName` on the table of interest.
 
-Each table is mapped to a [models/ class](https://github.com/seattle-uat/civiform/tree/main/universal-application-tool-0.0.1/app/models), and the classes contain more context.
+Each table is mapped to a [models/ class](https://github.com/seattle-uat/civiform/tree/main/server/app/models), and the classes contain more context.
 
 ```
                                          Table "public.accounts"

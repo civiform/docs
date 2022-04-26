@@ -21,7 +21,7 @@ Examples: it's not running tests, or it's telling you there are compiler warning
 
 SBT has a lot of caching built in, and it doesn't always clean itself up quite right.  There is no single way to clean up the entire cache.
 
-Try `bin/sbt clean`, and if that doesn't work you might try `rm -rf universal-application-tool-0.0.1/target/ universal-application-tool-0.0.1/project/project universal-application-tool-0.0.1/project/target universal-application-tool-0.0.1/logs/`.
+Try `bin/sbt clean`, and if that doesn't work you might try `rm -rf server/target/ server/project/project server/project/target server/logs/`.
 
 You might also try `docker-compose down --remove-orphans` or `docker system prune`, if you suspect the problem might be a rogue docker container locking the sbt directory.
 
@@ -29,7 +29,7 @@ If the problem persists even after trying the tips above, you can try increasing
 
 ### IOError - could not create directory, `_global/inputStreams`
 
-I don't know why this happens.  I have a lot of info on the symptoms and a solution that seems to work.  Solution first - run this on your host machine (not in the container).  `rm -rf universal-application-tool-0.0.1/target/*`.  Seems scary but this is just output cache stuff.  Everything works fine once you do this.
+I don't know why this happens.  I have a lot of info on the symptoms and a solution that seems to work.  Solution first - run this on your host machine (not in the container).  `rm -rf server/target/*`.  Seems scary but this is just output cache stuff.  Everything works fine once you do this.
 
 The bind mount in docker just doesn't copy subdirectories of `target/streams/`.  I can't figure out why to save my life, it makes no sense, it copies files in the `target` directory just fine, picks up changes to that directory fine.  There's no symlinks or hardlinks that it's failing to follow, as far as I can tell.  But if you delete the directory it works okay.  Google is no help - "bind mount missing subdirectory" and related searches are full of people confused about the wrong thing.  Please edit this if you figure out why - I hate mysteries!  But at least there's a fix.
 
@@ -40,7 +40,7 @@ The bind mount in docker just doesn't copy subdirectories of `target/streams/`. 
 `bin/run-dev` pulls the latest dev image from the public registry. If for any reason, you cannot download the image, you can build it yourself locally. To build the container that runs the app, type `docker build -t civiform .` Running this takes ~5 minutes, but it bakes in most of the dependencies you will need to download, so if you make a significant change to the dependencies you may want to re-build. Once the image is built, set environment variable `USE_LOCAL_CIVIFORM=1` so that `bin/run-dev` will use the image you just built.
 
 ### The docker container is not picking up my changes
-The docker container no longer requires the volume mount, so it could be that you ran the container without the volume mapping.  Try adding `-v $PWD/universal-application-tool-0.0.1:/usr/src/universal-application-tool-0.0.1`.  If you're running with `docker-compose` or `bin/run-dev`, check that you're running the command from the correct directory (the root of the git repo, one directory above the `build.sbt` file).
+The docker container no longer requires the volume mount, so it could be that you ran the container without the volume mapping.  Try adding `-v $PWD/server:/usr/src/server`.  If you're running with `docker-compose` or `bin/run-dev`, check that you're running the command from the correct directory (the root of the git repo, one directory above the `build.sbt` file).
 
 ### The tests are failing since Docker is not available inside the container
 The tests run a postgres docker container for full integration testing.  We used to use an in memory database (which play supports quite well), but we stopped doing that because the in-memory database doesn't support the json types we are using as the core of our application, and we would have had to mock out the majority of our database interactions even in the integration tests.  However, this means that the tests (which run inside a docker container) need to be able to start another docker container.  This situation is called "docker in docker", and [everyone recommends against doing it](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) (the author of that article is the one who invented the tools to make it possible).
@@ -123,7 +123,7 @@ Try these steps to clear caches, docker, etc. - hopefully one will get you into 
 
 1. Clean up docker containers: `docker-compose down --remove-orphans`
 1. Run `docker system prune`
-1. Clear the sbt cache (run from `universal-application-tool/` directory): `rm -rf universal-application-tool-0.0.1/target/ universal-application-tool-0.0.1/project/project universal-application-tool-0.0.1/project/target universal-application-tool-0.0.1/logs/`
+1. Clear the sbt cache (run from `universal-application-tool/` directory): `rm -rf server/target/ server/project/project server/project/target server/logs/`
 1. Remove all docker images - you can do this in Docker Desktop by going to "Images", then clicking the "Clean up" button in the top right
 1. Remove all docker volumes - run `docker volume ls` to see a list, and then `docker volume rm ${volume_name}` to remove them
 1. Remove home directory cache folders: `rm -rf ~/.ivy ~/.ivy2 ~/.sbt ~/.coursier`

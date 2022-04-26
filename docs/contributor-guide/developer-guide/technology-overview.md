@@ -10,11 +10,11 @@ CiviForm is built on the [Play Framework](https://www.playframework.com) in Java
 
 Instead of the default templating language for Play (Twirl), CiviForm uses the [J2Html](https://j2html.com) Java library to render HTML (server-side).
 
-All view classes should extend [`BaseHtmlView`](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/views/BaseHtmlView.java), which has some helpful common tag helper methods. Its `makeCsrfTokenInputTag` must be added to all CiviForm forms.
+All view classes should extend [`BaseHtmlView`](https://github.com/seattle-uat/civiform/blob/main/server/app/views/BaseHtmlView.java), which has some helpful common tag helper methods. Its `makeCsrfTokenInputTag` must be added to all CiviForm forms.
 
-[`ViewUtils`](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/views/ViewUtils.java) is a utility class for accessing stateful view dependencies.
+[`ViewUtils`](https://github.com/seattle-uat/civiform/blob/main/server/app/views/ViewUtils.java) is a utility class for accessing stateful view dependencies.
 
-The `View` classes are generally organized by which role(s) they are viewable by (e.g., [app/view/admin/](https://github.com/seattle-uat/civiform/tree/main/universal-application-tool-0.0.1/app/views/admin) for pages viewable by Admins, [app/views/applicant/](https://github.com/seattle-uat/civiform/tree/main/universal-application-tool-0.0.1/app/views/applicant) for pages viewable by Applicants). Each of these roles also has its own [`Layout` class](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/views/admin/AdminLayout.java) that extends `BaseHtmlLayout` for rendering page content in the context of that role.
+The `View` classes are generally organized by which role(s) they are viewable by (e.g., [app/view/admin/](https://github.com/seattle-uat/civiform/tree/main/server/app/views/admin) for pages viewable by Admins, [app/views/applicant/](https://github.com/seattle-uat/civiform/tree/main/server/app/views/applicant) for pages viewable by Applicants). Each of these roles also has its own [`Layout` class](https://github.com/seattle-uat/civiform/blob/main/server/app/views/admin/AdminLayout.java) that extends `BaseHtmlLayout` for rendering page content in the context of that role.
 
 ## How to add WebJar dependencies
 
@@ -40,7 +40,7 @@ This follows the pattern of group % artifact % version.
 
 Once the WebJar has been added to the build.sbt, it is automatically extracted into a `lib` folder relative to the `public` folder storing your assets. If you are interested in the location of these files, you can build the project with the new dependencies, then go into public -> lib -> \[artifact name] and see the dependencies for yourself.
 
-In order to use the associated dependencies, you need to find the JavaScript file storing these dependencies. The example given in the attached play WebJars documentation is useful, but I found that that locating this dependency was slightly more complicated. For Azure Blob Storage, the dependency was found at `lib/azure__storage-blob/browser/azure-storage-blob.min.js`. I determined this by manually going through the unpacked files added after building the project with the new WebJars dependency. In order to add this to your script, you can call the [`ViewUtils`](https://github.com/seattle-uat/civiform/blob/main/universal-application-tool-0.0.1/app/views/ViewUtils.java) `makeWebJarsTag` function and pass in this file path. That function uses the assetsFinder to find and load the necessary dependencies into the script.
+In order to use the associated dependencies, you need to find the JavaScript file storing these dependencies. The example given in the attached play WebJars documentation is useful, but I found that that locating this dependency was slightly more complicated. For Azure Blob Storage, the dependency was found at `lib/azure__storage-blob/browser/azure-storage-blob.min.js`. I determined this by manually going through the unpacked files added after building the project with the new WebJars dependency. In order to add this to your script, you can call the [`ViewUtils`](https://github.com/seattle-uat/civiform/blob/main/server/app/views/ViewUtils.java) `makeWebJarsTag` function and pass in this file path. That function uses the assetsFinder to find and load the necessary dependencies into the script.
 
 ## AWS Infra for Seattle Instance
 

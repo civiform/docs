@@ -60,6 +60,7 @@
   * [System Design](contributor-guide/developer-guide/system-design/README.md)
     * [Backend data model](contributor-guide/developer-guide/system-design/backend-data-model.md)
     * [Data Versioning model](contributor-guide/developer-guide/system-design/data-versioning-model.md)
+  * [Database](contributor-guide/developer-guide/database/README.md)
   * [DB Schema](contributor-guide/developer-guide/db-schema.md)
   * [File storage backend](contributor-guide/developer-guide/file-storage-backend.md)
   * [Authentication Providers](contributor-guide/developer-guide/authentication-providers.md)

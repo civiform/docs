@@ -70,20 +70,22 @@ Indexes:
     "files_pkey" PRIMARY KEY, btree (id)
 
                                             Table "public.programs"
-            Column            |       Type        | Collation | Nullable |               Default
-------------------------------+-------------------+-----------+----------+--------------------------------------
- id                           | bigint            |           | not null | nextval('programs_id_seq'::regclass)
- name                         | character varying |           |          |
- description                  | character varying |           |          |
- block_definitions            | jsonb             |           | not null |
- export_definitions           | jsonb             |           |          |
- legacy_localized_name        | jsonb             |           |          |
- legacy_localized_description | jsonb             |           |          |
- slug                         | character varying |           |          |
- localized_name               | jsonb             |           |          |
- localized_description        | jsonb             |           |          |
- external_link                | character varying |           |          | ''::character varying
- display_mode                 | character varying |           | not null | 'PUBLIC'::character varying
+            Column            |            Type             | Collation | Nullable |               Default                
+------------------------------+-----------------------------+-----------+----------+--------------------------------------
+ id                           | bigint                      |           | not null | nextval('programs_id_seq'::regclass)
+ name                         | character varying           |           |          | 
+ description                  | character varying           |           |          | 
+ block_definitions            | jsonb                       |           | not null | 
+ export_definitions           | jsonb                       |           |          | 
+ legacy_localized_name        | jsonb                       |           |          | 
+ legacy_localized_description | jsonb                       |           |          | 
+ slug                         | character varying           |           |          | 
+ localized_name               | jsonb                       |           |          | 
+ localized_description        | jsonb                       |           |          | 
+ external_link                | character varying           |           |          | ''::character varying
+ display_mode                 | character varying           |           | not null | 'PUBLIC'::character varying
+ create_time                  | timestamp without time zone |           |          | 
+ last_modified_time           | timestamp without time zone |           |          | 
 Indexes:
     "programs_pkey" PRIMARY KEY, btree (id)
 Referenced by:

@@ -12,8 +12,8 @@
     * actions/upload-artifact 6673cd0 -> 09a5d6a
     * ossf/scorecard-action c1aec4a -> 98a77f8 (needs PR arroval from another reviewer)
     * @tailwindcss/line-clamp 0.3.1 -> 0.4.0 (needs PR arroval from another reviewer)
-Issues created:
-* Jest update : https://github.com/seattle-uat/civiform/issues/2369
+ * Issues created:
+    * Jest update : https://github.com/seattle-uat/civiform/issues/2369
 
 ### 4/13/2022 - 4/20/2022 Gwen G.
 * RenovateBot

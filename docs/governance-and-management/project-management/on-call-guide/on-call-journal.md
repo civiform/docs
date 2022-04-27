@@ -8,10 +8,10 @@
     * org.apache.pdfbox:pdfbox to 2.0.25 -> 2.0.26
     * autoprefixer to	10.4.4 -> 10.4.5
     * github/codeql-action to	5f53256 -> 7286114 
-    * actions/checkout a12a394 -> 2541b12 (needs PR arroval from another reviewer)
+    * actions/checkout a12a394 -> 2541b12 
     * actions/upload-artifact 6673cd0 -> 09a5d6a
-    * ossf/scorecard-action c1aec4a -> 98a77f8 (needs PR arroval from another reviewer)
-    * @tailwindcss/line-clamp 0.3.1 -> 0.4.0 (needs PR arroval from another reviewer)
+    * ossf/scorecard-action c1aec4a -> 98a77f8 
+    * @tailwindcss/line-clamp 0.3.1 -> 0.4.0 
   * Issues created:
     * Jest update : https://github.com/seattle-uat/civiform/issues/2369
 

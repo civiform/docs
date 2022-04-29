@@ -5,10 +5,10 @@ CiviForm is an open-source platform that streamlines the way residents find and 
 In the docs, you will find:
 
 * [Overview of CiviForm](overview/what-is-civiform.md) with a high-level summary on how the platform works
-* [User Manuals](https://docs.civiform.us/user-manual/civiform-admin-guide) to set up and use CiviForm in your organization or program
-* [IT Manuals](https://docs.civiform.us/it-manual/sre-playbook) to deploy CiviForm on your technical infrastructure
-* [Contributor Guides](https://docs.civiform.us/contributor-guide/developer-guide) to contribute product improvements
-* [Governance & Management Documentation](https://docs.civiform.us/governance-and-management/project-management) with information on how CiviForm is being collaboratively managed and developed
+* [User Manuals](user-manual/civiform-admin-guide/README.md) to set up and use CiviForm in your organization or program
+* [IT Manuals](it-manual/sre-playbook/README.md) to deploy CiviForm on your technical infrastructure
+* [Contributor Guides](contributor-guide/developer-guide/README.md) to contribute product improvements
+* [Governance & Management Documentation](governance-and-management/project-management/README.md) with information on how CiviForm is being collaboratively managed and developed
 
 ### Getting Started
 

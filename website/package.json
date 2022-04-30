@@ -1,0 +1,15 @@
+{
+  "name": "civiform-website",
+  "version": "1.0.0",
+  "description": "Website for CiviForm.",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build:11ty": "npx @11ty/eleventy",
+    "build:sass": "npx sass src/sass:public/css",
+    "build": "npx @11ty/eleventy && npx sass src/sass:public/css"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "sass": "^1.51.0"
+  }
+}

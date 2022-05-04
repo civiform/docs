@@ -1,6 +1,12 @@
 # On Call Journal
 
 ## Journal of on-call tasks and incidents
+
+### 4/27/2022 - 5/4/2022 Bion J.
+* RenovateBot
+  * [Merged](https://github.com/seattle-uat/civiform/pulls?q=is%3Apr+is%3Amerged+author%3Aapp%2Frenovate+created%3A%3C2022-05-05+)
+  * Jest monorepo, TS-jest update: https://github.com/seattle-uat/civiform/issues/2431
+
 ### 4/20/2022 - 4/27/2022 Swathi M.
 * RenovateBot
   * Merged

@@ -36,17 +36,30 @@ The easiest way to get IntelliJ to index the project correctly is to install the
 First, install the following extensions:
 
 * [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+* [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
 * [Scala Syntax (official)](https://marketplace.visualstudio.com/items?itemName=scala-lang.scala)
 
 Then, run `bin/vscode-setup` to generate the pom.xml file
 
 **Editing the code**
 
-* Open the workspace file `civiform.code-workspace` in VSCode
+* Open the workspace file `civiform.code-workspace` in VSCode. (If you open the project directory directly, our project's custom settings won't be loaded)
+* In the popup "Multiple build definitions found" select "sbt" 
+
+   ![screenshot of the popup](https://user-images.githubusercontent.com/5566205/166615425-8a8675d9-cd2a-4a9d-9a8e-dcefa24422c7.png)
+   
+* In the popup "New sbt workspace detected" select "import build" 
+
+   ![screenshot of the popup](https://user-images.githubusercontent.com/5566205/166615465-d1359f91-3cef-4abc-bb23-f4e9b93b81b8.png)
+   
+* Note: on first open, Java and Metals need to compile and download dependancies.  This may take some time.
 
 **Troubleshooting**
 
-* If source code isn't being indexed / symbols aren't found, you may need to clean the Java workspace. Trigger the command pallet and select `Java: Clean Java Language Server Workspace`
+* If source code isn't being indexed / symbols aren't found:
+   * Try cleaning the Java workspace. Trigger the command pallet and select `Java: Clean Java Language Server Workspace`
+   * Try cleaning the Metals workspace. Trigger the command pallet and select `Metals: Import Build`
+   * Try triggering an `sbt bloopInstall`. Trigger the command pallet and select `Metals: Import Build`
 * If a new dependency is added, the `pom.xml` file may be out of date. You'll need to either add the dependancies manually, or re-run the bin/vscode-setup script to regenerate the file.
   * Here's a [guide to pom.xml setup](https://yongjie.codes/guides/java-play-sbt-on-vscode/) with the play framework
 

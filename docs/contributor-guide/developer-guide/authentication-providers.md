@@ -52,6 +52,18 @@ pbcopy < test.cert
 
 > ![image](https://user-images.githubusercontent.com/19631367/155667445-223de285-906f-4624-bbd4-ea88612fcc14.png)
 
+### Via Terraform Setup
+The terraform setup script should walk you through each step of this process so the manual set up is less necessary. If you mess up the initial IDP set up you just have to generate the "Generate LoginRadius' Certificate and Key" via [open ssl commands documented here](https://www.loginradius.com/docs/single-sign-on/concept/saml-miscellaneous/certificate/) -- these get stored in the Id Provider Certificate Key and the Id Provider Certificate. They don't need to be stored anywhere on the civiform side. 
+
+After that you will need to re deploy terraform and re generate the Service Provider certificate containing the sp public key which is given to the Login Radius, or the Idp (this is prompted in the setup). The setup script also takes the private key portion of the cert and puts it in a storage bucket, which is mounted as a volume that the application can access. This was implemented in [pr #2007](https://github.com/seattle-uat/civiform/pull/2007).
+
+When we generate the Service Provider secret/public key we password encrypt it with a "saml-keystore-pass." The private key password and the keystore password are the same value. Pac4J uses this password to protect the secret value and then knows how to grab the value via the following lines: 
+```
+config.setKeystoreResourceFilepath(configuration.getString("login_radius.keystore_name"));
+config.setKeystorePassword(configuration.getString("login_radius.keystore_password"));
+config.setPrivateKeyPassword(configuration.getString("login_radius.private_key_password"));
+```
+
 ## Authentication code structure
 
 ### AdminAuthClient and ApplicantAuthClient

@@ -54,6 +54,19 @@ If you find yourself needing to do this during a `docker build` command - for in
 ### Test `app.SecurityBrowserTest.basicOidcLogin` or Test `app.SecurityBrowserTest.mergeLogins` failed
 The error message says expecting `"username@example.com"` to be contained in the html content. This is likely you have a stale `oidc-provider` docker image. Simply run `docker pull public.ecr.aws/t1q6b4h2/oidc-provider:latest` to get the latest image and try again.
 
+## Database
+
+### ""PSQLException: FATAL: sorry, too many clients already""" (unit tests)
+Unit tests run against a single Postgres instance. The maximum number of
+concurrent Postgres connections is configured via the `fixedConnectionPool`
+Play configuration variable. If a unit test makes use of
+`play.inject.guice.GuiceApplicationBuilder` or `play.test.Helpers.fakeApplication`,
+a new Postgres connection will be created as part of applying database evolutions.
+If no call is made to `play.test.Helpers.stop` after the test completes, the
+Postgres connection will be leaked and potentially cause unrelated tests to fail
+with the above error.
+
+
 ## Running locally
 
 ### OpenJDK acting weird on M1 Mac

@@ -22,7 +22,7 @@ Run through the doctor script to make sure you have the right things on
 your machine:
 
 ```
-cloud/shared/bin/doctor
+export CIVIFORM_CLOUD_PROVIDER=azure && cloud/shared/bin/doctor
 ```
 
 ## Setup Login Radius For Local Development

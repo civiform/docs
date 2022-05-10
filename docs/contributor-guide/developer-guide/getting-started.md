@@ -33,16 +33,15 @@ The easiest way to get IntelliJ to index the project correctly is to install the
 
 **Setup**
 
-First, install the following extensions:
+1. Install the following extensions:
+    * [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+    * [Scala Syntax (official)](https://marketplace.visualstudio.com/items?itemName=scala-lang.scala)
+    * [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
+2. Run `bin/vscode-setup` to generate a pom.xml file that allows VSCode to resolve dependencies
+3. Open the workspace file `civiform.code-workspace` in VSCode
+4. Metals automatically detects the project. Click `Import Build` at the prompt. <img width="676" alt="Screen Shot 2022-05-06 at 9 28 17 AM" src="https://user-images.githubusercontent.com/1870301/167177672-45594f16-cfea-4f8c-845d-8c266443acc3.png">
+5. Choose `sbt` at the prompt for multiple build definitions. <img width="665" alt="Screen Shot 2022-05-06 at 9 51 24 AM" src="https://user-images.githubusercontent.com/1870301/167177704-cc3c290f-5cda-4776-88f5-a88573af3662.png">
 
-* [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-* [Scala Syntax (official)](https://marketplace.visualstudio.com/items?itemName=scala-lang.scala)
-
-Then, run `bin/vscode-setup` to generate the pom.xml file
-
-**Editing the code**
-
-* Open the workspace file `civiform.code-workspace` in VSCode
 
 **Troubleshooting**
 

@@ -168,18 +168,6 @@ You must be added as both a contributor and owner in Azure. After a teammate
 adds you, you must re-login since this doesn't refresh automatically. Run `az
 logout` and `az login` to refresh your credentials.
 
-## Azure access errors
-
-### Error
-
-Various Azure permission errors.
-
-### Resolution
-
-You must be added as both a contributor and owner in Azure. After a teammate
-adds you, you must re-login since this doesn't refresh automatically. Run `az
-logout` and `az login` to refresh your credentials.
-
 # Tearing down
 
 Use `terraform -chdir=cloud/azure/templates/azure_saml_ses destroy` to turn off

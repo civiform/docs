@@ -7,6 +7,8 @@
     <title>{{title}}</title>
   </head>
   <body>
-    {{content | safe}}
+    {% block content %}
+      {{content | safe}}
+    {% endblock %}
   </body>
 </html>

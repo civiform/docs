@@ -1,4 +1,25 @@
 /* Sitewide styles for CiviForm. */
+/* Cagov color scheme root variables */
+:root {
+  /* Theme colors */
+  --primary-100: #e7eef9;
+  --primary-300: #a3bee7;
+  --primary-500: #5a8ad4;
+  --primary-700: #165ac2;
+  --primary-900: #003688;
+  --accent1-100: #ffead6;
+  --accent1-300: #ffa656;
+  --accent1-500: #de6516;
+  --accent1-700: #9c4510;
+  --accent1-900: #642a0a;
+  --accent2-100: #ffecc4;
+  --accent2-300: #ecb32d;
+  --accent2-500: #ac8227;
+  --accent2-700: #775a20;
+  --accent2-900: #4a3918;
+}
+
+/* theme colors */
 /* sitewide styles, these are mostly blank but will be wrapped up into components/base-css */
 :root {
   --w-lg: 1176px;

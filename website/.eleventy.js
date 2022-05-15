@@ -18,7 +18,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/rootcopy": "/" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
-  eleventyConfig.addPassthroughCopy({ "src/sass/fonts": "fonts" });
+  eleventyConfig.addPassthroughCopy({ "src/css/fonts": "fonts" });
 
   return {
     dir: {

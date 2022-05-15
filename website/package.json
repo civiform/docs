@@ -5,8 +5,8 @@
   "license": "Apache-2.0",
   "scripts": {
     "build:11ty": "npx @11ty/eleventy",
-    "build:sass": "npx sass src/sass:public/css",
-    "build": "npx @11ty/eleventy && npx sass src/sass:public/css"
+    "build:sass": "npx sass src/css:public/css",
+    "build": "npx @11ty/eleventy && npx sass src/css:public/css"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",

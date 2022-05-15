@@ -1,3 +1,5 @@
+const esbuild = require('esbuild')
+
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.setNunjucksEnvironmentOptions({
@@ -5,10 +7,18 @@ module.exports = function(eleventyConfig) {
     trimBlocks: true
   });
 
+  eleventyConfig.on("eleventy.after", () => {
+    return esbuild.build({
+      entryPoints: ["src/js/index.js"],
+      bundle: true,
+      outdir: "public/js"
+    });
+  });
+  eleventyConfig.addWatchTarget("./src/js/");
+
   eleventyConfig.addPassthroughCopy({ "src/rootcopy": "/" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/sass/fonts": "fonts" });
-  eleventyConfig.addPassthroughCopy({ "src/js": "js" });
 
   return {
     dir: {

@@ -1,1 +1,4 @@
-console.log('index.js loaded')
+(() => {
+  // src/js/index.js
+  console.log("index.js loaded");
+})();

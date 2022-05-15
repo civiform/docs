@@ -13,6 +13,7 @@
     "@cagov/ds-base-css": "^1.0.19",
     "@cagov/ds-feature-card": "^1.0.7",
     "@cagov/ds-site-header": "^1.1.1",
+    "esbuild": "^0.14.39",
     "sass": "^1.51.0"
   }
 }

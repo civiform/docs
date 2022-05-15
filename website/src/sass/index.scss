@@ -4,10 +4,18 @@
 
 
 /* Component styles */
+@import '../../node_modules/@cagov/ds-feature-card/src/index.scss';
 @import '../../node_modules/@cagov/ds-site-header/src/index.scss';
 
 
 /* Custom styles */
 .grid-logo img {
   max-height: 120px;
+}
+
+/* Extend homepage hero text horizontally */
+@media (min-width: 1176px) {
+  .cagov-featured-sidebar {
+    max-width: 70%;
+  }
 }

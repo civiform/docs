@@ -1,3 +1,13 @@
 /* Sitewide styles for CiviForm. */
 
 @import '../../node_modules/@cagov/ds-base-css/src/_core';
+
+
+/* Component styles */
+@import '../../node_modules/@cagov/ds-site-header/src/index.scss';
+
+
+/* Custom styles */
+.grid-logo img {
+  max-height: 120px;
+}

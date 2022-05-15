@@ -4,9 +4,7 @@
   "description": "Website for CiviForm.",
   "license": "Apache-2.0",
   "scripts": {
-    "build:11ty": "npx @11ty/eleventy",
-    "build:sass": "npx sass src/css:public/css",
-    "build": "npx @11ty/eleventy && npx sass src/css:public/css"
+    "build": "npx @11ty/eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
@@ -14,6 +12,6 @@
     "@cagov/ds-feature-card": "^1.0.7",
     "@cagov/ds-site-header": "^1.1.1",
     "esbuild": "^0.14.39",
-    "sass": "^1.51.0"
+    "esbuild-sass-plugin": "^2.2.6"
   }
 }

@@ -1,4 +1,6 @@
 const esbuild = require('esbuild')
+const { sassPlugin } = require("esbuild-sass-plugin");
+
 
 module.exports = function(eleventyConfig) {
 
@@ -9,12 +11,15 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.on("eleventy.after", () => {
     return esbuild.build({
-      entryPoints: ["src/js/index.js"],
+      entryPoints: ["src/js/index.js", "src/css/index.scss"],
+      external: ["*.woff2", "*.woff"],
       bundle: true,
-      outdir: "public/js"
+      outdir: "public",
+      plugins: [sassPlugin()]
     });
   });
   eleventyConfig.addWatchTarget("./src/js/");
+  eleventyConfig.addWatchTarget("./src/css/");
 
   eleventyConfig.addPassthroughCopy({ "src/rootcopy": "/" });
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });

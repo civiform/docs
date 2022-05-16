@@ -61,8 +61,13 @@ cat certificate.cert
 ```
 
 "Service Provider Certificate" will be generated later while running setup.
-Since this is a required field, you can put in any dummy string for now, and
-update it later with the string generated during setup.
+Since this is a required field, you can use the following placeholder for now,
+and update it later with the string generated during setup:
+
+```
+-----BEGIN CERTIFICATE-----
+-----END CERTIFICATE-----
+```
 
 For the rest of the fields, you need to copy the details from a previous working
 setup in login radius, so look back at the staging one to fill yours out.

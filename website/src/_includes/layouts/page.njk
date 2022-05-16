@@ -1,0 +1,11 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <div id="page-container" class="page-container-ds">
+    <div id="main-content" class="main-content-ds single-column">
+      <main id="body-content">
+        {{content | safe}}
+      </main>
+    </div>
+  </div>
+{% endblock %}

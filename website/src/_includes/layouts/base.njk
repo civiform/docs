@@ -11,6 +11,11 @@
     {% block header %}
       {% include "layouts/header.njk" %}
     {% endblock %}
+
+    {% block navigation %}
+      {% include "layouts/navigation.njk" %}
+    {% endblock %}
+
     {% block content %}
       {{content | safe}}
     {% endblock %}

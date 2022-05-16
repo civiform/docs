@@ -3,5 +3,24 @@
     <a href="/" class="grid-logo" aria-label="CiviForm home">
       <img alt="CiviForm logo" src="/img/civiform-logo.png">
     </a>
+
+    <!-- Everything below here is boilerplate to support navigation markup defined in nagivation.njk -->
+
+    <!-- Mobile menu (including hamburger) boilerplate. -->
+    <div class="cagov-nav mobile-icons grid-mobile-icons">
+      <!-- We are not using mobile search (yet), but we must include the class regardless. -->
+      <div class="cagov-nav mobile-search"></div>
+      <button class="menu-trigger cagov-nav open-menu" aria-label="Navigation menu" aria-haspopup="true" aria-expanded="false" aria-owns="mainMenu" aria-controls="mainMenu">
+        <div class="cagov-nav hamburger">
+          <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+          </div>
+        </div>
+        <div class="cagov-nav menu-trigger-label menu-label" data-openlabel="Menu" data-closelabel="Close">Menu</div>
+      </button>
+    </div>
+
+    <!-- We are not using search (yet), but we must include the class regardless. -->
+    <div class="search-container grid-search"></div>
   </div>
 </div>

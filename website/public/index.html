@@ -13,8 +13,107 @@
         <a href="/" class="grid-logo" aria-label="CiviForm home">
           <img alt="CiviForm logo" src="/img/civiform-logo.png" />
         </a>
+
+        <!-- Everything below here is boilerplate to support navigation markup defined in nagivation.njk -->
+
+        <!-- Mobile menu (including hamburger) boilerplate. -->
+        <div class="cagov-nav mobile-icons grid-mobile-icons">
+          <!-- We are not using mobile search (yet), but we must include the class regardless. -->
+          <div class="cagov-nav mobile-search"></div>
+          <button
+            class="menu-trigger cagov-nav open-menu"
+            aria-label="Navigation menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-owns="mainMenu"
+            aria-controls="mainMenu"
+          >
+            <div class="cagov-nav hamburger">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+            <div
+              class="cagov-nav menu-trigger-label menu-label"
+              data-openlabel="Menu"
+              data-closelabel="Close"
+            >
+              Menu
+            </div>
+          </button>
+        </div>
+
+        <!-- We are not using search (yet), but we must include the class regardless. -->
+        <div class="search-container grid-search"></div>
       </div>
     </div>
+
+    <cagov-site-navigation>
+      <div class="container">
+        <!-- We are not using search (yet), but we must include the class regardless. -->
+        <div
+          class="search-container search-container--small hidden-search"
+        ></div>
+
+        <!-- Navigation menu items. -->
+        <nav
+          class="expanded-menu"
+          role="navigation"
+          aria-label="Site Navigation"
+          aria-hidden="false"
+          id="main-menu"
+        >
+          <div class="expanded-menu-grid">
+            <div class="expanded-menu-section mobile-only">
+              <strong class="expanded-menu-section-header">
+                <a
+                  class="expanded-menu-section-header-link js-event-hm-menu"
+                  href="/"
+                  >Home</a
+                >
+              </strong>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/"
+                    >About</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="https://docs.civiform.us"
+                    >Docs</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/"
+                    >Contact</a
+                  ></strong
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </cagov-site-navigation>
+
     <div id="page-container" class="page-container-ds">
       <div id="main-content" class="main-content-ds single-column landing">
         <main id="body-content">

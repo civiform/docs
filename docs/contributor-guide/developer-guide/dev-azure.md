@@ -61,6 +61,8 @@ cat certificate.cert
 ```
 
 "Service Provider Certificate" will be generated later while running setup.
+Since this is a required field, you can put in any dummy string for now, and
+update it later with the string generated during setup.
 
 For the rest of the fields, you need to copy the details from a previous working
 setup in login radius, so look back at the staging one to fill yours out.
@@ -165,8 +167,8 @@ Various Azure permission errors.
 ### Resolution
 
 You must be added as both a contributor and owner in Azure. After a teammate
-adds you, you must re-login since this doesn't refresh automatically. Run `az
-logout` and `az login` to refresh your credentials.
+adds you, you must re-login since this doesn't refresh automatically.
+Run `az logout` and `az login` to refresh your credentials.
 
 # Tearing down
 

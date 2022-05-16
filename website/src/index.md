@@ -9,6 +9,7 @@ title: CiviForm
       <p>
         CiviForm makes it easier to access public assistance by consolidating applications and saving residents time.
       </p>
+      <a class="btn-primary" href="/about">Learn more</a>
     </div>
   </div>
 </div>

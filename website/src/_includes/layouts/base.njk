@@ -8,13 +8,9 @@
     <title>{{title}}</title>
   </head>
   <body>
-    <div class="site-header">
-      <div class="container with-logo">
-        <a href="/" class="grid-logo" aria-label="CiviForm home">
-          <img alt="CiviForm logo" src="/img/civiform-logo.png">
-        </a>
-      </div>
-    </div>
+    {% block header %}
+      {% include "layouts/header.njk" %}
+    {% endblock %}
     {% block content %}
       {{content | safe}}
     {% endblock %}

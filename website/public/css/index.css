@@ -3101,7 +3101,8 @@ figure figcaption {
 .cagov-card h4 {
   padding-top: var(--s-2, 1rem) !important;
 }
-.p-t-3 {
+.p-t-3,
+.cagov-hero-body-content {
   padding-top: var(--s-3, 1.5rem) !important;
 }
 .p-t-4 {
@@ -3331,7 +3332,8 @@ figure figcaption {
 .m-t-0 {
   margin-top: 0 !important;
 }
-.m-t-1 {
+.m-t-1,
+.cagov-hero-body-content a.btn-primary {
   margin-top: var(--s-1, 0.5rem) !important;
 }
 .m-t-2 {

@@ -21,6 +21,16 @@
   }
 }
 
+/* Homepage text spacing */
+.cagov-hero-body-content {
+  @extend .p-t-3;
+}
+
+.cagov-hero-body-content a.btn-primary {
+  @extend .m-t-1;
+}
+
+
 /* Styles for feature cards on homepage. */
 .cagov-card {
   border: 2px solid;

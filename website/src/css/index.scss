@@ -20,3 +20,20 @@
     max-width: 70%;
   }
 }
+
+/* Styles for feature cards on homepage. */
+.cagov-card {
+  border: 2px solid;
+  border-color: var(--primary-900);
+  border-radius: 20px;
+}
+
+.cagov-card h4 {
+  @extend .p-t-2;
+  @extend .p-l-2;
+  color: var(--primary-900);
+}
+
+.cagov-card p {
+  @extend .p-a-2;
+}

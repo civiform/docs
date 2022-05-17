@@ -13,3 +13,24 @@ title: CiviForm
     </div>
   </div>
 </div>
+
+<div class="card-grid-3">
+  <div class="cagov-card">
+    <div class="card-text">
+      <h4>Applicants can save time.</h4>
+      <p class='p-t-3'>Residents applying for government assistance programs avoid having to enter redundant information and can find all applications in one place.</p>
+    </div>
+  </div>
+  <div class="cagov-card">
+    <div class="card-text">
+      <h4>Residents can discover more government programs.</h4>
+      <p>As a central hub for government assistance programs, residents can learn about and discover more available programs.</p>
+    </div>
+  </div>
+  <div class="cagov-card">
+    <div class="card-text">
+      <h4>Program Administrators can create and manage applications in one place.</h4>
+      <p>CiviForm is a low-code solution that is designed to be friendly and straightforward for government IT professionals and program administrators alike.</p>
+    </div>
+  </div>
+</div>

@@ -3048,7 +3048,8 @@ figure figcaption {
   padding-top: var(--s-1, 0.5rem) !important;
   padding-bottom: var(--s-1, 0.5rem) !important;
 }
-.p-a-2 {
+.p-a-2,
+.cagov-card p {
   padding-left: var(--s-2, 1rem) !important;
   padding-right: var(--s-2, 1rem) !important;
   padding-top: var(--s-2, 1rem) !important;
@@ -3096,7 +3097,8 @@ figure figcaption {
 .p-t-1 {
   padding-top: var(--s-1, 0.5rem) !important;
 }
-.p-t-2 {
+.p-t-2,
+.cagov-card h4 {
   padding-top: var(--s-2, 1rem) !important;
 }
 .p-t-3 {
@@ -3150,7 +3152,8 @@ figure figcaption {
 .p-l-1 {
   padding-left: var(--s-1, 0.5rem) !important;
 }
-.p-l-2 {
+.p-l-2,
+.cagov-card h4 {
   padding-left: var(--s-2, 1rem) !important;
 }
 .p-l-3 {
@@ -6111,4 +6114,12 @@ cagov-site-navigation .expanded-menu-close-mobile-svg {
   .cagov-featured-sidebar {
     max-width: 70%;
   }
+}
+.cagov-card {
+  border: 2px solid;
+  border-color: var(--primary-900);
+  border-radius: 20px;
+}
+.cagov-card h4 {
+  color: var(--primary-900);
 }

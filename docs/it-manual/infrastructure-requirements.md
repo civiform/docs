@@ -6,6 +6,12 @@ CiviForm is a classic web-based client-server architecture which stores applican
 
 ### The Subsystems
 
+Basic architecture
+
+![Screenshot from 2022-05-17 14-56-58](https://user-images.githubusercontent.com/473671/168917791-71592449-426f-4330-b18b-24127a4d2cfd.png)
+
+Note that there usually is not direct traffic between the CiviForm server and identity providers (dotted lines). Rather, users authenticate by visiting CiviForm, which redirects their browser to an identity provider, which in turn redirects them back to CiviForm.
+
 **Load Balancer**
 
 Software-defined load balancer to route incoming client traffic to an array of backends; required to ensure the software scales up gracefully with increased load.

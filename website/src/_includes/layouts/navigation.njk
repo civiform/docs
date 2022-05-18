@@ -1,8 +1,10 @@
 <cagov-site-navigation>
   <div class="container">
 
-    <!-- We are not using search (yet), but we must include the class regardless. -->
-    <div class="search-container search-container--small hidden-search"></div>
+    <!-- Embed mobile search form boilerplate. -->
+    {% block search_mobile %}
+      {% include "layouts/search-mobile.njk" %}
+    {% endblock %}
 
     <!-- Navigation menu items. -->
     <nav class="expanded-menu" role="navigation" aria-label="Site Navigation" aria-hidden="false" id="main-menu">

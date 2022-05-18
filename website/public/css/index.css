@@ -3094,15 +3094,15 @@ figure figcaption {
 .p-t-0 {
   padding-top: 0 !important;
 }
-.p-t-1 {
+.p-t-1,
+.cagov-hero-body-content {
   padding-top: var(--s-1, 0.5rem) !important;
 }
 .p-t-2,
 .cagov-card h4 {
   padding-top: var(--s-2, 1rem) !important;
 }
-.p-t-3,
-.cagov-hero-body-content {
+.p-t-3 {
   padding-top: var(--s-3, 1.5rem) !important;
 }
 .p-t-4 {
@@ -6196,8 +6196,11 @@ cagov-site-navigation .expanded-menu-close-mobile-svg {
 }
 @media (min-width: 1176px) {
   .cagov-featured-sidebar {
-    max-width: 70%;
+    max-width: 60%;
   }
+}
+.applicant-image {
+  object-fit: contain;
 }
 .cagov-card {
   border: 2px solid;

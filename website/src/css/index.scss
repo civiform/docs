@@ -18,13 +18,17 @@
 /* Extend homepage hero text horizontally */
 @media (min-width: 1176px) {
   .cagov-featured-sidebar {
-    max-width: 70%;
+    max-width: 60%;
   }
+}
+
+.applicant-image {
+  object-fit:  contain;
 }
 
 /* Homepage text spacing */
 .cagov-hero-body-content {
-  @extend .p-t-3;
+  @extend .p-t-1;
 }
 
 .cagov-hero-body-content a.btn-primary {

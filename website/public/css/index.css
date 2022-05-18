@@ -6194,9 +6194,15 @@ cagov-site-navigation .expanded-menu-close-mobile-svg {
 .grid-logo img {
   max-height: 110px;
 }
+@media (max-width: 768px) {
+  .grid-logo img {
+    max-height: 75px;
+  }
+}
 @media (min-width: 1176px) {
   .cagov-featured-sidebar {
     max-width: 55%;
+    padding-top: var(--s-5, 3rem) !important;
   }
 }
 .applicant-image {

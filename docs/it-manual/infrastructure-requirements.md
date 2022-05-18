@@ -8,7 +8,7 @@ CiviForm is a classic web-based client-server architecture which stores applican
 
 Basic architecture
 
-![Screenshot from 2022-05-17 14-56-58](https://user-images.githubusercontent.com/473671/168917791-71592449-426f-4330-b18b-24127a4d2cfd.png)
+![Screenshot from 2022-05-18 16-38-23](https://user-images.githubusercontent.com/473671/169172461-88113d27-6753-4a12-b771-d38984929b38.png)
 
 Note that there usually is not direct traffic between the CiviForm server and identity providers (dotted lines). Rather, users authenticate by visiting CiviForm, which redirects their browser to an identity provider, which in turn redirects them back to CiviForm.
 

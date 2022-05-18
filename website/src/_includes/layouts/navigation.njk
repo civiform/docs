@@ -1,0 +1,40 @@
+<cagov-site-navigation>
+  <div class="container">
+
+    <!-- Embed mobile search form boilerplate. -->
+    {% block search_mobile %}
+      {% include "layouts/search-mobile.njk" %}
+    {% endblock %}
+
+    <!-- Navigation menu items. -->
+    <nav class="expanded-menu" role="navigation" aria-label="Site Navigation" aria-hidden="false" id="main-menu">
+      <div class="expanded-menu-grid">
+
+        <div class="expanded-menu-section mobile-only">
+          <strong class="expanded-menu-section-header">
+            <a class="expanded-menu-section-header-link js-event-hm-menu" href="/">Home</a>
+          </strong>
+        </div>
+
+        <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+          <div class="expanded-menu-section">
+            <strong class="expanded-menu-section-header"><a class="expanded-menu-section-header-link js-event-hm-menu" href="/about">About</a></strong>
+          </div>
+        </div>
+
+        <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+          <div class="expanded-menu-section">
+            <strong class="expanded-menu-section-header"><a class="expanded-menu-section-header-link js-event-hm-menu" href="https://docs.civiform.us">Documentation</a></strong>
+          </div>
+        </div>
+
+        <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+          <div class="expanded-menu-section">
+            <strong class="expanded-menu-section-header"><a class="expanded-menu-section-header-link js-event-hm-menu" href="/contact">Contact</a></strong>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+</cagov-site-navigation>

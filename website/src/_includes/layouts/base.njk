@@ -19,5 +19,9 @@
     {% block content %}
       {{content | safe}}
     {% endblock %}
+
+    {% block footer %}
+      {% include "layouts/footer.njk" %}
+    {% endblock %}
   </body>
 </html>

@@ -4,18 +4,18 @@ title: CiviForm
 ---
 <div class="cagov-with-sidebar cagov-with-sidebar-left cagov-featured-section cagov-block">
   <div>
-  <div class="cagov-stack cagov-p-2 cagov-featured-sidebar">
-    <h2>A simpler way to access & administer government benefits</h2>
-    <div class="cagov-hero-body-content">
-      <p>
-        CiviForm makes it easier to access public assistance by consolidating applications and saving residents time.
-      </p>
-      <a class="btn-primary" href="/about">Learn more</a>
+    <div class="cagov-stack cagov-p-2 cagov-featured-sidebar">
+      <h2>A simpler way to access & administer government benefits</h2>
+      <div class="cagov-hero-body-content">
+        <p>
+          CiviForm makes it easier to access public assistance by consolidating applications and saving residents time.
+        </p>
+        <a class="btn-primary" href="/about">Learn more</a>
+      </div>
     </div>
-  </div>
-  <div>
-    <img class="cagov-featured-image applicant-image" src="img/applicant.svg" />
-  </div>
+    <div>
+      <img class="cagov-featured-image applicant-image" src="img/applicant.svg" />
+    </div>
   </div>
 </div>
 

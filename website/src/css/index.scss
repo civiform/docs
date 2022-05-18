@@ -11,14 +11,24 @@
 
 
 /* Custom styles */
+
+/* Set logo size on desktop */
 .grid-logo img {
   max-height: 110px;
 }
+/* Set logo height on mobile */
+@media (max-width: $mobile) {
+  .grid-logo img {
+    max-height: 75px;
+  }
+}
 
-/* Extend homepage hero text horizontally */
-@media (min-width: 1176px) {
+/* Extend hero text sizing and padding on desktop. */
+@media (min-width: $desktop) {
   .cagov-featured-sidebar {
     max-width: 55%;
+    /* Equivalent to .p-t-5, but you cannot @extend in a media query. */
+    padding-top: var(--s-5, 3rem) !important;
   }
 }
 

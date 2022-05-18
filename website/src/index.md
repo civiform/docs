@@ -4,7 +4,7 @@ title: CiviForm
 ---
 <div class="cagov-with-sidebar cagov-with-sidebar-left cagov-featured-section cagov-block">
   <div>
-    <div class="cagov-stack p-t-5 cagov-featured-sidebar">
+    <div class="cagov-stack cagov-featured-sidebar">
       <h2>A simpler way to access & administer government benefits</h2>
       <div class="cagov-hero-body-content">
         <p>

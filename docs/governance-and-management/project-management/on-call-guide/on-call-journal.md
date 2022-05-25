@@ -2,6 +2,12 @@
 
 ## Journal of on-call tasks and incidents
 
+### 5/25/2022 - 6/1/2022 Swathi
+
+### 5/18/2022 - 5/25/2022 Shane M
+* RenovateBot
+  * [Merged](https://github.com/seattle-uat/civiform/pulls?q=is%3Apr+is%3Amerged+author%3Aapp%2Frenovate+created%3A%3E%3D2022-05-18+)
+
 ### 4/27/2022 - 5/4/2022 Bion J.
 * RenovateBot
   * [Merged](https://github.com/seattle-uat/civiform/pulls?q=is%3Apr+is%3Amerged+author%3Aapp%2Frenovate+created%3A%3C2022-05-05+)

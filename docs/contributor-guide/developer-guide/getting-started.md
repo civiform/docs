@@ -113,7 +113,7 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup ti
 2.  Run any sbt commands! For example:
 
     ```
-    testOnly services.question.QuestionDefinitionTest
+    testOnly services.question.types.QuestionDefinitionTest
     ```
 
 ### Running browser tests

@@ -53,3 +53,11 @@
 * Production incident at city of Seattle: https://github.com/seattle-uat/civiform/issues/1797
   * Mitigated by Gwen G.
   * Shane M assigned investigation: https://github.com/seattle-uat/civiform/issues/2047
+
+### 05/25/2022 - 06/01/2022 Swathi M.
+ * Worked on prod bug : #2547   Unable to open docs for 1 application #2547 (PR in progress)
+ * RenovateBot
+  * Merged
+    * @types/node 16.11.36 → 16.11.38
+    * ossf/scorecard-action v1.0.4 → 1.1.0
+ 

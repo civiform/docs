@@ -12,6 +12,7 @@ In this Guide, you will find how-to:
 * [Show or hide questions based on inputs](show-or-hide-questions-based-on-inputs.md)
 * [Manage Trusted Intermediaries](manage-trusted-intermediaries.md)
 * [Question type requirements notes](question-type-requirements-notes.md)
+* [Manage API keys](manage-api-keys.md)
 
 {% hint style="success" %}
 To learn more about features for CiviForm Admin, read [how CiviForm works](../../overview/how-does-civiform-work.md#civiform-admin-experience).

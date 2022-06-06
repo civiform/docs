@@ -4,7 +4,7 @@ Civiform currently supports file uploads using AWS S3. There is an effort in pro
 
 ### Testing the Storage Backend
 
-The DevFileUploadView (`http://localhost:9000/dev/fileUpload`) is used to test file upload functionality using the Azurite or Localstack emulators. This view is by default configured to only work for CI browser tests. To get the view to work in your browser, you will need to add the following line to your local `/etc/hosts` file:
+File upload functionality uses the Azurite / Localstack emulators. For Azure-based file uploads to work in your browser, you will need to add the following line to your local `/etc/hosts` file:
 
 ```
 127.0.0.1 azurite

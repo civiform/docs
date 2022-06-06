@@ -10,11 +10,14 @@ Export applications to a specific program as JSON.
 
 **Path parameters**
 
-|`programSlug`|string|Human readable identifier for the program to export. The CiviForm admin can find the slug for a given program by examining the deep link link URL on the program index page or in the list of allowed programs on the API key index page.|
-
+|Path component|Type  |Description                                                                                                                                                                                                                              |
+|--------------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|`programSlug` |string|Human readable identifier for the program to export. The CiviForm admin can find the slug for a given program by examining the deep link link URL on the program index page or in the list of allowed programs on the API key index page.|
 
 **Query parameters**
 
+|Param name     |Presence|Type  |Description                                                                                                                                                                                        |
+|---------------|--------|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |`fromDate`     |optional|string|An ISO-8601 formatted date (i.e. YYYY-MM-DD). Limits results to applications submitted on or after the provided date.                                                                              |
 |`toDate`       |optional|string|An ISO-8601 formatted date (i.e. YYYY-MM-DD). Limits results to applications submitted before the provided date.                                                                                   |
 |`pageSize`     |optional|uint  |A positive integer. Limits the number of results per page. If pageSize is larger than CiviForm's maximum page size then the maximum will be used. The default maximum is 1,000 and is configurable.|

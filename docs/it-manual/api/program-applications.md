@@ -10,23 +10,15 @@ Export applications to a specific program as JSON.
 
 **Path parameters**
 
-|             |      |                                                                                                                                                                                                                                         |
-|-------------|------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |`programSlug`|string|Human readable identifier for the program to export. The CiviForm admin can find the slug for a given program by examining the deep link link URL on the program index page or in the list of allowed programs on the API key index page.|
 
 
 **Query parameters**
 
-|               |        |      |                                                                                                                                                                                                   |
-|---------------|--------|------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |`fromDate`     |optional|string|An ISO-8601 formatted date (i.e. YYYY-MM-DD). Limits results to applications submitted on or after the provided date.                                                                              |
-:               :        :      :                                                                                                                                                                                                   :
 |`toDate`       |optional|string|An ISO-8601 formatted date (i.e. YYYY-MM-DD). Limits results to applications submitted before the provided date.                                                                                   |
-:               :        :      :                                                                                                                                                                                                   :
 |`pageSize`     |optional|uint  |A positive integer. Limits the number of results per page. If pageSize is larger than CiviForm's maximum page size then the maximum will be used. The default maximum is 1,000 and is configurable.|
-:               :        :      :                                                                                                                                                                                                   :
 |`nextPageToken`|optional|string|An opaque, alphanumeric identifier for a specific page of results. When included CiviForm will return a page of results corresponding to the token.                                                |
-:               :        :      :                                                                                                                                                                                                   :
 
 ### Responses
 
@@ -102,24 +94,19 @@ Questions that are skipped are present but have null values for the skipped scal
 |             |line2           |string                                                           |
 |             |city            |string                                                           |
 |             |state           |string, two-character state code                                 |
-:             :                :                                                                 :
 |             |zip             |string, 5-character zip code                                     |
 |Currency     |currency_dollars|float with two digits of precision after the decimal             |
 |Date         |date            |string, date formatted as an ISO 8601 date YYYY-MM-DD            |
-:             :                :                                                                 :
 |Email        |email           |string                                                           |
 |ID           |id              |string                                                           |
 |Multiselect  |selections      |array of strings, en-US localized strings of the selected options|
-:             :                :                                                                 :
 |Name         |first_name      |string                                                           |
 |             |middle_name     |string                                                           |
 |             |last_name       |string                                                           |
 |Number       |number          |integer                                                          |
 |Single select|selection       |string, en-US localized string of the selected option            |
-:             :                :                                                                 :
 |Text         |text            |string                                                           |
 |Updated at   |updated_at      |ISO 8601 date and time of when the scalar was updated            |
-:             :                :                                                                 :
 
 **Example export**
 

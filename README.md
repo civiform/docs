@@ -13,7 +13,7 @@ Welcome to the documentation for Civiform.
 * Write your file in Markdown and submit via pull request.
 
 ## Organizing the table of contents
-* Updates to the sidebar and table of contents can be made in the summary.md file
+* Updates to the sidebar and table of contents can be made in the [SUMMARY.md](https://github.com/civiform/docs/blob/main/docs/SUMMARY.md) file
 
 ## Adding markdown
 * Reference [this guide on writing simple syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) and follow Gitbook specific syntax below:

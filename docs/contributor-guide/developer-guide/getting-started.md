@@ -158,6 +158,16 @@ You can return to that screen to switch to a Guest user and back again to an Adm
 
 You can change the logging levels by editing [conf/logback.xml](https://github.com/seattle-uat/civiform/blob/b140db3afb1851fc2bbe8c1ae5cafae67ac6429f/server/conf/logback.xml). This can help get a deeper understanding of what the server is doing for development.
 
+## Running Coverage
+
+To generate coverage report, run the following:
+   
+  ```
+    bin/sbt-run-test-coverage
+  ```
+
+Navigate to server/code-coverage/report/html/index.html and see the detailed report of the code coverage data and also dig deep to see how much your implemented classes are covered.
+
 ## What's next?
 
 To learn more about how to make code contributions, head to [Technical contribution guide.](technical-contribution-guide.md)

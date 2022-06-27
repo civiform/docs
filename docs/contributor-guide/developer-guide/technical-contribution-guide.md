@@ -30,6 +30,8 @@ Reviewers should grant approval if they do not feel additional review is necessa
 
 If the pull request does not require additional changes, the reviewer should merge it immediately after approving. Otherwise, once they have addressed all comments marked `(blocking)` or `nit`, the pull request author should either merge if able or re-request review and merging from a maintainer if not. Authors are encouraged to at least reply to `(non-blocking)` and `(if-minor)` comments if they do not address them with code changes.
 
+If you want a round robin review, our repo supports that (it will cycle through people within the a team, more details on [how to add roundrobin reviews link](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team) Once that is done you can add the name of the team (civiform-developers) in the reviewer box and it will auto assign someone. 
+
 ### Getting up to speed
 
 Want to get up to speed on this project? Awesome! Please see the following:

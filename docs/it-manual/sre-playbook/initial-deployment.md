@@ -5,9 +5,15 @@ This guide is for SREs or DevOps folks. It explains how to do an initial deploym
 At the time of first writing (March 2022) CiviForm has these constraints:
 
 * Can be deployed directly into AWS, via direct AWS APIs and tools such as [cloudformation](https://github.com/seattle-uat/civiform-deploy/tree/main/infra).
-* Can be deployed into Azure using [Terraform](https://github.com/seattle-uat/civiform/tree/main/cloud/azure). _In the future, AWS deployment will also be ported to Terraform, and GCP support will likely be added._
+* Can be deployed into Azure using [Terraform](https://github.com/seattle-uat/civiform/tree/main/cloud/azure).
+* (In progress) Can be deployed into AWS using [Terraform](https://github.com/seattle-uat/civiform/tree/main/cloud/aws).
+* _In the future, GCP support will likely be added._
 
-## Deploying into AWS
+## Deploying into AWS or Azure using Terraform
+
+See the [terraform deploy system docs](terraform-deploy-system.md).
+
+## Deploying into AWS using CloudFormation
 
 Our production infrastructure is managed declaratively by [cloudformation](https://github.com/seattle-uat/civiform-deploy/tree/main/infra). To deploy, `run bin/deploy-prod`. You will need the AWS CLI - `brew install awscli`.
 

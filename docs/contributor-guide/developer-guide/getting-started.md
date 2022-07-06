@@ -156,7 +156,7 @@ You can return to that screen to switch to a Guest user and back again to an Adm
 
 ## Debug logging
 
-You can change the logging levels by editing [conf/logback.xml](https://github.com/seattle-uat/civiform/blob/b140db3afb1851fc2bbe8c1ae5cafae67ac6429f/server/conf/logback.xml). This can help get a deeper understanding of what the server is doing for development.
+You can change the logging levels by editing [conf/logback.xml](https://github.com/seattle-uat/civiform/blob/main/server/conf/logback.xml). This can help get a deeper understanding of what the server is doing for development.
 
 ## Running Coverage
 

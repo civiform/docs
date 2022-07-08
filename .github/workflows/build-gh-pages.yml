@@ -8,11 +8,11 @@
 #   This workflow performs that mirror, which then triggers another action
 #   on the `gh-pages` branch that deploys the site content to GitHub Pages.
 
-name: Push website/public directory to gh-pages branch
+name: Verify the website/src directory builds
 
 # Run whenever the `website/public` folder in the `main` branch changes.
 on:
-  push:
+  pull_request:
     branches:
       - "main"
     paths:
@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  push-gh-pages:
+  build-gh-pages:
     runs-on: ubuntu-latest
     steps:
       # Check out the repository
@@ -35,11 +35,3 @@ jobs:
       # Build the website
       - name: Build
         run: cd website && npm run build
-      # Push the `website/public` directory to `gh-pages`
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_dir: website/public
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit_message: ${{ github.event.head_commit.message }}

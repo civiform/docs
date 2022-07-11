@@ -19,17 +19,17 @@ See full config [in code](https://github.com/seattle-uat/civiform/blob/d9ad85885
 
 Important values in your civiform_config.sh:
 ```sh
-  export APPLICANT_AUTH_PROTOCOL='oidc'
-  export CIVIFORM_APPLICANT_IDP='generic-oidc'
+  export APPLICANT_AUTH_PROTOCOL='oidc'   # this is a terraform configuration, to make sure resources are configured properly
+  export CIVIFORM_APPLICANT_IDP='generic-oidc' # tell civiform to use the generic OIDC adaptor, enabling the `APPLICANT_OIDC_` config values
   export APPLICANT_OIDC_PROVIDER_NAME='provider_name' # this value will be appended to callback urls
   export APPLICANT_OIDC_CLIENT_ID='...'  # comes from a secrets manager
   export APPLICANT_OIDC_CLIENT_SECRET='....'  # comes from a secrets manager
-  export APPLICANT_OIDC_DISCOVERY_URI='https://{auth_provider_hostname}/.well-known/openid-configuration'
-
+  export APPLICANT_OIDC_DISCOVERY_URI='https://{auth_provider_hostname}/.well-known/openid-configuration'  # provided by your OIDC provider
+ 
   # Different modes (defaults shown):
   export APPLICANT_OIDC_RESPONSE_MODE='form_post'
   export APPLICANT_OIDC_RESPONSE_TYPE='id_token token'
-  export APPLICANT_OIDC_ADDITIONAL_SCOPES='allatclaims profile'
+  export APPLICANT_OIDC_ADDITIONAL_SCOPES=''
 ```
 
 #### Identity Provider Configuration

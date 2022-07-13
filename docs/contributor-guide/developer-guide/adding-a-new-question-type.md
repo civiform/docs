@@ -36,4 +36,4 @@
         1. Can you fill out the question?
         1. Do error messages render correctly
 1. Add a helper function in the browser tests for the new question type: [`admin_question.ts`](https://github.com/seattle-uat/civiform/blob/main/browser-test/src/support/admin_questions.ts) and [`applicant_questions.ts`](https://github.com/seattle-uat/civiform/blob/main/browser-test/src/support/applicant_questions.ts)
-1. Add a focused browser test for the new question type: e.g. [`checkbox.test.ts`](https://github.com/seattle-uat/civiform/blob/main/browser-test/src/checkbox_test.ts)
+1. Add a focused browser test for the new question type: e.g. [`checkbox.test.ts`](https://github.com/seattle-uat/civiform/blob/main/browser-test/src/checkbox.test.ts)

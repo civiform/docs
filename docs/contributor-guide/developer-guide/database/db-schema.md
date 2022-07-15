@@ -115,7 +115,6 @@ Indexes:
     "programs_pkey" PRIMARY KEY, btree (id)
 Referenced by:
     TABLE "applications" CONSTRAINT "fk_program" FOREIGN KEY (program_id) REFERENCES programs(id)
-    
                                             Table "public.questions"
           Column           |        Type         | Collation | Nullable |                Default
 ---------------------------+---------------------+-----------+----------+---------------------------------------

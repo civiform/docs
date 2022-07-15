@@ -83,7 +83,7 @@ Foreign-key constraints:
     "fk_program" FOREIGN KEY (program_id) REFERENCES programs(id)
 
                                           Table "public.files"
-       Column       |          Type          | Collation | Nullable |              Default              
+       Column       |          Type          | Collation | Nullable |              Default
 --------------------+------------------------+-----------+----------+-----------------------------------
  id                 | bigint                 |           | not null | nextval('files_id_seq'::regclass)
  name               | character varying(255) |           |          | 

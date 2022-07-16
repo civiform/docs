@@ -1,6 +1,6 @@
 # DB Schema
 
-The database schema is derived by combining all of the [evolution SQL files](https://github.com/seattle-uat/civiform/tree/main/server/conf/evolutions/default) in sequential order. It's current state as of #36 follows.  This can be generated using `pg_dump -s postgres` and then `\d tableName` on the table of interest.
+The database schema is derived by combining all of the [evolution SQL files](https://github.com/seattle-uat/civiform/tree/main/server/conf/evolutions/default) in sequential order. Its current state as of #40 follows.  This can be generated using `pg_dump -s postgres` and then `\d tableName` on the table of interest.
 
 Each table is mapped to a [models/ class](https://github.com/seattle-uat/civiform/tree/main/server/app/models), and the classes contain more context.
 
@@ -26,7 +26,6 @@ Foreign-key constraints:
 Referenced by:
     TABLE "applicants" CONSTRAINT "applicants_account_id_fkey" FOREIGN KEY (account_id) REFERENCES accounts(id)
 
-
                                            Table "public.applicants"
       Column      |            Type             | Collation | Nullable |                Default
 ------------------+-----------------------------+-----------+----------+----------------------------------------
@@ -41,6 +40,29 @@ Foreign-key constraints:
     "applicants_account_id_fkey" FOREIGN KEY (account_id) REFERENCES accounts(id)
 Referenced by:
     TABLE "applications" CONSTRAINT "fk_applicant" FOREIGN KEY (applicant_id) REFERENCES applicants(id)
+
+                                             Table "public.api_keys"
+        Column        |            Type             | Collation | Nullable |               Default                
+----------------------+-----------------------------+-----------+----------+--------------------------------------
+ id                   | bigint                      |           | not null | nextval('api_keys_id_seq'::regclass)
+ name                 | character varying           |           | not null | 
+ create_time          | timestamp without time zone |           | not null | 
+ update_time          | timestamp without time zone |           | not null | 
+ created_by           | character varying           |           | not null | 
+ retired_time         | timestamp without time zone |           |          | 
+ retired_by           | character varying           |           |          | 
+ key_id               | character varying           |           | not null | 
+ salted_key_secret    | character varying           |           | not null | 
+ subnet               | character varying           |           | not null | 
+ expiration           | timestamp without time zone |           | not null | 
+ call_count           | bigint                      |           | not null | 0
+ last_call_ip_address | character varying           |           |          | 
+ grants               | jsonb                       |           | not null | 
+Indexes:
+    "api_keys_pkey" PRIMARY KEY, btree (id)
+    "api_key_ids" UNIQUE, btree (key_id)
+    "api_keys_key_id_key" UNIQUE CONSTRAINT, btree (key_id)
+    "api_keys_salted_key_secret_key" UNIQUE CONSTRAINT, btree (salted_key_secret)
 
                                            Table "public.applications"
       Column      |            Type             | Collation | Nullable |                 Default
@@ -64,12 +86,14 @@ Foreign-key constraints:
        Column       |          Type          | Collation | Nullable |              Default
 --------------------+------------------------+-----------+----------+-----------------------------------
  id                 | bigint                 |           | not null | nextval('files_id_seq'::regclass)
- name               | character varying(255) |           |          |
- original_file_name | character varying      |           |          |
+ name               | character varying(255) |           |          | 
+ original_file_name | character varying      |           |          | 
+ acls               | jsonb                  |           |          | '{}'::jsonb
 Indexes:
     "files_pkey" PRIMARY KEY, btree (id)
+    "index_file_names" UNIQUE, btree (name)
 
-                                            Table "public.programs"
+                                                 Table "public.programs"
             Column            |            Type             | Collation | Nullable |               Default                
 ------------------------------+-----------------------------+-----------+----------+--------------------------------------
  id                           | bigint                      |           | not null | nextval('programs_id_seq'::regclass)
@@ -86,11 +110,11 @@ Indexes:
  display_mode                 | character varying           |           | not null | 'PUBLIC'::character varying
  create_time                  | timestamp without time zone |           |          | 
  last_modified_time           | timestamp without time zone |           |          | 
+ status_definitions           | jsonb                       |           |          | '{"statuses": []}'::jsonb
 Indexes:
     "programs_pkey" PRIMARY KEY, btree (id)
 Referenced by:
     TABLE "applications" CONSTRAINT "fk_program" FOREIGN KEY (program_id) REFERENCES programs(id)
-
                                             Table "public.questions"
           Column           |        Type         | Collation | Nullable |                Default
 ---------------------------+---------------------+-----------+----------+---------------------------------------

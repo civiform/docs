@@ -23,7 +23,7 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup ti
 
 1. Bring up an sbt shell inside the Docker container by running:
 
-       bin/sbt
+       bin/sbt-test
 
 1. Run any sbt commands! For example:
 

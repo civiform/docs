@@ -31,7 +31,7 @@ A new major version must be created if there are any changes that cannot be depl
 
 Admins should ensure they have database backups before applying a new major change.
 
-## Minor version
+### Minor version
 
 A new minor version indicates feature or functionality changes that enable significant new capabilities in the system, but are unlikely to be disruptive and do not require preparation. Examples of such changes include new features, new APIs or API versions, and new resources in the system.
 
@@ -39,6 +39,6 @@ A new minor version may also indicate changes in the database schema, file key n
 
 Admins should ensure they have database backups before applying a new minor change.
 
-## Patch version
+### Patch version
 
 A new patch version indicates changes to stateless server code only, and is typically a refinement or improvement. Those changes may include bug fixes, dependency updates, UI polish, new minor functionality, but not stateful changes.

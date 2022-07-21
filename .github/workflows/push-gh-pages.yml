@@ -1,12 +1,12 @@
-# Push the `website/public` directory to the `gh-pages` branch.
+# Builds & pushes the `website/public` directory to the `gh-pages` branch.
 #
 # The 'main' branch of this repository is the source of truth for the website content.
-#   The gh-pages branch simply exists as a mirror of `website/public` directory  
-#   of the `main` branch to serve that site content via GitHub pages.
+#   The gh-pages branch contains the compiled html from running @11ty/eleventy
+#   on the `main` branch, to serve that site content via GitHub pages.
 #   The `gh-pages` branch should never be edited directly, and should always be
-#   an exact mirror of the `website/public` directory on the `main` branch.
-#   This workflow performs that mirror, which then triggers another action
-#   on the `gh-pages` branch that deploys the site content to GitHub Pages.
+#   an exact mirror of running 'npm run build' and generating a  `website/public`
+#   directory on the `main` branch. This workflow performs that build & mirror,
+#   which then triggers the `gh-pages` branch to deploys the site content to GitHub Pages.
 
 name: Push website/public directory to gh-pages branch
 
@@ -14,9 +14,9 @@ name: Push website/public directory to gh-pages branch
 on:
   push:
     branches:
-      - 'main'
+      - "main"
     paths:
-      - 'website/public/**'
+      - "website/**"
   # Allow manual runs from the Actions tab
   workflow_dispatch:
 
@@ -26,6 +26,20 @@ jobs:
     steps:
       # Check out the repository
       - uses: actions/checkout@v3
-      # Push the `website/public` directory to `gh-pages` via `git subtree push`
-      - name: Push to gh-pages branch
-        run: git push origin `git subtree split --prefix website/public main`:gh-pages --force
+      # Install dependancies
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install
+        run: cd website && npm install
+      # Build the website
+      - name: Build
+        run: cd website && npm run build
+      # Push the `website/public` directory to `gh-pages`
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: website/public
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: ${{ github.event.head_commit.message }}

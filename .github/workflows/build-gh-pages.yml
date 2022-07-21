@@ -1,0 +1,29 @@
+# Build the `website/public` directory on PRs to verify it doesn't error.
+
+name: Verify the website/src directory builds
+
+# Run whenever the `website/public` folder in the `main` branch changes.
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "website/**"
+  # Allow manual runs from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build-gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository
+      - uses: actions/checkout@v3
+      # Install dependancies
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install
+        run: cd website && npm install
+      # Build the website
+      - name: Build
+        run: cd website && npm run build

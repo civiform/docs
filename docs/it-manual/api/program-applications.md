@@ -85,7 +85,7 @@ enumerator_question_path = basic_question_path\[index\]
 full_question_path = [enumerator_question_path]*basic_question_path
 ```
 
-Question names are converted to paths by removing all non-alphabetic characters and replacing one or more spaces with an underscore ([source](https://github.com/seattle-uat/civiform/blob/main/server/app/services/question/types/QuestionDefinition.java#L110)).
+Question names are converted to paths by removing all non-alphabetic characters and replacing one or more spaces with an underscore ([source](https://github.com/civiform/civiform/blob/main/server/app/services/question/types/QuestionDefinition.java#L110)).
 
 Questions that are skipped are present but have null values for the skipped scalars. Scalar names and value types are determined by question type. Strings may contain unicode characters.
 

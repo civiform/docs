@@ -16,7 +16,7 @@ Start here! This step is a prerequisite for everything that follows, even if you
    2.  In that directory, run the following (and/or refer to [this guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)):
 
        ```
-       git clone git@github.com:seattle-uat/civiform.git
+       git clone git@github.com:civiform/civiform.git
        ```
 
 ### A note on IDEs
@@ -27,7 +27,7 @@ You may use whichever IDE you prefer, though _DO NOT_ use the IDE's built-in sbt
 
 #### Configuring IntelliJ
 
-The easiest way to get IntelliJ to index the project correctly is to install the Scala plugin and open the project by specifying the [build.sbt](https://github.com/seattle-uat/civiform/blob/main/server/build.sbt) file in IntelliJ's open existing project dialog. If this isn't done correctly IntelliJ probably won't load library code correctly and will complain that it can't find symbols imported from libraries.
+The easiest way to get IntelliJ to index the project correctly is to install the Scala plugin and open the project by specifying the [build.sbt](https://github.com/civiform/civiform/blob/main/server/build.sbt) file in IntelliJ's open existing project dialog. If this isn't done correctly IntelliJ probably won't load library code correctly and will complain that it can't find symbols imported from libraries.
 
 #### Configuring VSCode
 
@@ -75,13 +75,13 @@ VSCode uses the following files
 
 This will start up a dev instance of the application that uses Azurite, the Azure emulator, instead of local stack, the AWS emulator. This script sets an environment variable, `STORAGE_SERVICE_NAME` telling the application to run using the Azure emulator instead of AWS.
 
-**Warning**: There's a [known issue](https://github.com/seattle-uat/civiform/issues/2230) where you may encounter a compile loop, the most reliable way to address that is to do `bin/sbt clean` before the above.
+**Warning**: There's a [known issue](https://github.com/civiform/civiform/issues/2230) where you may encounter a compile loop, the most reliable way to address that is to do `bin/sbt clean` before the above.
 
 2. Once you see "Server started" in your terminal (it will take some time for the server to start up), you can access the app in a browser at http://localhost:9000. Be patient on the initial page load since it will take some time for all the sources to compile.
 
 If you want to use the Log In flow see [those instructions](authentication-providers.md#testing) which include a one-time setup too.
 
-The `bin/run-dev` script uses `docker-compose` (see [`docker-compose.yaml`](https://github.com/seattle-uat/civiform/blob/main/docker-compose.yml)). It enables Java and Javascript hot-reloading: when you modify most files, the server will recompile and restart. This is pretty time-consuming on first page load, but after that, it's not so bad.
+The `bin/run-dev` script uses `docker-compose` (see [`docker-compose.yaml`](https://github.com/civiform/civiform/blob/main/docker-compose.yml)). It enables Java and Javascript hot-reloading: when you modify most files, the server will recompile and restart. This is pretty time-consuming on first page load, but after that, it's not so bad.
 
 ### Seeding the development database
 
@@ -97,7 +97,7 @@ This section will help you run CiviForm unit and browser tests in a basic way. F
 
 ### Running unit tests
 
-To run the unit tests (includes all tests under [`test/`](https://github.com/seattle-uat/civiform/tree/main/server/test)), run the following:
+To run the unit tests (includes all tests under [`test/`](https://github.com/civiform/civiform/tree/main/server/test)), run the following:
 
 ```
 bin/run-test
@@ -118,7 +118,7 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup ti
 
 ### Running browser tests
 
-To run the browser tests (includes all the [Playwright](https://playwright.dev) tests in [`civiform/browser-test/src/`](https://github.com/seattle-uat/civiform/tree/main/browser-test/src), there are three steps:
+To run the browser tests (includes all the [Playwright](https://playwright.dev) tests in [`civiform/browser-test/src/`](https://github.com/civiform/civiform/tree/main/browser-test/src), there are three steps:
 
 1.  Build the Docker image for running the playwright tests. This only needs to be done once:
 
@@ -156,7 +156,7 @@ You can return to that screen to switch to a Guest user and back again to an Adm
 
 ## Debug logging
 
-You can change the logging levels by editing [conf/logback.xml](https://github.com/seattle-uat/civiform/blob/main/server/conf/logback.xml). This can help get a deeper understanding of what the server is doing for development.
+You can change the logging levels by editing [conf/logback.xml](https://github.com/civiform/civiform/blob/main/server/conf/logback.xml). This can help get a deeper understanding of what the server is doing for development.
 
 ## Running Coverage
 

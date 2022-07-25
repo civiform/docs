@@ -1,8 +1,8 @@
 # Upgrading to a New Release
 
-The CiviForm core team [distributes new versions of the system](https://github.com/seattle-uat/civiform/releases) at least monthly, and occasionally more often. We strongly recommend deployments stay up to date with the latest version to benefit from security patches, bug fixes, and new features.
+The CiviForm core team [distributes new versions of the system](https://github.com/civiform/civiform/releases) at least monthly, and occasionally more often. We strongly recommend deployments stay up to date with the latest version to benefit from security patches, bug fixes, and new features.
 
-Each release is published using [GitHub releases](https://github.com/seattle-uat/civiform/releases) with a corresponding server Docker image uploaded to [civiform/civiform on Docker Hub](https://hub.docker.com/repository/docker/civiform/civiform) and tagged with the release number.
+Each release is published using [GitHub releases](https://github.com/civiform/civiform/releases) with a corresponding server Docker image uploaded to [civiform/civiform on Docker Hub](https://hub.docker.com/repository/docker/civiform/civiform) and tagged with the release number.
 
 **Be sure to review the release notes on GitHub for each new release before deploying it.**
 

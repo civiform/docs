@@ -6,9 +6,9 @@ Applicant data, i.e. data provided by applicants for applying to programs, is st
 
 When the CiviForm admin creates a new question, they must provide a globally unique canonical name for the question. Once created, this name is immutable and so is not the same as the display name for the user.
 
-When the applicant answers a question, the answer is stored at a path created from the question's canonical name ([canonical name to path logic here](https://github.com/seattle-uat/civiform/blob/main/server/app/services/question/types/QuestionDefinition.java#L102-L109)). For example, if a question's canonical name is `"Address (mailing)"` the JSON path to the answer would be `"Address_mailing"`.
+When the applicant answers a question, the answer is stored at a path created from the question's canonical name ([canonical name to path logic here](https://github.com/civiform/civiform/blob/main/server/app/services/question/types/QuestionDefinition.java#L102-L109)). For example, if a question's canonical name is `"Address (mailing)"` the JSON path to the answer would be `"Address_mailing"`.
 
-The contents of an answer is determined by the question type. All question types have a hard-coded set of scalar values that comprise their answer. For example, [the address question type](https://github.com/seattle-uat/civiform/blob/main/server/app/services/applicant/question/AddressQuestion.java#L208-L226) has scalars for street, line 2, city, state, and zip code, all of which have a `ScalarType` of `STRING`. When an answer to an address question is stored, the scalars are stored in an object with the scalar names as keys. Answers to the mailing address questions could look like the following:
+The contents of an answer is determined by the question type. All question types have a hard-coded set of scalar values that comprise their answer. For example, [the address question type](https://github.com/civiform/civiform/blob/main/server/app/services/applicant/question/AddressQuestion.java#L208-L226) has scalars for street, line 2, city, state, and zip code, all of which have a `ScalarType` of `STRING`. When an answer to an address question is stored, the scalars are stored in an object with the scalar names as keys. Answers to the mailing address questions could look like the following:
 
 ```json
 {

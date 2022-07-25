@@ -19,7 +19,7 @@ Links
 ### Recommended Starting Points
 
 * [Getting Started Guide](getting-started.md)
-* [Good First Issues](https://github.com/seattle-uat/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+* [Good First Issues](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
 
 ### Accounts
 

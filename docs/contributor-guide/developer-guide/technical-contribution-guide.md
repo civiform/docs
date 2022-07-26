@@ -2,7 +2,7 @@
 
 This is a guide for making technical contributions to CiviForm. ****&#x20;
 
-If you haven't already, please **read our** [**code of conduct**](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md)**.**
+If you haven't already, please **read our** [**code of conduct**](https://github.com/civiform/civiform/blob/main/code\_of\_conduct.md)**.**
 
 {% hint style="info" %}
 Join the conversation in the [Civiform Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
@@ -14,9 +14,9 @@ To set up your environment and learn how to run a local CiviForm server and test
 
 ### Issue tracking
 
-Development tasks are managed in the [GitHub issues](https://github.com/seattle-uat/civiform/issues) for this repository. When you begin working on an issue, please self-assign or comment on it indicating you're beginning work to avoid duplicate effort.
+Development tasks are managed in the [GitHub issues](https://github.com/civiform/civiform/issues) for this repository. When you begin working on an issue, please self-assign or comment on it indicating you're beginning work to avoid duplicate effort.
 
-If you're just getting started, check out issues labeled with [Good First Issue](https://github.com/seattle-uat/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). Also check out issues in the [next milestone](https://github.com/seattle-uat/civiform/milestones?direction=asc\&sort=due\_date\&state=open) so you can work on the highest-priority tasks.
+If you're just getting started, check out issues labeled with [Good First Issue](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). Also check out issues in the [next milestone](https://github.com/civiform/civiform/milestones?direction=asc\&sort=due\_date\&state=open) so you can work on the highest-priority tasks.
 
 ### Pull requests
 
@@ -38,7 +38,7 @@ If the pull request does not require additional changes, the reviewer should mer
 
 Want to get up to speed on this project? Awesome! Please see the following:
 
-* Read the [code of conduct](https://github.com/seattle-uat/civiform/blob/main/code\_of\_conduct.md).
+* Read the [code of conduct](https://github.com/civiform/civiform/blob/main/code\_of\_conduct.md).
 * Join our [Slack workgroup](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q).
 * Check out the [Google Drive](https://drive.google.com/drive/folders/1\_uVkq1uOD14p19DvQzbXs2s0XhSOQjgF?usp=sharing) containing our design docs.
 * Read through our Developer guide docs in the right nav. Here are some good docs to get you started:
@@ -55,5 +55,5 @@ Want to get up to speed on this project? Awesome! Please see the following:
 [development-standards.md](development-standards.md)
 {% endcontent-ref %}
 
-* Work on at least one issue tagged with [`good first issue`](https://github.com/seattle-uat/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) before moving to others. Feel free to ask for task recommendations in Slack.
+* Work on at least one issue tagged with [`good first issue`](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) before moving to others. Feel free to ask for task recommendations in Slack.
 * Pair program with one of the project's main engineers. Reach out on Slack - we're happy to help!

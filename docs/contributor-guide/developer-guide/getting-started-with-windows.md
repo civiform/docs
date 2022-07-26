@@ -106,8 +106,8 @@ For some reason, the distribution may not be running. You can check by running `
 
 If things are working, you'll be able to run CiviForm in WSL with Docker using the following steps:
 
-1. In WSL, clone [**the CiviForm repository**](https://github.com/seattle-uat/civiform).
-2. Run [**`/bin/run-dev`**](https://github.com/seattle-uat/civiform/blob/main/bin/run-dev) to start the application.
+1. In WSL, clone [**the CiviForm repository**](https://github.com/civiform/civiform).
+2. Run [**`/bin/run-dev`**](https://github.com/civiform/civiform/blob/main/bin/run-dev) to start the application.
 3. In a browser, go to `localhost:9000`, and then wait for the application to load.
 
 ## Getting an IDE
@@ -129,7 +129,7 @@ There are two options for configuring an IDE:
 3. Install sbt 1.3.13 for Windows: [**https://www.scala-sbt.org/download.html**](https://www.scala-sbt.org/download.html)
 4. Install and configure IntelliJ in windows from [**https://www.jetbrains.com/idea/**](https://www.jetbrains.com/idea/)
 5. Open IntelliJ, download the Scala plugin, and restart IntelliJ.
-6. Open IntelliJ and open the [**`server/build.sbt`**](https://github.com/seattle-uat/civiform/blob/main/server/build.sbt) file as a project.
+6. Open IntelliJ and open the [**`server/build.sbt`**](https://github.com/civiform/civiform/blob/main/server/build.sbt) file as a project.
 7. Wait for a while for IntelliJ to index the project.
 
 | :bangbang: | While waiting for step 6, you may need to restart IntelliJ. This step takes a long time, but it takes a long time the first time. |
@@ -158,7 +158,7 @@ From within WSL:
 2. Install [sdkman](https://sdkman.io/install), and use it to install `sdk install java 11.0.10-open`, `sdk install sbt 1.3.13`, and `sdk install scala 2.13.1`.
 3. Install IntelliJ.
 4. Open IntelliJ, download the Scala plugin, and restart IntelliJ.
-5. Open IntelliJ and open the [**`server/build.sbt`**](https://github.com/seattle-uat/civiform/blob/main/server/build.sbt) file as a project.
+5. Open IntelliJ and open the [**`server/build.sbt`**](https://github.com/civiform/civiform/blob/main/server/build.sbt) file as a project.
 6. Wait for a while for IntelliJ to index the project.
 
 | :bangbang: | While waiting for step 6, you may need to restart IntelliJ. This step takes a long time, but it takes a long time the first time. |

@@ -22,7 +22,7 @@ To get started:
 
 * Learn about Tailwind on [the website](https://tailwindcss.com) or [with this crash course](https://morioh.com/p/39832809fef8).
 * Go through our [frontend introduction deck](https://docs.google.com/presentation/d/1tPGOj26p1MzieN7vfTj4MhoAoytLWo4j78Us5Ku89x8/edit#slide=id.p), assembled by one of our core engineers.
-* [Find an open Tailwind issue on GitHub](https://github.com/seattle-uat/civiform/labels/tailwind-css) and comment that you'd like to take it on.
+* [Find an open Tailwind issue on GitHub](https://github.com/civiform/civiform/labels/tailwind-css) and comment that you'd like to take it on.
 * [Copy this Tailwind playground](https://play.tailwindcss.com/JzARWTvFQP?file=css), which contains the basic styles and components that fit our style guidelines.
 * Start editing the playground to create a prototype of what the page should look like. Check out the user story and mockup connected to the issue you took on to get a sense of what to build in.
 * Once you're happy with your creation, copy the sharing link and paste it in the #tailwind channel on Slack to get feedback!

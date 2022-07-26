@@ -26,7 +26,7 @@
 
 <summary>Sample JSON of the <code>object</code> column</summary>
 
-For more information view the [backend data model page](https://github.com/seattle-uat/civiform/wiki/Backend-data-model)
+For more information view the [backend data model page](https://github.com/civiform/civiform/wiki/Backend-data-model)
 
 ```json
 {
@@ -76,7 +76,7 @@ For more information view the [backend data model page](https://github.com/seatt
 
 <summary>Sample JSON of the <code>object</code> column</summary>
 
-For more information view the [backend data model page](https://github.com/seattle-uat/civiform/wiki/Backend-data-model)
+For more information view the [backend data model page](https://github.com/civiform/civiform/wiki/Backend-data-model)
 
 ```json
 {
@@ -366,7 +366,7 @@ For information on versioning questions and programs see the [data versioning mo
 | tombstoned\_question\_names | character varying\[]        |          | ???                                                    |
 | tombstoned\_program\_names  | character varying\[]        |          | ???                                                    |
 
-For information on versioning `questions` and `programs` see the [data versioning model page](https://github.com/seattle-uat/civiform/wiki/Data-versioning-model).
+For information on versioning `questions` and `programs` see the [data versioning model page](https://github.com/civiform/civiform/wiki/Data-versioning-model).
 
 ## public.versions\_programs
 

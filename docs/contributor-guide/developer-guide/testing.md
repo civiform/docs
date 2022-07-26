@@ -13,7 +13,7 @@ For Java, classes generally have their own unit tests. The unit test file should
 
 Tests that require a Play application should either use `extends play.test.WithApplication`, or `extends repository.WithPostgresContainer` if a database is required. By default, using `extends play.test.WithApplication` will produce an application with a binding to an in-memory postgres database that is incompatible with everything and is pretty much useless.
 
-To run the unit tests (includes all tests under [`test/`](https://github.com/seattle-uat/civiform/tree/main/server/test)), run the following:
+To run the unit tests (includes all tests under [`test/`](https://github.com/civiform/civiform/tree/main/server/test)), run the following:
 
 ```
 bin/run-test
@@ -37,11 +37,11 @@ Controller tests should test the integration of business logic behind each HTTP 
 * Assertions may also be on the database state after the controller method has completed.
 * Controller tests should not rely heavily on mocking.
 
-See [AdminProgramControllerTest.java ](https://github.com/seattle-uat/civiform/pull/167/files#diff-643f94cff692c6554cd33c8e4c542b9f2bc65b4756bf027a623ce8f203d28677) for a good example of a controller test. See the [Play documentation](https://www.playframework.com/documentation/2.8.x/JavaTest#Unit-testing-controllers) for information on framework-provided testing tools.
+See [AdminProgramControllerTest.java ](https://github.com/civiform/civiform/pull/167/files#diff-643f94cff692c6554cd33c8e4c542b9f2bc65b4756bf027a623ce8f203d28677) for a good example of a controller test. See the [Play documentation](https://www.playframework.com/documentation/2.8.x/JavaTest#Unit-testing-controllers) for information on framework-provided testing tools.
 
 ### View tests
 
-[`BaseHtmlView`](https://github.com/seattle-uat/civiform/blob/main/server/app/views/BaseHtmlView.java) provides a number of HTML tag-producing methods, for example [`Tag submitButton(String textContents)`](https://github.com/seattle-uat/civiform/blob/main/server/app/views/BaseHtmlView.java#L53). These methods tend to be fairly simple, with unit tests that are brittle to small, inconsequential changes. Whether or not to test these types of methods is at the discretion of the implementer and code reviewer(s).
+[`BaseHtmlView`](https://github.com/civiform/civiform/blob/main/server/app/views/BaseHtmlView.java) provides a number of HTML tag-producing methods, for example [`Tag submitButton(String textContents)`](https://github.com/civiform/civiform/blob/main/server/app/views/BaseHtmlView.java#L53). These methods tend to be fairly simple, with unit tests that are brittle to small, inconsequential changes. Whether or not to test these types of methods is at the discretion of the implementer and code reviewer(s).
 
 View classes that render a complete page should not be unit tested, but instead should have corresponding [browser test(s)](#functional-browser-tests) that assert the key interactions for a user on that page.
 
@@ -49,7 +49,7 @@ Question type rendering and client-side logic deserves a special mention since t
 
 ## Functional browser tests
 
-Functional browser tests use the [Playwright](https://playwright.dev) browser automation TypeScript library with the [Jest](https://jestjs.io/) test runner. The code for those tests lives in the [browser-test/](https://github.com/seattle-uat/civiform/tree/main/browser-test) subdirectory.
+Functional browser tests use the [Playwright](https://playwright.dev) browser automation TypeScript library with the [Jest](https://jestjs.io/) test runner. The code for those tests lives in the [browser-test/](https://github.com/civiform/civiform/tree/main/browser-test) subdirectory.
 
 Browser tests run against an application stack that is very similar to the local development stack. The test stack has its own application server, postgres database, and fake IDCS server that all run in Docker, separate from the test code. The test stack is intended to stay up between test runs to reduce the iteration time for running the tests while developing.
 
@@ -124,7 +124,7 @@ You can step through a test run line-by-line with the browser by running the tes
 Before you can run the browser tests locally, you need to do the following:
 1. Install node.js.
 1. Install [yarn](https://yarnpkg.com/). In most cases, `npm -g install yarn` will do it.
-1. Run `yarn install` in the [`browser-test/`](https://github.com/seattle-uat/civiform/tree/main/browser-test) directory.
+1. Run `yarn install` in the [`browser-test/`](https://github.com/civiform/civiform/tree/main/browser-test) directory.
 
 To run the tests locally, use:
 
@@ -136,7 +136,7 @@ To run them in debug mode with the open browser add the `PWDEBUG` environment va
 
 #### Screenshots
 
-With both `bin/run-browser-tests` and `bin/run-browser-tests-local` you can take screenshots of the browser during test runs and save them to `browser-test/tmp`. (that directory [is mounted as a volume](https://github.com/seattle-uat/civiform/blob/main/bin/run-browser-tests) in the Docker test container). For example, to take a full-page screenshot and save it in a file called `screenshot.png`:
+With both `bin/run-browser-tests` and `bin/run-browser-tests-local` you can take screenshots of the browser during test runs and save them to `browser-test/tmp`. (that directory [is mounted as a volume](https://github.com/civiform/civiform/blob/main/bin/run-browser-tests) in the Docker test container). For example, to take a full-page screenshot and save it in a file called `screenshot.png`:
 
 ```typescript
 await page.screenshot({ path: 'tmp/screenshot.png', fullPage: true })

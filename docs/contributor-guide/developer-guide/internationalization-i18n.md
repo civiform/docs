@@ -9,11 +9,11 @@ There are two different cases where we require internationalization of strings -
 
 ## i18n for application strings
 
-Application strings are used in [views](https://github.com/seattle-uat/civiform/tree/main/server/app/views) and are configured following the [Play framework's i18n documentation](https://www.playframework.com/documentation/2.8.x/JavaI18N). Note that the admin views only contain text in CiviForm's default language, whereas applicant views must be localized. Whenever you add hardcoded text to a view, you need to add translations for the text in the `messages` file(s):
+Application strings are used in [views](https://github.com/civiform/civiform/tree/main/server/app/views) and are configured following the [Play framework's i18n documentation](https://www.playframework.com/documentation/2.8.x/JavaI18N). Note that the admin views only contain text in CiviForm's default language, whereas applicant views must be localized. Whenever you add hardcoded text to a view, you need to add translations for the text in the `messages` file(s):
 
-1. Add the default string to [messages](https://github.com/seattle-uat/civiform/blob/main/server/conf/messages), along with a comment providing context for how the text is used
-2. If you have translations available, add them to the language-specific [messages files](https://github.com/seattle-uat/civiform/blob/main/server/conf)
-3. Add the key from the messages file to [MessageKey.java](https://github.com/seattle-uat/civiform/blob/main/server/app/services/MessageKey.java)
+1. Add the default string to [messages](https://github.com/civiform/civiform/blob/main/server/conf/messages), along with a comment providing context for how the text is used
+2. If you have translations available, add them to the language-specific [messages files](https://github.com/civiform/civiform/blob/main/server/conf)
+3. Add the key from the messages file to [MessageKey.java](https://github.com/civiform/civiform/blob/main/server/app/services/MessageKey.java)
 4. Use the message in the appropriate view, by calling `messages.at(MessageKey.NEW_KEY_NAME.getKeyName())`
 
 **NOTE: The apostrophe (') is used as an escape character in messages files.** If you want to have an apostrophe in a message, you need to escape it with another apostrophe. Example: to produce `can't`, write `can''t` in the messages files. More information on apostrophes can be found in [Play's i18n documentation](https://www.playframework.com/documentation/2.8.x/JavaI18N#Notes-on-apostrophes)
@@ -27,9 +27,9 @@ The CiviForm admin must provide translations for program forms themselves. This 
 The Play framework supports internationalization with only a few steps required. If you would like CiviForm to support a new language, please do the following:
 
 1. Look up the language code for the new language. We use Java's [Locale](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Locale.html) class, which uses the IANA Language Subtag Registry. You can search the [list of valid language subtags](https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) to find the correct one (hint: look for "Type: language").
-2. Add the language tag to list in [application.conf](https://github.com/seattle-uat/civiform/blob/main/server/conf/application.conf) (under `play.i18n`). **IMPORTANT** - the first language code is considered the default for the application, so do not insert at the beginning. Instead, we keep the list ordered alphabetically by the English name of the language (ex: "Chinese" comes before "Korean", even though the language code for Chinese is "zh-TW").
-3. Add a new messages file under [/conf](https://github.com/seattle-uat/civiform/tree/main/server/conf) (see [messages.en-US](https://github.com/seattle-uat/civiform/blob/main/server/conf/messages.en-US) for an example). Note that the file extension must match the language tag exactly.
-4. Update the [ApplicantInformationControllerTest](https://github.com/seattle-uat/civiform/blob/main/server/test/controllers/applicant/ApplicantInformationControllerTest.java) `edit_usesHumanReadableLanguagesInsteadOfIsoTags` to include a check for the new language.
+2. Add the language tag to list in [application.conf](https://github.com/civiform/civiform/blob/main/server/conf/application.conf) (under `play.i18n`). **IMPORTANT** - the first language code is considered the default for the application, so do not insert at the beginning. Instead, we keep the list ordered alphabetically by the English name of the language (ex: "Chinese" comes before "Korean", even though the language code for Chinese is "zh-TW").
+3. Add a new messages file under [/conf](https://github.com/civiform/civiform/tree/main/server/conf) (see [messages.en-US](https://github.com/civiform/civiform/blob/main/server/conf/messages.en-US) for an example). Note that the file extension must match the language tag exactly.
+4. Update the [ApplicantInformationControllerTest](https://github.com/civiform/civiform/blob/main/server/test/controllers/applicant/ApplicantInformationControllerTest.java) `edit_usesHumanReadableLanguagesInsteadOfIsoTags` to include a check for the new language.
 5. Add translations to the new messages file for the language, and run the application to verify the new translations appear.
 
 Need help? See [Play's i18n documentation](https://www.playframework.com/documentation/2.8.x/JavaI18N) for more guidance.

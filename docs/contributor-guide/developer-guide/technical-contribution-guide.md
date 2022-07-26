@@ -26,7 +26,7 @@ It's easy for the intention of code review comments to be unclear or get misinte
 
 ### Adding Reviewers
 
-You can select the reviewer you feel most has context on your PR. If you want a round robin review, our repo supports that (it will cycle through people within the team 'civiform-developers', more details on [how to add roundrobin reviews here](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team). Once that is done you can add the name of the team (civiform-developers) in the reviewer box and it will auto assign someone.
+You can select the reviewer you feel most has context on your PR. If you want a round robin review, our repo supports that (it will cycle through people within the team 'civiform/developers', more details on [how to add roundrobin reviews here](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team). Once that is done you can add the name of the team (civiform/developers) in the reviewer box and it will auto assign someone.
 
 #### Approval and merging
 

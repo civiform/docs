@@ -87,12 +87,14 @@ To run the tests:
 
 ### Guidelines for functional browser tests
 
-In contrast to unit tests, browser tests do not and should attempt to exhaustively test all code paths and states possible for the system under test. Browser tests should:
+In contrast to unit tests, browser tests should not attempt to exhaustively test all code paths and states possible for the system under test. Browser tests should:
 
 - be fewer and larger, covering major features of the application
 - only create state in the database by interacting with the UI (e.g. when testing the applicant experience for answering of a certain type, first login as an admin, create a question and a program with that question)
 - encapsulate UI interaction details into [page object classes](https://playwright.dev/docs/pom/)
 - as much as is practical navigate using the UI and not by directly referencing URL paths
+
+Accessibility (a11y) testing also needs to happen at the browser test level, since it checks the final generated HTML for a11y violations. All applicant facing features should be covered by an a11y test check. See the [accessibility test section](#axe-accessibility-tests) for more details.
 
 
 #### Browser test reliability
@@ -144,3 +146,6 @@ await page.screenshot({ path: 'tmp/screenshot.png', fullPage: true })
 
 **Note**: You must prefix the filename with `tmp/`. [More info on taking screenshots with Playwright here](https://playwright.dev/docs/screenshots).
 
+### Axe accessibility tests
+       
+Accessibility tests are run at the browser test level on the final generated HTML page, using [axe](https://github.com/dequelabs/axe-core).

@@ -153,4 +153,4 @@ Accessibility tests are run at the browser test level on the final generated HTM
 await validateAccessibility(page)
 ```
 
-If the accessibility test fails, the error message will output the AxeResults.violations array. See [API docs](https://www.deque.com/axe/core-documentation/api-documentation/#results-object) for more info. The violation will include a `helpUrl` with a link of suggestions to fix the accessibility problem, and will include a snippet of the problematic `html`.
+If the accessibility test fails, the error message will output the AxeResults.violations array. See [API docs](https://www.deque.com/axe/core-documentation/api-documentation/#results-object) for more info. The violation will include a `helpUrl` with a link of suggestions to fix the accessibility problem, and will include a snippet of the problematic `html`. Running the tests locally with [debug mode](#debug-mode) is particularly helpful here since you can manually inspect the html.

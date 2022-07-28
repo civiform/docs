@@ -49,7 +49,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
    * [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
    * [pac4j security announcement mailing list](https://groups.google.com/g/pac4j-security)
 3. Check dependency updates (once per shift)
-4. Check serucity updates at : https://about.codecov.io/security-update/
+4. Check security updates at : https://about.codecov.io/security-update/
 
 #### Downstream production incident support
 

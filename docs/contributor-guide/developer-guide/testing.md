@@ -148,4 +148,9 @@ await page.screenshot({ path: 'tmp/screenshot.png', fullPage: true })
 
 ### Axe accessibility tests
        
-Accessibility tests are run at the browser test level on the final generated HTML page, using [axe](https://github.com/dequelabs/axe-core).
+Accessibility tests are run at the browser test level on the final generated HTML page, using [axe](https://github.com/dequelabs/axe-core). You can run an accessibility test on a page simply by calling:
+```typescript
+await validateAccessibility(page)
+```
+
+If the accessibility test fails, the error message will output the AxeResults.violations array. See [API docs](https://www.deque.com/axe/core-documentation/api-documentation/#results-object) for more info. The violation will include a `helpUrl` with a link of suggestions to fix the accessibility problem, and will include a snippet of the problematic `html`.

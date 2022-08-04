@@ -122,6 +122,8 @@ Please see the [Playwright debug docs](https://playwright.dev/docs/debug) for a 
 #### Debug mode
 
 You can step through a test run line-by-line with the browser by running the tests locally (i.e. not in Docker) with debug mode turned on.
+       
+Note: These instructions [need some work](https://github.com/civiform/civiform/issues/3058) 
 
 Before you can run the browser tests locally, you need to do the following:
 1. Install node.js.

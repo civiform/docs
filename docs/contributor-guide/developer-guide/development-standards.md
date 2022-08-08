@@ -15,6 +15,18 @@ The client should be as simple as is practical to implement the desired user exp
 
 For example, enable/disable logic in forms can be specified server-side with HTML [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use\_data\_attributes) then implemented with generic client-side JS that responds to DOM events relevant to the attribute-specified elements. [Here's a simple example](https://jsfiddle.net/c8g6y0ru/1/).
 
+## Server code organization
+
+In lieu of a microservice architecture, this project necessitates special care in ensuring [separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). **It is strongly recommended that all contributors read the [Play Java documentation](https://www.playframework.com/documentation/2.8.x/Home) prior to attempting major work on the CiviForm server.** While Play provides [some structure](https://www.playframework.com/documentation/2.8.x/Anatomy) for code organization, the CiviForm project has some additional conventions:
+
+Most business logic should be implemented in **service classses** (e.g. [ApplicantService](https://github.com/civiform/civiform/blob/main/server/app/services/applicant/ApplicantService.java)). Service classes should present public methods that are sematically meaningful with regard to CiviForm's domain logic, rather than technically meaningful with regard to their implementation details. Service classes should avoid directly performing database queries or handling HTTP concerns such as response codes and view rendering.
+
+**Play controllers** should be limited to brokering interaction between the server's business logic systems (i.e. service classes) and HTTP. Code in controllers should never directly implement business logic concerns and should instead delegate to classes specific to those purposes. One way to help think about this when writing controller code: if you're writing an HTTP handler that responds with HTML, factor out business logic classes so that implementing another handler that performs the same logic but responds with JSON benefits from high code re-use.
+
+**EBean models** should be limited to brokering interaction between the server's business logic and the database. Code in models should never directly implement business logic concerns.
+
+**Repositories**, such as [QuestionRepository](https://github.com/civiform/civiform/blob/main/server/app/repository/QuestionRepository.java), are the appropriate place for database queries and complex database interactions. This is in contrast to EBean models which are meant to provide a convenient wrapper over an instance of a database-backed resource.
+
 ## Scripts and development tasks
 
 Shell scripts should conform to the [Google Shell style guide](https://google.github.io/styleguide/shellguide.html).
@@ -46,16 +58,6 @@ If a 3rd party library returns nulls they likely should be quickly wrapped using
 We anticipate relatively low [QPS](https://en.wikipedia.org/wiki/Queries\_per\_second) for deployments of CiviForm. However, if a large jurisdiction uses CiviForm, QPS from applicants could get high enough to present scaling concerns. To balance the needs of development velocity and future scalability, we opt to optimize the applicant and intermediary code paths for scale while leaving the code paths that are unlikely to ever see significantly high QPS implemented synchronously.
 
 Exception handling in asynchronous execution deserves a special mention as `CompletionException` is unchecked and can be easily missed. We should always explicitly catch `CompletionException` when joining a future in a synchronous context. When returning `CompletionStage<Result>` to users, we should provide exception handling through `CompletableFuture#exceptionally` API.
-
-### Separation of concerns
-
-See [wikipedia definition](https://en.wikipedia.org/wiki/Separation\_of\_concerns).
-
-In lieu of a microservice architecture, this project necessitates special care in ensuring separation of concerns. While Play provides some structure in this regard, it should be viewed as a starting point.
-
-Code in **Play controllers** should be limited to brokering interaction between the server's business logic systems and HTTP. Code in controllers should never directly implement business logic concerns and should instead delegate to classes specific to those purposes. One way to help think about this when writing controller code: if you're writing an HTTP handler that responds with HTML, factor out business logic classes so that implementing another handler that performs the same logic but responds with JSON benefits from high code re-use.
-
-Code in **ebean models** should be limited to brokering interaction between the server's business logic and the database. Code in models should never directly implement business logic concerns.
 
 ## Bash scripts
 

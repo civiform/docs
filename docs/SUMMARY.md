@@ -41,6 +41,7 @@
   * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
 * [API Integration](it-manual/api/README.md)
+  * [Authentication](it-manual/api/authentication.md)
   * [List applications](it-manual/api/program-applications.md)
 * [Testing & QA](it-manual/testing-and-qa/README.md)
   * [Testing resources](it-manual/testing-and-qa/testing-resources.md)

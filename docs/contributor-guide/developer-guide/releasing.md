@@ -6,7 +6,6 @@ Releases are created once a month by the on-call engineer, and more often if req
 
 ## Creating a new release
 
-
 ### 1. Find the most recent commit that is passing CI for all staging environments:
 
 * [Seattle staging](https://staging.seattle.civiform.com/)

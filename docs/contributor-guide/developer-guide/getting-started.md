@@ -83,6 +83,17 @@ If you want to use the Log In flow see [those instructions](authentication-provi
 
 The `bin/run-dev` script uses `docker-compose` (see [`docker-compose.yaml`](https://github.com/civiform/civiform/blob/main/docker-compose.yml)). It enables Java and Javascript hot-reloading: when you modify most files, the server will recompile and restart. This is pretty time-consuming on first page load, but after that, it's not so bad.
 
+### Setting up routing for local testing
+
+For login and file upload to work with your local server, you need to edit your `/etc/hosts` file to include the following:
+
+```
+127.0.0.1 dev-oidc
+127.0.0.1 azurite
+127.0.0.1 localstack
+```
+This provides a local IP route for the 'dev-oidc', 'azurite', and 'localstack' hostnames.
+
 ### Seeding the development database
 
 Creating questions and programs in CiviForm is a bit time consuming to do manually with the UI, so in dev mode there is a controller action that generates several for you. You can access this feature at `localhost:<port number>/dev/seed`.

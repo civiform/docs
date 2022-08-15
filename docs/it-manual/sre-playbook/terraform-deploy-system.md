@@ -14,8 +14,8 @@ You will need couple of values that are configured outside of Civiform before yo
 1. Fork the [civiform-deploy](https://github.com/civiform/civiform-deploy) repo to your organization via the UI
 2. Pull the repo onto the machine you are deploying from (ideally this would be a shared instance multiple people can log onto)
 3. Find the version that you want to deploy on [Github](https://github.com/civiform/civiform/releases)
-4. Run the `bin/doctor --tag=<version>` and install the dependencies
-5. Copy the civiform\_config.example.sh into civiform\_config.sh and fill out the missing values. You can get a sense of required values depending on your cloud provider by looking at [staging-azure](https://github.com/civiform/staging-azure-deploy/blob/main/civiform_config.sh) or [staging-aws](https://github.com/civiform/staging-aws-deploy/blob/main/civiform_config.sh) configs.
+4. Copy the civiform\_config.example.sh into civiform\_config.sh and fill out the missing values. You can get a sense of required values depending on your cloud provider by looking at [staging-azure](https://github.com/civiform/staging-azure-deploy/blob/main/civiform_config.sh) or [staging-aws](https://github.com/civiform/staging-aws-deploy/blob/main/civiform_config.sh) configs.
+5. Run the `bin/doctor --tag=<version>` and install the dependencies
 6. Run `bin/setup --tag=<version>`
 
 

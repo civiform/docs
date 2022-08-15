@@ -1,12 +1,14 @@
 # Terraform deploy system
 
+Terraform - is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. Civiform provides Terraform configuration files that allow to deploy Civiform on Azure and AWS. Knowledge of Terraform is not required to run them but here is the high-level [Terraform overview](https://www.terraform.io/intro) nevertheless. 
+
 ## Setup
 
 ### Outside configuration
-You will need couple of values that are configured outside of Civiform before you start the setup.
-- [ ] Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-ad)
-- [ ] Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](../../contributor-guide/developer-guide/authentication-providers.md)
-- [ ] Domain name for your deployment
+You will need couple of values that are configured outside of Civiform before you start the setup. Some of the steps are optional meaning that you can bring up staging environment and get app working, but they need to be completed for production setup.
+- [ ] (Optional) Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-ad)
+- [ ] (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](../../contributor-guide/developer-guide/authentication-providers.md)
+- [ ] Domain name for your deployment. For example `civiform.mycity.gov`
 - [ ] (AWS) ARN of an SSL certificate for load balancer. See [requesting AWS certificate](#requesting-aws-certificate)
 
 ### Steps to run
@@ -16,7 +18,11 @@ You will need couple of values that are configured outside of Civiform before yo
 3. Find the version that you want to deploy on [Github](https://github.com/civiform/civiform/releases)
 4. Copy the civiform\_config.example.sh into civiform\_config.sh and fill out the missing values. You can get a sense of required values depending on your cloud provider by looking at [staging-azure](https://github.com/civiform/staging-azure-deploy/blob/main/civiform_config.sh) or [staging-aws](https://github.com/civiform/staging-aws-deploy/blob/main/civiform_config.sh) configs.
 5. Run the `bin/doctor --tag=<version>` and install the dependencies
-6. Run `bin/setup --tag=<version>`
+6. Run `bin/setup --tag=<version>`. What to expect:
+    * Runs 5-10 minutes.
+    * Terraform brings up resources in cloud (database, network, server, etc).
+    * Asks confirmation few times before creating resources listing everything that will be created. 
+    * Safe to re-run script if it fails.
 
 
 ## Deploy
@@ -26,7 +32,11 @@ You will need couple of values that are configured outside of Civiform before yo
 
 ## Troubleshooting
 
-#### Terraform fails
+#### Terraform fails with error "Provider produced inconsistent final plan"
+
+This error can happen when running `bin/setup` for the first time. If you set it - re-run `bin/setup`. This is a known Terraform [bug](https://github.com/hashicorp/terraform-provider-aws/issues/19583).
+
+#### Terraform fails with other errors
 
 The deploy command is idempotent so if it fails try running it again. The setup command can also be re-run but it does re-set a lot of variables which are kind of a pain to continually set up when you run it for Azure.
 

@@ -8,6 +8,7 @@ File upload functionality uses the Azurite / Localstack emulators. For Azure-bas
 
 ```
 127.0.0.1 azurite
+127.0.0.1 localstack
 ```
 
 This is because the application makes requests to Azurite using its container name, which can only be resolved when the request is made from within the Docker network. These container names to be mapped to the loopback IP address in order for the browser to resolve requests to `azurite` to upload and get uploaded images.

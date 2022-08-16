@@ -10,12 +10,18 @@ For general information see [Terraform deploy system](terraform-deploy-system.md
 ![AWS System Diagram](https://user-images.githubusercontent.com/1741747/184951252-1a33c8c8-8a86-44ea-b39a-cebea71e7495.png)
 
 
-Civiform app:
+Created for Civiform app:
 * VPC
+* Load balancer
+* Internet Gateway
+* NAT Gateway
 * Fargate ECS cluster
 * RDS with Postgres
 * S3 bucket
+
+Connected services
 * SES
+* Secrets Manager
 
 Supporting Infrastructure:
 * S3 bucket for terraform backend state

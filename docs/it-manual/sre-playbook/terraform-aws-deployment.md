@@ -27,7 +27,7 @@ Config for staging environment is [here](https://github.com/civiform/staging-aws
 
 ## Troubleshooting
 
-After running setup or deploy script you can login to [AWS ECS console](https://console.aws.amazon.com/ecs/v2/clusters to check status of Civiform. Make sure to select correct region in the top right corner.
+After running setup or deploy script you can login to [AWS ECS console](https://console.aws.amazon.com/ecs/v2/clusters) to check status of Civiform. Make sure to select correct region in the top right corner.
 
 You should see Cluster with app_preffix-civiform name. Click on it and go to Tasks tab. If everything is going well you should see task in the Running state.
 <img width="1240" alt="Screen Shot 2022-08-15 at 5 18 55 PM" src="https://user-images.githubusercontent.com/1741747/184758808-c1081316-7baf-45dc-9c76-a64594a9de5e.png">
@@ -35,6 +35,7 @@ You should see Cluster with app_preffix-civiform name. Click on it and go to Tas
 ### Inspecting task config
 
 You can see task configuration by clicking on Task definition tab, finding latest revision, and opening JSON tab. 
+
 <img width="812" alt="Screen Shot 2022-08-15 at 5 21 53 PM" src="https://user-images.githubusercontent.com/1741747/184758833-fce81bec-9f2c-49be-a102-2d5b38aa58dd.png">
 
 

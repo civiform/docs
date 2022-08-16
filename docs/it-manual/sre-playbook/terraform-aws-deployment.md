@@ -7,8 +7,7 @@ For general information see [Terraform deploy system](terraform-deploy-system.md
 
 ## Infrastructure
 
-![AWS System Diagram](https://user-images.githubusercontent.com/1741747/184946476-e44dbb80-58e3-4aba-a9c9-08b7ae705e77.png)
-
+![AWS System Diagram](https://user-images.githubusercontent.com/1741747/184951252-1a33c8c8-8a86-44ea-b39a-cebea71e7495.png)
 
 
 Civiform app:

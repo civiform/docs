@@ -7,6 +7,9 @@ For general information see [Terraform deploy system](terraform-deploy-system.md
 
 ## Infrastructure
 
+![Screen Shot 2022-08-16 at 8 55 32 AM](https://user-images.githubusercontent.com/1741747/184924625-7d873bee-c0f0-47e7-94fe-4b441ee981af.png)
+
+
 Civiform app:
 * VPC
 * Fargate ECS cluster
@@ -30,6 +33,7 @@ Config for staging environment is [here](https://github.com/civiform/staging-aws
 After running setup or deploy script you can login to [AWS ECS console](https://console.aws.amazon.com/ecs/v2/clusters) to check status of Civiform. Make sure to select correct region in the top right corner.
 
 You should see Cluster with app_preffix-civiform name. Click on it and go to Tasks tab. If everything is going well you should see task in the Running state.
+
 <img width="1240" alt="Screen Shot 2022-08-15 at 5 18 55 PM" src="https://user-images.githubusercontent.com/1741747/184758808-c1081316-7baf-45dc-9c76-a64594a9de5e.png">
 
 ### Inspecting task config
@@ -42,11 +46,13 @@ You can see task configuration by clicking on Task definition tab, finding lates
 ### Inspecting logs
 
 You can see logs on the task page by clicking into specific task and selecting tab Logs.
+
 <img width="1073" alt="Screen Shot 2022-08-15 at 5 23 27 PM" src="https://user-images.githubusercontent.com/1741747/184758931-a8374a7a-d1dc-4308-8676-7617d4237d7a.png">
 
 
 
 Logs are also available in Cloudwatch. Search for app_prefix-civiformlogs group.
+
 <img width="952" alt="Screen Shot 2022-08-15 at 5 26 42 PM" src="https://user-images.githubusercontent.com/1741747/184758880-f92b064b-658c-401e-ad71-175f64fde305.png">
 
 

@@ -1,5 +1,7 @@
 # Terraform deploy system
 
+In depth information about AWS can be found [here](terraform-aws-deployment.md).
+
 ## Setup
 
 ### Outside configuration

@@ -30,7 +30,7 @@
 
 ## IT Manual
 
-* [SRE Playbook](it-manual/sre-playbook/README.md)
+* [Technical Deployment Guide](it-manual/sre-playbook/README.md)
   * [Initial Deployment](it-manual/sre-playbook/initial-deployment.md)
   * [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md)
   * [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md)
@@ -39,6 +39,7 @@
   * [Breaking Glass on Database](it-manual/sre-playbook/breaking-glass-on-database.md)
   * [Look For Missing Questions](it-manual/sre-playbook/look-for-missing-questions.md)
   * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
+    * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
 * [API Integration](it-manual/api/README.md)
   * [Authentication](it-manual/api/authentication.md)

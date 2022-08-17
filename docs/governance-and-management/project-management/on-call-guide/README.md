@@ -19,7 +19,7 @@ NOTE: the mainline project repo existing under the `seattle-uat` GitHub org is t
 #### Ensure you have visibility into comms
 
 * Join the CiviForm public Slack org (https://civiform.slack.com), [join link](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q)
-* Subscribe to email alerts for new bugs filed in the [issue tracker](https://github.com/civiform/civiform/issues)
+* Subscribe to email alerts for new bugs filed in the [issue tracker](https://github.com/civiform/civiform/issues). Click on "Watch/Unwatch" button on the top.
 * Ensure that you are receiving emails to civiform-technical@googlegroups.com and are not catching them in email filters.
 * Subscribe to the [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
 * Subscribe to the [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
@@ -48,7 +48,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
    * [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
    * [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
    * [pac4j security announcement mailing list](https://groups.google.com/g/pac4j-security)
-3. Check dependency updates (once per shift)
+3. Check [dependency updates](https://github.com/civiform/civiform/labels/dependencies) (once per shift)
 4. Check security updates at : https://about.codecov.io/security-update/
 
 #### Downstream production incident support

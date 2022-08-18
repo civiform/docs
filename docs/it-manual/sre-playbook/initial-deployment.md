@@ -11,13 +11,11 @@ At the time of first writing (March 2022) CiviForm has these constraints:
 
 ## Deploying into AWS or Azure using Terraform
 
-See the [terraform deploy system docs](terraform-deploy-system.md).
+See the [terraform deploy system docs](terraform-deploy-system.md), terraform deployment is under active development and is the recommended option for future deployments.
 
 ## Deploying into AWS using CloudFormation
 
-Our production infrastructure is managed declaratively by [cloudformation](https://github.com/civiform/civiform-deploy/tree/main/infra). To deploy, `run bin/deploy-prod`. You will need the AWS CLI - `brew install awscli`.
-
-Production can also be deployed by kicking off the workflow for this prober [here](https://github.com/civiform/civiform/actions/workflows/cron.yaml). We have turned off scheduled probe and deploys for now.
+Seattle's production infrastructure is managed declaratively by [cloudformation](https://github.com/seattle-civiform/civiform-deploy/tree/main/infra). To deploy, `run bin/deploy-prod`. You will need the AWS CLI - `brew install awscli`.
 
 ### Resources not managed by CloudFormation
 

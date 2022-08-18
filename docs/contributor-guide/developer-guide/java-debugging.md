@@ -1,5 +1,13 @@
 # Java Debugging
 
+## Debug Ports
+
+| Server environment | script                             | Server Port | Debug Port |
+| ------------------ | ---------------------------------- | ----------- | ---------- |
+| Dev                | bin/run-dev, bin/sbt, bin/dev-bash | 9000        | 8457       |
+| Unit test          | bin/run-test, bin/sbt-test         | 9100        | 8459       |
+| Browser test       | bin/run-test, bin/sbt-test         | 9999        | 9457       |
+
 ## Setting up your debugger
 
 ### IntelliJ
@@ -22,10 +30,16 @@ of the "remote debug" type.
 
 ![Use the remote debug option.](https://imgur.com/t3GJtY2.png)
 
-The page should prepopulate with most of these options - fill in `8457` for the port.
+The page should prepopulate with most of these options - fill in your debug port from the table above ( `8457` for the dev environment).
 
-![Fill in the port, 8457, and check the rest of the settings.](https://i.imgur.com/hpWWwYp.png)
+![Fill in the port, and check the rest of the settings.](https://i.imgur.com/hpWWwYp.png)
+
+### VSCode
+
+Follow Microsoft's Guide [https://code.visualstudio.com/docs/java/java-debugging] to configure debugging.
+
+The `civiform.code-workspace` workspace file already has debug configurations setup for each of the 3 environments - make sure to select the correct one from the "Run and Debug" tab, then click "attach".
 
 ## Running the debugger
 
-First, run `bin/run-dev` to run a debuggable process. You'll know it's debuggable if it prints `Listening for transport dt_socket at address: 8457` in the startup logs. Then, click the bug icon to start debugging with your new debug configuration. You should see this: ![Debugger example.](https://imgur.com/NHbx2Km.png)
+First, run `bin/run-dev` (or the unit/browser test scripts) to run a debuggable process. You'll know it's debuggable if it prints `Listening for transport dt_socket at address` in the startup logs. Then, click the bug icon to start debugging with your new debug configuration. You should see this: ![Debugger example.](https://imgur.com/NHbx2Km.png)

@@ -5,7 +5,7 @@ This guide offers best practices for writing unit and browser tests for CiviForm
 
 In general, all execution paths in the system should be covered by [unit tests](#unit-tests). If you submit code that is infeasible or impractical to get full test coverage for, consider refactoring. If you would like to make an exception, include a clear explanation for why in your PR description.
 
-In contrast, [browser tests](#functional-browser-tests) should cover all major user-facing features to make sure the system generally works from a user's point of view, rather than exhaustively test all execution paths.
+In contrast, automated javascript-based [browser tests](#functional-browser-tests) should cover all major user-facing features to make sure the system generally works from a user's point of view, rather than exhaustively test all execution paths.
 
 ## Unit tests
 
@@ -21,13 +21,15 @@ bin/run-test
 
 If you'd like to run a specific test or set of tests, and/or save sbt startup time each time you run the test(s), use these steps:
 
-1. Bring up an sbt shell inside the Docker container by running:
+1. Bring up an sbt shell inside the unit-test docker-compose stack's civiform Docker container by running:
 
        bin/sbt-test
 
 1. Run any sbt commands! For example:
 
        testOnly services.question.QuestionDefinitionTest
+
+The unit test environment serves the application on port `9100` (http://localhost:9100), and the jvm debug port is `8459` (http://localhost:8459)
 
 ### Controller tests
 
@@ -55,10 +57,6 @@ Browser tests run against an application stack that is very similar to the local
 
 To run the tests:
 
-1. Build the Docker image for running the playwright tests. This only needs to be done once:
-
-       bin/build-browser-tests
-
 1. Bring up the local test environment with the AWS emulator. This step can be done in a separate terminal window while the
    Docker image is still building.
 
@@ -72,7 +70,7 @@ To run the tests:
 
    This runs the tests using Azurite, the Azure emulator. Because the Azure deployment of Civiform requires SES, the AWS email sending service, we also have to start Localstack, the AWS emulator, when running the Azure browser tests. 
 
- 
+   The browsertest environment serves the application on port `9999` (http://localhost:9999), and the jvm debug port is `8457` (http://localhost:8457)
 
 1. Once you see "Server started" in the terminal from the above step, in a separate terminal run the
    Playwright tests in a docker container:
@@ -125,18 +123,18 @@ You can step through a test run line-by-line with the browser by running the tes
        
 Note: These instructions [need some work](https://github.com/civiform/civiform/issues/3058) 
 
-Before you can run the browser tests locally, you need to do the following:
-1. Install node.js.
-1. Install [yarn](https://yarnpkg.com/). In most cases, `npm -g install yarn` will do it.
-1. Run `yarn install` in the [`browser-test/`](https://github.com/civiform/civiform/tree/main/browser-test) directory.
+Before you can run the browser tests locally, you need to [install Node.js](https://nodejs.org/en/download/package-manager)
 
 To run the tests locally, use:
 
+    bin/run-browser-test-env
     bin/run-browser-tests-local
 
 To run them in debug mode with the open browser add the `PWDEBUG` environment variable:
 
     PWDEBUG=1 bin/run-browser-tests-local
+
+You can also use the java debugger, following the instructions for [Java debugging in an IDE](https://docs.civiform.us/contributor-guide/developer-guide/java-debugging) and using port `8457`
 
 #### Screenshots
 

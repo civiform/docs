@@ -29,6 +29,18 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup ti
 
        testOnly services.question.QuestionDefinitionTest
 
+### Attaching a debugger to unit tests
+
+When running an individual unit test via `bin/sbt-test`, a debugger can be attached. In order to support this, JVM forking must be disabled since the debugger needs a well-known port to attach to. Within `build.sbt`, uncomment the following line:
+
+```
+Test / fork := false,
+```
+
+Then, use your debugger of choice to attach to port `8459` (VSCode workspace configuration already has a configuration for this).
+
+When attaching, a deadlock can occur if trying to attach too early. Consider waiting until the log line indicating connection to the database succeeded before attaching a debugger.
+
 ### Controller tests
 
 Controller tests should test the integration of business logic behind each HTTP endpoint. Most controller tests should likely extend `WithPostgresContainer` which provides a real database. Controllers should contain very little if any conditional logic and delegate business logic and network interactions (database, auth service, file services, etc.) to service classes.

@@ -10,9 +10,9 @@ Do these things when you initially onboard to the CiviForm on-call rotation.
 
 #### Join the GitHub repo
 
-Join the CiviForm GitHub repo (https://github.com/civiform/civiform). Ask someone who already has access to add you as an admin.
+Join the CiviForm GitHub repo ([https://github.com/civiform/civiform](https://github.com/civiform/civiform)). Ask someone who already has access to add you as an admin.
 
-Also join the CiviForm GitHub org (https://github.com/civiform).
+Also join the CiviForm GitHub org ([https://github.com/civiform](https://github.com/civiform)).
 
 NOTE: the mainline project repo existing under the `seattle-uat` GitHub org is temporary. Once Seattle no longer depends on deployment automation from the mainline repo you will only need to be an admin of https://github.com/civiform.
 

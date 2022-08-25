@@ -25,6 +25,7 @@ Foreign-key constraints:
     "fk_member" FOREIGN KEY (member_of_group_id) REFERENCES ti_organizations(id) ON DELETE SET NULL
 Referenced by:
     TABLE "applicants" CONSTRAINT "applicants_account_id_fkey" FOREIGN KEY (account_id) REFERENCES accounts(id)
+    TABLE "application_events" CONSTRAINT "fk_creator" FOREIGN KEY (creator_id) REFERENCES accounts(id)
 
                                            Table "public.applicants"
       Column      |            Type             | Collation | Nullable |                Default
@@ -65,22 +66,41 @@ Indexes:
     "api_keys_salted_key_secret_key" UNIQUE CONSTRAINT, btree (salted_key_secret)
 
                                            Table "public.applications"
-      Column      |            Type             | Collation | Nullable |                 Default
+      Column      |            Type             | Collation | Nullable |                 Default                  
 ------------------+-----------------------------+-----------+----------+------------------------------------------
  id               | bigint                      |           | not null | nextval('applications_id_seq'::regclass)
- applicant_id     | bigint                      |           |          |
- program_id       | bigint                      |           |          |
- object           | jsonb                       |           | not null |
- lifecycle_stage  | character varying           |           |          |
- submit_time      | timestamp without time zone |           |          |
- submitter_email  | character varying(255)      |           |          |
- create_time      | timestamp without time zone |           |          |
- preferred_locale | character varying           |           |          |
+ applicant_id     | bigint                      |           |          | 
+ program_id       | bigint                      |           |          | 
+ object           | jsonb                       |           | not null | 
+ lifecycle_stage  | character varying           |           |          | 
+ submit_time      | timestamp without time zone |           |          | 
+ submitter_email  | character varying(255)      |           |          | 
+ create_time      | timestamp without time zone |           |          | 
+ preferred_locale | character varying           |           |          | 
 Indexes:
     "applications_pkey" PRIMARY KEY, btree (id)
 Foreign-key constraints:
     "fk_applicant" FOREIGN KEY (applicant_id) REFERENCES applicants(id)
     "fk_program" FOREIGN KEY (program_id) REFERENCES programs(id)
+Referenced by:
+    TABLE "application_events" CONSTRAINT "fk_application" FOREIGN KEY (application_id) REFERENCES applications(id)
+
+                                          Table "public.application_events"
+     Column     |            Type             | Collation | Nullable |                    Default                     
+----------------+-----------------------------+-----------+----------+------------------------------------------------
+ id             | bigint                      |           | not null | nextval('application_events_id_seq'::regclass)
+ application_id | bigint                      |           |          | 
+ creator_id     | bigint                      |           |          | 
+ event_type     | character varying           |           | not null | 
+ details        | jsonb                       |           | not null | 
+ create_time    | timestamp without time zone |           | not null | 
+Indexes:
+    "application_events_pkey" PRIMARY KEY, btree (id)
+    "index_application_events_by_application" UNIQUE, btree (application_id)
+    "index_application_events_by_creator" UNIQUE, btree (creator_id)
+Foreign-key constraints:
+    "fk_application" FOREIGN KEY (application_id) REFERENCES applications(id)
+    "fk_creator" FOREIGN KEY (creator_id) REFERENCES accounts(id)
 
                                           Table "public.files"
        Column       |          Type          | Collation | Nullable |              Default

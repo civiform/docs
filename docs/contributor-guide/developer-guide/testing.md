@@ -136,7 +136,7 @@ Screenshot tests are implemented with [jest-image-snapshot](https://github.com/a
 await validateScreenshot(page, 'name-of-image')
 ```
        
-New screenshots are saved automatically to a subdirectory in .../image_snapshots/ with the test file name. If a screenshot diff is found, an image showing the diff will be saved to .../diff_output/. To accept the diff as expected and update the screenshot, re-run the test with the `-u` flag.
+New screenshots are saved automatically to a subdirectory in .../image_snapshots/ with the test file name. If a screenshot diff is found, an image showing the diff will be saved to .../diff_output/. To accept the diff as expected and update the screenshot, re-run the test with the `-u` flag (e.g. `bin/run-browser-tests -u some_file.test.ts`).
 
 Note that screenshot tests should be run via docker, not on your local machine, to minimize variability.
 

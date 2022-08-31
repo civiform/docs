@@ -90,3 +90,4 @@
   * [On Call Guide](governance-and-management/project-management/on-call-guide/README.md)
     * [On Call Journal](governance-and-management/project-management/on-call-guide/on-call-journal.md)
 * [Governance](governance-and-management/governance/README.md)
+  * [Communication](governance-and-management/governance/communication.md)

@@ -1,6 +1,6 @@
-# Communications Standards
+# Communications Guidelines
 
-These are communication guidelines for the Civiform Open Source community. This includes anyone interested in contributing to the open source project. We expect these to evolve over time.
+These are communication guidelines for the Civiform Open Source community. We expect these standards to evolve over time.
 
 * **For announcements & recognition → Google Groups.** Why? Emails are accessible and commonly used in government.
 * **For tracking work → Github.** Why? Github is our project management tool and should be the source of truth for ongoing work. 
@@ -8,16 +8,16 @@ These are communication guidelines for the Civiform Open Source community. This 
 
 ## Google Groups
 (All aliases are @googlegroups.com)
-|Alias|Purpose|Permissions|Who should join|How to join|
-|------------|-------|-----------|---------------|-----------|
-|civiform-announce|Announcements to the Civiform community.| Only managers can post. Anyone can view posts.|All contributors and maintainers.|[Join here.](https://groups.google.com/u/1/g/civiform-announce)|
-|civiform-technical|Technical announcements.|Anyone on web can post. Only members can view posts.|Technical contributors (e.g. software engineers)|[Request to join here.](https://groups.google.com/g/civiform-technical)|
-|civiform-escalations|Sensitive and non-public incident reports or technical escalations.|Anyone on web can post. Only members can view posts.|On-call software engineers.|Invite only by on-call software engineers.|
-|civiform-governance|Discussions for Governance Leads.|Anyone on web can post. Only members can view posts.|Governance Leads.|Invite only by Google.org or Product Steward.|
-|civiform-newsletter|Updates about ongoing fellowship projects and product development, shared with active participants|Only members can post. Only members can view posts.|Active participants from civic entities, Google.org, and Google.org Fellowships.|[Request to join.](https://groups.google.com/u/1/g/civiform-newsletter)|
+|Alias|Purpose & Who Should Join|Permissions|How to join|
+|------------|-------|-----------|-----------|
+|civiform-announce|Announcements to the Civiform community. Join if you are a contributor or maintainer.| Only managers can post. Anyone can view posts.|[Join here.](https://groups.google.com/u/1/g/civiform-announce)|
+|civiform-technical|Technical announcements. Join if you are a technical contributor (e.g. software engineers).|Anyone on web can post. Only members can view posts.|[Request to join here.](https://groups.google.com/g/civiform-technical)|
+|civiform-escalations|Sensitive and non-public incident reports or technical escalations. Join if you are an on-call software engineer.|Anyone on web can post. Only members can view posts.|Invite only by on-call software engineers.|
+|civiform-governance|Discussions for Governance Leads. Join if you are a Governance Lead for your civic entity.|Anyone on web can post. Only members can view posts.|Invite only by Google.org or Product Steward.|
+|civiform-newsletter|Updates about ongoing fellowship projects and product development, shared with active participants. Join if you are an active participant from civic entities, Google.org, and Google.org Fellowships.|Only members can post. Only members can view posts.|[Request to join.](https://groups.google.com/u/1/g/civiform-newsletter)|
 
 ## Slack Channels
-www.civiform.slack.com
+[www.civiform.slack.com](civiform.slack.com)
 
 |Slack Channel|Purpose|Who should join|
 |-------------|-------|---------------|

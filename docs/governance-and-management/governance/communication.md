@@ -12,7 +12,7 @@ These are communication guidelines for the Civiform Open Source community. We ex
 |------------|-------|-----------|-----------|
 |civiform-announce|Announcements to the Civiform community. Join if you are a contributor or maintainer.| Only managers can post. Anyone can view posts.|[Join here.](https://groups.google.com/u/1/g/civiform-announce)|
 |civiform-technical|Technical announcements. Join if you are a technical contributor (e.g. software engineers).|Anyone on web can post. Only members can view posts.|[Request to join here.](https://groups.google.com/g/civiform-technical)|
-|civiform-escalations|Sensitive and non-public incident reports or technical escalations. Join if you are an on-call software engineer.|Anyone on web can post. Only members can view posts.|Invite only by on-call software engineers.|
+|civiform-escalations|Sensitive incident reports or technical escalations. Join if you are an on-call software engineer.|Anyone on web can post. Only members can view posts.|Invite only by on-call software engineers.|
 |civiform-governance|Discussions for Governance Leads. Join if you are a Governance Lead for your civic entity.|Anyone on web can post. Only members can view posts.|Invite only by Google.org or Product Steward.|
 |civiform-newsletter|Updates about ongoing fellowship projects and product development, shared with active participants. Join if you are an active participant from civic entities, Google.org, and Google.org Fellowships.|Only members can post. Only members can view posts.|[Request to join.](https://groups.google.com/u/1/g/civiform-newsletter)|
 
@@ -32,14 +32,13 @@ These are communication guidelines for the Civiform Open Source community. We ex
 |CiviForm Project Folder|Purpose|Permissions|
 |-------------|-------|---------------|
 |[Public Folder](https://drive.google.com/drive/u/1/folders/1LT7ZivhjXb5iSxwisuF11CjUMKPYjpi0)|For files that are intended to be publicly visible.|Anyone with link can view and comment.|
-|[Private Folder](https://drive.google.com/drive/u/1/folders/1svFQEY73YpI9k0-wyfqY2UU_w8hUFIAG)|For non-public files that contributors are collaborating on.|Restricted. Only people to file added can open link.|
+|[Private Folder](https://drive.google.com/drive/u/1/folders/1svFQEY73YpI9k0-wyfqY2UU_w8hUFIAG)|For non-public files that contributors are collaborating on.|Restricted. Only people added to file can open link.|
 
 ## Types of Communications
 ### Google Groups
 * I have an announcement for developers or technical contributors  (“feedback on new technical design requested”) → civiform-technical
 * I have an announcement for an IT team managing a deployment (“new release, install update”, “critical security fix has been released”) → civiform-announce
 * I have a non-technical announcement for users or program administrators (“a new feature has been released”) → civiform-announce
-* I want to recognize or celebrate work (“We launched Civiform in [Civic Entity]!”) → civiform-announce
 
 ### Github
 * I have an idea for a feature (“I think we should have an application tracker”)

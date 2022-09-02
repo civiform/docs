@@ -32,6 +32,6 @@ Ensure your team lead grants you access to the following resources.
 * LoginRadius
 * DockerHub (if at Google need to pay for the professional one)
 * Github Access
-  * Civiform Org
-  * seatle-uat/civiform
-  * seatle-uat Org (for PMs)
+  * [Civiform Org](https://github.com/civiform)
+  * civiform/civiform
+  * civiform/docs 

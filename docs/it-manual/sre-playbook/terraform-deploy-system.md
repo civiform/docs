@@ -43,6 +43,14 @@ If you see error like no such file or directory
 ```
 The scripts expect you to be in specific directories. You probably need to cd into the checkout directory or the top level directory. If you are running setup/deploy/revert you will need to be in the top level directory if you are running a script like db-connection you need to be in the checkout directory!
 
+#### Terraform fails with `Error acquiring the state lock`
+
+This situation can happen when exiting deployment scripts using "Ctrl-C". Terraform acquires lock every time you run `./bin/deploy` or `./bin/setup` and releases lock at the end of the script. This helps to prevent concurrent infrastructure changes. If deploy process exited outside of terraform - the lock remains and needs to be force removed in order to run deploy again. To do it run the following command, assuming you deploy on AWS:
+
+```
+terraform -chdir=checkout/cloud/aws/templates/aws_oidc force-unlock $LOCK_ID
+```
+
 ## Helpful resources
 
 ### Requesting AWS certificate

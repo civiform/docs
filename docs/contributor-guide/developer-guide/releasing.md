@@ -16,7 +16,7 @@ Check the #deployment-bot Slack channel for the latest successful SNAPSHOT for A
 
 #### From Staging servers
 
-On the running servers inspect the DOM tree for the <head><meta> item civiform-build-tag. This will only show the current recent for each.
+On the running servers inspect the DOM tree for the <head><meta> item civiform-build-tag. This will only show the current SNAPSHOT for each though.
 
 * [staging-azure](https://staging-azure.civiform.dev/)
 * [staging-AWS](https://staging-aws.civiform.dev/)

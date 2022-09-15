@@ -12,7 +12,7 @@ Find the commit SNAPSHOT id from one of the following, and extract SHA from it. 
 
 #### From Deployment-bot
 
-Check the #deployment-bot Slack channel for the latest successful SNAPSHOT for Azure and AWS.  This offers a history of previous auto pushes too
+Check the #deployment-bot Slack channel for the latest successful SNAPSHOT for Azure and AWS.  This offers a history of previous auto pushes too.
 
 #### From Staging servers
 

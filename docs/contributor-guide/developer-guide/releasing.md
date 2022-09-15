@@ -22,7 +22,7 @@ On the running servers inspect the DOM tree for the <head><meta> item civiform-b
 * [staging-AWS](https://staging-aws.civiform.dev/)
 
 
-Note: If possible finding a commit that passes the above AND [Seattle staging](https://staging.seattle.civiform.com/) is great but not a requirement.  You'll have to inspect the DOM as in the 'From Staging server' section to find it's version.
+Note: If possible finding a commit that passes the above AND [Seattle staging](https://staging.seattle.civiform.com/) is great but not a requirement.  You'll have to inspect the DOM as in the 'From Staging server' section to find its version.
 
 ### 2. Run the script to create a new release
 

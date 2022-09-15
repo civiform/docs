@@ -8,7 +8,7 @@ Releases are created weekly by the on-call engineer, usually on Wednesday, or if
 
 ### 1. Find the most recent commit that is passing CI for all staging environments:
 
-Find the commit SNAPSHOT id from one of the following, and extract SHA from it. The SHA is the middle item in the SNAPSHOT-sha-hash ID
+Find the commit SNAPSHOT id from one of the following, and extract the SHA from it. The SHA is the middle item in the SNAPSHOT-sha-hash ID
 
 #### From Deployment-bot
 

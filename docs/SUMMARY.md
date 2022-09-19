@@ -40,6 +40,7 @@
   * [Look For Missing Questions](it-manual/sre-playbook/look-for-missing-questions.md)
   * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
     * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
+  * [Email configuration](it-manual/sre-playbook/email-configuration.md)
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
 * [API Integration](it-manual/api/README.md)
   * [Authentication](it-manual/api/authentication.md)

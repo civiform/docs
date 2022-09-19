@@ -10,7 +10,7 @@ Applicants see this email address in the footer of each page as a mailto link. C
 
 **Sender email address**  
 This email address is used as a sender for all notifications sent by the CiviForm. Example notifications are new applications (sent to program admins), 
-program status changes (sent to applicants). Config variables are `SENDER_EMAIL_ADDRESS`, `SES_SENDER_EMAIL`.
+program status changes (sent to applicants). Config variable are `SENDER_EMAIL_ADDRESS`.
 
 **Notifications recipients in staging**. 
 These email addresses are used only in staging. Instead of sending email notifications to program admins - they are sent to the provided email addresses. 
@@ -31,9 +31,6 @@ they received. Remember that that someone needs to regularly check inbox for the
 After deploying CiviForm to staging or prod it's important to test that email integration works correctly. Here is the list of things to try: 
 
 1. Open CiviForm site as applicant and send email to the technical support email address provided in the footer.
-2. Create a program, add a program admin. Submit an application for the program and verify that program admin received email.
+2. Create a program. Add a program admin. Submit an application for the program and verify that both the program admin and the applicant received emails.
 3. TODO: testing status email.
-
-
-
 

@@ -31,6 +31,9 @@ they received. Remember that that someone needs to regularly check inbox for the
 After deploying CiviForm to staging or prod it's important to test that email integration works correctly. Here is the list of things to try: 
 
 1. Open CiviForm site as applicant and send email to the technical support email address provided in the footer.
-2. Create a program. Add a program admin. Submit an application for the program and verify that both the program admin and the applicant received emails.
-3. TODO: testing status email.
+2. Create a program with a status that has email content.
+3. Apply as an applicant.
+4. Program Admin, applicant (and TI if present) should receive the email.
+4. As a Program Admin view the application and set the status.
+5. The applicant (and TI if present) should receive the email.
 

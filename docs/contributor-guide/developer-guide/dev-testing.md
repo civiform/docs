@@ -21,6 +21,7 @@ You should now be logged in as a named Applicant.  You can re-login as that appl
 
 Sent emails can be viewed at: http://localstack:4566/_localstack/ses
 
+To view the output nicer you can use the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) extension
 
 ## File Upload
 

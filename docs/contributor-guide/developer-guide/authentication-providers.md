@@ -53,7 +53,7 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
     ![image](https://user-images.githubusercontent.com/252053/191864859-1cd54843-6469-4cf8-b698-adc8a9937bb9.png)
    </details>
 
-#### Variables needed for integration
+Below is the list of variables that we need after setting up Azure AD to integrate with CiviForm.
 
 * `OpenID Connect metadata document` url from step 5.
 * `Application (client) ID` from step 5.

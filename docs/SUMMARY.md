@@ -73,6 +73,7 @@
   * [Development standards](contributor-guide/developer-guide/development-standards.md)
   * [Development stack](contributor-guide/developer-guide/development-stack.md)
   * [Form submission with Play](contributor-guide/developer-guide/form-submission-with-play.md)
+  * [Feature Flags](contributor-guide/developer-guide/feature-flags.md)
   * [Internationalization (i18n)](contributor-guide/developer-guide/internationalization-i18n.md)
   * [Adding a new question type](contributor-guide/developer-guide/adding-a-new-question-type.md)
   * [Deploy system](contributor-guide/developer-guide/deploy-system/README.md)

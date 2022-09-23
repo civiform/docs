@@ -11,6 +11,13 @@ features such as
 Currently we only have boolean flags/support but others could be added as
 necessary.
 
+## Uses
+
+Feature flags can be used to control features that will always be configuration controled such as if Global Admins are also Program Admins. The code, tests and configuration will always be present in CiviForm.
+
+Feature flags can also be used as launch gating controls for features that can't be done in a single PR.  This allows you to safely do incremental development while your code is being shipped weekly in releases.  And then to "launch" it when all is done.
+
+
 ## Using
 
 The
@@ -88,9 +95,9 @@ This can be done by using the `enableFeatureFlag(page, flagName)` method in
 [`index.ts`](https://sourcegraph.com/github.com/civiform/civiform/-/blob/browser-test/src/support/index.ts?L396:20&subtree=true)
 in your tests.
 
-#### Note
+## Probers
 
-Browser tests are overloaded in their usage and also used as deployment
+Browser tests are overloaded in their usage and are also used as deployment
 "probers" in various environments including CiviForm ran Staging servers as well
 Civic Entity ones, this means the default state of feature flags and flagged
 code in browser tests can not be assumed and must be explicitly set and managed.
@@ -98,3 +105,9 @@ code in browser tests can not be assumed and must be explicitly set and managed.
 For instance CiviForm staging might enable the feature while Seattle Staging
 does not. When you add the flagged java code you may then get different results
 in the existing tests until you also update them.
+
+## Best Practices
+
+1. Always gaurd DB write code, even if a path can't be reached unless upstream gaurded code was enabled. 
+2. Consider what will happen if your flag is enabled for some time then disabled. Should data views still be accessible? etc.
+3. Always test code with your feature off and on, or other variations.  Our dev environments make it easy to only see the bleeding-edge of features, but real users will be seeing the stable released version of your code.

@@ -27,12 +27,18 @@ Adding a new flag involves
 
 ## Manual overrides
 
+Overrides are meant for evaluation and development purposes and not production usage.
+
+They and are done through the browser and apply to the current user session only.
+
 ### Enable
 
-Overrides are meant for evaluation and development not production usage.
+
+To enable the ability to override all the following must be true:
 
 1.  Enable `feature_flag_overrides_enabled` in the environment configuration.
-2.  Use a dev or staging server
+2.  Use a dev or staging server.
+3.  Are a Global or Program admin.
 
 ### Access
 

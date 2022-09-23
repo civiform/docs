@@ -12,7 +12,7 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
 
 #### Configure Azure AD
 
-1. Login to Azure, go to "Active Active Directory" => "App Registrations" and create a new app. During creation set `Redirect URI` to be https://your-civiform-domain.gov/callback/AdClient replacing domain with your actual domain. The path `/callback/AdClient` is mandatory.
+1. Login to [Azure Portal](https://portal.azure.com/), go to "Active Directory" => "App Registrations" and create a new app. During creation set `Redirect URI` to be _https://your-civiform-domain.gov/callback/AdClient_ replacing domain with your actual domain. The path `/callback/AdClient` is mandatory.
    <details>
     <summary>Screenshots</summary>
 
@@ -20,26 +20,29 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
     ![image](https://user-images.githubusercontent.com/252053/191863133-cb396bb2-04cf-45a1-9d3a-1b805bcbab1c.png)
 
    </details>
-2. Go to the newly created app, then Authentication and enable `ID tokens`. 
+2. Go to the newly created app => Authentication and enable `ID tokens`. 
    <details>
     <summary>Screenshots</summary>
   
     ![image](https://user-images.githubusercontent.com/252053/191863376-d342092d-db5e-4111-96fa-a7fa751ed15f.png)
    </details>
-3. Go to "Token configuration" section and add the following claims. Optional claims: `acct`, `email`. Groups claims: `Security groups`.
+3. Go to "Token configuration" section and add the following claims:
+    -  Optional claims: `acct`, `email`. These determine what information about the user will be set to Civiform.
+    -  Groups claims: `Security groups`. These allow Civiform authenticate via security group.
+
    <details>
     <summary>Screenshots</summary>
   
     ![image](https://user-images.githubusercontent.com/252053/191863628-6414d71b-c396-4628-8be6-6c58939f8f9b.png)
     ![image](https://user-images.githubusercontent.com/252053/191863646-3d3c5e76-0510-48d2-9b78-bf27e18659e0.png)
    </details>
-4. Go to "Certificates & secrets" and create a new secret that will be used by the CiviForm when it talks to Azure AD. Write down secret value somewhere temporarily. It will be used in a few steps. If you don't write it down and refresh the page - the value won't be accessible anymore, but you can always create a new secret. 
+4. Go to "Certificates & secrets" and create a new secret that will be used by the CiviForm when it talks to Azure AD. Write down secret value somewhere temporarily. You will need to provide it to CiviForm. If you don't write it down and refresh the page - the value won't be accessible anymore, but you can always create a new secret. 
    <details>
     <summary>Screenshots</summary>     
     
     ![image](https://user-images.githubusercontent.com/252053/191864014-83385f7a-2c1b-4d29-8bbc-4506f6fd3631.png)
    </details>
-5. Go to "Overview" and write down `Application (client) ID` and `OpenID Connect metadata document`. They will be used later fdf...
+5. Go to "Overview" and write down `Application (client) ID` and `OpenID Connect metadata document`. They will be used later.
 
    <details>
     <summary>Screenshots</summary>     
@@ -57,8 +60,8 @@ Below is the list of variables that we need after setting up Azure AD to integra
 
 * `OpenID Connect metadata document` url from step 5.
 * `Application (client) ID` from step 5.
-* Secret value from step 4.
-* Group object ID from step 6.
+* `Client Secret` from step 4.
+* `Admin Group object ID` from step 6.
 
 #### Configure CiviForm
 
@@ -77,9 +80,9 @@ export ADFS_ADDITIONAL_SCOPES=""
 export AD_GROUPS_ATTRIBUTE_NAME="groups"
 ```
 
-2. Update ADFS client ID and client secret. If deploying on AWS - go to AWS Secrets Manager. Find secrets that end with `adfs_client_id` and `adfs_secret`. 
+2. Update `Client ID` and `Client Secret`. They are not exposed in the config and can be found in the Secrets Manager. Find secrets that end with `adfs_client_id` and `adfs_secret`. 
   * Update `adfs_client_id` to be `Application (client) ID` from step 5.
-  * Update `adfs_secret` to secret value from step 4.
+  * Update `adfs_secret` to `Client Secret` value from step 4.
 
 3. Redeploy CiviForm to pickup the updated value. Ensure that it starts healthy.
 
@@ -90,7 +93,7 @@ To test admin authentication try the following:
 1. In Azure add yourself to the security group you created at "Configure Azure AD" step 6. Go to CiviForm login page and click `Admin login`. It should take you through Microsoft login flow and redirect back to the CiviForm. You should see tabs like "Programs" and "Questions" indicating that you logged in as CiviForm admin.
 2. Logout from CiviForm. In Azure remove yourself from the security group and try logging in as admin again. It should take you through Microsoft login flow and redirect back to the CiviForm. You should see "Your programs" and no tabs like "Programs" or "Questions".
 
-If authentication not working - take a look at Debugging tips below.
+If authentication not working - take a look at [Debugging tips](#debugging) below.
 ## Applicant Authentication
 
 ### Oracle IDCS (OIDC)

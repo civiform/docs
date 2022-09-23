@@ -53,6 +53,13 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
     ![image](https://user-images.githubusercontent.com/252053/191864859-1cd54843-6469-4cf8-b698-adc8a9937bb9.png)
    </details>
 
+#### Variables needed for integration
+
+* `OpenID Connect metadata document` url from step 5.
+* `Application (client) ID` from step 5.
+* Secret value from step 4.
+* Group object ID from step 6.
+
 #### Configure CiviForm
 
 Now we need to update CiviForm server to use the value we used earlier.

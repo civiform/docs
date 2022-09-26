@@ -1,5 +1,13 @@
 # Dev Azure
 
+## Configuring Github Actions
+
+Current actions need the following secrets:
+ * ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }} Can be found in https://portal.azure.com/ under Subscriptions.
+ * ARM_TENANT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_TENANT }} Can be found in https://portal.azure.com/ -> App registrations -> civiform-staging-deploy. Field: _Directory (tenant) ID_
+ * ARM_CLIENT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_ID }} Can be found in https://portal.azure.com/ -> App registrations -> civiform-staging-deploy. Field: _Application (client) ID_
+ * ARM_CLIENT_SECRET: ${{ secrets.AZURE_SERVICE_PRINCIPAL_PASSWORD }} Can be found in https://portal.azure.com/ -> App registrations -> civiform-staging-deploy -> Certificates and secrets -> New client secret.  
+
 ## Setup Login Radius For Local Development
 
 Go to [Login Radius Dashboard](https://dashboard.loginradius.com/) and click the

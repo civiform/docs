@@ -106,6 +106,8 @@ In contrast to unit tests, browser tests should not attempt to exhaustively test
 - encapsulate UI interaction details into [page object classes](https://playwright.dev/docs/pom/)
 - as much as is practical navigate using the UI and not by directly referencing URL paths
 
+Screenshot diff tests should cover every question type, and should cover every page of the admin and applicant flow. See the [screenshot diffing section](#screenshot-diffing) for more details.
+
 Accessibility (a11y) testing also needs to happen at the browser test level, since it checks the final generated HTML for a11y violations. All applicant facing features should be covered by an a11y test check. See the [accessibility test section](#axe-accessibility-tests) for more details.
 
 
@@ -126,14 +128,37 @@ We have an auto-formatter for our browser test code. Please run the following co
 ```
 browser-test/bin/fmt
 ```
+  
+### Screenshot diffing
+       
+Screenshot tests are implemented with [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot). To add a screenshot test, simply call:
+```typescript
+await validateScreenshot(page, 'name-of-image')
+```
+       
+New screenshots are saved automatically to a subdirectory in .../image_snapshots/ with the test file name. If a screenshot diff is found, an image showing the diff will be saved to .../diff_output/. To accept the diff as expected and update the screenshot, re-run the test with the `-u` flag (e.g. `bin/run-browser-tests -u some_file.test.ts`).
 
+Note that we've disabled screenshot tests when run locally (e.g. with `bin/run-browser-tests-local`) to minimize variability. They are enabled when running with the usual command via docker (`bin/run-browser-tests`).
+
+When run as a GitHub action, screenshot diff images will be uploaded on test failure. These are available in the Artifacts section of the Summary tab on the GitHub action run. 
+       
+       
+### Axe accessibility tests
+       
+Accessibility tests are run at the browser test level on the final generated HTML page, using [axe](https://github.com/dequelabs/axe-core). You can run an accessibility test on a page simply by calling:
+```typescript
+await validateAccessibility(page)
+```
+
+If the accessibility test fails, the error message will output the AxeResults.violations array. See [API docs](https://www.deque.com/axe/core-documentation/api-documentation/#results-object) for more info. The violation will include a `helpUrl` with a link of suggestions to fix the accessibility problem, and will include a snippet of the problematic `html`. Running the tests locally with [debug mode](#debug-mode) is particularly helpful here since you can manually inspect the html.
+ 
 ### Debugging browser tests
 
 Please see the [Playwright debug docs](https://playwright.dev/docs/debug) for a lot more info on this topic.
 
-#### Debug mode
+#### Local debug mode
 
-You can step through a test run line-by-line with the browser by running the tests locally (i.e. not in Docker) with debug mode turned on.
+You can step through a test run line-by-line with a visible browser window by running the tests locally (i.e. not in Docker) with debug mode turned on. 
        
 Note: These instructions [need some work](https://github.com/civiform/civiform/issues/3058) 
 
@@ -149,22 +174,7 @@ To run the tests locally, use:
 To run them in debug mode with the open browser add the `PWDEBUG` environment variable:
 
     PWDEBUG=1 bin/run-browser-tests-local
-
-#### Screenshots
-
-With both `bin/run-browser-tests` and `bin/run-browser-tests-local` you can take screenshots of the browser during test runs and save them to `browser-test/tmp`. (that directory [is mounted as a volume](https://github.com/civiform/civiform/blob/main/bin/run-browser-tests) in the Docker test container). For example, to take a full-page screenshot and save it in a file called `screenshot.png`:
-
-```typescript
-await page.screenshot({ path: 'tmp/screenshot.png', fullPage: true })
-```
-
-**Note**: You must prefix the filename with `tmp/`. [More info on taking screenshots with Playwright here](https://playwright.dev/docs/screenshots).
-
-### Axe accessibility tests
        
-Accessibility tests are run at the browser test level on the final generated HTML page, using [axe](https://github.com/dequelabs/axe-core). You can run an accessibility test on a page simply by calling:
-```typescript
-await validateAccessibility(page)
-```
-
-If the accessibility test fails, the error message will output the AxeResults.violations array. See [API docs](https://www.deque.com/axe/core-documentation/api-documentation/#results-object) for more info. The violation will include a `helpUrl` with a link of suggestions to fix the accessibility problem, and will include a snippet of the problematic `html`. Running the tests locally with [debug mode](#debug-mode) is particularly helpful here since you can manually inspect the html.
+#### Debugging failed GitHub actions
+      
+On failure, a test video of the browser test will be uploaded to the Artifacts section of the Summary tab on the GitHub action run. 

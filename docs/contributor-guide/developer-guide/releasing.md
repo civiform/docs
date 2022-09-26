@@ -2,23 +2,42 @@
 
 See [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md) for an overview of CiviForm release practices.
 
-Releases are created once a month by the on-call engineer, and more often if requested by a civic entity (e.g. for an urgent bugfix).
+Releases are created weekly by the on-call engineer, usually on Wednesday, or if requested by a civic entity (e.g. for an urgent bugfix).
 
 ## Creating a new release
 
 ### 1. Find the most recent commit that is passing CI for all staging environments:
 
-* [Seattle staging](https://staging.seattle.civiform.com/)
+Find the commit SNAPSHOT id from one of the following, and extract the SHA from it. The SHA is the middle item in the SNAPSHOT-sha-hash ID
+
+#### From Deployment-bot
+
+Check the #deployment-bot Slack channel for the latest successful SNAPSHOT for Azure and AWS.  This offers a history of previous auto pushes too.
+
+#### From Staging servers
+
+On the running servers inspect the DOM tree for `<head><meta name="civiform-build-tag">`. Its `content` attribute will only show the current SNAPSHOT for each though.
+
 * [staging-azure](https://staging-azure.civiform.dev/)
 * [staging-AWS](https://staging-aws.civiform.dev/)
 
+
+Note: If possible finding a commit that passes the above AND [Seattle staging](https://staging.seattle.civiform.com/) is great but not a requirement.  You'll have to inspect the DOM as in the 'From Staging server' section to find its version.
+
 ### 2. Run the script to create a new release
 
-The release can either be run as [a GitHub action](https://github.com/civiform/civiform/actions/workflows/release.yaml) (recommended) or from your [local machine](https://github.com/civiform/civiform/blob/main/bin/create-release) (if the GitHub action is not working).
+You'll need to determine:
 
-When you run the script, pass the commit SHA from step 1 and the new release number as arguments. If you are uncertain what the new release number is, confer with other members of the CiviForm core team.
+* Commit SHA: This is the middle item in the SNAPSHOT-sha-hash ID from Step 1
+* Release number: Pick the next minor number (1.X.0) since the [last release](https://github.com/civiform/civiform/releases)
 
-The release script:
+Setup:
+* Login to docker as the civiform user. If you don't have the password ask the #github-maintainers Slack channel
+* Generate a GH access token and provide it as [documented](https://github.com/civiform/civiform/blob/main/bin/create-release#L14).
+
+When ready run: [/bin/create-release](https://github.com/civiform/civiform/blob/main/bin/create-release) SHA vNumber
+
+The release script will then:
 
 1. Validates the commit SHA is a commit on main and RELEASE_NUMBER matches the convention
 1. Tags the git commit with the release number, annotated with description that includes the email address of the release caller, and pushes it to github

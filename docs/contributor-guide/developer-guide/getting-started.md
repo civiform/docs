@@ -9,11 +9,17 @@ Start here! This step is a prerequisite for everything that follows, even if you
 1. [Join GitHub](https://github.com/join).
 2. [Install git](https://github.com/git-guides/install-git) on your machine.
 3. [Configure an SSH key with your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh). We recommend not including the "UseKeychain yes" line or setting a password.
-4. Download [Docker Desktop](https://www.docker.com/get-started). On Mac, run Docker Desktop and go to Preferences > Resources to increase max RAM for containers to at least 4GB (ideally 6GB), otherwise sbt compiles can get killed before completing and produce strange runtime behavior.
-5. (Linux only) Install Docker compose v2 by following [these instructions](https://docs.docker.com/compose/cli-command/#install-on-linux)
-6. Clone the CiviForm repo. This will create a copy of the codebase on your machine:
+4. Install Docker
+   * On Mac
+     * Download [Docker Desktop](https://www.docker.com/get-started). 
+     * Run Docker Desktop and go to Preferences > Resources to increase max RAM for containers to at least 4GB (ideally 6GB), otherwise sbt compiles can get killed before completing and produce strange runtime behavior.
+   * On Linux
+     * Install [Docker Engine](https://docs.docker.com/engine/install/#server) for your Linux distribution.
+     * Configure Docker to run in [Rootless Mode](https://docs.docker.com/engine/security/rootless). This will create generated files as the correct user, otherwise file permission issues occur.
+     * Install Docker compose v2 by following [these instructions](https://docs.docker.com/compose/cli-command/#install-on-linux).
+5. Clone the CiviForm repo. This will create a copy of the codebase on your machine:
    1. Open a terminal and navigate to the directory you'd like the copy of the CiviForm codebase to live.
-   2.  In that directory, run the following (and/or refer to [this guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)):
+   2. In that directory, run the following (and/or refer to [this guide](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)):
 
        ```
        git clone git@github.com:civiform/civiform.git

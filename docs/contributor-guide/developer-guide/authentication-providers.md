@@ -55,7 +55,7 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
   ![image](https://user-images.githubusercontent.com/252053/191864534-c79c78bd-effe-40b2-a22c-ecf6aa535698.png)
 </details>
 
-6\. We are done with setting up the Azure AD app. Now to go Azure "Groups" and create a new security group. That group will contain members that have CiviForm Admin access when they login to CiviForm. Other users, who are not members of that group, will be considered Program Admins. Once you created the group write down its ID it will be used later.
+6\. We are done with setting up the Azure AD app. Now to go Azure "Groups" and create a new security group. That group will contain members that have CiviForm Admin access when they login to CiviForm. Other users, who are not members of that group, will be considered Program Admins. Though they need to be assigned to particular programs by a CiviForm Admin to see the programs, by default they don't have access to any programs. Once you created the group write down its ID it will be used later.
 
 <details>
   <summary>Screenshots</summary>     

@@ -53,7 +53,7 @@ Boolean flags can be enabled or disabled via url and persist for the browser
 session.
 
 *   `/dev/feature/feature_flag_name/enable`
-*   `/dev/feature/feature_flag_name/enable`
+*   `/dev/feature/feature_flag_name/disable`
 
 For example: `/dev/feature/application_status_tracking_enabled/enable` enables
 the status tracking feature for the current user.
@@ -108,6 +108,6 @@ in the existing tests until you also update them.
 
 ## Best Practices
 
-1. Always gaurd DB write code, even if a path can't be reached unless upstream gaurded code was enabled. 
+1. Always guard DB write code, even if a path can't be reached unless upstream guarded code was enabled. 
 2. Consider what will happen if your flag is enabled for some time then disabled. Should data views still be accessible? etc.
 3. Always test code with your feature off and on, or other variations.  Our dev environments make it easy to only see the bleeding-edge of features, but real users will be seeing the stable released version of your code.

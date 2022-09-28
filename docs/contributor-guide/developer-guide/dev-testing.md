@@ -25,7 +25,7 @@ To view the output nicer you can use the [JSON Formatter](https://chrome.google.
 
 ## File Upload
 
-Make sure to add `localstack` and `azurite` to `/etc/hosts` prior to trying file upload within the dev stack.
+Make sure to add `localstack` and `azurite` to `/etc/hosts` prior to trying file upload within the dev stack. See [these docs](https://docs.civiform.us/contributor-guide/developer-guide/getting-started#setting-up-routing-for-local-testing) for details.
 
 ### AWS
 

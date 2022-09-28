@@ -25,4 +25,16 @@ To view the output nicer you can use the [JSON Formatter](https://chrome.google.
 
 ## File Upload
 
-TBD
+Make sure to add `localstack` and `azurite` to `/etc/hosts` prior to trying file upload within the dev stack.
+
+### AWS
+
+**Known issue:** AWS-based file uploads which use localstack only really work with empty PNG files due to https://github.com/localstack/localstack/issues/6588. Until this is fixed, generate an empty PNG file on your machine and use this to upload:
+
+```
+touch emptyfile.png
+```
+
+### Azure
+
+No extra configuration required.

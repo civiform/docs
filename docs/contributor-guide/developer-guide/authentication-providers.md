@@ -177,8 +177,8 @@ Here you'll find intstruction of how to setup login.gov authentication. It assum
 6\. Update `Client ID` variable in your CiviForm deployment. AWS deployment: that variable is not exposed in the `civiform_config.sh`. Instead it can be found in the AWS Secrets Manager. Find secret that ends with `applicant_oidc_client_id` and set it to the Issuer string you used on step 3.
 
 7\. Update `civiform_config.sh`: 
-  * Set `CIVIFORM_APPLICANT_IDP` to `login-gov`.
-  * Set `APPLICANT_OIDC_DISCOVERY_URI` to `https://idp.int.identitysandbox.gov/.well-known/openid-configuration`. Mentioned [here](https://developers.login.gov/oidc/#auto-discovery). For production deployment that value will needs to be updated.
+  * Set `CIVIFORM_APPLICANT_IDP` to `"login-gov"`.
+  * Set `APPLICANT_OIDC_DISCOVERY_URI` to `"https://idp.int.identitysandbox.gov/.well-known/openid-configuration"`. Mentioned [here](https://developers.login.gov/oidc/#auto-discovery). For production deployment that value will needs to be updated.
 
 8\. Redeploy CiviForm to pickup the updated value. Ensure that it starts healthy.
 

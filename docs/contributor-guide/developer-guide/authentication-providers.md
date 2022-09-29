@@ -132,6 +132,59 @@ Most Identity providers will need these urls:
 * Logout: https://{your_civiform_url}/**logout**
 
 
+### Login.gov (OIDC)
+
+Here you'll find intstruction of how to setup login.gov authentication. It assumes that you have access to [login.gov sandbox](https://developers.login.gov/testing/). First, you'll need to create app in the sandbox and configure it to work with your civiform instance.
+
+1\. Create new app. 
+
+<details>
+  <summary>Screenshots</summary>
+  
+  ![image](https://user-images.githubusercontent.com/252053/193155267-d97c88bf-d530-48de-b139-20fd39ea0b94.png)
+</details>
+
+2\. Use the following settings:
+  * Authentication Protocol - OpenID Connect PKCE.
+  * Attribute bundle - email.
+  * Level of service and Default Authentication Assurance Level are up to you.
+
+<details>
+  <summary>Screenshots</summary>
+  
+  ![image](https://user-images.githubusercontent.com/252053/193155482-22e94d3b-43f8-415e-8c44-b0b22df2c23d.png)
+</details>
+
+
+3\. Decide on Issuer string. It will be used later as client ID variable. No need to upload certificates as we are not using protocols relying on private keys.
+
+<details>
+  <summary>Screenshots</summary>
+  
+  ![image](https://user-images.githubusercontent.com/252053/193155703-21bc2f0f-ae3d-45c6-b976-ac0e69fe3f2e.png)
+</details>
+
+4\. Add redirect URIs. You should add 2 URIs: _https://your-civiform-domain.gov/callback/LoginGov_ and _https://your-civiform-domain.gov/logout_. 
+
+<details>
+  <summary>Screenshots</summary>
+  
+  ![image](https://user-images.githubusercontent.com/252053/193155863-9591b2e2-50a0-4348-8006-7d967239f859.png)
+</details>
+
+5\. Save app. The page might return error on saving. Still, the data is saved (you can refresh the page and should see the app you just created).
+
+6\. Update `Client ID` variable in your CiviForm deployment. AWS deployment: that variable is not exposed in the `civiform_config.sh`. Instead it can be found in the AWS Secrets Manager. Find secret that ends with `applicant_oidc_client_id` and set it to the Issuer string you used on step 3.
+
+7\. Update `civiform_config.sh`: 
+  * Set `CIVIFORM_APPLICANT_IDP` to `login-gov`.
+  * Set `APPLICANT_OIDC_DISCOVERY_URI` to `https://idp.int.identitysandbox.gov/.well-known/openid-configuration`. Mentioned [here](https://developers.login.gov/oidc/#auto-discovery). For production deployment that value will needs to be updated.
+
+8\. Redeploy CiviForm to pickup the updated value. Ensure that it starts healthy.
+
+9\. Test applicant login flow. If it is not working - take a look at [Debugging tips](#debugging) below.
+
+
 ### LoginRadius (SAML)
 
 SAML authentication involves an exchange between an Identity Provider or IdP(LoginRadius), and a Service Provider or SP (Civiform). In our application, we use SP-initiated SAML authentication, which means our application signs and sends a SAML request to LoginRadius to begin the auth process.

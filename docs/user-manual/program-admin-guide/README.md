@@ -4,6 +4,7 @@ Program Admin are the government employees who handle applications for programs.
 
 In this Guide, you will find how-to:
 
+* [How to become a Program Admin](how-to-become-a-program-admin.md)
 * [Review completed applications](review-completed-applications.md)
 
 {% hint style="success" %}

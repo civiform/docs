@@ -4,7 +4,7 @@ CiviForm Admin are the government employees who create and update application fo
 
 In this Guide, you will find how-to:
 
-* [How to become a CiviForm Admin](how-to-become-civiform-admin.md)
+* [How to become a CiviForm Admin](how-to-become-civiform-admin.mdd)
 * [Manage Programs](manage-programs.md)
 * [Manage Questions](manage-questions.md)
 * [Add or remove questions & screens in a program](add-or-remove-questions-and-screens-in-a-program.md)

@@ -11,6 +11,7 @@
 ## User Manual
 
 * [CiviForm Admin Guide](user-manual/civiform-admin-guide/README.md)
+  * [How to become a CiviForm Admin](user-manual/civiform-admin-guide/how-to-become-civiform-admin.md)
   * [Manage Programs](user-manual/civiform-admin-guide/manage-programs.md)
   * [Manage Questions](user-manual/civiform-admin-guide/manage-questions.md)
   * [Add or remove questions & screens in a program](user-manual/civiform-admin-guide/add-or-remove-questions-and-screens-in-a-program.md)
@@ -22,6 +23,7 @@
   * [Question type requirements notes](user-manual/civiform-admin-guide/question-type-requirements-notes.md)
   * [Manage API keys](user-manual/civiform-admin-guide/manage-api-keys.md)
 * [Program Admin Guide](user-manual/program-admin-guide/README.md)
+  * [How to become a Program Admin](user-manual/program-admin-guide/how-to-become-a-program-admin.md)
   * [Review completed applications](user-manual/program-admin-guide/review-completed-applications.md)
 * [Trusted Intermediary Guide](user-manual/trusted-intermediary-guide/README.md)
   * [Apply to a program](user-manual/trusted-intermediary-guide/apply-to-a-program.md)

@@ -38,7 +38,7 @@ Need help? See [Play's i18n documentation](https://www.playframework.com/documen
 
 When you add a new string that needs translation please contact `bion` on slack and he will get translations for the text.
 
-Whether you require translations before launching your feature depends. Ideally we would always have them, but getting them can be burdensome in time and upkeep in the development process, and CiviForm as a product doesn't necessarily support any other language.
+Whether you require translations before launching your feature depends. Ideally we would always have them, but getting them can be burdensome in time and upkeep in the development process. As well CiviForm as a product doesn't necessarily support any other language.
 
 **The main decision criteria is**: Can the default text be easily translated through a free online service and make sense.
 

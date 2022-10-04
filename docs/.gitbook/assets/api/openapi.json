@@ -1,0 +1,277 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "CiviForm API",
+    "description": "Access CiviForm data programmatically via REST API.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://staging-aws.civiform.dev"
+    },
+    {
+      "url": "https://staging-azure.civiform.dev"
+    }
+  ],
+  "tags": [
+    {
+      "name": "applications",
+      "description": "Access program application data"
+    }
+  ],
+  "paths": {
+    "/api/v1/admin/programs/{programSlug}/applications": {
+      "get": {
+        "tags": [
+          "applications"
+        ],
+        "summary": "Read program application data.",
+        "description": "Get all applications for a given program.",
+        "parameters": [
+          {
+            "name": "programSlug",
+            "in": "path",
+            "description": "Human readable identifier for the program to export. The CiviForm admin can find the slug for a given program by examining the deep link link URL on the program index page or in the list of allowed programs on the API key index page.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "description": "An ISO-8601 formatted date (i.e. YYYY-MM-DD). Limits results to applications submitted on or after the provided date.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "description": "An ISO-8601 formatted date (i.e. YYYY-MM-DD). Limits results to applications submitted before the provided date.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "A positive integer. Limits the number of results per page. If pageSize is larger than CiviForm's maximum page size then the maximum will be used. The default maximum is 1,000 and is configurable.",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "nextPageToken",
+            "in": "query",
+            "description": "An opaque, alphanumeric identifier for a specific page of results. When included CiviForm will return a page of results corresponding to the token.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "nextPageToken": {
+                      "type": "string"
+                    },
+                    "payload": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ProgramApplication"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Returned if any request parameters fail validation."
+          },
+          "401": {
+            "description": "Returned if the API key is invalid or does not have access to the program."
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "basicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    },
+    "schemas": {
+      "ProgramApplication": {
+        "type": "object",
+        "properties": {
+          "program_name": {
+            "type": "string",
+            "example": "Example Program With Enumerator"
+          },
+          "program_version_id": {
+            "type": "integer",
+            "example": 912
+          },
+          "applicant_id": {
+            "type": "integer",
+            "example": 767
+          },
+          "application_id": {
+            "type": "integer",
+            "example": 866
+          },
+          "language": {
+            "type": "string",
+            "example": "en-US"
+          },
+          "create_time": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2022-04-19T21:46:05.774Z"
+          },
+          "submitter_email": {
+            "type": "string",
+            "example": "Applicant"
+          },
+          "submit_time": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2022-04-19T21:55:05.123Z"
+          },
+          "application": {
+            "$ref": "#/components/schemas/Application"
+          }
+        }
+      },
+      "Application": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/QuestionValue"
+        }
+      },
+      "QuestionValue": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Address"
+          },
+          {
+            "$ref": "#/components/schemas/Currency"
+          },
+          {
+            "$ref": "#/components/schemas/Date"
+          },
+          {
+            "$ref": "#/components/schemas/Email"
+          },
+          {
+            "$ref": "#/components/schemas/ID"
+          },
+          {
+            "$ref": "#/components/schemas/Multiselect"
+          },
+          {
+            "$ref": "#/components/schemas/Name"
+          },
+          {
+            "$ref": "#/components/schemas/Number"
+          },
+          {
+            "$ref": "#/components/schemas/Singleselect"
+          },
+          {
+            "$ref": "#/components/schemas/Text"
+          }
+        ]
+      },
+      "Address": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string",
+            "example": "111 8th Avenue"
+          },
+          "line2": {
+            "type": "string",
+            "example": "4th Floor"
+          },
+          "city": {
+            "type": "string",
+            "example": "New York"
+          },
+          "state": {
+            "type": "string",
+            "example": "NY"
+          },
+          "zip": {
+            "type": "string",
+            "example": 10011
+          }
+        }
+      },
+      "Currency": {
+        "type": "number",
+        "format": "currency"
+      },
+      "Date": {
+        "type": "string",
+        "format": "date"
+      },
+      "Email": {
+        "type": "string"
+      },
+      "ID": {
+        "type": "string"
+      },
+      "Multiselect": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "Name": {
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "type": "string",
+            "example": "Susan"
+          },
+          "middle_name": {
+            "type": "string",
+            "example": "B."
+          },
+          "last_name": {
+            "type": "string",
+            "example": "Anthony"
+          }
+        }
+      },
+      "Number": {
+        "type": "integer"
+      },
+      "Singleselect": {
+        "type": "string"
+      },
+      "Text": {
+        "type": "string"
+      }
+    }
+  }
+}

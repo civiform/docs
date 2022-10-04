@@ -107,66 +107,116 @@ components:
     Application:
       type: object
       additionalProperties:
-        $ref: '#/components/schemas/QuestionValue'
-    QuestionValue:
+        $ref: '#/components/schemas/QuestionResponse'
+    QuestionResponse:
       anyOf:
         - $ref: '#/components/schemas/Address'
         - $ref: '#/components/schemas/Currency'
         - $ref: '#/components/schemas/Date'
         - $ref: '#/components/schemas/Email'
         - $ref: '#/components/schemas/ID'
-        - $ref: '#/components/schemas/Multiselect'
+        - $ref: '#/components/schemas/MultiSelect'
         - $ref: '#/components/schemas/Name'
         - $ref: '#/components/schemas/Number'
-        - $ref: '#/components/schemas/Singleselect'
+        - $ref: '#/components/schemas/SingleSelect'
         - $ref: '#/components/schemas/Text'
+    UpdatedAt:
+      type: object
+      properties:
+        updated_at:
+          type: string
+          format: date-time
     Address:
-      type: object
-      properties:
-        street:
-          type: string
-          example: 111 8th Avenue
-        line2:
-          type: string
-          example: 4th Floor
-        city:
-          type: string
-          example: New York
-        state:
-          type: string
-          example: NY
-        zip:
-          type: string
-          example: 10011
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            street:
+              type: string
+              example: 111 8th Avenue
+            line2:
+              type: string
+              example: 4th Floor
+            city:
+              type: string
+              example: New York
+            state:
+              type: string
+              example: NY
+            zip:
+              type: string
+              example: 10011
     Currency:
-      type: number
-      format: currency
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            currency_dollars:
+              type: number
+              format: currency
     Date:
-      type: string
-      format: date
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            date:
+              type: string
+              format: date
     Email:
-      type: string
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            email:
+              type: string
     ID:
-      type: string
-    Multiselect:
-      type: array
-      items:
-        type: string
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            id:
+              type: string
+    MultiSelect:
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            selections:
+              type: array
+              items:
+                type: string
     Name:
-      type: object
-      properties:
-        first_name:
-          type: string
-          example: Susan
-        middle_name:
-          type: string
-          example: B.
-        last_name:
-          type: string
-          example: Anthony
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            first_name:
+              type: string
+              example: Susan
+            middle_name:
+              type: string
+              example: B.
+            last_name:
+              type: string
+              example: Anthony
     Number:
-      type: integer
-    Singleselect:
-      type: string
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            number:
+              type: integer
+    SingleSelect:
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            selection:
+              type: string
     Text:
-      type: string
+      allOf:
+        - $ref: '#/components/schemas/UpdatedAt'
+        - type: object
+          properties:
+            text:
+              type: string

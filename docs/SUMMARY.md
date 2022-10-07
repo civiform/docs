@@ -17,6 +17,8 @@
   * [Edit a Program](user-manual/civiform-admin-guide/edit-a-program.md)
   * [Manage Questions](user-manual/civiform-admin-guide/manage-questions.md)
   * [How to publish programs](user-manual/civiform-admin-guide/publish-a-program.md)
+  * [Download exported data](user-manual/civiform-admin-guide/download-exported-data.md)
+  * [Manage Program Admin](user-manual/civiform-admin-guide/manage-program-admins.md)
   * [Using enumerator questions & screens in a program](user-manual/civiform-admin-guide/using-enumerator-questions-and-screens-in-a-program.md)
   * [Manage translations for programs & questions](user-manual/civiform-admin-guide/manage-translations-for-programs-and-questions.md)
   * [Manage versions for programs & questions](user-manual/civiform-admin-guide/manage-versions-for-programs-and-questions.md)

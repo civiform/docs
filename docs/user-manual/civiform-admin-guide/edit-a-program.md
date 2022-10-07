@@ -2,7 +2,11 @@
 
 Watch the video to learn how to edit programs. You can also follow the step-by-step guide below.
 
-{% embed url="https://drive.google.com/file/d/1sdXQ3qaKwOOPF4XdlRvRnWw8e_9FgbIZ/view?usp=sharing" %} Edit admin and applicant information, screens, questions, and visibility conditions. {% endembed %}
+### Learn how to edit admin and applicant information.
+{% embed url="https://drive.google.com/file/d/12yjt2tRhjn1OauRBc-6CE6pwKc3aonxG/view?usp=sharing" %}{% endembed %}
+
+### Learn how to edit screens, questions, and visibility conditions.
+{% embed url="https://drive.google.com/file/d/1n1BVLuZZFCvrf7gYvT3BRkIQPmJqL4_V/view?usp=sharing" %}{% endembed %}
 
 ### Edit a program
 

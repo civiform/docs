@@ -2,6 +2,11 @@
 
 CiviForm Admins are responsible for setting up and managing Trusted Intermediaries. A Trusted Intermediary Group is a Community-Based Organization (CBO) that helps people apply for benefit programs. A Trusted Intermediary is a CBO staff member who interacts with Applicants.
 
+Watch the video or follow the step-by-step guide below.
+
+{% embed url="https://drive.google.com/file/d/1FZE5Ar9Bc3XvrcQFpceVbxpfFk0RrWOb/view?usp=sharing" %} {% endembed %}
+
+
 ### Create a Trusted Intermediary Group
 
 1. Sign in to CiviForm as a CiviForm Admin.

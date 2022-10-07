@@ -4,13 +4,16 @@ CiviForm Admin are the government employees who create and update application fo
 
 In this Guide, you will find how-to:
 
-* [How to become a CiviForm Admin](how-to-become-civiform-admin.md)
-* [Manage Programs](manage-programs.md)
+* [CiviForm Admin Training Overview](civiform-admin-training-overview.md)
+* [How to Navigate CiviForm](how-to-navigate-civiform.md)
+* [Create a Program](create-a-program.md)
+* [Edit a Program](edit-a-program.md)
 * [Manage Questions](manage-questions.md)
-* [Add or remove questions & screens in a program](add-or-remove-questions-and-screens-in-a-program.md)
+* [Publish a Program](publish-a-program.md)
 * [Using enumerator questions & screens in a program](using-enumerator-questions-and-screens-in-a-program.md)
 * [Manage translations for programs & questions](manage-translations-for-programs-and-questions.md)
 * [Show or hide questions based on inputs](show-or-hide-questions-based-on-inputs.md)
+* [Manage Program Admin](manage-program-admin.md)
 * [Manage Trusted Intermediaries](manage-trusted-intermediaries.md)
 * [Question type requirements notes](question-type-requirements-notes.md)
 * [Manage API keys](manage-api-keys.md)

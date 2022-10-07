@@ -3,6 +3,9 @@
 Questions form the structure of a CiviForm program. When a CiviForm Admin creates a question for one of their forms, the question is saved in the global question bank. When programs reuse the same question, all Applicant data related to the question gets autofilled. This reduces duplicate data entry and ensures accuracy by using previously vetted information.
 
 ### Create a question
+Watch the video or follow the step-by-step guide below.
+
+{% embed url="https://drive.google.com/file/d/1W6qisNemjmm-HBRlHTiohQls2oA9Q_Hz/view?usp=sharing" %} Create new questions in the shared question bank. {% endembed %}
 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click **Questions** on the navigation bar.

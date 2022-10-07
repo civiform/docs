@@ -11,8 +11,10 @@
 ## User Manual
 
 * [CiviForm Admin Guide](user-manual/civiform-admin-guide/README.md)
-  * [How to become a CiviForm Admin](user-manual/civiform-admin-guide/how-to-become-civiform-admin.md)
-  * [Manage Programs](user-manual/civiform-admin-guide/manage-programs.md)
+  * [CiviForm Admin Training Overview](user-manual/civiform-admin-guide/civiform-admin-training-overview.md)
+  * [How to Navigate CiviForm](user-manual/civiform-admin-guide/how-to-navigate-civiform.md)
+  * [Create a Program](user-manual/civiform-admin-guide/create-a-program.md)
+  * [Edit a Program](user-manual/civiform-admin-guide/edit-a-program.md)
   * [Manage Questions](user-manual/civiform-admin-guide/manage-questions.md)
   * [Add or remove questions & screens in a program](user-manual/civiform-admin-guide/add-or-remove-questions-and-screens-in-a-program.md)
   * [Using enumerator questions & screens in a program](user-manual/civiform-admin-guide/using-enumerator-questions-and-screens-in-a-program.md)

@@ -13,11 +13,7 @@ Through the Google.org Fellowship, user researchers identified 4 key users of Ci
 * [CiviForm Admin](how-does-civiform-work.md#civiform-admin-experience) are government employees who create and manage forms for programs.
 * [Program Admin](how-does-civiform-work.md#undefined) are government employees who review and make decisions about applications.
 
-Read on to learn about the features for each user type. You can also watch a recent demo of CiviForm below:
-
-{% embed url="https://youtu.be/AIYZEd5WAcU" %}
-Product demo in January 2022.
-{% endembed %}
+Read on to learn about the features for each user type. 
 
 #### A note on data management & security:
 

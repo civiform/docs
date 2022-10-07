@@ -1,5 +1,4 @@
-# Manage translations for programs & questions
-
+# Manage translations
 CiviForm Admins can translate text for both programs and questions using the CiviForm interface. When an Applicant chooses a language, the entered text is displayed in the application.
 
 English is the default language for CiviForm. If CiviForm doesn’t include translations for a requested language, the default language is displayed instead. A warning also appears stating the form is not fully translated into the requested language.
@@ -7,6 +6,11 @@ English is the default language for CiviForm. If CiviForm doesn’t include tran
 **Note**: There’s no user interface for the CiviForm Admin to add or remove translation languages from programs or questions. The list of languages CiviForm can support is set up within the code.
 
 You can edit both unpublished and published programs. To edit published programs, you need to click **New Version**. For more details on versioning, go to [Manage versions for programs & questions.](manage-versions-for-programs-and-questions.md)
+
+Watch the video or follow the step-by-step instructions below.
+
+{% embed url="https://drive.google.com/file/d/1GIh2zQqZifAojx3OUPCYZMIGjFP0WrTV/view?usp=sharing" %} Translate program applications into languages beyond English. 
+{% endembed %}
 
 ### Add or edit program translations
 

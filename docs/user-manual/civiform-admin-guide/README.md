@@ -1,8 +1,11 @@
 # CiviForm Admin Guide
 
-CiviForm Admin are the government employees who create and update application forms for programs. With CiviForm, they can build custom, no-code required applications using a repository of reusable questions.
+Welcome to the CiviForm Admin Training Guide!
 
-In this Guide, you will find how-to:
+If you are a government employee who creates, publishes, and manages application forms for programs, then you are a CiviForm Admin. 
+With CiviForm, you can manage and create program applications using a repository of reusable questions.
+
+Follow the guide below to learn the ropes as a CiviForm Admin.
 
 * [CiviForm Admin Training Overview](civiform-admin-training-overview.md)
 * [How to Navigate CiviForm](how-to-navigate-civiform.md)

@@ -51,6 +51,14 @@ If you see error like no such file or directory
 ```
 The scripts expect you to be in specific directories. You probably need to cd into the checkout directory or the top level directory. If you are running setup/deploy/revert you will need to be in the top level directory if you are running a script like db-connection you need to be in the checkout directory!
 
+#### Terraform fails with `Error acquiring the state lock`
+
+This situation can happen when exiting deployment scripts using "Ctrl-C". Terraform acquires lock every time you run `./bin/deploy` or `./bin/setup` and releases lock at the end of the script. This helps to prevent concurrent infrastructure changes. If deploy process exited outside of terraform - the lock remains and needs to be force removed in order to run deploy again. To do it run the following command, assuming you deploy on AWS:
+
+```
+terraform -chdir=checkout/cloud/aws/templates/aws_oidc force-unlock $LOCK_ID
+```
+
 ## Helpful resources
 
 ### Requesting AWS certificate
@@ -65,11 +73,17 @@ ARN has format of arn:aws:acm:<region>:<user_id>:certificate/\<identifier>
 ### Setting up Azure AD
 
 The setup scrip prompts you to set up Azure AD. There are a few additional steps.
+ 
+In Azure Portal:
+  * Go to Azure Active Directory -> App registrations
+  * Click the tab for "All applications"
+  * Find your app (staging-dynamic-heron for Civiform Azure Staging)
+  <img width="905" alt="image" src="https://user-images.githubusercontent.com/1741747/191576453-45b0e029-7c39-4510-8e3a-a532c76d3a6d.png">
 
-* You will need to setup the Redirect URI to be what the app expects: https://\<custom\_hostname>/callback/AdClient.
-* You will also need an admin group which creates civiform admins
-* To allow for civiform admins you need to have the Azure Ad return the groups claim. Do this in the token configuration section of the Azure portal and add the security groups claim (you can verify the groups claim is being returned by decoding the base64 token from the token you get back from Azure AD on the website-- if you preserve the log in the Chrome Dev Tool window it should be from https://\<custom\_hostname>/callback/AdClient)
-
+ Use menu on the left:
+  * Authentication: setup the Redirect URI to be what the app expects: https://\<custom\_hostname>/callback/AdClient.
+  * You will also need an admin group which creates civiform admins
+  * Token configuration: To allow for civiform admins you need to have the Azure Ad return the groups claim. Add the security groups claim (you can verify the groups claim is being returned by decoding the base64 token from the token you get back from Azure AD on the website-- if you preserve the log in the Chrome Dev Tool window it should be from https://\<custom\_hostname>/callback/AdClient)
 
 ### Access the database (only Azure)
 

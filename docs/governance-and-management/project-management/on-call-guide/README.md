@@ -10,16 +10,16 @@ Do these things when you initially onboard to the CiviForm on-call rotation.
 
 #### Join the GitHub repo
 
-Join the CiviForm GitHub repo (https://github.com/civiform/civiform). Ask someone who already has access to add you as an admin.
+Join the CiviForm GitHub repo ([https://github.com/civiform/civiform](https://github.com/civiform/civiform)). Ask someone who already has access to add you as an admin.
 
-Also join the CiviForm GitHub org (https://github.com/civiform).
+Also join the CiviForm GitHub org ([https://github.com/civiform](https://github.com/civiform)).
 
 NOTE: the mainline project repo existing under the `seattle-uat` GitHub org is temporary. Once Seattle no longer depends on deployment automation from the mainline repo you will only need to be an admin of https://github.com/civiform.
 
 #### Ensure you have visibility into comms
 
 * Join the CiviForm public Slack org (https://civiform.slack.com), [join link](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q)
-* Subscribe to email alerts for new bugs filed in the [issue tracker](https://github.com/civiform/civiform/issues)
+* Subscribe to email alerts for new bugs filed in the [issue tracker](https://github.com/civiform/civiform/issues). Click on "Watch/Unwatch" button on the top.
 * Ensure that you are receiving emails to civiform-technical@googlegroups.com and are not catching them in email filters.
 * Subscribe to the [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
 * Subscribe to the [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
@@ -48,7 +48,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
    * [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
    * [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
    * [pac4j security announcement mailing list](https://groups.google.com/g/pac4j-security)
-3. Check dependency updates (once per shift)
+3. Check [dependency updates](https://github.com/civiform/civiform/labels/dependencies) (once per shift)
 4. Check security updates at : https://about.codecov.io/security-update/
 
 #### Downstream production incident support

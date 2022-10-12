@@ -1,10 +1,10 @@
 # New full-time SWE onboarding materials
 
-Links
+### Links
 
 * Seattle Staging: [https://staging.seattle.civiform.com](https://staging.seattle.civiform.com/loginForm)
 * Azure Staging: [https://staging-azure.civiform.dev](https://staging-azure.civiform.dev)
-* [Beta Project](https://github.com/orgs/seattle-uat/projects/1) (for Issue Tracking)
+* [Project Tracker and Product Roadmap](https://github.com/orgs/civiform/projects/1)
 
 ### Recommended Tutorials
 
@@ -30,8 +30,8 @@ Ensure your team lead grants you access to the following resources.
 * Slack
 * Added to the technical google group
 * LoginRadius
-* DockerHub (if at Google need to pay for the professional one)
+* DockerHub (if at Google, need to pay for the professional one)
 * Github Access
-  * Civiform Org
-  * seatle-uat/civiform
-  * seatle-uat Org (for PMs)
+  * [Civiform Org](https://github.com/civiform)
+  * civiform/civiform
+  * civiform/docs 

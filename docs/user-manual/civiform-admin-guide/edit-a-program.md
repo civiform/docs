@@ -1,10 +1,23 @@
-# Add or remove questions & screens in a program
+# Edit a Program
 
-CiviForm programs are made up of one or more questions housed in screens. Each program has a default screen.
+Watch the video to learn how to edit programs. You can also follow the step-by-step guide below.
 
-A program can hold multiple screens and each screen should contain a logically themed set of questions (for example, all employment-related questions). Each screen equates to a new page when applying to a program.
+## Learn how to edit admin and applicant information.
+{% embed url="https://drive.google.com/file/d/12yjt2tRhjn1OauRBc-6CE6pwKc3aonxG/view?usp=sharing" %}{% endembed %}
 
-You edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions](manage-versions-for-programs-and-questions.md).
+### Edit a program
+
+You can edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions.](manage-versions-for-programs-and-questions.md)
+
+1. Sign in to CiviForm as a CiviForm Admin.
+2. Click **Programs** on the navigation bar and select a program you created.
+3. Click **Edit**.
+4. Modify the program information fields.
+5. Click **Save**.
+
+
+## Learn how to edit screens, questions, and visibility conditions.
+{% embed url="https://drive.google.com/file/d/1n1BVLuZZFCvrf7gYvT3BRkIQPmJqL4_V/view?usp=sharing" %}{% endembed %}
 
 ### Add a question to a screen
 
@@ -23,16 +36,6 @@ You edit both unpublished and published programs. To edit published programs, yo
 3. Click **Edit** > **Manage questions**.
 4. Find the question within a screen you want to remove and click **Delete**.\
    The question is removed from the screen and it returns to the question bank.
-
-### Add a screen
-
-1. Sign in to CiviForm as a CiviForm Admin.
-2. Click **Programs** on the navigation bar and select a program.
-3. Click **Edit** > **Manage questions**.
-4. Click **Add screen**.\
-   The screen appears within the program.
-5. (Optional) To modify a screen’s name and description, click **Edit name and description**.
-
 ### Reorder screens
 
 If you have more than one screen in your program, you can organize the screens within the screen tree.

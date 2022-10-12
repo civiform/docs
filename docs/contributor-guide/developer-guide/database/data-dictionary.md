@@ -124,7 +124,6 @@ For more information view the [backend data model page](https://github.com/civif
 | name                           | character varying |          | Name of the program                                                                                        |
 | description                    | character varying |          | Description of the program                                                                                 |
 | block\_definitions             | jsonb             | not null | Screens are defined here along with linking questions to screens                                           |
-| export\_definitions            | jsonb             |          | ??? Settings for exporting program data. Doesn't seem to get saved                                         |
 | legacy\_localized\_name        | jsonb             |          | ???                                                                                                        |
 | legacy\_localized\_description | jsonb             |          | ???                                                                                                        |
 | slug                           | character varying |          | Used when creating a permalink to the new application of a program                                         |
@@ -218,16 +217,6 @@ For more information view the [backend data model page](https://github.com/civif
     ]
   }
 ]
-```
-
-</details>
-
-<details>
-
-<summary>Sample JSON of the <code>export_definitions</code> column</summary>
-
-```
-Sample not yet available
 ```
 
 </details>

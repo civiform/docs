@@ -1,37 +1,12 @@
 # Dev Azure
 
-The main difference between the dev azure deploy is that it doesn't use a shared
-state (since we don't want to share state among devs). Please remember
-to [tear down](#tearing-down) your dev instance as it does cost money.
+## Configuring Github Actions
 
-# Running the dev deploy
-
-## Go to the civiform dev directory
-
-All of these are run within the main repo and the files can be found in
-cloud/deploys/dev_azure.
-
-## Copy the civiform_config.example.sh
-
-Copy the civiform_config.example.sh into civiform_config.sh and change the
-required variables.
-
-## Get access to correct technologies
-
-You will need to reach out to team members to get accounts for the following:
-
-- Azure (must be added as a contributor AND owner)
-- AWS
-- Login Radius Civiform-Staging
-
-## Setup Local Machine
-
-Run through the doctor script to make sure you have the right things on your
-machine:
-
-```
-export CIVIFORM_CLOUD_PROVIDER=azure && cloud/shared/bin/doctor
-```
+Current actions need the following secrets:
+ * ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }} Can be found in https://portal.azure.com/ under Subscriptions.
+ * ARM_TENANT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_TENANT }} Can be found in https://portal.azure.com/ -> App registrations -> civiform-staging-deploy. Field: _Directory (tenant) ID_
+ * ARM_CLIENT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_ID }} Can be found in https://portal.azure.com/ -> App registrations -> civiform-staging-deploy. Field: _Application (client) ID_
+ * ARM_CLIENT_SECRET: ${{ secrets.AZURE_SERVICE_PRINCIPAL_PASSWORD }} Can be found in https://portal.azure.com/ -> App registrations -> civiform-staging-deploy -> Certificates and secrets -> New client secret.  
 
 ## Setup Login Radius For Local Development
 
@@ -71,58 +46,6 @@ and update it later with the string generated during setup:
 
 For the rest of the fields, you need to copy the details from a previous working
 setup in login radius, so look back at the staging one to fill yours out.
-
-## Run
-
-After that you can start the setup by running the below command and following
-the instructions. For the image tag, you can grab one from
-docker: https://hub.docker.com/r/civiform/civiform/tags
-
-```
-cloud/deploys/dev_azure/bin/setup --tag=<IMAGE_TAG>
-```
-
-For dev, you do not need to set any names when prompted. Just hit enter or
-type "yes" as needed.
-
-The setup script will output a certificate and prompt you to update the "Service
-Provider Certificate" in login radius as mentioned earlier in this doc. Go back
-to the dashboard and add the certificate.
-
-The script will also have you set up a new authentication provider in the azure
-portal.
-
-Finally, the script will output a url labeled app_service_default_hostname.
-Navigate to this url to see your dev instance!
-
-# Local Docker Build to Remote Azure Deploy
-
-If you want to do local onto terraform we build/tag/deploy the docker image and
-then update the azure app service to point to the local image.
-
-## 1. Build, Tag and Push the Docker Image
-
-Run the following script which takes the DOCKER_REPOSITORY, DOCKER_USERNAME from
-your civiform_config.sh and builds/tags/pushes your local up to docker hub. You
-must specify the image_tag to use for docker. You will need a custom docker hub
-in order to do this. Check with team on how to pay for docker hub pro.
-
-```
-cloud/deploys/dev_azure/bin/docker-build-tag-push --tag=<IMAGE_TAG>
-```
-
-## 2. Deploy the new version
-
-Deploy via the deploy script
-
-```
-cloud/deploys/dev_azure/bin/deploy --tag=<IMAGE_TAG>
-```
-
-or Within the app service resource, you can select Deployment Center, and within
-the registry settings change the 'Full Image Name and Tag' to be (the image_tag
-is what you specified in the build/tag/push)
-`<DOCKER_USERNAME>/<DOCKER_REPOSITORY>:<IMAGE_TAG>`
 
 # Troubleshooting
 

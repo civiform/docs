@@ -1,6 +1,6 @@
 # Terraform deploy system
 
-Terraform - is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. Civiform provides Terraform configuration files that allow to deploy Civiform on Azure and AWS. Knowledge of Terraform is not required to run them but here is the high-level [Terraform overview](https://www.terraform.io/intro) nevertheless. 
+Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. Civiform provides Terraform configuration files that allow to deploy Civiform on Azure and AWS. Knowledge of Terraform is not required to run them but here is the high-level [Terraform overview](https://www.terraform.io/intro) nevertheless. 
 
 ## Setup
 
@@ -22,7 +22,7 @@ You will need couple of values that are configured outside of Civiform before yo
     * Runs 5-10 minutes.
     * Terraform brings up resources in cloud (database, network, server, etc).
     * Asks confirmation few times before creating resources listing everything that will be created. 
-    * Safe to re-run script if it fails.
+    * Safe to re-run script if it fails. There is known [issue](https://github.com/cn-terraform/terraform-aws-logs-s3-bucket/issues/6) where `bin/setup` fails on the first run.
 
 
 ## Deploy
@@ -34,7 +34,7 @@ You will need couple of values that are configured outside of Civiform before yo
 
 #### Terraform fails with error "Provider produced inconsistent final plan"
 
-This error can happen when running `bin/setup` for the first time. If you set it - re-run `bin/setup`. This is a known Terraform [bug](https://github.com/hashicorp/terraform-provider-aws/issues/19583).
+This error can happen when running `bin/setup` for the first time. If you see it - re-run `bin/setup`. This is a known Terraform [bug](https://github.com/hashicorp/terraform-provider-aws/issues/19583).
 
 #### Terraform fails with other errors
 

@@ -4,7 +4,7 @@ CiviForm is free, open-source software that was built by the City of Seattle wit
 
 The following docs describe the processes and principles by which CiviForm is collectively developed and maintained:
 
-  * [Roles, Committees, & Responsibilities](governance-and-management/governance/roles-committees-and-responsibilities.md)
-  * [Governance Processes](governance-and-management/governance/governance-processes.md)
-  * [Development Principles](governance-and-management/governance/development-principles.md)
-  * [Communication Guidelines](governance-and-management/governance/communication.md)
+  * [Roles, Committees, & Responsibilities](https://docs.civiform.us/governance-and-management/governance/roles-committees-and-responsibilities)
+  * [Governance Processes](https://docs.civiform.us/governance-and-management/governance/governance-processes)
+  * [Development Principles](https://docs.civiform.us/governance-and-management/governance/development-principles)
+  * [Communication Guidelines](https://docs.civiform.us/governance-and-management/governance/communication)

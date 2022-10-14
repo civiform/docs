@@ -2,8 +2,6 @@
 
 ## Roles & Responsiblities
 
-![Individual and organizational roles across the CiviForm Project.](<../.gitbook/assets/Roles-and-responsibilities.png>)
-
 ### Individuals
 #### User
 Any person who uses CiviForm. Users may include residents applying for services, government employees managing benefit programs, government IT teams, or community-based organizations supporting applicants.

@@ -100,4 +100,7 @@
   * [On Call Guide](governance-and-management/project-management/on-call-guide/README.md)
     * [On Call Journal](governance-and-management/project-management/on-call-guide/on-call-journal.md)
 * [Governance](governance-and-management/governance/README.md)
+  * [Roles, Committees, & Responsibilities](governance-and-management/governance/roles-committees-and-responsibilities.md)
+  * [Governance Processes](governance-and-management/governance/governance-processes.md)
+  * [Development Principles](governance-and-management/governance/development-principles.md)
   * [Communication](governance-and-management/governance/communication.md)

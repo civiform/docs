@@ -255,14 +255,7 @@ lot more info on this topic.
 You can step through a test run line-by-line with a visible browser window by
 running the tests locally (i.e. not in Docker) with debug mode turned on.
 
-Note: These instructions
-[need some work](https://github.com/civiform/civiform/issues/3058)
-
-Before you can run the browser tests locally, you need to do the following: 1.
-Install node.js. 1. Install [yarn](https://yarnpkg.com/). In most cases, `npm -g
-install yarn` will do it. 1. Run `yarn install` in the
-[`browser-test/`](https://github.com/civiform/civiform/tree/main/browser-test)
-directory.
+Note: These instructions [need some work](https://github.com/civiform/civiform/issues/3058)
 
 To run the tests locally, use:
 
@@ -276,6 +269,8 @@ variable:
 ```
 PWDEBUG=1 bin/run-browser-tests-local
 ```
+    
+You can find more documentation on debugging Playwright in this [BrowserStack guide](https://www.browserstack.com/guide/playwright-debugging). 
 
 #### Debugging failed GitHub actions
 

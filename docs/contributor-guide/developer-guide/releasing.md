@@ -79,7 +79,7 @@ Every pull request that is relevant to the release should have a `Release notes`
 Message Matthew Sprenke (City of Seattle) in the `#release-discussion` channel on Slack, notifying QA that a new release candidate is ready for review. Make sure to do this AFTER Seattle has deployed the release candidate to staging if it is not the most recent snapshot.
 
 ```
-A new draft release is ready for testing. Release notes can be found here: [INSERT LINK TO GITHUB DRAFT RELEASE HERE].
+A new draft release vX.X.X is ready for testing. Release notes can be found here: [INSERT LINK TO GITHUB DRAFT RELEASE HERE].
 Draft release is available on the following stagings:
 https://staging.seattle.civiform.com/
 https://staging-aws.civiform.dev/

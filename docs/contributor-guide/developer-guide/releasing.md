@@ -10,7 +10,7 @@ New releases go through a QA process that takes them from a draft state to fully
 
 ### 1. Find the most recent commit that is passing CI for all staging environments:
 
-Find the commit SNAPSHOT id from one of the following, and extract the SHA from it. The SHA is the middle item in the SNAPSHOT-sha-hash ID
+Find the commit SNAPSHOT id from one of the following, and extract the SHA from it. The SHA is the middle item in the SNAPSHOT-sha-hash ID. For example for `SNAPSHOT-fa971bb-1666156765` ID the commit SHA is `fa971bb`.
 
 NOTE: If the last successful snapshot for ALL environments is not the most recent one, contact a Seattle software engineer to request that they deploy the release candidate to their staging environment.
 
@@ -37,7 +37,16 @@ Setup:
 * Login to docker as the civiform user. If you don't have the password ask the #github-maintainers Slack channel
 * Generate a GH access token and provide it as [documented](https://github.com/civiform/civiform/blob/main/bin/create-release#L14).
 
-When ready run: [/bin/create-release](https://github.com/civiform/civiform/blob/main/bin/create-release) SHA vNumber
+When ready run [create-release](https://github.com/civiform/civiform/blob/main/bin/create-release) script:
+```shell
+bin/create-release SHA vNumber
+```
+
+If the script fails due to missing `requests` library. Try the following:
+```shell
+python3 -m ensurepip
+pip3 install requests --user
+```
 
 The release script will then:
 
@@ -70,7 +79,14 @@ Every pull request that is relevant to the release should have a `Release notes`
 Message Matthew Sprenke (City of Seattle) in the `#release-discussion` channel on Slack, notifying QA that a new release candidate is ready for review. Make sure to do this AFTER Seattle has deployed the release candidate to staging if it is not the most recent snapshot.
 
 ```
-@Matthew Sprenke A new draft release is ready, [INSERT LINK TO GITHUB DRAFT RELEASE HERE].
+A new draft release vX.X.X is ready for testing. Release notes can be found here: [INSERT LINK TO GITHUB DRAFT RELEASE HERE].
+Draft release is available on the following stagings:
+https://staging.seattle.civiform.com/
+https://staging-aws.civiform.dev/
+
+Please perform necessary QA checks before EOD Wed [INSERT DATE] PT time. If you find any issues with the release - reply to this announcement.
+
+Folks to notify: @Matthew Sprenke
 ```
 
 Wait until Matthew provides feedback on the release to proceed to step 5, do not proceed if he reports any blocking issues with the release candidate.

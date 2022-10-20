@@ -84,7 +84,7 @@ Draft release is available on the following stagings:
 https://staging.seattle.civiform.com/
 https://staging-aws.civiform.dev/
 
-Please perform necessary QA checks before EOD Wed $DATE PT time. If you find any issues with the release - reply to this announcement.
+Please perform necessary QA checks before EOD Wed [INSERT DATE] PT time. If you find any issues with the release - reply to this announcement.
 
 Folks to notify: @Matthew Sprenke
 ```

@@ -95,4 +95,4 @@ If Matthew is not available, recruit engineers, PMs, and other contributors to e
 
 ### 5. Publish the release and email all stakeholders
 
-Once the release notes are looking good, publish the draft release and then email the release notes to civiform-technical@googlegroups.com
+Once the release notes are looking good, publish the draft release and then email the release notes to civiform-announce@googlegroups.com

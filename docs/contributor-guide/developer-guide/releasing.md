@@ -26,12 +26,26 @@ On the running servers inspect the DOM tree for `<head><meta name="civiform-buil
 * [staging-AWS](https://staging-aws.civiform.dev/)
 * [Seattle staging](https://staging.seattle.civiform.com/)
 
-### 2. Run the script to create a new draft release
+### 2. Create a New Draft Release
 
-You'll need to determine:
+Before proceding you'll need to determine:
 
 * Commit SHA: This is the middle item in the SNAPSHOT-sha-hash ID from Step 1
 * Release number: Pick the next minor number (1.X.0) since the [last release](https://github.com/civiform/civiform/releases)
+
+With those values create the draft release with one of the following options.
+
+#### Option 1: Via GitHub Actions
+
+* [Step 1 & 2] Navigate to the [Create Release](https://github.com/civiform/civiform/actions/workflows/release.yaml) GitHub Action.
+* [Step 3] Click the "Run workflow" button
+  * Supply the `Commit SHA` and `Release number` values
+* [Step 4] Click the "Run workflow" button
+
+![create-release](https://user-images.githubusercontent.com/195162/197020802-0d9ba335-f31d-4e79-944b-d79c2f9796f9.png)
+
+
+#### Option 2: Manually
 
 Setup:
 * Login to docker as the civiform user. If you don't have the password ask the #github-maintainers Slack channel

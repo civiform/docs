@@ -16,7 +16,7 @@ NOTE: If the last successful snapshot for ALL environments is not the most recen
 
 #### From Deployment-bot
 
-Check the #deployment-bot Slack channel for the latest successful SNAPSHOT for AWS, Seattle, and Azure. This offers a history of previous auto pushes too.
+Check the #ci Slack channel for the latest successful SNAPSHOT for AWS, Seattle, and Azure. This offers a history of previous auto pushes too.
 
 #### From Staging servers
 

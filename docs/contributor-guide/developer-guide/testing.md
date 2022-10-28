@@ -120,7 +120,7 @@ To run the tests:
     ```
     bin/build-browser-tests
     ```
-2.  Bring up the local test environment with the AWS emulator. This step can be
+1.  Bring up the local test environment with the AWS emulator. This step can be
     done in a separate terminal window while the Docker image is still building.
 
     Leave this running while you are working for faster browser test runs:
@@ -137,7 +137,7 @@ To run the tests:
     have to start Localstack, the AWS emulator, when running the Azure browser
     tests.
 
-3.  Once you see "Server started" in the terminal from the above step, in a
+1.  Once you see "Server started" in the terminal from the above step, in a
     separate terminal run the Playwright tests in a docker container:
     ```
     bin/run-browser-tests

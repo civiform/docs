@@ -38,13 +38,13 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup
 time each time you run the test(s), use these steps:
 
 1.  Bring up an sbt shell inside the Docker container by running:
-
+```
     bin/sbt-test
-
+```
 1.  Run any sbt commands! For example:
-
+```
     testOnly services.question.QuestionDefinitionTest
-
+```
 ### Attaching a debugger to unit tests
 
 When running an individual unit test via `bin/sbt-test`, a debugger can be
@@ -117,21 +117,21 @@ To run the tests:
 
 1.  Build the Docker image for running the playwright tests. This only needs to
     be done once:
-
+```
     bin/build-browser-tests
-
+```
 1.  Bring up the local test environment with the AWS emulator. This step can be
     done in a separate terminal window while the Docker image is still building.
 
     Leave this running while you are working for faster browser test runs:
-
+```
     bin/run-browser-test-env
-
+```
     To run browser tests with the Azure browser test environment, using Azurite
     (the Azure emnulator) instead of the AWS emulator, run:
-
+```
     bin/run-browser-test-env -–azure
-
+```
     This runs the tests using Azurite, the Azure emulator. Because the Azure
     deployment of Civiform requires SES, the AWS email sending service, we also
     have to start Localstack, the AWS emulator, when running the Azure browser
@@ -139,14 +139,14 @@ To run the tests:
 
 1.  Once you see "Server started" in the terminal from the above step, in a
     separate terminal run the Playwright tests in a docker container:
-
+```
     bin/run-browser-tests
-
+```
     Or, to run a test in a specific file, pass the file path relative to the
     `browser-test/src` directory. For example:
-
+```
     bin/run-browser-tests landing_page.test.ts
-
+```
     Use the `--debug` flag to print debug logs as the test runs.
 
 ### Guidelines for functional browser tests

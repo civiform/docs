@@ -38,13 +38,13 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup
 time each time you run the test(s), use these steps:
 
 1.  Bring up an sbt shell inside the Docker container by running:
-```
-bin/sbt-test
-```
+    ```
+    bin/sbt-test
+    ```
 1.  Run any sbt commands! For example:
-```
-testOnly services.question.QuestionDefinitionTest
-```
+    ```
+    testOnly services.question.QuestionDefinitionTest
+    ```
 ### Attaching a debugger to unit tests
 
 When running an individual unit test via `bin/sbt-test`, a debugger can be
@@ -144,9 +144,9 @@ To run the tests:
     ```
     Or, to run a test in a specific file, pass the file path relative to the
     `browser-test/src` directory. For example:
-```
+    ```
     bin/run-browser-tests landing_page.test.ts
-```
+    ```
     Use the `--debug` flag to print debug logs as the test runs.
 
 ### Guidelines for functional browser tests

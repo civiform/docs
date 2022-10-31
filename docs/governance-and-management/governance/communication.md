@@ -16,7 +16,7 @@ Google Groups enable people to post and engage in discussion topics via
 forums or email. Certain Google Groups are also used to manage access to
 shared documents. All group aliases are @googlegroups.com.
 
-| **Google Group**     | **Purpose & Audience**                                                                                                                                      | **Permissions**                                      | **How to join**                                                          |
+|Google Group|Purpose & Audience|Permissions|How to join|
 | -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------ |
 | civiform-announce    | Announcements to the Civiform community. Join if you are a contributor or maintainer.                                                                       | Only managers can post. Anyone can view posts.       | [Join here](https://groups.google.com/u/1/g/civiform-announce)         |
 | civiform-technical   | Technical announcements. Join if you are a technical contributor (e.g. software engineers).                                                                 | Anyone on web can post. Only members can view posts. | [Request to join](https://groups.google.com/g/civiform-technical)      |
@@ -36,7 +36,7 @@ we should reassess this approach.
 
 [**civiform.slack.com**](https://civiform.slack.com)
 
-| **Slack Channel**                   | **Purpose**                                                  | **Who should join?**                                                       |
+|Slack Channel|Purpose|Who should join?|
 | ----------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------- |
 | **\#general**                       | All general announcements                                    | Everyone                                                                   |
 | **\#introductions**                 | Introduce yourself to the Civiform community                 | Everyone (optional)                                                        |
@@ -68,20 +68,11 @@ allow you to create external documents, use and rename an existing
   - Created through civiform.us Google Workspace.
   - Join the **civiform-docs@** Google Group to access and edit
     documents.
-
-**[CiviForm Project Public Folder](https://drive.google.com/drive/u/1/folders/1LT7ZivhjXb5iSxwisuF11CjUMKPYjpi0)**
-
-  - **Sharing setting:** Anyone on the internet with this link can view
-    and comment.
-  - **Purpose:** For documents that are intended to be publicly visible
-    and commentable.
-
-**[CiviForm Project Private Folder](https://drive.google.com/drive/u/1/folders/1svFQEY73YpI9k0-wyfqY2UU_w8hUFIAG)**
-
-  - **Sharing setting:** Restricted. Only people in the
-    **civiform-docs@** Google Group can view and edit.
-  - **Purpose:** For non-public files that other CiviForm contributors
-    are collaborating on.
+    
+|CiviForm Project Folder|Purpose|Permissions|
+|-------------|-------|---------------|
+|[Public Folder](https://drive.google.com/drive/u/1/folders/1LT7ZivhjXb5iSxwisuF11CjUMKPYjpi0)|For documents that are intended to be publicly visible and commentable.|Anyone on the internet with this link can view and comment.|
+|[Private Folder](https://drive.google.com/drive/u/1/folders/1svFQEY73YpI9k0-wyfqY2UU_w8hUFIAG)|For non-public files that other CiviForm contributors are collaborating on.|Restricted. Only people in the **civiform-docs@** Google Group can view and edit.|
 
 ## Types of communications
 

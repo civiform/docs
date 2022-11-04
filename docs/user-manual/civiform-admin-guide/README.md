@@ -10,6 +10,7 @@ Follow the guide below to learn the ropes as a CiviForm Admin.
 * [CiviForm Admin Training Overview](civiform-admin-training-overview.md)
 * [How to Navigate CiviForm](how-to-navigate-civiform.md)
 * [Create a Program](create-a-program.md)
+* [Add Statuses to a Progam](add-statuses.md)
 * [Edit a Program](edit-a-program.md)
 * [Manage Questions](manage-questions.md)
 * [Publish a Program](publish-a-program.md)

@@ -19,7 +19,7 @@ Using a visibility condition, CiviForm Admins can easily show or hide a screen b
    3. Set the **Operator** value.
    4. Enter the **Value**.
    5. Click **Submit**.
-7. Click **Return to edit screen **_**#**_.
+7. Click **Return to edit screen #**.
 8. The visibility condition is displayed on both the Visibility Condition page and to the screen. For example, “Screen 3 is hidden if _address question name_ City is equal to New York."
 
 ### Remove a visibility condition
@@ -28,7 +28,7 @@ Using a visibility condition, CiviForm Admins can easily show or hide a screen b
 2. Click **Programs** on the navigation bar and select a program.
 3. Select a screen with a visibility condition and click **Edit visibility condition**.
 4. Click **Remove condition**.
-5. Click **Return to edit screen **_**#**_.
+5. Click **Return to edit screen #**.
 6. The visibility condition is removed from both the Visibility Condition page and to the screen. The default statement “This screen is always shown" is displayed on the page.
 
 ### Rules for visibility conditions

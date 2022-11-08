@@ -14,6 +14,7 @@
   * [CiviForm Admin Training Overview](user-manual/civiform-admin-guide/civiform-admin-training-overview.md)
   * [How to Navigate CiviForm](user-manual/civiform-admin-guide/how-to-navigate-civiform.md)
   * [Create a Program](user-manual/civiform-admin-guide/create-a-program.md)
+  * [Add Statuses to a Program](user-manual/civiform-admin-guide/add-statuses.md)
   * [Edit a Program](user-manual/civiform-admin-guide/edit-a-program.md)
   * [Manage Questions](user-manual/civiform-admin-guide/manage-questions.md)
   * [How to publish programs](user-manual/civiform-admin-guide/publish-a-program.md)

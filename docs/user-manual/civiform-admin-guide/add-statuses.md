@@ -4,6 +4,9 @@ As a CiviForm Admin, you have the ability to set custom statuses (e.g. Approved,
 
 For statuses with associated email content, a status change will trigger an email to applicants that used a CiviForm account to submit their application. The applicant will also see the status of their submitted application(s) when they log into their CiviForm account. 
 
+Note: in order to use status tracking, your IT Admin must have enabled the feature. To enable the feature, have your IT Admin set the CIVIFORM_APPLICATION_STATUS_TRACKING_ENABLED environment variable to true.
+
+
 ## To Create a Status 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click Programs on the navigation bar and select the program for which you would like to add statuses. 

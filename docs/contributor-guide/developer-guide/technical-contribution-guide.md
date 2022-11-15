@@ -22,9 +22,13 @@ If you're just getting started, check out issues labeled with [Good First Issue]
 
 #### Command line
 
-To start working on a change, first get the latest state from the github repository then create a new local development branch:
+To start working on a change, get the latest state from the github repository into your main branch then create a new local development branch:
 
 ```sh
+# Switches to your main branch, which is used for syncing only and checks that you are indeed on the main branch.
+git checkout main
+git branch
+
 # Downloads any commits from the github repository that your local repository does not have.
 git fetch origin
 

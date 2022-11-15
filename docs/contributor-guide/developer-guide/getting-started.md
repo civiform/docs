@@ -35,6 +35,13 @@ You may use whichever IDE you prefer, though _DO NOT_ use the IDE's built-in sbt
 
 The easiest way to get IntelliJ to index the project correctly is to install the Scala plugin and open the project by specifying the [build.sbt](https://github.com/civiform/civiform/blob/main/server/build.sbt) file in IntelliJ's open existing project dialog. If this isn't done correctly IntelliJ probably won't load library code correctly and will complain that it can't find symbols imported from libraries.
 
+This setup will only include the files under (.../server), therefore, if you would like to edit other files under .../civiform, you need to add additional modules manually:
+
+* Go to File/Project Structure, 
+* Select modules 
+* Ensure “civi-server and” “sources” are selected in second and third column,
+* Click on + on the right handside to add all folders under civiform except "server" to the content rootes 
+
 #### Configuring VSCode
 
 **Setup**

@@ -85,7 +85,21 @@ In Azure Portal:
   * You will also need an admin group which creates civiform admins
   * Token configuration: To allow for civiform admins you need to have the Azure Ad return the groups claim. Add the security groups claim (you can verify the groups claim is being returned by decoding the base64 token from the token you get back from Azure AD on the website-- if you preserve the log in the Chrome Dev Tool window it should be from https://\<custom\_hostname>/callback/AdClient)
 
-### Access the database (only Azure)
+### Access the database for emergency repair
+
+#### AWS
+
+We support on-demand deployment of [pgadmin](https://www.pgadmin.org/) web UI to access the CiviForm database.  We require explicit IP allow-listing via a list of CIDR blocks. Only these IPs will be able to access pgadmin. By default, the deploy tool uses the public IP of the host it is running on. To find the public IP of a host running a web browser (like your work laptop/desktop), visit https://checkip.amazonaws.com or contact your IT department.
+
+1. Run `bin/run` and pass in `pgadmin` for the command.
+1. Enter and accept the IP allow-list. If the auto-detected IP is not the same as the IP of the host that will access pgadmin via a web browser (like your work laptop/desktop), do not accept the auto-populated list. Enter in the list of CIDR blocks that should have access to pgadmin. For example, to add 76.132.231.67 to the allow-list, enter "76.132.231.67/32".
+1. Terraform will run to bring up the pgadmin resources. When it asks "Do you want to perform these actions?", enter "yes".
+1. The deploy tool will attempt to connect to the pgadmin service every 10 seconds. When a connection is successful, the pgadmin URL and login information will be printed.
+1. Open the pgadmin URL. Log in using the provided email and password.
+1. Expand the 
+
+
+#### Azure
 
 1. cd checkout
 2. cloud/azure/bin/db-connection -g sgdev -d civiform-artistic-halibut -v sgdev-civiform-kv

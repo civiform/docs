@@ -96,9 +96,9 @@ We support on-demand deployment of [pgadmin](https://www.pgadmin.org/) web UI to
 1. Enter in a CIDR block that covers the IP of the host that will access the pgadmin web UI. If the host's IP is '127.0.0.1', enter in '127.0.0.1/32' to allow-list just that IP.
 1. Either accept or reject the allow-list. If you previously chose to add the deploy tool's IP to the allow-list then reject the list, the deploy tool's IP will not be automatically added to the list again.
 1. Once accepting a list, terraform will run to bring up the pgadmin resources. When it asks "Do you want to perform these actions?", enter "yes".
-1. The deploy tool will attempt to connect to pgadmin every 10 seconds. When a connection is successful, the pgadmin URL and login information will be printed. Press ctrl-c to shortcut this wait.
-1. Open the pgadmin URL. Log in using the provided email and password.
-1. Expand the 'CiviForm (1)' item in the left navigation pane.
+1. The deploy tool will attempt to connect to pgadmin every 10 seconds. When a connection is successful, the pgadmin URL and authentication information will be printed. Press ctrl-c to shortcut this wait.
+1. Open the pgadmin URL. Log in using the 'login email' and 'login password' printed by the deploy tool.
+1. Expand the 'CiviForm (1)' item in the left navigation pane. You should be prompted to enter in the password to the database. Enter in the 'database password' printed by the deploy tool.
 1. Expand the 'Databases (2)' item under the 'CiviForm (1)' item.
 1. The 'postgres' item under the 'Databases (2)' item is the CiviForm database.  Right click on the 'postgres' item and select 'Query Tool' to send commands to the database.
 

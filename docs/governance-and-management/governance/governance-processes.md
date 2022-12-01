@@ -73,20 +73,20 @@ This section outlines the process for features that require a technical design d
 #### Before You Start
 
 The following should be true:
-1. There is an open issue in [Github](https://github.com/civiform/civiform/issues)
+1. There is an open issue in [GitHub](https://github.com/civiform/civiform/issues)
 2. There is an approved PRD in the [public folder)(https://drive.google.com/drive/u/0/folders/1gqw3VSK-lMPgRfcS_ZEhF3C_51We0eGz)
 3. If the issue has a `UX` label, approved UX Mocks are added to the [public folder](https://drive.google.com/drive/u/0/folders/1zY6OnQYH7Xo5ebPctTJtd5QRsHBAI5vF)
 4. A `Ready for TDD` label is added to the issue and visible in [this list](https://github.com/civiform/civiform/issues?q=is%3Aissue+is%3Aopen+label%3AReady+for+TDD)
 
-During the `CiviForm eng weekly` meeting on Mondays. We review the issues with the `Ready for TDD` label and assign an author, approvers and reviewers. Assignment can be during the week either in a daily status meeting or by discussing in the [engineering slack channel](https://civiform.slack.com/archives/C01QKN2UNMA)
+During the `CiviForm eng weekly` meeting on Mondays. We review the issues with the `Ready for TDD` label and assign an author, approvers and reviewers. Assignment can be during the week either in a daily status meeting or by discussing in the [engineering slack channel](https://civiform.slack.com/archives/C01QKN2UNMA).
 
 #### Working with the Doc
 
 1. Go to [this drive](https://drive.google.com/drive/u/0/folders/109bb32dwMPiqSaDUAyAkViXJu6KYFUkQ) and take one of the `Copy of Design Doc Template` docs or make a copy of `Design Doc Template`.
 2. Using the template, create a technical design document. Please remove any sections that aren't relevant and add any that may be missing.
 3. When your draft is ready for review:
-  a. Update the status to `IN REVIEW`
-  b. Notifiy the approvers and reviewers that the doc is ready for review
+   1. Update the status to `IN REVIEW`
+   2. Notifiy the approvers and reviewers that the doc is ready for review
 4. Approvers and reviewers will add comments and questions to start discussion
 5. Iterate on the design until you have approval
 

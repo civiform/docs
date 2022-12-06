@@ -80,9 +80,9 @@ The following should be true:
 
 During the CiviForm engineering weekly meeting on Mondays, we review the issues with the **Ready for TDD** label and assign an author, approvers and reviewers. If an urgent issue arises that does require a TDD and we cannot wait until the next weekly meeting, assignment may be done during the week, either in a daily status meeting or by discussing in the [engineering slack channel](https://civiform.slack.com/archives/C01QKN2UNMA).
 
-Three approvals are required to move forward with a design. At least one member of the Stewarding Organization should be assigned. From there, please assign available contributors who have domain expertise relevant to the issue.
+Two approvals are required to move forward with a design. At least one member of the Stewarding Organization should be assigned. From there, please assign available contributors who have domain expertise relevant to the issue.
 
-Stewarding Organization members who are not also approvers and any available and interested contributor may be a reviewer on the document. Approval of reviewers is not required, however the design will benefit from constructive and critical feedback.
+Stewarding Organization members who are not also approvers and any available and interested contributor may be a reviewer on the document. Approval of reviewers is not required, however the design will benefit from constructive and critical feedback. To that end, aim for a sum total of five reviewers when possible, including approvers.
 
 #### Working with the Doc
 

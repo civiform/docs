@@ -66,3 +66,34 @@ Types of technical design decisions that require approval:
     |**Product Design**|Consulted|Consulted|Consulted|Consulted|
     |**Technical Design**|Responsible|Responsible|Responsible|Accountable|
 
+### Technical Design Process
+
+This section outlines the process for features that require a technical design document. The purpose of a design document is to draft and approve major technical design decisions to ensure the quality, reliability, and maintainability of CiviForm for all its users.
+
+#### Before You Start
+
+The following should be true:
+1. There is an open issue in [GitHub](https://github.com/civiform/civiform/issues)
+2. There is an approved PRD in the [public folder)(https://drive.google.com/drive/u/0/folders/1gqw3VSK-lMPgRfcS_ZEhF3C_51We0eGz)
+3. If the issue has a **UX** label, approved UX Mocks are added to the [public folder](https://drive.google.com/drive/u/0/folders/1zY6OnQYH7Xo5ebPctTJtd5QRsHBAI5vF)
+4. A **Ready for TDD** label is added to the issue and visible in [this list](https://github.com/civiform/civiform/issues?q=is%3Aissue+is%3Aopen+label%3A"Ready+for+TDD")
+
+During the CiviForm engineering weekly meeting on Mondays, we review the issues with the **Ready for TDD** label and assign an author, approvers and reviewers. If an urgent issue arises that does require a TDD and we cannot wait until the next weekly meeting, assignment may be done during the week, either in a daily status meeting or by discussing in the [engineering slack channel](https://civiform.slack.com/archives/C01QKN2UNMA).
+
+Two approvals are required to move forward with a design. At least one member of the Stewarding Organization should be assigned. From there, please assign available contributors who have domain expertise relevant to the issue.
+
+Stewarding Organization members who are not also approvers and any available and interested contributor may be a reviewer on the document. Approval of reviewers is not required, however the design will benefit from constructive and critical feedback. To that end, aim for a sum total of five reviewers when possible, including approvers.
+
+#### Working with the Doc
+
+1. Go to [this drive](https://drive.google.com/drive/u/0/folders/109bb32dwMPiqSaDUAyAkViXJu6KYFUkQ) and take one of the "Copy of Design Doc Template" docs or make a copy of "Design Doc Template".
+2. Using the template, create a technical design document. Please remove any sections that aren't relevant and add any that may be missing.
+3. When your draft is ready for review:
+    1. Update the status to **IN REVIEW**
+    2. Notifiy the approvers and reviewers that the doc is ready for review.
+4. Approvers and reviewers will add comments and questions to start discussion
+5. Iterate on the design until you have approval
+
+#### After Approval :rocket:
+
+At this point the issue should be prioritized and implementation can begin according to its priority.

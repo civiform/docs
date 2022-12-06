@@ -74,7 +74,7 @@ This section outlines the process for features that require a technical design d
 
 The following should be true:
 1. There is an open issue in [GitHub](https://github.com/civiform/civiform/issues)
-2. There is an approved PRD in the [public folder)(https://drive.google.com/drive/u/0/folders/1gqw3VSK-lMPgRfcS_ZEhF3C_51We0eGz)
+2. There is an approved PRD in the [public folder](https://drive.google.com/drive/u/0/folders/1gqw3VSK-lMPgRfcS_ZEhF3C_51We0eGz)
 3. If the issue has a **UX** label, approved UX Mocks are added to the [public folder](https://drive.google.com/drive/u/0/folders/1zY6OnQYH7Xo5ebPctTJtd5QRsHBAI5vF)
 4. A **Ready for TDD** label is added to the issue and visible in [this list](https://github.com/civiform/civiform/issues?q=is%3Aissue+is%3Aopen+label%3A"Ready+for+TDD")
 

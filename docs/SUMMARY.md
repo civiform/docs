@@ -49,6 +49,7 @@
     * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
   * [Email configuration](it-manual/sre-playbook/email-configuration.md)
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
+* [Existing deployments](it-manual/existing-deployments.md)
 * [API Integration](it-manual/api/README.md)
   * [Authentication](it-manual/api/authentication.md)
   * [List applications](it-manual/api/program-applications.md)

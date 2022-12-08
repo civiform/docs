@@ -113,6 +113,21 @@ Indexes:
     "files_pkey" PRIMARY KEY, btree (id)
     "index_file_names" UNIQUE, btree (name)
 
+                                            Table "public.persisted_durable_jobs"
+       Column       |            Type             | Collation | Nullable |                      Default
+--------------------+-----------------------------+-----------+----------+----------------------------------------------------
+ id                 | bigint                      |           | not null | nextval('persisted_durable_jobs_id_seq'::regclass)
+ job_name           | character varying           |           | not null |
+ execution_time     | timestamp without time zone |           | not null |
+ success_time       | timestamp without time zone |           |          |
+ create_time        | timestamp without time zone |           | not null |
+ remaining_attempts | smallint                    |           | not null |
+ error_message      | character varying           |           |          |
+Indexes:
+    "persisted_durable_jobs_pkey" PRIMARY KEY, btree (id)
+    "index_persisted_durable_jobs_by_execution_time" btree (execution_time)
+    "index_persisted_durable_jobs_by_success_time" btree (success_time)
+
                                                  Table "public.programs"
             Column            |            Type             | Collation | Nullable |               Default                
 ------------------------------+-----------------------------+-----------+----------+--------------------------------------

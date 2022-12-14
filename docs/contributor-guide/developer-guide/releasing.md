@@ -73,7 +73,7 @@ The release script will then:
 
 ### 3. Edit the generated draft release
 
-Follow the GitHub URL to the draft release printed at the end of the script from the previous step, or navigate to [the repo's releases page](https://github.com/civiform/civiform/releases) and find the new draft release.
+Follow the GitHub URL to the draft release printed at the end of the `bin/create-release` script step from the previous step, or navigate to [the repo's releases page](https://github.com/civiform/civiform/releases) and find the new draft release.
 
 Next, edit the release notes to include the following:
 

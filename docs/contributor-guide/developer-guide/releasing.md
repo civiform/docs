@@ -107,6 +107,6 @@ Wait until Matthew provides feedback on the release to proceed to step 5, do not
 
 If Matthew is not available, recruit engineers, PMs, and other contributors to evaluate the release candidate. Direct them to specific areas of interest based on the release notes and the QA test plan.
 
-### 5. Publish the release and email all stakeholders
+### 5. Publish the release notes and email all stakeholders
 
-Once the release notes are looking good, publish the draft release and then email the release notes to civiform-announce@googlegroups.com
+Once the release notes are looking good, publish the draft notes and then email the release notes to civiform-announce@googlegroups.com

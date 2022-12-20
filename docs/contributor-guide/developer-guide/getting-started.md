@@ -103,7 +103,9 @@ For login and file upload to work with your local server, you need to edit your 
 ```
 127.0.0.1 dev-oidc
 127.0.0.1 azurite
-127.0.0.1 localstack
+127.0.0.1 localhost.localstack.cloud
+# Required for test AWS S3 bucket
+127.0.0.1 civiform-local-s3.localhost.localstack.cloud
 ```
 This provides a local IP route for the 'dev-oidc', 'azurite', and 'localstack' hostnames.
 

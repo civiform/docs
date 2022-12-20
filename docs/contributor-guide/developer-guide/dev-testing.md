@@ -19,7 +19,7 @@ You should now be logged in as a named Applicant.  You can re-login as that appl
 
 ## Email
 
-Sent emails can be viewed at: http://localstack:4566/_localstack/ses
+Sent emails can be viewed at: http://localhost.localstack.cloud:4566/_localstack/ses
 
 To view the output nicer you can use the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) extension
 

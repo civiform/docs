@@ -1,6 +1,8 @@
 # Authentication Providers
 
-This page will go over the implementation and configuration steps for currently supported authentication providers. A Civiform deployment should have exactly one admin authentication provider and one applicant authentication provider configured.
+CiviForm supports applicant and admin authentication via OpenID Connect (OIDC). We use [pac4j](https://www.pac4j.org/) for auth which hides most of gritty details. But many auth providers don't fully implement spec or have minor deviations from the spec. In those cases we need to dig into spec to debug and fix issues. Specs can be found here: https://openid.net/connect/. You can find debugging tips at the end of this page.
+
+Below we'll go over the implementation and configuration steps for currently supported authentication providers. A Civiform deployment should have exactly one admin authentication provider and one applicant authentication provider configured.
 
 ## Admin Authentication
 
@@ -103,7 +105,11 @@ To test admin authentication try the following:
 If authentication not working - take a look at [Debugging tips](#debugging) below.
 ## Applicant Authentication
 
-### Oracle IDCS (OIDC)
+### Oracle IDCS
+
+#### Logout
+
+Logout integration for IDCS is not using normal flow where logout url is read from the discovery metadata file. Instead we override logout url using `APPLICANT_OIDC_OVERRIDE_LOGOUT_URL` to a hardcoded value.
 
 ### Generic OIDC (OIDC)
 
@@ -184,6 +190,10 @@ Here you'll find intstruction of how to setup login.gov authentication. It assum
 
 9\. Test applicant login flow. If it is not working - take a look at [Debugging tips](#debugging) below.
 
+#### Logout
+
+Login.gov requires setting `state` param in logout request even though in the docs it specified as optional.
+
 
 ### LoginRadius (SAML)
 
@@ -236,6 +246,14 @@ config.setKeystoreResourceFilepath(configuration.getString("login_radius.keystor
 config.setKeystorePassword(configuration.getString("login_radius.keystore_password"));
 config.setPrivateKeyPassword(configuration.getString("login_radius.private_key_password"));
 ```
+
+## Logout
+
+CiviForm by default supports central logout meaning that when applicant logs out from CiviForm - they will be redirected to the auth provider logout page so that they can be logged out from the auth provider as well. That feature is especially important on shared computers. Logout integrations turned out to be somewhat complicated and each auth provider required special treatment. It's possible that new auth providers will need additional debugging/adjusting as well. If central logout is not working and blocking other work - it can be disabled by setting `APPLICANT_OIDC_PROVIDER_LOGOUT=false`.
+
+
+Spec: [OpenID Connect RP-Initiated Logout](https://openid.net/specs/openid-connect-rpinitiated-1_0.html).
+
 
 ## Authentication code structure
 

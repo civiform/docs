@@ -315,3 +315,12 @@ Debugging authentication is challenging as it involves external systems that are
   
 * **Use jwt.io to decode token.**  
   OIDC uses [JSON Web Token](https://jwt.io/introduction) to send data from auth provider to the CiviForm. It is sent as `id_token` param in the redirect POST request from auth provider. You can decode it using [jwt.io](https://jwt.io) to see what it contains. For example for ADFS flow you'll see what groups user belongs to.
+
+* **Test local changes with production config.**
+  Sometimes we need to test changes to an auth provider that we don't have an easy way to configure locally. 
+For example testing IDCS integration where we don't have access to the auth provider page and cannot create our own app to test with. For cases like that we can test it by imitating production setup locally using proxy. Let's say we want to emulate locally `staging-aws.civiform.dev` auth. Here are the steps:
+  1. Set necessary auth variables for your local CiviForm server. They might be `applicant_generic_oidc.client_id`, `applicant_generic_oidc.discovery_uri`. Note that these variables are generally not sensitive. For example `client_id` is passed as url param during auth flow so everyone can see it. If you don't know values of these variables - ask POC in the corresponding deployments (Seattle, Bloomington, State of Arkansas). 
+  2. Setup proxy locally that redirects all traffic from production host e.g. `https://staging-aws.civiform.dev` to `http://localhost:9000` where CiviForm is running. There are multiple proxies suited for that, one example is [Charles proxy](https://www.charlesproxy.com/) which Google employees have license for (search internally if you are one).
+  3. Start a new chrome instance that uses the proxy. Example command for Mac assuming proxy is running on port 8888: `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --proxy-server=localhost:8888 --user-data-dir=$HOME/test_data --ignore-certificate-errors --allow-running-insecure-content`.
+  4. Go to production url, e.g. `https://staging-aws.civiform.dev`. You should see local CiviForm. Now you can test auth. To make sure the setup is correct it's recommended to ensure that auth behavior matches production by removing all local changes to auth java code.
+

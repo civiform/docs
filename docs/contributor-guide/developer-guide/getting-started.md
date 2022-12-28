@@ -39,8 +39,8 @@ This setup will only include the files under (.../server), therefore, if you wou
 
 * Go to File/Project Structure, 
 * Select modules 
-* Ensure “civi-server and” “sources” are selected in second and third column,
-* Click on + on the right handside to add all folders under civiform except "server" to the content rootes 
+* Ensure `civiform-server` and `sources` are selected in second and third column,
+* Click on + on the right handside to add all folders under civiform except "server" to the content roots 
 
 #### Configuring VSCode
 

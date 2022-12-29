@@ -65,6 +65,34 @@ TypeScript code should conform to the [Google TypeScript style guide](https://go
 
 ### Code best practices
 
+#### assertNotNull vs non-null expression
+
+In TypeScript we often deal with APIs that returns nullable value. For example
+`document.querySelector()` returns `Element|null`. In many cases we expect the
+value to always be non-null, for example when certain DOM element is expected to
+be always on a page. In cases like that we can either use `assertNotNull`
+function or `!` non-null operator to indicate that value is not null. 
+
+Using `!` is dangerous as it is not transpiled to any runtime checks; it is
+completely omitted from transpiled code. However it's ok to use in cases where
+value is immediately referenced:
+
+```typescript
+// It's OK to use ! if the value is immediately de-referenced (effectively
+// asserting non-null).
+document.querySelector('#dialog')!.addEventListener(...)
+```
+
+If the value is not immediately dereferenced but rather passed to some other
+functions or used later - use `assertNotNull`:
+
+```typescript
+processDialog(assertNotNull(document.querySelector('#dialog')))
+```
+
+That way, if value is null - the error will be thrown immediately making sure
+the issue is surfaced as early as possible.
+
 #### No side effects
 
 TypeScript files should not perform any side effects, for example adding

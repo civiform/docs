@@ -1,6 +1,6 @@
 # Frontend Development
 
-## Everything is Java.
+## Everything is mostly Java.
 
 _Our frontend is weird._\
 _Nope! No two ways about it._\
@@ -12,7 +12,43 @@ _Just... it's really weird._
 
 If you already know Java, you're probably going to be pretty comfortable. If you don't there are still plenty of places where you can help.
 
-### Mocks (Photoshop, Sketch, Miro, etc)
+## Client-side code (TypeScript)
+
+CiviForm has some amount of client-side code used for adding dynamic behavior to
+the app. At the moment no XHR/AJAX is done through client-side code, all network
+interactions are done via HTML forms which are server-side rendered.
+
+We use TypeScript for client-side code. It is a very popular alternative to JavaScript that adds type safety and improves developer experience. The code is located in [server/app/assets/javascripts](https://github.com/civiform/civiform/tree/main/server/app/assets/javascripts).
+
+See [TypeScript best practices](development-standards.md#typescript-code).
+
+For testing see [TypeScript unit testing](testing.md#typescript-unit-tests).
+
+
+### Code organization
+
+There are no strict rules around TypeScript code organization. This codebase is
+relatively small so use your own judgement. If you are adding new functionality
+and that functionality is 100+ lines and focuses on a specific feature -
+consider adding it as a separate file.
+
+### Bundling
+
+Client-side code is bundled into a few bundle JS files. Only one bundle should
+be loaded on any given CiviForm page. Each bundle is built from a file ending
+with `_entry_point.ts`. Entry point file imports a subset of TS files and calls
+corresponding `init()` functions. At the moment we have the following bundles:
+
+* admin.bundle.js - loaded on admin pages (CiviForm admin, Program admin). Entry
+  point: [admin_entry_point.ts](https://github.com/civiform/civiform/blob/main/server/app/assets/javascripts/admin_entry_point.ts)
+  .
+* applicant.bundle.js - loaded on applicant pages. Should be kept small. Entry
+  point: [applicant_entry_point.ts](https://github.com/civiform/civiform/blob/main/server/app/assets/javascripts/applicant_entry_point.ts)
+  .
+
+Bundling is done using [webpack](https://webpack.js.org/). Webpack config is [webpack.config.js](https://github.com/civiform/civiform/blob/main/server/webpack.config.js).
+
+## Mocks (Photoshop, Sketch, Miro, etc)
 
 Pick your preferred tools and craft beautiful experiences. Then, hand off your mocks to a developer who wants to take the next step of the process, or try your hand at creating some prototypes.
 

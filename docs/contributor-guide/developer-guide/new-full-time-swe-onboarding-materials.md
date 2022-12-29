@@ -8,13 +8,22 @@
 
 ### Recommended Tutorials
 
-* [git](https://docs.github.com/en/get-started/using-git/about-git)
-* [docker](https://docs.docker.com/get-started/)
-* [github](https://lab.github.com/githubtraining/introduction-to-github)
-* [play framework (java version)](https://www.playframework.com/documentation/2.8.x/JavaHome)
-* [java guice framework](https://github.com/google/guice/wiki/GettingStarted)
-* [terraform framework tutorial](https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code)
-* [ebean](https://ebean.io)
+* general
+  * [git](https://docs.github.com/en/get-started/using-git/about-git)
+  * [docker](https://docs.docker.com/get-started/)
+  * [github](https://lab.github.com/githubtraining/introduction-to-github)
+* backend 
+  * [play framework (java version)](https://www.playframework.com/documentation/2.8.x/JavaHome)
+  * [java guice framework](https://github.com/google/guice/wiki/GettingStarted)
+  * [ebean](https://ebean.io)
+* frontend
+  * [playwright](https://playwright.dev/docs/writing-tests)
+  * [tailwindcss](https://tailwindcss.com/docs/utility-first)
+  * [jest](https://jestjs.io/docs/using-matchers)
+* deployment infra
+  * [terraform framework tutorial](https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code)
+
+
 
 ### Recommended Starting Points
 
@@ -25,13 +34,14 @@
 
 Ensure your team lead grants you access to the following resources.
 
-* Azure
-* AWS
 * Slack
 * Added to the technical google group
-* LoginRadius
 * DockerHub (if at Google, need to pay for the professional one)
 * Github Access
   * [Civiform Org](https://github.com/civiform)
   * civiform/civiform
-  * civiform/docs 
+  * civiform/docs
+* Azure (optional, if working on deployment)
+* AWS (optional, if working on deployment)
+* Auth0 (optional, if working on auth)
+* LoginRadius (optional, if working on auth)

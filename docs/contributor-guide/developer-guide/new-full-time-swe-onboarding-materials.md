@@ -8,19 +8,19 @@
 
 ### Recommended Tutorials
 
-* general
+* General
   * [git](https://docs.github.com/en/get-started/using-git/about-git)
   * [docker](https://docs.docker.com/get-started/)
   * [github](https://lab.github.com/githubtraining/introduction-to-github)
-* backend 
+* Backend
   * [play framework (java version)](https://www.playframework.com/documentation/2.8.x/JavaHome)
   * [java guice framework](https://github.com/google/guice/wiki/GettingStarted)
   * [ebean](https://ebean.io)
-* frontend
+* Frontend
   * [playwright](https://playwright.dev/docs/writing-tests)
   * [tailwindcss](https://tailwindcss.com/docs/utility-first)
   * [jest](https://jestjs.io/docs/using-matchers)
-* deployment infra
+* Deployment infra
   * [terraform framework tutorial](https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code)
 
 
@@ -41,7 +41,9 @@ Ensure your team lead grants you access to the following resources.
   * [Civiform Org](https://github.com/civiform)
   * civiform/civiform
   * civiform/docs
-* Azure (optional, if working on deployment)
-* AWS (optional, if working on deployment)
-* Auth0 (optional, if working on auth)
-* LoginRadius (optional, if working on auth)
+* Deployment (optional)
+  * Azure
+  * AWS
+* Authentication (optional)
+  * Auth0
+  * LoginRadius

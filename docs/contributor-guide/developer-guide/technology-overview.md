@@ -4,7 +4,7 @@
 
 ### Overview
 
-CiviForm is built on the [Play Framework](https://www.playframework.com) in Java, and backed by a [PostgreSQL](https://www.postgresql.org) database. We use Guice to do dependency injection and follow the [Strategy Pattern](https://www.tutorialspoint.com/design\_pattern/strategy\_pattern.htm). The front end uses [J2Html](https://j2html.com) Java library to render HTML (server-side). To client-side interactions we use TypeScript without using any frameworks (see [Frontend development](frontend-development.md) for more info). For applicant authentication we support a few different OIDC/SAML identity providers. For infrastructure we use terraform.
+CiviForm is built on the [Play Framework](https://www.playframework.com) in Java, and backed by a [PostgreSQL](https://www.postgresql.org) database. We use Guice to do dependency injection and follow the [Strategy Pattern](https://www.tutorialspoint.com/design\_pattern/strategy\_pattern.htm). The front end uses [J2Html](https://j2html.com) Java library to render HTML (server-side). For client-side interactions we use TypeScript without using any frameworks (see [Frontend development](frontend-development.md) for more info). For applicant authentication we support a few different OIDC/SAML identity providers. For infrastructure we use terraform.
 
 ### Views
 

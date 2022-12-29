@@ -4,6 +4,19 @@ CiviForm supports applicant and admin authentication via OpenID Connect (OIDC). 
 
 Below we'll go over the implementation and configuration steps for currently supported authentication providers. A Civiform deployment should have exactly one admin authentication provider and one applicant authentication provider configured.
 
+## Getting started exercise
+
+To familiarize yourself with OIDC it is useful to go through a setup using any OIDC provider. Setup across all providers roughly resemble one another. For practice purpose use https://auth0.com. CiviForm uses it on staging instances. Steps:
+
+1. **Get access to CiviForm auth0.com account.**  
+   Ask someone on the team to add it you the account (Settings -> Tenant Members -> Add member).
+2. **Create test app.**  
+   Create a test app on auth0.com. Take a look at "CiviForm AWS Staging" app as example. Use http://localhost:9000 as your domain.
+3. **Configure local CiviForm.**  
+   Set necessary settings in `application.conf`. They include `applicant_generic_oidc.client_id`, `applicant_generic_oidc.discovery_uri`. 
+4. **Test authentication.**  
+   Run CiviForm and test log in. You should be redirected to auth0.com and go through login process. At the end you should be redirected back to CiviForm.
+   
 ## Admin Authentication
 
 ### ADFS (OIDC)
@@ -316,12 +329,17 @@ Debugging authentication is challenging as it involves external systems that are
 * **Use jwt.io to decode token.**  
   OIDC uses [JSON Web Token](https://jwt.io/introduction) to send data from auth provider to the CiviForm. It is sent as `id_token` param in the redirect POST request from auth provider. You can decode it using [jwt.io](https://jwt.io) to see what it contains. For example for ADFS flow you'll see what groups user belongs to.
 
-* **Test local changes with production config.**
-  Sometimes we need to test changes to an auth provider that we don't have an easy way to configure locally. 
-For example testing IDCS integration where we don't have access to the auth provider page and cannot create our own app to test with. For cases like that we can test it by imitating production setup locally using proxy. Let's say we want to emulate locally `staging-aws.civiform.dev` auth. Here are the steps:
-  1. Set necessary auth variables for your local CiviForm server. They might be `applicant_generic_oidc.client_id`, `applicant_generic_oidc.discovery_uri`. Note that these variables are generally not sensitive. For example `client_id` is passed as url param during auth flow so everyone can see it. If you don't know values of these variables - ask POC in the corresponding deployments (Seattle, Bloomington, State of Arkansas).
-  2. Set `base_url` to be the production domain, e.g. `https://staging-aws.civiform.dev`. It is required so that local CiviForm uses production domain in redirect auth urls.
-  3. Setup proxy locally that redirects all traffic from production host e.g. `https://staging-aws.civiform.dev` to `http://localhost:9000` where CiviForm is running. There are multiple proxies suited for that, one example is [Charles proxy](https://www.charlesproxy.com/) which Google employees have license for (search internally if you are one).
-  4. Start a new chrome instance that uses the proxy. Example command for Mac assuming proxy is running on port 8888: `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --proxy-server=localhost:8888 --user-data-dir=$HOME/test_data --ignore-certificate-errors --allow-running-insecure-content`.
-  5. Go to production url, e.g. `https://staging-aws.civiform.dev`. You should see local CiviForm. Now you can test auth. To make sure the setup is correct it's recommended to ensure that auth behavior matches production by removing all local changes to auth java code.
+* **Test local changes on production auth.**  
+  Sometimes we need to test auth provider code changes that we don't have an easy way to test locally. 
+For example testing IDCS (Seattle) integration where we don't have access to the Seattle's IDCS page and can't create our own app to test with. For cases like that we can test by imitating production setup locally using proxy. Essentially we setup environment such that browser thinks that it is using production CiviForm while in fact local CiviForm is used. Let's say we want to emulate locally `staging-aws.civiform.dev` auth configuration. Here are the steps:
+  1. **Set necessary auth variables for your local CiviForm server.**  
+     The variables might be `applicant_generic_oidc.client_id`, `applicant_generic_oidc.discovery_uri` and others. These variables need to be copied from production config. Note that they are generally not sensitive. For example `client_id` is passed as url param during auth flow so everyone can see it. If you don't know values of these variables - ask POC in the corresponding deployments (Seattle, Bloomington, State of Arkansas).
+  2. **Set `base_url` to be the production domain.**  
+     In our example it should be set to `https://staging-aws.civiform.dev`. It is required so that local CiviForm uses production domain in redirect auth urls.
+  4. **Setup proxy locally that redirects all traffic from production host.**  
+     In our example proxy should redirect `https://staging-aws.civiform.dev` to `http://localhost:9000` where CiviForm is running. There are multiple proxies suited for that, one example is [Charles proxy](https://www.charlesproxy.com/) which Google employees have license for (search internally if you are one).
+  5. **Start a new chrome instance that uses the proxy.**  
+     Example command for Mac assuming proxy is running on port 8888: `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --proxy-server=localhost:8888 --user-data-dir=$HOME/test_data --ignore-certificate-errors --allow-running-insecure-content`.
+  6. **Go to production url and test.**  
+     In our example url is `https://staging-aws.civiform.dev`. You should see local CiviForm. Now you can test auth. To make sure the setup is correct it's recommended to ensure that auth behavior matches production by removing all local changes to auth java code.
 

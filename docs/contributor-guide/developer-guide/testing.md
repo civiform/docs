@@ -6,25 +6,28 @@ CiviForm, as well as debugging tips and practices.
 ## What to test
 
 In general, all execution paths in the system should be covered by
-[unit tests](#unit-tests). If you submit code that is infeasible or impractical
-to get full test coverage for, consider refactoring. If you would like to make
-an exception, include a clear explanation for why in your PR description.
+[java unit tests](#java-unit-tests)
+or [typescript unit tests](#typescript-unit-tests). If you submit code that is
+infeasible or impractical to get full test coverage for, consider refactoring.
+If you would like to make an exception, include a clear explanation for why in
+your PR description.
 
 In contrast, [browser tests](#functional-browser-tests) should cover all major
 user-facing features to make sure the system generally works from a user's point
 of view, rather than exhaustively test all execution paths.
 
-## Unit tests
+## Java unit tests
 
 For Java, classes generally have their own unit tests. The unit test file should
 mirror the implementation file. For example, `/app/package/path/MyClass.java`
 should have a unit test `/test/package/path/MyClassTest.java`.
 
-Tests that require a Play application should either use `extends
-play.test.WithApplication`, or `extends repository.WithPostgresContainer` if a
-database is required. By default, using `extends play.test.WithApplication` will
-produce an application with a binding to an in-memory postgres database that is
-incompatible with everything and is pretty much useless.
+Tests that require a Play application should either
+use `extends play.test.WithApplication`,
+or `extends repository.WithPostgresContainer` if a database is required. By
+default, using `extends play.test.WithApplication` will produce an application
+with a binding to an in-memory postgres database that is incompatible with
+everything and is pretty much useless.
 
 To run the unit tests (includes all tests under
 [`test/`](https://github.com/civiform/civiform/tree/main/server/test)), run the
@@ -45,6 +48,7 @@ time each time you run the test(s), use these steps:
     ```
     testOnly services.question.QuestionDefinitionTest
     ```
+
 ### Attaching a debugger to unit tests
 
 When running an individual unit test via `bin/sbt-test`, a debugger can be
@@ -71,10 +75,10 @@ which provides a real database. Controllers should contain very little if any
 conditional logic and delegate business logic and network interactions
 (database, auth service, file services, etc.) to service classes.
 
-*   Assertions should be on the method's `Result` rather than the rendered HTML.
-*   Assertions may also be on the database state after the controller method has
-    completed.
-*   Controller tests should not rely heavily on mocking.
+*  Assertions should be on the method's `Result` rather than the rendered HTML.
+*  Assertions may also be on the database state after the controller method has
+   completed.
+*  Controller tests should not rely heavily on mocking.
 
 See
 [AdminProgramControllerTest.java ](https://github.com/civiform/civiform/pull/167/files#diff-643f94cff692c6554cd33c8e4c542b9f2bc65b4756bf027a623ce8f203d28677)
@@ -86,7 +90,7 @@ for information on framework-provided testing tools.
 
 [`BaseHtmlView`](https://github.com/civiform/civiform/blob/main/server/app/views/BaseHtmlView.java)
 provides a number of HTML tag-producing methods, for example
-[`Tag submitButton(String textContents)`](https://github.com/civiform/civiform/blob/main/server/app/views/BaseHtmlView.java#L53).
+[`Tag submitButton(String textContents)`](https://github.com/civiform/civiform/blob/main/server/app/views/BaseHtmlView.java#L53). 
 These methods tend to be fairly simple, with unit tests that are brittle to
 small, inconsequential changes. Whether or not to test these types of methods is
 at the discretion of the implementer and code reviewer(s).
@@ -98,6 +102,35 @@ assert the key interactions for a user on that page.
 Question type rendering and client-side logic deserves a special mention since
 they can have complex interaction logic. These should be unit tested in
 isolation, in browser test(s).
+
+## TypeScript unit tests
+
+For TypeScript code in `server` directory each file should generally have
+corresponding unit test file. The unit test file should be placed in the same
+directory as implementation file use pattern `<impl>.test.ts`.
+
+Unit tests use [Jest](https://jestjs.io/docs/api) test runner.
+
+Unit tests are run using Node.js. By default, Node.js doesn't provide browser
+APIs such as DOM (document, querySelector, etc). At the same time client-side
+typescript code being tested assumes that it is executed in browser environment
+and assumes standard browser APIs are available. To workaround this issue we
+use [jsdom environment](https://jestjs.io/docs/configuration#testenvironment-string)
+in Jest. It adds a fake implementation of main browser APIs. Developers should
+keep that in mind as fake implementations will differ from actual browser API
+implementations in certain cases and don't support all browser APIs.
+
+To run the unit tests (includes tests under [app/assets/javascripts](https://github.com/civiform/civiform/tree/main/server/app/assets/javascripts)), run the following:
+
+```
+bin/run-ts-tests
+```
+
+If you'd like to run a specific test or set of tests, run the following:
+
+```
+bin/run-ts-tests file1.test.ts file2.test.ts
+```
 
 ## Functional browser tests
 
@@ -155,14 +188,14 @@ In contrast to unit tests, browser tests should not attempt to exhaustively test
 all code paths and states possible for the system under test. Browser tests
 should:
 
--   be fewer and larger, covering major features of the application
--   only create state in the database by interacting with the UI (e.g. when
-    testing the applicant experience for answering of a certain type, first
-    login as an admin, create a question and a program with that question)
--   encapsulate UI interaction details into
-    [page object classes](https://playwright.dev/docs/pom/)
--   as much as is practical navigate using the UI and not by directly
-    referencing URL paths
+-  be fewer and larger, covering major features of the application
+-  only create state in the database by interacting with the UI (e.g. when
+   testing the applicant experience for answering of a certain type, first
+   login as an admin, create a question and a program with that question)
+-  encapsulate UI interaction details into
+   [page object classes](https://playwright.dev/docs/pom/)
+-  as much as is practical navigate using the UI and not by directly referencing
+   URL paths
 
 Screenshot diff tests should cover every question type, and should cover every
 page of the admin and applicant flow. See the
@@ -179,35 +212,33 @@ Browser tests can be flaky if they trigger actions on the page and don't wait
 for Civiform javascript event handlers to complete before triggering subsequent
 actions or validating page contents. Some examples of where this can happen:
 
--   **Page initialization**: Civiform typically attaches javascript event handlers after pages load. Tests must therefore wait for pages to be ready after initial page load or any page navigation (whether triggered by anchor link clicks, form submissions, or js event handlers). To accomplish this, main.ts and modal.ts set data attributes on the html <body> tag when they are done running, and the browser test function `waitForPageJsLoad` can be used to wait for these attributes to be set. In general, stay very aware of when page navigations are happening to maintain correctness.
--   **DOM modification**: Civiform sometimes uses javascript to show/hide DOM
-    elements like modal dialogs, or makes copies of hidden templates (e.g., to
-    populate radio/checkbox option lists). Browser tests can use element
-    selectors to block on these manipulations finishing, but selectors must be
-    specific enough to differentiate (e.g., waiting for a specific matching
-    element index to appear, instead of targeting the last match). For typical
-    civiform modal dialogs, `clickAndWaitForModal` may be helpful.
--   **Input validation**: Civiform javascript input validators sometimes modify
-    the DOM (e.g., making sure text has been changed before enabling a submit
-    button). Browser tests can use specific selectors to have playwright wait
-    for input validation to complete (e.g., specifying an *enabled* button to
-    click instead of just specifying the button).
-
-#### Formatting browser tests code
-
-We have an auto-formatter for our browser test code. Please run the following
-command.
-
-```
-browser-test/bin/fmt
-```
+-  **Page initialization**: Civiform typically attaches javascript event handlers
+   after pages load. Tests must therefore wait for pages to be ready after
+   initial page load or any page navigation (whether triggered by anchor link
+   clicks, form submissions, or js event handlers). To accomplish this, main.ts
+   and modal.ts set data attributes on the html <body> tag when they are done
+   running, and the browser test function `waitForPageJsLoad` can be used to wait
+   for these attributes to be set. In general, stay very aware of when page
+   navigations are happening to maintain correctness.
+-  **DOM modification**: Civiform sometimes uses javascript to show/hide DOM
+   elements like modal dialogs, or makes copies of hidden templates (e.g., to
+   populate radio/checkbox option lists). Browser tests can use element selectors
+   to block on these manipulations finishing, but selectors must be specific
+   enough to differentiate (e.g., waiting for a specific matching element index
+   to appear, instead of targeting the last match). For typical civiform modal
+   dialogs, `clickAndWaitForModal` may be helpful.
+-  **Input validation**: Civiform javascript input validators sometimes modify
+   the DOM (e.g., making sure text has been changed before enabling a submit
+   button). Browser tests can use specific selectors to have playwright wait for
+   input validation to complete (e.g., specifying an *enabled* button to click
+   instead of just specifying the button).
 
 ### Screenshot diffing
 
 Screenshot tests are implemented with
 [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
-To add a screenshot test, simply call: `typescript await
-validateScreenshot(page, 'name-of-image')`
+To add a screenshot test, simply
+call: `await validateScreenshot(page, 'name-of-image')`
 
 New screenshots are saved automatically to a subdirectory in
 .../image_snapshots/ with the test file name. If a screenshot diff is found, an
@@ -225,17 +256,19 @@ GitHub action run.
 
 #### De-randomizing
 
-Timestamp/Dates and applicant IDs will change each time a test is ran, to
+Timestamp/Dates and applicant IDs will change each time a test is run, to
 automatically normalize these, UI elements that contain them need to have the
 [`ReferenceClasses`](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/app/views/style/ReferenceClasses.java?L133&subtree=true)
-`BT_DATE` and `BT_APPLICATION_ID` added respectively.
+`BT_DATE`, `BT_APPLICATION_ID` and a few others classes added respectively.
+Check the [normalizeElements](https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/civiform/civiform%24+normalizeElements&patternType=standard&sm=1)
+function for an up-to-date list of elements and update if necessary.
 
 ### Axe accessibility tests
 
 Accessibility tests are run at the browser test level on the final generated
 HTML page, using [axe](https://github.com/dequelabs/axe-core). You can run an
-accessibility test on a page simply by calling: `typescript await
-validateAccessibility(page)`
+accessibility test on a page simply by
+calling: `await validateAccessibility(page)`
 
 If the accessibility test fails, the error message will output the
 AxeResults.violations array. See
@@ -269,8 +302,9 @@ variable:
 ```
 PWDEBUG=1 bin/run-browser-tests-local
 ```
-    
-You can find more documentation on debugging Playwright in this [BrowserStack guide](https://www.browserstack.com/guide/playwright-debugging). 
+
+You can find more documentation on debugging Playwright in this [BrowserStack guide](https://www.browserstack.com/guide/playwright-debugging)
+.
 
 #### Debugging failed GitHub actions
 

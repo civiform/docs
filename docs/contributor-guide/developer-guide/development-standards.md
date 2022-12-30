@@ -59,6 +59,94 @@ We anticipate relatively low [QPS](https://en.wikipedia.org/wiki/Queries\_per\_s
 
 Exception handling in asynchronous execution deserves a special mention as `CompletionException` is unchecked and can be easily missed. We should always explicitly catch `CompletionException` when joining a future in a synchronous context. When returning `CompletionStage<Result>` to users, we should provide exception handling through `CompletableFuture#exceptionally` API.
 
+## TypeScript code
+
+TypeScript code should conform to the [Google TypeScript style guide](https://google.github.io/styleguide/tsguide.html). The project makes use of a linter ([eslint](https://eslint.org/)) and auto-formatter ([prettier](https://prettier.io/)) to help with this, just run `bin/fmt` and your code should be automatically formatted.
+
+### Code best practices
+
+#### assertNotNull vs non-null expression
+
+In TypeScript we often deal with APIs that returns nullable value. For example
+`document.querySelector()` returns `Element|null`. In many cases we expect the
+value to always be non-null, for example when certain DOM element is expected to
+be always on a page. In cases like that we can either use `assertNotNull`
+function or `!` non-null operator to indicate that value is not null. 
+
+Using `!` is dangerous as it is not transpiled to any runtime checks; it is
+completely omitted from transpiled code. However it's ok to use in cases where
+value is immediately referenced:
+
+```typescript
+// It's OK to use ! if the value is immediately de-referenced (effectively
+// asserting non-null).
+document.querySelector('#dialog')!.addEventListener(...)
+```
+
+If the value is not immediately dereferenced but rather passed to some other
+functions or used later - use `assertNotNull`:
+
+```typescript
+processDialog(assertNotNull(document.querySelector('#dialog')))
+```
+
+That way, if value is null - the error will be thrown immediately making sure
+the issue is surfaced as early as possible.
+
+#### No side effects
+
+TypeScript files should not perform any side effects, for example adding
+listeners to elements on page load. If a file needs to be initialized during
+page load, the file should export `init()` function which will be called by one
+of entry points (see [Bundling](frontend-development.md#bundling) below).
+
+Bad: 
+```typescript
+window.addEventListener('load', () => {
+  document.querySelector('#button').addEventListener('click', () => {
+    ...
+  })
+})
+```
+
+Good:
+```typescript
+export function init() {
+  document.querySelector('#button').addEventListener('click', () => {
+    ...
+  })
+}
+// init() is later called from an entry point
+```
+
+#### Verify presence of DOM elements before initialization
+
+TypeScript files are served as part of bundles and not individually. It's likely
+that a TS file will be served on a page that doesn't contain elements that the
+file expects (e.g. file expects page to contain question bank DOM elements).
+Because of that files should verify inside `init()` function that the page
+contains necessary elements.
+
+Bad:
+```typescript
+export function init() {
+  document.querySelector('#button').addEventListener('click', () => {
+  ...
+  })
+}
+```
+
+Good:
+```typescript
+export function init() {
+  const button = document.querySelector('#button')
+  if (button == null) return;
+  button.addEventListener('click', () => {
+     ...
+  })
+}
+```
+
 ## Bash scripts
 
 Bash scripts should conform to the [Google Bash style guide](https://google.github.io/styleguide/shellguide.html). The guide references a nice utility to help find issue and fix them at https://www.shellcheck.net/.

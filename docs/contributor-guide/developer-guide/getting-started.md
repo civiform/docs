@@ -121,9 +121,9 @@ We know setting up a development environment can have some snags in the road. If
 
 This section will help you run CiviForm unit and browser tests in a basic way. For more information on _writing_ and _debugging_ these tests, check out the [Testing ](testing.md)guide.
 
-### Running unit tests
+### Running java unit tests
 
-To run the unit tests (includes all tests under [`test/`](https://github.com/civiform/civiform/tree/main/server/test)), run the following:
+To run the java unit tests (includes all tests under [test/](https://github.com/civiform/civiform/tree/main/server/test)), run the following:
 
 ```
 bin/run-test
@@ -141,28 +141,32 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup ti
     ```
     testOnly services.question.types.QuestionDefinitionTest
     ```
+    
+### Running typescript unit tests
+
+To run the unit tests in [app/assets/javascripts](https://github.com/civiform/civiform/tree/main/server/app/assets/javascripts), run the following:
+
+```
+bin/run-ts-tests
+```
+
+If you'd like to run a specific test or set of tests, run the following:
+
+```
+bin/run-ts-tests file1.test.ts file2.test.ts
+```
 
 ### Running browser tests
 
 To run the browser tests (includes all the [Playwright](https://playwright.dev) tests in [`civiform/browser-test/src/`](https://github.com/civiform/civiform/tree/main/browser-test/src), there are three steps:
 
-1.  Build the Docker image for running the playwright tests. This only needs to be done once:
-
-    ```
-    bin/build-browser-tests
-    ```
-2.  Bring up the local test environment using the AWS emulator. This step can be done in a separate terminal window while the above step is still building. Leave this running while you are working for faster browser test runs:
+1.  Bring up the local test environment using the AWS emulator. Leave this running:
 
     ```
     bin/run-browser-test-env
     ```
 
-    To bring up the local test environment using Azurite, the Azure emulator, instead of the AWS localhost emulator, run:
-
-    ```
-    bin/run-browser-test-env --azure   
-    ```
-3.  Once you see "Server started" in the terminal from the above step, in a separate terminal run the tests in a docker container:
+2.  Once you see "Server started" in the terminal from the above step, in a separate terminal run the tests in a docker container:
 
     ```
     bin/run-browser-tests

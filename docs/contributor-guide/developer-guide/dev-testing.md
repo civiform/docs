@@ -2,7 +2,7 @@
 
 Below are ways to locally evaluate how the system works with external resources.
 
-These assume you're running a local dev server using bin/run-dev.
+These assume you're running a local dev server using `bin/run-dev`.
 
 Many of these will assume you have the referenced host name in your /etc/hosts file and any browser proxies turned off as it blocks the /etc/hosts routes.
 

@@ -27,7 +27,7 @@ Supporting Infrastructure:
 * S3 bucket for terraform backend state
 * Cloudwatch export for logs
 
-## Code and examples
+## Code and examples (AWS)
 Code can be found [here](https://github.com/civiform/civiform/tree/main/cloud/aws).
 
 Our staging enviroment is at [staging-aws.civiform.dev](https://staging-aws.civiform.dev).

@@ -87,6 +87,7 @@
   * [Adding a new question type](contributor-guide/developer-guide/adding-a-new-question-type.md)
   * [Deploy system](contributor-guide/developer-guide/deploy-system/README.md)
     * [Overview](contributor-guide/developer-guide/deploy-system/overview.md)
+    * [Testing](contributor-guide/developer-guide/deploy-system/testing.md)
     * [Running Dev Code in Azure](contributor-guide/developer-guide/deploy-system/dev-azure.md)
   * [Testing](contributor-guide/developer-guide/testing.md)
   * [Dev Testing](contributor-guide/developer-guide/dev-testing.md)

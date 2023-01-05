@@ -3,10 +3,10 @@
 ## Code
 
 Deployment related code can be found in
-https://github.com/civiform/cloud-deploy-infra.
+[civiform/cloud-deploy-infra](https://github.com/civiform/cloud-deploy-infra).
 
 Scripts that a user would run are in
-https://github.com/civiform/civiform-deploy.
+[civiform/civiform-deploy](https://github.com/civiform/civiform-deploy).
 
 ## Unit tests
 
@@ -17,9 +17,7 @@ github action.
 
 ## End to end (e2e) tests
 
-We have one end to end test that runs the deploy tool in a fresh AWS account.
-
-### AWS e2e tests accounts
+### AWS e2e test accounts
 
 There is currently one AWS account used for e2e tests. It is created under the
 root CiviForm dev organization and named 'cloud-deploy-infra-tests-0'.
@@ -29,13 +27,12 @@ To create a new e2e test account:
 1. Log in to the CiviForm dev AWS account and navigate to the ['AWS
    Organizations'
    page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/root).
-1. Determine the next test account number by logging into the CiviForm dev AWS
-   account.
-
-	For example, if there was only one e2e test account
-	'cloud-deploy-infra-tests-0', the next test account number would be 1. If
-	there were two e2e test accounts 'cloud-deploy-infra-tests-0' and
-	'cloud-deploy-infra-tests-1', the next test account number would be 2.
+1. Determine the next test account number by looking at the
+   'cloud-deploy-infra-tests-N' accounts in the account list. For example, if
+   there was only one e2e test account 'cloud-deploy-infra-tests-0', the next
+   test account number would be 1. If there were two e2e test accounts
+   'cloud-deploy-infra-tests-0' and 'cloud-deploy-infra-tests-1', the next test
+   account number would be 2.
 1. Click the 'Add an AWS account' button.
 
 	![Add AWS account from AWS Organizations

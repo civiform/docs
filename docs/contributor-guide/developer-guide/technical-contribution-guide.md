@@ -163,6 +163,35 @@ Reviewers should grant approval if they do not feel additional review is necessa
 
 If the pull request does not require additional changes, the reviewer should merge it immediately after approving. Otherwise, once they have addressed all comments marked `(blocking)` or `nit`, the pull request author should either merge if able or re-request review and merging from a maintainer if not. Authors are encouraged to at least reply to `(non-blocking)` and `(if-minor)` comments if they do not address them with code changes.
 
+### Workflow tips
+
+#### 1. Provide comments concisely
+
+There are two ways to leave comments and two interfaces to reply to a PR review request.  
+
+The `Discussions` tab will only let you apply single comments and replies that each generate and email.
+
+The `Files` tab, will allow you to do the above as well "Start a review" when you leave your first comment.  All subsequent comments in the `Files` tab will be batched into the review.  When you're done reviewing them you can then publish them all with `Review Changes` in the upper right.
+
+It's recommended that you batch comments this way to reduce email noise, provide a clear review, as well let you edit/delete comments before sending.
+
+#### 2. View changes since your last review
+
+You can view only changes since your last Review (using `Review Changes` above)
+
+As you're reviewing files, you can checkmark that you're done with the changes in it by clicking the checkbox to the far right of the file name.
+
+When you publish your review the checkbox state will be remembered.
+
+When new commits occur you can see only those changes by finding `Changes from all commits` just below the PR name, selecting `all commits` and clicking `Show changes since your last review`
+
+
+GitHub kinda lets you do this ad hoc, but the UI is hard to use and it doesn't track where you left off if you're doing multiple review rounds.
+
+#### 3. Incrementally see your own PR changes
+
+You can do Tip #2 on your own PRs through the same process of selection the check box and publishing a Review.  You can just do a "comment" review and give a perfunctory comment of "Baselining for review"
+
 ### Getting up to speed
 
 Want to get up to speed on this project? Awesome! Please see the following:

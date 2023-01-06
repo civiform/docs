@@ -131,7 +131,7 @@ To run the java unit tests (includes all tests under [test/](https://github.com/
 bin/run-test
 ```
 
-If you'd like to run a specific test or set of tests, and/or save sbt startup time each time you run the test(s), use these steps:
+If you'd like to run a specific test or set of tests, and/or save sbt startup time each time you run the test(s), use the following steps. This is recommended for developer velocity.
 
 1.  Bring up an sbt shell inside the Docker container by running:
 
@@ -142,6 +142,8 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup ti
 
     ```
     testOnly services.question.types.QuestionDefinitionTest
+
+    test
     ```
     
 ### Running typescript unit tests
@@ -179,6 +181,10 @@ To run the browser tests (includes all the [Playwright](https://playwright.dev) 
     ```
     bin/run-browser-tests landing_page.test.ts
     ```
+
+## Tips
+
+Browser tests are heavy handed and can take a while to run.  You can focus the run to only execute a single `it` test or `describe` suite per file by prefixing it with `f`.  EG: `fit` and `fdescribe`.
 
 ## Creating fake data
 

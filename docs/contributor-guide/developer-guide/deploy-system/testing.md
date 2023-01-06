@@ -20,8 +20,9 @@ github action.
 The current e2e testing implementation is the minimum viable setup. The
 [end-to-end testing implementation decision
 log](https://docs.google.com/document/d/1y1IFnuorFIsGJggMwJdLgAHtGMGPr9XDd8AdXH5VAlw/edit?usp=sharing)
-contains implementation options considered. Most aspects of the implementation
-can be iterated on to provide a more robust, secure, and developer-friendly e2e
+contains details on each implementation decision made, different options
+considered, and what decision was made. Most aspects of the implementation can
+be iterated on to provide a more robust, secure, and developer-friendly e2e
 testing framework. Each decision contains rational for when such iteration may
 be worth the implementation and maintenance cost.
 
@@ -30,12 +31,27 @@ test runs the deploy tool in a dedicated testing AWS account. The action runs
 [aws-nuke](https://github.com/rebuy-de/aws-nuke) before and after the deploy
 tool to clean the account.
 
-### AWS e2e test accounts
+### AWS e2e test account setup
 
 There is currently one AWS account used for e2e tests. It is created under the
 root CiviForm dev organization and named 'cloud-deploy-infra-tests-0'.
 
-To create a new e2e test account: 
+The account creation and configurations process was:
+
+1. Created a new e2e test account in the CiviForm dev AWS organization.
+1. Logged into the new account by switching roles into the default
+OrganizationAccountAccessRole role created in the new account.
+1. Added the GitHub OpenID Connect (OIDC) identity provider to the new AWS
+account.
+1. Added an e2e-test-runner role that can be assumed by entities provided by
+the GitHub OIDC provider (GitHub action runners).
+1. Edited the e2e-test-runner role trust policy so that only GitHub action
+runners scoped to the civiform/cloud-deploy-infra main branch are allowed to
+assume the e2e-test-runner role.
+
+Steps to create an additional test account:
+
+#### Create a new e2e test account
 
 1. Log in to the CiviForm dev AWS account and navigate to the ['AWS
    Organizations'
@@ -76,7 +92,7 @@ minute or two. Once it is created you will see it in the 'Organizational
 structure' list on the ['AWS Organizations'
 page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/root)
 page. **Copy the account number listed for the newly created account. You will
-need it in the next step.**
+need it to log into the new account and configure it.**
 
 1. Select the checkbox for the new account, click the 'Actions' button, then
 click the 'Move' button under the 'AWS account' section in the dropdown.
@@ -90,7 +106,7 @@ click the 'Move' button under the 'AWS account' section in the dropdown.
 	![Move account to cloud-deploy-infra-tests organizational
 	unit](../../../.gitbook/assets/move-account.png)
 
-To log in the newly created e2e test account:
+#### Log into a e2e test account
 
 1. Click on the top-rightmost dropdown then click the 'Switch role' button.
 
@@ -98,7 +114,7 @@ To log in the newly created e2e test account:
 
 1. Input the following details:
 
-  - 'Account' field: input the account number copied from the above step.
+  - 'Account' field: input the account number you want to log in to.
   - 'Role' field: input 'OrganizationAccountAccessRole'.
   - 'Display Name' field: input the account name, 'cloud-deploy-infra-tests-2'
 	for example.
@@ -111,8 +127,7 @@ dashboard'](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1
 On the right sidebar, the 'Account ID' should match the account number of the
 newly created account.
 
-To configure the newly created e2e test account so that e2e tests can run in
-it:
+#### Configure a e2e test account
 
 1. Navigate to the ['IAM > Identity providers'
 page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/identity_providers).
@@ -187,16 +202,3 @@ relationships' tab then on the 'Edit trust policy' button.
 	object](../../../.gitbook/assets/edit-trust-policy-details.png)
 
 1. Click the 'Update policy' button.
-
-The new account is ready to be used for e2e tests!  To recap, you:
-
-1. Created a new e2e test account in the CiviForm dev AWS organization.
-1. Logged into the new account by switching roles into the default
-OrganizationAccountAccessRole role created in the new account.
-1. Added the GitHub OpenID Connect (OIDC) identity provider to the new AWS
-account.
-1. Added an e2e-test-runner role that can be assumed by entities provided by
-the GitHub OIDC provider (GitHub action runners).
-1. Edited the e2e-test-runner role trust policy so that only GitHub action
-runners scoped to the civiform/cloud-deploy-infra main branch are allowed to
-assume the e2e-test-runner role.

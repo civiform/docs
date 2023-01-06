@@ -88,6 +88,8 @@ VSCode uses the following files
 
 This will start up a dev instance of the application that uses Azurite, the Azure emulator, instead of local stack, the AWS emulator. This script sets an environment variable, `STORAGE_SERVICE_NAME` telling the application to run using the Azure emulator instead of AWS.
 
+**Tip**: Once you have the local server working, you may want to set `USE_LOCAL_CIVIFORM=1` by default in your environment.  This will speed up reruns by not always redownloading the latest docker images (1-2GB each) which is not usually necessary.
+
 **Warning**: There's a [known issue](https://github.com/civiform/civiform/issues/2230) where you may encounter a compile loop, the most reliable way to address that is to do `bin/sbt clean` before the above.
 
 2. Once you see "Server started" in your terminal (it will take some time for the server to start up), you can access the app in a browser at http://localhost:9000. Be patient on the initial page load since it will take some time for all the sources to compile.

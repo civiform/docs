@@ -40,14 +40,14 @@ The account creation and configurations process was:
 
 1. Created a new e2e test account in the CiviForm dev AWS organization.
 1. Logged into the new account by switching roles into the default
-OrganizationAccountAccessRole role created in the new account.
+   OrganizationAccountAccessRole role created in the new account.
 1. Added the GitHub OpenID Connect (OIDC) identity provider to the new AWS
-account.
+   account.
 1. Added an e2e-test-runner role that can be assumed by entities provided by
-the GitHub OIDC provider (GitHub action runners).
+   the GitHub OIDC provider (GitHub action runners).
 1. Edited the e2e-test-runner role trust policy so that only GitHub action
-runners scoped to the civiform/cloud-deploy-infra main branch are allowed to
-assume the e2e-test-runner role.
+   runners scoped to the civiform/cloud-deploy-infra main branch are allowed to
+   assume the e2e-test-runner role.
 
 Steps to create an additional test account:
 
@@ -168,10 +168,10 @@ page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/role
 	details](../../../.gitbook/assets/add-role-details-provider.png)
 
 1. Click the 'Next' button. In the 'Permissions policies' screen, search for
-'SystemAdministrator'. Select the 'SystemAdministrator' policy. Click the
+'AdministratorAccess'. Select the 'AdministratorAccess' policy. Click the
 'Next' button.
 
-	![Searching for and selecting the SystemAdministrator
+	![Searching for and selecting the AdministratorAccess
 	policy](../../../.gitbook/assets/add-role-details-policies.png)
 
 1. Input the  new role details:

@@ -129,6 +129,16 @@ newly created account.
 
 #### Configure a e2e test account
 
+1. Navigate to the ['IAM'
+page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home).
+
+1. Click the 'Create' button next to the 'Account Alias' on the right sidebar.
+Input 'civiform-cloud-deploy-infra-tests-N' where N is the next test account
+number.  For example, if the next test account number was 2, input
+'civiform-cloud-deploy-infra-tests-2'.
+
+	![Add account alias](../../../.gitbook/assets/account-alias.png)
+
 1. Navigate to the ['IAM > Identity providers'
 page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/identity_providers).
 

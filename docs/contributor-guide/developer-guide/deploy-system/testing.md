@@ -41,6 +41,8 @@ The account creation and configurations process was:
 1. Created a new e2e test account in the CiviForm dev AWS organization.
 1. Logged into the new account by switching roles into the default
    OrganizationAccountAccessRole role created in the new account.
+1. Added an account alias for the new account.
+1. Added an AWS Certificate Manager certificate in the new account.
 1. Added the GitHub OpenID Connect (OIDC) identity provider to the new AWS
    account.
 1. Added an e2e-test-runner role that can be assumed by entities provided by
@@ -116,8 +118,9 @@ click the 'Move' button under the 'AWS account' section in the dropdown.
 
   - 'Account' field: input the account number you want to log in to.
   - 'Role' field: input 'OrganizationAccountAccessRole'.
-  - 'Display Name' field: input the account name, 'cloud-deploy-infra-tests-2'
-	for example.
+  - 'Display Name' field: input 'cloud-deploy-infra-tests-N 'where N is the
+	next test account number.  For example, if the next test account number was
+	2, input 'civiform-cloud-deploy-infra-tests-2'.
 
 	![Switch role details](../../../.gitbook/assets/switch-role-details.png)
 
@@ -135,9 +138,82 @@ page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home
 1. Click the 'Create' button next to the 'Account Alias' on the right sidebar.
 Input 'civiform-cloud-deploy-infra-tests-N' where N is the next test account
 number.  For example, if the next test account number was 2, input
-'civiform-cloud-deploy-infra-tests-2'.
+'civiform-cloud-deploy-infra-tests-2'. The account alias is needed to run
+aws-nuke on the account.
 
 	![Add account alias](../../../.gitbook/assets/account-alias.png)
+
+1. Navigate to the ['AWS Certificate Manager > Certificates > Request
+certificate'
+page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/request).
+Keep the default 'Request a public certificate' option selected. Click the
+'Next' button.
+
+	![AWS Certificate Manager > Certificates > Request certificate
+	page](../../../.gitbook/assets/request-cert.png)
+
+1. Input the certificate details:
+
+	- 'Fully qualified domain name' field: input 'cloud-deploy-infra-tests-N'
+	  where N is the next test account number.  For example, if the next test
+	  account number was 2, input 'civiform-cloud-deploy-infra-tests-2'.
+	- 'Validation method' selection: keep the default selection of 'DNS
+	  validation - recommended' selected.
+	- 'Key algorithm' selection: keep the default selection of 'RSA 2048'
+	  selected.
+
+	![New certificate details](../../../.gitbook/assets/new-cert-details.png)
+
+1. Click the 'Request' button.
+
+1. You should be redirected to the ['AWS Certificate Manager > Certificates'
+page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/list)
+and there should be a banner at the top of the page that says 'Successfully
+requested certificate with ID ...'.  Click the 'View certificate' button in the
+banner.
+
+	![Certificate request
+	banner](../../../.gitboot/assets/view-cert-request.png)
+
+1. In the 'Domains' section of the certificate detail page, there should be a
+single row with 'CNAME' in the 'Type' column. The values in the 'CNAME name'
+and 'CNAME value' columns are used to validate that we control the domain
+(civiform.dev) requested by the certificate. Copy both the 'CNAME name' and
+'CNAME value' column values, you will need them in the following steps.
+
+	![CNAME validation values in certificate detail
+	page](../../../.gitbook/assets/validation-details.png)
+
+1. In a new tab, open the [civiform.dev DNS configuration
+page](https://domains.google.com/registrar/civiform.dev/dns). Click the 'Manage
+custom records' button in the 'Resource records > Custom records' box.
+
+	![Manage custom records
+	button](../../../.gitbook/assets/manage-records.png)
+
+1. At the bottom of the list there should be empty inputs for a new record.
+Input the following details:
+
+  - 'Host name' field: input the value of the 'CNAME name' column. Remove the
+	'.civiform.dev' part at the end of the string. Google Domains automatically
+	appends this to whatever you enter. If you do not remove it, you will add a
+	CNAME record for
+	'<random_id>.cloud-deploy-infra-tests-N.civiform.dev.civiform.dev' which is
+	incorrect.
+  - 'Type' selection: choose 'CNAME'.
+  - 'TTL' field: leave the default of '3600'.
+  - 'Data' field: input the value of the 'CNAME value' column.
+
+  ![New record details](../../../.gitbook/assets/new-record-details.png)
+
+1. Click the 'Save' button. It will take a minute or two for AWS to see and
+validate the new CNAME record. Navigate to the ['AWS Certificate Manager >
+Certificates'
+page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/list).
+Once the validation has succeeded, the 'Status' column of the 'Certificates'
+list should say 'Issued'.
+
+	![Valid certificate in list](../../../.gitbook/assets/valid-cert.png)
 
 1. Navigate to the ['IAM > Identity providers'
 page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/identity_providers).

@@ -194,15 +194,15 @@ custom records' button in the 'Resource records > Custom records' box.
 1. At the bottom of the list there should be empty inputs for a new record.
 Input the following details:
 
-  - 'Host name' field: input the value of the 'CNAME name' column. Remove the
-	'.civiform.dev' part at the end of the string. Google Domains automatically
-	appends this to whatever you enter. If you do not remove it, you will add a
-	CNAME record for
-	'<random_id>.cloud-deploy-infra-tests-N.civiform.dev.civiform.dev' which is
-	incorrect.
-  - 'Type' selection: choose 'CNAME'.
-  - 'TTL' field: leave the default of '3600'.
-  - 'Data' field: input the value of the 'CNAME value' column.
+	- 'Host name' field: input the value of the 'CNAME name' column. Remove the
+	  '.civiform.dev' part at the end of the string. Google Domains
+	  automatically appends this to whatever you enter. If you do not remove
+	  it, you will add a CNAME record for
+	  '<random_id>.cloud-deploy-infra-tests-N.civiform.dev.civiform.dev' which
+	  is incorrect.
+	- 'Type' selection: choose 'CNAME'.
+	- 'TTL' field: leave the default of '3600'.
+	- 'Data' field: input the value of the 'CNAME value' column.
 
   ![New record details](../../../.gitbook/assets/new-record-details.png)
 

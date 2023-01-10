@@ -173,7 +173,7 @@ requested certificate with ID ...'.  Click the 'View certificate' button in the
 banner.
 
 	![Certificate request
-	banner](../../../.gitboot/assets/view-cert-request.png)
+	banner](../../../.gitbook/assets/view-cert-request.png)
 
 1. In the 'Domains' section of the certificate detail page, there should be a
 single row with 'CNAME' in the 'Type' column. The values in the 'CNAME name'

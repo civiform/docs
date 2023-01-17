@@ -157,6 +157,10 @@ It's easy for the intention of code review comments to be unclear or get misinte
 
 You can select the reviewer you feel most has context on your PR. If you want a round robin review, our repo supports that (it will cycle through people within the team 'civiform/developers', more details on [how to add roundrobin reviews here](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team). Once that is done you can add the name of the team (civiform/developers) in the reviewer box and it will auto assign someone.
 
+#### Responding to comments
+
+When a review has been provided, reply to comments and then re-request a review by clicking the "arrows pointing in a circle" icon next to the reviewers name in the Reviewers section on the Conversation tab.
+
 #### Approval and merging
 
 Reviewers should grant approval if they do not feel additional review is necessary before merging. This does not necessarily mean no more changes are required before merging, but that any further changes are expected to be minor enough to not require review.
@@ -167,7 +171,7 @@ If the pull request does not require additional changes, the reviewer should mer
 
 #### 1. Provide comments concisely
 
-There are two ways to leave comments and two interfaces to reply to a PR review request.  
+There are two ways to leave comments (whether giving or replying), and two interfaces to reply to a PR review request.  
 
 The `Discussions` tab will only let you apply single comments and replies that each generate and email.
 

@@ -184,11 +184,13 @@ To run the tests:
     
     
 <b>TIP:</b> To speed up the running of tests beyond selecting a specific test file,
-you can run an individual test case. Open the test file and replace the line that 
-begins with "it" 
+you can focus the run to only execute a single it test or describe suite per file 
+by prefixing it with f (fit and fdescribe). 
+For example, open the test file and find the line that begins with "it". 
 ```
 it("", async => {})   replace with    fit("", async => {})
 ```
+
 
 ### Guidelines for functional browser tests
 

@@ -187,7 +187,7 @@ To run the tests:
 you can run an individual test case. Open the test file and replace the line that 
 begins with "it" 
 ```
-it("", async => {})   replace with    it("", async => {})
+it("", async => {})   replace with    fit("", async => {})
 ```
 
 ### Guidelines for functional browser tests

@@ -181,6 +181,16 @@ To run the tests:
     bin/run-browser-tests landing_page.test.ts
     ```
     Use the `--debug` flag to print debug logs as the test runs.
+    
+    
+<b>TIP:</b> To speed up the running of tests beyond selecting a specific test file,
+you can focus the run to only execute a single it test or describe suite per file 
+by prefixing it with f (fit and fdescribe). 
+For example, open the test file and find the line that begins with "it". 
+```
+it("", async => {})   replace with    fit("", async => {})
+```
+
 
 ### Guidelines for functional browser tests
 
@@ -205,6 +215,7 @@ Accessibility (a11y) testing also needs to happen at the browser test level,
 since it checks the final generated HTML for a11y violations. All applicant
 facing features should be covered by an a11y test check. See the
 [accessibility test section](#axe-accessibility-tests) for more details.
+
 
 #### Browser test reliability
 

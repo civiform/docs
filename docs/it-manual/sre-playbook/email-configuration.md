@@ -50,8 +50,9 @@ to applicants, program admins, and TIs).** Follow [these
 steps](https://docs.aws.amazon.com/ses/latest/dg/request-production-access.html)
 to take SES out of sandbox mode.
 
-We create email-verified identities for each unique email specified by
-`SENDER_EMAIL_ADDRESS`, `STAGING_PROGRAM_ADMIN_NOTIFICATION_MAILING_LIST`,
+We create email-verified identities for each unique email specified by the
+server environment variables `SENDER_EMAIL_ADDRESS`,
+`STAGING_PROGRAM_ADMIN_NOTIFICATION_MAILING_LIST`,
 `STAGING_TI_NOTIFICATION_MAILING_LIST`, and
 `STAGING_APPLICANT_NOTIFICATION_MAILING_LIST`. After the initial deployment,
 AWS will send 'Email Address Verification Request' emails to each created

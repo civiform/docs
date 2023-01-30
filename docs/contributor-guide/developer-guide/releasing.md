@@ -24,7 +24,7 @@ On the running servers inspect the DOM tree for `<head><meta name="civiform-buil
 
 * [staging-azure](https://staging-azure.civiform.dev/)
 * [staging-AWS](https://staging-aws.civiform.dev/)
-* [Seattle staging](https://staging.seattle.civiform.com/)
+* [Seattle staging](https://civiformstage.seattle.gov/)
 
 ### 2. Create a New Draft Release
 
@@ -95,7 +95,7 @@ Message Matthew Sprenke (City of Seattle) in the `#release-discussion` channel o
 ```
 A new draft release vX.X.X is ready for testing. Release notes can be found here: [INSERT LINK TO GITHUB DRAFT RELEASE HERE].
 Draft release is available on the following stagings:
-https://staging.seattle.civiform.com/
+https://civiformstage.seattle.gov/
 https://staging-aws.civiform.dev/
 
 Please perform necessary QA checks before EOD Wed [INSERT DATE] PT time. If you find any issues with the release - reply to this announcement.

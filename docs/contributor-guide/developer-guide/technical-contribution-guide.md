@@ -173,7 +173,7 @@ If the pull request does not require additional changes, the reviewer should mer
 
 There are two ways to leave comments (whether giving or replying), and two interfaces to reply to a PR review request.  
 
-The `Discussions` tab will only let you apply single comments and replies that each generate and email.
+The `Discussions` tab will only let you apply single comments and replies that each generate an email.
 
 The `Files` tab, will allow you to do the above as well "Start a review" when you leave your first comment.  All subsequent comments in the `Files` tab will be batched into the review.  When you're done reviewing them you can then publish them all with `Review Changes` in the upper right.
 

@@ -47,4 +47,4 @@ Generally simpler text and more common online concepts will be a yes.
 If the answer is no you have two options:
 
 1. Leave your PR outstanding until they are available.  You'll eventually have to get your code synced to main, potentially with merge conflicts, before you can merge.
-2. Add a [FeatureFlag](https://docs.civiform.us/contributor-guide/developer-guide/feature-flags) around the code that adds your new text, and have it disabled until the translations are available.  In this way your future code changes are then to removed the feature flag and conditionals.  You can then choose to enable it in the browser test server configuration, and check in any image diffs.
+2. Add a [FeatureFlag](feature-flags.md) around the code that adds your new text, and have it disabled until the translations are available.  In this way your future code changes are then to removed the feature flag and conditionals.  You can then choose to enable it in the browser test server configuration, and check in any image diffs.

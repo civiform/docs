@@ -19,7 +19,7 @@ Project-wide planning and prioritization is managed by the Product Design Commit
  
     Mechanisms for feedback include:
     * Direct consultation with Member Organizations.
-    * Discussion or polls via [email lists and Slack](https://docs.civiform.us/governance-and-management/governance/communication). 
+    * Discussion or polls via [email lists and Slack](communication.md). 
     * Demos, reviews, and discussions in [Governance Committee meetings](https://docs.google.com/document/d/1MQikQy2I77IOEh_FCIG0pH6IDPC_nNtiJphAOychY0Q/edit#heading=h.u8srcsjo65zj).
     * Remaining ambiguities should be resolved by [agreed-upon prioritization criteria](https://docs.google.com/document/d/1I47tNPSylU2MtABXJfRQfXPApM3LH5vDXv2uSUhRj8M/edit). 
 

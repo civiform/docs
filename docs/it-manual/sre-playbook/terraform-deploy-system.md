@@ -23,7 +23,7 @@ You will need couple of values that are configured outside of Civiform before yo
     * Terraform brings up resources in cloud (database, network, server, etc).
     * Asks confirmation few times before creating resources listing everything that will be created. 
     * Safe to re-run script if it fails. There is known [issue](https://github.com/cn-terraform/terraform-aws-logs-s3-bucket/issues/6) where `bin/setup` fails on the first run.
-    * The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our oncall to resolve the issue. Our oncall [responds to new issues in the civiform issue tracker](https://docs.civiform.us/governance-and-management/project-management/on-call-guide#on-call-responsibilities).
+    * The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our oncall to resolve the issue. Our oncall [responds to new issues in the civiform issue tracker](../../governance-and-management/project-management/on-call-guide#on-call-responsibilities).
 ## Deploy
 
 1. Find the version that you want to deploy on [Github](https://github.com/civiform/civiform/releases).

@@ -34,6 +34,7 @@
   * [Apply to a program](user-manual/trusted-intermediary-guide/apply-to-a-program.md)
 * [Operational Resources](user-manual/operational-resources/README.md)
   * [Civic entity staffing overview](user-manual/operational-resources/civic-entity-staffing-overview.md)
+  * [Program assessment](user-manual/operational-resources/program-assessment.md)
 
 ## IT Manual
 

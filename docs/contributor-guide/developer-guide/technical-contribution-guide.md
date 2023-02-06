@@ -219,3 +219,7 @@ Want to get up to speed on this project? Awesome! Please see the following:
 
 * Work on at least one issue tagged with [`good first issue`](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) before moving to others. Feel free to ask for task recommendations in Slack.
 * Pair program with one of the project's main engineers. Reach out on Slack - we're happy to help!
+
+### Technical Design Reviews
+
+See the [Governance Processes](https://docs.civiform.us/governance-and-management/governance/governance-processes#technical-design-decisions) page for an overview of how technical design decisions are made and the process for creating a technical design document.

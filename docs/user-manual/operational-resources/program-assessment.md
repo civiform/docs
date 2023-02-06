@@ -33,25 +33,25 @@ Answering these questions can help form a *journey map* of applicants and progra
 For example:
 
 **Discovery and application** (X minutes total):
-1. Resident discovers program through local community group
-2. Resident fills out application X via website at www.example.com with help from local staff member (30 minutes)
-3. Resident comes into program office to drop off paper form (30 minutes)
-4. Paper form is prepared for processing by program staff in X group (once daily)
+  1. Resident discovers program through local community group
+  2. Resident fills out application X via website at www.example.com with help from local staff member (30 minutes)
+  3. Resident comes into program office to drop off paper form (30 minutes)
+  4. Paper form is prepared for processing by program staff in X group (once daily)
 
 **Processing** (X days total):
-1. Program staff is assigned an application to process (once daily)
-2. Program staff begins processing application within X days after submission
-3. Program staff from group A enters information into computer system Y
-4. Program staff cross-references data in systems Y and Z
-5. Program staff calls applicant to verify information D (X minutes)
-6. Applicant must bring document D into office (X days waiting)
-7. Program staff verifies document D against database Y (X minutes)
-8. Application is approved. Status is shared with applicant through system Y (X days)
+  1. Program staff is assigned an application to process (once daily)
+  2. Program staff begins processing application within X days after submission
+  3. Program staff from group A enters information into computer system Y
+  4. Program staff cross-references data in systems Y and Z
+  5. Program staff calls applicant to verify information D (X minutes)
+  6. Applicant must bring document D into office (X days waiting)
+  7. Program staff verifies document D against database Y (X minutes)
+  8. Application is approved. Status is shared with applicant through system Y (X days)
 
 **Delivery** (X days total):
-1. Approved application is marked for delivery in system A (once per application manually, 10 minutes)
-2. Data is exported from system A to system B for fulfillment (once daily for all applications automatically)
-3. Benefits are delivered through mail (X days)
+  1. Approved application is marked for delivery in system A (once per application manually, 10 minutes)
+  2. Data is exported from system A to system B for fulfillment (once daily for all applications automatically)
+  3. Benefits are delivered through mail (X days)
 
 (feel free to adjust these section categories or use your own)
 
@@ -59,22 +59,22 @@ ___
 
 **Discovery and application** (X minutes total):
 
-1. ...
-2. ...
-3. ...
+  1. ...
+  2. ...
+  3. ...
 
 
 **Processing** (X days total):
 
-1. ...
-2. ...
-3. ...
+  1. ...
+  2. ...
+  3. ...
 
 **Delivery** (X days total):
 
-1. ...
-2. ...
-3. ...
+  1. ...
+  2. ...
+  3. ...
 
 </i>
 

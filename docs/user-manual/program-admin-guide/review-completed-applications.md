@@ -4,7 +4,7 @@ description: How Program Administrators can use CiviForm.
 
 # Review completed applications
 
-A Program Admin can review completed applications using CiviForm. Program Admins only have access to applications for the programs they are assigned to manage. For more details, go to [CiviForm data management & security](https://github.com/seattle-uat/documents/wiki/How-CiviForm-works#civiform-data-management--security).
+A Program Admin can review completed applications using CiviForm. Program Admins only have access to applications for the programs they are assigned to manage. For more details, go to [CiviForm data management & security](../../overview/how-does-civiform-work.md#a-note-on-data-management--security).
 
 **Tip**: To retrieve a list of all applications, click **Download All (CSV)**.
 

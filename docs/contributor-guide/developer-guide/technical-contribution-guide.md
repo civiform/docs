@@ -222,4 +222,4 @@ Want to get up to speed on this project? Awesome! Please see the following:
 
 ### Technical Design Reviews
 
-See the [Governance Processes](https://docs.civiform.us/governance-and-management/governance/governance-processes#technical-design-decisions) page for an overview of how technical design decisions are made and the process for creating a technical design document.
+See the [Governance Processes](../../governance-and-management/governance/governance-processes.md#technical-design-decisions) page for an overview of how technical design decisions are made and the process for creating a technical design document.

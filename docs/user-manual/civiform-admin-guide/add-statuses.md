@@ -16,7 +16,7 @@ Note: in order to use status tracking, your IT Admin must have enabled the featu
 6. Enter your status name and (optional) any email text you would like the applicant to receive upon the status change.
 7. Repeat steps 5-6 for all statuses you would like to create.
 
-**Note**: you must Publish All Drafts in order for your statuses to go live. See [How to Publish Programs]([url](https://docs.civiform.us/user-manual/civiform-admin-guide/publish-a-program)) article for instructions on publishing. 
+**Note**: you must Publish All Drafts in order for your statuses to go live. See [How to Publish Programs](publish-a-program.md) for instructions on publishing. 
 
 **Tip**: Don’t see Manage Statuses as an option when you click the three dot icon? This is because you must add statuses to a Draft program, not an Active program. **To create a Draft version of your program**:
 1. Sign in to CiviForm as a CiviForm Admin.

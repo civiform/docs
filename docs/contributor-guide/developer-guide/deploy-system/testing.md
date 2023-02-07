@@ -202,6 +202,7 @@ if you don't know who to ask about access.
 
 9. Click the "create new record" button at the bottom of the list.
 Input the following details:
+
 	- 'Host name' field: input the value of the 'CNAME name' column. Remove the
 	  '.civiform.dev' part at the end of the string. Google Domains
 	  automatically appends this to whatever you enter. If you do not remove
@@ -211,6 +212,7 @@ Input the following details:
 	- 'Type' selection: choose 'CNAME'.
 	- 'TTL' field: leave the default of '3600'.
 	- 'Data' field: input the value of the 'CNAME value' column.
+	
   ![New record details](../../../.gitbook/assets/new-record-details.png)
 
 10. Click the 'Save' button. It will take a minute or two for AWS to see and

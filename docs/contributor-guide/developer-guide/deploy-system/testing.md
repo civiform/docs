@@ -59,7 +59,7 @@ Steps to create an additional test account:
    Organizations'
    page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/root).
    If you don't have the login details and don'tknow who to ask, 
-   please reach out on the engineering slack channel in the [CiviForm Slack workspace](https://civiform.slack.com/),
+   please reach out on the engineering slack channel in the [CiviForm Slack workspace](https://civiform.slack.com/).
 
 2. Determine the next test account number by looking at the
    'cloud-deploy-infra-tests-N' accounts in the 'cloud-deploy-infra-tests'
@@ -194,7 +194,7 @@ and 'CNAME value' columns are used to validate that we control the domain
 page](https://domains.google.com/registrar/civiform.dev/dns). Click the 'Manage
 custom records' button in the 'Resource records > Custom records' box. 
 If what you see is different to the below, you likely need to be added as a member to 
-the google domains account. Please reach out on the engineering slack channel in the [CiviForm Slack workspace](https://civiform.slack.com/).
+the google domains account. Please reach out on the engineering slack channel in the [CiviForm Slack workspace](https://civiform.slack.com/),
 if you don't know who to ask about access.
 
 	![Manage custom records

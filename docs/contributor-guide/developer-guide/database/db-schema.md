@@ -1,6 +1,6 @@
 # DB Schema
 
-The database schema is derived by combining all of the [evolution SQL files](https://github.com/civiform/civiform/tree/main/server/conf/evolutions/default) in sequential order. Its current state as of #40 follows.  This can be generated using `pg_dump -s postgres` and then `\d tableName` on the table of interest.
+The database schema is derived by combining all of the [evolution SQL files](https://github.com/civiform/civiform/tree/main/server/conf/evolutions/default) in sequential order. Its current state as of #40 follows.  This can be generated using `pg_dump -s postgres` and then `\d tableName` on the table of interest. See [Play's managing database evolution documentation](https://www.playframework.com/documentation/2.8.x/Evolutions) for more.
 
 Each table is mapped to a [models/ class](https://github.com/civiform/civiform/tree/main/server/app/models), and the classes contain more context.
 

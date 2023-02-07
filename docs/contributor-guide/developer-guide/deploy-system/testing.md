@@ -58,6 +58,8 @@ Steps to create an additional test account:
 1. Log in to the CiviForm dev AWS account and navigate to the ['AWS
    Organizations'
    page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/root).
+   If you don't have the login details and don'tknow who to ask, 
+   please reach out on the engineering slack channel in the [CiviForm Slack workspace](https://civiform.slack.com/),
 
 2. Determine the next test account number by looking at the
    'cloud-deploy-infra-tests-N' accounts in the 'cloud-deploy-infra-tests'
@@ -69,7 +71,7 @@ Steps to create an additional test account:
 	![Accounts in the cloud-deploy-infra-tests organizational
 	unit](../../../.gitbook/assets/account-list.png)
 
-3. Click the 'Add an AWS account' button.
+3. Go to [AWS Accounts](https://us-east-1.console.aws.amazon.com/organizations/v2/home/accounts) and click the 'Add an AWS account' button.
 
 	![Add AWS account from AWS Organizations
 	page](../../../.gitbook/assets/add-account.png)
@@ -113,6 +115,9 @@ click the 'Move' button under the 'AWS account' section in the dropdown.
 1. Click on the top-rightmost dropdown then click the 'Switch role' button.
 
 	![Switch role dropdown](../../../.gitbook/assets/switch-role.png)
+	
+You will likely see warnings that "you don't have permissions". This is normal
+because you are now logged in with a none-root account.
 
 2. Input the following details:
 
@@ -140,6 +145,7 @@ Input 'civiform-cloud-deploy-infra-tests-N' where N is the next test account
 number.  For example, if the next test account number was 2, input
 'civiform-cloud-deploy-infra-tests-2'. The account alias is needed to run
 aws-nuke on the account.
+<br>Then click the "save changes" button.
 
 	![Add account alias](../../../.gitbook/assets/account-alias.png)
 
@@ -186,14 +192,16 @@ and 'CNAME value' columns are used to validate that we control the domain
 
 8. In a new tab, open the [civiform.dev DNS configuration
 page](https://domains.google.com/registrar/civiform.dev/dns). Click the 'Manage
-custom records' button in the 'Resource records > Custom records' box.
+custom records' button in the 'Resource records > Custom records' box. 
+If what you see is different to the below, you likely need to be added as a member to 
+the google domains account. Please reach out on the engineering slack channel in the [CiviForm Slack workspace](https://civiform.slack.com/).
+if you don't know who to ask about access.
 
 	![Manage custom records
 	button](../../../.gitbook/assets/manage-records.png)
 
-9. At the bottom of the list there should be empty inputs for a new record.
+9. Click the "create new record" button at the bottom of the list.
 Input the following details:
-
 	- 'Host name' field: input the value of the 'CNAME name' column. Remove the
 	  '.civiform.dev' part at the end of the string. Google Domains
 	  automatically appends this to whatever you enter. If you do not remove
@@ -203,7 +211,6 @@ Input the following details:
 	- 'Type' selection: choose 'CNAME'.
 	- 'TTL' field: leave the default of '3600'.
 	- 'Data' field: input the value of the 'CNAME value' column.
-
   ![New record details](../../../.gitbook/assets/new-record-details.png)
 
 10. Click the 'Save' button. It will take a minute or two for AWS to see and

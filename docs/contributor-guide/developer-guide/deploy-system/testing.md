@@ -39,15 +39,15 @@ root CiviForm dev organization and named 'cloud-deploy-infra-tests-0'.
 The account creation and configurations process was:
 
 1. Created a new e2e test account in the CiviForm dev AWS organization.
-1. Logged into the new account by switching roles into the default
+2. Logged into the new account by switching roles into the default
    OrganizationAccountAccessRole role created in the new account.
-1. Added an account alias for the new account.
-1. Added an AWS Certificate Manager certificate in the new account.
-1. Added the GitHub OpenID Connect (OIDC) identity provider to the new AWS
+3. Added an account alias for the new account.
+4. Added an AWS Certificate Manager certificate in the new account.
+5. Added the GitHub OpenID Connect (OIDC) identity provider to the new AWS
    account.
-1. Added an e2e-test-runner role that can be assumed by entities provided by
+6. Added an e2e-test-runner role that can be assumed by entities provided by
    the GitHub OIDC provider (GitHub action runners).
-1. Edited the e2e-test-runner role trust policy so that only GitHub action
+7. Edited the e2e-test-runner role trust policy so that only GitHub action
    runners scoped to the civiform/cloud-deploy-infra main branch are allowed to
    assume the e2e-test-runner role.
 
@@ -59,7 +59,7 @@ Steps to create an additional test account:
    Organizations'
    page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/root).
 
-1. Determine the next test account number by looking at the
+2. Determine the next test account number by looking at the
    'cloud-deploy-infra-tests-N' accounts in the 'cloud-deploy-infra-tests'
    organizational unit account list. For example, if there was only one account
    'cloud-deploy-infra-tests-0', the next test account number would be 1. If
@@ -69,12 +69,12 @@ Steps to create an additional test account:
 	![Accounts in the cloud-deploy-infra-tests organizational
 	unit](../../../.gitbook/assets/account-list.png)
 
-1. Click the 'Add an AWS account' button.
+3. Click the 'Add an AWS account' button.
 
 	![Add AWS account from AWS Organizations
 	page](../../../.gitbook/assets/add-account.png)
 
-1. Input the new account details:
+4. Input the new account details:
 
    - 'AWS account name' field: input 'cloud-deploy-infra-tests-N' where N is
 	 the next test account number.  For example, if the next test account
@@ -89,20 +89,20 @@ Steps to create an additional test account:
 	![Add AWS account
 	details](../../../.gitbook/assets/add-account-details.png)
 
-1. Click the 'Create AWS account' button. The account creation will take a
+5. Click the 'Create AWS account' button. The account creation will take a
 minute or two. Once it is created you will see it in the 'Organizational
 structure' list on the ['AWS Organizations'
 page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/root)
 page. **Copy the account number listed for the newly created account. You will
 need it to log into the new account and configure it.**
 
-1. Select the checkbox for the new account, click the 'Actions' button, then
+6. Select the checkbox for the new account, click the 'Actions' button, then
 click the 'Move' button under the 'AWS account' section in the dropdown.
 
 	![Newly created AWS account in Organizational structure
 	list](../../../.gitbook/assets/new-account-in-list.png)
 
-1. Select the 'cloud-deploy-infra-tests' organizational unit then click the
+7. Select the 'cloud-deploy-infra-tests' organizational unit then click the
 'Move AWS account' button.
 
 	![Move account to cloud-deploy-infra-tests organizational
@@ -114,7 +114,7 @@ click the 'Move' button under the 'AWS account' section in the dropdown.
 
 	![Switch role dropdown](../../../.gitbook/assets/switch-role.png)
 
-1. Input the following details:
+2. Input the following details:
 
   - 'Account' field: input the account number you want to log in to.
   - 'Role' field: input 'OrganizationAccountAccessRole'.
@@ -124,7 +124,7 @@ click the 'Move' button under the 'AWS account' section in the dropdown.
 
 	![Switch role details](../../../.gitbook/assets/switch-role-details.png)
 
-1. Click the 'Switch Role' button.  You should now be viewing the newly created
+3. Click the 'Switch Role' button.  You should now be viewing the newly created
 account. To verify, navigate to the ['IAM
 dashboard'](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home).
 On the right sidebar, the 'Account ID' should match the account number of the
@@ -135,7 +135,7 @@ newly created account.
 1. Navigate to the ['IAM'
 page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home).
 
-1. Click the 'Create' button next to the 'Account Alias' on the right sidebar.
+2. Click the 'Create' button next to the 'Account Alias' on the right sidebar.
 Input 'civiform-cloud-deploy-infra-tests-N' where N is the next test account
 number.  For example, if the next test account number was 2, input
 'civiform-cloud-deploy-infra-tests-2'. The account alias is needed to run
@@ -143,7 +143,7 @@ aws-nuke on the account.
 
 	![Add account alias](../../../.gitbook/assets/account-alias.png)
 
-1. Navigate to the ['AWS Certificate Manager > Certificates > Request
+3. Navigate to the ['AWS Certificate Manager > Certificates > Request
 certificate'
 page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/request).
 Keep the default 'Request a public certificate' option selected. Click the
@@ -152,7 +152,7 @@ Keep the default 'Request a public certificate' option selected. Click the
 	![AWS Certificate Manager > Certificates > Request certificate
 	page](../../../.gitbook/assets/request-cert.png)
 
-1. Input the certificate details:
+4. Input the certificate details:
 
 	- 'Fully qualified domain name' field: input 'cloud-deploy-infra-tests-N'
 	  where N is the next test account number.  For example, if the next test
@@ -164,9 +164,9 @@ Keep the default 'Request a public certificate' option selected. Click the
 
 	![New certificate details](../../../.gitbook/assets/new-cert-details.png)
 
-1. Click the 'Request' button.
+5. Click the 'Request' button.
 
-1. You should be redirected to the ['AWS Certificate Manager > Certificates'
+6. You should be redirected to the ['AWS Certificate Manager > Certificates'
 page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/list)
 and there should be a banner at the top of the page that says 'Successfully
 requested certificate with ID ...'.  Click the 'View certificate' button in the
@@ -175,7 +175,7 @@ banner.
 	![Certificate request
 	banner](../../../.gitbook/assets/view-cert-request.png)
 
-1. In the 'Domains' section of the certificate detail page, there should be a
+7. In the 'Domains' section of the certificate detail page, there should be a
 single row with 'CNAME' in the 'Type' column. The values in the 'CNAME name'
 and 'CNAME value' columns are used to validate that we control the domain
 (civiform.dev) requested by the certificate. Copy both the 'CNAME name' and
@@ -184,14 +184,14 @@ and 'CNAME value' columns are used to validate that we control the domain
 	![CNAME validation values in certificate detail
 	page](../../../.gitbook/assets/validation-details.png)
 
-1. In a new tab, open the [civiform.dev DNS configuration
+8. In a new tab, open the [civiform.dev DNS configuration
 page](https://domains.google.com/registrar/civiform.dev/dns). Click the 'Manage
 custom records' button in the 'Resource records > Custom records' box.
 
 	![Manage custom records
 	button](../../../.gitbook/assets/manage-records.png)
 
-1. At the bottom of the list there should be empty inputs for a new record.
+9. At the bottom of the list there should be empty inputs for a new record.
 Input the following details:
 
 	- 'Host name' field: input the value of the 'CNAME name' column. Remove the
@@ -206,7 +206,7 @@ Input the following details:
 
   ![New record details](../../../.gitbook/assets/new-record-details.png)
 
-1. Click the 'Save' button. It will take a minute or two for AWS to see and
+10. Click the 'Save' button. It will take a minute or two for AWS to see and
 validate the new CNAME record. Navigate to the ['AWS Certificate Manager >
 Certificates'
 page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/list).
@@ -215,15 +215,15 @@ list should say 'Issued'.
 
 	![Valid certificate in list](../../../.gitbook/assets/valid-cert.png)
 
-1. Navigate to the ['IAM > Identity providers'
+11. Navigate to the ['IAM > Identity providers'
 page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/identity_providers).
 
-1. Click the 'Add provider' button.
+12. Click the 'Add provider' button.
 
 	![Add provider from AWS IAM > Identity providers
 	page](../../../.gitbook/assets/add-identity-provider.png)
 
-1. Input the new provider details:
+13. Input the new provider details:
 
 	- 'Provider type' selection: choose 'OpenID Connect'.
 	- 'Provider URL' field: input
@@ -234,16 +234,16 @@ page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/iden
 	![Add provider
 	details](../../../.gitbook/assets/add-identity-provider-details.png).
 
-1. Click the 'Add provider' button.
-1. Navigate to the ['IAM > Roles'
+14. Click the 'Add provider' button.
+15. Navigate to the ['IAM > Roles'
 page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/roles).
 
-1. Click the 'Create role' button.
+16. Click the 'Create role' button.
 
 	![Create role from AWS IAM > Roles
 	page](../../../.gitbook/assets/add-role.png).
 
-1. Input the new role identity provider details:
+17. Input the new role identity provider details:
 
 	- 'Trusted entity type' selection: choose 'Web identity'.
 	- 'Identity provider' dropdown: choose
@@ -253,20 +253,20 @@ page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/role
 	![New role identity provider
 	details](../../../.gitbook/assets/add-role-details-provider.png)
 
-1. Click the 'Next' button. In the 'Permissions policies' screen, search for
+18. Click the 'Next' button. In the 'Permissions policies' screen, search for
 'AdministratorAccess'. Select the 'AdministratorAccess' policy. Click the
 'Next' button.
 
 	![Searching for and selecting the AdministratorAccess
 	policy](../../../.gitbook/assets/add-role-details-policies.png)
 
-1. Input the  new role details:
+19. Input the  new role details:
 
 	- 'Role name' field: input 'e2e-test-runner'.
 	- 'Description' field: input 'Role used by GitHub actions to run end-to-end
 	  tests'.
 
-1. Click the 'Create role' button. The created role should now be visible in
+20. Click the 'Create role' button. The created role should now be visible in
 the ['IAM > Roles'
 page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/roles).
 Click on the 'e2e-test-runner' role name.
@@ -274,17 +274,17 @@ Click on the 'e2e-test-runner' role name.
 	![e2e-test-runner shown in the Roles
 	list](../../../.gitbook/assets/role-in-list.png)
 
-1. In the 'e2e-test-runner' role details screen, click on the 'Trust
+21. In the 'e2e-test-runner' role details screen, click on the 'Trust
 relationships' tab then on the 'Edit trust policy' button.
 
 	![Edit trust policy button in e2e-test-runner role detail
 	page](../../../.gitbook/assets/edit-trust-policy.png)
 
-1. Add `"token.actions.githubusercontent.com:sub":
+22. Add `"token.actions.githubusercontent.com:sub":
 "repo:civiform/cloud-deploy-infra:ref:refs/heads/main"` to the
 `Statement.Condition.StringEquals` object.
 
 	![Add new field to Statement.Condition.StringEquals
 	object](../../../.gitbook/assets/edit-trust-policy-details.png)
 
-1. Click the 'Update policy' button.
+23. Click the 'Update policy' button.

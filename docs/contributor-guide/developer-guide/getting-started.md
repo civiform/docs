@@ -42,6 +42,11 @@ This setup will only include the files under (.../server), therefore, if you wou
 * Ensure `civiform-server` and `sources` are selected in second and third column,
 * Click on + on the right handside to add all folders under civiform except "server" to the content roots 
 
+If you still have trouble getting some symbols to show (such as `routes` packages), try the following:
+
+1. Go to Preferences, then "Languages and Frameworks", then "Scala".
+2. Switch Error Highlighting from "Built-in" to "Compiler".
+
 #### Configuring VSCode
 
 **Setup**

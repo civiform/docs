@@ -2,7 +2,7 @@
 
 ### Links
 
-* Seattle Staging: [https://staging.seattle.civiform.com](https://staging.seattle.civiform.com/loginForm)
+* Seattle Staging: [https://civiformstage.seattle.gov](https://civiformstage.seattle.gov)
 * Azure Staging: [https://staging-azure.civiform.dev](https://staging-azure.civiform.dev)
 * [Project Tracker and Product Roadmap](https://github.com/orgs/civiform/projects/1)
 

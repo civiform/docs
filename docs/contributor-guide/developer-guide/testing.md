@@ -160,6 +160,9 @@ To run the tests:
     ```
     bin/run-browser-test-env
     ```
+    
+    **TIP**: the server is accessible manually at http://localhost:9999.
+    
     To run browser tests with the Azure browser test environment, using Azurite
     (the Azure emnulator) instead of the AWS emulator, run:
     ```

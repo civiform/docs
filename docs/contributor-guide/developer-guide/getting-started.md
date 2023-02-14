@@ -44,8 +44,10 @@ This setup will only include the files under (.../server), therefore, if you wou
 
 If you still have trouble getting some symbols to show (such as `routes` packages), try the following:
 
-1. Go to Preferences, then "Languages and Frameworks", then "Scala".
-2. Switch Error Highlighting from "Built-in" to "Compiler".
+1. Go to the sbt shell **within IntelliJ** and run `compile`.
+2. Failing that:
+  * Go to Preferences, then "Languages and Frameworks", then "Scala".
+  * Switch Error Highlighting from "Built-in" to "Compiler".
 
 #### Configuring VSCode
 

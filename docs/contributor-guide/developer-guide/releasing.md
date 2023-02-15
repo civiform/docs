@@ -28,10 +28,16 @@ On the running servers inspect the DOM tree for `<head><meta name="civiform-buil
 
 ### 2. Create a New Draft Release
 
-Before proceding you'll need to determine:
+Before proceding you'll need to determine the Commit SHA and the next Release number.
 
-* Commit SHA: This is the middle item in the SNAPSHOT-sha-hash ID from Step 1
-* Release number: Pick the next minor number (1.X.0) since the [last release](https://github.com/civiform/civiform/releases), make sure to include the 'v' prefix.
+#### Commit SHA
+This is the middle item in the SNAPSHOT-sha-hash ID from Step 1.
+
+#### Release number
+* Release number is based on the [semver format](https://semver.org).
+* Review the version number from the [last release](https://github.com/civiform/civiform/releases) and use the [rules defining version numbers](https://docs.civiform.us/it-manual/sre-playbook/upgrading-to-a-new-release#version-numbers) to determine the new release number.
+* Make sure to include the 'v' prefix.
+* Discuss with the dev team before changing the major version number.
 
 With those values create the draft release with one of the following options.
 

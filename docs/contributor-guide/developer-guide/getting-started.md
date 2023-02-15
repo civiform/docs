@@ -42,12 +42,11 @@ This setup will only include the files under (.../server), therefore, if you wou
 * Ensure `civiform-server` and `sources` are selected in second and third column,
 * Click on + on the right handside to add all folders under civiform except "server" to the content roots 
 
-If you still have trouble getting some symbols to show (such as `routes` packages), try the following:
+If you still have trouble getting some symbols to show (such as `routes` packages), try the following, in order:
 
-1. Go to the sbt shell **within IntelliJ** and run `compile`.
-2. Failing that:
-  * Go to Preferences, then "Languages and Frameworks", then "Scala".
-  * Switch Error Highlighting from "Built-in" to "Compiler".
+1. Go to Project Structure and add `target/scala-2.13` to your Sources in the `civiform-server` Module.
+2. Go to the sbt shell **within IntelliJ** and run `compile`.
+3. Go to Preferences, then "Languages and Frameworks", then "Scala". Switch Error Highlighting from "Built-in" to "Compiler".
 
 #### Configuring VSCode
 

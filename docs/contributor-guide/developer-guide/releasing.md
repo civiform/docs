@@ -1,6 +1,6 @@
 # Releasing
 
-See [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md) for an overview of CiviForm release practices.
+See [Upgrading to a New Release](https://docs.civiform.us/it-manual/sre-playbook/upgrading-to-a-new-release) for an overview of CiviForm release practices.
 
 Releases are created weekly by the on-call engineer on Wednesday before 12pm. The on-call engineer may use the production meeting time to create the release if desired. Out-of-schedule releases may be created if requested by a civic entity (e.g. for an urgent bugfix).
 

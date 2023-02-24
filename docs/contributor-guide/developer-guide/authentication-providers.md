@@ -1,6 +1,6 @@
 # Authentication Providers
 
-CiviForm supports applicant and admin authentication via OpenID Connect (OIDC). We use [pac4j](https://www.pac4j.org/) for auth which hides most of gritty details. But many auth providers don't fully implement spec or have minor deviations from the spec. In those cases we need to dig into spec to debug and fix issues. Specs can be found here: https://openid.net/connect/. You can find debugging tips at the end of this page.
+CiviForm supports applicant and admin authentication via OpenID Connect (OIDC). We use [pac4j](https://www.pac4j.org/) for auth which hides most of the gritty details. But many auth providers deviations from the [OpenID specifications](https://openid.net/connect/). In those cases we need to dig into the spec to debug and fix issues. You can find debugging tips at the end of this page.
 
 Below we'll go over the implementation and configuration steps for currently supported authentication providers. A Civiform deployment should have exactly one admin authentication provider and one applicant authentication provider configured.
 
@@ -9,25 +9,25 @@ Below we'll go over the implementation and configuration steps for currently sup
 To familiarize yourself with OIDC it is useful to go through a setup using any OIDC provider. Setup across all providers roughly resemble one another. For practice purpose use https://auth0.com. CiviForm uses it on staging instances. Steps:
 
 1. **Get access to CiviForm auth0.com account.**  
-   Ask someone on the team to add it you the account (Settings -> Tenant Members -> Add member).
+   Ask someone on the team to add you to the account (Settings -> Tenant Members -> Add member).
 2. **Create test app.**  
    Create a test app on auth0.com. Take a look at "CiviForm AWS Staging" app as example. Use http://localhost:9000 as your domain.
 3. **Configure local CiviForm.**  
-   Set necessary settings in `application.conf`. They include `applicant_generic_oidc.client_id`, `applicant_generic_oidc.discovery_uri`. 
-4. **Test authentication.**  
-   Run CiviForm and test log in. You should be redirected to auth0.com and go through login process. At the end you should be redirected back to CiviForm.
+   Set  the necessary settings in [application.conf](https://github.com/civiform/civiform/blob/main/server/conf/application.conf). They include `applicant_generic_oidc.client_id`, `applicant_generic_oidc.discovery_uri`. 
+4. **Run CiviForm and test log in.**  
+   You should be redirected to auth0.com and go through the login process. At the end you should be redirected back to CiviForm.
    
 ## Admin Authentication
 
-### ADFS (OIDC)
+### Azure AD and ADFS (OIDC)
 
-### Azure AD (OIDC)
+Azure Active directory (Azure AD) is an identity provider designed by Microsoft. Active Directory Federation Services(ADFS) is a companion tool for single sign on.
 
-Below you'll find instructions on how to use Azure Active Directory to authenticate CiviForm and Program admins. High-level steps are to create an app in Azure AD, create a group that contains CiviForm admins and finally update CiviForm server config to use the app and the group we just created. These instructions are just an example of how to get basic authentication working. Administrators are encouraged to adapt Azure AD part to fit their needs. 
+Below you'll find instructions on how to use Azure AD to authenticate applicants and Program admins in CiviForm. High-level steps are to create an app in Azure AD, create a group that contains CiviForm admins and finally update the CiviForm server config to use the app and the group we created. These instructions are one example of how to get basic authentication working. Administrators are encouraged to adapt Azure AD to fit their needs. 
 
 #### Configure Azure AD
 
-1\. Login to [Azure Portal](https://portal.azure.com/), go to "Active Directory" => "App Registrations" and create a new app. During creation set `Redirect URI` to be _https://your-civiform-domain.gov/callback/AdClient_ replacing domain with your actual domain. The path `/callback/AdClient` is mandatory.
+1\. Login to [Azure Portal](https://portal.azure.com/), go to "Active Directory" => "App Registrations" and create a new app. During creation set the `Redirect URI` to _https://your-civiform-domain.gov/callback/AdClient_ replacing the domain with your actual domain. The path `/callback/AdClient` is mandatory.
 <details>
   <summary>Screenshots</summary>
 
@@ -43,9 +43,9 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
   ![image](https://user-images.githubusercontent.com/252053/191863376-d342092d-db5e-4111-96fa-a7fa751ed15f.png)
 </details>
 
-3\. Go to "Token configuration" section and add the following claims:
+3\. Go to the "Token configuration" section and add the following claims:
     -  Optional claims: `acct`, `email`. These determine what information about the user will be set to Civiform.
-    -  Groups claims: `Security groups`. These allow Civiform authenticate via security group.
+    -  Groups claims: `Security groups`. These allows Civiform to authenticate via a security group.
 
 <details>
   <summary>Screenshots</summary>
@@ -54,7 +54,7 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
   ![image](https://user-images.githubusercontent.com/252053/191863646-3d3c5e76-0510-48d2-9b78-bf27e18659e0.png)
 </details>
 
-4\. Go to "Certificates & secrets" and create a new secret that will be used by the CiviForm when it talks to Azure AD. Write down secret value somewhere temporarily. You will need to provide it to CiviForm. If you don't write it down and refresh the page - the value won't be accessible anymore, but you can always create a new secret. 
+4\. Go to "Certificates & secrets" and create a new secret that will be used by the CiviForm when it talks to Azure AD. Write down the secret value somewhere temporarily. You will need to provide it to CiviForm. If you don't write it down and refresh the page - the value won't be accessible anymore, but you can always create a new secret. 
 
 <details>
   <summary>Screenshots</summary>     
@@ -70,7 +70,7 @@ Below you'll find instructions on how to use Azure Active Directory to authentic
   ![image](https://user-images.githubusercontent.com/252053/191864534-c79c78bd-effe-40b2-a22c-ecf6aa535698.png)
 </details>
 
-6\. We are done with setting up the Azure AD app. Now to go Azure "Groups" and create a new security group. That group will contain members that have CiviForm Admin access when they login to CiviForm. Other users, who are not members of that group, will be considered Program Admins. Though they need to be assigned to particular programs by a CiviForm Admin to see the programs, by default they don't have access to any programs. Once you created the group write down its ID it will be used later.
+6\. We are done with setting up the Azure AD app. Now go to Azure "Groups" and create a new security group. That group will contain members that have CiviForm Admin access when they log into CiviForm. Other users, who are not members of that group, will be considered Program Admins. They need to be assigned to particular programs by a CiviForm Admin to see programs, by default they don't have access to any programs. Once you created the group write down its ID it will be used later.
 
 <details>
   <summary>Screenshots</summary>     
@@ -87,14 +87,14 @@ Below is the list of variables that we need after setting up Azure AD to integra
 
 #### Configure CiviForm
 
-Now we need to update CiviForm server to use the value we used earlier.
+Now we need to update the CiviForm server to use the values we used earlier.
 
-1\. Update `civiform_config.sh` file and set the following variables:
+1\. Open the `civiform_config.sh` file and set the following variables:
 ```sh
-# Set to the the "OpenID Connect metadata document" URL from step 5.
+# Set to the "OpenID Connect metadata document" URL from step 5.
 export ADFS_DISCOVERY_URI="https://login.microsoftonline.com/11111111-2222-3333-4444-555555555555/v2.0/.well-known/openid-configuration"
 
-# Set to group Object ID from step 6.
+# Set to the group Object ID from step 6.
 export ADFS_ADMIN_GROUP="4294249d-6d31-4ba1-871a-0cefc3f6327f"
 
 # Set the following variables to these values to make it work with Azure AD. 
@@ -112,21 +112,23 @@ export AD_GROUPS_ATTRIBUTE_NAME="groups"
 
 To test admin authentication try the following:
 
-1. In Azure add yourself to the security group you created at "Configure Azure AD" step 6. Go to CiviForm login page and click `Admin login`. It should take you through Microsoft login flow and redirect back to the CiviForm. You should see tabs like "Programs" and "Questions" indicating that you logged in as CiviForm admin.
-2. Logout from CiviForm. In Azure remove yourself from the security group and try logging in as admin again. It should take you through Microsoft login flow and redirect back to the CiviForm. You should see "Your programs" and no tabs like "Programs" or "Questions".
+1. In Azure add yourself to the security group you created at "Configure Azure AD" step 6. Go to the CiviForm login page and click `Admin login`. It should take you through the Microsoft login flow and redirect back to CiviForm. You should see tabs like "Programs" and "Questions" indicating that you logged in as CiviForm admin.
+2. Logout from CiviForm. In Azure remove yourself from the security group and try logging in as an admin again. It should take you through the Microsoft login flow and redirect back to CiviForm. You should see "Your programs" and no tabs like "Programs" or "Questions".
 
-If authentication not working - take a look at [Debugging tips](#debugging) below.
+If authentication is not working - take a look at [Debugging tips](#debugging) below.
 ## Applicant Authentication
 
-### Oracle IDCS
+### Oracle IDCS 
+
+Oracle IDCS(Identity and Cloud Service) is a cloud service for identity and access management. It provides single sign on services.
 
 #### Logout
 
-Logout integration for IDCS is not using normal flow where logout url is read from the discovery metadata file. Instead we override logout url using `APPLICANT_OIDC_OVERRIDE_LOGOUT_URL` to a hardcoded value.
+Logout integration for IDCS is not using the normal flow where the logout url is read from the discovery metadata file. Instead we override logout url using `APPLICANT_OIDC_OVERRIDE_LOGOUT_URL` to a hardcoded value.
 
 ### Generic OIDC (OIDC)
 
-You can use generic oidc implementation with any OIDC based Authentication provider. 
+You can use the generic oidc implementation with any OIDC based Authentication provider. 
 See full config [in code](https://github.com/civiform/civiform/blob/d9ad85885b38d0176f85822fd472bd27cc398a95/server/conf/application.conf#L91-L115).
 
 Important values in your civiform_config.sh:
@@ -153,9 +155,9 @@ Most Identity providers will need these urls:
 
 ### Login.gov (OIDC)
 
-Here you'll find intstruction of how to setup login.gov authentication. It assumes that you have access to [login.gov sandbox](https://developers.login.gov/testing/). First, you'll need to create app in the sandbox and configure it to work with your civiform instance.
+Here you'll find intstruction of how to setup login.gov authentication. It assumes that you have access to [login.gov sandbox](https://developers.login.gov/testing/). First, you'll need to create an app in the sandbox and configure it to work with your civiform instance.
 
-1\. Create new app. 
+1\. Create a new app. 
 
 <details>
   <summary>Screenshots</summary>
@@ -175,7 +177,7 @@ Here you'll find intstruction of how to setup login.gov authentication. It assum
 </details>
 
 
-3\. Decide on Issuer string. It will be used later as client ID variable. No need to upload certificates as we are not using protocols relying on private keys.
+3\. Decide on an Issuer string. It will be used later as the client_id variable. No need to upload certificates as we are not using protocols relying on private keys.
 
 <details>
   <summary>Screenshots</summary>
@@ -191,9 +193,9 @@ Here you'll find intstruction of how to setup login.gov authentication. It assum
   ![image](https://user-images.githubusercontent.com/252053/193155863-9591b2e2-50a0-4348-8006-7d967239f859.png)
 </details>
 
-5\. Save app. The page might return error on saving. Still, the data is saved (you can refresh the page and should see the app you just created).
+5\. Save the app. The page might return an error on saving. Still, the data is saved (you can refresh the page to see the app you just created).
 
-6\. Update `Client ID` variable in your CiviForm deployment. AWS deployment: that variable is not exposed in the `civiform_config.sh`. Instead it can be found in the AWS Secrets Manager. Find secret that ends with `applicant_oidc_client_id` and set it to the Issuer string you used on step 3.
+6\. Update the `Client ID` variable in your CiviForm deployment. AWS deployment: that variable is not exposed in the `civiform_config.sh`. Instead it can be found in the AWS Secrets Manager. Find the secret that ends with `applicant_oidc_client_id` and set it to the Issuer string you used on step 3.
 
 7\. Update `civiform_config.sh`: 
   * Set `CIVIFORM_APPLICANT_IDP` to `"login-gov"`.

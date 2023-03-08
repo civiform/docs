@@ -17,6 +17,7 @@ Follow the guide below to learn the ropes as a CiviForm Admin.
 * [Using enumerator questions & screens in a program](using-enumerator-questions-and-screens-in-a-program.md)
 * [Manage translations for programs & questions](manage-translations-for-programs-and-questions.md)
 * [Show or hide questions based on inputs](show-or-hide-questions-based-on-inputs.md)
+* [Manage program eligibility](user-manual/civiform-admin-guide/manage-eligibility.md)
 * [Manage Program Admin](manage-program-admins.md)
 * [Manage Trusted Intermediaries](manage-trusted-intermediaries.md)
 * [Question type requirements notes](question-type-requirements-notes.md)

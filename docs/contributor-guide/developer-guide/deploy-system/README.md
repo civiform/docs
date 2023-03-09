@@ -1,13 +1,14 @@
-# CiviForm Deployment system
+# CiviForm Deploy system
 
-TODO(#4324) Add a high level view of the deployment system here. Explain what each of the sub categories provides.
+The Civiform deploy system is the system that allows civic entities to configure and deploy Civiform on a cloud provider (we support [AWS](https://aws.amazon.com/what-is-aws/) and [Azure](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-azure/).
 
-Before you start learning in depth about the deployment system, we recommend having a look at the [initial deployment instructions]{https://docs.civiform.us/it-manual/sre-playbook/initial-deployment} in the it-manual. The it-manual contains instructions for the operations teams who are in charge of deploying a system for a civic entity. Reading it first will allow you to start your learning from the users' perspective.
+To start development on the deploy system, we recommend working through the provided resources in the the follwing order:
 
-* [Technology Overview](overview.md)
-* [Getting started(dev setup)](getting-started.md)
+* [Technical overview](technical-overview.md)
+* [Prerequisits & dev setup](prerequisits.md)
 * [Developer guide](developer-guide.md)
-* [Technology Overview](overview.md)
-* [Recommended reading] (recommended-reading.md)
+* [Recommended reading](recommended-reading.md)
+* [Trouble shooting](trouble-shooting.md)
 * [Testing](testing.md)
 * [Azure](dev-azure.md) 
+

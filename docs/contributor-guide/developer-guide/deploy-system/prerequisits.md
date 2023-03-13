@@ -3,7 +3,7 @@
 This page contains instructions for the setup you should go through before you start development work on the deploy system.
 It is intended as a step by step guide and you are encouraged to improve the documentation if any step is not straight forward in its current state.
 
-TODO(#4324) This entire page needs to be rewritten. For each item in the list explain what it is and how to install/get it, remove or change the existing documentation below as required. 
+ TODO([#4324](https://github.com/civiform/civiform/issues/4324))This entire page needs to be rewritten. For each item in the list explain what it is and how to install/get it, remove or change the existing documentation below as required. 
  * Access you need to ask for to not get blocked on later steps
  * Required tools(python3, terraform etc, pip, yapf)
  * AWS accounts(including differences depending on who your employer is)

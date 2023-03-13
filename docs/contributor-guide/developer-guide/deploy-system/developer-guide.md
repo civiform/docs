@@ -2,7 +2,7 @@
 
 This page contains information for deploy system developers, which go beyond the initial setup. 
 You should have worked through the [Prerequisits & dev setup](contributor-guide/developer-guide/deploy-system/prerequisits.md) already
-and know the difference between the repositories (civiform-deploy, civiform-deploy-infra and civifor) from the overview section.
+and know the difference between the repositories (civiform-deploy, civiform-deploy-infra and civiform) from the overview section.
 
 The "Most common developer flows" section contains all essential information to be able to do a first change. 
 We recommend coming back soon to "Optimizing your flow" and skim reading the tips and tricks section so you know 
@@ -59,7 +59,7 @@ repositories and need to keep them in sync. In most cases you can avoid the extr
 which [setup](https://github.com/civiform/civiform-deploy/blob/main/bin/setup) is calling, directly in civiform-deploy-infra. 
 You can use the copy of civiform_config.sh that you have already created in civiform-deploy and pass it as a parameter to the run script:
 
-TODO: These steps are currently failing and need to be updated 
+TODO([#4324](https://github.com/civiform/civiform/issues/4324)) These steps are currently failing and need to be updated 
 ¸
 Use [run.py](https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/shared/bin/run.py) with necessary parameters.
 
@@ -145,11 +145,11 @@ Run the script from the civiform-deploy repository
 
 ### Automating your manual flow via ~/.bashrc
 
-TODO(#4324)
+TODO([#4324](https://github.com/civiform/civiform/issues/4324))
 
 ### Avoid having to enter values manually when running deploy scripts
 
-TODO(#4324)
+TODO([#4324](https://github.com/civiform/civiform/issues/4324))
 
 ## Additional Tips and tricks
 
@@ -167,5 +167,5 @@ terraform -chdir=cloud/aws/templates/aws_oidc plan
 
 ### Running individual Python files
 
-TODO(#4324)
+TODO([#4324](https://github.com/civiform/civiform/issues/4324))
 

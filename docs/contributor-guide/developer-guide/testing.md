@@ -302,7 +302,11 @@ lot more info on this topic.
 You can step through a test run line-by-line with a visible browser window by
 running the tests locally (i.e. not in Docker) with debug mode turned on.
 
-Note: These instructions [need some work](https://github.com/civiform/civiform/issues/3058)
+You will need to start the browser test environment by running:
+```
+bin/run-browser-test-env --local
+```
+Because this exposes port 3390 for the oidc-provider container, this can not be run concurrently with `bin/run-dev`.
 
 To run the tests locally, use:
 
@@ -318,7 +322,7 @@ PWDEBUG=1 bin/run-browser-tests-local
 ```
 
 You can find more documentation on debugging Playwright in this [BrowserStack guide](https://www.browserstack.com/guide/playwright-debugging)
-.
+. 
 
 #### Debugging failed GitHub actions
 

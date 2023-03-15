@@ -1,8 +1,10 @@
 # Create & Edit Custom Status Options for Programs
 
-As a CiviForm Admin, you have the ability to set custom statuses (e.g. Approved, Waitlisted) and email content for each program. Once you create and publish statuses for a given program, the Program Admin will be able to set statuses for each application submitted to their program. 
+As a CiviForm Admin, you have the ability to set custom statuses (e.g. Approved, Waitlisted) and email content for each program. Once you create and publish statuses for a given program, the Program Admin will be able to set statuses for each application submitted to their program.
 
-For statuses with associated email content, a status change will trigger an email to applicants that used a CiviForm account to submit their application. The applicant will also see the status of their submitted application(s) when they log into their CiviForm account. 
+For statuses with associated email content, a status change will trigger an email to applicants that used a CiviForm account to submit their application. The applicant will also see the status of their submitted application(s) when they log into their CiviForm account.
+
+Additionally, you can choose one of the statuses to be a default status. All new applications will automatically be set to this status, and the associated email for that status will be sent to the applicant.
 
 Note: in order to use status tracking, your IT Admin must have enabled the feature. To enable the feature, have your IT Admin set the CIVIFORM_APPLICATION_STATUS_TRACKING_ENABLED environment variable to true.
 
@@ -15,6 +17,7 @@ Note: in order to use status tracking, your IT Admin must have enabled the featu
 5. Click Create a New Status.
 6. Enter your status name and (optional) any email text you would like the applicant to receive upon the status change.
 7. Repeat steps 5-6 for all statuses you would like to create.
+8. For any status you wish to set as default, check the "Set as default status" checkbox when creating or editing the status.
 
 **Note**: you must Publish All Drafts in order for your statuses to go live. See [How to Publish Programs](publish-a-program.md) for instructions on publishing. 
 

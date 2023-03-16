@@ -150,16 +150,6 @@ ADD SCREENSHOT
 
 ## Setup AWS Account
 
- TODO([#4324](https://github.com/civiform/civiform/issues/4324))This entire page needs to be rewritten. For each item in the list explain what it is and how to install/get it, remove or change the existing documentation below as required. 
-<<<<<<< HEAD
- * Access you need to ask for to not get blocked on later steps(Google domains, AWS, Azure) and who to ask for it
- * Required tools(python3, terraform etc, pip, yapf)
- * AWS accounts(including differences depending on who your employer is)
- * AWS CLI
-=======
->>>>>>> c8df748 (first pass through required tooling and aws setup)
- * AWS nuke
-
  TODO([#4324](https://github.com/civiform/civiform/issues/4324)) Clean up and move the direct checkout vs using docker into the developer guide because it contains instructions that will be needed more than once. Document why the two options exist and when to choose which.
 
  TODO([#4324](https://github.com/civiform/civiform/issues/4324)) Remove the documentation below this line once we have better alternatives.

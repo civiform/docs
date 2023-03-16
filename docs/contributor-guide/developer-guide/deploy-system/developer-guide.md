@@ -122,7 +122,7 @@ Push the image to your repository
 ###  A typical full development cycle across 3 branches
 
 The below describes a flow for seeing changes across all three branches (civiform-deploy, civiform-deploy-infra and civiform).
-You can skip some sections, if you are only developing across less than 3 branches.kkkkkkkk
+You can skip some sections, if you are only developing across less than 3 branches.
 
 #### Server changes
 Make your Server changes (e.g. UI changes that depend on a config value reaching the server)

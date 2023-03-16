@@ -24,6 +24,7 @@
   * [Manage translations for programs & questions](user-manual/civiform-admin-guide/manage-translations-for-programs-and-questions.md)
   * [Manage versions for programs & questions](user-manual/civiform-admin-guide/manage-versions-for-programs-and-questions.md)
   * [Show or hide questions based on inputs](user-manual/civiform-admin-guide/show-or-hide-questions-based-on-inputs.md)
+  * [Manage program eligibility](user-manual/civiform-admin-guide/manage-eligibility.md)
   * [Manage Trusted Intermediaries](user-manual/civiform-admin-guide/manage-trusted-intermediaries.md)
   * [Question type requirements notes](user-manual/civiform-admin-guide/question-type-requirements-notes.md)
   * [Manage API keys](user-manual/civiform-admin-guide/manage-api-keys.md)

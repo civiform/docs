@@ -143,6 +143,44 @@ Run the script from the civiform-deploy repository
 
 ## Optimizing your flow
 
+
+### Running individual Python files
+
+While you make changes to the deploy system, you may want to test your changes without having to run the whole deployment script.
+This can optimize your workflow in some cases, but may not always be necessary (e.g. if the deploy scripts run your code very early)
+The recommended way to try/run individual bits of our python code, it to run the file via its tests. The second option is to run it directly. 
+
+In both cases you have to ensure that the file you are running is visible to Python.
+The error you will get when Python can't find the files is usually something along the lines of
+"ModuleNotFoundError: No module named <someModule>"
+In this case you have to add the current folder and its sub-folders to the existing PYTHONPATH by calling the following from command line:
+
+'''export PYTHONPATH=./cloud:$PYTHONPATH'''
+
+#### Running python code via tests:
+
+This has a few advantages: You are not adding any code in the source and therefore don't have to remove it before running the whole deploy system. The code you write to run the file can often very easily serve as additional test coverage! Existing tests also often already contain code that executes the relevant lines (less work for you understanding and writing the lines).
+
+* If the file does not have tests yet, add a test file by using of the other tests as an example. Our python tests are usually located in the same folder as the source code.
+* Check if there is a test that executes your code, if not, you can add a new one (existing tests are a good source for examples on how to create relevant objects and call the methods).
+* Call the test with 'python3 path/to/your/testfile'
+
+Once you are done with your testing and experimenting consider turning your temporary test into a real one to increase coverage.
+
+#### Running python code directly from the file
+
+There are a couple of disadvantages to this approach: You have to remember to remove the code you are adding before running the full deploy script. You also have to write all the calls that run relevant bits whereelse tests often already do that for you.
+
+* In the source code(e.g. path/to/your/file) create the objects and call the methods that you would like to be executed. In the example below you want to run the load_config method and the tf_config_vars method of the class ConfigLoader and print out the result. You add the following code to the end of the file that you will run afterwards
+''' 
+     config_loader = ConfigLoader()
+     validation_errors = config_loader.load_config("/Users/jhummel/Civiform/civiform-deploy/civiform_config.sh")
+     print(validation_errors)
+     tf_config_vars = config_loader.get_terraform_variables()
+     print(tf_config_vars)
+'''
+* Run the code by calling 'python3 path/to/your/file'
+
 ### Automating your manual flow via ~/.bashrc
 
 TODO([#4324](https://github.com/civiform/civiform/issues/4324))

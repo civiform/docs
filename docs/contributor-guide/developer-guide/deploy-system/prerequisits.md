@@ -80,7 +80,7 @@ Note: You only have to log in to your dev account one time. After that, it will 
 ![Request public certificate page](../../../.gitbook/assets/aws-request-public-cert.png)
 
 5. Input the certificate details and click "Request":
-    - Full qualified domain name: Input `<your-dev-account-name>.civiform.dev` (eg. `jdoe-dev.civiform.dev`)
+    - Fully qualified domain name: Input `<your-dev-account-name>.civiform.dev` (eg. `jdoe-dev.civiform.dev`)
     - Validation method: Leave the default selection "DNS validation - recommended" selected.
     - Key algorithm: Leave the default selection "RSA 2048" selected.
 ![Enter certificate details page](../../../.gitbook/assets/aws-enter-cert-details-page.png)
@@ -120,7 +120,7 @@ Note: You only have to log in to your dev account one time. After that, it will 
         aws_access_key_id = 
         aws_secret_access_key =
         ```
-    - `<name-of-parent-account>` can be whatever you want to call it. We recommend naming it after your dev's parent account eg. `civiform-dev` or `exygy-root`.
+    - `<name-of-parent-account>` can be whatever you want to call it. We recommend naming it after your dev account's parent account eg. `civiform-dev` or `exygy-root`.
 
 2. Get the value for `role_arn`
     - In your newly created dev account, go to [IAM->Roles->OrganizationAccountAccessRole](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/roles/details/OrganizationAccountAccessRole?section=permissions). 
@@ -141,7 +141,7 @@ Note: You only have to log in to your dev account one time. After that, it will 
     - Copy the "Access key" and the "Secret access key" into your `aws-cli` config file as the values for `aws_access_key_id` and `aws_secret_access_key` respectively.
 ![Copy access keys](../../../.gitbook/assets/aws-access-keys.png)
 
-## Test AWS authentication from your local machine
+## Test AWS Authentication From Your Local Machine
 1. Test that your local machine can authenticate to the root user account
     - Run `aws sts get-caller-identity --profile <name-of-parent-account>` in your terminal. Where `<name-of-parent-account>` is the name you specified in your `aws-cli` config file.
     - The output should look something like:
@@ -164,9 +164,9 @@ Note: You only have to log in to your dev account one time. After that, it will 
         }
         ```
 
-## Clone/Fork Repos
+## Setup Repositories
 ### [civiform-deploy](https://github.com/civiform/civiform-deploy)
-1. Fork [civiform-deploy](https://github.com/civiform/civiform-deploy) and clone your forked copy to your local machine.
+1. Fork [civiform-deploy](https://github.com/civiform/civiform-deploy) (name it something unique like `<your_first_name>-civiform-deploy`) and clone your forked copy to your local machine.
 2.  `cd` into the repo and run `cp civiform_config.example.sh civiform_config.sh` in your terminal to copy the example config file into the config file you will be editing.
 3. Set the following values in the newly created `civiform_config.sh` file:
     - `CIVIFORM_APPLICANT_AUTH_PROTOCOL="oidc"`
@@ -182,9 +182,73 @@ Note: You only have to log in to your dev account one time. After that, it will 
     - `APP_PREFIX="<your_dev_account_name>"` (Note: App prefix allows you to have more than one deployment in the same account. It can be set to whatever you want.)
     - `SSL_CERTIFICATE_ARN="<arn_of_the_SSL_cert>"` (Find the ARN by clicking into the Certificate ID on the [Certificates page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/list) in AWS.)
 ### [cloud-deploy-infra](https://github.com/civiform/cloud-deploy-infra)
-- Clone [cloud-deploy-infra](https://github.com/civiform/cloud-deploy-infra) onto your local machine.
+1. Clone [cloud-deploy-infra](https://github.com/civiform/cloud-deploy-infra) onto your local machine.
+2. Set your local copy of `civiform-deploy` to track your local copy of `cloud-deploy-infra`.
+    - In your local copy of `civiform-deploy`, update [this line](https://github.com/civiform/civiform-deploy/blob/4624131e74ff3a417d070f0a34da55744f26c347/bin/lib/checkout.sh#L86) in the `checkout::initialize` function in `checkout.sh` to point to your local repository instead of the remote origin.
+    - Eg. change 
+    ```
+    git remote add origin http://github.com/civiform/cloud-deploy-infra
+    ```
+    to 
+    ```
+    git remote add origin <path_to_local_repo>/cloud-deploy-infra
+    ```
 
+## Setup AWS Nuke
+AWS Nuke is a package that makes it easy to remove all resources from an AWS account. You will want to run this at the end of each working session (at least at the end of each day so we don't leave resources running overnight) and anytime you need to cleanup your AWS account to test new changes. It is destructive, so it's very important to set up your config file correctly to only clear out resources from your dev account. Check out the [README for the `aws-nuke` repository](https://github.com/rebuy-de/aws-nuke) for more information about the inner workings of `aws-nuke`.
+1. Download the correct binary for your machine's architecture/OS from the [aws-nuke repo](https://github.com/rebuy-de/aws-nuke/releases). Or on mac run `brew install aws-nuke`
+2. If you downloaded the binary, unpack the tarball, rename the binary to `aws-nuke` and put it somewhere in your shell's path.
+3. Run `aws-nuke -h` to make sure it is installed correctly.
+4. Create a `nuke.yaml` file and copy the [`nuke.yaml` file used for end to end](https://github.com/civiform/cloud-deploy-infra/blob/main/e2e-test/nuke.yaml) tests this file.
+5. Update the file with the correct blocklist and accounts. This will look different depending on the AWS root account you are using, but should end up looking something like:
+    ```
+    regions:
+    - us-east-1
+    - global
 
+    account-blocklist:
+    - "<account_number_1_to_blocklist>" # Description of account number 1
+    - ... additional accounts to blocklist if have them ...
+
+    accounts:
+    "<your_new_account_number>":
+        filters:
+        ACMCertificate:
+            - property: "DomainName"
+            value: "<your_user_name>.civiform.dev"
+        IAMRole:
+            - "OrganizationAccountAccessRole"
+        IAMRolePolicyAttachment:
+            - "OrganizationAccountAccessRole -> AdministratorAccess"
+    ```
+6. To test your configuration setup, you can run `aws-nuke --config nuke.yaml` to list all nukeable resources. You need to add the flag `--no-dry-run` to actually delete resources.
+7. When you want to clean your account, run `aws-nuke --config nuke.yaml --no-dry-run`. You will be asked for confirmation twice and need to enter the account alias you chose when you created the account (eg. `jdoe-dev`).
+
+## Try running `bin/setup`
+1. From within your local fork of `civiform-deploy`, run `bin/setup` to kick off the setup script. At a very high level this script does the following things:
+    - Creates a `checkout` folder in your local copy of `civiform-deploy` and pulls in the code from `cloud-deploy-infra` that contains all of the actual implementation for deployment.
+    - Runs the scripts pulled in from `cloud-deploy-infra` to deploy the instance.
+    - Creates an S3 bucket in Amazon in which to store resources.
+    - Creates all of the resources specified in the Terraform config files in `cloud-deploy-infra`. (Note: this step is the same as running the `bin/deploy` script.) Terraform will prompt you to type "yes" several times to confirm creation of resources.
+    - Automatically retries resource creation once because of a [known bug with Terraform and AWS](https://github.com/hashicorp/terraform-provider-aws/issues/19583)
+    - Prompts you to create several secrets like for login integration credentials. These strings don't matter unless you are testing applicant authentication. They can also be changed later via the AWS console.
+    - Starts the server.
+    - Checks for service health.
+    - If everything is successful, the script will print out `Server is available on url:....` and give you a url to add to your domain registrar.
+2. Create a new record in the [domain registrar](https://domains.google.com/registrar/civiform.dev/dns) with the following values and click "Save":
+    - Host name: The domain name you set when requesting your certificate (step 5 in Configure new AWS Account above)
+    - Type: CNAME
+    - TTL: 3600
+    - Data: URL copied from script output (will look something like `jdoe-dev-civiform-lb-<some_numbers>.us-east-1.elb.amazonaws.com`)
+3. Wait a few minutes and then load up your domain url and you should have a live site!!
+
+Note: You can use the Server url directly and skip the step of adding it to the domain registrar if you like. You will receive an `SSL_ERROR_BAD_CERT_DOMAIN` error because the certificate is only valid for the domain you defined when you created it, but if you click "Advanced" on the error page it should give you an option to proceed anyway.
+
+Troubleshooting:
+- If you get an error message about "Amaxon 3 already exists", this is likely because you have run the script before (possibly unsuccessfully) and some resources were created. Run `aws-nuke --config nuke.yaml --no-dry-run` to clear out all resources and try again.
+- Sometimes the service health check will fail even though the service started up correctly. The service health check repeats every 30 seconds up to 20 times. This number is arbitrary and sometimes the script will not receive the response it's expecting in the alloted time, even though the service has started up correctly. You can follow along with the service events by going to the Service URL that is output by the script directly before it starts checking for Service Health. Make sure you are logged into your dev account in AWS to see the service events. If you see an event like "service `<your_dev_service>` has reached a steady state" that means the deployment was successful. If this is the case, the script won't output the url you need to add to the domain registrar. You can find this url in AWS by navigating to `EC2 > Load balancers > <your_dev_lb>` and copying the DNS name under "Details" on that screen.
+![Copy DNS name](../../../.gitbook/assets/aws-load-balancer.png)
+- The service health checks might also fail because something is wrong with the service. It could be a problem with the values set in `civiform_config.sh` or some other issue. To debug, go to the AWS Service URL output before the health checks, and click into the "Logs" tab to see the tasks that have run. From there, you can click into individual tasks and inspect the logs for those tasks. 
 
 ## Setup AWS Account
 

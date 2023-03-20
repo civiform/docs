@@ -1,7 +1,7 @@
 # Deploy system developer guide
 
 This page contains information for deploy system developers, which go beyond the initial one off setup. 
-You should have worked through the [Prerequisits & dev setup](contributor-guide/developer-guide/deploy-system/prerequisits.md) already
+You should have worked through the [Prerequisites & dev setup](contributor-guide/developer-guide/deploy-system/prerequisites.md) already
 and know the difference between the repositories (civiform-deploy, civiform-deploy-infra and civiform) from the overview section.
 
 The "Setup" section will talk you through setup which you may have to revisit more than once, e.g steps you will do for each
@@ -11,8 +11,7 @@ We recommend coming back soon to "Optimizing your flow" and skim reading the tip
 what information is provided when you need it.
 
 ## Setup
-TODO([#4324](https://github.com/civiform/civiform/issues/4324))
-Add information about the git setup for cross repository development 
+See the [Setup Repositories](prerequisites.md#setup-repositories) section in [Prerequisites and developer setup](prerequisites.md) for instructions on setting up your responsitories for the first time.
 
 ## Most Common developer flows
 
@@ -143,7 +142,7 @@ Make your changes
 
 Double check that setup script sees the changes
 * Change to the civiform-deploy repository
-* Ensure that your checkout.sh copies your changes from the correct git branch in civiform-deploy-infra (see Prerequisits)
+* Ensure that your checkout.sh copies your changes from the correct git branch in civiform-deploy-infra (see Prerequisites)
 
 #### Run the deployment script
 Run the script from the civiform-deploy repository
@@ -156,7 +155,7 @@ Before you push your change to git and ask for a review, format the code with th
 yapf --verbose --style='{based_on_style: google, SPLIT_BEFORE_FIRST_ARGUMENT:true}' -ir .
 '''
 This formats all python files under the current directory and requires the installation of yapf as described
-in the prerequisits section.
+in the prerequisites section.
 
 ## Optimizing your flow
 

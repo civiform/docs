@@ -168,27 +168,27 @@ AWS Nuke is a package that makes it easy to remove all resources from an AWS acc
 1. Download the correct binary for your machine's architecture/OS from the [aws-nuke repo](https://github.com/rebuy-de/aws-nuke/releases). Or on mac run `brew install aws-nuke` (go [here](https://brew.sh/) to install Homebrew if you don't already have it).
 2. If you downloaded the binary, unpack the tarball, rename the binary to `aws-nuke` and put it somewhere in your shell's path.
 3. Run `aws-nuke -h` to make sure it is installed correctly.
-4. In the root directory of your local `civiform-deploy` repo, create a `nuke.yaml` file and copy the [`nuke.yaml` file](https://github.com/civiform/cloud-deploy-infra/blob/main/e2e-test/nuke.yaml) used for end to end tests this file.
+4. In the root directory of your local `civiform-deploy` repo, create a `nuke.yaml` file and copy the [`nuke.yaml` file used for end to end tests](https://github.com/civiform/cloud-deploy-infra/blob/main/e2e-test/nuke.yaml) into this file.
 5. Update the file with the correct blocklist and accounts (remove any references to e2e tests). For folks using the Exygy AWS account, remove any references to Google accounts. Take care to update the ACMCertificate value to the correct domain for your cert or the script will delete it every time. The config file will look different depending on the AWS root account you are using, but should end up looking something like:
     ```
     regions:
-    - us-east-1
-    - global
+        - us-east-1
+        - global
 
     account-blocklist:
-    - "<account_number_1_to_blocklist>" # Description of account number 1
-    - ... additional accounts to blocklist if have them ...
+        - "<account_number_1_to_blocklist>" # Description of account number 1
+        - ... additional accounts to blocklist if have them ...
 
     accounts:
-    "<your_new_account_number>":
-        filters:
-        ACMCertificate:
-            - property: "DomainName"
-            value: "<your_user_name>.civiform.dev"
-        IAMRole:
-            - "OrganizationAccountAccessRole"
-        IAMRolePolicyAttachment:
-            - "OrganizationAccountAccessRole -> AdministratorAccess"
+        "<your_new_account_number>":
+            filters:
+                ACMCertificate:
+                    - property: "DomainName"
+                    value: "<your_user_name>.civiform.dev"
+                IAMRole:
+                    - "OrganizationAccountAccessRole"
+                IAMRolePolicyAttachment:
+                    - "OrganizationAccountAccessRole -> AdministratorAccess"
     ```
 6. To test your configuration setup, you can run `aws-nuke --config nuke.yaml` to list all nukeable resources. You need to add the flag `--no-dry-run` to actually delete resources.
 7. When you want to clean your account, run `aws-nuke --config nuke.yaml --no-dry-run`. You will be asked for confirmation twice and need to enter the account alias you chose when you created the account (eg. `jdoe-dev`). You may see error messages and `failed` messages as the script runs. These are generally safe to ignore as the error messages are related to `aws-nuke` attempting to delete resources for services we don't have setup. `failed` messages mean the script was unable to delete the resource, but it automatically retries until all specified resources are successfully deleted. 

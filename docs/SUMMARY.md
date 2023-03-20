@@ -89,7 +89,7 @@
   * [Adding a new question type](contributor-guide/developer-guide/adding-a-new-question-type.md)
   * [Deploy system](contributor-guide/developer-guide/deploy-system/README.md)
     * [Technical overview](technical-overview.md)
-    * [Prerequisits & dev setup](contributor-guide/developer-guide/deploy-system/prerequisits.md)
+    * [Prerequisites & dev setup](contributor-guide/developer-guide/deploy-system/prerequisites.md)
     * [Developer guide](contributor-guide/developer-guide/deploy-system/developer-guide.md)
     * [Recommended reading](contributor-guide/developer-guide/deploy-system/recommended-reading.md)
     * [Testing](contributor-guide/developer-guide/deploy-system/testing.md)

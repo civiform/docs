@@ -5,7 +5,7 @@ The Civiform deploy system is the system that allows civic entities to configure
 To start development on the deploy system, we recommend working through the provided resources in the the follwing order:
 
 * [Technical overview](technical-overview.md)
-* [Prerequisits & dev setup](prerequisits.md)
+* [Prerequisites & dev setup](prerequisites.md)
 * [Developer guide](developer-guide.md)
 * [Recommended reading](recommended-reading.md)
 * [Trouble shooting](trouble-shooting.md)

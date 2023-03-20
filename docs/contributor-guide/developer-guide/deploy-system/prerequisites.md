@@ -1,4 +1,4 @@
-# Prerequisits and developer setup
+# Prerequisites and developer setup
 
 This page contains instructions for the setup you should go through before you start development work on the deploy system.
 It is intended as a step by step guide and you are encouraged to improve the documentation if any step is not straight forward in its current state.
@@ -70,11 +70,10 @@ Note: You only have to log in to your dev account one time. After that, it will 
 
 1. Navigate to your newly created dev account's [IAM page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home).
 
-2. Click the "Create" button next to the Account Number on the righthand sidebar.
+2. Click the "Create" button under "Account Alias" on the righthand sidebar.
 ![Create Alias button](../../../.gitbook/assets/aws-create-account-alias.png)
 
-3. Under "Preferred alias" input the name for your newly created dev account (eg. `jdoe-dev`) and click "Save changes". You will use this alias later when running `aws-nuke` to clear resources.
-![Create Alias screen](../../../.gitbook/assets/aws-enter-preferred-alias.png)
+3. Under "Preferred alias" input the name for your newly created dev account (eg. `jdoe-dev`) and click "Save changes". You will use this alias later when running `aws-nuke` to clear resources. AWS aliases must contain only lowercase letters, digits and hyphens and must be globally unique (if you get an error that the alias already exists, try another string). ![Create Alias screen](../../../.gitbook/assets/aws-enter-preferred-alias.png)
 
 4. Navigate to the [Request certificate page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/request). Keep the default "Request a public certificate" option selected and click the "Next" button.
 ![Request public certificate page](../../../.gitbook/assets/aws-request-public-cert.png)
@@ -109,7 +108,7 @@ Note: You only have to log in to your dev account one time. After that, it will 
 ## Setup AWS CLI
 
 1.  Create the credentials file
-    - Run `touch ~/.aws/credentials` in your terminal to create a config file for `aws-cli`.
+    - Run `mkdir -p ~/.aws; touch ~/.aws/credential` in your terminal to create a config file for `aws-cli`.
     - Open the newly created config file and paste in the following template:
         ```
         [default]
@@ -164,6 +163,36 @@ Note: You only have to log in to your dev account one time. After that, it will 
         }
         ```
 
+## Setup AWS Nuke
+AWS Nuke is a package that makes it easy to remove all resources from an AWS account. You will want to run this at the end of each working session (at least at the end of each day so we don't leave resources running overnight) and anytime you need to cleanup your AWS account to test new changes. It is destructive, so it's very important to set up your config file correctly to only clear out resources from your dev account. Check out the [README for the `aws-nuke` repository](https://github.com/rebuy-de/aws-nuke) for more information about the inner workings of `aws-nuke`.
+1. Download the correct binary for your machine's architecture/OS from the [aws-nuke repo](https://github.com/rebuy-de/aws-nuke/releases). Or on mac run `brew install aws-nuke` (go [here](https://brew.sh/) to install Homebrew if you don't already have it).
+2. If you downloaded the binary, unpack the tarball, rename the binary to `aws-nuke` and put it somewhere in your shell's path.
+3. Run `aws-nuke -h` to make sure it is installed correctly.
+4. In the root directory of your local `civiform-deploy` repo, create a `nuke.yaml` file and copy the [`nuke.yaml` file](https://github.com/civiform/cloud-deploy-infra/blob/main/e2e-test/nuke.yaml) used for end to end tests this file.
+5. Update the file with the correct blocklist and accounts (remove any references to e2e tests). For folks using the Exygy AWS account, remove any references to Google accounts. Take care to update the ACMCertificate value to the correct domain for your cert or the script will delete it every time. The config file will look different depending on the AWS root account you are using, but should end up looking something like:
+    ```
+    regions:
+    - us-east-1
+    - global
+
+    account-blocklist:
+    - "<account_number_1_to_blocklist>" # Description of account number 1
+    - ... additional accounts to blocklist if have them ...
+
+    accounts:
+    "<your_new_account_number>":
+        filters:
+        ACMCertificate:
+            - property: "DomainName"
+            value: "<your_user_name>.civiform.dev"
+        IAMRole:
+            - "OrganizationAccountAccessRole"
+        IAMRolePolicyAttachment:
+            - "OrganizationAccountAccessRole -> AdministratorAccess"
+    ```
+6. To test your configuration setup, you can run `aws-nuke --config nuke.yaml` to list all nukeable resources. You need to add the flag `--no-dry-run` to actually delete resources.
+7. When you want to clean your account, run `aws-nuke --config nuke.yaml --no-dry-run`. You will be asked for confirmation twice and need to enter the account alias you chose when you created the account (eg. `jdoe-dev`). You may see error messages and `failed` messages as the script runs. These are generally safe to ignore as the error messages are related to `aws-nuke` attempting to delete resources for services we don't have setup. `failed` messages mean the script was unable to delete the resource, but it automatically retries until all specified resources are successfully deleted. 
+
 ## Setup Repositories
 ### [civiform-deploy](https://github.com/civiform/civiform-deploy)
 1. Fork [civiform-deploy](https://github.com/civiform/civiform-deploy) (name it something unique like `<your_first_name>-civiform-deploy`) and clone your forked copy to your local machine.
@@ -193,38 +222,10 @@ Note: You only have to log in to your dev account one time. After that, it will 
     ```
     git remote add origin <path_to_local_repo>/cloud-deploy-infra
     ```
-
-## Setup AWS Nuke
-AWS Nuke is a package that makes it easy to remove all resources from an AWS account. You will want to run this at the end of each working session (at least at the end of each day so we don't leave resources running overnight) and anytime you need to cleanup your AWS account to test new changes. It is destructive, so it's very important to set up your config file correctly to only clear out resources from your dev account. Check out the [README for the `aws-nuke` repository](https://github.com/rebuy-de/aws-nuke) for more information about the inner workings of `aws-nuke`.
-1. Download the correct binary for your machine's architecture/OS from the [aws-nuke repo](https://github.com/rebuy-de/aws-nuke/releases). Or on mac run `brew install aws-nuke`
-2. If you downloaded the binary, unpack the tarball, rename the binary to `aws-nuke` and put it somewhere in your shell's path.
-3. Run `aws-nuke -h` to make sure it is installed correctly.
-4. Create a `nuke.yaml` file and copy the [`nuke.yaml` file used for end to end](https://github.com/civiform/cloud-deploy-infra/blob/main/e2e-test/nuke.yaml) tests this file.
-5. Update the file with the correct blocklist and accounts. This will look different depending on the AWS root account you are using, but should end up looking something like:
-    ```
-    regions:
-    - us-east-1
-    - global
-
-    account-blocklist:
-    - "<account_number_1_to_blocklist>" # Description of account number 1
-    - ... additional accounts to blocklist if have them ...
-
-    accounts:
-    "<your_new_account_number>":
-        filters:
-        ACMCertificate:
-            - property: "DomainName"
-            value: "<your_user_name>.civiform.dev"
-        IAMRole:
-            - "OrganizationAccountAccessRole"
-        IAMRolePolicyAttachment:
-            - "OrganizationAccountAccessRole -> AdministratorAccess"
-    ```
-6. To test your configuration setup, you can run `aws-nuke --config nuke.yaml` to list all nukeable resources. You need to add the flag `--no-dry-run` to actually delete resources.
-7. When you want to clean your account, run `aws-nuke --config nuke.yaml --no-dry-run`. You will be asked for confirmation twice and need to enter the account alias you chose when you created the account (eg. `jdoe-dev`).
+    Note: You may need to update this line as you work depending on how you need the system to track changes you are making.
 
 ## Try running `bin/setup`
+Note: You will need to run this script as the first step for any working session to create and launch your deployment instance.
 1. From within your local fork of `civiform-deploy`, run `bin/setup` to kick off the setup script. At a very high level this script does the following things:
     - Creates a `checkout` folder in your local copy of `civiform-deploy` and pulls in the code from `cloud-deploy-infra` that contains all of the actual implementation for deployment.
     - Runs the scripts pulled in from `cloud-deploy-infra` to deploy the instance.
@@ -235,14 +236,14 @@ AWS Nuke is a package that makes it easy to remove all resources from an AWS acc
     - Starts the server.
     - Checks for service health.
     - If everything is successful, the script will print out `Server is available on url:....` and give you a url to add to your domain registrar.
-2. Create a new record in the [domain registrar](https://domains.google.com/registrar/civiform.dev/dns) with the following values and click "Save":
-    - Host name: The domain name you set when requesting your certificate (step 5 in Configure new AWS Account above)
+2. Navigate to the url output by the script. You will receive an `SSL_ERROR_BAD_CERT_DOMAIN` error because the certificate is only valid for the domain you defined when you created it, but if you click "Advanced" on the error page it should give you an option to proceed anyway. Proceed through the warning and you should see your live site!!
+3. If you want to, you can create a new record in the [domain registrar](https://domains.google.com/registrar/civiform.dev/dns) that points your dev url (eg. `jdoe-dev.civiform.dev`) to the server URL. Enter the following values into the new record and click "Save":
+    - Host name: The domain name you set when requesting your certificate (step 5 in [Configure new AWS Account](#configure-new-aws-account) above)
     - Type: CNAME
     - TTL: 3600
     - Data: URL copied from script output (will look something like `jdoe-dev-civiform-lb-<some_numbers>.us-east-1.elb.amazonaws.com`)
-3. Wait a few minutes and then load up your domain url and you should have a live site!!
-
-Note: You can use the Server url directly and skip the step of adding it to the domain registrar if you like. You will receive an `SSL_ERROR_BAD_CERT_DOMAIN` error because the certificate is only valid for the domain you defined when you created it, but if you click "Advanced" on the error page it should give you an option to proceed anyway.
+    
+    It can take up to 20 minutes for the DNS to propagate, so don't worry if you don't see it load right away. 
 
 Troubleshooting:
 - If you get an error message about "Amazon 3 already exists", this is likely because you have run the script before (possibly unsuccessfully) and some resources were created. Run `aws-nuke --config nuke.yaml --no-dry-run` to clear out all resources and try again.
@@ -250,9 +251,10 @@ Troubleshooting:
 ![Copy DNS name](../../../.gitbook/assets/aws-load-balancer.png)
 - The service health checks might also fail because something is wrong with the service. It could be a problem with the values set in `civiform_config.sh` or some other issue. To debug, go to the AWS Service URL output before the health checks, and click into the "Logs" tab to see the tasks that have run. From there, you can click into individual tasks and inspect the logs for those tasks. 
 
-## Setup AWS Account
 
 TODO([#4324](https://github.com/civiform/civiform/issues/4324)) Determine what of the remaining documentation below should be moved and what can be deleted.
+
+## Setup AWS Account
 
  TODO([#4324](https://github.com/civiform/civiform/issues/4324)) Clean up and move the direct checkout vs using docker into the developer guide because it contains instructions that will be needed more than once. Document why the two options exist and when to choose which.
 

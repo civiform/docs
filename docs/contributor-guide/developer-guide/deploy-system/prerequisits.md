@@ -13,7 +13,7 @@ Note: These steps are AWS specific as there are not any current production deplo
 * [yapf](https://github.com/google/yapf#installation) -- Python formatter
 * [aws-nuke](https://github.com/rebuy-de/aws-nuke) -- Used to cleanup/destroy AWS resources at the end of your work session
 
-## Get Account Access
+## Get AWS Account Access
 * Ask your employer to create an AWS root account for you.
 * In #deployment-eng, ask to be added to the list of Users for civiform.dev in [Google Domains](https://domains.google.com)
 

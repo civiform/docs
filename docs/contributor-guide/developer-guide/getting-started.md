@@ -212,6 +212,35 @@ To generate coverage report, run the following:
 
 Navigate to server/code-coverage/report/html/index.html and see the detailed report of the code coverage data and also dig deep to see how much your implemented classes are covered.
 
+## Running the formatter
+
+To format your code, run:
+
+```
+bin/fmt
+```
+
+By default, this will format any files that have diffs compared to `origin/main`. Diffing against `origin/main`, however, can have a lot of noise if you haven't synced in a while. You can run this against a different diffbase with:
+
+```
+bin/fmt -d <diffbase>
+```
+
+For example:
+```
+# Diff against your local main branch:
+bin/fmt -d main
+
+# Diff against a specific commit:
+bin/fmt -d <commit ID>
+
+# Diff against the current commit:
+bin/fmt -d HEAD
+
+# Diff against the previous commit:
+bin/fmt -d HEAD^
+```
+
 ## What's next?
 
 To learn more about how to make code contributions, head to [Technical contribution guide.](technical-contribution-guide.md)

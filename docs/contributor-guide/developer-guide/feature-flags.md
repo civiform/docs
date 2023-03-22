@@ -25,12 +25,14 @@ The
 class provides readable accessors for environment variables and when a `Request`
 object is provided it allows for manual overrides.
 
-Adding a new flag involves
+To add a new flag:
 
-1.  Add the Config value to all relevant .conf files.
-1.  Added accessors in `FeatureFlags`.
+1.  Add a new enum to [`FeatureFlag.java`](https://github.com/civiform/civiform/blob/main/server/app/featureflags/FeatureFlag.java).
+1.  Add the Config value to [`feature-flags.conf`](https://github.com/civiform/civiform/blob/main/server/conf/helper/feature-flags.conf).
 1.  Inject `FeatureFlags` into client classes.
-1.  Use accessors to vary behavior.
+1.  Call `FeatureFlags::getFlagEnabled`](https://github.com/civiform/civiform/blob/183a4d634fa53e7c07975ce3f915f1b8f6a4660a/server/app/featureflags/FeatureFlags.java#L51) to determine whether a flag is enabled.
+
+[Here](https://github.com/civiform/civiform/pull/4435/files) is a simple example of doing all of these.
 
 ## Manual overrides
 

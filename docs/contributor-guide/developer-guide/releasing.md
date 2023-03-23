@@ -1,8 +1,8 @@
 # Releasing
 
-See [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md) for an overview of CiviForm release practices.
+See [Upgrading to a New Release](../../it-manual/sre-playbook/upgrading-to-a-new-release.md) for an overview of CiviForm release practices.
 
-Releases are created weekly by the on-call engineer on Wednesday before 12pm. The on-call engineer may use the production meeting time to create the release if desired. Out-of-schedule releases may be created if requested by a civic entity (e.g. for an urgent bugfix).
+Releases are created weekly by the on-call engineer on Wednesday before 12pm Pacific Time. The on-call engineer may use the production meeting time to create the release if desired. Out-of-schedule releases may be created if requested by a civic entity (e.g. for an urgent bugfix).
 
 New releases go through a QA process that takes them from a draft state to fully published. The QA process is best-effort for official release images, and may be skipped if resources are not available.
 
@@ -115,4 +115,4 @@ If Matthew is not available, recruit engineers, PMs, and other contributors to e
 
 ### 5. Publish the release notes and email all stakeholders
 
-Once the release notes are looking good, publish the draft notes and then email the release notes to civiform-announce@googlegroups.com
+Once the release notes are looking good, publish the draft notes (click the edit button and then "Publish" at the bottom of the screen) and then email the release notes to civiform-announce@googlegroups.com and civiform-technical@googlegroups.com

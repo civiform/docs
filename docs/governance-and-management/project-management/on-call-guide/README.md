@@ -14,11 +14,6 @@ Join the CiviForm GitHub repo ([https://github.com/civiform/civiform](https://gi
 
 Also join the CiviForm GitHub org ([https://github.com/civiform](https://github.com/civiform)).
 
-
-TODO: is this still true?
-
-NOTE: the mainline project repo existing under the `seattle-uat` GitHub org is temporary. Once Seattle no longer depends on deployment automation from the mainline repo you will only need to be an admin of https://github.com/civiform.
-
 #### Ensure you have visibility into comms
 
 * Join the CiviForm public Slack org (https://civiform.slack.com), [join link](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q)
@@ -55,7 +50,9 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
 4. Monitor staging deployments in the [#ci](https://app.slack.com/client/T01Q6PJQAES/C03UXPUEXU4) Slack channel. Investigate failed deployments and re-run if appropriate. (Note: our browser tests can be flakey and case deployments to fail. If this is the case, re-running the deployment will often fix the issue.)
 4. Check [dependency updates](https://github.com/civiform/civiform/labels/dependencies) (once per shift)
 5. Check security updates at [Codecov](https://about.codecov.io/security-update)
-6. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md)
+6. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md) and close the oncall issue assigned to you.
+7. Update the [Oncall Journal](on-call-journal.md) with anything that happened during your shift that you think might be helpful for future on-callers to know.
+8. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
 
 #### Downstream production incident support
 

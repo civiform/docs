@@ -247,7 +247,7 @@ actions or validating page contents. Some examples of where this can happen:
    input validation to complete (e.g., specifying an *enabled* button to click
    instead of just specifying the button).
 
-### Screenshot diffing
+#### Screenshot diffing
 
 Screenshot tests are implemented with
 [jest-image-snapshot](https://github.com/americanexpress/jest-image-snapshot).
@@ -277,7 +277,7 @@ automatically normalize these, UI elements that contain them need to have the
 Check the [normalizeElements](https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/civiform/civiform%24+normalizeElements&patternType=standard&sm=1)
 function for an up-to-date list of elements and update if necessary.
 
-### Axe accessibility tests
+#### Axe accessibility tests
 
 Accessibility tests are run at the browser test level on the final generated
 HTML page, using [axe](https://github.com/dequelabs/axe-core). You can run an
@@ -292,10 +292,13 @@ to fix the accessibility problem, and will include a snippet of the problematic
 `html`. Running the tests locally with [debug mode](#debug-mode) is particularly
 helpful here since you can manually inspect the html.
 
-### Debugging browser tests
+#### Debugging browser tests
 
 Please see the [Playwright debug docs](https://playwright.dev/docs/debug) for a
 lot more info on this topic.
+
+Set the env var `RECORD_VIDEO=1` to tell playwright to record a video of the test run. 
+Videos are available in `browser-tests/tmp/videos` after the test run completes.
 
 #### Local debug mode
 

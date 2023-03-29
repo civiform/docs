@@ -41,7 +41,7 @@
 
 * [Technical Deployment Guide](it-manual/sre-playbook/README.md)
   * [Initial Deployment](it-manual/sre-playbook/initial-deployment.md)
-  * [CiviForm server environment variables](it-manual/sre-playbook/server-environment-variables/README.md)
+  * [CiviForm server environment variables](it-manual/sre-playbook/server-environment-variables)
   * [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md)
   * [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)

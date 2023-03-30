@@ -7,5 +7,5 @@ When we create a new CiviForm release a corresponding markdown file is
 generated from env-var-docs.json and added to this directory.
 
 <!--- env-var-docs/generate_markdown.py START --->
-- [v1.19.0](./v1.19.0.md)
+- [v1.19.0](v1.19.0.md)
 <!--- env-var-docs/generate_markdown.py END --->

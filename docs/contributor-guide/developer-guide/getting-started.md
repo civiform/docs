@@ -148,6 +148,8 @@ If you'd like to run a specific test or set of tests, and/or save sbt startup ti
 
     ```
     testOnly services.question.types.QuestionDefinitionTest
+    
+    testOnly services.question.types.QuestionDefinitionTest -- -z getQuestion*
 
     test
     ```

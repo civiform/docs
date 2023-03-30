@@ -3,7 +3,7 @@
 This section covers tips on how to adopt and implement CiviForm to meet your organization's needs. 
 
 * [Plan]: Map the needs of your organization and programs in detail to understand where CiviForm can help.
-  * [Organization assessment]
+  * [Organization assessment](organization-assessment.md)
   * [Program assessment](program-assessment.md)
 * [Implement]: Work with program administrators to create a better experience for applicants and staff.
   * [Getting started with service design]

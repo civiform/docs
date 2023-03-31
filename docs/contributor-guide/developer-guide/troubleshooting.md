@@ -68,6 +68,10 @@ with the above error.
 
 
 ## Running locally
+### type UntrailingController is not a member of package controllers
+If you see this error and a bunch error like the below, running bin/sbt clean seem to have it fixed for many.
+[error] GET     /support/unconfirmedIdcsEmail  controllers.SupportController.handleUnconfirmedIdcsEmail(request: Request)
+
 
 ### OpenJDK acting weird on M1 Mac
 If you're running Docker on an M1 Mac and getting a weird error like this:

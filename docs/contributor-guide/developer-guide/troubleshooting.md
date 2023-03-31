@@ -69,7 +69,7 @@ with the above error.
 
 ## Running locally
 ### type UntrailingController is not a member of package controllers
-If you see this error and a bunch error like the below, running bin/sbt clean seem to have fixed for many.
+If you see this error and a bunch error like the below, running bin/sbt clean seem to have it fixed for many.
 [error] GET     /support/unconfirmedIdcsEmail  controllers.SupportController.handleUnconfirmedIdcsEmail(request: Request)
 
 

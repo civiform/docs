@@ -43,6 +43,7 @@
   * [Initial Deployment](it-manual/sre-playbook/initial-deployment.md)
   * [CiviForm server environment variables](it-manual/sre-playbook/server-environment-variables)
     * [v1.19.0](it-manual/sre-playbook/server-environment-variables/v1.19.0.md)
+    * [v1.20.0](it-manual/sre-playbook/server-environment-variables/v1.20.0.md)
   * [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md)
   * [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)

@@ -1,7 +1,12 @@
 # CiviForm server environment variables
 
-We document every environment variable that the CiviForm server reads
-configuration from in
-[env-var-docs.json](https://github.com/civiform/civiform/blob/main/server/conf/env-var-docs.json).
-When we create a new CiviForm release a corresponding markdown file is
-generated from env-var-docs.json and added to this directory.
+The CiviForm server is configurable through environment variables. All
+availabile variables are documented in a
+[env-var-docs.json](https://github.com/civiform/civiform/blob/main/server/conf/env-var-docs.json)
+file in the civiform/civiform repository.
+
+When a CiviForm server version is released, the env-var-docs.json file
+corresponding to the release is used to generate markdown documentation of the
+variables. The generated markdown files are added to this directoy. Use the
+left sidebar to see the available configuration variables for the CiviForm
+version you are deploying.

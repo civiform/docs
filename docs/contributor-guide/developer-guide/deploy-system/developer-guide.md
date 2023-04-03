@@ -1,14 +1,21 @@
 # Deploy system developer guide
 
-This page contains information for deploy system developers, which go beyond the initial setup. 
-You should have worked through the [Prerequisits & dev setup](contributor-guide/developer-guide/deploy-system/prerequisits.md) already
+This page contains information for deploy system developers, which go beyond the initial one off setup. 
+You should have worked through the [Prerequisites & dev setup](contributor-guide/developer-guide/deploy-system/prerequisites.md) already
 and know the difference between the repositories (civiform-deploy, civiform-deploy-infra and civiform) from the overview section.
 
+The "Setup" section will talk you through setup which you may have to revisit more than once, e.g steps you will do for each
+new change.
 The "Most common developer flows" section contains all essential information to be able to do a first change. 
 We recommend coming back soon to "Optimizing your flow" and skim reading the tips and tricks section so you know 
 what information is provided when you need it.
 
-## Running locally
+## Setup
+See the [Setup Repositories](prerequisites.md#setup-repositories) section in [Prerequisites and developer setup](prerequisites.md) for instructions on setting up your responsitories for the first time.
+
+## Most Common developer flows
+
+### Running locally
 
 The most common flow for developers is to run the deployment script on your local machine to test your changes to 
 the civiform-deploy-infra repository. To do this,you create a configuration file for your deployment and then run 
@@ -21,7 +28,7 @@ You have two options here:
 [bin/setup](https://github.com/civiform/civiform-deploy/blob/main/bin/setup), which then calls 
 run.py(https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/shared/bin/run.py). 
 Because run.py is in a different repository, it requires development across different git repositories.
-2. For the second flow you develope in the civiform-deploy-infra repository and run run.py from there.
+2. For the second flow, you develop in the civiform-deploy-infra repository and run run.py from there.
 
 #### Create civiform config (shared for both flows)
 
@@ -49,8 +56,8 @@ Setup will ask you to confirm multiple times and to provide secret values. You c
 At the end the script should print url to your dev server!
 
 Remember that if you have any changes in your civiform-deploy-infra repository which you would like to be visible in your deployment, 
-you have to have gone through the git setup steps in the prerequisits previously to ensure that the newest version is copied
-from your civiform-deploy-infra to your civiform-deploy repository. Also make sure commit the changes to the relevant 
+you have to have gone through the git setup steps in the setup section above previously to ensure that the newest version is copied
+from your civiform-deploy-infra to your civiform-deploy repository. Also make to sure commit the changes to the relevant 
 branch in git before running the script.
 
 ### Flow 2 Running the deploy script from within civiform-deploy-infra
@@ -80,7 +87,7 @@ cloud/shared/bin/run.py --command=destroy
 
 ### Viewing local server changes in your deployment
 
-Please note that at the time of writing this is only supported for linux machines due to this issue.
+Please note that at the time of writing this was only supported for linux machines due to this issue.
 
 In some cases you will want to see changes you made to your local server in your local deployment, for example if you want to 
 test that a configuration value that is supposed to change the UI is effective. 
@@ -109,11 +116,12 @@ Push the image to your repository
 
 #### Pointing your deployment at your docker image
 * Open app.tf (https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/aws/templates/aws_oidc/app.tf#L37) 
-* Change the container image to '''container_image              = “jessbumblebee/civiform:latest” '''
+* Change the container image to '''container_image              = “<your_dockerhub_username>/civiform:latest” '''
 
 ###  A typical full development cycle across 3 branches
 
 The below describes a flow for seeing changes across all three branches (civiform-deploy, civiform-deploy-infra and civiform).
+You can skip some sections, if you are only developing across less than 3 branches.
 
 #### Server changes
 Make your Server changes (e.g. UI changes that depend on a config value reaching the server)
@@ -124,7 +132,7 @@ Make your Server changes (e.g. UI changes that depend on a config value reaching
 
 Make your deployment use the civiform image you created locally(to see server changes)
 * In [app.tf](https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/aws/templates/aws_oidc/app.tf#L37) in the 
-the deploy-infra repository, change the image you use      '''container_image              = "jessbumblebee/civiform:latest" '''
+the deploy-infra repository, change the image you use      '''container_image              = "<your_dockerhub_username>/civiform:latest" '''
 * git add and git commit your changes 
 
 #### Deployment system changes
@@ -134,12 +142,20 @@ Make your changes
 
 Double check that setup script sees the changes
 * Change to the civiform-deploy repository
-* Ensure that your checkout.sh copies your changes from the correct git branch in civiform-deploy-infra (see Prerequisits)
+* Ensure that your checkout.sh copies your changes from the correct git branch in civiform-deploy-infra (see Prerequisites)
 
 #### Run the deployment script
 Run the script from the civiform-deploy repository
  * If you need to make any further changes to civiform_config.sh, do so
  * run '''yes yes | bin/set''' 
+
+### Running the Python formatter
+Before you push your change to git and ask for a review, format the code with the following command:
+'''
+yapf --verbose --style='{based_on_style: google, SPLIT_BEFORE_FIRST_ARGUMENT:true}' -ir .
+'''
+This formats all python files under the current directory and requires the installation of yapf as described
+in the prerequisites section.
 
 ## Optimizing your flow
 
@@ -189,6 +205,10 @@ TODO([#4324](https://github.com/civiform/civiform/issues/4324))
 
 TODO([#4324](https://github.com/civiform/civiform/issues/4324))
 
+### Running individual Python files
+
+TODO([#4324](https://github.com/civiform/civiform/issues/4324))
+
 ## Additional Tips and tricks
 
 ### Running more terraform commands
@@ -203,7 +223,4 @@ For example:
 terraform -chdir=cloud/aws/templates/aws_oidc plan
 ```
 
-### Running individual Python files
-
-TODO([#4324](https://github.com/civiform/civiform/issues/4324))
 

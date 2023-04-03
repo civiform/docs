@@ -14,8 +14,6 @@ Join the CiviForm GitHub repo ([https://github.com/civiform/civiform](https://gi
 
 Also join the CiviForm GitHub org ([https://github.com/civiform](https://github.com/civiform)).
 
-NOTE: the mainline project repo existing under the `seattle-uat` GitHub org is temporary. Once Seattle no longer depends on deployment automation from the mainline repo you will only need to be an admin of https://github.com/civiform.
-
 #### Ensure you have visibility into comms
 
 * Join the CiviForm public Slack org (https://civiform.slack.com), [join link](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q)
@@ -41,21 +39,26 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
 
 ### On-call responsibilities
 
-1. Respond to downstream production incidents (daily)
+1. [Generate a release](../../../contributor-guide/developer-guide/releasing.md) on Wednesday by 12pm Pacific Time
+2. Respond to downstream production incidents (daily)
    * Check GitHub [issue tracker](https://github.com/civiform/civiform/issues)
    * Check [civiform-technical@googlegroups.com](https://groups.google.com/g/civiform-technical)
-2. Check security mailing lists for new vulnerability reports (daily)
+3. Check security mailing lists for new vulnerability reports (daily)
    * [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
    * [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
    * [pac4j security announcement mailing list](https://groups.google.com/g/pac4j-security)
-3. Check [dependency updates](https://github.com/civiform/civiform/labels/dependencies) (once per shift)
-4. Check security updates at [Codecov](https://about.codecov.io/security-update)
+4. Monitor staging deployments in the [#ci](https://app.slack.com/client/T01Q6PJQAES/C03UXPUEXU4) Slack channel. Investigate failed deployments and re-run if appropriate. (Note: our browser tests can be flakey and case deployments to fail. If this is the case, re-running the deployment will often fix the issue.)
+4. Check [dependency updates](https://github.com/civiform/civiform/labels/dependencies) (once per shift)
+5. Check security updates at [Codecov](https://about.codecov.io/security-update)
+6. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md) and close the oncall issue assigned to you.
+7. Update the [Oncall Journal](on-call-journal.md) with anything that happened during your shift that you think might be helpful for future on-callers to know.
+8. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
 
 #### Downstream production incident support
 
 The top priority for the on-caller is addressing urgent needs from downstream deployments of CiviForm. An urgent need is an outage, privacy, or security incident caused by bugs in the CiviForm application or deployment code. When an incident occurs it may not be clear what the root cause is and whether or not it is ultimately the responsibility of the upstream project to resolve it. Assume it is though until proven otherwise.
 
-Incidents may be reported in a variety of ways. Since they're coming from civic entities and not Google internal staff or tooling we have limited control over this. At a minimum you should monitor:
+Incidents may be reported in a variety of ways. Since they're coming from civic entities and not Google or Exygy internal staff or tooling we have limited control over this. At a minimum you should monitor:
 
 * Bugs filed in the GitHub issues tracker
 * Emails to civiform-technical@googlegroups.com
@@ -67,7 +70,7 @@ Tip: Your primary responsibility with respect to incident response is to triage 
 
 #### Security vulnerability fixes
 
-In open source software development, it's common for library maintainers to release updates when a new security vulnerability is discovered. Subscribe to the security mailing lists mentioned in the Preparation section. If you receive an advisory during your on-call shift, respond to it by creating an issue in GitHub and triaging it appropriately.
+In open source software development, it's common for library maintainers to release updates when a new security vulnerability is discovered. Subscribe to the security mailing lists mentioned in the [Preparation section](#ensure-you-have-visibility-into-comms). If you receive an advisory during your on-call shift, respond to it by creating an issue in GitHub and triaging it appropriately.
 
 The most common response will be to update the appropriate dependency to the latest patch version that includes a fix.
 

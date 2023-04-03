@@ -41,6 +41,9 @@
 
 * [Technical Deployment Guide](it-manual/sre-playbook/README.md)
   * [Initial Deployment](it-manual/sre-playbook/initial-deployment.md)
+  * [CiviForm server environment variables](it-manual/sre-playbook/server-environment-variables)
+    * [v1.19.0](it-manual/sre-playbook/server-environment-variables/v1.19.0.md)
+    * [v1.20.0](it-manual/sre-playbook/server-environment-variables/v1.20.0.md)
   * [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md)
   * [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
@@ -89,7 +92,7 @@
   * [Adding a new question type](contributor-guide/developer-guide/adding-a-new-question-type.md)
   * [Deploy system](contributor-guide/developer-guide/deploy-system/README.md)
     * [Technical overview](technical-overview.md)
-    * [Prerequisits & dev setup](contributor-guide/developer-guide/deploy-system/prerequisits.md)
+    * [Prerequisites & dev setup](contributor-guide/developer-guide/deploy-system/prerequisites.md)
     * [Developer guide](contributor-guide/developer-guide/deploy-system/developer-guide.md)
     * [Recommended reading](contributor-guide/developer-guide/deploy-system/recommended-reading.md)
     * [Testing](contributor-guide/developer-guide/deploy-system/testing.md)

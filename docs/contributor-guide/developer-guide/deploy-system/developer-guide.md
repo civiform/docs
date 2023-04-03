@@ -110,13 +110,13 @@ In your civiform repository,
 * run bin/build-prod
 
 Push the image to your repository
-* check the image is present with '''docker images'''
-* push it to docker with '''docker push <your_cockerhub_name>/civiform:latest'''. (If you get an access denied error, you may need to log into your docker account with '''docker login''')
+* check the image is present with `docker images`
+* push it to docker with `docker push <your_cockerhub_name>/civiform:latest`. (If you get an access denied error, you may need to log into your docker account with `docker login`)
 * go to your dockerhub at https://hub.docker.com/u/<your_dockerhub_name> to check the image has been updated
 
 #### Pointing your deployment at your docker image
 * Open app.tf (https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/aws/templates/aws_oidc/app.tf#L37) 
-* Change the container image to '''container_image              = “<your_dockerhub_username>/civiform:latest” '''
+* Change the container image to `container_image              = “<your_dockerhub_username>/civiform:latest” `
 
 ###  A typical full development cycle across 3 branches
 
@@ -126,13 +126,13 @@ You can skip some sections, if you are only developing across less than 3 branch
 #### Server changes
 Make your Server changes (e.g. UI changes that depend on a config value reaching the server)
 * Make your change in the civiform repository
-* from the root of your civiform repository build a docker image '''docker build -t <your_dockerhub_name>/civiform:latest .'''
-* push the image to dockerhub '''docker push <your_dockerhub_name>/civiform:latest'''
+* from the root of your civiform repository build a docker image `docker build -t <your_dockerhub_name>/civiform:latest .`
+* push the image to dockerhub `docker push <your_dockerhub_name>/civiform:latest`
 * Check on dockerhub that the image is visible and has the correct timestamp
 
 Make your deployment use the civiform image you created locally(to see server changes)
 * In [app.tf](https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/aws/templates/aws_oidc/app.tf#L37) in the 
-the deploy-infra repository, change the image you use      '''container_image              = "<your_dockerhub_username>/civiform:latest" '''
+the deploy-infra repository, change the image you use      `container_image              = "<your_dockerhub_username>/civiform:latest" `
 * git add and git commit your changes 
 
 #### Deployment system changes
@@ -147,13 +147,13 @@ Double check that setup script sees the changes
 #### Run the deployment script
 Run the script from the civiform-deploy repository
  * If you need to make any further changes to civiform_config.sh, do so
- * run '''yes yes | bin/set''' 
+ * run `yes yes | bin/set`
 
 ### Running the Python formatter
 Before you push your change to git and ask for a review, format the code with the following command:
-'''
+```
 yapf --verbose --style='{based_on_style: google, SPLIT_BEFORE_FIRST_ARGUMENT:true}' -ir .
-'''
+```
 This formats all python files under the current directory and requires the installation of yapf as described
 in the prerequisites section.
 
@@ -171,7 +171,7 @@ The error you will get when Python can't find the files is usually something alo
 'ModuleNotFoundError: No module named <someModule>'
 In this case you have to add the current folder and its sub-folders to the existing PYTHONPATH by calling the following from command line:
 
-'''export PYTHONPATH=./cloud:$PYTHONPATH'''
+```export PYTHONPATH=./cloud:$PYTHONPATH```
 
 #### Running python code via tests:
 
@@ -179,7 +179,7 @@ This has a few advantages: You are not adding any code in the source and therefo
 
 * If the file does not have tests yet, add a test file. Tests for other files can server as an example. Our python tests are usually located in the same folder as the source code.
 * Check if there is a test case that executes your code. The easiest way is to add a print() statement and see if gets printed. If no test case for the relevant lines exists, you can add a new one.
-* Call the test with 'python3 path/to/your/testfile'
+* Call the test with `python3 path/to/your/testfile`
 
 Once you are done with your testing and experimenting consider turning your temporary test into a real one to increase coverage (Wohoo! Extra tests with little etra effort!)
 
@@ -188,14 +188,14 @@ Once you are done with your testing and experimenting consider turning your temp
 There are a couple of disadvantages to this approach: You have to remember to remove the code you are adding before running the full deploy script. You also have to write all the calls that run relevant bits yourself whereelse tests often already do that for you.
 
 * In the source code(e.g. path/to/your/file) create the objects and call the methods that you would like to be executed. In the example below you want to run the load_config method and the tf_config_vars method of the class ConfigLoader and print out the result. You add the following code to the end of the file that you will run afterwards
-''' 
+```
      config_loader = ConfigLoader()
      validation_errors = config_loader.load_config("/Users/jhummel/Civiform/civiform-deploy/civiform_config.sh")
      print(validation_errors)
      tf_config_vars = config_loader.get_terraform_variables()
      print(tf_config_vars)
-'''
-* Run the code by calling 'python3 path/to/your/file'
+```
+* Run the code by calling `python3 path/to/your/file`
 
 ### Automating your manual flow via ~/.bashrc
 

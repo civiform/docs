@@ -112,7 +112,7 @@ click the 'Move' button under the 'AWS account' section in the dropdown.
 
 #### Log into a e2e test account
 
-1. Click on the top-rightmost dropdown then click the 'Switch role' button.
+1. Click on the top-rightmost dropdown the 'Switch role' button.
 
 	![Switch role dropdown](../../../.gitbook/assets/switch-role.png)
 	
@@ -144,8 +144,8 @@ page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home
 Input 'civiform-cloud-deploy-infra-tests-N' where N is the next test account
 number.  For example, if the next test account number was 2, input
 'civiform-cloud-deploy-infra-tests-2'. The account alias is needed to run
-aws-nuke on the account.
-<br>Then click the "save changes" button.
+aws-nuke on the account.<br>
+Then click the "save changes" button.
 
 	![Add account alias](../../../.gitbook/assets/account-alias.png)
 

@@ -85,7 +85,7 @@ Creating providers (for DateTime things) is different and looks like
 Use the override functionality of FeatureFlags and set the session data of your
 fake requests.
 
-`Helpers.fakeRequest().session(FeatureFlags.APPLICATION_STATUS_TRACKING_ENABLED,
+`Helpers.fakeRequest().session(FeatureFlags.APPLICATION_STATUS_TRACKING_ENABLED.toString(),
 "false")`
 
 ### Browser

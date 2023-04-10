@@ -127,6 +127,9 @@ Questions that are skipped are present but have null values for the skipped scal
     "submitter_email": "Applicant",
     "submit_time": "2022-04-19T21:46:05.774624Z",
     "application": {
+     "phone":{
+        "phone_number":"+1 425-810-3298"
+      },
       "applicant_favorite_color": {
         "text": "brown",
         "updated_at": "2022-03-31T18:02:11.822075Z"

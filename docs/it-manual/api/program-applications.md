@@ -110,6 +110,7 @@ Questions that are skipped are present but have null values for the skipped scal
 |Single select|selection       |string, en-US localized string of the selected option            |
 |Text         |text            |string                                                           |
 |Updated at   |updated_at      |ISO 8601 date and time of when the scalar was updated            |
+|Phone Number |phone_number    |E.123 format, but with all spaces replaced with a hyphen.        |
 
 **Example export**
 

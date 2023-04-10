@@ -110,7 +110,7 @@ Questions that are skipped are present but have null values for the skipped scal
 |Single select|selection       |string, en-US localized string of the selected option            |
 |Text         |text            |string                                                           |
 |Updated at   |updated_at      |ISO 8601 date and time of when the scalar was updated            |
-|Phone Number |phone_number    |E.123 format, but with all spaces replaced with a hyphen.        |
+|Phone Number |phone_number    |E.164 format                                                     |
 
 **Example export**
 
@@ -128,7 +128,7 @@ Questions that are skipped are present but have null values for the skipped scal
     "submit_time": "2022-04-19T21:46:05.774624Z",
     "application": {
      "phone":{
-        "phone_number":"+1 425-810-3298"
+        "phone_number":"+14258103298"
       },
       "applicant_favorite_color": {
         "text": "brown",

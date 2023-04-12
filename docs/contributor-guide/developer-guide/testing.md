@@ -63,9 +63,15 @@ Test / fork := false,
 Then, use your debugger of choice to attach to port `8459` (VSCode workspace
 configuration already has a configuration for this).
 
+Note that this causes the configuration override not to have an effect. This means that [overriding feature flags](https://docs.civiform.us/contributor-guide/developer-guide/feature-flags#testing) in tests will not work and code gated by a feature flag will not be run.
+
 When attaching, a deadlock can occur if trying to attach too early. Consider
 waiting until the log line indicating connection to the database succeeded
 before attaching a debugger.
+
+### Using the `@VisibleForTesting` annotation
+
+The [`@VisibleForTesting`](https://guava.dev/releases/19.0/api/docs/com/google/common/annotations/VisibleForTesting.html) annotation puts a restriction on the method you are annotating so that it can only be called from code contained in tests. It does not change the access level of the method, so you will still need to make the method accessible to your test (eg. `public` if it's not contained in the same package as your test).
 
 ### Controller tests
 

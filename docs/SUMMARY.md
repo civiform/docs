@@ -29,6 +29,7 @@
   * [Question type requirements notes](user-manual/civiform-admin-guide/question-type-requirements-notes.md)
   * [Manage API keys](user-manual/civiform-admin-guide/manage-api-keys.md)
   * [Manage Address & Service Area Validation](user-manual/manage-address-correction-and-service-area-validation.md)
+  * [Set a pre-screener](user-manual/civiform-admin-guide/set-pre-screener.md)
 * [Program Admin Guide](user-manual/program-admin-guide/README.md)
   * [How to become a Program Admin](user-manual/program-admin-guide/how-to-become-a-program-admin.md)
   * [Review completed applications](user-manual/program-admin-guide/review-completed-applications.md)
@@ -37,7 +38,6 @@
 * [Operational Resources](user-manual/operational-resources/README.md)
   * [Civic entity staffing overview](user-manual/operational-resources/civic-entity-staffing-overview.md)
   * [Program assessment](user-manual/operational-resources/program-assessment.md)
-  * [Set a pre-screener](user-manual/civiform-admin-guide/set-pre-screener.md)
 
 ## IT Manual
 

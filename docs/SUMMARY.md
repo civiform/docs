@@ -37,6 +37,7 @@
 * [Operational Resources](user-manual/operational-resources/README.md)
   * [Civic entity staffing overview](user-manual/operational-resources/civic-entity-staffing-overview.md)
   * [Program assessment](user-manual/operational-resources/program-assessment.md)
+  * [Set a pre-screener](user-manual/civiform-admin-guide/set-pre-screener.md)
 
 ## IT Manual
 

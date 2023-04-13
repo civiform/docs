@@ -1,6 +1,6 @@
 # Set a program as the pre-screener
 
-You can mark one program as the pre-screener (aka intake form). The pre-screener is pinned to the top of the programs page for applicants in a special **Find benefits** section. When the applicant fills out the pre-screener, programs they may be eligible for are displayed to them based on their answers. For that reason, you may want to use the pre-screener feature in combination with the eligibility feature.
+You can mark one program as the pre-screener (aka intake form). The pre-screener is pinned to the top of the programs page for applicants in a special **Find benefits** section. After the applicant submits the pre-screener, programs they may be eligible for are displayed to them based on their answers. For that reason, you may want to use the pre-screener feature in combination with specifying eligibility conditions on non-pre-screener programs.
 
 ![](../../.gitbook/assets/find-benefits.png)
 

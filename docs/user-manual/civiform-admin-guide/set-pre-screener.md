@@ -1,6 +1,6 @@
 # Set a program as the pre-screener
 
-You can mark one program as the pre-screener (aka intake form). The pre-screener is pinned to the top of the programs page for applicants in a special **Find benefits** section. After the applicant submits the pre-screener, programs they may be eligible for are displayed to them based on their answers. For that reason, you may want to use the pre-screener feature in combination with specifying eligibility conditions on non-pre-screener programs.
+You can mark one program as the pre-screener (aka intake form). The pre-screener is pinned to the top of the programs page for applicants in a special **Find services** section. After the applicant submits the pre-screener, programs they may be eligible for are displayed to them based on their answers. For that reason, you may want to use the pre-screener feature in combination with specifying eligibility conditions on non-pre-screener programs.
 
 ![](../../.gitbook/assets/find-benefits.png)
 
@@ -8,7 +8,7 @@ You can mark one program as the pre-screener (aka intake form). The pre-screener
 
 When the applicant fills out the pre-screener, programs they may be eligible for are displayed to them based on their answers. To make the most use out of this feature, set [eligibility conditions](https://docs.civiform.us/user-manual/civiform-admin-guide/manage-eligibility) on the programs using questions that appear on both the pre-screener and the target program.
 
-For example, you may create a pre-screener with a question asking applicants for their date of birth. You may have program A that requires applicants to be over the age of 18 and program B that requires candidates to be under 18. Set an eligibility condition for program A specifying that the applicant is eligible if 18 or over. Set the eligibility condition for program B to under 18. Then when the applicant fills out the pre-screener, either program A or B will be recommended to them based on their answer to the date of birth question.
+For example, you may create a pre-screener with a question asking applicants for their date of birth. You may have program A that requires applicants to be at least 18 years old and program B that requires candidates to be under 18. Set an eligibility condition for program A specifying that the applicant is eligible if 18 or over. Set the eligibility condition for program B to under 18. Then when the applicant fills out the pre-screener, either program A or B will be recommended to them based on their answer to the date of birth question.
 
 ## Creating a program and marking it as the pre-screener
 

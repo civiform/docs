@@ -34,3 +34,11 @@ Note that eligibility conditions cannot be set for the pre-screener, so if you h
 1. Click **Programs** on the navigation bar.
 1. The pre-screener will be labeled. If no program has the pre-screener label, there is no pre-screener currently set.
 
+## Setting a redirect URL for when no eligible programs are found
+If the applicant fills out the pre-screener and no programs they may be eligible for are found, we display a message to them that contains a link to the civic entity's website where they can find more benefit programs. The message says:
+
+***The pre-screener could not find programs you may qualify for at this time. However, you may apply for benefits at any time, by clicking 'Apply to programs'. Or to view additional benefit programs you can visit `CIVIC_ENTITY_WEBSITE`***
+
+To set the text and URL that are used for `CIVIC_ENTITY_WEBSITE`, you need to set the following [environment variables](https://docs.civiform.us/it-manual/sre-playbook/server-environment-variables) in your deployment script:
+* ```COMMON_INTAKE_MORE_RESOURCES_LINK_TEXT```
+* ```COMMON_INTAKE_MORE_RESOURCES_LINK_HREF```

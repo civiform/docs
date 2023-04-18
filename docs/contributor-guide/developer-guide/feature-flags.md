@@ -31,6 +31,7 @@ To add a new flag:
 1.  Add the Config value to [`feature-flags.conf`](https://github.com/civiform/civiform/blob/main/server/conf/helper/feature-flags.conf).
 1.  Inject `FeatureFlags` into client classes.
 1.  Call `FeatureFlags::getFlagEnabled`](https://github.com/civiform/civiform/blob/183a4d634fa53e7c07975ce3f915f1b8f6a4660a/server/app/featureflags/FeatureFlags.java#L51) to determine whether a flag is enabled.
+1.  If you'd like for your flag to be able to be overriden via environment variables for a deployment, pass the flag through the deployment system. See [this pull request](https://github.com/civiform/cloud-deploy-infra/pull/145) as an example.
 
 [Here](https://github.com/civiform/civiform/pull/4435/files) is a simple example of doing all of these.
 

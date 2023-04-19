@@ -32,9 +32,9 @@ Once you have an Identity Center user with permissions to administer your Grafan
 
 To enable viewing metrics, add the Prometheus server as a data source for your Grafana workspace: 
 
-1. In AWS console for your Grafana workspace, lick on the 'Data sources' tab
+1. In AWS console for your Grafana workspace, click on the 'Data sources' tab
 1. Click on the 'Configure in Grafana' link on the 'Amazon Managed Service for Prometheus' row
-1. Select the region where civiform is deployed
+1. Select the region where CiviForm is deployed
 1. Select the '[deployment name]-CiviForm_metrics' row 
 1. Select 'add 1 data source'
 
@@ -50,7 +50,11 @@ With Prometheus connected as a Grafana workspace, panels can now be created in G
 
 To import this pre-built dashboard: 
 
-1. Hover over the "+" icon in the left nav
-1. Click the "Import" option 
-1. Paste [the JSON here](https://gist.githubusercontent.com/bion/9c5e9293a887f4ea76f123908fb35ef7/raw/c179075f37026544124475ed46646861fda16a5f/civiform_grafana_dashboard.json) into the "Import via panel JSON" and click "Load"
-1. Fill in the details for the imported dashboard, selecting your CiviForm prometheus instance for the data source
+1. Click on the "Data Sources" tab and select the Prometheus data source
+2. Copy the ID at the end of the URL after `/edit/`
+3. Hover over the "+" icon in the left nav
+4. Click the "Import" option 
+5. Paste [the JSON here](https://gist.githubusercontent.com/dkatzz/204b5c411cb43b8617b777efe2567b01/raw/d146013037c8e1ab8f7a1616f94ab59444170a11/gistfile1.txt) into the "Import via panel JSON" 
+6. Replace all instances of ${PROMETHEUS_ID} with the ID you copied in step 2
+7. Click "Load"
+8. Fill in the details for the imported dashboard, selecting your CiviForm prometheus instance for the data source

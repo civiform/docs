@@ -128,28 +128,31 @@ Indexes:
     "index_persisted_durable_jobs_by_execution_time" btree (execution_time)
     "index_persisted_durable_jobs_by_success_time" btree (success_time)
 
-                                                 Table "public.programs"
-            Column            |            Type             | Collation | Nullable |               Default                
-------------------------------+-----------------------------+-----------+----------+--------------------------------------
- id                           | bigint                      |           | not null | nextval('programs_id_seq'::regclass)
- name                         | character varying           |           |          | 
- description                  | character varying           |           |          | 
- block_definitions            | jsonb                       |           | not null | 
- export_definitions           | jsonb                       |           |          | 
- legacy_localized_name        | jsonb                       |           |          | 
- legacy_localized_description | jsonb                       |           |          | 
- slug                         | character varying           |           |          | 
- localized_name               | jsonb                       |           |          | 
- localized_description        | jsonb                       |           |          | 
- external_link                | character varying           |           |          | ''::character varying
- display_mode                 | character varying           |           | not null | 'PUBLIC'::character varying
- create_time                  | timestamp without time zone |           |          | 
- last_modified_time           | timestamp without time zone |           |          | 
- status_definitions           | jsonb                       |           |          | '{"statuses": []}'::jsonb
+                                                  Table "public.programs"
+             Column             |            Type             | Collation | Nullable |               Default
+--------------------------------+-----------------------------+-----------+----------+--------------------------------------
+ id                             | bigint                      |           | not null | nextval('programs_id_seq'::regclass)
+ name                           | character varying           |           |          |
+ description                    | character varying           |           |          |
+ block_definitions              | jsonb                       |           | not null |
+ legacy_localized_name          | jsonb                       |           |          |
+ legacy_localized_description   | jsonb                       |           |          |
+ slug                           | character varying           |           |          |
+ localized_name                 | jsonb                       |           |          |
+ localized_description          | jsonb                       |           |          |
+ external_link                  | character varying           |           |          | ''::character varying
+ display_mode                   | character varying           |           | not null | 'PUBLIC'::character varying
+ create_time                    | timestamp without time zone |           |          |
+ last_modified_time             | timestamp without time zone |           |          |
+ status_definitions             | jsonb                       |           |          | '{"statuses": []}'::jsonb
+ program_type                   | character varying           |           |          | 'default'::character varying
+ eligibility_is_gating          | boolean                     |           |          | true
+ localized_confirmation_message | jsonb                       |           |          |
 Indexes:
     "programs_pkey" PRIMARY KEY, btree (id)
 Referenced by:
     TABLE "applications" CONSTRAINT "fk_program" FOREIGN KEY (program_id) REFERENCES programs(id)
+
                                             Table "public.questions"
           Column           |        Type         | Collation | Nullable |                Default
 ---------------------------+---------------------+-----------+----------+---------------------------------------

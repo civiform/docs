@@ -2,19 +2,19 @@
 
 This document describes the infrastructure required to deploy CiviForm into a new jurisdiction.
 
-CiviForm is a classic web-based client-server architecture which stores applicant data in a database. The application server typically runs in a Docker container, a type of virtualized environment which contains most of the pieces described below.
+CiviForm is a classic web-based client-server architecture which stores applicant information in a database. The application server typically runs in a Docker container, a type of virtualized environment which contains most of the pieces described below.
 
-### The Subsystems
+## The Subsystems
 
 Basic architecture
 
-![Screenshot from 2022-05-18 16-38-23](https://user-images.githubusercontent.com/473671/169172461-88113d27-6753-4a12-b771-d38984929b38.png)
+![Basic architecture diagram](https://user-images.githubusercontent.com/473671/169172461-88113d27-6753-4a12-b771-d38984929b38.png)
 
 Note that there usually is not direct traffic between the CiviForm server and identity providers (dotted lines). Rather, users authenticate by visiting CiviForm, which redirects their browser to an identity provider, which in turn redirects them back to CiviForm.
 
 **Load Balancer**
 
-Software-defined load balancer to route incoming client traffic to an array of backends; required to ensure the software scales up gracefully with increased load.
+Software-defined load balancer to route incoming client traffic to an array of backends; required to ensure the software scales up gracefully with increased load. 
 
 If running in a cloud-service, an example would be AWS ELB or Azure Load Balancer.
 
@@ -47,11 +47,11 @@ For a local deployment, one would need to interface with the government's own em
 
 Two systems are needed: one which is configured to authenticate applicants, and one configured to authenticate administrators. Both systems must be OIDC compliant, and the adminstrator-systems must have configurable claims.
 
-### Why Cloud Deployment is Preferred
+## Why Cloud Deployment is Preferred
 
-CiviForm was originally designed to run in a cloud-native environment. In theory, it could be run "on prem" (with a lot of work) if dissected into separate subsystems running across multiple on-prem machines.
+CiviForm is designed to run reliably and with minimal ongoing effort in a cloud-native environment. This is accomplished through the use of standardized infrastructure-as-code tools that automatically provision and deploy the necessary infrastucture.
 
-That said, CiviForm depends on many small services that are low-cost add-ons in the cloud. Doing an "on prem" version means these services would need to be developed, deployed, and maintained internally. That list includes:
+The core application and database can be run on-premises with additional effort if desired, though service dependencies such as email, file storage, and monitoring are often easier to manage through a cloud provider. Deploying on-premises means these services would need to be separately developed, deployed, and maintained internally without full use of CiviForm's included deployment system. Such services include:
 
 * provisioning
 * deployment
@@ -61,21 +61,20 @@ That said, CiviForm depends on many small services that are low-cost add-ons in 
 * database backups and recovery and storage scaling
 * application server scaling
 
-On-prem deployment:
+*On-prem deployment:*
 
 _Pros_
 
-* Total control of all machines
-* Total control of all sensitive data
-* Can use existing pre-approved software.
+* Total control of all infrastructure and data.
+* Can use existing pre-approved and familiar software and infrastructure.
 
 _Cons_
 
 * Hardware capex & opex becomes expensive at scale
-* Given the limited size and time-availability of civic IT departments, on-prem is much more work to scale up, and likely less reliable (more outages). Will require
+* Given the limited size and time-availability of civic IT departments, on-prem is much more work to scale up, and likely less reliable (more outages).
 * Requires building bespoke systems that are much more laborious for new contributors/maintainers to work with. In contrast, major cloud providers have extensive training and certification offerings making it straightforward to train existing personnel and identify qualified job applicants.
 
-Cloud deployment:
+*Cloud deployment:*
 
 _Pros_
 
@@ -83,14 +82,14 @@ _Pros_
 * Likely more reliable (fewer outages)
 * Opex cost is likely less than on-prem machine maintenance
 * More efficient use of IT staff's time
-* Dramatically less technical effort put towards infrastructure, meaning more time can go toward ROC's product goals
+* Dramatically less technical effort put towards infrastructure, meaning more time can go towards other efforts.
 
 _Cons_
 
-* Requires careful audit to ensure Cloud service is meeting government security & privacy requirements. (Many Cloud services have special clusters designed for this already.)
-* May require multiple levels of gov't approval to deploy.
+* Requires careful audit to ensure cloud service and architecture is meeting government security & privacy requirements.
+* May require multiple levels of agency approval to deploy.
 
-### What Cloud deployment looks like
+## What Cloud deployment looks like
 
 In general, a **cloud provider** refers to a business like AWS, Azure, or GCP.
 

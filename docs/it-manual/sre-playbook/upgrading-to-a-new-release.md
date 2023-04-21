@@ -17,7 +17,7 @@ Release notes include:
 - Infrastructure changes
 - Dependency changes (for the server only) including new, removed, and version updates
 
-New releases are also announced on civiform-announce@googlegroups.com
+New releases are also announced on [civiform-announce@googlegroups.com](https://groups.google.com/g/civiform-announce)
 
 ## Version numbers
 

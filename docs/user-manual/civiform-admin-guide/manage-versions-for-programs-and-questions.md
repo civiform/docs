@@ -33,7 +33,6 @@ The following rules apply when trying to understand versioning:
 * There can only be one unpublished version in the system at a time.
 * Once a version is published, it’s locked and cannot be modified.
 * New versions are initialized with a complete copy of the current published version.
-* A CiviForm Admin can revert to previously published versions using the “Set live” button.
 * Applicants are pinned to the version they began their first program application with. They remain on that program version until it’s been submitted.
 * When a CiviForm Admin modifies a question, CiviForm displays a list of programs using the question.
 * A new draft is created when an existing draft is published.

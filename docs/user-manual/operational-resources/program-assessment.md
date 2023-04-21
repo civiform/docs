@@ -78,7 +78,7 @@ ___
 
 
 ## What applications, systems, websites, tools, or other resources are used to process information or applications for this program?
-Include tools used at all steps, including for application intake, record-keeping, benefits processing and delivery, status notification, data aggregation, reporting, or any other tools.
+*Include tools used at all steps, including for application intake, record-keeping, benefits processing and delivery, status notification, data aggregation, reporting, or any other tools.*
 
 ## Do you cross-check eligibility information or other details with any other programs or data sources?
 

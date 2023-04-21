@@ -25,16 +25,6 @@ Read more about the [data versioning model](../../contributor-guide/developer-gu
 4. Modify the question information fields.
 5. Click **Update**.
 
-### View or revert to earlier versions
-
-You can easily view or restore earlier published versions.
-
-1. Sign in to CiviForm as a CiviForm Admin.
-2. Click **Versions**.
-3. Locate a previous version using the version ID or the Publish Time columns.\
-   You can also view the number of programs and questions added or edited since the last time it was published.
-4. (Optional) To revert to this version, click **Set live**.
-
 ### Rules for versioning
 
 The following rules apply when trying to understand versioning:

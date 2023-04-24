@@ -28,11 +28,11 @@ Supporting Infrastructure:
 * Cloudwatch export for logs
 
 ## Code and examples (AWS)
-Code can be found [here](https://github.com/civiform/civiform/tree/main/cloud/aws).
+Code managing deployment can be found [here](https://github.com/civiform/cloud-deploy-infra/tree/main/cloud/aws).
 
 Our staging enviroment is at [staging-aws.civiform.dev](https://staging-aws.civiform.dev).
 
-Config for staging environment is [here](https://github.com/civiform/staging-aws-deploy/blob/main/civiform_config.sh).
+Config for staging environment is [here](https://github.com/civiform/civiform-staging-deploy/blob/main/aws_staging_civiform_config.sh).
 
 ## Troubleshooting
 

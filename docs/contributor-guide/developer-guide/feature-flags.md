@@ -30,7 +30,7 @@ To add a new flag:
 1.  Add a new enum to [`FeatureFlag.java`](https://github.com/civiform/civiform/blob/main/server/app/featureflags/FeatureFlag.java).
 1.  Add the Config value to [`feature-flags.conf`](https://github.com/civiform/civiform/blob/main/server/conf/helper/feature-flags.conf).
 1.  Inject `FeatureFlags` into client classes.
-1.  Call `FeatureFlags::getFlagEnabled`](https://github.com/civiform/civiform/blob/183a4d634fa53e7c07975ce3f915f1b8f6a4660a/server/app/featureflags/FeatureFlags.java#L51) to determine whether a flag is enabled.
+1.  Call [`FeatureFlags::getFlagEnabled`](https://github.com/civiform/civiform/blob/183a4d634fa53e7c07975ce3f915f1b8f6a4660a/server/app/featureflags/FeatureFlags.java#L51) to determine whether a flag is enabled.
 1.  If you'd like for your flag to be able to be overriden via environment variables for a deployment, pass the flag through the deployment system. See [this pull request](https://github.com/civiform/cloud-deploy-infra/pull/145) as an example.
 
 [Here](https://github.com/civiform/civiform/pull/4435/files) is a simple example of doing all of these.
@@ -114,3 +114,20 @@ in the existing tests until you also update them.
 1. Always guard DB write code, even if a path can't be reached unless upstream guarded code was enabled. 
 2. Consider what will happen if your flag is enabled for some time then disabled. Should data views still be accessible? etc.
 3. Always test code with your feature off and on, or other variations.  Our dev environments make it easy to only see the bleeding-edge of features, but real users will be seeing the stable released version of your code.
+
+## Releasing a Feature Behind a Feature Flag
+
+The following process should be used to implement a feature flag, release it in a build, and then remove it once the feature has been used in production.
+
+1. Create a Github issue using the Feature Flag template that covers the creation and deletion of the feature flag that will guard your feature. Ensure it is tied to the appropriate epic so that the issue must be completed before the epic is considered complete.
+2. Create the feature flag in code ([example](https://github.com/civiform/civiform/pull/4435)), update the issue to mention that the feature flag now exists. Enable the feature flag in [dev](https://github.com/civiform/civiform/blob/main/server/conf/application.dev.conf). Disable the flag for [browser tests](https://github.com/civiform/civiform/blob/main/server/conf/application.dev-browser-tests.conf), since the browser tests will turn the flag on and off inside the tests themselves.  For the PR that adds the flag, ensure the release notes section describes what this flag is for.
+3. Write your feature and guard it with the flag.
+4. Pass the flag through the deployment system to allow enabling it in staging ([example](https://github.com/civiform/cloud-deploy-infra/commit/9d17356ff1fa1f3a16c97608cc00cbd4c7c11ffe)). Soon, this will not be necessary as we will be automatically passing flags through the deployment system.
+5. When the next release is created, ensure information about the release flag is in the email sent for the release.
+6. Enable the flag in AWS staging and Azure staging and ask Seattle engineers to enable the flag in their staging environment.
+7. Optional (depending on the complexity of your feature): Organize a bug bash where team members try to break your feature
+8. Send a message to Matthew Sprenke in the #release-discussion channel on CiviForm Slack to check if Seattle wants to do some manual QA.
+9. Set the default value of the flag to `true` to make it default enabled (e.g. [changing this to true](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/helper/feature-flags.conf?L27)). In the PR, include release notes, which mention that the specific feature flag's default value was changed and what feature it enables. Update the feature flag Github issue to note when the default was changed. Assign the issue to yourself or someone who will be around in the future.
+10. Ensure that the feature is enabled in an actual production build, because each deployment can choose to enable or disable the flags of their choosing (often the easiest deployment to use will be in Seattle) and note the date when it was enabled in the Github issue.
+11. Leave the flag in the codebase for at least another month after it went live in production (e.g. Seattle).
+12. Remove the flag, remove the guards in the code looking for the flag, note in the PR release notes that the flag is being removed, then close the Github issue. Ensure the email sent for the next release includes a note about the removal of the feature flag.

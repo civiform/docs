@@ -50,6 +50,7 @@
     * [v1.21.0](it-manual/sre-playbook/server-environment-variables/v1.21.0.md)
     * [v1.22.0](it-manual/sre-playbook/server-environment-variables/v1.22.0.md)
     * [v1.23.0](it-manual/sre-playbook/server-environment-variables/v1.23.0.md)
+    * [v1.23.1](it-manual/sre-playbook/server-environment-variables/v1.23.1.md)
   * [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md)
   * [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)

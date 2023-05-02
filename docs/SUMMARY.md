@@ -57,6 +57,7 @@
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
   * [Breaking Glass on Database](it-manual/sre-playbook/breaking-glass-on-database.md)
+  * [Database Disaster Recovery](it-manual/sre-playbook/breaking-glass-on-database.md)
   * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
     * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
   * [Email configuration](it-manual/sre-playbook/email-configuration.md)

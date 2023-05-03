@@ -15,13 +15,13 @@ This section outlines strategies on how to adopt and implement CiviForm to meet 
   * [Data reporting and other integrations](reporting-and-integrations.md)
   * [Security and privacy considerations](security-and-privacy.md)
 * **Pilot**: Test applications and processes to refine your approach.
-  * [Piloting with staff]
-  * [Piloting with CBOs]
-  * [Piloting with residents]
+  * Piloting with staff
+  * Piloting with CBOs
+  * Piloting with residents
 * **Launch**: Put your new applications out into the world.
 * **Grow**: Leverage CiviForm to continue to expand access to programs.
-  * [Onboarding new programs]
-  * [Resources for community outreach]
+  * Onboarding new programs
+  * Resources for community outreach
 * **Sustain**: Ensure that this work can continue over time.
   * [Staffing overview](civic-entity-staffing-overview.md)
-  * [Impact measurement and reporting]
+  * Impact measurement and reporting

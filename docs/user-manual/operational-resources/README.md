@@ -8,7 +8,7 @@ This section outlines strategies on how to adopt and implement CiviForm to meet 
 * **Implement**: Work with program administrators to create a better experience for applicants and staff.
   * [Getting started with service design](service-design.md)
   * [Journey mapping](journey-mapping.md)
-  * [Discovery, eligibility, and intake](discover-eligibility-intake.md)
+  * [Discovery, eligibility, and intake](discovery-eligibility-intake.md)
   * [Consolidating applications across programs](consolidating-programs.md)
   * [Working with existing processes](existing-processes.md)
   * [Working across jurisdictions](working-across-jurisdictions.md)

@@ -1,4 +1,4 @@
-# Working with existing program processes
+# Working with existing tools and processes
 In order for CiviForm to be implemented sucessfully, it must be easy for your program staff to continue administering their programs without significantly disturbing their existing workflows and processes. Integrating CiviForm with existing tools and processes allows staff to take advantage of CiviForm's benefits without introducing a substantial learning curve. 
 
 This approach assumes there are three phases of end-to-end service delivery: (1) Accepting applications, (2) reviewing applications, and (3) delivering benefits/services. Existing tools may serve all or none of these purposes, whereas CiviForm can serve to (1) accept applications, and optionally (2) review applications, depending on the needs and existing approach of each program.

@@ -10,7 +10,7 @@ This section outlines strategies on how to adopt and implement CiviForm to meet 
   * [Journey mapping](journey-mapping.md)
   * [Discovery, eligibility, and intake](discovery-eligibility-intake.md)
   * [Consolidating questions across programs](consolidating-programs.md)
-  * [Working with existing processes](existing-processes.md)
+  * [Working with existing tools and processes](existing-processes.md)
   * [Working across jurisdictions](working-across-jurisdictions.md)
   * [Data reporting and other integrations](reporting-and-integrations.md)
   * [Security and privacy considerations](security-and-privacy.md)

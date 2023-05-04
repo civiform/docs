@@ -60,3 +60,12 @@ This approach can be taken regardless of whether or not there are existing chann
 | **Existing tool** | 🟡 | 🟡 | 🟡 |
 
 If there is already a tool used for reviewing applications that a program wishes to keep, CiviForm can be used alongside that tool, albeit at the cost of having two different review processes. This may be useful in a state of transition as a program consolidates to use one tool (whether CiviForm or the existing tool), or if there is a way to consolidate the remainder of the delivery process after applications are reviewed across tools. Understanding the primary channels for accepting applications and the downstream processes after applications are review can help make a decision about how to best integrate CiviForm within a program's workflow.
+
+## Other considerations
+Consider these other factors when integrating CiviForm with existing tools.
+
+* Can the program's existing tool ingest data from external sources via an API?
+* What is your IT team's preferred approach to running data import/export pipleines?
+* What is an acceptable frequency for applications to be exported from CiviForm and imported into other systems?
+* What processes must be implemented to ensure breaking changes to forms or APIs are accounted for across systems?
+* What are security or privacy requirements for these integrations? See "[Working across jurisdictions](working-across-jurisdictions.md)" and "[Security and privacy considerations](security-and-privacy.md)" for more details.

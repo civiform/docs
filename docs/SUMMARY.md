@@ -32,9 +32,18 @@
   * [Review completed applications](user-manual/program-admin-guide/review-completed-applications.md)
 * [Trusted Intermediary Guide](user-manual/trusted-intermediary-guide/README.md)
   * [Apply to a program](user-manual/trusted-intermediary-guide/apply-to-a-program.md)
-* [Operational Resources](user-manual/operational-resources/README.md)
-  * [Civic entity staffing overview](user-manual/operational-resources/civic-entity-staffing-overview.md)
+* [Onboarding Guide](user-manual/operational-resources/README.md)
+  * [Organization assessment](user-manual/operational-resources/organization-assessment.md)
   * [Program assessment](user-manual/operational-resources/program-assessment.md)
+  * [Getting started with service design](user-manual/operational-resources/service-design.md)
+  * [Journey mapping](user-manual/operational-resources/journey-mapping.md)
+  * [Discovery, eligibility, and intake](user-manual/operational-resources/discovery-eligibility-intake.md)
+  * [Consolidating questions across programs](user-manual/operational-resources/consolidating-programs.md)
+  * [Working with existing tools and processes](user-manual/operational-resources/existing-processes.md)
+  * [Working across jurisdictions](user-manual/operational-resources/working-across-jurisdictions.md)
+  * [Data reporting and other integrations](user-manual/operational-resources/reporting-and-integrations.md)
+  * [Security and privacy considerations](user-manual/operational-resources/security-and-privacy.md)
+  * [Staffing overview](user-manual/operational-resources/civic-entity-staffing-overview.md)
 
 ## IT Manual
 

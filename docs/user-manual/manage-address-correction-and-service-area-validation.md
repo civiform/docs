@@ -17,7 +17,7 @@ Once the address correction feature is enabled, an admin user may enable address
 ## How to enable service area validation
 
 To enable service area validation for an address question, an admin user must first enable address correction for an address question. Once that is done, an admin user may add service area validation by following these steps:
- - Click the "edit visibility condition" button:
+ - Click the "edit eligibility condition" button:
 
      <img width="750" alt="Screenshot 2023-04-04 at 11 01 52 AM" src="https://user-images.githubusercontent.com/4401157/229879433-09e196e3-cff4-4138-97d4-555fcc65192c.png">
  - Find the address question in the list of questions, check the checkbox and click the "add condition" button:

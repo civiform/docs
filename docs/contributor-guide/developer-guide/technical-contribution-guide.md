@@ -57,7 +57,7 @@ git add --patch
 git add .
 ```
 
-Once some changes are staged, you can create a commit the packages them together with a description:
+Once some changes are staged, you can create a commit that packages them together with a description:
 
 ```
 # Double-check only the desired changes are staged.

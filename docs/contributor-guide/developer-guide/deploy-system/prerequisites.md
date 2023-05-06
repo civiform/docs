@@ -26,7 +26,7 @@ Note: These steps are AWS specific as there are not any current production deplo
 2. Click the 'Add an AWS account' button.
 <details>
   <summary>Screenshots</summary>
-  ![Add AWS account from AWS Organizations page](../../../.gitbook/assets/add-account.png)
+  ![image](../../../.gitbook/assets/add-account.png)
 </details>
 
 3. Input the new account details and click "Create AWS account"

@@ -24,86 +24,163 @@ Note: These steps are AWS specific as there are not any current production deplo
 1. Log in to your company's AWS account and navigate to the [AWS Organizations page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/accounts).
 
 2. Click the 'Add an AWS account' button.
-![Add AWS account from AWS Organizations page](../../../.gitbook/assets/add-account.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Add AWS account from AWS Organizations page](../../../.gitbook/assets/add-account.png)
+</details>
 
 3. Input the new account details and click "Create AWS account"
     - AWS account name: input your dev account name (for example `jdoe-dev`)
     - Email address of the account's owner: input your email address
     - IAM role name: leave the default of 'OrganizationAccountAccessRole'.
-![Add AWS account details](../../../.gitbook/assets/aws-add-dev-account-details.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Add AWS account details](../../../.gitbook/assets/aws-add-dev-account-details.png)
+</details>
 
 4. Account creation will take a minute or two. Once it is created, you will see it listed on the [AWS Organizations page](https://us-east-1.console.aws.amazon.com/organizations/v2/home/root).
 
 5. Once the account is created, copy the account number somewhere for yourself temporarily. You will need it to log in to the new account and configure it.
-![Newly created AWS account in Organizational structure list](../../../.gitbook/assets/aws-new-dev-account-in-list.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Newly created AWS account in Organizational structure list](../../../.gitbook/assets/aws-new-dev-account-in-list.png)
+</details>
 
 6. (For Exygy employees only) Move the newly created dev account so that it is nested inside the `civiform-dev` folder via the following steps:
     - Select the checkbox for the new account.
     - Click the "Actions" dropdown.
     - Select "Move" under the "AWS account" section in the dropdown.
-![Move newly created AWS account - part 1](../../../.gitbook/assets/aws-move-dev-account-1.png)
     - On the following screen, select the `civiform-dev` folder and then click the "Move AWS account" button.
-![Move newly created AWS account - part 2](../../../.gitbook/assets/aws-move-dev-account-2.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Move newly created AWS account - part 1](../../../.gitbook/assets/aws-move-dev-account-1.png)
+  ![Move newly created AWS account - part 2](../../../.gitbook/assets/aws-move-dev-account-2.png)
+</details>
 
 ### Log in to your new dev AWS Account
 
 1. From any screen in the AWS Console, click the drop down in the upper right hand corner and click "Switch role". 
-![Switch role dropdown](../../../.gitbook/assets/aws-switch-role-1.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Switch role dropdown](../../../.gitbook/assets/aws-switch-role-1.png)
+</details>
 
 2. Click "Switch Role" on the next screen.
-![Switch role screen](../../../.gitbook/assets/aws-switch-role-2.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Switch role screen](../../../.gitbook/assets/aws-switch-role-2.png)
+</details>
 
 3. Input the following details and click "Switch Role":
     - Account: Input the account number for your new dev account (copied in step 5 above).
     - Role: Input "OrganizationAccountAccessRole"
     - Display Name: Input the dev account name you created when making the account (e.g `jdoe-dev`)
-![Switch role details](../../../.gitbook/assets/aws-switch-role-3.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Switch role details](../../../.gitbook/assets/aws-switch-role-3.png)
+</details>
 
 4. Verify that you are now viewing the newly created account by navigating to the [IAM dashboard](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home) and making sure that the Account ID listed in the sidebar on the right matches the account ID for your newly created dev account.
-![Check new dev account number](../../../.gitbook/assets/aws-confirm-switched-roles.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Check new dev account number](../../../.gitbook/assets/aws-confirm-switched-roles.png)
+</details>
 
 Note: You only have to log in to your dev account one time. After that, it will be listed under "Role history" in the drop down in the upper right and you will be able to easily toggle back and forth between accounts by clicking on the role in that menu.
 
-![Role history in dropdown](../../../.gitbook/assets/aws-role-history.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Role history in dropdown](../../../.gitbook/assets/aws-role-history.png)
+</details>
 
 ### Configure new AWS Account
 
 1. Navigate to your newly created dev account's [IAM page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/home).
 
 2. Click the "Create" button under "Account Alias" on the righthand sidebar.
-![Create Alias button](../../../.gitbook/assets/aws-create-account-alias.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Create Alias button](../../../.gitbook/assets/aws-create-account-alias.png)
+</details>
 
-3. Under "Preferred alias" input the name for your newly created dev account (eg. `jdoe-dev`) and click "Save changes". You will use this alias later when running `aws-nuke` to clear resources. AWS aliases must contain only lowercase letters, digits and hyphens and must be globally unique (if you get an error that the alias already exists, try another string). ![Create Alias screen](../../../.gitbook/assets/aws-enter-preferred-alias.png)
+3. Under "Preferred alias" input the name for your newly created dev account (eg. `jdoe-dev`) and click "Save changes". You will use this alias later when running `aws-nuke` to clear resources. AWS aliases must contain only lowercase letters, digits <details>
+  <summary>Screenshots</summary>
+  and hyphens and must be globally unique (if you get an error that the alias already exists, try another string). 
+</details
+![Create Alias screen](../../../
+.gitbook/assets/aws-enter-preferred-alias.png)
 
 4. Navigate to the [Request certificate page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/request). Keep the default "Request a public certificate" option selected and click the "Next" button.
-![Request public certificate page](../../../.gitbook/assets/aws-request-public-cert.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Request public certificate page](../../../.gitbook/assets/aws-request-public-cert.png)
+</details>
 
 5. Input the certificate details and click "Request":
     - Fully qualified domain name: Input `<your-dev-account-name>.civiform.dev` (eg. `jdoe-dev.civiform.dev`)
     - Validation method: Leave the default selection "DNS validation - recommended" selected.
     - Key algorithm: Leave the default selection "RSA 2048" selected.
-![Enter certificate details page](../../../.gitbook/assets/aws-enter-cert-details-page.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Enter certificate details page](../../../.gitbook/assets/aws-enter-cert-details-page.png)
+</details>
 
 6. You should be redirected to the [Certificates page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/list) and there should be a banner at the top of the page that says "Successfully requested certificate with ID ...". Click "View certificate". This will take you to the certificate details page.
-![View certificate banner](../../../.gitbook/assets/aws-view-cert-banner.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![View certificate banner](../../../.gitbook/assets/aws-view-cert-banner.png)
+</details>
 
 7. In the "Domains" section of the certificate details page, there should be a single row with `CNAME` listed under the "Type" column. The values in the "CNAME name" and "CNAME value" columns are used to validate that we control the domain (`civiform.dev`) requested by the certificate. Copy both the "CNAME name" and "CNAME value" column values somewhere for yourself temporarily, you will need them in the following steps.
-![Certificate details page](../../../.gitbook/assets/aws-copy-cname-values.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Certificate details page](../../../.gitbook/assets/aws-copy-cname-values.png)
+</details>
 
 8. In a new tab, open the [civiform.dev DNS configuration page](https://domains.google.com/registrar/civiform.dev/dns) and click "Manage custom records".
-![Manage civiform.dev dns records](../../../.gitbook/assets/dns-manage-custom-records.png)
-9. Scroll to the bottom of this list and click "Create new record" (note: the UI is a little buggy you might have to click this twice to get an empty row to appear).
-![Create new dns record](../../../.gitbook/assets/dns-create-new-record.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Manage civiform.dev dns records](../../../.gitbook/assets/dns-manage-custom-records.png)
+</details>9. Scroll to the bottom of this 
+list and click "Create new record" (note: the UI is a little buggy you might have to click this twice to get an empty row to appear).
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Create new dns record](../../../.gitbook/assets/dns-create-new-record.png)
+</details>
 
 10. Input the following details into the new row and click "Save":
     - Host name: Input the value of the "CNAME name" column you copied in step 7 above. Remove the `civiform.dev` part at the end of the string. Google Domains automatically appends this to whatever you enter. If you do not remove it, you will add a CNAME record for `<random_id>.<dev-account>.civiform.dev.civiform.dev` which is incorrect.
     - Type: Select "CNAME"
     - TTL: Leave the default value "3600"
     - Data: Input the value of the "CNAME value" column you copied in step 7 above.
-![Save new record details](../../../.gitbook/assets/dns-new-record-details.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Save new record details](../../../.gitbook/assets/dns-new-record-details.png)
+</details>
 
 11. Navigate to the [Certificates page](https://us-east-1.console.aws.amazon.com/acm/home?region=us-east-1#/certificates/list) in AWS. It will take a minute or two for AWS to see and validate the new CNAME record. Once the validation has succeeded, the "Status" column of the "Certificates" list should have a green checkmark and say "Issued".
-![Certificate successfully issued](../../../.gitbook/assets/aws-cert-issued.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Certificate successfully issued](../../../.gitbook/assets/aws-cert-issued.png)
+</details>
 
 ## Setup AWS CLI
 
@@ -124,21 +201,29 @@ Note: You only have to log in to your dev account one time. After that, it will 
 2. Get the value for `role_arn`
     - In your newly created dev account, go to [IAM->Roles->OrganizationAccountAccessRole](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/roles/details/OrganizationAccountAccessRole?section=permissions). 
     - Copy the ARN in the "Summary" section and paste this into the `aws-cli` config file you just created as the value for `role_arn`.
-![Copy ARN value](../../../.gitbook/assets/aws-copy-arn.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Copy ARN value](../../../.gitbook/assets/aws-copy-arn.png)
+</details>
 
 3. Get the value for `aws_access_key_id` and `aws_secret_access_key`
     - Switch back to the AWS root account by clicking "Switch Back" from the dropdown menu in the upper right hand corner.
     - Click on your user in the [Users page](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users).
     - Go to the "Security credentials" tab on your user details page.
-![Security credentials screen](../../../.gitbook/assets/aws-security-credentials-screen.png)
     - Scroll down to the "Access keys" section and click "Create access key"
-![Create access key button](../../../.gitbook/assets/aws-create-access-key.png)
     - Select "Command Line Interface (CLI)" from the options of "Access key best practices & alternatives", check the "I understand..." checkbox and click "Next"
-![Select CLI from Access key best practices & alternatives](../../../.gitbook/assets/aws-access-keys-select-cli.png)
     - Add a description tag if you want to (not required) and click "Create access key"
-![Set optional description tag](../../../.gitbook/assets/aws-access-keys-set-description-tag.png)
     - Copy the "Access key" and the "Secret access key" into your `aws-cli` config file as the values for `aws_access_key_id` and `aws_secret_access_key` respectively.
-![Copy access keys](../../../.gitbook/assets/aws-access-keys.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Security credentials screen](../../../.gitbook/assets/aws-security-credentials-screen.png)
+  ![Create access key button](../../../.gitbook/assets/aws-create-access-key.png)
+  ![Select CLI from Access key best practices & alternatives](../../../.gitbook/assets/aws-access-keys-select-cli.png)
+  ![Set optional description tag](../../../.gitbook/assets/aws-access-keys-set-description-tag.png)
+  ![Copy access keys](../../../.gitbook/assets/aws-access-keys.png)
+</details>
 
 ## Test AWS Authentication From Your Local Machine
 1. Test that your local machine can authenticate to the root user account
@@ -248,7 +333,11 @@ Note: You will need to run this script as the first step for any working session
 Troubleshooting:
 - If you get an error message about "Amazon 3 already exists", this is likely because you have run the script before (possibly unsuccessfully) and some resources were created. Run `aws-nuke --config nuke.yaml --no-dry-run` to clear out all resources and try again.
 - Sometimes the service health check will fail even though the service started up correctly. The service health check repeats every 30 seconds up to 20 times. This number is arbitrary and sometimes the script will not receive the response it's expecting in the alloted time, even though the service has started up correctly. You can follow along with the service events by going to the Service URL that is output by the script directly before it starts checking for Service Health. If you see `Cluster not found.` errors, make sure you are logged into your newly created dev account in AWS and not the root account. Scroll down to events and, if you see an event like "service `<your_dev_service>` has reached a steady state", that means the deployment was successful. If the service health check times out, the script won't output the url you need to add to the domain registrar. You can find this url in AWS by navigating to `EC2 > Load balancers > <your_dev_lb>` and copying the DNS name under "Details" on that screen.
-![Copy DNS name](../../../.gitbook/assets/aws-load-balancer.png)
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Copy DNS name](../../../.gitbook/assets/aws-load-balancer.png)
+</details>
 - The service health checks might also fail because something is wrong with the service. It could be a problem with the values set in `civiform_config.sh` or some other issue. To debug, go to the AWS Service URL output before the health checks, and click into the "Logs" tab to see the tasks that have run. From there, you can click into individual tasks and inspect the logs for those tasks. 
 
 

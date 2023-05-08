@@ -74,7 +74,6 @@
 [comment]: # (* [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md))
 
 [comment]: # (* [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md))
-
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
 * [Existing deployments](it-manual/existing-deployments.md)
 * [API Integration](it-manual/api/README.md)

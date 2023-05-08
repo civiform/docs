@@ -52,10 +52,10 @@
 
 * [Technical Deployment Guide](it-manual/sre-playbook/README.md)
   * [Initial Deployment](it-manual/sre-playbook/initial-deployment.md)
-  * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
-    * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
-    * [Email configuration](it-manual/sre-playbook/email-configuration.md)
-    * [GIS Service configuration](it-manual/configure-gis-service.md)
+    * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
+      * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
+     * [Email configuration](it-manual/sre-playbook/email-configuration.md)
+     * [GIS Service configuration](it-manual/configure-gis-service.md)
   * [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md)
     * [CiviForm server environment variables](it-manual/sre-playbook/server-environment-variables)
       * [v1.19.0](it-manual/sre-playbook/server-environment-variables/v1.19.0.md)
@@ -68,10 +68,13 @@
       * [v1.24.0](it-manual/sre-playbook/server-environment-variables/v1.24.0.md)
       * [v1.24.1](it-manual/sre-playbook/server-environment-variables/v1.24.1.md)
       * [v1.24.2](it-manual/sre-playbook/server-environment-variables/v1.24.2.md)
-  * [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
-  * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
   * [Breaking Glass on Database](it-manual/sre-playbook/breaking-glass-on-database.md)
+
+[comment]: # (* [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md))
+
+[comment]: # (* [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md))
+
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
 * [Existing deployments](it-manual/existing-deployments.md)
 * [API Integration](it-manual/api/README.md)

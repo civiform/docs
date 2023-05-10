@@ -70,11 +70,12 @@
       * [v1.24.2](it-manual/sre-playbook/server-environment-variables/v1.24.2.md)
       * [v1.25.0](it-manual/sre-playbook/server-environment-variables/v1.25.0.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
-  * [Breaking Glass on Database](it-manual/sre-playbook/breaking-glass-on-database.md)
-
-[comment]: # (* [Teardown & Rebuild](it-manual/sre-playbook/teardown-and-rebuild.md))
-
-[comment]: # (* [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md))
+  * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
+  * [Production Database Access](it-manual/sre-playbook/production-database-access.md)
+  * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
+    * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
+  * [Email configuration](it-manual/sre-playbook/email-configuration.md)
+  * [GIS Service configuration](it-manual/configure-gis-service.md)
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)
 * [Existing deployments](it-manual/existing-deployments.md)
 * [API Integration](it-manual/api/README.md)

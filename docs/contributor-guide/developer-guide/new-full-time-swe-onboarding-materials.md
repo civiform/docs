@@ -4,6 +4,7 @@
 
 * Seattle Staging: [https://civiformstage.seattle.gov](https://civiformstage.seattle.gov)
 * Azure Staging: [https://staging-azure.civiform.dev](https://staging-azure.civiform.dev)
+* AWS Staging: [https://staging-aws.civiform.dev](https://staging-aws.civiform.dev)
 * [Project Tracker and Product Roadmap](https://github.com/orgs/civiform/projects/1)
 
 ### Recommended Tutorials

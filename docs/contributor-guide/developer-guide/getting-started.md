@@ -170,7 +170,7 @@ bin/run-ts-tests file1.test.ts file2.test.ts
 
 ### Running browser tests
 
-To run the browser tests (includes all the [Playwright](https://playwright.dev) tests in [`civiform/browser-test/src/`](https://github.com/civiform/civiform/tree/main/browser-test/src), there are three steps:
+To run the browser tests (includes all the [Playwright](https://playwright.dev) tests in [`civiform/browser-test/src/`](https://github.com/civiform/civiform/tree/main/browser-test/src), there are two steps:
 
 1.  Bring up the local test environment using the AWS emulator. Leave this running:
 

@@ -51,10 +51,9 @@ With Prometheus connected as a Grafana workspace, panels can now be created in G
 To import this pre-built dashboard: 
 
 1. Click on the "Data Sources" tab and select the Prometheus data source
-2. Copy the ID at the end of the URL after `/edit/`
+2. Change the Name value to PROMETHEUS_DATA
 3. Hover over the "+" icon in the left nav
 4. Click the "Import" option 
-5. Paste [the JSON here](https://gist.githubusercontent.com/dkatzz/204b5c411cb43b8617b777efe2567b01/raw/d146013037c8e1ab8f7a1616f94ab59444170a11/gistfile1.txt) into the "Import via panel JSON" 
-6. Replace all instances of ${PROMETHEUS_ID} with the ID you copied in step 2
+5. Paste [the JSON here](https://gist.githubusercontent.com/dkatzz/71ed4f3bd310bf6a5ca61352bfe8c1b9/raw/73fb4ad62a40a620762f17b083f8f7d78166f80a/gistfile1.txt) into the "Import via panel JSON" 
 7. Click "Load"
 8. Fill in the details for the imported dashboard, selecting your CiviForm prometheus instance for the data source

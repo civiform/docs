@@ -183,6 +183,7 @@ Questions that are skipped are present but have null values for the skipped scal
 
 Requesting applications to a program named "Utility discount program" between January 3, 2022 and February 4, 2022, with a page size of 100.
 
+{% code title="example_request.py" overflow="wrap" lineNumbers="true" %}
 ```
 import json
 import os
@@ -214,3 +215,4 @@ with open('exported_applications.json', 'w', encoding='utf-8') as f:
 
 print(f'Exported {len(results)} applications.')
 ```
+{% endcode %}

@@ -10,7 +10,7 @@ snapshot. To do this:
 1. Identify the DB snapshot to restore to in the AWS console by navigating to RDS > Snapshots.
 1. Copy the snapshot identifier (not the name, the identifier begins with `rds:`)
 1. In your civiform_config.sh file, set `POSTGRES_RESTORE_SNAPSHOT_IDENTIFIER` to the identifier.
-1. Remove deletion protection from the databae by navigating to RDS > Databases, selecting your production database and removing deletion protection.
+1. Remove deletion protection from the database by navigating to RDS > Databases, selecting your production database and removing deletion protection.
 1. Run `bin/deploy`. You should see in the terraform plan that the RDS database will be replaced.
 
 Note that once the database is restored, the `POSTGRES_RESTORE_SNAPSHOT_IDENTIFIER` should continue to reference

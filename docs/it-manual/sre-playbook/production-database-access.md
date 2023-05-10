@@ -4,12 +4,12 @@ The CiviForm deployment system provides a mechanism for temporary and secure dir
 
 **When accessing the database in this way, it is strongly recommended to do so on a trusted device and network
 or a cloud CLI tool such as [AWS CloudShell](https://aws.amazon.com/cloudshell/).
-Furthemore, do not interrupt the script while it is running (ctrl-c) as this may prevent it from revoking the temporary security settings allowing connections from the public internet.**
+Furthermore, do not interrupt the script while it is running (ctrl-c) as this may prevent it from revoking the temporary security settings allowing connections from the public internet.**
 
-To provide access to the production database, the access script creates a temporory node running pgadmin a random username and password in the CiviForm VPC with temporary network security settings allowing it to connect to the production database. It also adds network security settings allowing connections from an IP-allowlist from the public internet. With the access script running, a user must make requests from an allow-listed IP and enter
+## How it works
+
+To provide access to the production database, the access script creates a temporary node running pgadmin along with a random username and password in the CiviForm VPC and temporary network security settings allowing it to connect to the production database. It also adds network security settings allowing connections from an IP-allowlist from the public internet. With the access script running, you must make requests from an allow-listed IP and enter
 the username and password to access the database.
-
-Once you are done accessing the database, continue execution of the script to allow it to remove the temporary security settings that allowed you access to the database.
 
 ## Running the access script
 

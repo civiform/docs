@@ -71,6 +71,7 @@
       * [v1.25.0](it-manual/sre-playbook/server-environment-variables/v1.25.0.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
+  * [Database Disaster Recovery](it-manual/sre-playbook/database-disaster-recovery.md)
   * [Production Database Access](it-manual/sre-playbook/production-database-access.md)
   * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
     * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)

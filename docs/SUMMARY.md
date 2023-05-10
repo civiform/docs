@@ -68,6 +68,7 @@
       * [v1.24.0](it-manual/sre-playbook/server-environment-variables/v1.24.0.md)
       * [v1.24.1](it-manual/sre-playbook/server-environment-variables/v1.24.1.md)
       * [v1.24.2](it-manual/sre-playbook/server-environment-variables/v1.24.2.md)
+      * [v1.25.0](it-manual/sre-playbook/server-environment-variables/v1.25.0.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
   * [Breaking Glass on Database](it-manual/sre-playbook/breaking-glass-on-database.md)
 

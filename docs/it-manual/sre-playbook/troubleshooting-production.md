@@ -13,7 +13,7 @@
 
 **Diagnose**
 
-On a unix command line, run `dig <your CiviForm domain>`. There should be a `CNAME` entry that points to an AWS
+On a unix command line, run `dig <your CiviForm domain>`. (Note: Remove the protocol -- `http` or `https` -- from the front of your domain before running the command.) There should be a `CNAME` entry that points to an AWS
 load balancer e.g. `seattle-civiform-lb-2038295446.us-west-1.elb.amazonaws.com.`
 
 Confirm that the `CNAME` record matches the public domain for your AWS application load balancer by visiting

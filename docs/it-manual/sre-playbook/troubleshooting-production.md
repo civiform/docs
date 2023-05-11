@@ -1,10 +1,8 @@
-# Troubleshooting Production
+# Troubleshooting AWS deployments
 
-## AWS
+## Outage, site is down
 
-### Outage, site is down
-
-#### DNS
+### DNS
 
 **Symptoms**
 
@@ -23,7 +21,7 @@ the AWS console EC2 > Load Balancing > Load Balancers and finding the load balan
 
 If the `CNAME` entry is missing or does not match the DNS name you find in AWS, add or update a `CNAME` entry in your domain registrar with the application load balancer's DNS name.
 
-#### Server can't start
+### Server can't start
 
 **Symptoms**
 
@@ -38,11 +36,11 @@ If no tasks are healthy, view the server logs (see _Server errors_ below). Look 
 
 **Resolution**
 
-If you have just deployed, revert your CiviForm version number to the previous version you deployed and re-deploy.
+If you have just deployed, revert your CiviForm version number to the previous version you deployed and [re-deploy](https://docs.civiform.us/it-manual/sre-playbook/upgrading-to-a-new-release).
 
 Contact the CiviForm maintainers and include any errors you found in the server logs.
 
-### Server errors
+## Server errors
 
 **Symptoms**
 
@@ -50,11 +48,11 @@ Server returns 400 or 500 level errors or pages with short, plaintext messages s
 
 **Resolution**
 
-If you have deployed recently, consider reverting your CiviForm version number to the previous version you deployed and re-deploying.
+If you have deployed recently, consider reverting your CiviForm version number to the previous version you deployed and [re-deploying](https://docs.civiform.us/it-manual/sre-playbook/upgrading-to-a-new-release).
 
 Investigate the server logs. Report any errors you find along with complete stack traces to the CiviForm maintainers. To view the server logs in the AWS console go to CloudWatch > Logs > Log groups, select the log group for your production deployment and view the combined log stream.
 
-### Authentication errors
+## Authentication errors
 
 **Symptoms**
 
@@ -62,7 +60,7 @@ Users are unable to log in.
 
 **Resolution**
 
-Check with maintainers of the admin and applicant auth systems if there have been recent changes. If errors are occuring after the user successfully authenticates with the identity backend and redirects back to CiviForm there is likely a server error involved. Check server logs for errors.
+Check with maintainers of the admin and applicant auth systems if there have been recent changes. Check the [release notes](https://github.com/civiform/civiform/releases/) for your CiviForm version to see if it mentions auth changes. If errors are occuring after the user successfully authenticates with the identity backend and redirects back to CiviForm there is likely a server error involved. Check server logs for errors.
 
 Contact CiviForm maintainers with details of the investigation.
 

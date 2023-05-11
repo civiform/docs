@@ -34,7 +34,7 @@ If the `CNAME` entry is missing or does not match the DNS name you find in AWS, 
 
 View the ECS cluster for your prod deployment in AWS by going to ECS > Clusters and clicking the cluster for your production deployment. There should be at least one healthy task. If all tasks are unhealthy or unknown the server is unable to start.
 
-If no tasks or healthy, view the server logs (see _Server errors_ below). Look for stack traces and error messages.
+If no tasks are healthy, view the server logs (see _Server errors_ below). Look for stack traces and error messages.
 
 **Resolution**
 

@@ -64,5 +64,5 @@ Users are unable to log in.
 
 Check with maintainers of the admin and applicant auth systems if there have been recent changes. If errors are occuring after the user successfully authenticates with the identity backend and redirects back to CiviForm there is likely a server error involved. Check server logs for errors.
 
-Contact CiviForm mainteners with details of the investigation.
+Contact CiviForm maintainers with details of the investigation.
 

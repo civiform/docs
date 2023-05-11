@@ -46,6 +46,8 @@ Contact the CiviForm maintainers and include any errors you found in the server 
 
 Server returns 400 or 500 level errors or pages with short, plaintext messages stating an error message.
 
+![Server error example](../../.gitbook/assets/server-error-example.png)
+
 **Resolution**
 
 If you have deployed recently, consider reverting your CiviForm version number to the previous version you deployed and [re-deploying](https://docs.civiform.us/it-manual/sre-playbook/upgrading-to-a-new-release).

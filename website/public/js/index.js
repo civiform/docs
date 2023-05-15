@@ -1,7 +1,9 @@
 (() => {
   // node_modules/@cagov/ds-site-navigation/dist/index.js
   function mobileView() {
-    const mobileElement = document.querySelector(".site-header .grid-mobile-icons");
+    const mobileElement = document.querySelector(
+      ".site-header .grid-mobile-icons"
+    );
     if (mobileElement) {
       return getComputedStyle(mobileElement).display !== "none";
     }
@@ -10,11 +12,15 @@
   var CAGovSiteNavigation = class extends window.HTMLElement {
     connectedCallback() {
       document.querySelector(".cagov-nav.open-menu").addEventListener("click", this.toggleMainMenu.bind(this));
-      const mobileSearchBtn = document.querySelector(".cagov-nav.mobile-search .search-btn");
+      const mobileSearchBtn = document.querySelector(
+        ".cagov-nav.mobile-search .search-btn"
+      );
       if (mobileSearchBtn) {
         mobileSearchBtn.setAttribute("aria-expanded", "false");
         document.querySelector(".search-container--small .site-search input").setAttribute("tabindex", "-1");
-        document.querySelector(".search-container--small .site-search button.search-submit").setAttribute("tabindex", "-1");
+        document.querySelector(
+          ".search-container--small .site-search button.search-submit"
+        ).setAttribute("tabindex", "-1");
         document.querySelector(".search-container--small").setAttribute("aria-hidden", "true");
         if (mobileView()) {
           mobileSearchBtn.addEventListener("click", () => {
@@ -23,13 +29,17 @@
             if (searchactive) {
               mobileSearchBtn.setAttribute("aria-expanded", "false");
               document.querySelector(".search-container--small .site-search input").setAttribute("tabindex", "-1");
-              document.querySelector(".search-container--small .site-search button.search-submit").setAttribute("tabindex", "-1");
+              document.querySelector(
+                ".search-container--small .site-search button.search-submit"
+              ).setAttribute("tabindex", "-1");
               document.querySelector(".search-container--small").setAttribute("aria-hidden", "true");
             } else {
               mobileSearchBtn.setAttribute("aria-expanded", "true");
               document.querySelector(".search-container--small .site-search input").focus();
               document.querySelector(".search-container--small .site-search input").removeAttribute("tabindex");
-              document.querySelector(".search-container--small .site-search button.search-submit").removeAttribute("tabindex");
+              document.querySelector(
+                ".search-container--small .site-search button.search-submit"
+              ).removeAttribute("tabindex");
               document.querySelector(".search-container--small").setAttribute("aria-hidden", "false");
             }
           });
@@ -41,7 +51,9 @@
           document.querySelector(".cagov-nav.mobile-search .search-btn").setAttribute("aria-expanded", "false");
         }
         document.querySelector(".search-container--small .site-search input").setAttribute("tabindex", "-1");
-        document.querySelector(".search-container--small .site-search button.search-submit").setAttribute("tabindex", "-1");
+        document.querySelector(
+          ".search-container--small .site-search button.search-submit"
+        ).setAttribute("tabindex", "-1");
         document.querySelector(".search-container--small").setAttribute("aria-hidden", "true");
         this.closeAllMenus();
         this.closeMainMenu();
@@ -116,10 +128,14 @@
       allMenus.forEach((menu) => {
         const nearestMenu = menu.querySelector(".expanded-menu-section");
         if (nearestMenu) {
-          const nearestMenuDropDown = nearestMenu.querySelector(".expanded-menu-dropdown");
+          const nearestMenuDropDown = nearestMenu.querySelector(
+            ".expanded-menu-dropdown"
+          );
           if (nearestMenuDropDown) {
             nearestMenuDropDown.setAttribute("aria-hidden", "true");
-            if (nearestMenuDropDown && nearestMenuDropDown.id && menu.querySelector(`button[aria-controls=${nearestMenuDropDown.id}]`)) {
+            if (nearestMenuDropDown && nearestMenuDropDown.id && menu.querySelector(
+              `button[aria-controls=${nearestMenuDropDown.id}]`
+            )) {
               menu.querySelector(`button[aria-controls=${nearestMenuDropDown.id}]`).setAttribute("aria-expanded", "false");
             }
           }
@@ -136,7 +152,9 @@
             } else {
               menuComponent.closeAllMenus();
               expandedEl.classList.add("expanded");
-              const closestDropDown = this.querySelector(".expanded-menu-dropdown");
+              const closestDropDown = this.querySelector(
+                ".expanded-menu-dropdown"
+              );
               if (closestDropDown && closestDropDown.id && menu.querySelector(`button[aria-controls=${closestDropDown.id}]`)) {
                 menu.querySelector(`button[aria-controls=${closestDropDown.id}]`).setAttribute("aria-expanded", "true");
               }

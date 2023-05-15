@@ -10,10 +10,10 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@cagov/ds-base-css": "^1.0.19",
-    "@cagov/ds-feature-card": "^1.0.7",
-    "@cagov/ds-site-footer": "^1.1.1",
-    "@cagov/ds-site-header": "^1.1.1",
-    "@cagov/ds-site-navigation": "^2.1.4",
+    "@cagov/ds-feature-card": "^2.0.0",
+    "@cagov/ds-site-footer": "^2.0.0",
+    "@cagov/ds-site-header": "^2.0.0",
+    "@cagov/ds-site-navigation": "^3.0.0",
     "esbuild": "^0.17.19",
     "esbuild-sass-plugin": "^2.9.0",
     "prettier": "^2.8.8"

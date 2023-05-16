@@ -67,7 +67,7 @@
 /* Show the first portion of the contact form on mobile. */
 @media (max-width: $mobile) {
   .contact-form {
-    min-height: 300px;
+    min-height: 360px;
     /* Equivalent to .m-b-3, but you cannot @extend in a media query. */
     margin-bottom: var(--s-3, 1.5rem) !important;
   }

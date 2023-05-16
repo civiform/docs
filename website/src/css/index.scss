@@ -8,6 +8,7 @@
 @import '../../node_modules/@cagov/ds-site-footer/src/index.scss';
 @import '../../node_modules/@cagov/ds-site-header/src/index.scss';
 @import '../../node_modules/@cagov/ds-site-navigation/src/index.scss';
+@import '../../node_modules/@cagov/ds-step-list/src/index.scss';
 
 
 /* Custom styles */
@@ -61,4 +62,50 @@
 
 .cagov-card p {
   @extend .p-a-2;
+}
+
+/* Show the first portion of the contact form on mobile. */
+@media (max-width: $mobile) {
+  .contact-form {
+    min-height: 300px;
+    /* Equivalent to .m-b-3, but you cannot @extend in a media query. */
+    margin-bottom: var(--s-3, 1.5rem) !important;
+  }
+}
+
+/* Make the cagov-step-list component lines blue. */
+.cagov-step-list li {
+  border-left: 5px solid var(--primary-900);
+}
+.cagov-step-list li:before {
+  border: 5px solid var(--primary-900);
+}
+
+/* Make features titles show above feature descriptions on mobile. */
+@media (max-width: $desktop) {
+  .cagov-with-sidebar.cagov-no-reverse > * {
+    flex-direction: column;
+  }
+}
+
+/* Features overview text alignment and layout */
+@media (min-width: $desktop) {
+  .features-overview .cagov-featured-sidebar {
+    width: 40%;
+    /* Equivalent to .p-t-5, but you cannot @extend in a media query. */
+    padding-top: 0 !important;
+  }
+}
+
+/* Semi-bold text for key user descriptions. */
+.features-overview .cagov-hero-body-content {
+  font-weight: var(--font-weight-5, 500);
+}
+
+/* Make the accordion title text approximately h4 with custom padding. */
+cagov-accordion details summary {
+  font-size: var(--font-size-4) !important;
+  padding-top: var(--s-2) !important;
+  padding-bottom: var(--s-2) !important;
+  font-weight: var(--font-weight-7, 700) !important;
 }

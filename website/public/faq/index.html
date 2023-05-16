@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/index.css" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <script type="module" src="/js/index.js"></script>
-    <title>CiviForm</title>
+    <title>CiviForm | FAQ</title>
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-SPPGE89TM8"
@@ -173,106 +173,171 @@
     <div id="page-container" class="page-container-ds">
       <div id="main-content" class="main-content-ds single-column landing">
         <main id="body-content">
-          <div
-            class="cagov-with-sidebar cagov-with-sidebar-left cagov-featured-section cagov-block"
-          >
-            <div>
-              <div class="cagov-stack cagov-featured-sidebar">
-                <h2>
-                  A simpler way to access & administer government services
-                </h2>
-                <div class="cagov-hero-body-content">
-                  <p>
-                    Residents can find and apply for public assistance programs
-                    in one place, and government teams can better reach
-                    communities in need.
-                  </p>
-                  <a href="/about" class="btn-action-primary m-t-1"
-                    ><span class="btn-action-title">Learn more</span
-                    ><span class="btn-action-text"
-                      >Read about how CiviForm works</span
-                    ></a
+          <h1>Frequently Asked Questions</h1>
+          <cagov-accordion>
+            <details open>
+              <summary>How is CiviForm developed and maintained?</summary>
+              <div class="accordion-body">
+                <p>
+                  CiviForm is an open source project that is collectively
+                  developed and maintained by the governments that use it, with
+                  additional support from Google.org and Exygy. Read about
+                  CiviForm’s
+                  <a
+                    href="https://docs.civiform.us/governance-and-management/governance"
+                    >governance structure</a
                   >
-                  <a href="/contact" class="btn-action-primary m-t-1"
-                    ><span class="btn-action-title">Get started</span
-                    ><span class="btn-action-text"
-                      >Bring CiviForm to your community</span
-                    ></a
+                  to learn more about how governments work together to make
+                  decisions and shape the project.
+                </p>
+              </div>
+            </details>
+          </cagov-accordion>
+          <cagov-accordion>
+            <details open>
+              <summary>How much does CiviForm cost?</summary>
+              <div class="accordion-body">
+                <p>
+                  CiviForm’s software is free and open source; however, setting
+                  up CiviForm in your community requires a significant
+                  organizational investment in civic service design to ensure
+                  programs and residents have an improved experience, and
+                  operating CiviForm requires ongoing staff time to manage
+                  questions and application forms. Additionally, there are
+                  <a
+                    href="https://docs.civiform.us/it-manual/infrastructure-requirements"
+                    >infrastructure costs</a
                   >
-                </div>
-              </div>
-              <div>
-                <img
-                  class="cagov-featured-image applicant-image"
-                  src="img/applicant.svg"
-                />
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3>Designed by the public, for the public</h3>
-          </div>
-          <div class="card-grid-3 m-t-3">
-            <div class="cagov-card">
-              <div class="card-text">
-                <h4>Unified, accessible applications</h4>
-                <p class="p-t-3">
-                  Residents can find and apply to multiple programs in one place
-                  without needing to re-enter information.
+                  associated with hosting CiviForm using in-house resources or a
+                  third party.
                 </p>
               </div>
-            </div>
-            <div class="cagov-card">
-              <div class="card-text">
-                <h4>Program discovery & eligibility screening</h4>
+            </details>
+          </cagov-accordion>
+          <cagov-accordion>
+            <details open>
+              <summary>Which governments are using CiviForm?</summary>
+              <div class="accordion-body">
                 <p>
-                  Residents can quickly discover relevant programs and
-                  understand their potential eligibility.
+                  CiviForm is in active use by the City of Seattle and the City
+                  of Bloomington. CiviForm is actively being piloted for launch
+                  by the State of Arkansas. Our hope is to make CiviForm widely
+                  adopted in communities across the country.
                 </p>
               </div>
-            </div>
-            <div class="cagov-card">
-              <div class="card-text">
-                <h4>Community support</h4>
+            </details>
+          </cagov-accordion>
+          <cagov-accordion>
+            <details open>
+              <summary>How can I get CiviForm in my community?</summary>
+              <div class="accordion-body">
                 <p>
-                  Community-based organizations (CBOs) and other trusted
-                  intermediaries can help residents apply to programs through a
-                  dedicated interface.
+                  Adopting CiviForm requires working closely with program
+                  administrators, IT teams, and other stakeholders to
+                  successfully understand and meet the needs of programs and
+                  residents. See "<a href="/contact">Getting started</a>" for a
+                  detailed look at the process. Hands-on support for adopting
+                  CiviForm is also available through the
+                  <a href="https://g.co/fellowship"
+                    >Google.org Fellowship program</a
+                  >.
                 </p>
               </div>
-            </div>
-            <div class="cagov-card">
-              <div class="card-text">
-                <h4>Simple form creation</h4>
+            </details>
+          </cagov-accordion>
+          <cagov-accordion>
+            <details open>
+              <summary>
+                What technical capacity is necessary to deploy and manage
+                CiviForm?
+              </summary>
+              <div class="accordion-body">
                 <p>
-                  Government IT teams and program administrators can quickly
-                  build, launch, and onboard new programs using a no-code
-                  interface and reusable question bank.
+                  CiviForm is open source software that can be deployed and
+                  self-hosted on each government’s own cloud or on-premises
+                  infrastructure. Existing IT staff with knowledge of cloud or
+                  on-premises systems can
+                  <a
+                    href="https://docs.civiform.us/it-manual/sre-playbook/initial-deployment"
+                    >set up and manage CiviForm with minimal effort</a
+                  >. Once CiviForm is deployed, non-technical users can manage
+                  programs and questions through a user-friendly interface. Read
+                  more about
+                  <a
+                    href="https://docs.civiform.us/it-manual/infrastructure-requirements"
+                    >infrastructure requirements</a
+                  >
+                  and
+                  <a
+                    href="https://docs.civiform.us/user-manual/operational-resources/civic-entity-staffing-overview"
+                    >staffing needs</a
+                  >.
                 </p>
               </div>
-            </div>
-            <div class="cagov-card">
-              <div class="card-text">
-                <h4>Application management & reporting</h4>
+            </details>
+          </cagov-accordion>
+          <cagov-accordion>
+            <details open>
+              <summary>
+                How does CiviForm store and manage applicant information?
+              </summary>
+              <div class="accordion-body">
                 <p>
-                  Program administrators can manage application statuses and
-                  export information for processing or reporting in existing
-                  tools.
+                  Because CiviForm’s underlying infrastructure is self-hosted by
+                  each government, all applicant information is stored and
+                  managed by each government in accordance with their security
+                  and privacy policies. Read more about
+                  <a
+                    href="https://docs.civiform.us/user-manual/onboarding-guide/security-and-privacy"
+                    >security and privacy considerations in CiviForm</a
+                  >.
                 </p>
               </div>
-            </div>
-            <div class="cagov-card">
-              <div class="card-text">
-                <h4>Open, shared software</h4>
+            </details>
+          </cagov-accordion>
+          <cagov-accordion>
+            <details open>
+              <summary>Why is CiviForm built as open source software?</summary>
+              <div class="accordion-body">
                 <p>
-                  CiviForm is free and open source software that is developed
-                  and maintained by governments. It is self-hosted on your
-                  infrastructure for reliability, security, and
-                  interoperability.
+                  CiviForm is built as a
+                  <a href="https://softwarecollaborative.org/"
+                    >government software collaborative</a
+                  >, which provides a way of co-developing and maintaining
+                  shared government software that reduces long-term maintenance
+                  costs and makes it easier to adapt to the changing needs of
+                  programs and communities. CiviForm’s open source approach is
+                  grounded in principles of transparency, community ownership,
+                  and community-driven development. Member organizations
+                  contribute to CiviForm’s shared codebase through collective
+                  planning and decision-making processes (read about CiviForm’s
+                  governance processes
+                  <a
+                    href="https://docs.civiform.us/governance-and-management/governance"
+                    >here</a
+                  >).
                 </p>
               </div>
-            </div>
-          </div>
+            </details>
+          </cagov-accordion>
+          <cagov-accordion>
+            <details open>
+              <summary>Are open source tools like CiviForm secure?</summary>
+              <div class="accordion-body">
+                <p>
+                  Yes. Open source software is widely used across critical web
+                  infrastructure, including by secure government services such
+                  as
+                  <a href="https://github.com/18F/identity-idp">Login.gov</a>.
+                  CiviForm’s maintainers regularly update software dependencies
+                  and publish a new release each week. CiviForm’s approach to
+                  open source software development is inspired by best practices
+                  from technical government organizations such as
+                  <a href="https://18f.gsa.gov/open-source-policy/">18F</a>.
+                </p>
+              </div>
+            </details>
+          </cagov-accordion>
         </main>
       </div>
     </div>

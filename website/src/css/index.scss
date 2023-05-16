@@ -80,3 +80,24 @@
 .cagov-step-list li:before {
   border: 5px solid var(--primary-900);
 }
+
+/* Make features titles show above feature descriptions on mobile. */
+@media (max-width: $desktop) {
+  .cagov-with-sidebar.cagov-no-reverse > * {
+    flex-direction: column;
+  }
+}
+
+/* Features overview text alignment and layout */
+@media (min-width: $desktop) {
+  .features-overview .cagov-featured-sidebar {
+    width: 40%;
+    /* Equivalent to .p-t-5, but you cannot @extend in a media query. */
+    padding-top: 0 !important;
+  }
+}
+
+/* Semi-bold text for key user descriptions. */
+.features-overview .cagov-hero-body-content {
+  font-weight: var(--font-weight-5, 500);
+}

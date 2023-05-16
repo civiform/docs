@@ -6284,3 +6284,17 @@ cagov-site-navigation .expanded-menu-close-mobile-svg {
 .cagov-step-list li:before {
   border: 5px solid var(--primary-900);
 }
+@media (max-width: 1176px) {
+  .cagov-with-sidebar.cagov-no-reverse > * {
+    flex-direction: column;
+  }
+}
+@media (min-width: 1176px) {
+  .features-overview .cagov-featured-sidebar {
+    width: 40%;
+    padding-top: 0 !important;
+  }
+}
+.features-overview .cagov-hero-body-content {
+  font-weight: var(--font-weight-5, 500);
+}

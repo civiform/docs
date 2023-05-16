@@ -6191,6 +6191,62 @@ cagov-site-navigation .expanded-menu-close-mobile-svg {
 .expanded-menu-section-header-arrow-svg {
   max-width: 20px;
 }
+.cagov-step-list {
+  padding-left: 0 !important;
+  margin-left: 30px !important;
+  counter-reset: step-list-count;
+}
+.cagov-step-list li {
+  list-style: none;
+  border-left: 5px solid var(--accent2-300, #ecb32d);
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-7, 700);
+  position: relative;
+  padding-left: 45px;
+  line-height: var(--font-lineheight-3, 1.5);
+  margin-bottom: 0;
+}
+.cagov-step-list li:before {
+  content: "";
+  font-size: var(--font-size-5, 1.625rem);
+  font-weight: 700;
+  padding: 0 13px 0 13px;
+  border: 5px solid var(--accent2-300, #ecb32d);
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  left: -27px;
+  top: -5px;
+  margin-left: -1px;
+}
+.cagov-step-list li span.has-black-color,
+.cagov-step-list li .cagov-step-list-content {
+  margin-top: var(--s-2, 1rem);
+  padding-bottom: 1.75rem;
+  font-size: var(--font-size-2, 1.125rem);
+  font-weight: var(--font-weight-5, 500);
+  display: block;
+}
+.cagov-step-list li:first-child:before {
+  padding: 0 13px 0 13px;
+}
+.cagov-step-list li::before {
+  counter-increment: step-list-count;
+  content: counter(step-list-count);
+}
+.cagov-step-list li:nth-child(n+10):before {
+  padding: 0 7px;
+}
+.cagov-step-list li:nth-child(n+20):before {
+  padding: 0 5px;
+}
+.cagov-step-list li:last-child {
+  border-left: none;
+}
+.cagov-step-list li:last-child:before {
+  margin-left: 6px;
+}
 .grid-logo img {
   max-height: 110px;
 }
@@ -6215,4 +6271,16 @@ cagov-site-navigation .expanded-menu-close-mobile-svg {
 }
 .cagov-card h4 {
   color: var(--primary-900);
+}
+@media (max-width: 768px) {
+  .contact-form {
+    min-height: 300px;
+    margin-bottom: var(--s-3, 1.5rem) !important;
+  }
+}
+.cagov-step-list li {
+  border-left: 5px solid var(--primary-900);
+}
+.cagov-step-list li:before {
+  border: 5px solid var(--primary-900);
 }

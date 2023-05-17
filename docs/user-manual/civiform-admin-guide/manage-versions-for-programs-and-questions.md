@@ -1,6 +1,6 @@
 # Manage versions for programs & questions
 
-Questions can be shared between programs. If the wording for a question changes, it does so for all programs that use it. However, program can be set up to show or hide specific questions based on previously answered questions. These dependencies can be different for the same questions across different applications.
+Questions can be shared between programs. If the wording for a question changes, it does so for all programs that use it. However, programs can be set up to show or hide specific questions based on previously answered questions. These dependencies can be different for the same questions across different applications.
 
 To account for this use case, CiviForm allows versioning of programs and questions when making changes instead of overwriting the existing version. This means when Applicants begin an application, they remain on that version even if the program or questions are updated.
 

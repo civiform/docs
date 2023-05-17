@@ -1,6 +1,6 @@
 # Manage versions for programs & questions
 
-Once published, questions can be shared between programs. If the wording for a question changes, it does so for all programs that use it. However, program applications can be set up to show or hide specific questions based on previously answered questions. These dependencies can be different for the same questions across different applications.
+Questions can be shared between programs. If the wording for a question changes, it does so for all programs that use it. However, program can be set up to show or hide specific questions based on previously answered questions. These dependencies can be different for the same questions across different applications.
 
 To account for this use case, CiviForm allows versioning of programs and questions when making changes instead of overwriting the existing version. This means when Applicants begin an application, they remain on that version even if the program or questions are updated.
 
@@ -11,17 +11,18 @@ Read more about the [data versioning model](../../contributor-guide/developer-gu
 ### Update program version
 
 1. Sign in to CiviForm as a CiviForm Admin.
-2. Click **Programs** on the navigation bar and select a program.
-3. Click **New version** to create a draft version of the program.
-4. Modify the program information fields, edit questions, etc.\
+2. Click **Programs** on the navigation bar.
+3. Locate the program you'd like to update.
+4. Click on the three dots to open the dropdown menu for that program.
+5. Click **Edit** to create a draft version of the program.
+6. Modify the program information fields, edit questions, etc.\
    **Note**: You can’t edit the internal Program Name field.
-5. Click **Save**.
 
 ### Update question version
 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click **Questions** on the navigation bar and select a question.
-3. Click **New version** to create a draft version of the question.
+3. Click **Edit** to create a draft version of the question.
 4. Modify the question information fields.
 5. Click **Update**.
 

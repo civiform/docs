@@ -10,7 +10,7 @@ Note: Applications are also affected by versioning, but are largely a separate c
 | -------- | ----------------------------------------------------------------------- |
 | QP       | Short hand for "Question or Program". Many concepts here apply to both. |
 | Revision | A specific iteration/edit of a QP                                       |
-| Publish  | The act of making all DRAFT QPs ACTIVE                                  |
+| Publish  | The act of making DRAFT QPs ACTIVE                                      |
 
 ### Conceptual Overview
 
@@ -69,6 +69,16 @@ Each time the system is published the following steps happen
 * The DRAFT versions's stage is set to ACTIVE
 
 The end result is that all previously ACTIVE QP revisions are ACTIVE still, along with the pending DRAFT revisions for the edited QPS.
+
+Publishing a single program is similar with a few additional steps
+
+* A new DRAFT is created
+* All DRAFT QPs not currently being published are moved to the new DRAFT
+* Any ACTIVE QPs that do not correspond to the QPs being published are associated with the old DRAFT version.
+* The existing DRAFT now contains all ACTIVE QPs, the one DRAFT program to be published, and its DRAFT questions. The new DRAFT now contains all the DRAFT QPs that are not to be published.
+* The ACTIVE version's stage is set to OBSOLETE
+* The DRAFT version's stage is set to ACTIVE
+* There is now an ACTIVE Version containing the published program, its questions, and all previously published QPs, and there is a DRAFT Version containing all programs and questions that had edits and were not published.
 
 NOTE: Before the Publish, QPs with a DRAFT had 1 revision (A) associated with ACTIVE and another (B) with DRAFT. After the Publish, A is now part of the "historical record", and B is the current ACTIVE revision. For all other ACTIVE QPs, they are associated with the previous ACTIVE version and the new one. As an example: An ACTIVE QP that never changes will end up being associated will all versions past its creation.
 

@@ -6,6 +6,6 @@ In this Guide, you will learn how-to:
 
 * [Apply to a program on behalf of a resident](apply-to-a-program.md)
 
-{% hint style="success" %}
+{% hint style="info" %}
 To learn more about features for Trusted Intermediaries, read [how CiviForm works](../../overview/how-does-civiform-work.md#trusted-intermediary-experience).
 {% endhint %}

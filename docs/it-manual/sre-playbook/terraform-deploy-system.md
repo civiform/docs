@@ -1,11 +1,11 @@
 # Terraform deploy system
 
-Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. Civiform provides Terraform configuration files that allow to deploy Civiform on Azure and AWS. Knowledge of Terraform is not required to run them but here is the high-level [Terraform overview](https://www.terraform.io/intro) nevertheless. 
+Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. CiviForm provides Terraform configuration files that allow to deploy CiviForm on Azure and AWS. Knowledge of Terraform is not required to run them but here is the high-level [Terraform overview](https://www.terraform.io/intro) nevertheless. 
 
 ## Setup
 
 ### Outside configuration
-You will need couple of values that are configured outside of Civiform before you start the setup. Some of the steps are optional meaning that you can bring up staging environment and get app working, but they need to be completed for production setup.
+You will need couple of values that are configured outside of CiviForm before you start the setup. Some of the steps are optional meaning that you can bring up staging environment and get app working, but they need to be completed for production setup.
 - [ ] (Optional) Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-ad)
 - [ ] (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](../../contributor-guide/developer-guide/authentication-providers.md)
 - [ ] Domain name for your deployment. For example `civiform.mycity.gov`
@@ -23,7 +23,7 @@ You will need couple of values that are configured outside of Civiform before yo
     * Terraform brings up resources in cloud (database, network, server, etc).
     * Asks confirmation few times before creating resources listing everything that will be created. 
     * Safe to re-run script if it fails. There is known [issue](https://github.com/cn-terraform/terraform-aws-logs-s3-bucket/issues/6) where `bin/setup` fails on the first run.
-    * The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our oncall to resolve the issue. Our oncall [responds to new issues in the civiform issue tracker](../../governance-and-management/project-management/on-call-guide#on-call-responsibilities).
+    * The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our oncall to resolve the issue. Our oncall [responds to new issues in the CiviForm issue tracker](../../governance-and-management/project-management/on-call-guide#on-call-responsibilities).
 ## Deploy
 
 1. Find the version that you want to deploy on [Github](https://github.com/civiform/civiform/releases).
@@ -77,13 +77,13 @@ The setup scrip prompts you to set up Azure AD. There are a few additional steps
 In Azure Portal:
   * Go to Azure Active Directory -> App registrations
   * Click the tab for "All applications"
-  * Find your app (staging-dynamic-heron for Civiform Azure Staging)
+  * Find your app (staging-dynamic-heron for CiviForm Azure Staging)
   <img width="905" alt="image" src="https://user-images.githubusercontent.com/1741747/191576453-45b0e029-7c39-4510-8e3a-a532c76d3a6d.png">
 
  Use menu on the left:
   * Authentication: setup the Redirect URI to be what the app expects: https://\<custom\_hostname>/callback/AdClient.
-  * You will also need an admin group which creates civiform admins
-  * Token configuration: To allow for civiform admins you need to have the Azure Ad return the groups claim. Add the security groups claim (you can verify the groups claim is being returned by decoding the base64 token from the token you get back from Azure AD on the website-- if you preserve the log in the Chrome Dev Tool window it should be from https://\<custom\_hostname>/callback/AdClient)
+  * You will also need an admin group which creates CiviForm admins
+  * Token configuration: To allow for CiviForm admins you need to have the Azure Ad return the groups claim. Add the security groups claim (you can verify the groups claim is being returned by decoding the base64 token from the token you get back from Azure AD on the website-- if you preserve the log in the Chrome Dev Tool window it should be from https://\<custom\_hostname>/callback/AdClient)
 
 ### Access the database for emergency repair
 

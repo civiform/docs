@@ -12,7 +12,7 @@ Current actions need the following secrets:
 
 Go to [Login Radius Dashboard](https://dashboard.loginradius.com/) and click the
 existing civiform-staging app. Click into the Integration tab, and add a new
-civiform integration. Choose the outbound SSO Saml.
+CiviForm integration. Choose the outbound SSO Saml.
 
 From there add an app with "Sp initiated login" and pick a name (this gets put
 into the config as `LOGIN_RADIUS_SAML_APP_NAME`).

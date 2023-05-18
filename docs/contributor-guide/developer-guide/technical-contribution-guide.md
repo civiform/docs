@@ -5,7 +5,7 @@ This is a guide for making technical contributions to CiviForm. ****&#x20;
 If you haven't already, please **read our** [**code of conduct**](https://github.com/civiform/civiform/blob/main/code\_of\_conduct.md)**.**
 
 {% hint style="info" %}
-Join the conversation in the [Civiform Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
+Join the conversation in the [CiviForm Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
 {% endhint %}
 
 ### Getting started

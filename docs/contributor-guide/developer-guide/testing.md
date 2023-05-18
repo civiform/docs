@@ -175,7 +175,7 @@ To run the tests:
     bin/run-browser-test-env -–azure
     ```
     This runs the tests using Azurite, the Azure emulator. Because the Azure
-    deployment of Civiform requires SES, the AWS email sending service, we also
+    deployment of CiviForm requires SES, the AWS email sending service, we also
     have to start Localstack, the AWS emulator, when running the Azure browser
     tests.
 
@@ -229,10 +229,10 @@ facing features should be covered by an a11y test check. See the
 #### Browser test reliability
 
 Browser tests can be flaky if they trigger actions on the page and don't wait
-for Civiform javascript event handlers to complete before triggering subsequent
+for CiviForm javascript event handlers to complete before triggering subsequent
 actions or validating page contents. Some examples of where this can happen:
 
--  **Page initialization**: Civiform typically attaches javascript event handlers
+-  **Page initialization**: CiviForm typically attaches javascript event handlers
    after pages load. Tests must therefore wait for pages to be ready after
    initial page load or any page navigation (whether triggered by anchor link
    clicks, form submissions, or js event handlers). To accomplish this, main.ts
@@ -240,14 +240,14 @@ actions or validating page contents. Some examples of where this can happen:
    running, and the browser test function `waitForPageJsLoad` can be used to wait
    for these attributes to be set. In general, stay very aware of when page
    navigations are happening to maintain correctness.
--  **DOM modification**: Civiform sometimes uses javascript to show/hide DOM
+-  **DOM modification**: CiviForm sometimes uses javascript to show/hide DOM
    elements like modal dialogs, or makes copies of hidden templates (e.g., to
    populate radio/checkbox option lists). Browser tests can use element selectors
    to block on these manipulations finishing, but selectors must be specific
    enough to differentiate (e.g., waiting for a specific matching element index
-   to appear, instead of targeting the last match). For typical civiform modal
+   to appear, instead of targeting the last match). For typical CiviForm modal
    dialogs, `clickAndWaitForModal` may be helpful.
--  **Input validation**: Civiform javascript input validators sometimes modify
+-  **Input validation**: CiviForm javascript input validators sometimes modify
    the DOM (e.g., making sure text has been changed before enabling a submit
    button). Browser tests can use specific selectors to have playwright wait for
    input validation to complete (e.g., specifying an *enabled* button to click

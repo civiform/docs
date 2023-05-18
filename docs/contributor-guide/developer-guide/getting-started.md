@@ -196,7 +196,7 @@ Browser tests are heavy handed and can take a while to run.  You can focus the r
 
 ## Creating fake data
 
-To create Questions and Programs that use them, you need to log in as a "Program and Civiform Admin" through http://localhost:9000/loginForm .
+To create Questions and Programs that use them, you need to log in as a "Program and CiviForm Admin" through http://localhost:9000/loginForm .
 
 You can return to that screen to switch to a Guest user and back again to an Admin as needed.
 

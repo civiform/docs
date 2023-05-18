@@ -30,7 +30,7 @@ run.py(https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/shared/bin
 Because run.py is in a different repository, it requires development across different git repositories.
 2. For the second flow, you develop in the civiform-deploy-infra repository and run run.py from there.
 
-#### Create civiform config (shared for both flows)
+#### Create CiviForm config (shared for both flows)
 
 First you need a config file, which contains key value pairs to configure the deployment
 (e.g. choice of cloud provider and infra, timezone settings, authentication provider etc). 

@@ -2,7 +2,7 @@
 
 CiviForm supports applicant and admin authentication via OpenID Connect (OIDC). We use [pac4j](https://www.pac4j.org/) for auth which hides most of the gritty details. But many auth providers deviations from the [OpenID specifications](https://openid.net/connect/). In those cases we need to dig into the spec to debug and fix issues. You can find debugging tips at the end of this page.
 
-Below we'll go over the implementation and configuration steps for currently supported authentication providers. A Civiform deployment should have exactly one admin authentication provider and one applicant authentication provider configured.
+Below we'll go over the implementation and configuration steps for currently supported authentication providers. A CiviForm deployment should have exactly one admin authentication provider and one applicant authentication provider configured.
 
 ## Getting started exercise
 
@@ -44,8 +44,8 @@ Below you'll find instructions on how to use Azure AD to authenticate applicants
 </details>
 
 3\. Go to the "Token configuration" section and add the following claims:
-    -  Optional claims: `acct`, `email`. These determine what information about the user will be set to Civiform.
-    -  Groups claims: `Security groups`. These allows Civiform to authenticate via a security group.
+    -  Optional claims: `acct`, `email`. These determine what information about the user will be set to CiviForm.
+    -  Groups claims: `Security groups`. These allows CiviForm to authenticate via a security group.
 
 <details>
   <summary>Screenshots</summary>
@@ -155,7 +155,7 @@ Most Identity providers will need these urls:
 
 ### Login.gov (OIDC)
 
-Here you'll find intstruction of how to setup login.gov authentication. It assumes that you have access to [login.gov sandbox](https://developers.login.gov/testing/). First, you'll need to create an app in the sandbox and configure it to work with your civiform instance.
+Here you'll find intstruction of how to setup login.gov authentication. It assumes that you have access to [login.gov sandbox](https://developers.login.gov/testing/). First, you'll need to create an app in the sandbox and configure it to work with your CiviForm instance.
 
 1\. Create a new app. 
 
@@ -212,7 +212,7 @@ Login.gov requires setting `state` param in logout request even though in the do
 
 ### LoginRadius (SAML)
 
-SAML authentication involves an exchange between an Identity Provider or IdP(LoginRadius), and a Service Provider or SP (Civiform). In our application, we use SP-initiated SAML authentication, which means our application signs and sends a SAML request to LoginRadius to begin the auth process.
+SAML authentication involves an exchange between an Identity Provider or IdP(LoginRadius), and a Service Provider or SP (CiviForm). In our application, we use SP-initiated SAML authentication, which means our application signs and sends a SAML request to LoginRadius to begin the auth process.
 
 #### Service Provider Configuration
 
@@ -251,7 +251,7 @@ pbcopy < test.cert
 > ![image](https://user-images.githubusercontent.com/19631367/155667445-223de285-906f-4624-bbd4-ea88612fcc14.png)
 
 ### Via Terraform Setup
-The terraform setup script should walk you through each step of this process so the manual set up is less necessary. If you mess up the initial IDP set up you just have to generate the "Generate LoginRadius' Certificate and Key" via [open ssl commands documented here](https://www.loginradius.com/docs/single-sign-on/concept/saml-miscellaneous/certificate/) -- these get stored in the Id Provider Certificate Key and the Id Provider Certificate. They don't need to be stored anywhere on the civiform side. 
+The terraform setup script should walk you through each step of this process so the manual set up is less necessary. If you mess up the initial IDP set up you just have to generate the "Generate LoginRadius' Certificate and Key" via [open ssl commands documented here](https://www.loginradius.com/docs/single-sign-on/concept/saml-miscellaneous/certificate/) -- these get stored in the Id Provider Certificate Key and the Id Provider Certificate. They don't need to be stored anywhere on the CiviForm side. 
 
 After that you will need to re deploy terraform and re generate the Service Provider certificate containing the sp public key which is given to the Login Radius, or the Idp (this is prompted in the setup). The setup script also takes the private key portion of the cert and puts it in a storage bucket, which is mounted as a volume that the application can access. This was implemented in [pr #2007](https://github.com/civiform/civiform/pull/2007).
 
@@ -306,7 +306,7 @@ The SamlCiviformProfileAdapter is used to augment the [CiviformProfile](https://
 
 ## Testing
 
-OIDC for the IDCS applicant flow can be tested locally.  Out of the box, `bin/run-dev` runs a dev-oidc container and Civiform allows you to log in using it.
+OIDC for the IDCS applicant flow can be tested locally.  Out of the box, `bin/run-dev` runs a dev-oidc container and CiviForm allows you to log in using it.
 
 The logged out landing page has a Log In button that will redirect to the dev OIDC server.  Enter any user/pass you like and accept the subsequent claims page.  You'll then be redirected back to your civiform.
 

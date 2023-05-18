@@ -1,5 +1,5 @@
 ---
-description: Overview of Civiform users and how the product serves them.
+description: Overview of CiviForm users and how the product serves them.
 ---
 
 # How does CiviForm work?
@@ -88,7 +88,7 @@ From filtering applicants by programs to tracking application status, trusted in
 
 </details>
 
-## Civiform Admin Experience
+## CiviForm Admin Experience
 
 CiviForm Admin are the government employees who create and update applications. These users manage CiviForm for their civic entity, build custom applications, and can maintain the tool without ever needing to go into the code. They may be provisioned access to aggregated and anonymized data for analytics purposes.
 

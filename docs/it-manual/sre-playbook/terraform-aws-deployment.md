@@ -1,6 +1,6 @@
 # AWS Deployment with Terraform Guide
 
-Information specific to Civiform Terraform deploy scripts for AWS.
+Information specific to CiviForm Terraform deploy scripts for AWS.
 
 For general information see [Terraform deploy system](terraform-deploy-system.md).
 
@@ -10,7 +10,7 @@ For general information see [Terraform deploy system](terraform-deploy-system.md
 ![AWS System Diagram](https://user-images.githubusercontent.com/1741747/184951252-1a33c8c8-8a86-44ea-b39a-cebea71e7495.png)
 
 
-Created for Civiform app:
+Created for CiviForm app:
 * VPC
 * Load balancer
 * Internet Gateway

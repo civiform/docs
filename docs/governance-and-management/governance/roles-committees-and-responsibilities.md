@@ -17,7 +17,7 @@ Any person whose primary work responsibility is the ongoing development and main
 Any government using CiviForm in a pilot or production capacity to expand residents’ access to services and benefits. Individuals from Member Organizations may be responsible for managing their individual government’s instance of CiviForm, but they bear no responsibility to the broader CiviForm software project unless they choose to act as project Contributors or Maintainers.
 
 #### Stewarding Organization
-A central organization responsible for the cross-organizational coordination and stewardship of CiviForm’s development and maintenance. They facilitate many of the processes described in this document in order to consolidate the needs, plans, and development efforts of different Member Organizations into one unified project. Google.org is currently managing these responsibilities and will transition these responsibilities to a non-profit organization in Q4 of 2022.
+A central organization responsible for the cross-organizational coordination and stewardship of CiviForm’s development and maintenance. They facilitate many of the processes described in this document in order to consolidate the needs, plans, and development efforts of different Member Organizations into one unified project. Exygy is currently managing these responsibilities.
 
 ## Committees
 Committees are groups of Contributors and Maintainers from Member Organizations and the Stewarding Organization who collaborate to make decisions and provide expertise on project planning and development. The responsibilities and membership of each committee are as follows:

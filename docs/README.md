@@ -1,21 +1,28 @@
 # CiviForm Docs
 
-CiviForm is an open-source platform that streamlines the way residents find and sign up for public assistance. This self-service tool also enables government employees to manage forms without ever needing to go into the backend code.
+This is CiviForm's documentation. **[Visit the main website here](https://civiform.us).**
+
+CiviForm is a free, open source tool that makes it easier to access and administer public assistance programs. Residents and community organizations can find and apply to multiple programs in one place, and governments can streamline services and reach communities in need.
 
 In the docs, you will find:
 
-* [Overview of CiviForm](overview/what-is-civiform.md) with a high-level summary on how the platform works
-* [User Manuals](user-manual/civiform-admin-guide/README.md) to set up and use CiviForm in your organization or program
-* [IT Manuals](it-manual/sre-playbook/README.md) to deploy CiviForm on your technical infrastructure
-* [Contributor Guides](contributor-guide/developer-guide/README.md) to contribute product improvements
-* [Governance & Management Documentation](governance-and-management/project-management/README.md) with information on how CiviForm is being collaboratively managed and developed
+* [Overview of CiviForm](overview/what-is-civiform.md) with a high-level summary on how the tool works
+* [Onboarding Guide](user-manual/onboarding-guide) to understand how CiviForm can support your organization's service delivery
+* [User Manual](user-manual/civiform-admin-guide/README.md) to set up and manage your programs and applications
+* [IT Manual](it-manual/sre-playbook/README.md) to deploy CiviForm on your technical infrastructure
+* [Contributor Guide](contributor-guide/developer-guide/technical-contribution-guide.md) to contribute new features
+* [Governance & Management Documentation](governance-and-management/governance/) with information on how CiviForm is being collaboratively managed and developed
 
 ### Getting Started
 
 Below are good docs to start learning about CiviForm:
 
 {% content-ref url="overview/what-is-civiform.md" %}
-[what-is-civiform.md](overview/what-is-civiform.md)
+[What is CiviForm?](overview/what-is-civiform.md)
+{% endcontent-ref %}
+
+{% content-ref url="user-manual/onboarding-guide/README.md" %}
+[Onboarding Guide](user-manual/onboarding-guide/README.md)
 {% endcontent-ref %}
 
 {% content-ref url="contributor-guide/developer-guide/technical-contribution-guide.md" %}

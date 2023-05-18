@@ -74,8 +74,6 @@
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
   * [Database Disaster Recovery](it-manual/sre-playbook/database-disaster-recovery.md)
   * [Production Database Access](it-manual/sre-playbook/production-database-access.md)
-  * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
-    * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
   * [Email configuration](it-manual/sre-playbook/email-configuration.md)
   * [GIS Service configuration](it-manual/configure-gis-service.md)
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)

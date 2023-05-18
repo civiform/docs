@@ -18,7 +18,7 @@ The [CiviForm terraform deployment system](https://github.com/civiform/cloud-dep
 
 [AWS Managed Grafana](https://aws.amazon.com/grafana/) uses [AWS IAM Identity Center](https://aws.amazon.com/iam/identity-center/) for access management.
 
-**Note that this is a different service from [AWS IAM](https://aws.amazon.com/iam/) the accounts/user profiles in AWS IAM Identity Center are completely separate from accounts in AWS IAM.**
+**Note that this is a different service from [AWS IAM](https://aws.amazon.com/iam/). The accounts/user profiles in AWS IAM Identity Center are completely separate from accounts in AWS IAM.**
 
 1. Login to the AWS console and navigate to the IAM Identity Center service
 1. In the left nav, click "Users"
@@ -43,7 +43,7 @@ With Prometheus connected as a Grafana workspace, panels can now be created in G
 - Requests per minute, split out by controller action
 - Requests per minute, split out by URL path pattern
 - Client errors (4XX status codes) per minute, split out by controller action and status code
-- Server erors per minute (500 status code), split out by controller action
+- Server errors per minute (500 status code), split out by controller action
 - 50th percentile 5-minute trailing average request latency, split out by controller action 
 - 90th percentile 5-minute trailing average request latency, split out by controller action 
 - 99th percentile 5-minute trailing average request latency, split out by controller action 

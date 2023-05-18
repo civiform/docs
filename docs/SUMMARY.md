@@ -127,9 +127,6 @@
   * [Dev Testing](contributor-guide/developer-guide/dev-testing.md)
   * [Troubleshooting](contributor-guide/developer-guide/troubleshooting.md)
   * [Creating a new release](contributor-guide/developer-guide/releasing.md)
-* [UI/UX Guide](contributor-guide/ui-ux-guide/README.md)
-  * [UI contribution guide (HTML/CSS)](contributor-guide/ui-ux-guide/ui-contribution-guide-html-css.md)
-  * [UX contribution guide (mockups)](contributor-guide/ui-ux-guide/ux-contribution-guide-mockups.md)
 
 ## Governance & Management
 

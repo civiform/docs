@@ -119,7 +119,7 @@
     * [Developer guide](contributor-guide/developer-guide/deploy-system/developer-guide.md)
     * [Recommended reading](contributor-guide/developer-guide/deploy-system/recommended-reading.md)
     * [Testing](contributor-guide/developer-guide/deploy-system/testing.md)
-    * [Trouble shooting](trouble-shooting.md)
+    * [Troubleshooting](contributor-guide/developer-guide/deploy-system/troubleshooting.md)
     * [Running Dev Code in Azure](contributor-guide/developer-guide/deploy-system/dev-azure.md)
   * [Testing](contributor-guide/developer-guide/testing.md)
   * [Dev Testing](contributor-guide/developer-guide/dev-testing.md)

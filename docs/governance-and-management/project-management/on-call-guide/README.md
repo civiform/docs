@@ -5,6 +5,7 @@ description: On-call responsibilities and process for CiviForm.
 # On Call Guide
 
 ### Onboarding
+Exygy engineers are responsible for on-call shifts, and Google.org Works and Civic Entity engineers can opt-in to the rotation. To get added to the rotation, contact Nick Burgan on Slack.
 
 Do these things when you initially onboard to the CiviForm on-call rotation.
 
@@ -13,6 +14,8 @@ Do these things when you initially onboard to the CiviForm on-call rotation.
 Join the CiviForm GitHub repo ([https://github.com/civiform/civiform](https://github.com/civiform/civiform)). Ask someone who already has access to add you as an admin.
 
 Also join the CiviForm GitHub org ([https://github.com/civiform](https://github.com/civiform)).
+
+Add the CiviForm Shared Google Calendar. Contact Nick Burgan or Rocky Fine on Slack to get added to the permissions list.
 
 #### Ensure you have visibility into comms
 
@@ -51,8 +54,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
 4. Check [dependency updates](https://github.com/civiform/civiform/labels/dependencies) (once per shift)
 5. Check security updates at [Codecov](https://about.codecov.io/security-update)
 6. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md) and close the oncall issue assigned to you.
-7. Update the [Oncall Journal](on-call-journal.md) with anything that happened during your shift that you think might be helpful for future on-callers to know.
-8. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
+7. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
 
 #### Downstream production incident support
 

@@ -126,7 +126,7 @@ Make your Server changes (e.g. UI changes that depend on a config value reaching
 * Check on DockerHub that the image is visible and has the correct timestamp
 
 Make your deployment use the `civiform` image you created locally to view server changes
-* In [app.tf](https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/aws/templates/aws_oidc/app.tf#L37) in the 
+* In [app.tf](https://github.com/civiform/cloud-deploy-infra/blob/66cc7db5d166b4069bc63dd1dea7cfa23ffce2a7/cloud/aws/templates/aws_oidc/app.tf#L37) in the 
 the `cloud-deploy-infra` repository, change the image you use with `container_image              = "<your_dockerhub_username>/civiform:latest" `
 * `git add` and `git commit` your changes 
 

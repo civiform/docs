@@ -142,7 +142,7 @@ Double check that the setup script sees the changes
 #### Run the deployment script
 Run the script from the `civiform-deploy` repository
  * If you need to make any further changes to `civiform_config.sh`, do so.
- * run `yes yes | bin/set`
+ * run `yes yes | bin/setup`
 
 ### Running the Python formatter
 Before you push your change to git and ask for a review, format the code with the following command:

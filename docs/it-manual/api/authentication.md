@@ -7,7 +7,7 @@ Depending on your API client, you may need to take different steps to construct 
 
 ### Using a username and password
 
-If you API client requires you to provide a username and password when using Basic Auth, use the Username and Password values provided on the API key confirmation screen. The client will then create the `Authorization` header for you.
+If your API client requires you to provide a username and password when using Basic Auth, use the Username and Password values provided on the API key confirmation screen. The client will then create the `Authorization` header for you.
 
 ### Manually constructing the header
 

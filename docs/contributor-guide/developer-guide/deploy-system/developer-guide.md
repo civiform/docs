@@ -115,7 +115,7 @@ Push the image to your repository
 
 ### A typical full development cycle across 3 branches
 
-This section describes a flow for implementing changes across all three repositories (`civiform-deploy`, `civiform-deploy-infra` and `civiform`).
+This section describes a flow for implementing changes across all three repositories (`civiform-deploy`, `cloud-deploy-infra` and `civiform`).
 You can skip some sections if you are not making changes to all three repositories.
 
 #### Server changes

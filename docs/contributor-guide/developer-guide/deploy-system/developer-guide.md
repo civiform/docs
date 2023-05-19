@@ -137,7 +137,7 @@ Make your changes
 
 Double check that the setup script sees the changes
 * Navigate to the `civiform-deploy` repository
-* Ensure that your `checkout.sh` copies your changes from the correct git branch in `cloud-deploy-infra` (see Prerequisites)
+* Ensure that your `checkout.sh` copies your changes from the correct git branch in `cloud-deploy-infra` (see [Prerequisites](https://docs.civiform.us/contributor-guide/developer-guide/deploy-system/prerequisites#setup-repositories))
 
 #### Run the deployment script
 Run the script from the `civiform-deploy` repository

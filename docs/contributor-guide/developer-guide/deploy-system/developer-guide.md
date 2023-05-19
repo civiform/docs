@@ -110,7 +110,7 @@ Push the image to your repository
 * Go to your DockerHub account at `https://hub.docker.com/u/<your_dockerhub_name>` to check that the image has been updated.
 
 #### Pointing your deployment at your docker image
-* Open [app.tf](https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/aws/templates/aws_oidc/app.tf#L37)
+* Open [app.tf](https://github.com/civiform/cloud-deploy-infra/blob/66cc7db5d166b4069bc63dd1dea7cfa23ffce2a7/cloud/aws/templates/aws_oidc/app.tf#L37)
 * Change the container image to `container_image              = “<your_dockerhub_username>/civiform:latest” `
 
 ### A typical full development cycle across 3 branches

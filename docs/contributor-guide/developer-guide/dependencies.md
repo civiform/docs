@@ -1,6 +1,6 @@
 # Dependencies
 
-This page will describe the ways in which Civiform maintainers manage, track, and update dependencies.
+This page will describe the ways in which CiviForm maintainers manage, track, and update dependencies.
 
 ## Dependency Plugin for sbt
 

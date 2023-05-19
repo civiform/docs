@@ -1,6 +1,6 @@
 # Communication Guidelines
 
-These are the communication guidelines for the Civiform community,
+These are the communication guidelines for the CiviForm community,
 including anyone interested in contributing to the open source project. 
 
   - **For announcements & recognition → email lists.** Why? Emails
@@ -18,7 +18,7 @@ shared documents. All group aliases are @googlegroups.com.
 
 |Google Group|Purpose & Audience|Permissions|How to join|
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| civiform-announce                               | Announcements to the Civiform community. Join if you are a contributor or maintainer.                                                                       | Only managers can post. Anyone can view posts.       | [Join here](https://groups.google.com/u/1/g/civiform-announce)                                |
+| civiform-announce                               | Announcements to the CiviForm community. Join if you are a contributor or maintainer.                                                                       | Only managers can post. Anyone can view posts.       | [Join here](https://groups.google.com/u/1/g/civiform-announce)                                |
 | civiform-technical                              | Technical announcements. Join if you are a technical contributor (e.g. software engineers).                                                                 | Anyone on web can post. Only members can view posts. | [Request to join](https://groups.google.com/g/civiform-technical)                             |
 | civiform-cloud-deploy-infra-test-notifications  | Group used to forward automated test infrastructure emails to. Join if you are working on the deploy system.                                                | Anyone on web can post. Only members can view posts. | [Request to join](https://groups.google.com/g/civiform-cloud-deploy-infra-test-notifications) |
 | civiform-escalations                            | Sensitive and non-public incident reports or technical escalations Join if you are an on-call software engineer.                                            | Anyone on web can post. Only members can view posts. | Invite only. Contact @bionj to be added.                                                      |
@@ -40,7 +40,7 @@ we should reassess this approach.
 |Slack Channel|Purpose|Who should join?|
 | ----------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------- |
 | **\#general**                       | All general announcements                                    | Everyone                                                                   |
-| **\#introductions**                 | Introduce yourself to the Civiform community                 | Everyone (optional)                                                        |
+| **\#introductions**                 | Introduce yourself to the CiviForm community                 | Everyone (optional)                                                        |
 | **\#engineering**                   | For any and all engineering discussions                      | Software Engineers, PMs (optional)                                         |
 | **\#pull-request-discuss**          | For deep dive discussions on PR reviews                      | Software Engineers                                                         |
 | **\#civiform-gh**                   | For bot updates from github (e.g. new issue created, new PR) | Software Engineers, PMs                                                    |

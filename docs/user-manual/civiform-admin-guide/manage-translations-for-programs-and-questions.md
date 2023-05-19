@@ -27,7 +27,7 @@ Watch the video or follow the step-by-step instructions below.
 3. To add a translation, select another language and enter the translated text for the Program display name and Program description.\
    \
    ![image](https://user-images.githubusercontent.com/98119305/156821120-29f5f0b4-0644-43e1-b6bc-d75a7835f37c.png)
-4. Click **Save**.\\
+4. Click **Save**.
 
 ### Add or edit question translations
 

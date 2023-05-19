@@ -24,8 +24,7 @@ You’ll need to have virtualization enabled on your machine. To check if you ha
 
 ![Windows task manager virtualization check](https://drive.google.com/uc?id=1jknfSqD\_qUEU8ulsFko52PG31eYs6QSm)
 
-| :bangbang: | If virtualization is disabled, you’ll need to boot up into the BIOS and enable virtualization. If your machine does not support virtualization you won't be able to proceed. |
-| :--------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+**Note: If virtualization is disabled, you’ll need to boot up into the BIOS and enable virtualization. If your machine does not support virtualization you won't be able to proceed.**
 
 ### Is it working?
 
@@ -65,8 +64,7 @@ In your WSL distribution, you can `ping` your favorite website to check for inte
 
 ### Installing and configuring Docker
 
-| :bangbang: | If you already had Docker installed before setting up WSL 2, you may want to uninstall and reinstall Docker so it installs with the required components for WSL 2. |
-| :--------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+**Note: If you already had Docker installed before setting up WSL 2, you may want to uninstall and reinstall Docker so it installs with the required components for WSL 2.**
 
 As you install Docker, make sure you install the required Windows components for WSL 2.
 
@@ -121,8 +119,7 @@ There are two options for configuring an IDE:
 
 ### Developing with files stored in Windows
 
-| :bangbang: | It's slow to run start and test the application when the files are stored in Windows because Docker runs in WSL, and will be accessing files through the `/mnt/c` mount. |
-| :--------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+**Note: It's slow to run start and test the application when the files are stored in Windows because Docker runs in WSL, and will be accessing files through the `/mnt/c` mount.**
 
 1. From WSL, `git clone` the CiviForm repository somewhere in your Windows file system (`/mnt/c/...`).
 2. Install jdk 11 for Windows: [**http://jdk.java.net/java-se-ri/11**](http://jdk.java.net/java-se-ri/11)
@@ -132,13 +129,11 @@ There are two options for configuring an IDE:
 6. Open IntelliJ and open the [**`server/build.sbt`**](https://github.com/civiform/civiform/blob/main/server/build.sbt) file as a project.
 7. Wait for a while for IntelliJ to index the project.
 
-| :bangbang: | While waiting for step 6, you may need to restart IntelliJ. This step takes a long time, but it takes a long time the first time. |
-| :--------: | --------------------------------------------------------------------------------------------------------------------------------- |
+**Note: While waiting for step 6, you may need to restart IntelliJ. This step takes a long time, but it takes a long time the first time.****
 
 The files are stored in Windows, and WSL is used to run `bin/run-dev` and other `bin` executables.
 
-| :bangbang: | You may need to configure the IDE to use Linux line endings. |
-| :--------: | ------------------------------------------------------------ |
+**Note: You may need to configure the IDE to use Linux line endings.**
 
 ### Developing with files stored in WSL
 
@@ -151,8 +146,7 @@ From within WSL:
 
 1. `git clone` the CiviForm repository in WSL
 
-| :bangbang: | Do not clone into `/mnt/c` |
-| :--------: | -------------------------- |
+**Note: Do not clone into `/mnt/c`**
 
 1. Install zip using `sudo apt install zip unzip`
 2. Install [sdkman](https://sdkman.io/install), and use it to install `sdk install java 11.0.10-open`, `sdk install sbt 1.3.13`, and `sdk install scala 2.13.1`.
@@ -161,5 +155,4 @@ From within WSL:
 5. Open IntelliJ and open the [**`server/build.sbt`**](https://github.com/civiform/civiform/blob/main/server/build.sbt) file as a project.
 6. Wait for a while for IntelliJ to index the project.
 
-| :bangbang: | While waiting for step 6, you may need to restart IntelliJ. This step takes a long time, but it takes a long time the first time. |
-| :--------: | --------------------------------------------------------------------------------------------------------------------------------- |
+**Note: While waiting for step 6, you may need to restart IntelliJ. This step takes a long time, but it takes a long time the first time.**

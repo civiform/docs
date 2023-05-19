@@ -23,6 +23,6 @@ Follow the guide below to learn the ropes as a CiviForm Admin.
 * [Question type requirements notes](question-type-requirements-notes.md)
 * [Manage API keys](manage-api-keys.md)
 
-{% hint style="success" %}
+{% hint style="info" %}
 To learn more about features for CiviForm Admin, read [how CiviForm works](../../overview/how-does-civiform-work.md#civiform-admin-experience).
 {% endhint %}

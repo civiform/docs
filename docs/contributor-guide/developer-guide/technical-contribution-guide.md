@@ -1,11 +1,11 @@
 # Technical contribution guide
 
-This is a guide for making technical contributions to CiviForm. ****&#x20;
+This is a guide for making technical contributions to CiviForm.
 
 If you haven't already, please **read our** [**code of conduct**](https://github.com/civiform/civiform/blob/main/code\_of\_conduct.md)**.**
 
 {% hint style="info" %}
-Join the conversation in the [Civiform Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
+Join the conversation in the [CiviForm Slack workspace](https://app.slack.com/client/T01Q6PJQAES/C01R3BWAL1E).
 {% endhint %}
 
 ### Getting started
@@ -155,7 +155,7 @@ It's easy for the intention of code review comments to be unclear or get misinte
 
 #### Adding Reviewers
 
-You can select the reviewer you feel most has context on your PR. If you want a round robin review, our repo supports that (it will cycle through people within the team 'civiform/developers', more details on [how to add roundrobin reviews here](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team). Once that is done you can add the name of the team (civiform/developers) in the reviewer box and it will auto assign someone.
+You can select the reviewer you feel most has context on your PR. If you want a round robin review, add `civiform/developers` as a reviewer and a team member will be chosen. More details on [how to add roundrobin reviews here](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team). Once that is done you can add the name of the team (civiform/developers) in the reviewer box and it will auto assign someone.
 
 #### Responding to comments
 

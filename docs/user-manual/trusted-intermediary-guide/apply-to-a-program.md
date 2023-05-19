@@ -9,7 +9,7 @@ CiviForm also allows Trusted Intermediaries to manage multiple clients through t
 ### Add clients
 
 1. Sign in to CiviForm as a Trusted Intermediary.
-2. At the top of the **Programs & services** page, it should say “Trusted intermediary dashboard / (applying as: _your name_)”
+2. At the top of the **Programs & services** page, it should say “Trusted intermediary dashboard (applying as: _your name_)”
 3. Click **Trusted intermediary dashboard**.
 4. Under **Add client**, fill in the Applicant information fields and click **Add**.\
    The new client appears in the list of clients.

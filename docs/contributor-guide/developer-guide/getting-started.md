@@ -58,8 +58,10 @@ If you still have trouble getting some symbols to show (such as `routes` package
     * [Scala (Metals)](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
 2. Run `bin/vscode-setup` to generate a pom.xml file that allows VSCode to resolve dependencies
 3. Open the workspace file `civiform.code-workspace` in VSCode
-4. Metals automatically detects the project. Click `Import Build` at the prompt. <img width="676" alt="Screen Shot 2022-05-06 at 9 28 17 AM" src="https://user-images.githubusercontent.com/1870301/167177672-45594f16-cfea-4f8c-845d-8c266443acc3.png">
-5. Choose `sbt` at the prompt for multiple build definitions. <img width="665" alt="Screen Shot 2022-05-06 at 9 51 24 AM" src="https://user-images.githubusercontent.com/1870301/167177704-cc3c290f-5cda-4776-88f5-a88573af3662.png">
+4. Metals automatically detects the project. Click `Import Build` at the prompt. 
+<img width="676" alt="Screen Shot 2022-05-06 at 9 28 17 AM" src="https://user-images.githubusercontent.com/1870301/167177672-45594f16-cfea-4f8c-845d-8c266443acc3.png">
+5. Choose `sbt` at the prompt for multiple build definitions. 
+<img width="665" alt="Screen Shot 2022-05-06 at 9 51 24 AM" src="https://user-images.githubusercontent.com/1870301/167177704-cc3c290f-5cda-4776-88f5-a88573af3662.png">
 
 
 **Troubleshooting**
@@ -196,7 +198,7 @@ Browser tests are heavy handed and can take a while to run.  You can focus the r
 
 ## Creating fake data
 
-To create Questions and Programs that use them, you need to log in as a "Program and Civiform Admin" through http://localhost:9000/loginForm .
+To create Questions and Programs that use them, you need to log in as a "Program and CiviForm Admin" through http://localhost:9000/loginForm .
 
 You can return to that screen to switch to a Guest user and back again to an Admin as needed.
 

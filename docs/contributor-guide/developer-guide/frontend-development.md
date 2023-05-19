@@ -48,12 +48,6 @@ corresponding `init()` functions. At the moment we have the following bundles:
 
 Bundling is done using [webpack](https://webpack.js.org/). Webpack config is [webpack.config.js](https://github.com/civiform/civiform/blob/main/server/webpack.config.js).
 
-## Mocks (Photoshop, Sketch, Miro, etc)
-
-Pick your preferred tools and craft beautiful experiences. Then, hand off your mocks to a developer who wants to take the next step of the process, or try your hand at creating some prototypes.
-
-View some of our mocks on our [Miro board](../../developers/developer-guide/tiny.cc/cvf-flow/) or obtain more UX resources in our [UX Contribution Guide](../ui-ux-guide/ux-contribution-guide-mockups.md).
-
 ### Prototypes (HTML and Tailwind CSS)
 
 If you're really comfortable in HTML and CSS, the best place to get started is through developing tailwind prototypes. You can view some examples of tailwind component [here](https://tailwindcomponents.com/components). Feel free to implement a mock or just start from scratch and roll your own. [Tailwind Play](https://play.tailwindcss.com) is an excellent resource for creating and sharing quick tailwind mocks in your browser. We've also provided links to some of our Tailwind prototypes as a springboard for you to get started.

@@ -13,7 +13,7 @@ The client should be as simple as is practical to implement the desired user exp
 * Client-side JavaScript should have no need to manage browser history or derive state from the URL.
 * Client-side JavaScript should avoid API-driven interactions, and instead access JSON embedded in the initial page load and submit data using HTML forms.
 
-For example, enable/disable logic in forms can be specified server-side with HTML [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use\_data\_attributes) then implemented with generic client-side JS that responds to DOM events relevant to the attribute-specified elements. [Here's a simple example](https://jsfiddle.net/c8g6y0ru/1/).
+For example, enable/disable logic in forms can be specified server-side with HTML [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use\_data\_attributes), then implemented with generic client-side JS that responds to DOM events relevant to the attribute-specified elements. [Here's a simple example](https://jsfiddle.net/c8g6y0ru/1/).
 
 ## Server code organization
 
@@ -41,11 +41,11 @@ Java code should conform to the [Google Java style guide](https://google.github.
 
 #### Prefer using immutable collection types
 
-provided by [Guava](https://github.com/google/guava) ([API docs](https://guava.dev/releases/snapshot/api/docs/)) over the Java standard library's mutable collections unless impractical. Include a comment justifying the use of a mutable collection if you use one.
+Prefer immutable collection types provided by [Guava](https://github.com/google/guava) ([API docs](https://guava.dev/releases/snapshot/api/docs/)) over the Java standard library's mutable collections unless impractical. Include a comment justifying the use of a mutable collection if you use one.
 
 #### Prefer Optional instead of null
 
-null should only be used when necessary. Examples include working directly with database objects and checking if a field is set.
+`null` should only be used when necessary. Examples include working directly with database objects and checking if a field is set.
 
 If a 3rd party library returns nulls they likely should be quickly wrapped using `Optional.ofNullable()`
 
@@ -149,7 +149,7 @@ export function init() {
 
 ## Bash scripts
 
-Bash scripts should conform to the [Google Bash style guide](https://google.github.io/styleguide/shellguide.html). The guide references a nice utility to help find issue and fix them at https://www.shellcheck.net/.
+Bash scripts should conform to the [Google Bash style guide](https://google.github.io/styleguide/shellguide.html). The guide references a nice utility to help find issues and fix them at [https://www.shellcheck.net/](https://www.shellcheck.net/).
 
 ## Routing and controller methods
 

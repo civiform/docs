@@ -11,7 +11,7 @@ If your API client requires you to provide a username and password when using Ba
 
 ### Manually constructing the header
 
-If you are constructing the header by hand, for example, if you are using a `curl` command, you'll need to create the header yourself. Use the API Secret Token value provided on the API confirmation screen, and construct a header that looks like `Authorization: Basic <API Secret Token>`.
+Some clients, such as `curl`, require constructing the header by hand. Use the API Secret Token value provided on the API confirmation screen, and construct a header that looks like `Authorization: Basic <API Secret Token>`.
 
 {% hint style="info" %}
 Basic Auth requires that the request contain a header field in the form of `Authorization: Basic <credentials>`, where `<credentials>` is the Base64 encoding of the Username and Password in the format `username:password`. CiviForm does this encoding for you and provides it in the value of `API Secret Token`.

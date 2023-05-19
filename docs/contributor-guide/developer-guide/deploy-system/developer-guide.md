@@ -2,7 +2,7 @@
 
 This page contains information for deploy system developers, which go beyond the initial one-off setup. 
 You should have worked through the [Prerequisites & dev setup](contributor-guide/developer-guide/deploy-system/prerequisites.md) already
-and know the difference between the repositories (`civiform-deploy`, `civiform-deploy-infra` and `civiform`) from the overview section.
+and know the difference between the repositories (`civiform-deploy`, `cloud-deploy-infra` and `civiform`) from the overview section.
 
 The "Setup" section will take you through setup which you may have to revisit for each new change.
 The "Most common developer flows" section contains all essential information to be able to do a first change. 

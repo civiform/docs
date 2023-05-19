@@ -17,7 +17,7 @@ See the [Setup Repositories](prerequisites.md#setup-repositories) section in [Pr
 ### Running locally
 
 The most common flow for developers is to run the deployment script on your local machine to test your changes to 
-the `civiform-deploy-infra` repository. To do this, create a configuration file for your deployment and then run 
+the `cloud-deploy-infra` repository. To do this, create a configuration file for your deployment and then run 
 the setup script which pulls in the configuration values and applies them via Terraform to the deployment on your 
 chosen cloud provider (AWS/Azure).
 

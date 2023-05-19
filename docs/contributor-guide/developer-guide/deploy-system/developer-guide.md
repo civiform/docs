@@ -52,7 +52,7 @@ Run the [bin/setup](https://github.com/civiform/civiform-deploy/blob/main/bin/se
 Setup will ask you to confirm multiple times and to provide secret values. You can enter random values and enter yes as needed.
 At the end, the script should print the URL to your dev server!
 
-Remember that if you have any changes in your `civiform-deploy-infra` repository which you would like to be visible in your deployment, 
+Remember that if you have any changes in your `cloud-deploy-infra` repository which you would like to be visible in your deployment, 
 you must have gone through the git setup steps in the setup section above to ensure that the newest version is copied
 from your `cloud-deploy-infra` repository to your `civiform-deploy` repository. Also, make to sure commit the changes to the relevant 
 branch in git before running the script.

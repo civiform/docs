@@ -27,7 +27,7 @@ You have two options here:
 [bin/setup](https://github.com/civiform/civiform-deploy/blob/main/bin/setup), which then calls 
 [run.py](https://github.com/civiform/cloud-deploy-infra/blob/main/cloud/shared/bin/run.py). 
 Because `run.py` is in a different repository, this requires development across different git repositories.
-2. For the second flow, make changes in the `civiform-deploy-infra` repository and execute `run.py` from there.
+2. For the second flow, make changes in the `cloud-deploy-infra` repository and execute `run.py` from there.
 
 #### Create CiviForm config (shared for both flows)
 

@@ -17,7 +17,7 @@ Some clients, such as `curl`, require constructing the header by hand. Use the A
 Basic Auth requires that the request contain a header field in the form of `Authorization: Basic <credentials>`, where `<credentials>` is the Base64 encoding of the Username and Password in the format `username:password`. CiviForm does this encoding for you and provides it in the value of API Secret Token.
 {% endhint %}
 
-## Additional securty Features
+## Additional security features
 
 Additionally, API keys have several security features beyond simply checking the ID and secret of the key. If any of the constraints specified by those features are not met, API requests will receive a 401 response code. For more information see [Api key security](/docs/user-manual/civiform-admin-guide/manage-api-keys.md#api-key-security). 
 

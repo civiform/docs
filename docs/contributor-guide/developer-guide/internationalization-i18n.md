@@ -15,10 +15,12 @@ Application strings are used throughout CiviForm source code, and are configured
 
 Note that the admin views only contain text in CiviForm's default language, whereas applicant views must be localized. Whenever you add hardcoded text to a view, you need to add translations for the text in the `messages` file:
 
-1. Add the default string to [`messages`](https://github.com/civiform/civiform/blob/main/server/conf/i18n/messages), along with a comment providing context for how the text is used
+1. Add the default string to [`messages`](https://github.com/civiform/civiform/blob/main/server/conf/i18n/messages)
 2. Do not touch the other `messages.xx` files, such as `messages.tl`. Transifex will update these files automatically when translations are available. For now, all foreign languages will fall back to English strings.
 3. Add the key from the messages file to [MessageKey.java](https://github.com/civiform/civiform/blob/main/server/app/services/MessageKey.java)
-4. Use the message in the appropriate view, by calling `messages.at(MessageKey.NEW_KEY_NAME.getKeyName())`
+4. Merge your changes to `messages` and `MessageKey`.
+5. **IMPORTANT**: Go to the [Transifex project](https://app.transifex.com/civiform/) and add a [context string](https://user-images.githubusercontent.com/30369272/239957567-5ddd5c42-4194-488a-9b1e-61cb4ec33c8b.png) to your new key. This will appear on the dashboard within a few minutes after merging your change.
+6. Use the message in the appropriate view, by calling `messages.at(MessageKey.NEW_KEY_NAME.getKeyName())`
 
 Whether you need to wait for translations to be merged by Transifex before launching your feature depends on the context of the feature; use your best judgement or ask the team.
 

@@ -2,6 +2,13 @@
 
 One strategy for understanding the needs of applicants and program staff in more detail is *journey mapping*. Journey mapping is a way of documenting and understanding the end-to-end experience of applicants and program staff as they engage with the program. A *journey map* can give a high-level overview of key interactions, challenges, and opportunities for improvement for different stakeholders throughout their experience with the program.
 
+<figure>
+  <img src="https://github.com/civiform/docs/assets/2267370/a27db3dc-8631-4d07-a523-e014f4fae0e0" alt="USDA Journey Map">
+  <figcaption>
+    <p>Example journey map <a href="https://coe.gsa.gov/coe/farm-loans/">from USDA</a>.</p>
+  </figcaption>
+</figure>
+
 ## Mapping what exists
 The first step to improving residents' experience with programs is understanding their current experience in detail. Working with each program to answer the questions in [Program Assessment](program-assessment.md) can help give a clear picture of each program's user journey across different phases, including discovery, eligibility screening, application submission and processing, determination, delivery, and renewal. A detailed journey map will include touchpoints between residents and staff, tools, processes, timelines, and pain points. In addition to working closely with program staff, conducting reserach with residents is a key part of understanding existing challenges and opportunities for improvement.
 

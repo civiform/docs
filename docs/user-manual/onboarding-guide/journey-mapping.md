@@ -3,9 +3,7 @@
 One strategy for understanding the needs of applicants and program staff in more detail is *journey mapping*. Journey mapping is a way of documenting and understanding the end-to-end experience of applicants and program staff as they engage with the program. A *journey map* can give a high-level overview of key interactions, challenges, and opportunities for improvement for different stakeholders throughout their experience with the program.
 
 <figure>
-  <a href="https://github.com/civiform/docs/assets/2267370/a27db3dc-8631-4d07-a523-e014f4fae0e0">
-    <img src="https://github.com/civiform/docs/assets/2267370/a27db3dc-8631-4d07-a523-e014f4fae0e0" alt="USDA Journey Map">
-  </a>
+  <img src="https://github.com/civiform/docs/assets/2267370/a27db3dc-8631-4d07-a523-e014f4fae0e0" alt="USDA Journey Map">
   <figcaption>
     <p>Example journey map <a href="https://coe.gsa.gov/coe/farm-loans/">from USDA</a>.</p>
   </figcaption>

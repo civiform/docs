@@ -211,7 +211,7 @@ You can change the logging levels by editing [conf/logback.xml](https://github.c
 To generate coverage report, run the following:
    
   ```
-    bin/sbt-run-test-coverage
+    bin/run-test-coverage
   ```
 
 Navigate to server/code-coverage/report/html/index.html and see the detailed report of the code coverage data and also dig deep to see how much your implemented classes are covered.

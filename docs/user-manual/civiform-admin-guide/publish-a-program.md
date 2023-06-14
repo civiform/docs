@@ -22,7 +22,6 @@ Instead of publishing all programs and questions at the same time, you can also 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click **Programs** on the navigation bar.
 3. Locate the draft program you'd like to publish.
-4. Click on the three dots that correspond to that program to open the dropdown menu.
-5. Click **Publish program**.
+4. Click **Publish** on that program's row.
 
 If the program has any draft questions, those questions will be published along with the program. However, if the draft questions are also referenced by other programs, the program cannot be published on its own. You can only publish it by publishing all programs as described above under **Publish all draft programs**.

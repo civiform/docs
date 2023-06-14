@@ -13,7 +13,7 @@ necessary.
 
 The generated
 [`SettingsManifest`](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/app/services/settings/SettingsManifest.java)
-class provides readable accessors for environment variables and when a `Request`
+class provides readable accessors for environment variables. When a `Request`
 object is provided it allows for manual overrides.
 
 ## Uses

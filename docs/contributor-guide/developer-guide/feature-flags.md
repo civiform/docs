@@ -45,7 +45,7 @@ The following process should be used to implement a feature flag, release it in 
 1.  Add the flag to the `"Feature Flags"` section of [server/conf/env-var-docs.json](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/env-var-docs.json). 
 1.  Run `bin/fmt` to regenerated `SettingsManifest.java`
 1.  Inject `SettingsManifest` where you want to consume the flag
-1.  Call the generated method on `SettingsManifest` that matches the name of your flag. Unless infeasible, use the version of the method that takes a `play.mvc.Http.Request` argument so that the flag can be overridden in non-prod environments.
+1.  Call the generated method on `SettingsManifest` that matches the name of your flag. For example, a flag named `MAGIC_SHOE_ENABLED` will have generated getter methods named `getMagicShoeEnabled`. Unless infeasible, use the version of the method that takes a `play.mvc.Http.Request` argument so that the flag can be overridden in non-prod environments.
 1.  If you'd like for your flag to be able to be overriden via environment variables for a deployment, pass the flag through the deployment system. See [this pull request](https://github.com/civiform/cloud-deploy-infra/pull/145) as an example.
 
 ## Manual overrides

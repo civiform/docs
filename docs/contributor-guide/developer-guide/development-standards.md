@@ -59,6 +59,10 @@ We anticipate relatively low [QPS](https://en.wikipedia.org/wiki/Queries\_per\_s
 
 Exception handling in asynchronous execution deserves a special mention as `CompletionException` is unchecked and can be easily missed. We should always explicitly catch `CompletionException` when joining a future in a synchronous context. When returning `CompletionStage<Result>` to users, we should provide exception handling through `CompletableFuture#exceptionally` API.
 
+### Server config values
+
+Server config values are specifid in [server/conf/env-var-docs.json](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/env-var-docs.json) and read by the server using [Play's HOCON config system](https://playframework.com/documentation/2.8.x/Configuration). When new config variables are added, we update a generated [manifest file](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/app/services/settings/SettingsManifest.java) that provides accessor methods. Developers should consume all config values through this class and avoid working directly with the `import com.typesafe.config.Config` class in application code. 
+
 ## TypeScript code
 
 TypeScript code should conform to the [Google TypeScript style guide](https://google.github.io/styleguide/tsguide.html). The project makes use of a linter ([eslint](https://eslint.org/)) and auto-formatter ([prettier](https://prettier.io/)) to help with this, just run `bin/fmt` and your code should be automatically formatted.

@@ -11,6 +11,11 @@ features such as
 Currently we only have boolean flags, but others could be added as
 necessary.
 
+The generated
+[`SettingsManifest`](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/app/services/settings/SettingsManifest.java)
+class provides readable accessors for environment variables and when a `Request`
+object is provided it allows for manual overrides.
+
 ## Uses
 
 Feature flags can be used to control features that will always be configuration-controlled, such as if Global Admins are also Program Admins. The code, tests, and configuration will always be present in CiviForm.
@@ -22,7 +27,7 @@ Feature flags can also be used as launch gating controls for features that can't
 The following process should be used to implement a feature flag, release it in a build, and then remove it once the feature has been used in production.
 
 1. Create a Github issue using the Feature Flag template that covers the creation and deletion of the feature flag that will guard your feature. Ensure it is tied to the appropriate epic so that the issue must be completed before the epic is considered complete.
-2. Create the feature flag in code ([example](https://github.com/civiform/civiform/pull/4435)) and update the issue to mention that the feature flag now exists. Enable the feature flag in [dev](https://github.com/civiform/civiform/blob/main/server/conf/application.dev.conf). Disable the flag for [browser tests](https://github.com/civiform/civiform/blob/main/server/conf/application.dev-browser-tests.conf), since the browser tests will turn the flag on and off inside the tests themselves.  For the PR that adds the flag, ensure the release notes section describes what this flag is for.
+2. Create the feature flag in code (see "Adding a new flag" below) and update the issue to mention that the feature flag now exists. Enable the feature flag in [dev](https://github.com/civiform/civiform/blob/main/server/conf/application.dev.conf). Disable the flag for [browser tests](https://github.com/civiform/civiform/blob/main/server/conf/application.dev-browser-tests.conf), since the browser tests will turn the flag on and off inside the tests themselves.  For the PR that adds the flag, ensure the release notes section describes what this flag is for.
 3. Write your feature and guard it with the flag.
 4. Pass the flag through the deployment system to allow enabling it in staging ([example](https://github.com/civiform/cloud-deploy-infra/commit/9d17356ff1fa1f3a16c97608cc00cbd4c7c11ffe)). Soon, this will not be necessary as we will be automatically passing flags through the deployment system.
 5. When the next release is created, ensure information about the release flag is in the email sent for the release.
@@ -33,6 +38,15 @@ The following process should be used to implement a feature flag, release it in 
 10. Ensure that the feature is enabled in an actual production build, because each deployment can choose to enable or disable the flags of their choosing (often the easiest deployment to use will be in Seattle) and note the date when it was enabled in the Github issue.
 11. Leave the flag in the codebase for at least another month after it went live in production (e.g. Seattle).
 12. Remove the flag, remove the guards in the code looking for the flag, note in the PR release notes that the flag is being removed, then close the Github issue. Ensure the email sent for the next release includes a note about the removal of the feature flag.
+
+
+### Adding a new flag
+
+1.  Add the flag to the `"Feature Flags"` section of [server/conf/env-var-docs.json](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/env-var-docs.json). 
+1.  Run `bin/fmt` to regenerated `SettingsManifest.java`
+1.  Inject `SettingsManifest` where you want to consume the flag
+1.  Call the generated method on `SettingsManifest` that matches the name of your flag. Unless infeasible, use the version of the method that takes a `play.mvc.Http.Request` argument so that the flag can be overridden in non-prod environments.
+1.  If you'd like for your flag to be able to be overriden via environment variables for a deployment, pass the flag through the deployment system. See [this pull request](https://github.com/civiform/cloud-deploy-infra/pull/145) as an example.
 
 ## Manual overrides
 
@@ -68,25 +82,20 @@ The current state of Overrides can be viewed at `/dev/feature`
 
 There are two ways to test Feature Flag conditioned code.
 
-#### Mock
+#### Change the Config value
 
-Create a Mock of `FeatureFlags` and create a new instance of the class under
-test passing your mock to it. You can then mock the accessor return values as
-needed. They're boolean=false by default.
+Create an instance of `SettingsManifest` and pass it a `Config` object with
+the hocon name (i.e. lower `snake_case`) of the feature flag set to "true".
 
 Note this will require manually injecting all its other dependencies via
 instanceOf().
-
-Creating providers (for DateTime things) is different and looks like
-`Providers.of(LocalDateTime.now(ZoneId.systemDefault())`
 
 #### Request config
 
 Use the override functionality of FeatureFlags and set the session data of your
 fake requests.
 
-`Helpers.fakeRequest().session(FeatureFlags.APPLICATION_STATUS_TRACKING_ENABLED.toString(),
-"false")`
+`Helpers.fakeRequest().session("APPLICATION_STATUS_TRACKING_ENABLED", "false")`
 
 ### Browser
 

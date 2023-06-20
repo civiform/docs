@@ -178,7 +178,7 @@ You can select the reviewer you feel most has context on your PR. If you want a 
 - `civiform/developer-tools`
 - `civiform/export-api`
 
-The teams can be viewed by expanding the `Teams` dropdown under `Developers` at https://github.com/orgs/civiform/teams. If you are a member of the `civiform` GitHub organization, feel free to add yourself to any focus areas you would like to conduct reviews for.
+The teams can be viewed by expanding the `Teams` dropdown under `Developers` at [https://github.com/orgs/civiform/teams](https://github.com/orgs/civiform/teams). If you are a member of the `civiform` GitHub organization, feel free to add yourself to any focus areas you would like to conduct reviews for.
 
 ### Workflow tips
 

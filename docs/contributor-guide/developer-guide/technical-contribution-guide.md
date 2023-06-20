@@ -14,7 +14,7 @@ To set up your environment and learn how to run a local CiviForm server and test
 
 ### Issue tracking
 
-Development tasks are managed in the [GitHub issues](https://github.com/civiform/civiform/issues) for this repository. When you begin working on an issue, please self-assign or comment on it indicating you're beginning work to avoid duplicate effort.
+Development tasks are managed in the [GitHub issues](https://github.com/civiform/civiform/issues) for this repository. When you begin working on an issue, please self-assign or comment on it indicating you're beginning work to avoid duplicate effort. Please coordinate your work with Nick Burgan and Isabel Shaw to assist in coordination of work across teams. A ping in the Civiform Slack would be appreciated.
 
 If you're just getting started, check out issues labeled with [Good First Issue](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). Also check out issues in the [next milestone](https://github.com/civiform/civiform/milestones?direction=asc\&sort=due\_date\&state=open) so you can work on the highest-priority tasks.
 
@@ -147,25 +147,38 @@ If you're editing files that others have merged changes to you may need to resol
 
 When you're ready to have your code reviewed, open a pull request. After pushing a new branch there should be a "Compare & pull request" button on the github repository. Alternatively, go to the [new pull request](https://github.com/civiform/civiform/compare) page in github.
 
-Include "Closes #X" in the description to link the relevant issue.
+#### Guidelines for pull requests
+- Ensure the PR references the relevant issue it relates to in the PR comment. At the bottom of the PR template is a place to add "Fixes #X" which will link your PR to the issue and close it once the PR is merged.
+- Remove checkboxes from the PR template that don't apply. Ensure all checkboxes are checked before a PR is merged.
+- If a PR is inconsequential for deployments, like changes to github templates or actions, code changes without user-visible effects, etc., add the `ignore-for-release` label, so it is not included in the release notes. If they are deployment tool-specific or infrastructure-specific (read: dev tooling) changes, add `deploy` or `infrastructure` labels, as these will also get removed from the release notes.
+- If your PR includes a database evolution, include the `database` label.
+- A PR should be opened as Draft until it is ready for review.
+- A PR is ready for review when it is code complete, unit and browser tests are created (where appropriate), `bin/fmt` has been run, all checkboxes listed in the PR template that are relevant are checked and completed, all PR checks are passing, and manual testing has been performed.
+- Manual testing should ideally be performed with both Chrome and Firefox if your PR includes a front-end change. Note that some accessibility functionality, such as tabbing through buttons, may not work on Firefox.
+- If appropriate, add instructions in PR comments for reviewers on how to manually test it.
+- Optionally, you can post a message in the #pull-request-discuss Slack channel and ping the reviewer.
+- Press the "re-request review" button (the "arrows pointing in a circle" icon next to the reviewer's name in the Reviewers section on the Conversation tab) when you've fixed all the things mentioned in the comments and are ready for the reviewers to re-review.
+- Resolve any minor, non-blocking comments. Blocking comments should only be resolved by the reviewer.
 
-### Getting reviews on a pull request
+#### Review guidelines
+- If you are tagged as a reviewer, aim to have a turnaround time of no more than 24 hours. Responding to any subsequent changes to your comments should be a priority and addressed ASAP.
+- Use [conventional comments](https://conventionalcomments.org) and note `(blocking)` vs. `(non-blocking)` comments. There are browser extensions to make using conventional comments easier.
+- Resolve blocking comments after re-reviewing. Minor, non-blocking comments should be resolved by the implementer.
+
+#### Getting reviews on a pull request
 
 It's easy for the intention of code review comments to be unclear or get misinterpreted. To help with communication, reviewers are encouraged to use [conventional comments](https://conventionalcomments.org) and explicitly indicate that comments are `(blocking)`, where the discussion must be resolved for PR to be merged, or `(non-blocking)` where resolving the discussion is optional for the implementer.
 
 #### Adding Reviewers
 
-You can select the reviewer you feel most has context on your PR. If you want a round robin review, add `civiform/developers` as a reviewer and a team member will be chosen. More details on [how to add roundrobin reviews here](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team). Once that is done you can add the name of the team (civiform/developers) in the reviewer box and it will auto assign someone.
+You can select the reviewer you feel most has context on your PR. If you want a round robin review, add `civiform/developers` as a reviewer and a team member will be chosen. More details on [how to add roundrobin reviews here](https://docs.github.com/en/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team). Once that is done you can add the name of the team (`civiform/developers`) in the reviewer box and it will auto assign someone. Alternatively, you may use one of the subsystem groups to get a domain expert to review. Currently, these are:
+- `civiform/auth-system`
+- `civiform/core-application`
+- `civiform/deployment-system`
+- `civiform/developer-tools`
+- `civiform/export-api`
 
-#### Responding to comments
-
-When a review has been provided, reply to comments and then re-request a review by clicking the "arrows pointing in a circle" icon next to the reviewers name in the Reviewers section on the Conversation tab.
-
-#### Approval and merging
-
-Reviewers should grant approval if they do not feel additional review is necessary before merging. This does not necessarily mean no more changes are required before merging, but that any further changes are expected to be minor enough to not require review.
-
-If the pull request does not require additional changes, the reviewer should merge it immediately after approving. Otherwise, once they have addressed all comments marked `(blocking)` or `nit`, the pull request author should either merge if able or re-request review and merging from a maintainer if not. Authors are encouraged to at least reply to `(non-blocking)` and `(if-minor)` comments if they do not address them with code changes.
+The teams can be viewed by expanding the `Teams` dropdown under `Developers` at https://github.com/orgs/civiform/teams. If you are a member of the `civiform` GitHub organization, feel free to add yourself to any focus areas you would like to conduct reviews for.
 
 ### Workflow tips
 

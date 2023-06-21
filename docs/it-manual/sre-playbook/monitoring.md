@@ -120,7 +120,7 @@ Database customization variables, including the one for the instance class and s
 
 If you navigate to `Elastic Container Service` in the AWS Console and click `Clusters` in the menu, you'll see the CiviForm cluster. When you click on the service, you can see health metrics (similar to those in CloudWatch).
 
-In the Configuration section of the service, you can see the Auto Scaling policies that are set up. 
+In the Configuration section of the service, you can see current Auto Scaling policies. 
 
 By default, there is a high and low CPU auto-scaling policy, which adds or removes a task if the CPU is higher / lower than the alarm thresholds (mentioned above).
 

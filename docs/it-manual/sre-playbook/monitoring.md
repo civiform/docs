@@ -74,7 +74,7 @@ In addition to the server metrics provided by Prometheus, there are some additio
 
 #### Alarms
 
-Some alarms are configured by default through terraform, which includes the following: 
+Some alarms are configured by default through the CiviForm deployment system, including the following: 
 - ECS:
   - High CPU alarm
     - Related variables: `ECS_MAX_CPU_THRESHOLD`, `ECS_MAX_CPU_EVALUATION_PERIOD`, `ECS_MAX_CPU_PERIOD`, `ECS_SCALE_TARGET_MAX_CAPACITY`

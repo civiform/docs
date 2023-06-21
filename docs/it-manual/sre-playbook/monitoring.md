@@ -69,7 +69,7 @@ In addition to the server metrics provided by Prometheus, there are some additio
 
 #### Dashboards
 
-CloudWatch has some default dashboards that allow you to see graphs with metrics on different parts of the deployment. Not all of these are relevant, but these can be helpful in seeing CPU utilization in RDS (the database) and Elastic Container Service, as well as requests to the Application ELB (load balancer), metrics about S3, etc.
+[CloudWatch](https://aws.amazon.com/cloudwatch/) has some default dashboards that allow you to see graphs with metrics on different parts of the deployment. Not all of these are relevant, but these can be helpful in seeing CPU utilization in [RDS](https://aws.amazon.com/rds/) (CiviForm's PostgreSQL database) and [ECS](https://aws.amazon.com/ecs/) (server hosting), as well as requests to the [ALB](https://aws.amazon.com/elasticloadbalancing/application-load-balancer/) (load balancer), metrics about [S3](https://aws.amazon.com/s3/) (file storage), etc.
 ![](<../../.gitbook/assets/aws-cloudwatch-dashboards.png>)
 
 #### Alarms

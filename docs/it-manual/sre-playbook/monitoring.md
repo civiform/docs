@@ -108,7 +108,7 @@ These alarms can be viewed through the AWS management console by clicking `All a
 
 The related variables can be added to the civiform_config.sh file of the forked civiform-deploy repository to customize the alarm settings or disable / enable certain alarms.
 
-If there are alarms that you wish to have, please let us know.
+If there are other alarms that you wish to add, please let us know.
 
 ### RDS database metrics
 

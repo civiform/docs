@@ -1,6 +1,6 @@
 # Monitoring a CiviForm deployment
 
-In addition to default metrics provided with AWS, CiviForm supports server monitoring via [Prometheus](https://prometheus.io/) metrics visualized in [Grafana](https://grafana.com/). These metrics are related to server status, things like latency and error rates, and do not contain sensitive data, such as who is applying to what programs.
+CiviForm supports server monitoring via [Prometheus](https://prometheus.io/) metrics visualized in [Grafana](https://grafana.com/). These metrics are related to server status, things like latency and error rates, and do not contain sensitive data, such as who is applying to what programs.
 
 ![](<../../.gitbook/assets/monitoring-architecture.png>)
 

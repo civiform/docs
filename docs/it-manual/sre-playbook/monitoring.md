@@ -116,7 +116,7 @@ If you navigate to `RDS` in the AWS Console and click `Databases` in the navigat
 
 Database customization variables, including the one for the instance class and storage amount can be added to the civiform_config.sh file of the forked civiform-deploy repository to customize the configuration. 
 
-### Elastic Container Service (ECS) metrics
+### ECS metrics
 
 If you navigate to `Elastic Container Service` in the AWS Console and click `Clusters` in the menu, you'll see the CiviForm cluster. When you click on the service, you can see health metrics (similar to those in CloudWatch).
 

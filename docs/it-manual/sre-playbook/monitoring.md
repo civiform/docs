@@ -74,13 +74,18 @@ In addition to the server metrics provided by Prometheus, there are some additio
 
 #### Alarms
 
+[AWS alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html) allow you to see when metrics for an AWS service reach a given threshold, and can trigger an action, such as autoscaling. 
+
 Some alarms are configured by default through the CiviForm deployment system, including the following: 
 - ECS:
   - High CPU alarm
     - Related variables: `ECS_MAX_CPU_THRESHOLD`, `ECS_MAX_CPU_EVALUATION_PERIOD`, `ECS_MAX_CPU_PERIOD`, `ECS_SCALE_TARGET_MAX_CAPACITY`
   - Low CPU alarm
     - Related variables: `ECS_MIN_CPU_THRESHOLD`, `ECS_MIN_CPU_EVALUATION_PERIOD`, `ECS_MIN_CPU_PERIOD`, `ECS_SCALE_TARGET_MIN_CAPACITY`
-- RDS:
+
+When the ECS alarms get triggered, an autoscaling policy is set up for a task to be added or removed.
+
+There are also the following alarms that can be enabled for RDS, but aren't created by default:
   - High CPU alarm
     - Related variables: `RDS_CREATE_HIGH_CPU_ALARM`, `RDS_MAX_CPU_UTILIZATION_THRESHOLD`
   - High disk queue depth alarm
@@ -89,10 +94,6 @@ Some alarms are configured by default through the CiviForm deployment system, in
     - Related variables: `RDS_CREATE_LOW_DISK_SPACE_ALARM`, `RDS_DISK_FREE_STORAGE_LOW_THRESHOLD`
   - Low freeable memory alarm
     - Related variables: `RDS_CREATE_LOW_MEMORY_SPACE_ALARM`, `RDS_LOW_MEMORY_THRESHOLD`
-  - Maximum used transaction IDs alarm
-      - Related variable: `RDS_MAX_USED_TRANSACTION_IDS_HIGH_THRESHOLD`
-
-There are also the following alarms that can be enabled for RDS, but aren't created by default:
   - Low CPU credit alarm
     - Related variables: `RDS_CREATE_LOW_CPU_CREDIT_ALARM`, `RDS_LOW_CPU_CREDIT_BALANCE_THRESHOLD`
   - Low disk burst alarm
@@ -101,6 +102,8 @@ There are also the following alarms that can be enabled for RDS, but aren't crea
     - Related variables: `RDS_CREATE_SWAP_ALARM`, `RDS_CREATE_SWAP_ALARM`
   - Anomalous connection count alarm
     - Related variable: `RDS_CREATE_ANOMALY_ALARM`
+
+These alarms can be enabled by setting the first related variable listed to `true` in the civiform_config.sh file of the forked civiform-deploy repository.
 
 For each of the RDS alarms, the variables `RDS_ALARM_EVALUATION_PERIOD` and `RDS_ALARM_STATISTIC_PERIOD` also apply.
 

@@ -298,16 +298,14 @@ AWS Nuke is a package that makes it easy to remove all resources from an AWS acc
 ### [cloud-deploy-infra](https://github.com/civiform/cloud-deploy-infra)
 1. Clone [cloud-deploy-infra](https://github.com/civiform/cloud-deploy-infra) onto your local machine.
 2. Set your local copy of `civiform-deploy` to track your local copy of `cloud-deploy-infra`.
-    - In your local copy of `civiform-deploy`, update [this line](https://github.com/civiform/civiform-deploy/blob/4624131e74ff3a417d070f0a34da55744f26c347/bin/lib/checkout.sh#L86) in the `checkout::initialize` function in `checkout.sh` to point to your local repository instead of the remote origin.
-    - Eg. change 
+    - Set the `CLOUD_DEPLOY_INFRA_REMOTE` environment variable to override the location of the `cloud-deploy-infra` repo to your local clone. You can either do this inline with a command, such as
     ```
-    git remote add origin http://github.com/civiform/cloud-deploy-infra
+    CLOUD_DEPLOY_INFRA_REMOTE=/path/to/cloud-deploy-infra bin/deploy
     ```
-    to 
+    - Or, you can set it in your shell to have it always apply
     ```
-    git remote add origin <path_to_local_repo>/cloud-deploy-infra
+    export CLOUD_DEPLOY_INFRA_REMOTE=/path/to/cloud-deploy-infra
     ```
-    Note: You may need to update this line as you work depending on how you need the system to track changes you are making.
 
 ## Try running `bin/setup`
 Note: You will need to run this script as the first step for any working session to create and launch your deployment instance.

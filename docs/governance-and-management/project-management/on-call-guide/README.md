@@ -20,7 +20,7 @@ Add the CiviForm Shared Google Calendar. Contact Nick Burgan or Rocky Fine on Sl
 #### Ensure you have visibility into comms
 
 * Join the CiviForm public Slack org (https://civiform.slack.com), [join link](https://join.slack.com/t/civiform/shared\_invite/zt-niap7ys1-RAICICUpDJfjpizjyjBr7Q)
-* Subscribe to email alerts for new bugs filed in the [issue tracker](https://github.com/civiform/civiform/issues). Click on "Watch/Unwatch" button on the top.
+* Subscribe to email alerts for new bugs filed in the [issue tracker](https://github.com/civiform/civiform/issues). Click on "Watch/Unwatch" button at the top of the [civiform repo page](https://github.com/civiform/civiform), select "Custom" and select "Issues".
 * Ensure that you are receiving emails to civiform-technical@googlegroups.com and are not catching them in email filters.
 * Subscribe to the [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
 * Subscribe to the [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)

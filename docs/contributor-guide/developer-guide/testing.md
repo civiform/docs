@@ -332,3 +332,18 @@ You can find more documentation on debugging Playwright in this [BrowserStack gu
 
 On failure, a test video of the browser test will be uploaded to the Artifacts
 section of the Summary tab on the GitHub action run.
+
+#### Running probers locally against staging
+
+Sometimes, we'll find a test that passes when run locally via `bin/run-browser-tests`, but fails when run via probers on [staging deploy](https://github.com/civiform/civiform-staging-deploy/actions/workflows/aws_deploy.yaml). These can be tricky to debug. You may want to modify some tests in your local Civiform repo clone and try them against staging.
+
+To do this, clone the [civiform-staging-deploy](https://github.com/civiform/civiform-staging-deploy) repo. The `bin/run-prober` command is what is used to run probers against staging. To run this, do the following:
+
+- If you haven't already, create an account on [Auth0](https://auth0.com/). You'll want to create an actual account, rather than use your Google account to log in.
+- Set the following environment variables. You can do this inline with the command, or set them in your shell before running `bin/prober`
+  - `TEST_USER_LOGIN` - Your Auth0 username
+  - `TEST_USER_PASSWORD` - Your Auth0 password
+- To run only a specific test, in addition to the staging URL argument, add another argument with the test name. 
+  - For example, `TEST_USER_LOGIN=me@google.com TEST_USER_PASSWORD=<password> bin/run-prober "https://staging-aws.civiform/dev" admin_settings.test.ts`
+- Note that videos of the test runs are saved to the `tmp` directory inside of `civiform-staging-deploy`.
+- Ensure you are not attempting to do this at the same time as someone else, as tests will surely collide and cause problems. Put a message in the `#engineering` channel noting when you are starting and finishing running manual probers against staging.

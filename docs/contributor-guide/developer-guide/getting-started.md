@@ -44,7 +44,7 @@ This setup will only include the files under (.../server), therefore, if you wou
 
 If you still have trouble getting some symbols to show (such as `routes` packages), try the following, in order:
 
-1. Go to Project Structure and add `target/scala-2.13` to your Sources in the `civiform-server` Module.
+1. Go to Project Structure and add `target` to your Sources in the `civiform-server` Module.
 2. Go to the sbt shell **within IntelliJ** and run `compile`.
 3. Go to Preferences, then "Languages and Frameworks", then "Scala". Switch Error Highlighting from "Built-in" to "Compiler".
 

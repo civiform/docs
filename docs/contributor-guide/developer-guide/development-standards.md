@@ -7,13 +7,21 @@
 
 ## Client-server concerns
 
-The client should be as simple as is practical to implement the desired user experience.
+The client (i.e. browser-side code) should be as simple as is practical to implement the desired user experience.
 
 * Pages should only include the JavaScript needed to implement their own behavior.
 * Client-side JavaScript should have no need to manage browser history or derive state from the URL.
 * Client-side JavaScript should avoid API-driven interactions, and instead access JSON embedded in the initial page load and submit data using HTML forms.
 
 For example, enable/disable logic in forms can be specified server-side with HTML [data attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use\_data\_attributes), then implemented with generic client-side JS that responds to DOM events relevant to the attribute-specified elements. [Here's a simple example](https://jsfiddle.net/c8g6y0ru/1/).
+
+**Prefer to implement UI in Java with server-side rendering rather than in TypeScript.**
+
+There are several reasons for this:
+
+1. UIs driven by client-side scripts generally involve more complexity than server-side rendering, increasing the effort to develop **and maintain** them.
+1. Server-driven UIs are much more likely to be accessible by default than client-side rendered UIs. Unless you are familiar with a11y best practices, you are much more likely to create a UI that a person using assistive technologies can use if you build it using semantic HTML rendered on the server.
+1. CiviForm does not have a system for detecting and reporting client-side errors, so if part of the UI is broken due to a TS/JS bug we won't know about it until a user reports it manually.
 
 ## Server code organization
 

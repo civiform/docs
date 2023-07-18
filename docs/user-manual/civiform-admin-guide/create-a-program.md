@@ -1,4 +1,4 @@
-# Create a Program
+# Create a program
 
 A CiviForm program is a benefits program built by CiviForm Admins. It’s essentially a vehicle to ask questions of program applicants and to collect completed applications. Once you create a program, you’ll need to publish it to make it available.
 

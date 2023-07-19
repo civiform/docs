@@ -28,7 +28,7 @@ Skills needed:
 
 * familiarity with web services and basic web application architecture
 * familiarity with command line interfaces
-* basic familiarity with public key cryptography
+* basic familiarity with web security (e.g. provisioning SSL certificates)
 * some knowledge of computer networking – IP addresses, DNS, ports, etc
 * experience maintaining web servers in a cloud environment
 
@@ -38,7 +38,7 @@ Skills needed:
 
 Staffing two full time software developers or more would allow for code-level customizations and a readier incident response posture. At this level of staffing, the civic entity is able to investigate and resolve production incidents independently without relying on the mainline open source developers.
 
-The majority of those developers time however would be spent on feature work which could include generic features and enhancements to the core system desired by the civic entity and/or custom features such as integration with external systems for administering programs (e.g. populating entries in a vehicle licensing database with applications submitted through CiviForm).
+The majority of those developers' time however could be spent on feature work which could include generic features and enhancements to the core system desired by the civic entity and/or custom features such as integration with external systems for administering programs (e.g. populating entries in a vehicle licensing database with applications submitted through CiviForm).
 
 Additional skills needed:
 

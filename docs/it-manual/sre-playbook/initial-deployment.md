@@ -1,6 +1,6 @@
 # Initial Deployment
 
-This guide is for SREs or DevOps folks. It explains how to do an initial deployment of CiviForm into your production cloud environment. CiviForm has the following deployment options:
+This guide is for Systems Administrators, IT managers, SREs, or DevOps folks. It explains how to do an initial deployment of CiviForm into your production cloud environment. CiviForm has the following deployment options:
 
 * Can be deployed into AWS using [Terraform](terraform-deploy-system.md).
 * Can be deployed into Azure using [Terraform](terraform-deploy-system.md).
@@ -20,5 +20,5 @@ The following details are necessary for the initial deployment. A staging enviro
 - [ ] Two domain names for your deployment (one for a staging environment, and one for the production environment).
 - [ ] Government logo images for branding
 - [ ] A support email address to display on the site
-- [ ] An understanding of which existing program systems are necessary to integrate with via CiviForm's API.
+- [ ] An understanding of which of your [existing systems you would like to integrate with](../../user-manual/onboarding-guide/existing-processes.md) via CiviForm's API.
 - [ ] SSL certificates for domain names and/or load balancers.

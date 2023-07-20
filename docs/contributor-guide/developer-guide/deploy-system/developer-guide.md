@@ -106,7 +106,7 @@ In your `civiform` repository,
 
 Push the image to your repository
 * Check the image is present with `docker images`.
-* Push it to DockerHub with `docker push <your_cockerhub_name>/civiform:latest`. If you get an access denied error, you may need to log into your docker account with `docker login`.
+* Push it to DockerHub with `docker push <your_dockerhub_name>/civiform:latest`. If you get an access denied error, you may need to log into your docker account with `docker login`.
 * Go to your DockerHub account at `https://hub.docker.com/u/<your_dockerhub_name>` to check that the image has been updated.
 
 #### Pointing your deployment at your docker image

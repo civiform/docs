@@ -185,8 +185,8 @@ list and click "Create new record" (note: the UI is a little buggy you might hav
 ## Setup AWS CLI
 
 1.  Create the credentials file
-    - Run `mkdir -p ~/.aws; touch ~/.aws/credential` in your terminal to create a config file for `aws-cli`.
-    - Open the newly created config file and paste in the following template:
+    - Run `mkdir -p ~/.aws; touch ~/.aws/credentials` in your terminal to create a config file for `aws-cli`.
+    - Open the newly created credentials file and paste in the following template:
         ```
         [default]
         role_arn = 

@@ -82,26 +82,29 @@ Some alarms are configured by default through the CiviForm deployment system, in
     - Related variables: `ECS_MAX_CPU_THRESHOLD`, `ECS_MAX_CPU_EVALUATION_PERIOD`, `ECS_MAX_CPU_PERIOD`, `ECS_SCALE_TARGET_MAX_CAPACITY`
   - Low CPU alarm
     - Related variables: `ECS_MIN_CPU_THRESHOLD`, `ECS_MIN_CPU_EVALUATION_PERIOD`, `ECS_MIN_CPU_PERIOD`, `ECS_SCALE_TARGET_MIN_CAPACITY`
-
-When the ECS alarms get triggered, an autoscaling policy is set up for a task to be added or removed.
-
-There are also the following alarms that can be enabled for RDS, but aren't created by default:
+- RDS:
   - High CPU alarm
     - Related variables: `RDS_CREATE_HIGH_CPU_ALARM`, `RDS_MAX_CPU_UTILIZATION_THRESHOLD`
   - High disk queue depth alarm
     - Related variables: `RDS_CREATE_HIGH_QUEUE_DEPTH_ALARM`, `RDS_DISK_QUEUE_DEPTH_HIGH_THRESHOLD`
-  - Low disk space alarm
+  - Low disk space alarm 
     - Related variables: `RDS_CREATE_LOW_DISK_SPACE_ALARM`, `RDS_DISK_FREE_STORAGE_LOW_THRESHOLD`
-  - Low freeable memory alarm
-    - Related variables: `RDS_CREATE_LOW_MEMORY_SPACE_ALARM`, `RDS_LOW_MEMORY_THRESHOLD`
-  - Low CPU credit alarm
-    - Related variables: `RDS_CREATE_LOW_CPU_CREDIT_ALARM`, `RDS_LOW_CPU_CREDIT_BALANCE_THRESHOLD`
-  - Low disk burst alarm
-    - Related variables: `RDS_CREATE_LOW_DISK_BURST_ALARM`, `RDS_DISK_BURST_BALANCE_LOW_THRESHOLD`
-  - High memory swap usage alarm
-    - Related variables: `RDS_CREATE_SWAP_ALARM`, `RDS_CREATE_SWAP_ALARM`
-  - Anomalous connection count alarm
-    - Related variable: `RDS_CREATE_ANOMALY_ALARM`
+  - Low freeable memory alarm 
+    - Related variables: `RDS_CREATE_LOW_MEMORY_ALARM`, `RDS_LOW_MEMORY_THRESHOLD`
+
+When the ECS alarms get triggered, an autoscaling policy is set up for a task to be added or removed.
+
+There are also the following alarms that can be enabled for RDS, but aren't created by default:
+- Low CPU credit alarm
+  - Related variables: `RDS_CREATE_LOW_CPU_CREDIT_ALARM`, `RDS_LOW_CPU_CREDIT_BALANCE_THRESHOLD`
+- Low disk burst alarm
+  - Related variables: `RDS_CREATE_LOW_DISK_BURST_ALARM`, `RDS_DISK_BURST_BALANCE_LOW_THRESHOLD`
+- High memory swap usage alarm
+  - Related variables: `RDS_CREATE_SWAP_ALARM`, `RDS_HIGH_SWAP_USAGE_THRESHOLD`
+- Anomalous connection count alarm
+  - Related variables: `RDS_CREATE_ANOMALY_ALARM`, `RDS_ANOMALY_BANDWIDTH`
+- Maximum transaction IDs too high alarm
+    - Related variable: `RDS_CREATE_TRANSACTION_ID_WRAPAROUND_ALARM`, `RDS_MAX_USED_TRANSACTION_IDS_HIGH_THRESHOLD`
 
 These alarms can be enabled by setting the first related variable listed to `true` in the civiform_config.sh file of the forked civiform-deploy repository.
 

@@ -46,6 +46,7 @@ The following process should be used to implement a feature flag, release it in 
 1.  Run `bin/fmt` to regenerated `SettingsManifest.java`
 1.  Inject `SettingsManifest` where you want to consume the flag
 1.  Call the generated method on `SettingsManifest` that matches the name of your flag. For example, a flag named `MAGIC_SHOE_ENABLED` will have generated getter methods named `getMagicShoeEnabled`. Unless infeasible, use the version of the method that takes a `play.mvc.Http.Request` argument so that the flag can be overridden in non-prod environments.
+2.  If you add browser tests related to your feature, add the feature flag to our [AWS Staging config](https://github.com/civiform/civiform-staging-deploy/blob/150009d20aad95d607db67413a9589d42d7f8dfc/aws_staging_civiform_config.sh#L215) to prevent tests from failing when the staging prober tests run.
 1.  If you'd like for your flag to be able to be overriden via environment variables for a deployment, pass the flag through the deployment system. See [this pull request](https://github.com/civiform/cloud-deploy-infra/pull/145) as an example.
 
 ## Manual overrides

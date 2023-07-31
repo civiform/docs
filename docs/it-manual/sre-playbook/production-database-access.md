@@ -17,6 +17,6 @@ From your CiviForm deployment repo:
 1. Run `./bin/run`
 1. When prompted for a command to run, enter `pgadmin`
 1. The script will attempt to detect your IP address and suggest an IP-allowlist containing it. If the web browser you will use to access pgadmin is on a different machine than the one running the script, add the CIDR mask for the IP address of local network instead. (Follow on-screen instructions for this).
-1. Wait for the pgadmin instance to become available. (If the script is still polling after a minute or so, it's ok to press ctrl+c **once** to cancel polling to get the access credentials and trying visiting pgadmin in your browser)
-1. Once it is available, visit the URL printed by the script and login with the credentials provided by the script.
+1. Wait for the pgadmin instance to become available. (If the script is still polling after a minute or so, it's ok to press ctrl+c **once** to cancel polling to get the access credentials)
+1. Visit the URL printed by the script and login with the credentials provided by the script.
 1. After you are finished accessing the database, press enter to allow the script to clean up pgadmin.

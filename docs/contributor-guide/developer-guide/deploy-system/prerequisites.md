@@ -324,7 +324,7 @@ Note: You will need to run this script as the first step for any working session
     - Host name: The domain name you set when requesting your certificate (step 5 in [Configure new AWS Account](#configure-new-aws-account) above)
     - Type: CNAME
     - TTL: 3600
-    - Data: URL copied from script output (will look something like `jdoe-dev-civiform-lb-<some_numbers>.us-east-1.elb.amazonaws.com`)
+    - Data: URL copied from script output (will look something like `jdoe-dev-civiform-lb-<some_numbers>.us-east-1.elb.amazonaws.com.`)
     
     It can take up to 20 minutes for the DNS to propagate, so don't worry if you don't see it load right away. 
 

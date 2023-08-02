@@ -10,7 +10,7 @@ Staging is re-deployed with the latest code on the main branch of the [`civiform
 
 It's possible to trigger a manual run from the main branch or another working branch in `civiform-staging-deploy`. This is extremely helpful when debugging failed staging deploys, or when testing out changes to the `civiform-staging-deploy` repository.
 
-To trigger a manual deploy from the main branch:
+### To trigger a manual deploy from the main branch:
 
 1. Go to [`AWS Staging Deploy`](https://github.com/civiform/civiform-staging-deploy/actions/workflows/aws_deploy.yaml) under "Actions" and click the "Run workflow" dropdown.
 2. Select or unselect the "Runs probers when checked" box depending on if you would like prober tests to run (we recommend unselecting this box when debugging deploys to save time).
@@ -22,7 +22,7 @@ To trigger a manual deploy from the main branch:
   ![Trigger manual deploy](../../../.gitbook/assets/trigger-staging-deploy.png)
 </details>
 
-To trigger a manual deploy from a branch other than main:
+### To trigger a manual deploy from a branch other than main:
 
 1. Update the ["Trust Policy"](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/roles/details/civiform-staging-deploy-action?section=trust_relationships) in the `civiform-staging` AWS account to point to your branch.
 2. Go to [`AWS Staging Deploy`](https://github.com/civiform/civiform-staging-deploy/actions/workflows/aws_deploy.yaml) under "Actions" and click the "Run workflow" dropdown.
@@ -40,13 +40,21 @@ To trigger a manual deploy from a branch other than main:
 
 ## How to check AWS logs (staging)
 
-- if Exygy employee...
+### Setup:
 
-First, make sure your AWS account is set up with the *OrganizationAccountAccessRole*.  See [prerequisites document](https://github.com/civiform/docs/blob/main/docs/contributor-guide/developer-guide/deploy-system/prerequisites.md).
+For Exygy employees, make sure your AWS account is set up with the *OrganizationAccountAccessRole*.  See [prerequisites document](https://github.com/civiform/docs/blob/main/docs/contributor-guide/developer-guide/deploy-system/prerequisites.md).
 
-- Otherwise, ask an Exygy employee to add you to the staging group (include instructions here for doing that)
+For all others, ask an Exygy employee to [create a user](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users/create) for you in the `civiform-staging` AWS account and add you to the [staging-admins user group](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/groups/details/staging-admins?section=users) (screenshot instructions below). 
 
-Follow this [link](https://us-east-1.console.aws.amazon.com/ecs/v2/clusters/exygy-civiform/services/exygy-civiform-service/logs?region=us-east-1) or manually navigate with the steps below.
+<details>
+  <summary>Screenshots</summary>
+  
+  ![Add user](../../../.gitbook/assets/create-user-aws-1.png)
+  ![Add user to user group](../../../.gitbook/assets/create-user-aws-2.png)
+  ![Create user](../../../.gitbook/assets/create-user-aws-3.png)
+</details>
+
+After securing a user account, follow this [link](https://us-east-1.console.aws.amazon.com/ecs/v2/clusters/exygy-civiform/services/exygy-civiform-service/logs?region=us-east-1) or manually navigate with the steps below.
 
 1. From the AWS Organizations Dashboard, enter ECS into the Search bar at the top of the page.
 2. Click on “Elastic Container Service” from the list of results.

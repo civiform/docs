@@ -133,7 +133,7 @@
   * [Dev Testing](contributor-guide/developer-guide/dev-testing.md)
   * [Troubleshooting](contributor-guide/developer-guide/troubleshooting.md)
   * [Creating a new release](contributor-guide/developer-guide/releasing.md)
-  * [Checking AWS logs](contributor-guide/developer-guide/logs.md)
+  * [Working with our AWS Staging environment](contributor-guide/developer-guide/staging.md)
 
 ## Governance & Management
 

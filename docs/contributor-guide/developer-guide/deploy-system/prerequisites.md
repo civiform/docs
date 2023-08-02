@@ -253,8 +253,8 @@ AWS Nuke is a package that makes it easy to remove all resources from an AWS acc
 1. Download the correct binary for your machine's architecture/OS from the [aws-nuke repo](https://github.com/rebuy-de/aws-nuke/releases). Or on mac run `brew install aws-nuke` (go [here](https://brew.sh/) to install Homebrew if you don't already have it).
 2. If you downloaded the binary, unpack the tarball, rename the binary to `aws-nuke` and put it somewhere in your shell's path.
 3. Run `aws-nuke -h` to make sure it is installed correctly.
-4. In the root directory of your local `civiform-deploy` repo, create a `nuke.yaml` file and copy the [`nuke.yaml` file used for end to end tests](https://github.com/civiform/cloud-deploy-infra/blob/main/e2e-test/nuke.yaml) into this file. Make sure to name the file `nuke.yaml` so it is ignored by `.gitignore`.
-5. Update the file with the correct blocklist and accounts (remove any references to e2e tests). For folks using the Exygy AWS account, remove any references to Google accounts. Take care to update the ACMCertificate value to the correct domain for your cert or the script will delete it every time. The config file will look different depending on the AWS root account you are using, but should end up looking something like:
+4. In the root directory of your local `civiform-deploy` repo, create a `nuke.yaml` file. Make sure to name the file `nuke.yaml` so it is ignored by `.gitignore`.
+5. Add regions, account-blocklist, and accounts to the file. Be sure to include the AWS root account number in the account-blocklist, along with any other subaccounts you want to protect (eg. the CiviForm Staging account if you are working out of Exygy's AWS account). If in doubt, ask a coworker for their `nuke.yaml` setup. Take care to update the ACMCertificate value to the correct domain for your cert or the script will delete it every time (not the end of the world, but definitely annoying). The config file will look different depending on the AWS root account you are using, but should end up looking something like:
     ```
     regions:
         - us-east-1

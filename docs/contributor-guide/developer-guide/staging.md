@@ -19,7 +19,7 @@ It's possible to trigger a manual run from the main branch or another working br
 <details>
   <summary>Screenshots</summary>
   
-  ![Trigger manual deploy](../../../.gitbook/assets/trigger-staging-deploy.png)
+  ![Trigger manual deploy](../../.gitbook/assets/trigger-staging-deploy.png)
 </details>
 
 ### To trigger a manual deploy from a branch other than main:
@@ -33,9 +33,9 @@ It's possible to trigger a manual run from the main branch or another working br
 <details>
   <summary>Screenshots</summary>
   
-  ![Trust policy](../../../.gitbook/assets/trust-policy.png)
-  ![Edit trust policy](../../../.gitbook/assets/edit-trust-policy-staging.png)
-  ![Select deploy branch](../../../.gitbook/assets/trigger-branch-deploy.png)
+  ![Trust policy](../../.gitbook/assets/trust-policy.png)
+  ![Edit trust policy](../../.gitbook/assets/edit-trust-policy-staging.png)
+  ![Select deploy branch](../../.gitbook/assets/trigger-branch-deploy.png)
 </details>
 
 ## How to check AWS logs (staging)
@@ -47,9 +47,9 @@ For all others, ask an Exygy employee to [create a user](https://us-east-1.conso
 <details>
   <summary>Screenshots</summary>
   
-  ![Add user](../../../.gitbook/assets/create-user-aws-1.png)
-  ![Add user to user group](../../../.gitbook/assets/create-user-aws-2.png)
-  ![Create user](../../../.gitbook/assets/create-user-aws-3.png)
+  ![Add user](../../.gitbook/assets/create-user-aws-1.png)
+  ![Add user to user group](../../.gitbook/assets/create-user-aws-2.png)
+  ![Create user](../../.gitbook/assets/create-user-aws-3.png)
 </details>
 
 After securing a user account, follow this [link](https://us-east-1.console.aws.amazon.com/ecs/v2/clusters/exygy-civiform/services/exygy-civiform-service/logs?region=us-east-1) or manually navigate with the steps below.

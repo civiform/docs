@@ -40,8 +40,6 @@ It's possible to trigger a manual run from the main branch or another working br
 
 ## How to check AWS logs (staging)
 
-### Setup:
-
 For Exygy employees, make sure your AWS account is set up with the *OrganizationAccountAccessRole*.  See [prerequisites document](https://github.com/civiform/docs/blob/main/docs/contributor-guide/developer-guide/deploy-system/prerequisites.md).
 
 For all others, ask an Exygy employee to [create a user](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/users/create) for you in the `civiform-staging` AWS account and add you to the [staging-admins user group](https://us-east-1.console.aws.amazon.com/iamv2/home?region=us-east-1#/groups/details/staging-admins?section=users) (screenshot instructions below). 

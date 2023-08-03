@@ -2,7 +2,7 @@
 
 Our AWS staging instance is available at https://staging-aws.civiform.dev
 
-Configuration and deployment of our staging instance is managed by the [`civiform_staging_deploy` repository](https://github.com/civiform/civiform-staging-deploy). Our AWS instance specifically is configured in the [`aws_staging_civiform_config.sh` file](https://github.com/civiform/civiform-staging-deploy/blob/main/aws_staging_civiform_config.sh).
+Configuration and deployment of our staging instance is managed by the [`civiform_staging_deploy` repository](https://github.com/civiform/civiform-staging-deploy) which is forked from the [`civiform_deploy` repository](https://github.com/civiform/civiform-deploy). Our AWS instance specifically is configured in the [`aws_staging_civiform_config.sh` file](https://github.com/civiform/civiform-staging-deploy/blob/main/aws_staging_civiform_config.sh).
 
 Staging is re-deployed with the latest code on the main branch of the [`civiform` repository](https://github.com/civiform/civiform) daily at 6pm PDT (1am UTC). Deploys are managed by [this github workflow](https://github.com/civiform/civiform-staging-deploy/blob/main/.github/workflows/aws_deploy.yaml). You can see details of previous deploy runs, including deploy logs, by clicking into a specific deploy in Github Actions [here](https://github.com/civiform/civiform-staging-deploy/actions/workflows/aws_deploy.yaml). Results of deploys and links to specific runs are also posted in the #ci channel in Slack.
 

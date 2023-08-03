@@ -29,6 +29,7 @@ It's possible to trigger a manual run from the main branch or another working br
 3. Select your branch from the dropdown.
 4. Select or unselect the "Runs probers when checked" box depending on if you would like prober tests to run (we recommend unselecting this box when debugging deploys to save time).
 5. Click the green "Run workflow" button.
+6. Once you are done testing deployments from your branch, reset the Trust Policy in AWS back to "main".
 
 <details>
   <summary>Screenshots</summary>

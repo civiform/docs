@@ -13,3 +13,4 @@ Here are excellent resources on service design to read and reference as you work
     * Going Big with Human-Centered Redesign ([PDF](https://beeckcenter.georgetown.edu/wp-content/uploads/2022/11/Large-ScaleHumanCenteredRedesign.pdf))
 * [18F Human-Centered Design Methods](https://methods.18f.gov/)
 * [The Good Services Scale](https://good.services/the-good-services-scale)
+* [Mapping the applicant experience of benefit enrollment](https://github.com/usds/benefits-enrollment-prototype/blob/master/assets/discovery-findings-mapping-enrollment-Nov2016.pdf)

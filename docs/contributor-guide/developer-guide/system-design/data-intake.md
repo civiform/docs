@@ -18,7 +18,7 @@ Generally speaking, data stored in [ApplicantData](https://github.com/civiform/c
 
 #### Preferred locale
 
-The applicant's preferred locale is stored in `ApplicantData` with [hard coded and and write logic](https://github.com/civiform/civiform/blob/main/server/app/controllers/applicant/ApplicantInformationController.java#L179) to support the applicant specifying it.
+The applicant's preferred locale is stored in `ApplicantData` with [hard coded read and write logic](https://github.com/civiform/civiform/blob/main/server/app/controllers/applicant/ApplicantInformationController.java#L179) to support the applicant specifying it.
 
 ## Account data
 

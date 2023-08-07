@@ -26,7 +26,7 @@ Data stored on an applicant's account originates from identity providers as well
 
 ### Email address
 
-Each account's email address originates either from the identity provider the account authenticated with or is specified by the TI when they create a new client account. It is unset for guest accounts.
+Each account's email address originates either from the identity provider the account authenticated with or is optionally specified by the TI when they create a new client account. It is unset for guest accounts and some TI client accounts.
 
 ### Permissions data
 

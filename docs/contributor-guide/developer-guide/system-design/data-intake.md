@@ -22,11 +22,11 @@ The applicant's preferred locale is stored in `ApplicantData` with [hard coded r
 
 ## Account data
 
-Data stored on an applicant's account originates from identity providers and CiviForm Admin user behavior.
+Data stored on an applicant's account originates from identity providers as well as CiviForm Admin and Trusted Intermediary user behavior.
 
 ### Email address
 
-Each account's email address originates from the identity provider the account authenticated with. It is unset for guest accounts.
+Each account's email address originates either from the identity provider the account authenticated with or is specified by the TI when they create a new client account. It is unset for guest accounts.
 
 ### Permissions data
 

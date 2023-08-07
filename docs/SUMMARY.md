@@ -109,6 +109,7 @@
   * [Java Debugging](contributor-guide/developer-guide/java-debugging.md)
   * [System Design](contributor-guide/developer-guide/system-design/README.md)
     * [Backend data model](contributor-guide/developer-guide/system-design/backend-data-model.md)
+    * [Data intake](contributor-guide/developer-guide/system-design/data-intake.md)
     * [Data Versioning model](contributor-guide/developer-guide/system-design/data-versioning-model.md)
   * [Database](contributor-guide/developer-guide/database/README.md)
     * [DB Schema](contributor-guide/developer-guide/database/db-schema.md) 

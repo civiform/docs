@@ -43,9 +43,9 @@ Watch the video or follow the step-by-step instructions below.
    ![image](https://user-images.githubusercontent.com/98119305/156827015-424c1637-1b01-4645-b648-ad7e8b88c66f.png)
 5. To add a translation, select another language and enter the translated text for the Question text and Question help text.\
    \
-   ![image](https://github.com/civiform/docs/assets/101214724/1002af9c-c590-4bc6-bd79-209252be823f)
+  ![image](https://github.com/civiform/docs/assets/101214724/ae4aacdd-3e55-4b11-9a63-b28389033c77)
 
-7. Click **Save**.
-8. The **Supported languages** column will display the newly added language.\
+6. Click **Save**.
+7. The **Supported languages** column will display the newly added language.\
    \
    ![image](https://user-images.githubusercontent.com/98119305/156827418-05e4fd5b-219b-4cb9-a0bc-5d438952af97.png)

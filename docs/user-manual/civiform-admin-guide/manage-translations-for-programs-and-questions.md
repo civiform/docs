@@ -23,10 +23,11 @@ Watch the video or follow the step-by-step instructions below.
    ![image](https://user-images.githubusercontent.com/98119305/156825855-5f412056-b00d-445d-a976-ed17bc17d5d5.png)
 2. The default language is listed first and it contains the program information from when the program was created. Subsequent languages are listed alphabetically.\
    \
-   ![image](https://user-images.githubusercontent.com/98119305/156820867-c26331c9-cc7d-431a-803b-111904844b86.png)
+  ![image](https://github.com/civiform/docs/assets/101214724/b33d47a7-c9ee-4305-ae76-ef58a61f19c3)
+
 3. To add a translation, select another language and enter the translated text for the Program display name and Program description.\
    \
-   ![image](https://user-images.githubusercontent.com/98119305/156821120-29f5f0b4-0644-43e1-b6bc-d75a7835f37c.png)
+   ![image](https://github.com/civiform/docs/assets/101214724/83fcf68c-142c-4bf0-9245-64873a651274)
 4. Click **Save**.
 
 ### Add or edit question translations

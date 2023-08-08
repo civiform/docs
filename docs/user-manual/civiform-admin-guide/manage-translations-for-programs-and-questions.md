@@ -26,9 +26,9 @@ Watch the video or follow the step-by-step instructions below.
    ![image](https://user-images.githubusercontent.com/98119305/156820867-c26331c9-cc7d-431a-803b-111904844b86.png)
 3. To add a translation, select another language and enter the translated text for the Program display name and Program description.\
    \
-   ![image](https://user-images.githubusercontent.com/98119305/156821120-29f5f0b4-0644-43e1-b6bc-d75a7835f37c.png)
-4. Click **Save**.
+   ![image](https://github.com/civiform/docs/assets/101214724/0b805465-dd42-417a-b944-a2d06dcdb74b)
 
+4. Click **Save**. To go back to edit page, click "Back" button.
 ### Add or edit question translations
 
 1. Sign in to CiviForm as a CiviForm Admin.
@@ -43,8 +43,9 @@ Watch the video or follow the step-by-step instructions below.
    ![image](https://user-images.githubusercontent.com/98119305/156827015-424c1637-1b01-4645-b648-ad7e8b88c66f.png)
 5. To add a translation, select another language and enter the translated text for the Question text and Question help text.\
    \
-   ![image](https://user-images.githubusercontent.com/98119305/156823577-fdec48ed-7ced-4ce0-9183-bb200e293ef3.png)
-6. Click **Save**.
-7. The **Supported languages** column will display the newly added language.\
+   ![image](https://github.com/civiform/docs/assets/101214724/1002af9c-c590-4bc6-bd79-209252be823f)
+
+7. Click **Save**.
+8. The **Supported languages** column will display the newly added language.\
    \
    ![image](https://user-images.githubusercontent.com/98119305/156827418-05e4fd5b-219b-4cb9-a0bc-5d438952af97.png)

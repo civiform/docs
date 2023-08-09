@@ -21,14 +21,16 @@ Watch the video or follow the step-by-step instructions below.
 
 1. Click **Manage translations**.\
    ![image](https://user-images.githubusercontent.com/98119305/156825855-5f412056-b00d-445d-a976-ed17bc17d5d5.png)
-2. The default language is listed first and it contains the program information from when the program was created. Subsequent languages are listed alphabetically.\
+2. The default Program details and its custom confirmation texts are displayed in the side. \
    \
-   ![image](https://user-images.githubusercontent.com/98119305/156820867-c26331c9-cc7d-431a-803b-111904844b86.png)
-3. To add a translation, select another language and enter the translated text for the Program display name and Program description.\
+   ![image](https://github.com/civiform/docs/assets/101214724/ca8cea92-77f6-4eba-be3f-5b9656bfd10a)
+
+
+3. To add a translation, select a language tab and enter the translated text for the Program display name, Program description and custom information page.\
    \
    ![image](https://github.com/civiform/docs/assets/101214724/0b805465-dd42-417a-b944-a2d06dcdb74b)
 
-4. Click **Save**. To go back to edit page, click "Back" button.
+4. Click **Save**. To go back to program list page, click **Back** button.
 ### Add or edit question translations
 
 1. Sign in to CiviForm as a CiviForm Admin.
@@ -38,14 +40,15 @@ Watch the video or follow the step-by-step instructions below.
 3. Click **Manage draft translations**.\
    \
    ![image](https://user-images.githubusercontent.com/98119305/156822400-08c25717-8fef-4928-b094-14dda35129e6.png)
-4. The default language is listed first and it contains the text from when the question was created. Subsequent languages are listed alphabetically.\
+4. The default question text and help texts are displayed in the side.\
    \
-   ![image](https://user-images.githubusercontent.com/98119305/156827015-424c1637-1b01-4645-b648-ad7e8b88c66f.png)
+  ![image](https://github.com/civiform/docs/assets/101214724/1f1ae520-3c0a-41b1-a6e6-293053d3be43)
+
 5. To add a translation, select another language and enter the translated text for the Question text and Question help text.\
    \
   ![image](https://github.com/civiform/docs/assets/101214724/ae4aacdd-3e55-4b11-9a63-b28389033c77)
 
-6. Click **Save**.
+6. Click **Save**. To go back to Question list page, click **Back** button.
 7. The **Supported languages** column will display the newly added language.\
    \
    ![image](https://user-images.githubusercontent.com/98119305/156827418-05e4fd5b-219b-4cb9-a0bc-5d438952af97.png)

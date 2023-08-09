@@ -10,10 +10,16 @@ To familiarize yourself with OIDC, it is useful to go through a setup using any 
 
 1. **Get access to CiviForm auth0.com account.**  
    Ask someone on the team to add you to the account (Settings -> Tenant Members -> Add member).
-2. **Create test app.**  
-   Create a test app on auth0.com. Take a look at "CiviForm AWS Staging" app as example. Use http://localhost:9000 as your domain.
-3. **Configure local CiviForm.**  
-   Set the necessary settings in [application.conf](https://github.com/civiform/civiform/blob/main/server/conf/application.conf). They include `applicant_generic_oidc.client_id`, `applicant_generic_oidc.discovery_uri`. 
+2. **Create a test application.**  
+    1. Create a test application on auth0.com by going to the [Applications](https://manage.auth0.com/dashboard/us/civiform-staging/applications) page and clicking "Create Application".
+    2. The Domain, Client ID, and Client Secret are fixed, and will be used in your Civiform config.
+    3. For Allowed Callback URLs, enter `http://localhost:9000/callback/generic-oidc`.
+3. **Configure local CiviForm in [docker_compose.yml](https://github.com/civiform/civiform/blob/main/docker_compose.yml).**  
+    1. Set `APPLICANT_OIDC_PROVIDER_NAME=generic-oidc`.
+    2. Set `APPLICANT_OIDC_CLIENT_ID` to the Client ID from the auth0 config for your test application.
+    3. Set `APPLICANT_OIDC_CLIENT_SECRET` to the Client Secret from the auth0 config for your test application.
+    4. Set `APPLICANT_OIDC_DISCOVERY_URI=https://civiform-staging.us.auth0.com/.well-known/openid-configuration`.
+    5. **Do not merge these settings --- just use them for local testing.**
 4. **Run CiviForm and test log in.**  
    You should be redirected to auth0.com and go through the login process. At the end, you should be redirected back to CiviForm.
    

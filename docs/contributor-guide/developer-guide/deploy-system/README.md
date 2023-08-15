@@ -8,7 +8,7 @@ To start development on the deploy system, we recommend working through the prov
 * [Prerequisites & dev setup](prerequisites.md)
 * [Developer guide](developer-guide.md)
 * [Recommended reading](recommended-reading.md)
-* [Trouble shooting](trouble-shooting.md)
+* [Troubleshooting](troubleshooting.md)
 * [Testing](testing.md)
 * [Azure](dev-azure.md) 
 

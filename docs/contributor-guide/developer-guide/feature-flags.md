@@ -29,15 +29,14 @@ The following process should be used to implement a feature flag, release it in 
 1. Create a Github issue using the Feature Flag template that covers the creation and deletion of the feature flag that will guard your feature. Ensure it is tied to the appropriate epic so that the issue must be completed before the epic is considered complete.
 2. Create the feature flag in code (see "Adding a new flag" below) and update the issue to mention that the feature flag now exists. Enable the feature flag in [dev](https://github.com/civiform/civiform/blob/main/server/conf/application.dev.conf). Disable the flag for [browser tests](https://github.com/civiform/civiform/blob/main/server/conf/application.dev-browser-tests.conf), since the browser tests will turn the flag on and off inside the tests themselves.  For the PR that adds the flag, ensure the release notes section describes what this flag is for.
 3. Write your feature and guard it with the flag.
-4. Pass the flag through the deployment system to allow enabling it in staging ([example](https://github.com/civiform/cloud-deploy-infra/commit/9d17356ff1fa1f3a16c97608cc00cbd4c7c11ffe)). Soon, this will not be necessary as we will be automatically passing flags through the deployment system.
-5. When the next release is created, ensure information about the release flag is in the email sent for the release.
-6. Enable the flag in AWS staging and Azure staging and ask Seattle engineers to enable the flag in their staging environment.
-7. Optional (depending on the complexity of your feature): Organize a bug bash where team members try to break your feature
-8. Send a message to Matthew Sprenke in the #release-discussion channel on CiviForm Slack to check if Seattle wants to do some manual QA.
-9. Set the default value of the flag to `true` to make it default enabled (e.g. [changing this to true](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/helper/feature-flags.conf?L27)). In the PR, include release notes, which mention that the specific feature flag's default value was changed and what feature it enables. Update the feature flag Github issue to note when the default was changed. Assign the issue to yourself or someone who will be around in the future.
-10. Ensure that the feature is enabled in an actual production build, because each deployment can choose to enable or disable the flags of their choosing (often the easiest deployment to use will be in Seattle) and note the date when it was enabled in the Github issue.
-11. Leave the flag in the codebase for at least another month after it went live in production (e.g. Seattle).
-12. Remove the flag, remove the guards in the code looking for the flag, note in the PR release notes that the flag is being removed, then close the Github issue. Ensure the email sent for the next release includes a note about the removal of the feature flag.
+4. When the next release is created, ensure information about the release flag is in the email sent for the release.
+5. Enable the flag in AWS staging and Azure staging and ask Seattle engineers to enable the flag in their staging environment.
+6. Optional (depending on the complexity of your feature): Organize a bug bash where team members try to break your feature
+7. Send a message to Matthew Sprenke in the #release-discussion channel on CiviForm Slack to check if Seattle wants to do some manual QA.
+8. Set the default value of the flag to `true` to make it default enabled (e.g. [changing this to true](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/helper/feature-flags.conf?L27)). In the PR, include release notes, which mention that the specific feature flag's default value was changed and what feature it enables. Update the feature flag Github issue to note when the default was changed. Assign the issue to yourself or someone who will be around in the future.
+9. Ensure that the feature is enabled in an actual production build, because each deployment can choose to enable or disable the flags of their choosing (often the easiest deployment to use will be in Seattle) and note the date when it was enabled in the Github issue.
+10. Leave the flag in the codebase for at least another month after it went live in production (e.g. Seattle).
+11. Remove the flag, remove the guards in the code looking for the flag, note in the PR release notes that the flag is being removed, then close the Github issue. Ensure the email sent for the next release includes a note about the removal of the feature flag.
 
 
 ### Adding a new flag
@@ -47,7 +46,6 @@ The following process should be used to implement a feature flag, release it in 
 1.  Inject `SettingsManifest` where you want to consume the flag
 1.  Call the generated method on `SettingsManifest` that matches the name of your flag. For example, a flag named `MAGIC_SHOE_ENABLED` will have generated getter methods named `getMagicShoeEnabled`. Unless infeasible, use the version of the method that takes a `play.mvc.Http.Request` argument so that the flag can be overridden in non-prod environments.
 1.  If you add browser tests that rely on your feature being enabled, add the feature flag to our [AWS Staging config](https://github.com/civiform/civiform-staging-deploy/blob/150009d20aad95d607db67413a9589d42d7f8dfc/aws_staging_civiform_config.sh#L215) to prevent tests from failing when the staging prober tests run.
-1.  If you'd like for your flag to be able to be overriden via environment variables for a deployment, pass the flag through the deployment system. See [this pull request](https://github.com/civiform/cloud-deploy-infra/pull/145) as an example.
 
 ## Manual overrides
 

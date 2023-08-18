@@ -36,15 +36,15 @@
 Ensure your team lead grants you access to the following resources.
 
 * Slack
-* Added to the technical google group
-* DockerHub (if at Google, need to pay for the professional one)
+* Added to the civiform-engineers and civiform-technical Google groups
 * Github Access
   * [Civiform Org](https://github.com/civiform)
   * civiform/civiform
   * civiform/docs
+* DockerHub (optional)
+  * You probably don't need this, as images are pushed automatically by an Exygy account and a DockerHub account is not required in order to use the images, but contact an Exygy engineer if you do at some point.
 * Deployment (optional)
-  * Azure
   * AWS
+  * Azure (not currently in use)
 * Authentication (optional)
-  * Auth0
-  * LoginRadius
+  * Auth0 - you can create your own account to use to log in to staging as an applicant

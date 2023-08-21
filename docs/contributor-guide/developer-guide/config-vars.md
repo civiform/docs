@@ -24,7 +24,7 @@ aws.region=${?AWS_REGION}
 
 The file format is [HOCON](https://www.playframework.com/documentation/2.8.x/ConfigFile).
 
-## Accessing config varaiables
+## Accessing config variables
 
 Enviroment variable overrides for config variables should be registered in [`env-var-docs.json`](https://github.com/civiform/civiform/blob/main/server/conf/env-var-docs.json). The registered name (in [screaming snake case](https://en.wiktionary.org/wiki/screaming_snake_case)) should be the environment variable used in the `conf` file. When new variables are added, we programatically update the generated [SettingsManifest](https://github.com/civiform/civiform/blob/main/server/app/services/settings/SettingsManifest.java) class that provides accessor methods. Developers should consume all config variables through this class. Some existing code may interact directly with the `com.typesafe.config.Config` class, but the `SettingsManifest` should be used for new code.
 
@@ -32,7 +32,7 @@ The variables in `env-var-docs.json` are also used to generate Markdown document
 
 Note that the server reads the values from `application.conf`, while the `SettingsManifest` is derived from the configured environment variables that are dereferenced in that file. This implies a tight (but unenforced) linkage between `application.conf` and `env-var-docs.json`. It is theoretically possible to add a config var to `env-var-docs.json` without *using* the value in `application.conf`, which would result in confusion. Furthermore, if a variable in `application.conf` does not have an overriding environment variable, then no accessor will be available from `SettingsManifest` and direct access to the `Config` object is required to retrieve the value (see [example](https://github.com/civiform/civiform/blob/b4d2a0c3e2b5f3d1244611afdf5ed81bd670a609/server/app/modules/EsriModule.java#L33) of fetching from `Config`).
 
-{% note %}
+{% hint style="success" %}
 
 **Note:** The `SettingsManifest` is generated/updated by either of the following steps:
 * Executing `bin/generate-settings-manifest`.
@@ -40,7 +40,7 @@ Note that the server reads the values from `application.conf`, while the `Settin
 
 The related Markdown documentation is updated through the GitHub action [Env Variable Docs - Generate](https://github.com/civiform/civiform/actions/workflows/generate_env_var_docs_markdown_for_release.yaml), which is invoked by the [Create Release Workflow](https://github.com/civiform/civiform/actions/workflows/release.yaml).
 
-{% endnote %}
+{% endhint %}
 
 ## Setting values for deployments
 

@@ -69,7 +69,7 @@ Exception handling in asynchronous execution deserves a special mention as `Comp
 
 ### Server config values
 
-Server config values are specified in [server/conf/env-var-docs.json](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/env-var-docs.json) and read by the server using [Play's HOCON config system](https://playframework.com/documentation/2.8.x/Configuration). When new config variables are added, we update a generated [manifest file](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/app/services/settings/SettingsManifest.java) that provides accessor methods. Developers should consume all config values through this class and avoid working directly with the `import com.typesafe.config.Config` class in application code. 
+Server config values are specified in [server/conf/env-var-docs.json](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/conf/env-var-docs.json) and read by the server using [Play's HOCON config system](https://playframework.com/documentation/2.8.x/Configuration). When new config variables are added, we update a generated [manifest file](https://sourcegraph.com/github.com/civiform/civiform/-/blob/server/app/services/settings/SettingsManifest.java) that provides accessor methods. Developers should consume all config values through this class and avoid working directly with the `import com.typesafe.config.Config` class in application code. See [Server configuration variables](config-vars.md) for more information.
 
 ## TypeScript code
 

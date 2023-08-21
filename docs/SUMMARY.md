@@ -125,6 +125,7 @@
   * [Feature Flags](contributor-guide/developer-guide/feature-flags.md)
   * [Internationalization (i18n)](contributor-guide/developer-guide/internationalization-i18n.md)
   * [Adding a new question type](contributor-guide/developer-guide/adding-a-new-question-type.md)
+  * [Server configuration variables](contributor-guide/developer-guide/config-vars.md)
   * [Deploy system](contributor-guide/developer-guide/deploy-system/README.md)
     * [Technical overview](contributor-guide/developer-guide/deploy-system/technical-overview.md)
     * [Prerequisites & dev setup](contributor-guide/developer-guide/deploy-system/prerequisites.md)

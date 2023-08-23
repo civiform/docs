@@ -5,8 +5,8 @@ CiviForm’s code is designed to be shared across organizations as off-the-shelf
 
 ## Technical Standards
 * Once features are prioritized and PRDs have been finalized, **features are developed following the following technical standards**:
-    * [Technical Contribution Guidelines](../../contributor-guide/developer-guide/technical-contribution-guide.md)
-    * [Testing practices & guidelines](../../contributor-guide/developer-guide/testing.md)
+    * [Technical Contribution Guidelines](https://github.com/civiform/civiform/wiki/Technical-contribution-guide)
+    * [Testing practices & guidelines](https://github.com/civiform/civiform/wiki/Testing)
 * Code quality is critical to the long-term viability of the CiviForm project. All code contributions must be reviewed by at least one Maintainer who has familiarity of the Guidelines, with additional reviewers strongly recommended for major contributions.
 When questions of code quality or best practice arise that are not resolved by the Technical Contribution Guide, a member of the Technical Design Comittee may make a decision on the spot, or bring the issue to the committee for a vote if necessary.
 * Features are announced via [Release Notes in GitHub](https://github.com/civiform/civiform/releases) and sent to civiform-technical@ and civiform-announce@. Read more about [release practices](../../it-manual/sre-playbook/upgrading-to-a-new-release.md).

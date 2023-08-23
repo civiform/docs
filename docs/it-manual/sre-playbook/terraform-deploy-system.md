@@ -7,7 +7,7 @@ Terraform is an infrastructure-as-code tool that allows you to define both cloud
 ### Outside configuration
 You will need some values that are configured outside of CiviForm before you start the setup. Some of the steps are optional, meaning that you can bring up a staging environment and get the app working without them, but they will need to be completed for production setup.
 * (Optional) Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-ad)
-* (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](../../contributor-guide/developer-guide/authentication-providers.md)
+* (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](https://github.com/civiform/civiform/wiki/Authentication-Providers)
 * Domain name for your deployment. For example `civiform.mycity.gov`
 * (AWS) ARN of an SSL certificate for load balancer. See [requesting AWS certificate](#requesting-aws-certificate)
 

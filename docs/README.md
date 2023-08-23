@@ -10,7 +10,6 @@ In the docs, you will find:
 * [Onboarding Guide](user-manual/onboarding-guide) to understand how CiviForm can support your organization's service delivery
 * [User Manual](user-manual/civiform-admin-guide/README.md) to set up and manage your programs and applications
 * [IT Manual](it-manual/sre-playbook/README.md) to deploy CiviForm on your technical infrastructure
-* [Contributor Guide](contributor-guide/developer-guide/technical-contribution-guide.md) to contribute new features
 * [Governance & Management Documentation](governance-and-management/governance/) with information on how CiviForm is being collaboratively managed and developed
 
 ### Getting Started
@@ -23,10 +22,6 @@ Below are good docs to start learning about CiviForm:
 
 {% content-ref url="user-manual/onboarding-guide/README.md" %}
 [Onboarding Guide](user-manual/onboarding-guide/README.md)
-{% endcontent-ref %}
-
-{% content-ref url="contributor-guide/developer-guide/technical-contribution-guide.md" %}
-[technical-contribution-guide.md](contributor-guide/developer-guide/technical-contribution-guide.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}

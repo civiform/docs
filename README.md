@@ -4,7 +4,7 @@ Welcome to the documentation for Civiform.
 ## Updating a page
 * Updates should be made directly in the markdown files in ‘docs’ directory of the GitHub repository. 
 * Anyone can click ‘Edit on GitHub’ for any page within the docs site, which will take you directly to the markdown file for that page on GitHub. 
-* For example, if you want to update the [Getting Started](https://docs.civiform.us/contributor-guide/developer-guide/getting-started) page of the Developer Guide, you should make edits to [this markdown file](https://github.com/civiform/docs/blob/main/docs/contributor-guide/developer-guide/getting-started.md) on GitHub.
+* For example, if you want to update the [Glossery](https://docs.civiform.us/overview/glossary) page, you should make edits to [this markdown file](https://github.com/civiform/docs/blob/remove-contributor-guide/docs/overview/glossary.md) on GitHub.
 * Updates must be made via pull request.
 
 ## Creating a new page

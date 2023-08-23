@@ -32,7 +32,7 @@ Things to do before each on-call shift starts.
 
 #### Setup dev environment
 
-Ensure your CiviForm development environment is set up and working. Pull in the latest changes to the `main` branch if yours is out of date. Follow instructions for [getting started](../../../contributor-guide/developer-guide/getting-started.md) with a dev environment.
+Ensure your CiviForm development environment is set up and working. Pull in the latest changes to the `main` branch if yours is out of date. Follow instructions for [getting started](https://github.com/civiform/civiform/wiki/Getting-started) with a dev environment.
 
 #### Review current bug triage list
 
@@ -42,7 +42,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
 
 ### On-call responsibilities
 
-1. [Generate a release](../../../contributor-guide/developer-guide/releasing.md) on Wednesday by 12pm Pacific Time
+1. [Generate a release](https://github.com/civiform/civiform/wiki/Releasing) on Wednesday by 12pm Pacific Time
 2. Respond to downstream production incidents (daily)
    * Check GitHub [issue tracker](https://github.com/civiform/civiform/issues)
    * Check [civiform-technical@googlegroups.com](https://groups.google.com/g/civiform-technical)

@@ -1,12 +1,12 @@
 # Terraform deploy system
 
-Terraform is an infrastructure-as-code tool that allows you to define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. CiviForm provides Terraform configuration files that allow you to deploy CiviForm on Azure and AWS. Knowledge of Terraform is not required to run them, but reading the high-level [Terraform overview](https://www.terraform.io/intro) may be useful. 
+Terraform is an infrastructure-as-code tool that allows you to define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. CiviForm provides Terraform configuration files that allow you to deploy CiviForm on AWS. Knowledge of Terraform is not required to run them, but reading the high-level [Terraform overview](https://www.terraform.io/intro) may be useful. 
 
 ## Setup
 
 ### Outside configuration
 You will need some values that are configured outside of CiviForm before you start the setup. Some of the steps are optional, meaning that you can bring up a staging environment and get the app working without them, but they will need to be completed for production setup.
-* (Optional) Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-ad)
+* (Optional) Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-a-d)
 * (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](https://github.com/civiform/civiform/wiki/Authentication-Providers)
 * Domain name for your deployment. For example `civiform.mycity.gov`
 * (AWS) ARN of an SSL certificate for load balancer. See [requesting AWS certificate](#requesting-aws-certificate)
@@ -16,7 +16,7 @@ You will need some values that are configured outside of CiviForm before you sta
 1. Fork the [civiform-deploy](https://github.com/civiform/civiform-deploy) repo to your organization via the GitHub webpage.
 1. Clone the repo onto the machine you are deploying from. Ideally, this would be a shared instance that multiple people can log onto.
 1. Find the version that you want to deploy on [Github](https://github.com/civiform/civiform/releases).
-1. Copy the [`civiform_config.example.sh`](https://github.com/civiform/civiform-deploy/blob/main/civiform_config.example.sh) into `civiform_config.sh` and fill out the missing values. You can get a sense of required values depending on your cloud provider by looking at [staging-azure](https://github.com/civiform/civiform-staging-deploy/blob/main/azure_staging_civiform_config.sh) or [staging-aws](https://github.com/civiform/civiform-staging-deploy/blob/main/aws_staging_civiform_config.sh) configs.
+1. Copy the [`civiform_config.example.sh`](https://github.com/civiform/civiform-deploy/blob/main/civiform_config.example.sh) into `civiform_config.sh` and fill out the missing values. You can get a sense of required values depending on your cloud provider by looking at [staging-aws](https://github.com/civiform/civiform-staging-deploy/blob/main/aws_staging_civiform_config.sh) configs.
 1. Run `bin/doctor` and install the dependencies.
 1. Run `bin/setup`. What to expect:
     * Takes 5-10 minutes to run.
@@ -38,7 +38,7 @@ This error can happen when running `bin/setup` for the first time. If you see it
 
 #### Terraform fails with other errors
 
-The deploy command is idempotent, so if it fails, try running it again. The setup command can also be re-run, but it resets a lot of variables which are kind of a pain to continually set up when you run it for Azure.
+The deploy command is idempotent, so if it fails, try running it again. The setup command can also be re-run, but it may have partially created resources in AWS that you will need to delete before re-running.
 
 If changes were made upstream, you can change the code in the checkout env, but will need to commit PRs to fix in the main repo.
 
@@ -46,7 +46,7 @@ If changes were made upstream, you can change the code in the checkout env, but 
 
 If you see error like "no such file or directory"
 ```
-./db-connection: line 2: cloud/azure/bin/lib.sh: No such file or directory
+./db-connection: line 2: cloud/aws/bin/lib.sh: No such file or directory
 ./db-connection: line 21: out::error: command not found
 ```
 The scripts expect you to be in specific directories. You probably need to `cd` into the checkout directory or the top level directory. If you are running `setup`/`deploy`/`revert`, you will need to be in the top level directory. If you are running a script like `db-connection`, you need to be in the checkout directory.
@@ -102,34 +102,5 @@ We support on-demand deployment of the [pgadmin](https://www.pgadmin.org/) web U
 1. Expand the 'Databases (2)' item under the 'CiviForm (1)' item.
 1. The 'postgres' item under the 'Databases (2)' item is the CiviForm database.  Right click on the 'postgres' item and select 'Query Tool' to send commands to the database.
 
-
-#### Azure
-
-1. `cd checkout`
-2. `cloud/azure/bin/db-connection -g sgdev -d civiform-artistic-halibut -v sgdev-civiform-kv`
-
-### Restore data to the database from a dump file (only Azure)
-
-1. If on WSL, figure out what the location of the dump file is (possibly `/mnt/c/..`)
-2. `cd checkout`
-3. `cloud/azure/bin/pg-restore -g sgdev -d civiform-artistic-halibut -v sgdev-civiform-kv -f /mnt/c/pg\_dump.dump -b testData.dump`
-
-### Clear data from the database (only Azure)
-1. `cd checkout `
-2. From checkout directory run `cloud/azure/bin/db-connection -d <database_name> -g <resource_group> -v <keyvault>`
-Note that the database_name does not include the .postgres.database 
-3. Wait for the application to say you can run sql (try running `\dt` to make sure you can see the data) 
-4. Run the following commands (has to be in order)
-```
-DELETE FROM applications;
-DELETE FROM applicants;
-DELETE FROM accounts;
-DELETE FROM programs;
-DELETE FROM questions;
-DELETE FROM ti_organizations;
-DELETE FROM versions;
-DELETE FROM versions_programs;
-DELETE FROM versions_questions;
-```
 
 

@@ -1,4 +1,4 @@
-Note: Our support for deploying with Azure is currently deprecated. This page contains information related to supporting Azure that we want to keep around for when we need to implement support again.
+Note: Our support for deploying with Azure is currently on pause. This page contains information related to supporting Azure that we want to keep around for when we resume support.
 
 
 From `terraform-deploy-system.md`:

@@ -14,3 +14,8 @@ Here are excellent resources on service design to read and reference as you work
 * [18F Human-Centered Design Methods](https://methods.18f.gov/)
 * [The Good Services Scale](https://good.services/the-good-services-scale)
 * [Mapping the applicant experience of benefit enrollment](https://github.com/usds/benefits-enrollment-prototype/blob/master/assets/discovery-findings-mapping-enrollment-Nov2016.pdf)
+* [Civilla Practica](https://civilla.org/practica)
+   * [Foundations](https://civilla.org/practica/foundations)
+   * [Design Principles](https://civilla.org/practica/design-principles)
+   * [Qualitiative User Research](https://civilla.org/practica/user-research)
+   * [Applications](https://civilla.org/practica/applications)

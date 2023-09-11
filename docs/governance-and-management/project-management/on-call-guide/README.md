@@ -51,10 +51,12 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
    * [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
    * [pac4j security announcement mailing list](https://groups.google.com/g/pac4j-security)
 4. Monitor staging deployments in the [#ci](https://app.slack.com/client/T01Q6PJQAES/C03UXPUEXU4) Slack channel. Investigate failed deployments and re-run if appropriate. (Note: our browser tests can be flakey and case deployments to fail. If this is the case, re-running the deployment will often fix the issue.)
-4. Check [dependency updates](https://github.com/civiform/civiform/labels/dependencies) (once per shift)
-5. Check security updates at [Codecov](https://about.codecov.io/security-update)
-6. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md) and close the oncall issue assigned to you.
-7. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
+5. Check the [dependency dashboard](https://github.com/civiform/civiform/issues/2124) (once per shift)
+   * This issue is one that Renovate creates and updates with what it is currently tracking. Check this for any rate-limited dependencies and check the box to create them.
+   * For any problematic dependency updates that break tests, add the "needs-triage" label so Exygy can prioritize fixing these.
+6. Check security updates at [Codecov](https://about.codecov.io/security-update)
+7. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md) and close the oncall issue assigned to you.
+8. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
 
 #### Downstream production incident support
 
@@ -82,6 +84,6 @@ CiviForm relies on versioned dependencies managed by an open source dependency m
 
 CiviForm's dependencies are mostly listed in the [`build.sbt` file](https://github.com/civiform/civiform/blob/main/server/build.sbt). Dependencies in here are retrieved by [sbt](https://www.scala-sbt.org) (CiviForm's build tool) from the [Maven Central Repository](https://search.maven.org), which is where you can check to see if new versions are availabe. Additionally, there are some dependencies managed as [sbt plugins here](https://github.com/civiform/civiform/blob/main/server/project/plugins.sbt). These dependencies must be checked at their individual project pages for updates.
 
-CiviForm relies on [renovate bot](https://github.com/renovatebot/renovate) to automatically detect new versions of dependencies and create pull requests to update them. It is the on-call engineer's responsibility to review and merge these pull requests as they come in. **Do not simply approve and merge every pull request renovate bot creates.** While in most cases passing CI checks indicates the change is acceptable, that not always the case and more diligence is required ([here's an example](https://github.com/civiform/civiform/pull/2130#discussion\_r834714183)). Be sure you understand what is being updated before approving. If need be, get in touch with the broader engineering team to help evaluate a given PR.
+CiviForm relies on [renovate bot](https://github.com/renovatebot/renovate) to automatically detect new versions of dependencies and create pull requests to update them. It is the on-call engineer's responsibility to review and merge these pull requests as they come in. **Do not simply approve and merge every pull request renovate bot creates.** While in most cases passing CI checks indicates the change is acceptable, that not always the case and more diligence is required ([here's an example](https://github.com/civiform/civiform/pull/2130#discussion\_r834714183)). Be sure you understand what is being updated before approving. If need be, get in touch with the broader engineering team to help evaluate a given PR. For PRs that break tests, add the "needs-triage" label to the PR so Exygy can prioritize fixing these issues.
 
 **Do not merge terraform-related dependency updates without first manually exercising the code, we do not have automated tests for terraform/deployment configuration.** Feel free to close related PRs and file issues for performing the upgrade.

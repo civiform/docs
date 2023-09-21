@@ -94,6 +94,8 @@ Some alarms are configured by default through the CiviForm deployment system, in
 
 When the ECS alarms get triggered, an autoscaling policy is set up for a task to be added or removed.
 
+For the RDS alarms, the field `RDS_ALARM_EMAIL` can be set for an email to be sent to the specified email when an alert gets triggered.
+
 There are also the following alarms that can be enabled for RDS, but aren't created by default:
 - Low CPU credit alarm
   - Related variables: `RDS_CREATE_LOW_CPU_CREDIT_ALARM`, `RDS_LOW_CPU_CREDIT_BALANCE_THRESHOLD`

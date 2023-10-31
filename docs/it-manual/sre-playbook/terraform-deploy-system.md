@@ -1,10 +1,11 @@
 # Terraform deploy system
 
-Terraform is an infrastructure-as-code tool that allows you to define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. CiviForm provides Terraform configuration files that allow you to deploy CiviForm on AWS. Knowledge of Terraform is not required to run them, but reading the high-level [Terraform overview](https://www.terraform.io/intro) may be useful. 
+Terraform is an infrastructure-as-code tool that allows you to define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. CiviForm provides Terraform configuration files that allow you to deploy CiviForm on AWS. Knowledge of Terraform is not required to run them, but reading the high-level [Terraform overview](https://www.terraform.io/intro) may be useful.
 
 ## Setup
 
 ### Outside configuration
+
 You will need some values that are configured outside of CiviForm before you start the setup. Some of the steps are optional, meaning that you can bring up a staging environment and get the app working without them, but they will need to be completed for production setup.
 * (Optional) Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-a-d)
 * (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](https://github.com/civiform/civiform/wiki/Authentication-Providers)
@@ -87,20 +88,6 @@ In Azure Portal:
 
 ### Access the database for emergency repair
 
-#### AWS
+The CiviForm deployment system provides a mechanism for temporary and secure direct access to the production database via the [pgadmin](https://www.pgadmin.org/)
 
-We support on-demand deployment of the [pgadmin](https://www.pgadmin.org/) web UI to access the CiviForm database.  We require explicit IP allow-listing via a list of CIDR blocks. Only these IPs will be able to access pgadmin. The public IP of the host running the web browser used to access the pgadmin web UI (like your work laptop/desktop) must be covered by a block in the list. To detect the public IP of a host running a web browser, visit https://checkip.amazonaws.com.
-
-1. Run `bin/run` and pass in `pgadmin` for the command.
-1. The deploy tool will auto-detect the public IP of the host it is running on and ask if you would like to add the IP to the allow-list. If you want the deploy tool to wait until pgadmin is available to print out connection information, enter 'y'.
-1. Enter in a CIDR block that covers the IP of the host that will access the pgadmin web UI. If the host's IP is '127.0.0.1', enter in '127.0.0.1/32' to allow-list just that IP.
-1. Either accept or reject the allow-list. If you previously chose to add the deploy tool's IP to the allow-list, and then reject the list, the deploy tool's IP will not be automatically added to the list again.
-1. After accepting a list, Terraform will run to bring up the pgadmin resources. When it asks "Do you want to perform these actions?", enter "yes".
-1. The deploy tool will attempt to connect to pgadmin every 10 seconds. When a connection is successful, the pgadmin URL and authentication information will be printed. Press Ctrl-c to shortcut this wait.
-1. Open the pgadmin URL. Log in using the 'login email' and 'login password' printed by the deploy tool.
-1. Expand the 'CiviForm (1)' item in the left navigation pane. You should be prompted to enter in the password to the database. Enter in the 'database password' printed by the deploy tool.
-1. Expand the 'Databases (2)' item under the 'CiviForm (1)' item.
-1. The 'postgres' item under the 'Databases (2)' item is the CiviForm database.  Right click on the 'postgres' item and select 'Query Tool' to send commands to the database.
-
-
-
+For details on how to access the database with pgadmin visit the [Production Database Access](./production-database-access.md) page.

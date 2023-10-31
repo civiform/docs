@@ -28,3 +28,7 @@ To detect the public IP of a host running a web browser, visit https://checkip.a
 1. Expand the 'Databases (2)' item under the 'CiviForm (1)' item.
 1. The 'postgres' item under the 'Databases (2)' item is the CiviForm database. Right click on the 'postgres' item and select 'Query Tool' to send commands to the database.
 1. After you are finished accessing the database, press enter to allow the script to clean up pgadmin.
+
+### Saving files within pgadmin
+
+WARNING: The pgadmin tool has the ability to save queries. Do NOT saving file within the tool. When pgadmin is shutdown it will permanently remove the files. If you need to save a query, copy and paste it into a file on your computer.

@@ -31,4 +31,4 @@ To detect the public IP of a host running a web browser, visit https://checkip.a
 
 ### Saving files within pgadmin
 
-WARNING: The pgadmin tool has the ability to save queries. Do NOT saving file within the tool. When pgadmin is shutdown it will permanently remove the files. If you need to save a query, copy and paste it into a file on your computer.
+WARNING: The pgadmin tool has the ability to save queries. Do NOT save files within the tool. When pgadmin is shutdown it will permanently remove the files. If you need to save a query, copy and paste it into a file on your computer.

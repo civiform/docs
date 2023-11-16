@@ -54,7 +54,13 @@ The scripts expect you to be in specific directories. You probably need to `cd` 
 
 #### Terraform fails with `Error acquiring the state lock`
 
-This situation can happen when exiting deployment scripts using "Ctrl-C". Terraform acquires a lock every time you run `./bin/deploy` or `./bin/setup`, and releases the lock at the end of the script. This helps to prevent concurrent infrastructure changes. If the deploy process exited outside of Terraform, the lock remains and needs to be force removed in order to run deploy again. To do it, run the following command (assuming you deploy on AWS):
+This situation can happen when exiting deployment scripts using "Ctrl-C". Terraform acquires a lock every time you run `./bin/deploy` or `./bin/setup`, and releases the lock at the end of the script. This helps to prevent concurrent infrastructure changes. If the deploy process exited outside of Terraform, the lock remains and needs to be force removed in order to run deploy again. The end of the error message will contain the `LOCK_ID`. To unlock, re-run either `bin/deploy` or `bin/setup` with `FORCE_UNLOCK_ID` set like this:
+
+```
+FORCE_UNLOCK_ID="$LOCK_ID" ./bin/deploy
+```
+
+Alternatively, it can be done by manually calling terraform like this:
 
 ```
 terraform -chdir=checkout/cloud/aws/templates/aws_oidc force-unlock $LOCK_ID

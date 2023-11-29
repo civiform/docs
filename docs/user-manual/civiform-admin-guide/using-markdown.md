@@ -23,3 +23,10 @@ Urls used within text links must also include `http://` or `https://` to link ou
 Correct: `[This link will work!](https://www.example.com)`\
 Incorrect:  `[This link will not work](www.example.com)`
 
+### Email Addresses
+Email addresses (Eg. `test@example.com`) are automatically detected as links and formatted accordingly. Clicking on an email address will open the local email program (Eg. Outlook) and create a new email to that address.
+
+You can also use email addresses in text links by adding `mailto:` and the email address in the parentheses after the text. Example:\
+`[Send email](mailto:test@example.com)` 
+
+

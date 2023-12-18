@@ -42,7 +42,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
 
 ### On-call responsibilities
 
-1. [Generate a release](https://github.com/civiform/civiform/wiki/Releasing) on Wednesday by 12pm Pacific Time
+1. [Generate a release](https://github.com/civiform/civiform/wiki/Releasing) on Tuesday by 12pm Pacific Time
 2. Respond to downstream production incidents (daily)
    * Check GitHub [issue tracker](https://github.com/civiform/civiform/issues)
    * Check [civiform-technical@googlegroups.com](https://groups.google.com/g/civiform-technical)

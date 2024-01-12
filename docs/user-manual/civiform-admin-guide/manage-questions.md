@@ -33,6 +33,21 @@ Input: 123-45-6789 Example obfuscated output: d158596dd5a6cae6fcb282832885631553
 
 Input: 123-45-6780 Example obfuscated output: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
 
+### Universal questions
+
+Universal questions are questions that are intended to be used by all programs. When a question is marked as universal, it appears at the top in a separate section in the questions tab and the question bank. Any question may be set as a universal question.
+
+![](../../.gitbook/assets/universal-question.png)
+![](../../.gitbook/assets/universal-questions-tab.png)
+
+On the programs tab, each program notes how many of the universal questions are used in the program. 
+
+![](../../.gitbook/assets/universal-questions-program-list.png)
+
+If a CiviForm Admin attempts to publish a program that does not contain all universal questions, a warning will be shown, but the program may be published anyway.
+
+![](../../.gitbook/assets/universal-questions-warning.png)
+
 ### Edit a question
 
 You can edit both unpublished and published questions. To edit published questions, you need a new version. For more details on versioning, go to [Manage versions for programs & questions.](manage-versions-for-programs-and-questions.md)
@@ -80,5 +95,5 @@ You can customize your program to include multiple different question types. The
 | Radio Button | <p>Suitable for a short list (&#x3C;=7 items) of static items where the Applicant is required to select only one option. For example, simple yes/no questions or employment status.</p><p><strong>Tip</strong>: If you want Applicants to select multiple options in a question, use a Checkbox question instead.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Static Text  | <p>A free form field that includes the ability to fully format text using Markdown. See <a href="using-markdown.md">Using Markdown</a> for more information.|
 
-| Text         | A free form field that can store letters, numbers, characters, or symbols.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|Phone         | <p>It accepts two inputs from the user: the country, and the number. The number is a formatted input in the (xxx) xxx-xxxx format. Currently, it supports only US and Canadian numbers. The phone numbers are validated and stored as Strings. When the admin sees the entered number, they see it as +1 xxx-xxx-xxxx format.</p>
+| Text         | A free form field that can store letters, numbers, characters, or symbols.|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|Phone         | <p>It accepts two inputs from the user: the country, and the number. The number is a formatted input in the (xxx) xxx-xxxx format. Currently, it supports only US and Canadian numbers. The phone numbers are validated and stored as Strings. When the admin sees the entered number, they see it as +1 xxx-xxx-xxxx format.</p>|

@@ -35,10 +35,14 @@ Input: 123-45-6780 Example obfuscated output: 01ba4719c80b6fe911b091a7c05124b64e
 
 ### Universal questions
 
-Universal questions are questions that are intended to be used by all programs. When a question is marked as universal, it appears at the top in a separate section in the questions tab and the question bank. Any question may be set as a universal question.
+Universal questions are questions that are intended to be used by all programs. When a question is marked as universal, it appears at the top in a separate section in the questions tab and in the questions list sidebar when creating a program. Any question may be set as a universal question.
 
+When creating or editing a question, select the following toggle to make the question universal.
 ![](../../.gitbook/assets/universal-question.png)
+
+It then shows up in the questions tab, as well as the questions list sidebar.
 ![](../../.gitbook/assets/universal-questions-tab.png)
+![](../../.gitbook/assets/universal-questions-sidebar.png)
 
 On the programs tab, each program notes how many of the universal questions are used in the program. 
 

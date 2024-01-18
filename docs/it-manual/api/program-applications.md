@@ -109,7 +109,6 @@ Questions that are skipped are present but have null values for the skipped scal
 |Number       |number          |integer                                                          |
 |Single select|selection       |string, en-US localized string of the selected option            |
 |Text         |text            |string                                                           |
-|Updated at   |updated_at      |ISO 8601 date and time of when the scalar was updated            |
 |Phone Number |phone_number    |E.164 format                                                     |
 
 **Example export**
@@ -131,38 +130,32 @@ Questions that are skipped are present but have null values for the skipped scal
         "phone_number":"+14258103298"
       },
       "applicant_favorite_color": {
-        "text": "brown",
-        "updated_at": "2022-03-31T18:02:11.822075Z"
+        "text": "brown"
       },
       "applicant_monthly_income": {
-        "currency_dollars": 3000.00,
-        "updated_at": "2022-03-31T18:02:11.822075Z"
+        "currency_dollars": 3000.00
       },
       "applicant_household_members": [
         {
           "household_members_name": {
             "last_name": "Jameson",
             "middle_name": null,
-            "first_name": "James",
-            "updated_at": "2022-03-31T18:02:11.822075Z"
+            "first_name": "James"
           },
           "household_members_jobs": [
             {
               "household_members_days_worked": {
-                "number": 111,
-                "updated_at": "2022-03-31T18:02:11.822075Z"
+                "number": 111
               }
             },
             {
               "household_members_days_worked": {
-                "number": 222,
-                "updated_at": "2022-03-31T18:02:11.822075Z"
+                "number": 222
               }
             },
             {
               "household_members_days_worked": {
-                "number": 333,
-                "updated_at": "2022-03-31T18:02:11.822075Z"
+                "number": 333
               }
             }
           ]
@@ -171,8 +164,7 @@ Questions that are skipped are present but have null values for the skipped scal
       "applicant_name": {
         "last_name": "Doe",
         "middle_name": null,
-        "first_name": "John",
-        "updated_at": "2022-03-31T18:02:11.822075Z"
+        "first_name": "John"
       }
     }
   }]

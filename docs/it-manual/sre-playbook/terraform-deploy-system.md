@@ -11,6 +11,7 @@ You will need some values that are configured outside of CiviForm before you sta
 * (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](https://github.com/civiform/civiform/wiki/Authentication-Providers)
 * Domain name for your deployment. For example `civiform.mycity.gov`
 * (AWS) ARN of an SSL certificate for load balancer. See [requesting AWS certificate](#requesting-aws-certificate)
+* (AWS) Decision around where deployments will live. See [AWS deployment setup options](#aws-deployment-setup-options)
 
 ### Steps to run
 
@@ -66,6 +67,14 @@ Alternatively, it can be done by manually calling terraform like this:
 terraform -chdir=checkout/cloud/aws/templates/aws_oidc force-unlock $LOCK_ID
 ```
 
+#### (AWS) Notes on using CloudShell for deployment
+
+It is an option to use CloudShell for doing deployments, but you should be aware that installations aren't persisted (see (FAQs)[https://aws.amazon.com/cloudshell/faqs/]), so it may be easier to use the AWS CLI.
+
+If you do choose to use CloudShell, you likely will need to install Java and Terraform.
+
+Java can be installed with `sudo yum install java` and terraform can be installed by following the [installation commands](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli#install-terraform) under `Linux` / `Amazon Linux`.
+
 ## Helpful resources
 
 ### Requesting AWS certificate
@@ -76,6 +85,17 @@ ARN has format of arn:aws:acm:<region>:<user_id>:certificate/\<identifier>
   
 ![Screen Shot 2022-08-10 at 3 50 39 PM](https://user-images.githubusercontent.com/1741747/184037024-c7ed7537-cfc6-41e9-9b32-40f1b4d03341.png)
 
+### AWS deployment setup options
+
+Before going through the AWS deployment, it is helpful to understand how you plan to manage various deployments, if you plan to create multiple instances of CiviForm (i.e. staging, prod, etc.).
+
+By default, each deployment will have its own prefix, which allows you to distinguish the different ones from each other, but [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) is a way of keeping deployments more separate from each other.
+
+Some benefits of using AWS environments are:
+- There is more separation between environments, which makes it easier to remove resources without worrying about causing any issues to another deployment environment
+- It is easier to see cost breakdowns by deployment
+
+A drawback to be aware of is that you'll have to create profiles in the AWS CLI and switch between the different profiles when doing deployments or, if using CloudShell, you'll have to do this in separate CloudShell for each environment.
 
 ### Setting up Azure AD
 

@@ -101,6 +101,7 @@
       * [v1.46.0](it-manual/sre-playbook/server-environment-variables/v1.46.0.md)
       * [v1.47.0](it-manual/sre-playbook/server-environment-variables/v1.47.0.md)
       * [v1.48.0](it-manual/sre-playbook/server-environment-variables/v1.48.0.md)
+      * [v1.49.0](it-manual/sre-playbook/server-environment-variables/v1.49.0.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
   * [Database Disaster Recovery](it-manual/sre-playbook/database-disaster-recovery.md)

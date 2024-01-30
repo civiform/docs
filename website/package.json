@@ -16,7 +16,7 @@
     "@cagov/ds-site-header": "^2.0.0",
     "@cagov/ds-site-navigation": "^3.0.0",
     "@cagov/ds-step-list": "^3.0.0",
-    "esbuild": "^0.17.19",
+    "esbuild": "^0.20.0",
     "esbuild-sass-plugin": "^2.9.0",
     "prettier": "^2.8.8"
   }

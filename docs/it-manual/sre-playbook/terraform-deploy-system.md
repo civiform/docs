@@ -2,6 +2,8 @@
 
 Terraform is an infrastructure-as-code tool that allows you to define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. CiviForm provides Terraform configuration files that allow you to deploy CiviForm on AWS. Knowledge of Terraform is not required to run them, but reading the high-level [Terraform overview](https://www.terraform.io/intro) may be useful.
 
+More detailed information on our deploy system can be found in our [developer docs](https://github.com/civiform/civiform/wiki/Deploy-System).
+
 ## Setup
 
 ### Outside configuration

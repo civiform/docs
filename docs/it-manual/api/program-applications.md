@@ -130,7 +130,7 @@ _Note_: If a question is shared between programs, a question must be submitted _
 #### revision_state
 - **Property**: `revision_state`
 - **JSON Type**: `string`
-- **Value**: An enum currently consisting of  [`CURRENT`, `OBSOLETE`].\
+- **Value**: An enum currently consisting of one of [`CURRENT`, `OBSOLETE`].\
 _Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
 - **Description**: Describes the current state of this application. `CURRENT` indicates this is the most recent version of the application. `OBSOLETE` indicates this application has been superseded by a newer submission.
 
@@ -150,7 +150,7 @@ _Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/doc
 #### submitter_type
 - **Property**: `submitter_type`
 - **JSON Type**: `string`
-- **Value**: An enum consisting of [`APPLICANT`, `TRUSTED_INTERMEDIARY`]\
+- **Value**: An enum consisting of one of [`APPLICANT`, `TRUSTED_INTERMEDIARY`]\
 _Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
 - **Description**: The type of user submitting the applicant. `APPLICANT` indicates the applicant submitted the application themselves, and `TRUSTED_INTERMEDIARY` indicates the application was submitted by a TI on behalf of an applicant.
 
@@ -263,10 +263,105 @@ This is the path to the number of hours worked at the 2nd job of the 3rd househo
 See [Enumerator questions](#enumerator-questions) below for more about enumerator questions.
 
 ### Question objects
-todo
+Question objects contain the applicant's answers to a question, as well as some additional metadata. They all contain the same metadata property, and then additional properties that vary based on the question type.
+
+{% hint style="warning" %}
+**Warning** The order of properties within the a JSON object is not guaranteed.
+{% endhint %}
+
+#### Question metadata
+All question objects have a `question_type` field.
+
+- **Property**: `question_type`
+- **JSON Type**: `string`
+- **Format**: An enum currently consisting of one of [`ADDRESS`, `MULTI_SELECT`, `CURRENCY`, `DATE`, `SINGLE_SELECT`, `EMAIL`, `ENUMERATOR`, `FILE_UPLOAD`, `ID`, `NAME`, `NUMBER`, `TEXT`, `PHONE`].\
+_Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
+- **Description**: Specifies the type of question this object represents.
 
 #### Address questions
-todo
+`"question_type": "ADDRESS"`
+
+In addition to the metadata field, address questions have the following properties
+
+##### `street`
+- **Property**: `street`
+- **JSON Type**: `string` or `null`
+- **Format**: Any characters
+- **Description**: The "street" portion of the applicant's address. `null` if the question was skipped. If any of `street`, `line2`, `city`, `state`, or `zip` are provided, then only `line2` is optional.
+
+##### `line2`
+- **Property**: `line2`
+- **JSON Type**: `string`  or `null`
+- **Format**: Any characters
+- **Description**: The second line of the applicant's address (such as their apartment, suite number, etc). `null` if the question was skipped or the field was not filled. If any of `street`, `line2`, `city`, `state`, or `zip` are provided, then only `line2` is optional.
+
+##### `city`
+- **Property**: `city`
+- **JSON Type**: `string`  or `null`
+- **Format**: Any characters
+- **Description**: The "city" portion of the applicant's address. `null` if the question was skipped or the field was not filled. If any of `street`, `line2`, `city`, `state`, or `zip` are provided, then only `line2` is optional.
+
+##### `state`
+- **Property**: `state`
+- **JSON Type**: `string` or `null`
+- **Format**: A two letter state code, capitalized. (e.g. `NY`). Includes 50 states, DC, and 8 territories. See [USPS's Two–Letter State and Possession Abbreviations](https://pe.usps.com/text/pub28/28apb.htm) for the full list.
+- **Description**: The "state" portion of the applicant's address. `null` if the question was skipped. If any of `street`, `line2`, `city`, `state`, or `zip` are provided, then only `line2` is optional.
+
+##### `zip`
+- **Property**: `zip`
+- **JSON Type**: `string` or `null`
+- **Format**: A `string` consisting of 5 digits (`55555`), or 5 digits, a dash, a 4 digits (`55555-5555`)
+- **Description**: The "zip" portion of the applicant's address. `null` if the question was skipped. If any of `street`, `line2`, `city`, `state`, or `zip` are provided, then only `line2` is optional.
+
+##### `corrected`
+- **Property**: `corrected`
+- **JSON Type**: `string` or `null`
+- **Format**: An enum consisting of [`Corrected`, `Failed`, `AsEnteredByUser`] or `null`
+- **Description**: Indicates the result of correcting an address. `null` if the question was skipped or address correction is not enabled.
+
+##### `latitude`
+- **Property**: `latitude`
+- **JSON Type**: `number` or `null`
+- **Format**: A signed Java [`double`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+- **Description**: The latitude of the applicant's corrected address, as specified by the address correction server. `null` if the question was skipped, the address was not corrected, address correction failed, or the user kept the address as they entered it.
+
+##### `longitude`
+- **Property**: `longitude`
+- **JSON Type**: `number` or `null`
+- **Format**: A signed Java [`double`](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+- **Description**: The longitude of the applicant's corrected address, as specified by the address correction server. `null` if the question was skipped, the address was not corrected, address correction failed, or the user kept the address as they entered it.
+
+##### `well_known_id`
+- **Property**: `well_known_id`
+- **JSON Type**: `number` or `null`
+- **Format**: A Well Known ID for a [spacial reference system](https://developers.arcgis.com/documentation/spatial-references/#commonly-used-coordinate-reference-systems)
+- **Description**: The Well Known ID for the spacial reference system used by the `latitude` and `longitude` properties. `null` if the question was skipped, the address was not corrected, address correction failed, or the user kept the address as they entered it.
+
+##### `service_area`
+- **Property**: `service_area`
+- **JSON Type**:
+- **Format**:
+- **Description**:
+
+This looks like
+
+{% code %}
+```json
+"sample_address_question" : {
+  "question_type" : "ADDRESS",
+  "street" : "742 Evergreen Terrace",
+  "line2" : null,
+  "city" : "Springfield",
+  "state" : "OR",
+  "zip" : "97403",
+  "corrected" : null,
+  "latitude" : "44.0462",
+  "longitude" : "-123.0236",
+  "well_known_id" : "23214",
+  "service_area" : "springfield_county"
+},
+```
+{% endcode %}
 
 #### Checkbox questions
 Checkbox questions are a form of multi-select question. See [Multiselect questions](#multiselect-questions) below.

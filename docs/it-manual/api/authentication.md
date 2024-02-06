@@ -19,7 +19,7 @@ Basic Auth requires that the request contain a header field in the form of `Auth
 
 ## Additional security features
 
-Additionally, API keys have several security features beyond simply checking the ID and secret of the key. If any of the constraints specified by those features are not met, API requests will receive a 401 response code. For more information see [Api key security](/docs/user-manual/civiform-admin-guide/manage-api-keys.md#api-key-security). 
+Additionally, API keys have several security features beyond simply checking the ID and secret of the key. If any of the constraints specified by those features are not met, API requests will receive a 401 response code. For more information see [Api key security](/docs/user-manual/civiform-admin-guide/manage-api-keys.md#api-key-security).
 
 ## Obtaining API credentials
 
@@ -32,11 +32,9 @@ To test your API credentials, submit a `GET` request to `/api/v1/checkAuth` with
 With `curl`, that might look like this:
 
 {% code %}
-
 ```shell
 curl staging.myciviform.gov/api/v1/checkAuth -vH "Authorization: Basic <api_key>"
 ```
-
 {% endcode %}
 
 If you recieve a `200 OK` then your key is set up correctly to access CiviForm.

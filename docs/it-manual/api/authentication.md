@@ -31,7 +31,7 @@ To test your API credentials, submit a `GET` request to `/api/v1/checkAuth` with
 
 With `curl`, that might look like this:
 
-{% code title="checkauth"  %}
+{% code %}
 
 ```shell
 curl staging.myciviform.gov/api/v1/checkAuth -vH "Authorization: Basic <api_key>"

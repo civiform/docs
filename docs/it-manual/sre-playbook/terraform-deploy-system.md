@@ -28,6 +28,9 @@ You will need some values that are configured outside of CiviForm before you sta
     * Asks confirmation a few times before creating resources, listing everything that will be created. 
     * Safe to re-run the script if it fails. There is a known [issue](https://github.com/cn-terraform/terraform-aws-logs-s3-bucket/issues/6) where `bin/setup` fails on the first run.
     * The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our on-call engineer to resolve the issue. Our on-call engineer [responds to new issues in the CiviForm issue tracker](../../governance-and-management/project-management/on-call-guide#on-call-responsibilities).
+
+Note: If you are running `bin/doctor` or another command for a config file other than `civiform_config.sh`, you can specify that with the config flag (i.e. `bin/doctor --config=civiform_staging_config.sh`)
+
 ## Deploy
 
 1. Find the version that you want to deploy on [Github](https://github.com/civiform/civiform/releases).

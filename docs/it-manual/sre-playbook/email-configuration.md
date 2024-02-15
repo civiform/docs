@@ -1,15 +1,15 @@
 # Email configuration
 
 CiviForm uses email to send notifications to program administrators, applicants,
-and for a few other functionalities. Email addresses are provided in the
-deployment configuration file. Below is the list of different email addresses
-required by deployment and some recommendations on how to organize them.
+and for a few other functionalities. Email addresses are provided via the
+deployment configuration file or the Admin Settings Panel. Below is the list of 
+different email addresses that are required and some recommendations on how to organize them.
 
 ## Email addresses
 
 **Support email address**  Applicants see this email address in the footer of
-each page as a mailto link. Config variable is
-`CIVIC_ENTITY_SUPPORT_EMAIL_ADDRESS`.
+each page as a mailto link. This value should be set via the Admin Settings Panel
+`SUPPORT_EMAIL_ADDRESS`.
 
 **Sender email address**  This email address is used as a sender for all
 notifications sent by the CiviForm. For example, notifications sent on new

@@ -16,3 +16,5 @@ Variables can have four different modes which determine where they are set and d
 2. Admin readable variables should be set in your deployment config file. The values for these variables can be seen in the admin settings panel, but not changed there.
 3. Server setting variables should be set in your deployment config file and are not visible in the admin settings panel.
 4. Managed secret variables should be set in your cloud provider's secrets manager. These are not visible in the admin settings panel.
+
+A variable's mode is listed in between the variable name and its description in the generated documentation in this directory.

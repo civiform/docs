@@ -17,4 +17,4 @@ Variables can have four different modes which determine where they are set and d
 3. "Server setting" variables should be set in your deployment config file and are not visible in the admin settings panel.
 4. "Managed secret" variables should be set in your cloud provider's secrets manager. These are not visible in the admin settings panel.
 
-A variable's mode is listed in between the variable name and its description in the server environment documentation that is generated on each release and saved in this directory (for example [v1.51.0](https://docs.civiform.us/it-manual/sre-playbook/upgrading-to-a-new-release/server-environment-variables/v1.51.0)).
+A variable's mode is listed in between the variable name and its description in the server environment variable documentation that is generated on each release and saved in this directory (for example [v1.51.0](https://docs.civiform.us/it-manual/sre-playbook/upgrading-to-a-new-release/server-environment-variables/v1.51.0)).

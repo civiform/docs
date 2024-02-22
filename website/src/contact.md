@@ -4,7 +4,7 @@ title: CiviForm | Get started
 ---
 # Get started
 
-CiviForm is expanding to state and local governments across the country. If you are interested in launching CiviForm in your community with hands-on pro bono support from <a href="https://g.co/fellowship">Google.org</a> or the broader CiviForm Project team, **complete the form below** or send an email to [info@civiform.us](mailto:info@civiform.us?subject=I%20want%20to%20learn%20more%20about%20CiviForm). You can read more about the typical onboarding process below.
+CiviForm is expanding to state and local governments across the country. If you are interested in launching CiviForm in your community, **complete the form below** or send an email to [info@civiform.us](mailto:info@civiform.us?subject=I%20want%20to%20learn%20more%20about%20CiviForm). You can read more about the typical onboarding process below.
 
 <div class="cagov-with-sidebar cagov-with-sidebar-left cagov-featured-section cagov-block">
   <div>

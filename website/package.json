@@ -14,10 +14,10 @@
     "@cagov/ds-feature-card": "^2.0.0",
     "@cagov/ds-site-footer": "^2.0.0",
     "@cagov/ds-site-header": "^2.0.0",
-    "@cagov/ds-site-navigation": "^3.0.0",
+    "@cagov/ds-site-navigation": "^3.0.3",
     "@cagov/ds-step-list": "^3.0.0",
-    "esbuild": "^0.17.19",
-    "esbuild-sass-plugin": "^2.9.0",
-    "prettier": "^2.8.8"
+    "esbuild": "^0.20.1",
+    "esbuild-sass-plugin": "^3.0.0",
+    "prettier": "^3.2.5"
   }
 }

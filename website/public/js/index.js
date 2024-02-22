@@ -11,6 +11,7 @@
   }
   var CAGovSiteNavigation = class extends window.HTMLElement {
     connectedCallback() {
+      this.priorWidth = window.innerWidth;
       document.querySelector(".cagov-nav.open-menu").addEventListener("click", this.toggleMainMenu.bind(this));
       const mobileSearchBtn = document.querySelector(
         ".cagov-nav.mobile-search .search-btn"
@@ -46,6 +47,10 @@
         }
       }
       window.addEventListener("resize", () => {
+        if (this.priorWidth === window.innerWidth) {
+          return;
+        }
+        this.priorWidth = window.innerWidth;
         document.querySelector(".search-container--small").classList.add("hidden-search");
         if (mobileSearchBtn) {
           document.querySelector(".cagov-nav.mobile-search .search-btn").setAttribute("aria-expanded", "false");
@@ -142,7 +147,7 @@
         }
         const menuComponent = this;
         menu.addEventListener("click", function addingClickListener(event) {
-          if (event.target.nodeName !== "A") {
+          if (event.target.nodeName !== "A" && event.target.nodeName !== "FONT") {
             event.preventDefault();
           }
           const expandedEl = this.querySelector(".expanded-menu-section");

@@ -59,7 +59,7 @@
   * [Initial Deployment](it-manual/sre-playbook/initial-deployment.md)
     * [Terraform deploy system](it-manual/sre-playbook/terraform-deploy-system.md)
       * [AWS Terraform deployment](it-manual/sre-playbook/terraform-aws-deployment.md)
-     * [Authentication setup](it-manual/sre-playbook/authentication-providers.md)
+     * [Authentication setup](it-manual/authentication-providers.md)
      * [Email configuration](it-manual/sre-playbook/email-configuration.md)
      * [GIS Service configuration](it-manual/configure-gis-service.md)
   * [Upgrading to a New Release](it-manual/sre-playbook/upgrading-to-a-new-release.md)

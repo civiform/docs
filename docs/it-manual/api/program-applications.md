@@ -141,7 +141,7 @@ _Note_: If a question is shared between programs, a question must be submitted _
 #### `revision_state`
 - **Property**: `revision_state`
 - **JSON Type**: `string`
-- **Value**: An enum currently consisting of one of [`CURRENT`, `OBSOLETE`].\
+- **Value**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/RevisionState.java) currently consisting of one of [`CURRENT`, `OBSOLETE`].\
 _Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
 - **Description**: Describes the current state of this application. `CURRENT` indicates this is the most recent version of the application. `OBSOLETE` indicates this application has been superseded by a newer submission.
 
@@ -161,7 +161,7 @@ _Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/doc
 #### `submitter_type`
 - **Property**: `submitter_type`
 - **JSON Type**: `string`
-- **Value**: An enum consisting of one of [`APPLICANT`, `TRUSTED_INTERMEDIARY`]\
+- **Value**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/SubmitterType.java) consisting of one of [`APPLICANT`, `TRUSTED_INTERMEDIARY`]\
 _Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
 - **Description**: The type of user submitting the application. `APPLICANT` indicates the applicant submitted the application themselves, and `TRUSTED_INTERMEDIARY` indicates the application was submitted by a TI on behalf of an applicant.
 
@@ -287,7 +287,7 @@ All question objects have a `question_type` field.
 
 - **Property**: `question_type`
 - **JSON Type**: `string`
-- **Format**: An enum currently consisting of one of [`ADDRESS`, `MULTI_SELECT`, `CURRENCY`, `DATE`, `SINGLE_SELECT`, `EMAIL`, `ENUMERATOR`, `FILE_UPLOAD`, `ID`, `NAME`, `NUMBER`, `TEXT`, `PHONE`].\
+- **Format**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/QuestionTypeExternal.java) currently consisting of one of [`ADDRESS`, `MULTI_SELECT`, `CURRENCY`, `DATE`, `SINGLE_SELECT`, `EMAIL`, `ENUMERATOR`, `FILE_UPLOAD`, `ID`, `NAME`, `NUMBER`, `TEXT`, `PHONE`].\
 _Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
 - **Description**: Specifies the type of question this object represents.
 
@@ -329,7 +329,7 @@ In addition to the metadata field, address questions have the following properti
 #### `corrected`
 - **Property**: `corrected`
 - **JSON Type**: `string` or `null`
-- **Format**: An enum consisting of [`Corrected`, `Failed`, `AsEnteredByUser`] or `null` if the question was unanswered or address correction is not enabled.
+- **Format**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/services/geo/CorrectedAddressState.java) consisting of [`Corrected`, `Failed`, `AsEnteredByUser`] or `null` if the question was unanswered or address correction is not enabled.
 - **Description**: Indicates the result of correcting an address.
 
 #### `latitude`
@@ -548,7 +548,7 @@ In addition to the metadata field, multi-select questions have the following pro
 #### `selections`
 - **Property**: `selections`
 - **JSON Type**: `[string]`
-- **Format**: An array of Unicode `string`s, which are the admin IDs of the selected options. An empty array `[]` if no options were selected or the question was unanswered. With the exception of legacy questions, admin IDs can only contain lowercase letters, numbers, underscores, and dashes.\
+- **Format**: An array of Unicode `string`s, which are the admin IDs of the selected options. An empty array `[]` if no options were selected or the question was unanswered. With the exception of questions created before March 2024, admin IDs can only contain lowercase letters, numbers, underscores, and dashes.\
 _Note_: Any option admin ID that has ever been available for applicants to select may be returned. A list of all possible option admin IDs is available in the [program-specific API docs](#generated-program-specific-docs) in your CiviForm instance.
 - **Description**: A list of the question options selected by the applicant.
 
@@ -635,7 +635,7 @@ In addition to the metadata field, single-select questions have the following pr
 #### `selection`
 - **Property**: `selection`
 - **JSON Type**: `string` or `null`
-- **Format**: A Unicode `string` containing the admin ID of the selected option. `null` if unanswered. With the exception of legacy questions, admin IDs can only contain lowercase letters, numbers, underscores, and dashes.\
+- **Format**: A Unicode `string` containing the admin ID of the selected option. `null` if unanswered. With the exception of questions created before March 2024, admin IDs can only contain lowercase letters, numbers, underscores, and dashes.\
 _Note_: Any option admin ID that has ever been available for applicants to select may be returned. A list of all possible option admin IDs is available in the [program-specific API docs](#generated-program-specific-docs) in your CiviForm instance.
 - **Description**: A list of the question options selected by the applicant.
 

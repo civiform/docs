@@ -163,7 +163,7 @@ _Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/doc
 - **JSON Type**: `string`
 - **Value**: An enum consisting of one of [`APPLICANT`, `TRUSTED_INTERMEDIARY`]\
 _Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
-- **Description**: The type of user submitting the applicant. `APPLICANT` indicates the applicant submitted the application themselves, and `TRUSTED_INTERMEDIARY` indicates the application was submitted by a TI on behalf of an applicant.
+- **Description**: The type of user submitting the application. `APPLICANT` indicates the applicant submitted the application themselves, and `TRUSTED_INTERMEDIARY` indicates the application was submitted by a TI on behalf of an applicant.
 
 #### `ti_email`
 - **Property**: `ti_email`

@@ -116,7 +116,6 @@
 * [API Integration](it-manual/api/README.md)
   * [Authentication](it-manual/api/authentication.md)
   * [List applications](it-manual/api/program-applications.md)
-  * [API specification](it-manual/api/api-specification.md)
 * [Testing & QA](it-manual/testing-and-qa/README.md)
   * [Testing resources](it-manual/testing-and-qa/testing-resources.md)
   * [SQL queries to look for missing questions](it-manual/testing-and-qa/sql-queries-to-look-for-missing-questions.md)

@@ -36,7 +36,7 @@ All query parameters are optional, but case-sensitive.
 
 #### `nextPageToken`
 - **Parameter**: `nextPageToken`
-- **Format**: A opaque token, such as `eyJzZXJpYWxpemVkUGF5bG9hfQ==`
+- **Format**: An opaque token, such as `eyJzZXJpYWxpemVkUGF5bG9hfQ==`
 - **Description**: An opaque, alphanumeric identifier for a specific page of results. When included CiviForm will return a page of results corresponding to the token. See [Pagination](#pagination) for more.
 
 ## Responses

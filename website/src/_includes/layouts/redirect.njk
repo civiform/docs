@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ redirect.title }}</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url='{{ redirect.to }}'" />
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Redirecting to <a href="{{ redirect.to }}">{{ redirect.title }}</a></h1>
+  </body>
+</html>

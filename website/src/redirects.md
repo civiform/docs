@@ -19,6 +19,6 @@ redirects:
       "from": "slack",
       "to": "https://civiform.slack.com",
     }
-permalink: "{{ redirect.from }}"
+permalink: "{{ redirect.from }}/"
 layout: layouts/redirect.njk
 ---

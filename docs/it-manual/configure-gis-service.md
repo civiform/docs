@@ -1,51 +1,110 @@
-# How to Configure your GIS service for address correction and service area validation
+# How to configure your GIS service for address correction and service area validation
 
-There are several configuration values needed to enable address correction and service area validation. These features rely on an external Esri service and are not compatible with other geolocation services.
+You may have some programs that need to collect an applicant's address to offer services. Those programs may also want to
+verify that the address exists and matches a standard format, and may also want to verify that
+the address is in the area that's eligible for the program. For example, a program may only be for applicants living in a certain county.
+CiviForm uses the external Esri service for both these use cases. CiviForm is not currently compatible with other geolocation services.
 
-The address correction feature may be enabled on its own, but service area validation depends on address correction being enabled.
+## Address Correction
 
-## Configure Address Correction
+Programs may want to have an applicant's address corrected so that they can verify the address exists and have all addresses in a standard format. This needs to be configured both at the deployment level and at a question level.
 
-[ESRI_ADDRESS_CORRECTION_ENABLED](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L725) - Boolean
+If you want to see what results address correction might provide, you can experiment with ArcGIS's world endpoint. [Here's a sample query for 700 5th Ave, Seattle WA 98101](https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?Address=700+5th+Ave&City=Seattle&Region=WA&Postal=98101&f=pjson).
+For your official deployment, you could choose to [use this endpoint](https://www.postman.com/esridevs/workspace/arcgis-location-services/request/15786767-3c13e739-ad89-496d-9ddd-7746b2335dd0) instead of defining your own, but you would still need to purchase an Esri subscription and create an Esri API token.
 
-Enables the feature that allows address correction for address questions.
+### Deployment-level configuration
 
-[ESRI_FIND_ADDRESS_CANDIDATES_URL](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L726) - String
+Before any specific program can use address correction, it must be enabled for your deployment as a whole.
 
-The URL CiviForm will use to call Esri’s [findAddressCandidates service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm).
+1. Set [ESRI_ADDRESS_CORRECTION_ENABLED](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L725) to true.
 
-## Configure Service Area Validation
+2. Set [ESRI_FIND_ADDRESS_CANDIDATES_URL](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L726) to a URL that CiviForm will use to call Esri’s [findAddressCandidates service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm).
+The service should have a `GeocodeServer` type. Example URL value: "https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates"
 
-[ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ENABLED](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L729) - Boolean
+### Applying to questions
 
-Enables the feature that allows for service area validation of a corrected address. ESRI_ADDRESS_CORRECTION_ENABLED needs to be enabled.
+Once those configuration variables are set up, address correction can be enabled or disabled on any address question using a toggle:
 
-[ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L730) - String[]
+![Image of address correction toggle enabled](assets/address-question-correction-toggle.png)
 
-Human readable labels used to present the service area validation options in CiviForm’s admin UI.
+When a user fills out an address question with address correction, CiviForm will use the Esri endpoint to fetch address suggestions. If a suggestion perfectly matches what the user inputted, 
+the suggestion will automatically be used and the user will proceed with the application. Otherwise, the user will be presented with a screen asking them to choose the correct suggested address:
 
-Example value: ["Seattle"]
+![Image of address correction page applicants will see](assets/address-correction-page.png)
 
-[ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L731) - String[]
+Note that for each block in an application, there can only be one address question with address correction enabled. This is because it's complicated to chain multiple address correction pages together (both from a technical standpoint and from the perspective of an applicant). If multiple address questions need address correction, they can be on different blocks.
 
-The value CiviForm uses to validate if an address is in a service area.
+## Service Area Validation
 
-Example value: ["Seattle"]
+Service area validation checks whether an address is within a specific area. This can be used for visibility or eligibility conditions. For example, a user may only be eligible for a program if they live in a specific neighborhood.
 
-[ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L732) - String[]
+Service area validation requires that address correction must also be enabled for the question. CiviForm needs the address's latitude and longitude values from Esri to determine if the address is within a certain area, and we only get the latitude and longitude values from Esri's address correction information.
 
-The URL CiviForm will use to call Esri’s [map query service](https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-layer-.htm) for service area validation.
+### Deployment-level configuration
 
-Example value: ["https://gisdata.your city.gov/server/rest/services/City_Limits/MapServer/1/query"]
+#### Step 1: Enable feature flag
+1. Set [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ENABLED](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L729) to true. Note that `ESRI_ADDRESS_CORRECTION_ENABLED` must also be set to true.
 
-[ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L733) - String[]
+#### Step 2: Configure service area map values
 
-The attribute CiviForm checks from the service area validation response to get the service area validation ID.
+Set the four `ESRI_ADDRESS_SERVICE_AREA_VALIDATION_*` configuration variables to contain the necessary information:
 
-Example value: ["CITYNAME"]
+- [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L732) is the list of URL(s) that CiviForm will use to call Esri’s [map query service](https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-layer-.htm) to determine if the address is within the area specified by the map query service. The map should be a `MapService` type.
+  
+  Type:  String[]
+
+  Example value: ["https://gisdata.your city.gov/server/rest/services/City_Limits/MapServer/1/query"]
+
+
+ - [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L730) is the list of labels that CiviForm admins will see when setting up eligibility or visibility conditions.
+ 
+   Type:  String[]
+   
+   Example values: ["Seattle"], ["Abc Neighborhood"], ["Abc County", "Def County"]
+
+
+
+- [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L733) is the list of attributes that should be checked in the response returned from the Esri service URL.
+
+  Note that these attributes are custom for each Esri URL and you'll need to look at what fields are provided for your specific map to know what attribute to use. For example, [Seattle's service area validation service](https://gisdata.seattle.gov/server/rest/services/COS/Seattle_City_Limits/MapServer/1) specifies "CITYNAME" as an attribute.
+  
+  Type:  String[]
+
+   Example values: ["CITYNAME"], ["ZIPCODE"]
+
+
+- [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L731) is the list of values that the attribute should be equal to.
+  
+  Type:  String[]
+  
+  Example values:
+       
+    - If `_ATTRIBUTES` is set to ["CITYNAME"], then `_IDS` could be set to ["Seattle"] in order to require addresses be in the city of Seattle.
+    - If `_ATTRIBUTES` is set to ["ZIPCODE"], then `_IDS` could be set to ["28202"] in order to require addresses be in the 28202 zip code.
+
+The configuration allows you to set up multiple service areas so that different questions can have different eligibility requirements. For example, maybe one program allows anyone in the county to apply while a different program only allows people in a certain zip code to apply. You can set up two service areas:
+
+```
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS = ["example-county-url", "neighborhood-url"]
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS = ["Example County", "Example Neighborhood"]
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES = ["COUNTY", "ZIPCODE"]
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS = ["Example County", "01234"]
+```
+
+One program can set their eligibility condition to use "Example County" and the other program can set their eligibility condition to use "Example Neighborhood".
+
+The arrays in each of these four variables should all be the same length. The values at index `i` should all correlate with each other. In the example above, all values at index `0` are for checking the county service area, and all values at index `1` are for checking the neighborhood service area.
+
+### Applying to questions
+
+Once those configuration variables are set up, service area validation can be enabled or disabled on any address question using eligibility or visibility conditions:
+
+![Image of validating that an address is in the Seattle service area as an eligibility condition](assets/service-area-eligibility-condition.png)
+
+Address correction must be enabled on the question before the eligibility or visibility conditions based on the service area can be set up.
+
+## Other configuration
 
 [ESRI_EXTERNAL_CALL_TRIES](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L735) - Integer
 
 The number of tries CiviForm will attempt requests to external Esri services.
-
-

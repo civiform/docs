@@ -6,7 +6,8 @@ matches a standard format, and may also want to verify that the address is in
 the area that's eligible for the program. For example, a program may only be for 
 applicants living in a certain county. CiviForm uses the external Esri service
 for both these use cases. CiviForm is not currently compatible with other
-geolocation services.
+geolocation services. If you'd like to use another geolocation service, please
+reach out to the engineering team.
 
 ## Address Correction
 
@@ -105,7 +106,8 @@ the Esri service URL.
 
 
 - [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L731)
-is the list of values that the attribute should be equal to.
+is the list of values that the attribute should be equal to in order for the
+address to be considered within the service area.
   
   - Type:  String[]
   
@@ -117,10 +119,10 @@ is the list of values that the attribute should be equal to.
 The configuration allows you to set up multiple service areas so that different questions can have different eligibility requirements. For example, maybe one program allows anyone in the county to apply while a different program only allows people in a certain zip code to apply. You can set up two service areas:
 
 ```
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS = ["example-county-url", "neighborhood-url"]
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS = ["Example County", "Example Neighborhood"]
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES = ["COUNTY", "ZIPCODE"]
-export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS = ["Example County", "01234"]
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS = ["arkansas-url", "neighborhood-url"]
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS = ["Arkansas", "Example Neighborhood"]
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES = ["STATE", "ZIPCODE"]
+export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS = ["AR", "01234"]
 ```
 
 One program can set their eligibility condition to use "Example County" and the
@@ -130,6 +132,15 @@ The arrays in each of these four variables should all be the same length. The
 values at index `i` should all correlate with each other. In the example above,
 all values at index `0` are for checking the county service area, and all values
 at index `1` are for checking the neighborhood service area.
+
+Put another way:
+
+- When checking that an address is in the service area labeled "Arkansas"
+in the admin UI, CiviForm will query `arkansas-url` and check the response
+for a field called `STATE` with a value of "AR".
+- When checking that an address is in the service area labeled "Example
+Neighborhood" in the admin UI, CiviForm will query `neighborhood-url` and check
+the response for a field called `ZIPCODE` with a value of "01234".
 
 ### Applying to questions
 

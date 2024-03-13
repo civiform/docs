@@ -83,13 +83,13 @@ For example, one of these objects might look like this:
 {
   "applicant_id": 1,
   "application_id": 2,
-  "create_time": "2023/05/25 1:46:15 PM PDT",
+  "create_time": "2023-05-25T13:46:15-07:00",
   "language": "en-US",
   "program_name": "sample-application",
   "program_version_id": 3,
   "revision_state": "CURRENT",
   "status": "custom status",
-  "submit_time": "2023/05/26 1:46:15 PM PDT",
+  "submit_time": "2023-05-26T13:46:15-07:00",
   "submitter_type": "TRUSTED_INTERMEDIARY",
   "ti_email": "alice@trustedintermediary.org",
   "ti_organization": "TIs Inc.",
@@ -115,8 +115,8 @@ For example, one of these objects might look like this:
 #### `create_time`
 - **Property**: `create_time`
 - **JSON Type**: `string`
-- **Format**: A datetime formatted as `yyyy/MM/dd h:mm:ss a z`. For example, `2023/10/26 3:01:56 PM PDT`.\
-_Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) for format pattern specifics. This is _not_ ISO 8601 formatted.
+- **Format**: A datetime formatted in the ISO 8601 extended offset format. For example, `2023-10-26T15:01:56-07:00`.\
+_Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) for format pattern specifics. This is the ISO_OFFSET_DATE_TIME format.
 - **Description**: The time the first question in a program was submitted, in the timezone of the CiviForm instance.\
 _Note_: If a question is shared between programs, a question must be submitted _as part of this program_ to set `create_time`. Questions submitted as part of another program do not start the clock.
 
@@ -154,8 +154,8 @@ _Note_: More values may be added to this enum in the future. Ensure client code 
 #### `submit_time`
 - **Property**: `submit_time`
 - **JSON Type**: `string`
-- **Value**: A datetime formatted as `yyyy/MM/dd h:mm:ss a z`. For example, `2023/10/26 3:01:56 PM PDT`.\
-_Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) for format pattern specifics. This is _not_ ISO 8601 formatted.
+- **Value**: A datetime formatted in the ISO 8601 extended offset format. For example, `2023-10-26T15:01:56-07:00`.\
+_Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) for format pattern specifics. This is the ISO_OFFSET_DATE_TIME format.
 - **Description**: The time the application was submitted, in the timezone of the CiviForm instance.
 
 #### `submitter_type`
@@ -718,13 +718,13 @@ Below is an example endpoint response for a generic program.
   "payload": [{
     "applicant_id": 1,
     "application_id": 2,
-    "create_time": "2023/05/25 1:46:15 PM PDT",
+    "create_time": "2023-05-25T13:46:15-07:00",
     "language": "en-US",
     "program_name": "sample-application",
     "program_version_id": 3,
     "revision_state": "CURRENT",
     "status": "custom status",
-    "submit_time": "2023/05/26 1:46:15 PM PDT",
+    "submit_time": "2023-05-26T13:46:15-07:00",
     "submitter_type": "TRUSTED_INTERMEDIARY",
     "ti_email": "alice@trustedintermediary.org",
     "ti_organization": "TIs Inc.",
@@ -741,13 +741,13 @@ Below is an example endpoint response for a generic program.
   }, {
     "applicant_id": 3,
     "application_id": 4,
-    "create_time": "2023/05/27 2:21:14 AM PDT",
+    "create_time": "2023-05-27T02:21:14-07:00",
     "language": "en-US",
     "program_name": "sample-application",
     "program_version_id": 5,
     "revision_state": "CURRENT",
     "status": "custom status",
-    "submit_time": "2023/05/27 2:26:45 AM PDT",
+    "submit_time": "2023-05-27T02:26:45-07:00",
     "submitter_type": "APPLICANT",
     "ti_email": null,
     "ti_organization": null,

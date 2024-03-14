@@ -41,7 +41,9 @@ Note: If you are running `bin/doctor` or another command for a config file other
 
 The Play Framework used by CiviForm utilizes an [application secret key](https://www.playframework.com/documentation/2.9.x/ApplicationSecret). This key is used for signing session cookies and CSRF tokens, among other things. While this secret is secured storely by the deployment system, it's a good idea to rotate it periodically in order to mitigate the risk of a leaked secret.
 
-To do this, run `bin/run`, and enter the `rotate_app_secret` command. This will redeploy CiviForm, changing the secret key to a new, random value.
+IMPORTANT: When the secret is rotated, all user sessions will be invalidated. This means that any guest users in the middle of an application that have not submitted it yet will lose that application, and any logged in users or admins will get logged out. It is recommended that this rotation happen at a low traffic time of day. You may also want to give users a warning before it happens.
+
+To rotate the secret, run `bin/run`, and enter the `rotate_app_secret` command. This will redeploy CiviForm, changing the secret key to a new, random value.
 
 Additionally, you should add `export RANDOM_PASSWORD_LENGTH=64` to your `civiform_config.sh` file. The secret length was originally only 16 characters, and when CiviForm moves to using version 2.9 or later of the Play Framework, 32 will be the minimum.
 

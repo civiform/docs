@@ -37,6 +37,14 @@ Note: If you are running `bin/doctor` or another command for a config file other
 1. Update the `CIVIFORM_VERSION` value in `civiform_config.sh`.
 1. Run `bin/deploy`.
 
+## Rotating the application secret
+
+The Play Framework used by CiviForm utilizes an [application secret key](https://www.playframework.com/documentation/2.9.x/ApplicationSecret). This key is used for signing session cookies and CSRF tokens, among other things. While this secret is secured storely by the deployment system, it's a good idea to rotate it periodically in order to mitigate the risk of a leaked secret.
+
+To do this, run `bin/run`, and enter the `rotate_app_secret` command. This will redeploy CiviForm, changing the secret key to a new, random value.
+
+Additionally, you should add `export RANDOM_PASSWORD_LENGTH=64` to your `civiform_config.sh` file. The secret length was originally only 16 characters, and when CiviForm moves to using version 2.9 or later of the Play Framework, 32 will be the minimum.
+
 ## Troubleshooting
 
 #### Terraform fails with error "Provider produced inconsistent final plan"

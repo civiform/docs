@@ -125,7 +125,7 @@ export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_ATTRIBUTES = ["STATE", "ZIPCODE"]
 export ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS = ["AR", "01234"]
 ```
 
-One program can set their eligibility condition to use "Example County" and the
+One program can set their eligibility condition to use "Arkansas" and the
 other program can set their eligibility condition to use "Example Neighborhood".
 
 The arrays in each of these four variables should all be the same length. The

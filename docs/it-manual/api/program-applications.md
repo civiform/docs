@@ -188,10 +188,12 @@ The `application` object contains the applicant's answers to the questions in th
 
 If they update their answers to _this_ program and click submit again, a new application entry is created. See the [`revision_state`](#revision_state) metadata field for more.
 
-The `application` object includes all questions that are in a program, even if the applicant did not answer them or they were skipped due to a visibility condition.
+The `application` object includes all questions that have ever been in a program, even if the applicant did not answer them or they were skipped due to a visibility condition.
 
-{% hint style="warning" %}
-**Warning** Currently only the questions that are in the most recent version of the program are included in the `application` object. Follow [Github Issue #5018](https://github.com/civiform/civiform/issues/5018) for the work to include all questions that have ever been part of a program in the `application` object.
+{% hint style="info" %}
+**Note** The `application` object includes all questions that have ever been in a program, even if they're not in the most recent version of a program. This is for two reasons:
+1. If a question is removed from the API response, code that consumes the response may still expect the question to be present and break when it's not. Keeping questions in the response, even after they're removed from the program, prevents this failure scenario.
+1. If an applicant submits an application and then a question is removed from the program, the API should still return all the applicant's answers. If the `application` object only included questions from the most recent version of the program, some of the applicant's answers would be missing.
 {% endhint %}
 
 The `application` object is organized as a set of `key`-`object` pairs that represent each question in the program. The `key` is generated from the admin name of the question, and the `object`contains the applicant's answer. For example, this is the `application` object for a program with two questions:

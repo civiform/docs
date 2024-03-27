@@ -55,7 +55,7 @@ This error can happen when running `bin/setup` for the first time. If you see it
 
 #### Terraform fails with other errors
 
-The deploy command is idempotent, so if it fails, try running it again. The setup command can also be re-run, but it may have partially created resources in AWS that you will need to delete before re-running.
+The deploy command is idempotent, so if it fails, try running it again. The setup command can also be re-run, but it may fail to destroy resources if the resources Terraform uses to track created resources are corrupted. If the script is failing to destroy resources, try running `bin/run destroy` on its own. If this fails, you may need to manually delete resources in your cloud provider's console. Once all resources are cleaned up, run `bin/run destroy_backend_state_resources` to cleanup up the corrupted backend state resources and then try running `bin/setup` again.
 
 If changes were made upstream, you can change the code in the checkout env, but will need to commit PRs to fix in the main repo.
 

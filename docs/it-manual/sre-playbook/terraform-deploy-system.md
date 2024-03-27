@@ -23,10 +23,10 @@ You will need some values that are configured outside of CiviForm before you sta
 1. Copy the [`civiform_config.example.sh`](https://github.com/civiform/civiform-deploy/blob/main/civiform_config.example.sh) into `civiform_config.sh` and fill out the missing values. You can get a sense of required values depending on your cloud provider by looking at [staging-aws](https://github.com/civiform/civiform-staging-deploy/blob/main/aws_staging_civiform_config.sh) configs.
 1. Run `bin/doctor` and install the dependencies.
 1. Run `bin/setup`. What to expect:
-    * Takes 5-10 minutes to run.
+    * Takes up to 20 minutes to run. Make sure you have time to allow the script to run to completion to avoid errors.
     * Terraform brings up resources in the cloud (database, network, server, etc).
     * Asks confirmation a few times before creating resources, listing everything that will be created. 
-    * Safe to re-run the script if it fails. There is a known [issue](https://github.com/cn-terraform/terraform-aws-logs-s3-bucket/issues/6) where `bin/setup` fails on the first run.
+    * Safe to re-run the script if it fails (re-runs will take longer because resources must be destroyed before being re-created).
     * The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our on-call engineer to resolve the issue. Our on-call engineer [responds to new issues in the CiviForm issue tracker](../../governance-and-management/project-management/on-call-guide#on-call-responsibilities).
 
 Note: If you are running `bin/doctor` or another command for a config file other than `civiform_config.sh`, you can specify that with the config flag (i.e. `bin/doctor --config=civiform_staging_config.sh`)
@@ -55,7 +55,7 @@ This error can happen when running `bin/setup` for the first time. If you see it
 
 #### Terraform fails with other errors
 
-The deploy command is idempotent, so if it fails, try running it again. The setup command can also be re-run, but it may have partially created resources in AWS that you will need to delete before re-running.
+The deploy command is idempotent, so if it fails, try running it again. The setup command can also be re-run, but it may fail to destroy resources if the resources Terraform uses to track created resources are corrupted. If the script is failing to destroy resources, try running `bin/run destroy` on its own. If this fails, you may need to manually delete resources in your cloud provider's console. Once all resources are cleaned up, run `bin/run destroy_backend_state_resources` to cleanup up the corrupted backend state resources and then try running `bin/setup` again.
 
 If changes were made upstream, you can change the code in the checkout env, but will need to commit PRs to fix in the main repo.
 

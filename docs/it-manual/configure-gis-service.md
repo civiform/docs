@@ -32,6 +32,37 @@ your deployment as a whole.
 2. Set [ESRI_FIND_ADDRESS_CANDIDATES_URL](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L726) to a URL that CiviForm will use to call Esri’s [findAddressCandidates service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm).
 The service should have a `GeocodeServer` type. Example URL value: "https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates"
 
+3. Optional, but recommended. Set [ESRI_WELLKNOWN_ID_OVERRIDE](url) which forces the service calls to return spatial references using the specified wellknown id value for their coordinate system.
+
+### Overriding the default wellKnownId
+
+The Esri API has the ability to return spatial reference data using different coordinate systems via a wellKnownId (a.k.a wkid). Details of that along with links to the long list of possible coordinate systems can be found on the [arcgis developer site](https://developers.arcgis.com/rest/services-reference/enterprise/using-spatial-references.htm).
+
+The default wellKnownId is `4326 - GPS` which are traditional latitude and longitude value most often thought around of around coordinate systems. Custom hosted installations may set a different value as their default. For example, Seattle defaults to using wellKnownId `2926 - NAD_1983_HARN_StatePlane_Washington_North_FIPS_4601_Feet` [link](https://developers.arcgis.com/rest/services-reference/enterprise/pdf/pcs_PDF_11.2.pdf).
+
+This works fine as long as calls to correct an address and calls to mapping layers for service area validation are all defaulting to the same wellKnownId. Such as calling both endpoints on the same hosted instance.
+
+Where it becomes a problem is if you want to start mixing calls to different installations.
+
+#### Example
+
+> 1. Call arcgis.com to correct address, returns coordinates using wellKnownId 4326
+> 1. Call Seattle's hosted instance for map query endpoints for service area validation using values from arcgis.com would result in not being eligible because the coordinates systems don't match
+
+By setting the ESRI_WELLKNOWN_ID_OVERRIDE we force both systems to use the same coordinate system.
+
+#### Existing data
+
+After we get the corrected address we save the x, y, and wkid as part of the address. Calls to map query endpoints already use the stored wkid to specify what the input spatial reference should be. Existing records will still work as is. 
+
+{% hint style="warning" %}
+If this override is added after CiviForm users have been using address correction and is different from the previously used default you will end up having new records stored in different format. If that is a concern the solution is to make sure the override value is the same as used before.
+
+This is only an issue if you change the find address endpoint at a later point in time to one with a different default. Such as using Seattle's version to using arcgis.com.
+
+If there is only a single host this will never be a problem since they'll both have the same defaults.
+{% endhint %}
+
 ### Applying to questions
 
 Once those configuration variables are set up, address correction can be enabled

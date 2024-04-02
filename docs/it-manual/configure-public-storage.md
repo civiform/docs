@@ -1,4 +1,4 @@
-# Configure public storage
+# Configure public cloud storage for program images
 
 The program cards that we show on the CiviForm homepage can show an image to
 help users more quickly scan all the available programs and see which programs
@@ -53,7 +53,7 @@ account" in the left menu, and set it to "Off":
   
    ![Bucket "Permissions" tab](assets/bucket-permissions-tab.png)
 
-   - Manually edit the permissions to be the following
+   - Manually edit the permissions to be the following:
    
     ```json
    {

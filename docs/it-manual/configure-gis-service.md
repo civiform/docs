@@ -32,7 +32,7 @@ your deployment as a whole.
 2. Set [ESRI_FIND_ADDRESS_CANDIDATES_URL](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L726) to a URL that CiviForm will use to call Esri’s [findAddressCandidates service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm).
 The service should have a `GeocodeServer` type. Example URL value: "https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates"
 
-3. Optional, but recommended. Set [ESRI_WELLKNOWN_ID_OVERRIDE](url) which forces the service calls to return spatial references using the specified wellknown id value for their coordinate system.
+3. Optional, but recommended. Set [ESRI_WELLKNOWN_ID_OVERRIDE](https://github.com/civiform/civiform/blob/478246036fb280e5d9032c64f1dc4eedf1b088f6/server/conf/helper/esri.conf#L20) which forces the service calls to return spatial references using the specified wellknown id value for their coordinate system.
 
 ### Overriding the default wellKnownId
 

@@ -78,6 +78,25 @@ When you restore an archived question, you can use it in your programs. You can 
 2. Click **Questions** on the navigation bar and select an archived question.
 3. Click **Restore archived**.
 
+### Add a question to a screen
+
+1. Sign in to CiviForm as a CiviForm Admin.
+2. Click **Programs** on the navigation bar and select a program.
+3. Click **Edit** > **Manage questions**.
+4. Add a question to a screen by selecting it from the question bank.\
+   The question appears within the screen.
+
+**Note**: Enumerator or file upload questions must be the only questions on a screen. These question types cannot coexist with others. For example, if you add one of these questions to an empty screen, you can't add any other question types. If you have a screen that already has a question, you can't add an enumerator or file upload question to the screen.
+
+### Remove a question from a screen
+
+1. Sign in to CiviForm as a CiviForm Admin.
+2. Click **Programs** on the navigation bar and select a program.
+3. Click **Edit** > **Manage questions**.
+4. Find the question within a screen you want to remove and click **Delete**.\
+   The question is removed from the screen and it returns to the question bank.
+
+
 ### Question types
 
 You can customize your program to include multiple different question types. The table below shows the supported question types, along with the expected data input.

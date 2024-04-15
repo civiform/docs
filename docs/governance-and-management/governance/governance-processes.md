@@ -60,7 +60,7 @@ Types of technical design decisions that require approval:
 * How new infrastructure will connect with existing infrastructure (e.g. API design)
 
     ### RACI for Technical Design Decisions
-    |Committee|Author PRDs|Review|Finalize|Approve|
+    |Committee|Author TDDs|Review|Finalize|Approve|
     |------------|-------|-----------|-----------|------|
     |**Governance**|Informed|Consulted|Consulted|Informed|
     |**Product Design**|Consulted|Consulted|Consulted|Consulted|

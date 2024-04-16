@@ -47,7 +47,6 @@ we should reassess this approach.
 | **\#offtopic**                      | For off topic fun                                            | Anyone                                                                     |
 | **\#prox-management**               | For PM and UX discussions                                    | PMs, UX                                                                    |
 | **\#civic-entity (e.g. \#seattle)** | For topic-specific discussions with a given civic entity.    | Anyone from the specified civic entity and their designated collaborators. |
-| **\#story-acceptance**              | *This channel is currently live but is not used.*            |                                                                            |
 
 Slack Norms:
 

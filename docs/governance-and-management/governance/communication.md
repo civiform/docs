@@ -46,7 +46,6 @@ we should reassess this approach.
 | **\#civiform-gh**                   | For bot updates from github (e.g. new issue created, new PR) | Software Engineers, PMs                                                    |
 | **\#offtopic**                      | For off topic fun                                            | Anyone                                                                     |
 | **\#prox-management**               | For PM and UX discussions                                    | PMs, UX                                                                    |
-| **\#new-contributors**              | For questions by new contributors to the codebase.           | Software Engineers                                                         |
 | **\#civic-entity (e.g. \#seattle)** | For topic-specific discussions with a given civic entity.    | Anyone from the specified civic entity and their designated collaborators. |
 | **\#story-acceptance**              | *This channel is currently live but is not used.*            |                                                                            |
 

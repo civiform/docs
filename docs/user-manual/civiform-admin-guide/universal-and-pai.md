@@ -21,17 +21,16 @@ If a CiviForm Admin attempts to publish a program that does not contain all univ
 
 ### Primary Applicant Information questions
 
-Primary Applicant Information (PAI) questions are a subset of Universal questions that allow the system to take actions based on the answers an applicant gives to those questions, whether or not the user is logged in. There are currently four types of questions that may be marked as PAI questions and have specific actions associated with them:
+Primary Applicant Information (PAI) questions are a subset of Universal questions that allow the system to take actions based on answers to those questions given by a logged in or guest user. There are currently four types of questions that may be marked as PAI questions:
 - Name questions
 - Email questions
 - Phone number questions
 - Date questions (should only be used for date of birth questions)
 
-{% hint style="info" %}
-**Note** A question MUST be marked as a Universal question before it can be marked as a PAI question. Only one instance of a question type may be marked as the PAI question for that question type at a time.
-{% endhint %}
+> [!NOTE]
+> A question MUST be marked as a Universal question before it can be marked as a PAI question. Only one instance of a question type may be marked as the PAI question for that question type at a time.
 
-When an applicant answers a question marked as a PAI question, specific actions may taken using their answer. The current system actions that are available are:
+When an applicant answers a question marked as a PAI question, specific actions may be taken using their answer. The current available system actions are:
 - Searching applications by name, email, and phone number
 - Emailing guest users status updates about their applications
 - Pre-populating applications with information entered when a Trusted Intermediary (TI) creates a client

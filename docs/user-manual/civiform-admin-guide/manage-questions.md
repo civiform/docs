@@ -17,40 +17,6 @@ Watch the video or follow the step-by-step guide below.
 
 **Tip**: You might want to develop a naming convention for your questions. For example, address-residence, address-work, etc.
 
-### Question Export Settings
-
-When a CiviForm Admin creates a question, they must choose an export setting. The export setting controls whether data will be exported in the demography CSV, which is the CiviForm Admin's exported data. The export setting does not affect the Program Admin's exported data. The CiviForm Admin selects one of the following data export options:
-
-**Don't include in demographic export** - the answer won't appear in any way in the exported data.
-
-**Include in demographic export** - the raw answer as provided by the applicant will appear in the exported data.
-
-**Obfuscate and include in demographic export** - the raw answer as provided by the applicant will not appear in the exported data, and instead, an "obfuscated" answer will appear. Obfuscated means that the applicant's answer to the question is cryptographically obscured, exporting text that is unique to the applicant's answer but does not reveal what the original text was. It is impossible to derive the applicant's original input from the resulting exported value. Only other questions with the exact same answer will have the same exported value. 
-
-For example, in a social security number question, the following inputs would result in the corresponding outputs: 
-
-Input: 123-45-6789 Example obfuscated output: d158596dd5a6cae6fcb282832885631553ecc8c8b0bf07f84c4aa691953cd0da 
-
-Input: 123-45-6780 Example obfuscated output: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-
-### Universal questions
-
-Universal questions are questions that are intended to be used by all programs. When a question is marked as universal, it appears at the top in a separate section in the questions tab and in the questions list sidebar when creating a program. Any question may be set as a universal question.
-
-When creating or editing a question, select the following toggle to make the question universal.
-![](../../.gitbook/assets/universal-question.png)
-
-It then shows up in the questions tab, as well as the questions list sidebar.
-![](../../.gitbook/assets/universal-questions-tab.png)
-![](../../.gitbook/assets/universal-questions-sidebar.png)
-
-On the programs tab, each program notes how many of the universal questions are used in the program. 
-
-![](../../.gitbook/assets/universal-questions-program-list.png)
-
-If a CiviForm Admin attempts to publish a program that does not contain all universal questions, a warning will be shown, but the program may be published anyway.
-
-![](../../.gitbook/assets/universal-questions-warning.png)
 
 ### Edit a question
 
@@ -77,6 +43,23 @@ When you restore an archived question, you can use it in your programs. You can 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click **Questions** on the navigation bar and select an archived question.
 3. Click **Restore archived**.
+
+
+### Question type requirements
+
+All question types have the following configuration options:
+
+* Title (text shown to the user)
+* Description or help text (this is raw text, but if we detect a URL, we can format it as a hyperlink.)
+* Required or optional
+
+Each question may have zero, one, or more validation criteria.
+
+* For simplicity, if there are two or more criteria, it's assumed that they're joined with "AND" (all criteria must be met for the answer to be accepted)
+* The list of supported validation criteria are given under each question type's heading.
+
+Each validation criterion may be paired with an error message in case that criterion isn't met.
+
 
 ### Question types
 

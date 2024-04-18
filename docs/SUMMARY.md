@@ -23,7 +23,8 @@
     * [Set a pre-screener](user-manual/civiform-admin-guide/set-pre-screener.md)
   * Working with questions
     * [Manage questions](user-manual/civiform-admin-guide/manage-questions.md)
-    * [Question type requirements notes](user-manual/civiform-admin-guide/question-type-requirements-notes.md)
+    * [Question export settings](user-manual/civiform-admin-guide/question-export-settings.md)
+    * [Universal and Primary Applicant Information questions](user-manual/civiform-admin-guide/universal-and-pai.md)
     * [Using enumerator questions & screens in a program](user-manual/civiform-admin-guide/using-enumerator-questions-and-screens-in-a-program.md)
   * [Manage translations for programs & questions](user-manual/civiform-admin-guide/manage-translations-for-programs-and-questions.md)
   * [Manage versions for programs & questions](user-manual/civiform-admin-guide/manage-versions-for-programs-and-questions.md)

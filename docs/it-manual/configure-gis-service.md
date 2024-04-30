@@ -29,8 +29,11 @@ your deployment as a whole.
 
 1. Set [ESRI_ADDRESS_CORRECTION_ENABLED](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L725) to true.
 
-2. Set [ESRI_FIND_ADDRESS_CANDIDATES_URL](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L726) to a URL that CiviForm will use to call Esri’s [findAddressCandidates service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm).
+2. Set [ESRI_FIND_ADDRESS_CANDIDATES_URLS](https://github.com/civiform/civiform/blob/b7c2f30e0870ac2d9f798bc91d5153e10ec5ed64/server/conf/helper/esri.conf#L19) to one or more URLs that CiviForm will use to call Esri’s [findAddressCandidates service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm).
 The service should have a `GeocodeServer` type. Example URL value: "https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates"
+
+> [!NOTE]
+> If you are using Esri's ArcGis Online service (arcgis.com), you need to also set a valid api token for [ESRI_ARCGIS_API_TOKEN](https://github.com/civiform/civiform/blob/b7c2f30e0870ac2d9f798bc91d5153e10ec5ed64/server/conf/helper/esri.conf#L29). You can get a token via your arcgis.com account.
 
 3. Optional, but recommended. Set [ESRI_WELLKNOWN_ID_OVERRIDE](https://github.com/civiform/civiform/blob/478246036fb280e5d9032c64f1dc4eedf1b088f6/server/conf/helper/esri.conf#L20) which forces the service calls to return spatial references using the specified wellknown id value for their coordinate system.
 

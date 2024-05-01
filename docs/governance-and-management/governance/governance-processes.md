@@ -86,7 +86,7 @@ Stewarding Organization members who are not also approvers and any available and
 
 #### Working with the Doc
 
-1. Go to [this drive](https://drive.google.com/drive/u/0/folders/109bb32dwMPiqSaDUAyAkViXJu6KYFUkQ) and take one of the "Copy of Design Doc Template" docs or make a copy of "Design Doc Template".
+1. Go to [this drive](https://drive.google.com/drive/u/0/folders/109bb32dwMPiqSaDUAyAkViXJu6KYFUkQ) and take one of the "Copy of Design Doc Template" docs or make a copy of "Design Doc Template". Google employees using official Google email addresses aren't able to create or move docs. If you're a Google employee, you can either join the drive with a personal email or ask an Exygy employee to create a doc for you.
 2. Using the template, create a technical design document. Please remove any sections that aren't relevant and add any that may be missing.
 3. When your draft is ready for review:
     1. Update the status to **IN REVIEW**

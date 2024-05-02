@@ -12,7 +12,7 @@ pagination:
 <div class="cagov-stack">
 {%- for story in pagination.items -%}
       <a href="{{story.URL}}" target="_blank" class="btn-action-primary m-t-1"><span class="btn-action-title">{{story.Title}}</span>
-      <span class="btn-action-text"><strong>{{story.Date}}</strong> | {{story.Publisher}}</span></a>
+      <span class="btn-action-text"><strong>{{story.Date | textDate}}</strong> | {{story.Publisher}}</span></a>
 {%- endfor -%}
 </div>
 

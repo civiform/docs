@@ -1,14 +1,12 @@
 const path = require("path");
-const esbuild = require('esbuild')
+const esbuild = require("esbuild");
 const { sassPlugin } = require("esbuild-sass-plugin");
 const prettier = require("prettier");
 
-
-module.exports = function(eleventyConfig) {
-
+module.exports = function (eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({
     lstripBlocks: true,
-    trimBlocks: true
+    trimBlocks: true,
   });
 
   eleventyConfig.on("eleventy.after", () => {
@@ -17,7 +15,7 @@ module.exports = function(eleventyConfig) {
       external: ["*.woff2", "*.woff"],
       bundle: true,
       outdir: "public",
-      plugins: [sassPlugin()]
+      plugins: [sassPlugin()],
     });
   });
   eleventyConfig.addWatchTarget("./src/js/");
@@ -27,7 +25,7 @@ module.exports = function(eleventyConfig) {
     const extname = path.extname(outputPath);
     switch (extname) {
       case ".html":
-        return prettier.format(content, { parser: 'html' });
+        return prettier.format(content, { parser: "html" });
       default:
         return content;
     }
@@ -40,7 +38,7 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "public"
-    }
+      output: "public",
+    },
   };
 };

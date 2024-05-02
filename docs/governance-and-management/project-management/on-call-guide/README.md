@@ -50,7 +50,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
    * [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
    * [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
    * [pac4j security announcement mailing list](https://groups.google.com/g/pac4j-security)
-4. Check the [needs triage bugs](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3Aneeds-triage) that are created to make sure there aren't any P0s. If there is something that looks critical, post in #eng-prod-incidents or #eng-general if you aren't sure.
+4. Check the [needs triage bugs](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3Aneeds-triage) that are created to make sure there aren't any P0s. If there is something that looks critical, post in #eng-prod-incidents or post in #eng-general if you aren't sure.
 5. Monitor staging deployments in the [#ci](https://app.slack.com/client/T01Q6PJQAES/C03UXPUEXU4) Slack channel. Investigate failed deployments and re-run if appropriate. (Note: our browser tests can be flakey and case deployments to fail. If this is the case, re-running the deployment will often fix the issue.)
 6. Check the [dependency dashboard](https://github.com/civiform/civiform/issues/2124) (once per shift)
    * This issue is one that Renovate creates and updates with what it is currently tracking. Check this for any rate-limited dependencies and check the box to create them.

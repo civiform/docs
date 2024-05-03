@@ -36,7 +36,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/css/fonts": "fonts" });
 
-  eleventyConfig.addFilter("textDate", (date_str) => {
+  eleventyConfig.addFilter("textDate", (dateObj) => {
     /* Expects an ISO  8601-formatted  string, e.g. YYYY-MM-DD */
     return DateTime.fromISO(dateObj).toLocaleString(DateTime.DATE_MED);
   });

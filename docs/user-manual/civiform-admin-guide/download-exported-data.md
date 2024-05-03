@@ -1,4 +1,4 @@
-## How to export demographic data
+# How to export demographic data
 
 Watch the video or follow the step-by-step guide below to download the demography export for all applications for all programs into a CSV file:
 

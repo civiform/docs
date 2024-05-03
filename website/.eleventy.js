@@ -1,14 +1,13 @@
 const path = require("path");
-const esbuild = require('esbuild')
+const esbuild = require("esbuild");
 const { sassPlugin } = require("esbuild-sass-plugin");
 const prettier = require("prettier");
+const { DateTime } = require("luxon");
 
-
-module.exports = function(eleventyConfig) {
-
+module.exports = function (eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({
     lstripBlocks: true,
-    trimBlocks: true
+    trimBlocks: true,
   });
 
   eleventyConfig.on("eleventy.after", () => {
@@ -17,7 +16,7 @@ module.exports = function(eleventyConfig) {
       external: ["*.woff2", "*.woff"],
       bundle: true,
       outdir: "public",
-      plugins: [sassPlugin()]
+      plugins: [sassPlugin()],
     });
   });
   eleventyConfig.addWatchTarget("./src/js/");
@@ -27,7 +26,7 @@ module.exports = function(eleventyConfig) {
     const extname = path.extname(outputPath);
     switch (extname) {
       case ".html":
-        return prettier.format(content, { parser: 'html' });
+        return prettier.format(content, { parser: "html" });
       default:
         return content;
     }
@@ -37,10 +36,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/css/fonts": "fonts" });
 
+  eleventyConfig.addFilter("textDate", (dateObj) => {
+    /* Expects an ISO  8601-formatted  string, e.g. YYYY-MM-DD */
+    return DateTime.fromISO(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+
   return {
     dir: {
       input: "src",
-      output: "public"
-    }
+      output: "public",
+    },
   };
 };

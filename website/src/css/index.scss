@@ -2,14 +2,12 @@
 
 @import "../../node_modules/@cagov/ds-base-css/src/themes/_cagov.scss";
 
-
 /* Component styles */
-@import '../../node_modules/@cagov/ds-feature-card/src/index.scss';
-@import '../../node_modules/@cagov/ds-site-footer/src/index.scss';
-@import '../../node_modules/@cagov/ds-site-header/src/index.scss';
-@import '../../node_modules/@cagov/ds-site-navigation/src/index.scss';
-@import '../../node_modules/@cagov/ds-step-list/src/index.scss';
-
+@import "../../node_modules/@cagov/ds-feature-card/src/index.scss";
+@import "../../node_modules/@cagov/ds-site-footer/src/index.scss";
+@import "../../node_modules/@cagov/ds-site-header/src/index.scss";
+@import "../../node_modules/@cagov/ds-site-navigation/src/index.scss";
+@import "../../node_modules/@cagov/ds-step-list/src/index.scss";
 
 /* Custom styles */
 
@@ -34,7 +32,7 @@
 }
 
 .applicant-image {
-  object-fit:  contain;
+  object-fit: contain;
 }
 
 /* Homepage text spacing */
@@ -45,7 +43,6 @@
 .cagov-hero-body-content a.btn-primary {
   @extend .m-t-1;
 }
-
 
 /* Styles for feature cards on homepage. */
 .cagov-card {
@@ -108,4 +105,10 @@ cagov-accordion details summary {
   padding-top: var(--s-2) !important;
   padding-bottom: var(--s-2) !important;
   font-weight: var(--font-weight-7, 700) !important;
+}
+
+/* Justify page selection buttons left and right. */
+.page-selector {
+  display: flex;
+  justify-content: space-between;
 }

@@ -5,7 +5,7 @@ description: On-call responsibilities and process for CiviForm.
 # On Call Guide
 
 ### Onboarding
-Exygy engineers are responsible for on-call shifts, and Google.org Works and Civic Entity engineers can opt-in to the rotation. To get added to the rotation, contact Nick Burgan on Slack.
+Exygy engineers are responsible for on-call shifts, and Google.org and Civic Entity engineers can opt-in to the rotation. To get added to the rotation, contact Nick Burgan on Slack.
 
 Do these things when you initially onboard to the CiviForm on-call rotation.
 
@@ -43,20 +43,23 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
 ### On-call responsibilities
 
 1. [Generate a release](https://github.com/civiform/civiform/wiki/Releasing) on Tuesday by 12pm Pacific Time
-2. Respond to downstream production incidents (daily)
+2. Upgrade the version in the demo sites config files by running [this action](https://github.com/civiform/civiform-staging-deploy/actions/workflows/update_demo_versions.yaml) then merging the generated PR
+3. Respond to downstream production incidents (daily)
    * Check GitHub [issue tracker](https://github.com/civiform/civiform/issues)
    * Check [civiform-technical@googlegroups.com](https://groups.google.com/g/civiform-technical)
-3. Check security mailing lists for new vulnerability reports (daily)
+4. Check security mailing lists for new vulnerability reports (daily)
    * [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
    * [OpenJDK security announcement mailing list](https://mail.openjdk.java.net/mailman/listinfo/vuln-announce)
    * [pac4j security announcement mailing list](https://groups.google.com/g/pac4j-security)
-4. Monitor staging deployments in the [#ci](https://app.slack.com/client/T01Q6PJQAES/C03UXPUEXU4) Slack channel. Investigate failed deployments and re-run if appropriate. (Note: our browser tests can be flakey and case deployments to fail. If this is the case, re-running the deployment will often fix the issue.)
-5. Check the [dependency dashboard](https://github.com/civiform/civiform/issues/2124) (once per shift)
+5. Check the [needs triage bugs](https://github.com/civiform/civiform/issues?q=is%3Aopen+is%3Aissue+label%3Aneeds-triage) that are created to make sure there aren't any P0s (daily)
+   * If there is something that looks critical, post in #eng-prod-incidents or post in #eng-general if you aren't sure.
+6. Monitor staging deployments in the [#ci](https://app.slack.com/client/T01Q6PJQAES/C03UXPUEXU4) Slack channel. Investigate failed deployments and re-run if appropriate. (Note: our browser tests can be flakey and case deployments to fail. If this is the case, re-running the deployment will often fix the issue.)
+7. Check the [dependency dashboard](https://github.com/civiform/civiform/issues/2124) (once per shift)
    * This issue is one that Renovate creates and updates with what it is currently tracking. Check this for any rate-limited dependencies and check the box to create them.
    * For any problematic dependency updates that break tests, add the "needs-triage" label so Exygy can prioritize fixing these.
-6. Check security updates at [Codecov](https://about.codecov.io/security-update)
-7. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md) and close the oncall issue assigned to you.
-8. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
+8. Check security updates at [Codecov](https://about.codecov.io/security-update)
+9. Create an oncall issue for the next rotation using the [Oncall Issue Template](https://github.com/civiform/civiform/blob/main/.github/ISSUE_TEMPLATE/oncall-rotation.md) and close the oncall issue assigned to you.
+10. If you come accross an issue that could use a playbook or further documentation, create a github issue to track that additional documentation is needed. Assign it to yourself or the next oncaller if you don't have capacity.
 
 #### Downstream production incident support
 
@@ -87,3 +90,7 @@ CiviForm's dependencies are mostly listed in the [`build.sbt` file](https://gith
 CiviForm relies on [renovate bot](https://github.com/renovatebot/renovate) to automatically detect new versions of dependencies and create pull requests to update them. It is the on-call engineer's responsibility to review and merge these pull requests as they come in. **Do not simply approve and merge every pull request renovate bot creates.** While in most cases passing CI checks indicates the change is acceptable, that not always the case and more diligence is required ([here's an example](https://github.com/civiform/civiform/pull/2130#discussion\_r834714183)). Be sure you understand what is being updated before approving. If need be, get in touch with the broader engineering team to help evaluate a given PR. For PRs that break tests, add the "needs-triage" label to the PR so Exygy can prioritize fixing these issues.
 
 **Do not merge terraform-related dependency updates without first manually exercising the code, we do not have automated tests for terraform/deployment configuration.** Feel free to close related PRs and file issues for performing the upgrade.
+
+#### Upgrading demo sites
+
+We have all of our demo sites managed in [this repository](https://github.com/civiform/civiform-staging-deploy). In order to upgrade the demo sites' version number in the config files, we can run the [update demo versions action](https://github.com/civiform/civiform-staging-deploy/actions/workflows/update_demo_versions.yaml). This will create a pull request that you can approve and merge. By default, this new version will get picked up the next time the site is automatically deployed. In order to do a one-off deployment of the demo sites, the [deploy action](https://github.com/civiform/civiform-staging-deploy/actions/workflows/aws_deploy_all_demos.yaml) can be used. Please make sure nobody is actively using the demo site if you are planning to run the deploy action to ensure no issues.

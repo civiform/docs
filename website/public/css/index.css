@@ -6304,7 +6304,3 @@ cagov-accordion details summary {
   padding-bottom: var(--s-2) !important;
   font-weight: var(--font-weight-7, 700) !important;
 }
-.page-selector {
-  display: flex;
-  justify-content: space-between;
-}

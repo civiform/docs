@@ -242,4 +242,102 @@
     }
   };
   window.customElements.define("cagov-accordion", CaGovAccordion);
+
+  // node_modules/@cagov/ds-page-navigation/dist/index.js
+  var styles2 = "/* PAGE NAVIGATION */\nsidebar cagov-page-navigation .label {\n  font-weight: 700;\n  font-size: 24px;\n  line-height: 28.2px;\n  padding: 0;\n  margin: 0;\n  padding-bottom: 16px;\n}\n\nsidebar cagov-page-navigation ul,\nsidebar cagov-page-navigation ol:not([class*=menu]):not([class*=nav]):not([class*=footer-links]),\nsidebar cagov-page-navigation ul:not([class*=menu]):not([class*=nav]):not([class*=footer-links]) {\n  margin: 0;\n  text-indent: 0;\n  padding: 0;\n}\n\nsidebar cagov-page-navigation ul li {\n  padding-top: 14px;\n  padding-bottom: 18px;\n  margin-left: 0;\n  margin-top: 0px;\n  margin-bottom: 0px;\n  border-bottom: 1px solid var(--gray-300, #e1e0e3);\n  line-height: 28.2px;\n  list-style: none;\n}\nsidebar cagov-page-navigation ul li:first-child {\n  border-top: 1px solid var(--gray-300, #e1e0e3);\n}\nsidebar cagov-page-navigation ul li a {\n  text-decoration: none;\n}\nsidebar cagov-page-navigation ul li a:hover {\n  text-decoration: underline;\n}\n\n@media only screen and (max-width: 992px) {\n  cagov-page-navigation .label {\n    display: none;\n  }\n  .sidebar-container {\n    display: block;\n    width: 100%;\n    max-width: 100%;\n  }\n  cagov-page-navigation ul li a {\n    font-size: 16px;\n    line-height: 24px;\n  }\n}\n\n/*# sourceMappingURL=index.css.map */\n";
+  var CAGovPageNavigation = class _CAGovPageNavigation extends window.HTMLElement {
+    constructor() {
+      super();
+      if (!document.querySelector("#cagov-page-navigation-styles")) {
+        const style = document.createElement("style");
+        style.id = "cagov-page-navigation-styles";
+        style.textContent = styles2;
+        document.querySelector("head").appendChild(style);
+      }
+    }
+    connectedCallback() {
+      this.type = "wordpress";
+      if (this.type === "wordpress") {
+        document.addEventListener(
+          "DOMContentLoaded",
+          () => this.buildContentNavigation()
+        );
+      }
+      if (document.readyState === "complete" || document.readyState === "loaded") {
+        this.buildContentNavigation();
+      }
+    }
+    buildContentNavigation() {
+      const markup = this.getHeaderTags();
+      let label = null;
+      if (markup !== null) {
+        label = this.dataset.label || "On this page";
+      }
+      let content = null;
+      if (markup !== null) {
+        content = `<nav aria-labelledby="page-navigation-label"> <div id="page-navigation-label" class="label">${label}</div> ${markup}</nav>`;
+      }
+      this.template({ content }, "wordpress");
+    }
+    template(data, type) {
+      if (data !== void 0 && data !== null && data.content !== null) {
+        if (type === "wordpress") {
+          this.innerHTML = `${data.content}`;
+        }
+      }
+      return null;
+    }
+    renderNoContent() {
+      this.innerHTML = "";
+    }
+    getHeaderTags() {
+      const { selector } = this.dataset;
+      const h = ["h2"];
+      for (let i = 0; i < h.length; i += 1) {
+        if (selector !== void 0 && selector !== null) {
+          {
+            const selectorContent = document.querySelector(selector);
+            if (selectorContent !== null) {
+              const outline = _CAGovPageNavigation.outliner(selectorContent);
+              return outline;
+            }
+          }
+        }
+      }
+      return null;
+    }
+    static outliner(content) {
+      const headers = content.querySelectorAll("h2");
+      let output = "";
+      if (headers !== void 0 && headers !== null && headers.length > 0) {
+        headers.forEach((tag) => {
+          const tagId = tag.getAttribute("id");
+          const tagName = tag.getAttribute("name");
+          const tabIndex = tag.getAttribute("tabindex") || "-1";
+          const title = tag.innerHTML;
+          let anchorLabel = null;
+          if (tagId) {
+            anchorLabel = tagId;
+          } else if (tagName) {
+            anchorLabel = tagName;
+          } else {
+            anchorLabel = tag.innerHTML;
+          }
+          const anchor = anchorLabel.toLowerCase().trim().replace(/ /g, "-").replace(
+            /\(|\)|!|"|#|\$|%|&|'|\*|\+|,|\.|\/|:|;|<|=|>|\?|@|\[|\]|\\|\^|`|\{|\||\|\}|~/g,
+            ""
+          ).replace(/a-zA-ZÃ€-Ã–Ã™-Ã¶Ã¹-Ã¿Ä€-Å¾á¸€-á»¿0-9\u00A0-\u017F/g, "");
+          output += `<li><a data-page-navigation href="#${encodeURI(
+            anchor
+          )}">${title}</a></li>`;
+          tag.setAttribute("id", anchor);
+          tag.setAttribute("name", anchor);
+          tag.setAttribute("tabindex", tabIndex);
+        });
+        return `<ul>${output}</ul>`;
+      }
+      return null;
+    }
+  };
+  window.customElements.define("cagov-page-navigation", CAGovPageNavigation);
 })();

@@ -1,0 +1,25 @@
+{% extends "layouts/base.njk" %} {% block content %}
+
+<div
+  id="page-container"
+  class="page-container-ds with-sidebar has-sidebar-left"
+>
+  <div id="main-content" class="main-content-ds single-column">
+    <div class="ds-content-layout">
+      <aside>
+        <div class="sidebar-container everylayout">
+          <sidebar space="0" side="left">
+            <cagov-page-navigation
+              data-selector=".main-content-ds"
+              data-label="On this page"
+            ></cagov-page-navigation>
+          </sidebar>
+        </div>
+      </aside>
+      <div class="everylayout">
+        <main id="body-content">{{content | safe}}</main>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -2,6 +2,7 @@
 layout: layouts/page.njk
 title: CiviForm | About
 ---
+
 # About CiviForm
 
 Accessing public assistance programs is complicated. Residents must navigate siloed application sites and re-enter sensitive personal information, which can be burdensome and demoralizing. Local program staff and community-based organizations lack the tools necessary to help quickly connect residents to the resources they need most. These problems are only made worse in times of crisis.
@@ -14,7 +15,14 @@ Read more about CiviForm's key features below and in our [documentation](https:/
 
 <a href="/contact" class="btn-action-primary m-t-1"><span class="btn-action-title">Get started</span><span class="btn-action-text">Bring CiviForm to your community</span></a>
 
+## Product Overview
+
+<div class="slides-embed">
+  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRmL6-IWI3JyQo6zefAceiuhDbe9AfZBzVlCClHK4McIBnFt19vY1uwUo_WnScvngFBmug7f1tztumC/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
+</div>
+
 ## Our goals
+
 1. Improve quality of life for individuals and communities by expanding and simplifying access to public assistance programs.
 2. Improve individuals’ understanding and awareness of the public assistance that is available to them.
 3. Make the application process more accessible, effective, and compassionate for applicants, program staff, and community-based organizations.

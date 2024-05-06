@@ -106,3 +106,27 @@ cagov-accordion details summary {
   padding-bottom: var(--s-2) !important;
   font-weight: var(--font-weight-7, 700) !important;
 }
+
+/* Embedded Google Slides on About page. */
+.slides-embed {
+  position: relative;
+  padding-bottom: 60.6%; /* Just eyeballed to remove black bars. */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* Set embedding dimension on mobile */
+@media (max-width: $mobile) {
+  .slides-embed {
+    padding-bottom: 64%; /* Just eyeballed to remove black bars. */
+  }
+}
+
+.slides-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

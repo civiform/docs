@@ -130,3 +130,18 @@ cagov-accordion details summary {
   width: 100%;
   height: 100%;
 }
+
+/* Size gov images */
+.gov-image {
+  width: auto;
+  max-height: 200px;
+  @extend .m-x-a;
+  @extend .p-y-2;
+  @extend .p-x-2;
+}
+
+.gov-image img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}

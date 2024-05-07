@@ -2,6 +2,7 @@
 layout: layouts/home.njk
 title: CiviForm | FAQ
 ---
+
 # Frequently Asked Questions
 
 <cagov-accordion>
@@ -33,6 +34,14 @@ title: CiviForm | FAQ
     <summary>How can I get CiviForm in my community?</summary>
     <div class="accordion-body">
     <p>Adopting CiviForm requires working closely with program administrators, IT teams, and other stakeholders to successfully understand and meet the needs of programs and residents. See "<a href="/contact">Getting started</a>" for a detailed look at the process. Hands-on support for adopting CiviForm is also available through the <a href="https://g.co/fellowship">Google.org Fellowship program</a>.</p>
+    </div>
+  </details>
+</cagov-accordion>
+<cagov-accordion>
+  <details open>
+    <summary>Do you have resources I can share with colleagues?</summary>
+    <div class="accordion-body">
+    <p>Direct interested colleagues to this website (<a href="https://civiform.us" target="_blank">civiform.us</a>), our documentation (<a href="https://docs.civiform.us" target="_blank">docs.civiform.us</a>), or our <a href="https://docs.google.com/presentation/d/14sIo4oyKUj0HaIx7_G8BsaCpvqW3PB04T53JA_4SQ78/preview" target="_blank">one-page flyer</a> (<a href="https://docs.google.com/presentation/d/14sIo4oyKUj0HaIx7_G8BsaCpvqW3PB04T53JA_4SQ78/export/pdf">PDF</a>). You can also <a href="https://civiform.us/contact/">get in touch</a> to meet with the team and learn more.</p>
     </div>
   </details>
 </cagov-accordion>

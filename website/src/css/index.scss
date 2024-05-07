@@ -135,13 +135,20 @@ cagov-accordion details summary {
 .gov-image {
   width: auto;
   max-height: 200px;
+  text-align: center;
   @extend .m-x-a;
   @extend .p-y-2;
   @extend .p-x-2;
 }
 
-.gov-image img {
+.gov-image img,
+figure {
   width: 100%;
   height: 100%;
   vertical-align: middle;
+}
+
+/* Move the URLs closer to the logos */
+.gov-image figcaption {
+  margin-top: -12px;
 }

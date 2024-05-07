@@ -6342,3 +6342,13 @@ figure {
     margin-top: -12px;
   }
 }
+.info-box {
+  padding: 8px 16px;
+  width: 100%;
+  min-height: 46px;
+  height: auto;
+  background: rgba(112, 224, 255, 0.281);
+  border: 1px solid blue;
+  border-radius: 5px;
+  margin: 32px 0px;
+}

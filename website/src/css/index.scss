@@ -149,6 +149,8 @@ figure {
 }
 
 /* Move the URLs closer to the logos */
-.gov-image figcaption {
-  margin-top: -12px;
+@media (min-width: $desktop) {
+  .gov-image figcaption {
+    margin-top: -12px;
+  }
 }

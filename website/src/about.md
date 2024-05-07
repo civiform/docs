@@ -15,6 +15,29 @@ Read more about CiviForm's key features below and in our [documentation](https:/
 
 <a href="/contact" class="btn-action-primary m-t-1"><span class="btn-action-title">Get started</span><span class="btn-action-text">Bring CiviForm to your community</span></a>
 
+## Developed and trusted by:
+
+<div class="grid-container">
+  <div class="gov-image">
+    <img alt="City of Seattle" src="/img/seattle-logo.svg" />
+  </div>
+  <div class="gov-image">
+    <img alt="City of Bloomington" src="/img/bloomington-logo.svg" />
+  </div>
+</div>
+
+<div class="grid-container">
+  <div class="gov-image">
+      <img alt="City of Charlotte" src="/img/charlotte-logo.svg" />
+  </div>
+  <div class="gov-image">
+    <img alt="State of Arkansas" src="/img/arkansas-logo.png" />
+  </div>
+  <div class="gov-image">
+    <img alt="Miami-Dade County" src="/img/mdc-logo.svg" />
+  </div>
+</div>
+
 ## Product Overview
 
 <div class="slides-embed">

@@ -33,7 +33,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>How can I get CiviForm in my community?</summary>
     <div class="accordion-body">
-    <p>Adopting CiviForm requires working closely with program administrators, IT teams, and other stakeholders to successfully understand and meet the needs of programs and residents. See "<a href="/contact">Getting started</a>" for a detailed look at the process. Hands-on support for adopting CiviForm is also available through the <a href="https://g.co/fellowship">Google.org Fellowship program</a>.</p>
+    <p>Adopting CiviForm requires working closely with program administrators, IT teams, and other stakeholders to successfully understand and meet the needs of programs and residents. See "<a href="/contact">Getting started</a>" for a detailed look at the process.</p>
     </div>
   </details>
 </cagov-accordion>

@@ -41,7 +41,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>Do you have resources I can share with colleagues?</summary>
     <div class="accordion-body">
-    <p>Direct interested colleagues to this website (<a href="https://civiform.us" target="_blank">civiform.us</a>), our documentation (<a href="https://docs.civiform.us" target="_blank">docs.civiform.us</a>), or our <a href="https://docs.google.com/presentation/d/14sIo4oyKUj0HaIx7_G8BsaCpvqW3PB04T53JA_4SQ78/preview" target="_blank">one-page flyer</a> (<a href="https://docs.google.com/presentation/d/14sIo4oyKUj0HaIx7_G8BsaCpvqW3PB04T53JA_4SQ78/export/pdf">PDF</a>). You can also <a href="https://civiform.us/contact/">get in touch</a> to meet with the team and learn more.</p>
+    <p>Direct interested colleagues to this website (<a href="https://civiform.us" target="_blank">civiform.us</a>), our documentation (<a href="https://docs.civiform.us" target="_blank">docs.civiform.us</a>), our <a href="https://docs.google.com/presentation/d/1ZissgzK4Qdf48q9IAVfeK6e3WSIPtUev40atgmIGEf0/preview" target="_blank">Product Overview</a>, or our <a href="https://docs.google.com/presentation/d/14sIo4oyKUj0HaIx7_G8BsaCpvqW3PB04T53JA_4SQ78/preview" target="_blank">one-page flyer</a> (<a href="https://docs.google.com/presentation/d/14sIo4oyKUj0HaIx7_G8BsaCpvqW3PB04T53JA_4SQ78/export/pdf">PDF</a>). You can also <a href="https://civiform.us/contact/">get in touch</a> to meet with the team and learn more.</p>
     </div>
   </details>
 </cagov-accordion>

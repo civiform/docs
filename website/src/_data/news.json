@@ -14,6 +14,7 @@
         "Publisher": "Anthem Awards",
         "Date": "2024-01-30",
         "Image": "anthem-awards.png",
+        "ImageDescription": "Anthem Awards logo.",
         "Featured": true
     },
     {
@@ -31,6 +32,7 @@
         "Publisher": "City of Bloomington",
         "Date": "2023-10-27",
         "Image": "bloomington-best-of-in-award.jpg",
+        "ImageDescription": "Greg Overtoom and Rick Dietz of Bloomington being congratulated by Tracy Barnes, CIO at Indiana Office of Technology.",
         "Featured": true
     },
     {
@@ -55,6 +57,7 @@
         "Publisher": "City of Seattle",
         "Date": "2023-07-12",
         "Image": "affordable-seattle-announcement.jpg",
+        "ImageDescription": "Seattle Mayor Bruce Harrell signing the exectuive order at the announcement event.",
         "Featured": true
     },
     {

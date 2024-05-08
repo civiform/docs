@@ -5,6 +5,7 @@
         "Title": "Seattle Mayor Bruce Harrell Announces City Initiative to Help Save Families Up to $23,000 Per Year",
         "Description": "In an Executive Order, the Mayor directed departments to unify their program applications on CiviForm.",
         "Publisher": "City of Seattle",
+        "Date": "2023-07-13",
         "Image": "affordable-seattle-announcement.jpg"
     },
     {
@@ -13,6 +14,7 @@
         "Title": "CiviForm Awarded Anthem Silver Award",
         "Description": "CiviForm was awarded a Silver award for excellence in a product dedicated to advancing humanitarian action and services.",
         "Publisher": "Anthem Awards",
+        "Date": "2024-01-30",
         "Image": "anthem-awards.png"
     },
     {
@@ -21,6 +23,7 @@
         "Title": "Bloomington Wins Best of Indiana Award for Best Application Serving the Public",
         "Description": "The City of Bloomington has been awarded for its use of CiviForm in streamlining the process of applying for public grants, scholarships, and other assistance programs.",
         "Publisher": "City of Bloomington",
+        "Date": "2023-10-27",
         "Image": "bloomington-best-of-in-award.jpg"
     }
 ]

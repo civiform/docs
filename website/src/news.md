@@ -10,10 +10,12 @@ title: CiviForm | News
 Check out the latest product updates in our <a href="https://github.com/civiform/civiform/releases" target="_blank">release notes</a>!
 </div>
 
-{%- for story in news_featured -%}
+{%- for story in news -%}
+{%- if story.Featured -%}
 {%- block news_feature -%}
 {%- include "layouts/news-feature.njk" -%}
 {%- endblock -%}
+{%- endif -%}
 {%- endfor -%}
 
 <h2>More stories</h2>

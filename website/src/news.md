@@ -10,6 +10,14 @@ title: CiviForm | News
 Check out the latest product updates in our <a href="https://github.com/civiform/civiform/releases" target="_blank">release notes</a>!
 </div>
 
+{%- for story in news_featured -%}
+{%- block news_feature -%}
+{%- include "layouts/news-feature.njk" -%}
+{%- endblock -%}
+{%- endfor -%}
+
+<h2>More stories</h2>
+
 <div class="cagov-stack">
   {%- for story in news -%}
     <a href="{{story.URL}}" target="_blank" class="btn-action-primary m-t-1"><span class="btn-action-title">{{story.Title}}</span>

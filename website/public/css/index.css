@@ -6355,3 +6355,15 @@ figure {
 .info-box > * {
   background-color: transparent;
 }
+.news-image {
+  object-fit: scale-down;
+  margin-left: 20px;
+}
+@media (max-width: 768px) {
+  .news-feature h3 {
+    padding-top: 10px;
+  }
+  .news-image {
+    margin-left: auto;
+  }
+}

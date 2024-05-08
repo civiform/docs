@@ -12,7 +12,9 @@
         "Title": "CiviForm Awarded Anthem Silver Award",
         "Description": "CiviForm was awarded a Silver award for excellence in a product dedicated to advancing humanitarian action and services.",
         "Publisher": "Anthem Awards",
-        "Date": "2024-01-30"
+        "Date": "2024-01-30",
+        "Image": "anthem-awards.png",
+        "Featured": true
     },
     {
         "URL": "https:\/\/www.govtech.com\/gov-experience\/how-digitization-can-make-government-more-equitable",
@@ -24,9 +26,12 @@
     {
         "URL": "https:\/\/bloomington.in.gov\/news\/2023\/10\/27\/5769",
         "Government": "Bloomington",
-        "Title": "City Wins Best of Indiana Award for Best Application Serving the Public",
+        "Title": "Bloomington Wins Best of Indiana Award for Best Application Serving the Public",
+        "Description": "The City of Bloomington has been awarded for its use of CiviForm in streamlining the process of applying for public grants, scholarships, and other assistance programs.",
         "Publisher": "City of Bloomington",
-        "Date": "2023-10-27"
+        "Date": "2023-10-27",
+        "Image": "bloomington-best-of-in-award.jpg",
+        "Featured": true
     },
     {
         "URL": "https:\/\/seattlemedium.com\/seattle-mayor-bruce-harrell-unveils-city-initiative-to-help-families-save-money\/",
@@ -46,8 +51,11 @@
         "URL": "https:\/\/harrell.seattle.gov\/2023\/07\/12\/seattle-mayor-bruce-harrell-announces-city-initiative-to-help-save-families-up-to-23000-per-year\/",
         "Government": "Seattle",
         "Title": "Seattle Mayor Bruce Harrell Announces City Initiative to Help Save Families Up to $23,000 Per Year",
+        "Description": "In an Executive Order, the Mayor directed departments to unify their program applications on CiviForm.",
         "Publisher": "City of Seattle",
-        "Date": "2023-07-12"
+        "Date": "2023-07-12",
+        "Image": "affordable-seattle-announcement.jpg",
+        "Featured": true
     },
     {
         "URL": "https:\/\/www.westsideseattle.com\/robinson-papers\/2023\/07\/12\/city-initiative-help-save-families-23000-year-announced",

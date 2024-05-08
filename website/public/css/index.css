@@ -6350,20 +6350,21 @@ figure {
   background: rgba(112, 224, 255, 0.281);
   border: 1px solid blue;
   border-radius: 5px;
-  margin: 32px 0px;
+  margin: 15px 0px;
 }
 .info-box > * {
   background-color: transparent;
 }
 .news-image {
   object-fit: scale-down;
-  margin-left: 20px;
+}
+@media (min-width: 768px) {
+  .news-feature .cagov-featured-sidebar {
+    padding-right: 30px;
+  }
 }
 @media (max-width: 768px) {
   .news-feature h3 {
-    padding-top: 10px;
-  }
-  .news-image {
-    margin-left: auto;
+    margin-top: 20px;
   }
 }

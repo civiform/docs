@@ -165,3 +165,8 @@ figure {
   border-radius: 5px;
   margin: 32px 0px;
 }
+
+/* Remove link highlighting from info box. */
+.info-box > * {
+  background-color: transparent;
+}

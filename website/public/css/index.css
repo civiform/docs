@@ -6352,3 +6352,6 @@ figure {
   border-radius: 5px;
   margin: 32px 0px;
 }
+.info-box > * {
+  background-color: transparent;
+}

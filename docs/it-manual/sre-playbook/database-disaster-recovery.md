@@ -30,7 +30,7 @@ As part of your backup strategy, you may want to dump the contents of the databa
 
 ![pgadmin-backup](../assets/pgadmin-backup.png)
 
-3. Pick any file name. All of the options can be left as default. Note that this saves the file locally inside the pgadmin container.
+3. Pick any file name. All of the options can be left as default. If you'd like to only download some of the data, you can select which tables to download in the `Objects` tab. Note that this saves the file locally inside the pgadmin container.
 
 ![pgadmin-backup-filename](../assets/pgadmin-backup-filename.png)
 
@@ -68,3 +68,23 @@ As part of your backup strategy, you may want to dump the contents of the databa
 
 6. Inspect the tables under `postgres -> Schemas -> Tables` to verify the data was restored properly.
 
+### Option 2: Use the `dumpdb` and `restoredb` commands
+
+This option utilizes the CiviForm Terraform-based deployment system. It will create a temporary EC2 host with access to the database, install the PostgreSQL client, run pg_dump or pg_restore, and then clean up the resources. These commands require the `ssh`, `ssh-keygen`, and `scp` binaries to be available on your system.
+
+{% hint style="danger" %}
+
+
+#### Backup
+{% hint style="danger" %}
+This process will create a dump of the entire database, including personally identifiable information. Ensure you take the utmost care in handling this data and store it in a secure location.
+{% endhint %}
+1. From your clone of the `civiform-deploy` repo, run `bin/run`.
+2. Enter the `dumpdb` command and follow the prompts.
+
+#### Restore
+{% hint style="danger" %}
+This process will overwrite the entire database with the contents of the dump file, including all applicant data. Ensure this is really what you want to do before proceeding.
+{% endhint %}
+1. From your clone of the `civiform-deploy` repo, run `bin/run`.
+2. Enter the `restoredb` command and follow the prompts.

@@ -15,22 +15,35 @@ Watch the video or follow the step-by-step instructions below.
 ### Add or edit program translations
 
 1. Sign in to CiviForm as a CiviForm Admin.
-2. Click **Programs** on the navigation bar and select an unpublished program.
 
-![image](https://user-images.githubusercontent.com/98119305/156823969-78ccb796-d08e-422c-9753-b508380e0848.png)
+2. Click **Programs** on the navigation bar.
 
-1. Click **Manage translations**.\
-   ![image](https://user-images.githubusercontent.com/98119305/156825855-5f412056-b00d-445d-a976-ed17bc17d5d5.png)
-2. The default Program details and its custom confirmation texts are displayed in the side. \
+  ![image](https://user-images.githubusercontent.com/98119305/156823969-78ccb796-d08e-422c-9753-b508380e0848.png)
+
+3. Find a **draft** (unpublished) program.
+   * To add or edit translations for a published program, [edit the program](https://docs.civiform.us/user-manual/civiform-admin-guide/working-with-programs/edit-a-program) and save a version of the program in the draft (unpublished) state.
+  
+4. Click the **three dots button** on the right-hand side.
+
+   ![three_dots](https://github.com/civiform/docs/assets/23390490/3c749b5b-b24d-4aba-b73d-a7b57d677d40)
+
+5. Click **Manage translations** in the dropdown menu.
+
+   ![manage_translations](https://github.com/civiform/docs/assets/23390490/f00db15e-f674-4fbd-8e84-0c0a958f6135)
+
+6. The default Program details and its custom confirmation texts are displayed in the side. \
    \
    ![image](https://github.com/civiform/docs/assets/101214724/ca8cea92-77f6-4eba-be3f-5b9656bfd10a)
 
 
-3. To add a translation, select a language tab and enter the translated text for the Program display name, Program description and custom information page.\
+7. To add a translation, select a language tab and enter the translated text for the Program display name, Program description and custom information page.\
    \
    ![image](https://github.com/civiform/docs/assets/101214724/0b805465-dd42-417a-b944-a2d06dcdb74b)
 
-4. Click **Save**. To go back to program list page, click **Back** button.
+8. Click **Save**.
+
+9. To go back to program list page, click **Back** button.
+
 ### Add or edit question translations
 
 1. Sign in to CiviForm as a CiviForm Admin.

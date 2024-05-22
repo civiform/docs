@@ -3,7 +3,7 @@
 You may have some programs that need to collect an applicant's address to offer
 services. Those programs may also want to verify that the address exists and
 matches a standard format, and may also want to verify that the address is in
-the area that's eligible for the program. For example, a program may only be for 
+the area that's eligible for the program. For example, a program may only be for
 applicants living in a certain county. CiviForm uses the external Esri service
 for both these use cases. CiviForm is not currently compatible with other
 geolocation services. If you'd like to use another geolocation service, please
@@ -32,10 +32,50 @@ your deployment as a whole.
 2. Set [ESRI_FIND_ADDRESS_CANDIDATES_URLS](https://github.com/civiform/civiform/blob/b7c2f30e0870ac2d9f798bc91d5153e10ec5ed64/server/conf/helper/esri.conf#L19) to one or more URLs that CiviForm will use to call Esri’s [findAddressCandidates service](https://developers.arcgis.com/rest/geocode/api-reference/geocoding-find-address-candidates.htm).
 The service should have a `GeocodeServer` type. Example URL value: "https://gisdata.seattle.gov/cosgis/rest/services/locators/AddressPoints/GeocodeServer/findAddressCandidates"
 
-> [!NOTE]
-> If you are using Esri's ArcGis Online service (arcgis.com), you need to also set a valid api token for [ESRI_ARCGIS_API_TOKEN](https://github.com/civiform/civiform/blob/b7c2f30e0870ac2d9f798bc91d5153e10ec5ed64/server/conf/helper/esri.conf#L29). You can get a token via your arcgis.com account.
+{% hint style="info" %}
+Make sure the URL ends in `findAddressCandidates`
+{% endhint %}
+
+{% hint style="info" %}
+If you are using Esri's ArcGis Online service (arcgis.com), you need to also set a valid api token for [ESRI_ARCGIS_API_TOKEN](https://github.com/civiform/civiform/blob/b7c2f30e0870ac2d9f798bc91d5153e10ec5ed64/server/conf/helper/esri.conf#L29). You can get a token via your arcgis.com account.
+{% endhint %}
 
 3. Optional, but recommended. Set [ESRI_WELLKNOWN_ID_OVERRIDE](https://github.com/civiform/civiform/blob/478246036fb280e5d9032c64f1dc4eedf1b088f6/server/conf/helper/esri.conf#L20) which forces the service calls to return spatial references using the specified wellknown id value for their coordinate system.
+
+#### Expected `findAddressCandidates` response format
+Civiform expects a response with the following fields:
+
+```json
+{
+  "spatialReference": {
+    "wkid": 4326
+  },
+  "candidates": [
+    {
+      "address": "555 Example St, Sample Town, AR, 55555",
+      "location": {
+        "x": -100.00,
+        "y": 100.00
+      },
+      "score": 99.53,
+      "attributes": {
+        "SubAddr": "",
+        "Address": "555 Example St",
+        "City": "Sample Town",
+        "Region": "",
+        "RegionAbbr": "AR",
+        "Postal": "55555"
+      }
+    },
+    {...},
+    {...}
+  ]
+}
+```
+
+Notes on parsing:
+- If there the response does not include a value in `SubAddr`, CiviForm keeps the value the user entered.
+- If the value in `RegionAbbr` is not two characters, CiviForm checks the `Region` field for the two character state code. If it's also not two characters, CiviForm keeps the state code the user provided.
 
 ### Overriding the default wellKnownId
 
@@ -56,7 +96,7 @@ By setting the ESRI_WELLKNOWN_ID_OVERRIDE we force both systems to use the same 
 
 #### Existing data
 
-After we get the corrected address we save the x, y, and wkid as part of the address. Calls to map query endpoints already use the stored wkid to specify what the input spatial reference should be. Existing records will still work as is. 
+After we get the corrected address we save the x, y, and wkid as part of the address. Calls to map query endpoints already use the stored wkid to specify what the input spatial reference should be. Existing records will still work as is.
 
 {% hint style="warning" %}
 If this override is added after CiviForm users have been using address correction and is different from the previously used default you will end up having new records stored in different format. If that is a concern the solution is to make sure the override value is the same as used before.
@@ -109,11 +149,11 @@ Set the four `ESRI_ADDRESS_SERVICE_AREA_VALIDATION_*` configuration variables to
 contain the necessary information:
 
 - [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_URLS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L732)
-is the list of URL(s) that CiviForm will use to call Esri’s 
+is the list of URL(s) that CiviForm will use to call Esri’s
 [map query service](https://developers.arcgis.com/rest/services-reference/enterprise/query-feature-service-layer-.htm)
 to determine if the address is within the area specified by the map query
 service. The map should be a `MapService` type.
-  
+
   - Type:  String[]
 
   - Example value: ["https://gisdata.yourcity.gov/server/rest/services/City_Limits/MapServer/1/query"]
@@ -122,9 +162,9 @@ service. The map should be a `MapService` type.
  - [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_LABELS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L730)
 is the list of labels that CiviForm admins will see when setting up eligibility
 or visibility conditions.
- 
+
    - Type:  String[]
-   
+
    - Example values: ["Seattle"], ["Abc County", "Def County", "Ghi County"]
 
 
@@ -133,7 +173,7 @@ is the list of attributes that should be checked in the response returned from
 the Esri service URL.
 
   Note that these attributes are custom for each Esri URL and you'll need to look at what fields are provided for your specific map to know what attribute to use. For example, [Seattle's service area validation service](https://gisdata.seattle.gov/server/rest/services/COS/Seattle_City_Limits/MapServer/1) specifies "CITYNAME" as an attribute.
-  
+
   - Type:  String[]
 
   - Example values: ["CITYNAME"], ["ZIPCODE"]
@@ -142,11 +182,11 @@ the Esri service URL.
 - [ESRI_ADDRESS_SERVICE_AREA_VALIDATION_IDS](https://github.com/civiform/civiform/blob/fd0aaa002e2ee01d378ca90f236c316641ed0101/server/conf/application.conf#L731)
 is the list of values that the attribute should be equal to in order for the
 address to be considered within the service area.
-  
+
   - Type:  String[]
-  
+
   - Example values:
-       
+
     - If `_ATTRIBUTES` is set to ["CITYNAME"], then `_IDS` could be set to ["Seattle"] in order to require addresses be in the city of Seattle.
     - If `_ATTRIBUTES` is set to ["ZIPCODE"], then `_IDS` could be set to ["28202"] in order to require addresses be in the 28202 zip code.
 

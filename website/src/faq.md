@@ -17,7 +17,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>How much does CiviForm cost?</summary>
     <div class="accordion-body">
-    <p>CiviForm’s software is free and open source; however, setting up CiviForm in your community requires a significant organizational investment in civic service design to ensure programs and residents have an improved experience, and operating CiviForm requires ongoing staff time to manage questions and application forms. Additionally, there are <a href="https://docs.civiform.us/it-manual/infrastructure-requirements">infrastructure costs</a> associated with hosting CiviForm using in-house resources or a third party.</p>
+    <p>CiviForm’s software is free and open source; however, setting up CiviForm in your community requires a significant organizational investment in civic service design to ensure programs and residents have a good experience, and operating CiviForm requires ongoing staff time to manage questions and application forms. Additionally, there are <a href="https://docs.civiform.us/it-manual/infrastructure-requirements">infrastructure costs</a> associated with hosting CiviForm using in-house resources or a third party.</p>
     </div>
   </details>
 </cagov-accordion>
@@ -25,7 +25,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>Which governments are using CiviForm?</summary>
     <div class="accordion-body">
-    <p>CiviForm is in active use by the City of Seattle and the City of Bloomington. CiviForm is actively being piloted for launch by the State of Arkansas. Our hope is to make CiviForm widely adopted in communities across the country.</p>
+    <p>Residents in the <a href="https://civiform.seattle.gov/">City of Seattle, Washington</a> and the <a href="https://civiform.bloomington.in.gov/">City of Bloomington, Indiana</a> are already benefiting from easier access to government services. The State of Arkansas is approaching a state-wide launch. Charlotte, North Carolina is conducting a pilot and Miami-Dade County, Florida is starting development. We look forward to more governments joining the software collaborative later this year.</p>
     </div>
   </details>
 </cagov-accordion>
@@ -33,7 +33,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>How can I get CiviForm in my community?</summary>
     <div class="accordion-body">
-    <p>Adopting CiviForm requires working closely with program administrators, IT teams, and other stakeholders to successfully understand and meet the needs of programs and residents. See "<a href="/contact">Getting started</a>" for a detailed look at the process.</p>
+    <p>Adopting CiviForm requires working closely with program administrators, IT teams, and other stakeholders to successfully understand and meet the needs of programs and residents. See "<a href="/contact">Get started</a>" for a detailed look at the process.</p>
     </div>
   </details>
 </cagov-accordion>

@@ -25,7 +25,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>Which governments are using CiviForm?</summary>
     <div class="accordion-body">
-    <p>Residents in the <a href="https://civiform.seattle.gov/">City of Seattle, Washington</a> and the <a href="https://civiform.bloomington.in.gov/">City of Bloomington</a>, Indiana are already benefiting from easier access to government services. The State of Arkansas is approaching a state-wide launch. Charlotte, North Carolina is conducting a pilot and Miami-Dade County, Florida is starting development. We look forward to more governments joining the software collaborative later this year.</p>
+    <p>Residents in the <a href="https://civiform.seattle.gov/">City of Seattle, Washington</a> and the <a href="https://civiform.bloomington.in.gov/">City of Bloomington, Indiana</a> are already benefiting from easier access to government services. The State of Arkansas is approaching a state-wide launch. Charlotte, North Carolina is conducting a pilot and Miami-Dade County, Florida is starting development. We look forward to more governments joining the software collaborative later this year.</p>
     </div>
   </details>
 </cagov-accordion>

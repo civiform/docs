@@ -9,4 +9,4 @@ Product managers, user experience designers, and others may need to test out Civ
 * CiviForm admins
 * Program admins
 
-To log in under a specific role, open your staging site (e.g. [demo.civiform.dev](https://demo.civiform.dev)) and select the role you wish to log in as.
+To log in under a specific role, open your staging site (e.g. [demo.civiform.dev](https://demo.civiform.dev)), click the "DevTools" link in the upper right of the page, and select the role you wish to log in as.

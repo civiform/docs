@@ -515,7 +515,31 @@ An enumerator question, with two entities and a repeated `household_member_phone
 {% endcode %}
 
 ### File upload questions
-File upload questions are not currently available in the API. See [GitHub Issue #5025](https://github.com/civiform/civiform/issues/5025) for progress on this feature.
+`"question_type": "FILE_UPLOAD"`
+
+{% hint style="info" %}
+The API doesn't currently support exporting files programatically. It only provides a link a Program Admin can use to retrieve the file. See [GitHub Issue #5025](https://github.com/civiform/civiform/issues/5025) for progress on supporting programmatically retrieving files.
+{% endhint %}
+
+In addition to the metadata field, file upload questions have the following property:
+
+#### `file_key`
+- **Property**: `file_key`
+- **JSON Type**: `string` or `null`
+- **Format**: A URL, `null` if unanswered.
+- **Description**: A link to the file the applicant uploaded.\
+_Note_: This link is not a link to the file that can be used programatically. It's a link that requires a Program Admin login to retrieve the file.
+
+An file upload question looks like
+
+{% code %}
+```json
+"proof_of_income" : {
+  "question_type" : "FILE_UPLOAD",
+  "file_key" : "https://my.civiform.gov/file_key.pdf"
+},
+```
+{% endcode %}
 
 ### ID questions
 `"question_type": "ID"`

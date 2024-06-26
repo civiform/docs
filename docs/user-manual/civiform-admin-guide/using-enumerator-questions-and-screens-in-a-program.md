@@ -26,7 +26,7 @@ A screen can only contain an enumerator when it’s the only question on the scr
     | Description         | The description displayed in the global question bank.                                                                                                                                              |
     | Question text       | <p>The text displayed to the Applicant.</p><p>For nested enumerators, the “$this” token is required.</p>                                                                                            |
     | Question help text  | <p>The help text displayed to the Applicant.</p><p>If the question help text field is used, the “$this” token may be used for nested enumerators.</p>                                               |
-    | Question settings   | <p>The repeated entity type that’s being enumerated.</p><p><strong>Tip</strong>: This should be a singular noun, not plural. For example, “Household member”, <em>not</em> “Household members”.</p> |
+    | Question settings   | <p>Entity type: The repeated entity type that’s being enumerated. This should be a singular noun, not plural. For example, “Household member”, <em>not</em> “Household members”.</p><p>Minimum entity count: The minimum number of answers the applicant must provide.</p><p>Maximum entity count: The maximum number of answers the applicant may provide.</p>  |
 5. Click **Create**.\
    The new question appears in the list of questions.
 

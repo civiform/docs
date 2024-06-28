@@ -10,7 +10,7 @@ title: CiviForm | News
 Check out the latest product updates in our <a href="https://github.com/civiform/civiform/releases" target="_blank">release notes</a>!
 </div>
 
-{%- for story in news -%}
+{%- for story in news.newsItems -%}
 {%- if story.Featured -%}
 {%- block news_feature -%}
 {%- include "layouts/news-feature.njk" -%}
@@ -21,7 +21,7 @@ Check out the latest product updates in our <a href="https://github.com/civiform
 <h2>More stories</h2>
 
 <div class="cagov-stack">
-  {%- for story in news -%}
+  {%- for story in news.newsItems -%}
     <a href="{{story.URL}}" target="_blank" class="btn-action-primary m-t-1"><span class="btn-action-title">{{story.Title}}</span>
     <span class="btn-action-text"><strong>{{story.Date | textDate}}</strong> | {{story.Publisher}}</span></a>
   {%- endfor -%}

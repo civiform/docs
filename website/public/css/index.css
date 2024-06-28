@@ -6337,6 +6337,9 @@ figure {
   height: 100%;
   vertical-align: middle;
 }
+.gov-image-ar img {
+  object-fit: scale-down;
+}
 @media (min-width: 1176px) {
   .gov-image figcaption {
     margin-top: -12px;

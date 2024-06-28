@@ -148,6 +148,10 @@ figure {
   vertical-align: middle;
 }
 
+.gov-image-ar img {
+  object-fit: scale-down;
+}
+
 /* Move the URLs closer to the logos */
 @media (min-width: $desktop) {
   .gov-image figcaption {

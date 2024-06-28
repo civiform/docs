@@ -40,7 +40,7 @@ Read more about CiviForm's key features below and in our [documentation](https:/
   <div class="gov-image">
       <img alt="City of Charlotte" src="/img/charlotte-logo.svg" />
   </div>
-  <div class="gov-image">
+  <div class="gov-image gov-image-ar">
     <img alt="State of Arkansas" src="/img/arkansas-logo.png" />
   </div>
   <div class="gov-image">

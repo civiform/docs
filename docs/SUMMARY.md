@@ -124,6 +124,7 @@
       * [v2.1.0](it-manual/sre-playbook/server-environment-variables/v2.1.0.md)
       * [v2.2.0](it-manual/sre-playbook/server-environment-variables/v2.2.0.md)
       * [v2.3.0](it-manual/sre-playbook/server-environment-variables/v2.3.0.md)
+      * [v2.4.0](it-manual/sre-playbook/server-environment-variables/v2.4.0.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
   * [Database Disaster Recovery](it-manual/sre-playbook/database-disaster-recovery.md)

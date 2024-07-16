@@ -77,9 +77,7 @@ Tip: Your primary responsibility with respect to incident response is to triage 
 
 #### Security vulnerability fixes
 
-In open source software development, it's common for library maintainers to release updates when a new security vulnerability is discovered. Subscribe to the security mailing lists mentioned in the [Preparation section](#ensure-you-have-visibility-into-comms). If you receive an advisory during your on-call shift, respond to it by creating an issue in GitHub and triaging it appropriately.
-
-The most common response will be to update the appropriate dependency to the latest patch version that includes a fix.
+In open source software development, it's common for library maintainers to release updates when a new security vulnerability is discovered. Subscribe to the security mailing lists mentioned in the [Preparation section](#ensure-you-have-visibility-into-comms). If you receive an advisory during your on-call shift, including OpenJDK advisories, the most common response will be to update the appropriate dependency to the latest patch version that includes a fix.  Once the update is available, Renovate will automatically create a PR with the update.  If the vulnerability is being actively exploited and an update with a fix isn't available yet, create an issue in GitHub and triage it appropriately so that it receives immediate attention.
 
 #### Dependency updates
 

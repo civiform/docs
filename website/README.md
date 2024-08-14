@@ -12,7 +12,7 @@ git clone git@github.com:civiform/docs.git
 cd docs
 git checkout -b my-website-update
 ```
-### 2. Run the webstie locally
+### 2. Run the website locally
 Install website libraries if they haven't been installed already:
 ```
 cd website
@@ -24,12 +24,12 @@ npm start
 ```
 You should be able to visit the website at [localhost:8080](http://localhost:8080).
 
-### 3. Make desired changes to markdown files in `docs/website/src` directory.
-Edit the markdown files in `src/` as needed. 
+### 3. Make desired changes to markdown files in [`website/src`](https://github.com/civiform/docs/blob/main/website/src/) directory.
+Edit the markdown files in `website/src` as needed. Note that these edits should be made in your own branch or fork (see Step 1 above).
 
-**Do NOT edit the files in `docs/website/public`**, these files are automatically generated from the source files. 
+**Do NOT edit the files in `website/public`**, these files are automatically generated from the source files. 
 
-The live preview at [localhost:8080](http://localhost:8080) will update automatically as you make and save changes to the files in `docs/website/src`.
+The live preview at [localhost:8080](http://localhost:8080) will update automatically as you make and save changes to the files in `website/src`.
 If you make a change that breaks the site (for example, removing a necessary HTML tag), you will see associated errors in your terminal. Otherwise, if you see your changes rendered, the build was successful.
 
 ### 4. Commit changes and push to GitHub.
@@ -42,7 +42,7 @@ git push origin my-website-update
 This should produce a link directing you to create a new pull request on GitHub.
 
 ### 5. Create and merge pull request and view live site.
-To create a pull request, visit the [civiform/docs](https://github.com/civiform/docs) repository on GitHub and click the dialog to create a new pull request with your recent change.
+To create a pull request, visit the [`civiform/docs`](https://github.com/civiform/docs) repository on GitHub and click the dialog to create a new pull request with your recent change.
 Request a review if you want it, otherwise click "**Squash and merge**" to merge the pull request. The changes should be live on [civiform.us](https://civiform.us) within a minute.
 
 If you need more help with GitHub, ask a teammate or take a look at [this guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github).
@@ -50,7 +50,7 @@ If you need more help with GitHub, ask a teammate or take a look at [this guide]
 ## Updating the News section
 CiviForm's [News page](https://civiform.us/news) shows a list of recent news stories, including a featured section with images, headlines, and descriptions. 
 
-To update the stories or add a new story, edit the JSON file at [website/src/_data/news.json](https://github.com/civiform/docs/blob/main/website/src/_data/news.json).
+To update the stories or add a new story, edit the JSON file at [`website/src/_data/news.json`](https://github.com/civiform/docs/blob/main/website/src/_data/news.json).
 
 Note:
 * At minimum, each entry should contain:
@@ -61,7 +61,7 @@ Note:
     * `"Date"`: Date of publication formatted as `"YYYY-MM-DD"`. Stories are sorted by most recent date (the order in the JSON doesn't matter, but it is still nice to organize them in chronological order to make editing easier).
 * To **feature a story** at the top of the page, include `"Featured": true` in the entry. All featured story entries must contain:
     * `"Featured": true`: marks the story to be featured in the top section.
-    * `"Image"`: the filename of the featured image. The image file itself should be in [website/src/assets/img](https://github.com/civiform/docs/tree/main/website/src/assets/img).
+    * `"Image"`: the filename of the featured image. The image file itself should be in the [`website/src/assets/img/`](https://github.com/civiform/docs/tree/main/website/src/assets/img) directory.
     * `"ImageDescription"`: a description of the image for accessibility.
     * `"Description"`: a simple description of the story to appear alongside the featured image.
 
@@ -69,7 +69,7 @@ As with any changes, the website must be rebuilt and redeployed following the st
 
 ## Updating redirects
 The website supports redirects (e.g. [civiform.us/drive](https://civiform.us/drive) redirects to our project Drive).
-Redirects are configured in [website/src/redirects.md](https://github.com/civiform/docs/blob/main/website/src/redirects.md). 
+Redirects are configured in [`website/src/redirects.md`](https://github.com/civiform/docs/blob/main/website/src/redirects.md). 
 
 To add a redirect, add an entry to the `redirects` section of the file.
 ```

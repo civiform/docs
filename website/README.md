@@ -43,6 +43,7 @@ This should produce a link directing you to create a new pull request on GitHub.
 To create a pull request, visit the [civiform/docs](https://github.com/civiform/docs) repository on GitHub and click the dialog to create a new pull request with your recent change.
 Request a review if you want it, otherwise click "**Squash and merge**" to merge the pull request. The changes should be live on [civiform.us](https://civiform.us) within a minute.
 
+If you need more help with GitHub, ask a teammate or take a look at [this guide](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github).
 
 ## Updating the News section
 CiviForm's [News page](https://civiform.us/news) shows a list of recent news stories, including a featured section with images, headlines, and descriptions. 

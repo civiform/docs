@@ -58,7 +58,7 @@ Note:
     * `"Government"`: The government associated with this story. Can be "Seattle", "Bloomington", "Arkansas", "General", or a new string for a new government. For new governments, be consistent in usage across entries.
     * `"Title"`: The title to display for each entry (usually just the story title itself, but you can adjust it if needed).
     * `"Publisher"`: The news source or event that published this story.
-    * `"Date"`: Date of publication formatted as `YYYY-MM-DD`. Stories are sorted by most recent date (the order in the JSON doesn't matter, but it is still nice to organize them in chronological order to make editing easier).
+    * `"Date"`: Date of publication formatted as `"YYYY-MM-DD"`. Stories are sorted by most recent date (the order in the JSON doesn't matter, but it is still nice to organize them in chronological order to make editing easier).
 * To feature a story at the top of the page, include `"Featured": true` in the entry.
 * All featured story entries must contain:
     * `"Featured": true`: marks the story to be featured in the top section.

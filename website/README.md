@@ -18,7 +18,7 @@ Install website libraries if they haven't been installed already:
 cd website
 npm install
 ```
-Run the website
+Run the website:
 ```
 npm start
 ```
@@ -26,7 +26,9 @@ You should be able to visit the website at [localhost:8080](http://localhost:808
 
 ### 3. Make desired changes to markdown files in `docs/website/src` directory.
 Edit the markdown files in `src/` as needed. 
+
 **Do NOT edit the files in `docs/website/public`**, these files are automatically generated from the source files. 
+
 The live preview at [localhost:8080](http://localhost:8080) will update automatically as you make and save changes to the files in `docs/website/src`.
 If you make a change that breaks the site (for example, removing a necessary HTML tag), you will see associated errors in your terminal. Otherwise, if you see your changes rendered, the build was successful.
 
@@ -49,6 +51,7 @@ If you need more help with GitHub, ask a teammate or take a look at [this guide]
 CiviForm's [News page](https://civiform.us/news) shows a list of recent news stories, including a featured section with images, headlines, and descriptions. 
 
 To update the stories or add a new story, edit the JSON file at [website/src/_data/news.json](https://github.com/civiform/docs/blob/main/website/src/_data/news.json).
+
 Note:
 * At minimum, each entry should contain:
     * `"URL"`: The story URL that this entry should link to.
@@ -66,8 +69,9 @@ Note:
 As with any changes, the website must be rebuilt and redeployed following the steps above to be reflected live on [civiform.us](https://civiform.us).
 
 ## Updating redirects
-The website supports redirects (e.g. [civiform.us/drive](https://civiform.us/drive) redirects to our project Drive.)
+The website supports redirects (e.g. [civiform.us/drive](https://civiform.us/drive) redirects to our project Drive).
 Redirects are configured in [website/src/redirects.md](https://github.com/civiform/docs/blob/main/website/src/redirects.md). 
+
 To add a redirect, add an entry to the `redirects` section of the file.
 ```
 redirects:

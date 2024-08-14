@@ -1,6 +1,6 @@
-# Civiform.us website
+# [civiform.us](https://civiform.us) website
 
-This directory contains the files necessary to build and deploy the CiviForm website.
+This directory contains the files necessary to build and deploy the CiviForm project website at [civiform.us](https://civiform.us).
 ## Making changes
 
 ### 0. Install dependencies

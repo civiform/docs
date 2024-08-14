@@ -59,8 +59,7 @@ Note:
     * `"Title"`: The title to display for each entry (usually just the story title itself, but you can adjust it if needed).
     * `"Publisher"`: The news source or event that published this story.
     * `"Date"`: Date of publication formatted as `"YYYY-MM-DD"`. Stories are sorted by most recent date (the order in the JSON doesn't matter, but it is still nice to organize them in chronological order to make editing easier).
-* To feature a story at the top of the page, include `"Featured": true` in the entry.
-* All featured story entries must contain:
+* To **feature a story** at the top of the page, include `"Featured": true` in the entry. All featured story entries must contain:
     * `"Featured": true`: marks the story to be featured in the top section.
     * `"Image"`: the filename of the featured image. The image file itself should be in [website/src/assets/img](https://github.com/civiform/docs/tree/main/website/src/assets/img).
     * `"ImageDescription"`: a description of the image for accessibility.

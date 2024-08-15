@@ -3,16 +3,26 @@
 This directory contains the files necessary to build and deploy the CiviForm project website at [civiform.us](https://civiform.us).
 ## Making changes
 
-### 0. Install dependencies
+### 0. Setup
+The site is built using 11ty, a static site generator. To build the site, you need a development environment with the necessary dependencies. We recommend using GitHub Codespaces to get started quickly, otherwise you can also set up these dependenices on your local machine.
+
+#### Option A: GitHub Codespaces
+Create a branch or fork of the repository in GitHub Codespaces: 
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/civiform/docs)
+
+#### Option B: Local Setup
+##### 0a. Install dependencies
 You need `node` and `npm`. You can install them both [here](https://nodejs.org/en/download/prebuilt-installer) (installing `node` will install `npm` alongside it).
 
-### 1. Clone the [`civiform/docs`](https://github.com/civiform/docs) repo and create a branch or fork
+##### 0b. Clone the [`civiform/docs`](https://github.com/civiform/docs) repo and create a branch or fork
 ```
 git clone git@github.com:civiform/docs.git
 cd docs
 git checkout -b my-website-update
 ```
-### 2. Run the website locally
+
+### 1. Run the website locally
 Install website libraries if they haven't been installed already:
 ```
 cd website
@@ -22,9 +32,9 @@ Run the website:
 ```
 npm start
 ```
-You should be able to visit the website at [localhost:8080](http://localhost:8080).
+You should be able to visit the website at [localhost:8080](http://localhost:8080). If you are using GitHub Codespaces, click through the URL popup in the terminal to view the live site. 
 
-### 3. Make desired changes to markdown files in [`website/src`](https://github.com/civiform/docs/blob/main/website/src/) directory.
+### 2. Make desired changes to markdown files in [`website/src`](https://github.com/civiform/docs/blob/main/website/src/) directory.
 Edit the markdown files in `website/src` as needed. Note that these edits should be made in your own branch or fork (see Step 1 above).
 
 **Do NOT edit the files in `website/public`**, these files are automatically generated from the source files. 
@@ -32,8 +42,8 @@ Edit the markdown files in `website/src` as needed. Note that these edits should
 The live preview at [localhost:8080](http://localhost:8080) will update automatically as you make and save changes to the files in `website/src`.
 If you make a change that breaks the site (for example, removing a necessary HTML tag), you will see associated errors in your terminal. Otherwise, if you see your changes rendered, the build was successful.
 
-### 4. Commit changes and push to GitHub.
-Once you are happy with your changes, it is time to commit them to the repository and push them back to GitHub:
+### 3. Commit changes and push to GitHub.
+Once you are happy with your changes, it is time to commit them to the repository and push them back to GitHub. You can do this in the GitHub Codespaces UI, or in the terminal:
 ```
 git add .
 git commit -m 'Added details on how to get started.'
@@ -41,7 +51,7 @@ git push origin my-website-update
 ```
 This should produce a link directing you to create a new pull request on GitHub.
 
-### 5. Create and merge pull request and view live site.
+### 4. Create and merge pull request and view live site.
 To create a pull request, visit the [`civiform/docs`](https://github.com/civiform/docs) repository on GitHub and click the dialog to create a new pull request with your recent change.
 Request a review if you want it, otherwise click "**Squash and merge**" to merge the pull request. The changes should be live on [civiform.us](https://civiform.us) within a minute.
 

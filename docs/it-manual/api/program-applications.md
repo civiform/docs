@@ -528,12 +528,13 @@ In addition to the metadata field, file upload questions have the following prop
 - **JSON Type**: `string` or `null`
 - **Format**: A URL, `null` if unanswered.
 - **Description**: A link to the file the applicant uploaded.\
-_Note_: This property is deprecated and soon to be replaced by `file_urls`.
+_Note_: This property is deprecated and soon to be replaced by `file_urls`. It is not included if the MULTIPLE_FILE_UPLOAD_ENABLED flag is turned on.
 
 #### `file_urls`
 - **Property**: `file_urls`
 - **JSON Type**: `[string]`
 - **Format**: A URL, or an empty array `[]` if unanswered.
+- **Format**: An array of URLs, or an empty array `[]` if unanswered.
 - **Description**: An array of links to the file the applicant uploaded.\
 _Note_: This link is not a link to the file that can be used programatically. It's a link that requires a Program Admin login to retrieve the file.
 

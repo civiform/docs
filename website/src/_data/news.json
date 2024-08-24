@@ -1,19 +1,25 @@
 {
     "newsItems": [
-         {
-            "URL": "https://innovation-hub.seattle.gov/2024/07/31/seattle-celebrates-progress-towards-making-benefits-and-discounts-more-accessible-for-all-residents/",
-            "Government": "Seattle",
-            "Title": "Seattle celebrates progress towards making benefits and discounts more accessible for all residents",
-            "Publisher": "City of Seattle",
-            "Date": "2024-07-31"
-        },                
         {
-            "URL": "https:\/\/seattlechannel.org\/Mayor\/?videoid=x155163",
+            "URL": "https:\/\/innovation-hub.seattle.gov\/2024\/07\/31\/seattle-celebrates-progress-towards-making-benefits-and-discounts-more-accessible-for-all-residents\/",
             "Government": "Seattle",
-            "Title": "Mayor Bruce Harrell delivers 2024 State of the City address",
+            "Title": "Total available savings through programs on CiviForm at the City of Seattle has increased $2,200 to $25,200 per year",
             "Publisher": "City of Seattle",
-            "Date": "2024-02-20"
+            "Date": "2024-07-31",
+            "Image": "affordable-seattle-announcement.jpg",
+            "ImageDescription": "Seattle Mayor Bruce Harrell signing the exectuive order for CiviForm usage in Seattle.",
+            "Featured": true
         },
+        {
+            "URL": "https:\/\/www.idc.com\/getdoc.jsp?containerId=prUS51902824",
+            "Government": "Bloomington",
+            "Title": "Bloomington, IN named as an IDC’s Smart Cities North America Finalist for their Civiform deployment",
+            "Publisher": "IDC",
+            "Date": "2024-02-26",
+            "Image": "bloomington-best-of-in-award.jpg",
+            "ImageDescription": "Greg Overtoom and Rick Dietz of Bloomington being congratulated by Tracy Barnes, CIO at Indiana Office of Technology.",
+            "Featured": true
+        }, 
         {
             "URL": "https:\/\/www.anthemawards.com\/winners\/list\/entry\/#!humanitarian-action-services\/product\/civiform\/1976\/-1\/456542",
             "Government": "General",
@@ -45,10 +51,7 @@
             "Title": "Bloomington Wins Best of Indiana Award for Best Application Serving the Public",
             "Description": "The City of Bloomington has been awarded for its use of CiviForm in streamlining the process of applying for public grants, scholarships, and other assistance programs.",
             "Publisher": "City of Bloomington",
-            "Date": "2023-10-27",
-            "Image": "bloomington-best-of-in-award.jpg",
-            "ImageDescription": "Greg Overtoom and Rick Dietz of Bloomington being congratulated by Tracy Barnes, CIO at Indiana Office of Technology.",
-            "Featured": true
+            "Date": "2023-10-27"
         },
         {
             "URL": "https:\/\/seattlemedium.com\/seattle-mayor-bruce-harrell-unveils-city-initiative-to-help-families-save-money\/",
@@ -70,10 +73,7 @@
             "Title": "Seattle Mayor Bruce Harrell Announces City Initiative to Help Save Families Up to $23,000 Per Year",
             "Description": "In an Executive Order, the Mayor directed departments to unify their program applications on CiviForm.",
             "Publisher": "City of Seattle",
-            "Date": "2023-07-12",
-            "Image": "affordable-seattle-announcement.jpg",
-            "ImageDescription": "Seattle Mayor Bruce Harrell signing the exectuive order at the announcement event.",
-            "Featured": true
+            "Date": "2023-07-12"
         },
         {
             "URL": "https:\/\/www.westsideseattle.com\/robinson-papers\/2023\/07\/12\/city-initiative-help-save-families-23000-year-announced",

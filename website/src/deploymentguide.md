@@ -1,3 +1,9 @@
+---
+layout: layouts/home.njk
+title: CiviForm | Deployment Guide
+---
+# Deployment Guide
+
 **CiviForm Business Owner Deployment Guide**  
 This document is for someone that has decided to use CiviForm and now needs a guide of how to deploy it in their organization. It includes an overview as well as a detailed guide of what steps are needed at  each stage. It will help you:
 

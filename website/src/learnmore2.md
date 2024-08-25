@@ -1,4 +1,8 @@
-## Learn More
+---
+layout: layouts/home.njk
+title: CiviForm | Learn More
+---
+# Learn More
 
 CiviForm is flexible open source software designed to simplify government services administration process while making the application process easier for residents. It allows residents and community organizations to find and apply for multiple services and benefits in one centralized place.
 

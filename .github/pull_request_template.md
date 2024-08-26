@@ -1,0 +1,15 @@
+### Description
+
+Please explain the changes you made here.
+
+### Checklist
+
+#### General
+
+- [ ] Ensure any links to pages aren't referenced in code (if there are changes to links)
+- [ ] Changes to the website have been verified via steps [here](https://github.com/civiform/docs/blob/pull-request-template/website/README.md#1-run-the-website-locally)
+- [ ] Large changes include reviewers or are added to the #eng-pull-request-discuss slack channel for visibility
+
+### Issue(s) this completes
+
+Fixes #<issue_number>; Fixes #<issue_number>...

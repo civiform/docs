@@ -32,3 +32,10 @@ To detect the public IP of a host running a web browser, visit https://checkip.a
 ### Saving files within pgadmin
 
 WARNING: The pgadmin tool has the ability to save queries. Do NOT save files within the tool. When pgadmin is shutdown it will permanently remove the files. If you need to save a query, copy and paste it into a file on your computer.
+
+### Updating data in pgadmin
+
+We cache program and question data on the server for active and obsolete versions, so if you're making changes to this data, you may not see updates reflected until you:
+
+- Dev / staging instance: clear the cache by going to Dev Tools -> Additional tools -> Clear cache
+- Prod instance (in which data shouldn't be maniputlated or should be done with extreme caution): re-start the the application containers to clear the cache

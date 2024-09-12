@@ -36,6 +36,7 @@
     * [Manage Trusted Intermediaries](user-manual/civiform-admin-guide/manage-trusted-intermediaries.md)
   * [Manage API keys](user-manual/civiform-admin-guide/manage-api-keys.md)
   * [Using Markdown](user-manual/civiform-admin-guide/using-markdown.md)
+  * [Migrating programs between environments](user-manual/civiform-admin-guide/program-migration)
 * [Program Admin Guide](user-manual/program-admin-guide/README.md)
   * [How to become a Program Admin](user-manual/program-admin-guide/how-to-become-a-program-admin.md)
   * [Review completed applications](user-manual/program-admin-guide/review-completed-applications.md)

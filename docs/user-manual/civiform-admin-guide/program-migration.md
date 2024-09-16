@@ -35,25 +35,25 @@ There are two feature flags to be aware of for Program Migration:
    <img width="498" alt="Import program image" src="https://github.com/user-attachments/assets/9554f809-cc4a-4743-a545-83727ad126c7">
 2. Click this link to be taken to the program import page and follow the instructions there to import a program.
 
-## Program Settings Not Migrated
+## Program Settings That Are Not Migrated
 
 There are a few program and question settings that are not yet being migrated over. You will have to manually set these in your import environment after importing a new program:
 
 - Program images
 - Program statuses (and their associated translations)
 - Any categories assigned to the program
-- Primary Applicant Info settings applied to questions
 - TI groups associated with the program
+- Primary Applicant Info settings applied to questions
 
 ## Potential Errors
 
 Situations in which you might get an error include:
 
 - Attempting to import a program with an admin name that matches the admin name of an existing program.
-  - You can resolve this by editing the program admin name in the json, but please be careful when doing so and only use lowercase letters with dashes between words (validation for this will be added soon).
+  - You can resolve this by editing the program admin name in the json, but please be careful when doing so and only use lowercase letters with dashes between words. Using invalid characters in a program admin name will result in another error.
 - Exporting a program from an environment that is on a different CiviForm version than the import environment.
   - Please try to make sure environments are on the same CiviForm version before migrating programs between them. If they are on different versions, you might see an error about an expected field missing.
-- Programs are in draft mode.
-  - With the NO_DUPLICATE_QUESTIONS_FOR_MIGRATION_ENABLED flag enabled, you must make sure all programs and questions are published before attempting to import a new program.
 - Attempting to import a program with program visibility set to “Visible to selected trusted intermediaries only” (shows up as “SELECT_TI” in the program json)
   - Since we don’t migrate ti groups with the program, you must select a different visibility for the program before migrating.
+- Programs are in draft mode.
+  - With the NO_DUPLICATE_QUESTIONS_FOR_MIGRATION_ENABLED flag enabled, you must make sure all programs and questions are published before attempting to import a new program.

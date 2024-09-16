@@ -19,6 +19,7 @@
     * [Show or hide questions based on inputs](user-manual/civiform-admin-guide/show-or-hide-questions-based-on-inputs.md)
     * [Manage program eligibility](user-manual/civiform-admin-guide/manage-eligibility.md)
     * [Manage address & service area validation](user-manual/civiform-admin-guide/manage-address-correction-and-service-area-validation.md)
+    * [Manage notifications](user-manual/civiform-admin-guide/manage-notifications.md)
     * [How to publish programs](user-manual/civiform-admin-guide/publish-a-program.md)
     * [Set a pre-screener](user-manual/civiform-admin-guide/set-pre-screener.md)
   * Working with questions

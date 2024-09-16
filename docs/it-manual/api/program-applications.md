@@ -623,8 +623,10 @@ In addition to the metadata field, name questions have the following properties:
 
 #### `suffix`
 - **Property**: `suffix`
-- **JSON Type**: `string` or `null`
-- **Format**: A Unicode string of any characters. `null` if unanswered or not provided.
+- **JSON Type**: `string`
+- **Value**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/models/ApplicantModel.java#L43)
+currently conssiting of one of [`JR`, `SR`, `I`, `II`, `III`, `IV`, `V`].\
+_Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
 - **Description**: The applicant's name suffix. If the question is answered, only the `middle_name` and `suffix` are optional.
 
 A name question looks like

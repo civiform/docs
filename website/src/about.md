@@ -41,7 +41,12 @@ Read more about CiviForm's key features below and in our [documentation](https:/
       <img alt="City of Charlotte" src="/img/charlotte-logo.svg" />
   </div>
   <div class="gov-image gov-image-ar">
-    <img alt="State of Arkansas" src="/img/arkansas-logo.png" />
+   <figure>
+      <a href="https://myarciviform.arkansas.gov/" target="_blank">
+            <img alt="State of Arkansas" src="/img/arkansas-logo.png" />
+        <figcaption>myarciviform.arkansas.gov</figcaption>
+      </a>
+    </figure>
   </div>
   <div class="gov-image">
     <img alt="Miami-Dade County" src="/img/mdc-logo.svg" />

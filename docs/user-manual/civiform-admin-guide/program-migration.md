@@ -55,5 +55,7 @@ Situations in which you might get an error include:
   - Please try to make sure environments are on the same CiviForm version before migrating programs between them. If they are on different versions, you might see an error about an expected field missing.
 - Attempting to import a program with program visibility set to “Visible to selected trusted intermediaries only” (shows up as “SELECT_TI” in the program json)
   - Since we don’t migrate ti groups with the program, you must select a different visibility for the program before migrating.
+- Attempting to import a program with visibiity or eligibility tied to service area validation.
+   - We do not yet support this, but will soon. 
 - Programs are in draft mode.
   - With the NO_DUPLICATE_QUESTIONS_FOR_MIGRATION_ENABLED flag enabled, you must make sure all programs and questions are published before attempting to import a new program.

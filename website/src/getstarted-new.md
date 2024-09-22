@@ -1,5 +1,5 @@
 ---
-layout: layouts/home.njk
+layout: layouts/page.njk
 title: CiviForm | Get started
 ---
 # Get started
@@ -52,4 +52,4 @@ To get started learning how to deploy CiviForm in your organization, <br>use thi
     </div>
   </div>
 </div>
-For more details, see our <a href="https://docs.civiform.us/user-manual/onboarding-guide"> implementation guide</a>.
+<a href="/implementation-guide" class="btn-action-primary m-t-1"><span class="btn-action-title">Implementation Guide</span><span class="btn-action-text">For more details, see our implementation guide</span></a>

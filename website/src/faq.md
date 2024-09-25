@@ -34,7 +34,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>How can I get CiviForm in my community?</summary>
     <div class="accordion-body">
-    <p>Adopting CiviForm requires working closely with program administrators, IT teams, and other stakeholders to successfully understand and meet the needs of programs and residents. See "<a href="/contact">Get started</a>" for a detailed look at the process.</p>
+    <p>Adopting CiviForm requires working closely with program administrators, IT teams, and other stakeholders to successfully understand and meet the needs of programs and residents. See "<a href="/getstarted-new">Get Started</a>" for an overview. If you want more detail, visit the "<a href="/implementation-guide">Implementation Guide</a>" for a detailed look at the process.</p>
     </div>
   </details>
 </cagov-accordion>

@@ -13,7 +13,7 @@ CiviForm is a free, open source software solution for governments that was devel
 
 Read more about CiviForm's key features below and in our [documentation](https://docs.civiform.us), and reach out to learn more about bringing CiviForm to your community:
 
-<a href="/contact" class="btn-action-primary m-t-1"><span class="btn-action-title">Get started</span><span class="btn-action-text">Bring CiviForm to your community</span></a>
+<a href="/getstarted-new" class="btn-action-primary m-t-1"><span class="btn-action-title">Get started</span><span class="btn-action-text">Bring CiviForm to your community</span></a>
 
 ## Developed and trusted by:
 

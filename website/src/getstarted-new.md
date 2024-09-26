@@ -1,8 +1,8 @@
 ---
 layout: layouts/page.njk
-title: CiviForm | Get started
+title: CiviForm | Get Started
 ---
-# Get started
+# Get Started
 
 To get started learning how to deploy CiviForm in your organization, <br>use this guide to learn what steps are needed at each stage of implementation.
 
@@ -52,4 +52,4 @@ To get started learning how to deploy CiviForm in your organization, <br>use thi
     </div>
   </div>
 </div>
-<a href="/implementation-guide" class="btn-action-primary m-t-1"><span class="btn-action-title">Implementation Guide</span><span class="btn-action-text">For more details, see our implementation guide</span></a>
+<a href="/implementation-guide" class="btn-action-primary m-t-1"><span class="btn-action-title">Implementation Guide</span><span class="btn-action-text">For more details, see our Implementation Guide</span></a>

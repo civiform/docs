@@ -208,6 +208,7 @@ The `application` object is organized as a set of `key`-`object` pairs that repr
     "first_name": "Taylor",
     "middle_name": "Allison",
     "last_name": "Swift",
+    "suffix": "I"
   },
   "favorite_color": {
     "question_type": "TEXT",
@@ -606,19 +607,27 @@ In addition to the metadata field, name questions have the following properties:
 - **Property**: `first_name`
 - **JSON Type**: `string` or `null`
 - **Format**: A Unicode string of any characters. `null` if the question is unanswered.
-- **Description**: The applicant's first name. If the question is answered, only the `middle_name` is optional.
+- **Description**: The applicant's first name. If the question is answered, only the `middle_name` and `suffix` are optional.
 
 #### `middle_name`
 - **Property**: `middle_name`
 - **JSON Type**: `string` or `null`
 - **Format**: A Unicode string of any characters. `null` if unanswered or not provided.
-- **Description**: The applicant's middle name. If the question is answered, only the `middle_name` is optional.
+- **Description**: The applicant's middle name. If the question is answered, only the `middle_name` and `suffix` are optional.
 
 #### `last_name`
 - **Property**: `last_name`
 - **JSON Type**: `string` or `null`
 - **Format**: A Unicode string of any characters. `null` if the question is unanswered.
-- **Description**: The applicant's last name. If the question is answered, only the `middle_name` is optional.
+- **Description**: The applicant's last name. If the question is answered, only the `middle_name` and `suffix` are optional.
+
+#### `suffix`
+- **Property**: `suffix`
+- **JSON Type**: `string`
+- **Value**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/models/ApplicantModel.java#L43)
+currently conssiting of one of [`JR`, `SR`, `I`, `II`, `III`, `IV`, `V`].\
+_Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
+- **Description**: The applicant's name suffix. If the question is answered, only the `middle_name` and `suffix` are optional.
 
 A name question looks like
 
@@ -629,6 +638,7 @@ A name question looks like
   "first_name" : "Taylor",
   "middle_name" : "Allison",
   "last_name" : "Swift",
+  "suffix" : "I"
 },
 ```
 {% endcode %}

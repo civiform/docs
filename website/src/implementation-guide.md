@@ -99,5 +99,6 @@ Iterate and Grow
 * [Learn More about CiviForm](https://civiform.us/learnmore/)  
 * [What is CiviForm](https://docs.civiform.us/overview/what-is-civiform)  
 * [How CiviForm works](https://docs.civiform.us/overview/how-does-civiform-work)  
-* [CiviForm Onboarding guide](https://docs.civiform.us/user-manual/onboarding-guide)  
-* Technical deployment checklist for CiviForm
+* [CiviForm Onboarding Guide](https://docs.civiform.us/user-manual/onboarding-guide)  
+* [Technical Readiness Guide](https://civiform.us/tech-guide/)
+

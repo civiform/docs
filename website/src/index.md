@@ -10,8 +10,8 @@ title: CiviForm
         <p>
           Residents can find and apply for public assistance programs in one place, and government teams can better reach communities in need.
         </p>
-        <a href="/about" class="btn-action-primary m-t-1"><span class="btn-action-title">Learn more</span><span class="btn-action-text">Read about how CiviForm works</span></a>
-        <a href="/contact" class="btn-action-primary m-t-1"><span class="btn-action-title">Get started</span><span class="btn-action-text">Bring CiviForm to your community</span></a>
+        <a href="/learnmore" class="btn-action-primary m-t-1"><span class="btn-action-title">Learn more</span><span class="btn-action-text">Read about how CiviForm works</span></a>
+        <a href="/getstarted-new" class="btn-action-primary m-t-1"><span class="btn-action-title">Get started</span><span class="btn-action-text">Bring CiviForm to your community</span></a>
       </div>
     </div>
     <div>

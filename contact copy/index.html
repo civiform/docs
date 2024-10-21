@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <script type="module" src="/js/index.js"></script>
+    <title>CiviForm | Get started</title>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SPPGE89TM8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SPPGE89TM8");
+    </script>
+  </head>
+  <body>
+    <div class="site-header">
+      <div class="container with-logo">
+        <a href="/" class="grid-logo" aria-label="CiviForm home">
+          <img alt="CiviForm logo" src="/img/civiform-logo.png" />
+        </a>
+
+        <!-- Everything below here is boilerplate to support navigation markup defined in nagivation.njk -->
+
+        <!-- Mobile menu icons (hamburger and search) boilerplate. -->
+        <div class="cagov-nav mobile-icons grid-mobile-icons">
+          <!-- Hamburger icon for mobile menu. -->
+          <button
+            class="menu-trigger cagov-nav open-menu"
+            aria-label="Navigation menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-owns="mainMenu"
+            aria-controls="mainMenu"
+          >
+            <div class="cagov-nav hamburger">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+            <div
+              class="cagov-nav menu-trigger-label menu-label"
+              data-openlabel="Menu"
+              data-closelabel="Close"
+            >
+              Menu
+            </div>
+          </button>
+        </div>
+
+        <!-- Embed desktop search form boilerplate. -->
+        <!-- Search form for desktop. -->
+        <div class="search-container grid-search">
+          <form class="site-search" action="https://docs.civiform.us/">
+            <span class="sr-only" id="SearchInput">Search</span>
+            <input
+              type="text"
+              id="q"
+              name="q"
+              aria-labelledby="SearchInput"
+              placeholder="Search documentation"
+              class="search-textfield"
+            />
+            <button type="submit" class="search-submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="17px"
+                height="17px"
+                viewbox="0 0 17 17"
+                style="enable-background: new 0 0 17 17"
+                xml:space="preserve"
+              >
+                <path
+                  class="blue"
+                  d="M16.4,15.2l-4-4c2-2.6,1.8-6.5-0.6-8.9c-1.3-1.3-3-2-4.8-2S3.5,1,2.2,2.3c-2.6,2.6-2.6,6.9,0,9.6c1.3,1.3,3,2,4.8,2c1.4,0,2.9-0.5,4.1-1.4l4.1,4c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.5-0.1,0.7-0.3C16.7,16.2,16.7,15.6,16.4,15.2L16.4,15.2z M7,12c-1.3,0-2.6-0.5-3.5-1.4c-1.9-1.9-1.9-5.1,0-7C4.4,2.7,5.6,2.1,7,2.1s2.6,0.5,3.5,1.4c0.9,0.9,1.4,2.2,1.4,3.5c0,1.3-0.5,2.6-1.4,3.5C9.5,11.5,8.3,12,7,12z"
+                />
+              </svg>
+              <span class="sr-only">Submit</span>
+            </button>
+            <button class="search-close">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <cagov-site-navigation>
+      <div class="container">
+        <!-- Navigation menu items. -->
+        <nav
+          class="expanded-menu"
+          role="navigation"
+          aria-label="Site Navigation"
+          aria-hidden="false"
+          id="main-menu"
+        >
+          <div class="expanded-menu-grid">
+            <div class="expanded-menu-section mobile-only">
+              <strong class="expanded-menu-section-header">
+                <a
+                  class="expanded-menu-section-header-link js-event-hm-menu"
+                  href="/"
+                  >Home</a
+                >
+              </strong>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/about"
+                    >About</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/contact"
+                    >Get started</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/news"
+                    >News</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/faq"
+                    >FAQ</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="https://docs.civiform.us"
+                    >Documentation</a
+                  ></strong
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </cagov-site-navigation>
+
+    <div id="page-container" class="page-container-ds">
+      <div id="main-content" class="main-content-ds single-column landing">
+        <main id="body-content">
+          <h1>Get started</h1>
+          <p>
+            CiviForm is expanding to state and local governments across the
+            country. If you are interested in launching CiviForm in your
+            community, <strong>complete the form below</strong> or send an email
+            to
+            <a
+              href="mailto:info@civiform.us?subject=I%20want%20to%20learn%20more%20about%20CiviForm"
+              >info@civiform.us</a
+            >. You can read more about the typical onboarding process below.
+          </p>
+          <div
+            class="cagov-with-sidebar cagov-with-sidebar-left cagov-featured-section cagov-block"
+          >
+            <div>
+              <div class="cagov-stack cagov-featured-sidebar">
+                <h3>Bring CiviForm to your community</h3>
+                For more details, see our
+                <a href="https://docs.civiform.us/user-manual/onboarding-guide">
+                  onboarding guide</a
+                >.
+                <div class="cagov-hero-body-content">
+                  <ol class="cagov-step-list m-t-2">
+                    <li>
+                      <strong>Plan</strong>
+                      <br />
+                      <span class="has-inline-color cagov-step-list-content">
+                        With support from key stakeholders, map the needs of
+                        your organization, programs, and community in detail to
+                        identify where CiviForm can help.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Design</strong>
+                      <br />
+                      <span class="has-inline-color cagov-step-list-content">
+                        Work with program administrators to design a better
+                        experience for applicants and staff.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Implement</strong>
+                      <br />
+                      <span class="has-inline-color cagov-step-list-content">
+                        Set up CiviForm to integrate with your existing
+                        programs’ infrastructure and processes.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Validate</strong>
+                      <br />
+                      <span class="has-inline-color cagov-step-list-content">
+                        Test the new applications and workflows to refine your
+                        approach.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Launch</strong>
+                      <br />
+                      <span class="has-inline-color cagov-step-list-content">
+                        Put your new applications out into the world and conduct
+                        outreach in your community.
+                      </span>
+                    </li>
+                    <li>
+                      <strong>Grow & Sustain</strong>
+                      <br />
+                      <span class="has-inline-color cagov-step-list-content">
+                        Continue onboarding new programs and expanding access to
+                        existing ones. Ensure that this work can continue over
+                        time.
+                      </span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="contact-form m-t-3">
+                <iframe
+                  src="https://docs.google.com/forms/d/e/1FAIpQLSdWy_ISffN20vEbRfA3hZi5SHTeapOJyYlddH2A0I49_C-63Q/viewform?embedded=true"
+                  width="100%"
+                  height="100%"
+                  frameborder="0"
+                  marginheight="0"
+                  marginwidth="0"
+                  >Loading…</iframe
+                >
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <section aria-label="Site footer" class="site-footer">
+      <div class="container">
+        <div class="footer-secondary-links">
+          <a href="/contact">Contact</a>
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/civiform/civiform">
+            <span class="sr-only">GitHub</span>
+            <svg aria-hidden="true" width="25" height="25" viewBox="0 0 25 25">
+              <path
+                d="M12.686 0.909302C6.05604 0.909302 0.686035 6.2823 0.686035 12.9093C0.686035 18.2123 4.12403 22.7093 8.89104 24.2943C9.49104 24.4073 9.71103 24.0363 9.71103 23.7173C9.71103 23.4323 9.70104 22.6773 9.69604 21.6773C6.35804 22.4013 5.65404 20.0673 5.65404 20.0673C5.10804 18.6823 4.31904 18.3123 4.31904 18.3123C3.23204 17.5683 4.40304 17.5833 4.40304 17.5833C5.60804 17.6673 6.24103 18.8193 6.24103 18.8193C7.31104 20.6543 9.05004 20.1243 9.73604 19.8173C9.84404 19.0413 10.153 18.5123 10.496 18.2123C7.83104 17.9123 5.03004 16.8803 5.03004 12.2823C5.03004 10.9723 5.49504 9.9023 6.26504 9.0623C6.13003 8.7593 5.72504 7.5393 6.37004 5.8863C6.37004 5.8863 7.37504 5.5643 9.67004 7.1163C10.63 6.8493 11.65 6.7173 12.67 6.7113C13.69 6.7173 14.71 6.8493 15.67 7.1163C17.95 5.5643 18.955 5.8863 18.955 5.8863C19.6 7.5393 19.195 8.7593 19.075 9.0623C19.84 9.9023 20.305 10.9723 20.305 12.2823C20.305 16.8923 17.5 17.9073 14.83 18.2023C15.25 18.5623 15.64 19.2983 15.64 20.4223C15.64 22.0283 15.625 23.3183 15.625 23.7083C15.625 24.0233 15.835 24.3983 16.45 24.2783C21.251 22.7043 24.686 18.2043 24.686 12.9093C24.686 6.2823 19.313 0.909302 12.686 0.909302Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:info@civiform.us?subject=I%20want%20to%20learn%20more%20about%20CiviForm"
+          >
+            <span class="sr-only">Email</span>
+            <svg
+              aria-hidden="true"
+              width="24px"
+              height="24px"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M22.9,6.4c-0.1-1-0.8-1.8-1.8-1.8c0,0-0.1,0-0.1,0v0l-18,0c0,0-0.1,0-0.1,0C1.9,4.6,1.1,5.4,1,6.4c0,0,0,0.1,0,0.1 s0,0.1,0,0.1v12.8h21.9V6.6c0,0,0-0.1,0-0.1C22.9,6.4,22.9,6.4,22.9,6.4L22.9,6.4z M19.3,6.5L12,12.7L4.6,6.5 C4.6,6.5,19.3,6.5,19.3,6.5z M3,8.4C3,8.4,3,8.5,3,8.4l0-0.8l4.8,4.1L3,16.3C3,16.3,3,8.4,3,8.4z M4,17.4l4.9-4.8l3.1,2.7l3.2-2.8 l4.8,4.9L4,17.4L4,17.4z M21,16.3l-4.8-4.6L21,7.6v0.8c0,0,0,0,0,0L21,16.3L21,16.3z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

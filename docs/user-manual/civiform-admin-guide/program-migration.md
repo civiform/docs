@@ -44,6 +44,7 @@ There are a few program and question settings that are not yet being migrated ov
 - Any categories assigned to the program
 - TI groups associated with the program
 - Primary Applicant Info settings applied to questions
+- "pre-screener" setting on a program
 
 ## Potential Errors
 

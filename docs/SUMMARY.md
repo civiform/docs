@@ -147,6 +147,7 @@
       * [v2.9.0](it-manual/sre-playbook/server-environment-variables/v2.9.0.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
+  * [Disaster Recovery](it-manual/sre-playbook/disaster-recovery.md)
   * [Database Disaster Recovery](it-manual/sre-playbook/database-disaster-recovery.md)
   * [Production Database Access](it-manual/sre-playbook/production-database-access.md)
 * [Infrastructure Requirements](it-manual/infrastructure-requirements.md)

@@ -4,7 +4,7 @@ This document describes long-term CiviForm staffing needs for a deploying civic 
 
 ### CiviForm administrator
 
-The CiviForm Admin user role has the ability to define questions, designate data anonymization settings, define program applications, perform anonymized bulk applicant data exports, designate program administrators, and designate trusted intermediaries.
+The CiviForm Admin user role has the ability to define questions and definitions, designate data anonymization settings, define program applications, perform anonymized bulk applicant data exports, designate program administrators, and designate trusted intermediaries.
 
 For programs to reuse applicant data, they must have harmonized data requirements, which requires someone to coordinate those data needs across programs. This is a natural fit for the CiviForm admin.
 

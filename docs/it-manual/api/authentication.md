@@ -9,6 +9,11 @@ Depending on your API client, you may need to take different steps to construct 
 
 If your API client requires you to provide a username and password when using Basic Auth, use the _Username_ and _Password_ values provided on the API key confirmation screen. Your client will then create the `Authorization` header for you.
 
+#### Example: Postman
+
+Postman is an example of an API client that prompts for a username and password. The secret token isn't needed in this case and no other custom headers should be needed aside from the username and password.
+![PostmanExample](https://github.com/user-attachments/assets/4bd22f50-89ed-45d1-b459-f450cc23747f)
+
 ### Manually constructing the header
 
 Some clients, such as `curl`, require constructing the header by hand. Use the _API Secret Token_ value provided on the API confirmation screen, and construct a header that looks like `Authorization: Basic <API Secret Token>`.
@@ -16,6 +21,16 @@ Some clients, such as `curl`, require constructing the header by hand. Use the _
 {% hint style="info" %}
 Basic Auth requires that the request contain a header field in the form of `Authorization: Basic <credentials>`, where `<credentials>` is the Base64 encoding of the Username and Password in the format `username:password`. CiviForm does this encoding for you and provides it in the value of API Secret Token.
 {% endhint %}
+
+#### Example: curl
+
+For a curl, you'll use the following code, but replace the URL and replace the <api_secret_token> with the API secret token that is provided when API credentials are created.
+
+{% code %}
+```shell
+curl https://staging.myciviform.gov/api/v1/checkAuth -vH "Authorization: Basic <api_secret_token>"
+```
+{% endcode %}
 
 ## Additional security features
 
@@ -33,7 +48,7 @@ With `curl`, that might look like this:
 
 {% code %}
 ```shell
-curl staging.myciviform.gov/api/v1/checkAuth -vH "Authorization: Basic <api_key>"
+curl https://staging.myciviform.gov/api/v1/checkAuth -vH "Authorization: Basic <api_secret_token>"
 ```
 {% endcode %}
 

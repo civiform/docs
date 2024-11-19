@@ -113,7 +113,9 @@ While it is often instantaneous, it may take a few minutes for the DNS update to
 - Verify you can log in as an admin and an applicant
 - Check Cloudwatch for errors
 
+{% hint style="success" %}
 The newly restored environment is now up and running.
+{% endhint %}
 
 ## Post restoration
 

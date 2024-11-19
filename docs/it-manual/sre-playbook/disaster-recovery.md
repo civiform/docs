@@ -43,7 +43,7 @@ Make a few edits to the new configuration file.
   - To find the postgres version go to the AWS console and navigate to RDS.
   - Click on the database you will be restoring to get the details page
   - Click on the "Configuration" tab
-  - Look for "Engine version" to get the value you for `POSTGRESQL_VERSION`.
+  - Look for "Engine version" to get the value for `POSTGRESQL_VERSION`.
 
   {% hint style="warning" %}
   Upgrading Postgres versions should NOT be done at the same time as restoring an environment. Restoring a snapshot of the old database to a new database with differing Postgres versions increases the risk of failure and compatibility.
@@ -84,8 +84,12 @@ At this point the new environment is setup and should be online at the above end
 
 Test that the site responds by using the endpoint url from the previous section.
 
-- Paste the endpoint url into your browser, you will see an invalid SSL certificate error and may not be able to process depending on your browser settings. If you can temporarily accept the invalid certificate you should see the CiviForm program page load.
+- Paste the endpoint url into your browser, you will see an invalid SSL certificate error and may not be able to proceed depending on your browser settings. If you can temporarily accept the invalid certificate you should see the CiviForm program page load.
 - Alternatively, you can run `curl --insecure --location PUT_ENDPOINT_URL_HERE`. The results should be HTML.
+
+{% hint style="info" %}
+The site will load at this url. There are however many features that depend on running from your real domain name such as authentication.
+{% endhint %}
 
 ## Change DNS settings to point to new site
 
@@ -100,7 +104,9 @@ Test that the site responds by using the endpoint url from the previous section.
     - Select the newly created environment's load balancer from the list
 - Click Save
 
+{% hint style="info" %}
 While is usually pretty instantaneous, it may take a few minutes for the DNS update to propagate.
+{% endhint %}
 
 ## Testing
 

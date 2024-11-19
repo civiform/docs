@@ -105,7 +105,7 @@ The site will load at this url. There are however many features that depend on r
 - Click Save
 
 {% hint style="info" %}
-While is usually pretty instantaneous, it may take a few minutes for the DNS update to propagate.
+While it is often instantaneous, it may take a few minutes for the DNS update to propagate.
 {% endhint %}
 
 ## Testing

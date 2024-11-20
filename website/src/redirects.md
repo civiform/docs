@@ -19,6 +19,11 @@ redirects:
       "from": "slack",
       "to": "https://civiform.slack.com",
     }
+  - {
+      "title": "CiviForm GitBook",
+      "from": "gitbook",
+      "to": "https://app.gitbook.com/o/wBNvRDS9F9chFAOX9goM/s/M5SFyCJ88HXDn4uBz6Bv/",
+    }
 permalink: "{{ redirect.from }}/"
 layout: layouts/redirect.njk
 ---

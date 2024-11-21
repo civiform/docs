@@ -50,12 +50,12 @@ There are a few program and question settings that are not yet being migrated ov
 
 Situations in which you might get an error include:
 
-- Attempting to import a program that is larger than 256,000 characters.
-  - We do not currently support importing programs that are larger than 256,000 characters. If you need to import a program that is larger than this limit, contact the engineering team and we can look into raising the size limit.
+- Attempting to import a program that is larger than 512,000 characters.
+  - We do not currently support importing programs that are larger than 512,000 characters. If you need to import a program that is larger than this limit, contact the engineering team and we can look into raising the size limit.
 - Attempting to import a program with an admin name that matches the admin name of an existing program.
   - You can resolve this by editing the program admin name in the json, but please be careful when doing so and only use lowercase letters with dashes between words. Using invalid characters in a program admin name will result in another error.
 - Exporting a program from an environment that is on a different CiviForm version than the import environment.
-  - Please try to make sure environments are on the same CiviForm version before migrating programs between them. If they are on different versions, you might see an error about an expected field missing.
+  - Please try to make sure environments are on the same CiviForm version before migrating programs between them. If they are on different versions, you might see an error about an expected field or translation missing.
 - Attempting to import a program with program visibility set to “Visible to selected trusted intermediaries only” (shows up as “SELECT_TI” in the program json)
   - Since we don’t migrate ti groups with the program, you must select a different visibility for the program before migrating.
 - Programs are in draft mode.

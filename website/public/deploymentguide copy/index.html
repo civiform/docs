@@ -1,0 +1,579 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <script type="module" src="/js/index.js"></script>
+    <title>CiviForm | Deployment Guide</title>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SPPGE89TM8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-SPPGE89TM8");
+    </script>
+  </head>
+  <body>
+    <div class="site-header">
+      <div class="container with-logo">
+        <a href="/" class="grid-logo" aria-label="CiviForm home">
+          <img alt="CiviForm logo" src="/img/civiform-logo.png" />
+        </a>
+
+        <!-- Everything below here is boilerplate to support navigation markup defined in nagivation.njk -->
+
+        <!-- Mobile menu icons (hamburger and search) boilerplate. -->
+        <div class="cagov-nav mobile-icons grid-mobile-icons">
+          <!-- Hamburger icon for mobile menu. -->
+          <button
+            class="menu-trigger cagov-nav open-menu"
+            aria-label="Navigation menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-owns="mainMenu"
+            aria-controls="mainMenu"
+          >
+            <div class="cagov-nav hamburger">
+              <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+              </div>
+            </div>
+            <div
+              class="cagov-nav menu-trigger-label menu-label"
+              data-openlabel="Menu"
+              data-closelabel="Close"
+            >
+              Menu
+            </div>
+          </button>
+        </div>
+
+        <!-- Embed desktop search form boilerplate. -->
+        <!-- Search form for desktop. -->
+        <div class="search-container grid-search">
+          <form class="site-search" action="https://docs.civiform.us/">
+            <span class="sr-only" id="SearchInput">Search</span>
+            <input
+              type="text"
+              id="q"
+              name="q"
+              aria-labelledby="SearchInput"
+              placeholder="Search documentation"
+              class="search-textfield"
+            />
+            <button type="submit" class="search-submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="17px"
+                height="17px"
+                viewbox="0 0 17 17"
+                style="enable-background: new 0 0 17 17"
+                xml:space="preserve"
+              >
+                <path
+                  class="blue"
+                  d="M16.4,15.2l-4-4c2-2.6,1.8-6.5-0.6-8.9c-1.3-1.3-3-2-4.8-2S3.5,1,2.2,2.3c-2.6,2.6-2.6,6.9,0,9.6c1.3,1.3,3,2,4.8,2c1.4,0,2.9-0.5,4.1-1.4l4.1,4c0.2,0.2,0.4,0.3,0.7,0.3c0.2,0,0.5-0.1,0.7-0.3C16.7,16.2,16.7,15.6,16.4,15.2L16.4,15.2z M7,12c-1.3,0-2.6-0.5-3.5-1.4c-1.9-1.9-1.9-5.1,0-7C4.4,2.7,5.6,2.1,7,2.1s2.6,0.5,3.5,1.4c0.9,0.9,1.4,2.2,1.4,3.5c0,1.3-0.5,2.6-1.4,3.5C9.5,11.5,8.3,12,7,12z"
+                />
+              </svg>
+              <span class="sr-only">Submit</span>
+            </button>
+            <button class="search-close">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <cagov-site-navigation>
+      <div class="container">
+        <!-- Navigation menu items. -->
+        <nav
+          class="expanded-menu"
+          role="navigation"
+          aria-label="Site Navigation"
+          aria-hidden="false"
+          id="main-menu"
+        >
+          <div class="expanded-menu-grid">
+            <div class="expanded-menu-section mobile-only">
+              <strong class="expanded-menu-section-header">
+                <a
+                  class="expanded-menu-section-header-link js-event-hm-menu"
+                  href="/"
+                  >Home</a
+                >
+              </strong>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/about"
+                    >About</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/getstarted-new"
+                    >Get Started</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/learnmore"
+                    >Learn More</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/news"
+                    >News</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/faq"
+                    >FAQ</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/contact-new"
+                    >Contact Us</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="/implementation-guide"
+                    >Implementation Guide</a
+                  ></strong
+                >
+              </div>
+            </div>
+
+            <div class="expanded-menu-col js-cagov-navoverlay-expandable">
+              <div class="expanded-menu-section">
+                <strong class="expanded-menu-section-header"
+                  ><a
+                    class="expanded-menu-section-header-link js-event-hm-menu"
+                    href="https://docs.civiform.us"
+                    >Documentation</a
+                  ></strong
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </cagov-site-navigation>
+
+    <div id="page-container" class="page-container-ds">
+      <div id="main-content" class="main-content-ds single-column landing">
+        <main id="body-content">
+          <h1>Deployment Guide</h1>
+          <p>
+            <strong>CiviForm Business Owner Deployment Guide</strong><br />
+            This document is for someone that has decided to use CiviForm and
+            now needs a guide of how to deploy it in their organization. It
+            includes an overview as well as a detailed guide of what steps are
+            needed at each stage. It will help you:
+          </p>
+          <ul>
+            <li>Choose your initial programs</li>
+            <li>Create test and production forms for programs</li>
+            <li>
+              <a
+                href="https://docs.civiform.us/user-manual/onboarding-guide/journey-mapping"
+                >Optimize the program administration process / program
+                mapping</a
+              >
+            </li>
+            <li>Simplify forms and the application process</li>
+            <li>Set up user testing for forms / program applications</li>
+            <li>Prepare for your launch</li>
+            <li>Join the CiviForm community</li>
+          </ul>
+          <hr />
+          <h2>Overview</h2>
+          <p>
+            CiviForm is a powerful open source tool for civic entities and
+            governments designed to simplify the administration of benefit
+            programs, and make it easier for residents to access those benefits.
+            It lets residents and community organizations find and apply to
+            multiple services in one place. CiviForm also makes it easier for
+            governments to administer their programs so they can better reach
+            communities in need. CiviForm deployments will be most successful
+            if:
+          </p>
+          <ul>
+            <li>Your CiviForm deployment has an owner and champion.</li>
+            <li>
+              You can decide early as to which will be the first program(s) you
+              will deploy on CiviForm.
+            </li>
+            <li>You can simplify and optimize your program applications.</li>
+            <li>
+              You can simplify how you process and follow up on applications.
+            </li>
+          </ul>
+          <p>
+            To ensure a successful CiviForm implementation, read through the
+            brief guide below and create your plan to build programs.
+          </p>
+          <h2>Understanding Your Needs and Goals</h2>
+          <ul>
+            <li>
+              <p>
+                [ ] <strong>Define user needs:</strong> To create program forms
+                that people will find intuitive and easy to use, consider the
+                needs of both your residents and program administrators.<br />
+                - [ ] Spend time to understand how your residents interact with
+                the program applications so that you can optimize the experience
+                of CiviForm users (including residents and administrators):<br />
+                - [ ] Review
+                <a
+                  href="https://beeckcenter.georgetown.edu/report/preparing-for-human-centered-redesign/"
+                  >Preparing for Human-Centered Redesign</a
+                >.<br />
+                - [ ] Read more about
+                <a
+                  href="https://github.com/usds/benefits-enrollment-prototype/blob/master/assets/discovery-findings-mapping-enrollment-Nov2016.pdf"
+                  >mapping the applicant experience</a
+                >.<br />
+                - [ ] Consider engaging community-based organizations for user
+                research.
+              </p>
+            </li>
+            <li>
+              <p>
+                [ ]
+                <strong
+                  >Decide who will be the
+                  <a
+                    href="https://docs.civiform.us/overview/how-does-civiform-work#civiform-admin-experience"
+                    >CiviForm Admin</a
+                  ></strong
+                >
+                across your civic entity<br />
+                - [ ] Decide who will own and maintain your CiviForm instance in
+                the long term (IT team, Digital Services or other). This will be
+                the person who creates the Forms and Programs on CiviForm.
+              </p>
+            </li>
+            <li>
+              <p>
+                [ ] <strong>Review and evaluate</strong> the
+                <a
+                  href="https://docs.google.com/document/d/1AacsuDbMmVfmBuWWSNRz3nOUYR3WG5_KDnDgxrc6z0A/edit"
+                  >Recommended CiviForm Launch Team</a
+                ><br />
+                - [ ] Consider if any new staffing or resources are needed for
+                the implementation / maintenance of CiviForm and/or the
+                programs.
+              </p>
+            </li>
+            <li>
+              <p>
+                [ ]
+                <strong>Choose programs to put in CiviForm:</strong> Determine
+                which programs will benefit most from using CiviForm (e.g.,
+                benefit applications, complaint forms, event registrations,
+                permit applications).<br />
+                - [ ] Evaluate programs most likely to benefit from CiviForm by
+                using these resources:<br />
+                - [ ]
+                <a
+                  href="https://docs.google.com/document/d/10TTk68evp-X8iJ2W3S2--MpiqMeg1Uf0jTysbZITEdg/edit?usp=sharing"
+                  >CiviForm Fellowship - Program Assessment</a
+                ><br />
+                - [ ]
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1_NNMln-LOAxxXCoYgh1oI0uaS6YhoyMoBvudaiKRMm4/edit?resourcekey=0-KPl3Y1YgUYty81OKHbRMpQ#gid=629433048"
+                  >CiviForm - Program Evaluation Worksheet </a
+                ><br />
+                - [ ] Examine selected programs to identify opportunities to
+                streamline overlapping questions:<br />
+                - [ ] Review the information gathered on the application for
+                each program and remove any unnecessary questions.<br />
+                - [ ] Work with program stakeholders including program
+                administrators to understand the administrative and policy
+                requirements for different programs.<br />
+                - [ ] Identify common questions across programs (Ex. Name,
+                Address, income).<br />
+                - [ ] Explore ways to consolidate these questions to streamline
+                reuse.<br />
+                - [ ] Consider creating a “Common Intake” form as a “Get
+                Started”.<br />
+                - [ ] For each program:<br />
+                - [ ] Decide on who the program leader/owner and primary point
+                of contact will be.<br />
+                - [ ] Decide how applications to the program will be reviewed.
+                Will they be reviewed in CiviForm, or pulled into an external
+                system? If an external system, identify the technical PoCs.
+              </p>
+            </li>
+            <li>
+              <p>
+                [ ] <strong>Join the CiviForm community</strong><br />
+                - [ ] Understand how the CiviForm community works.<br />
+                - [ ]
+                <a
+                  href="https://docs.civiform.us/governance-and-management/governance/roles-committees-and-responsibilities"
+                  >Community member responsibilities</a
+                ><br />
+                - [ ]
+                <a
+                  href="https://docs.civiform.us/governance-and-management/governance/governance-processes"
+                  >Governance Processes</a
+                ><br />
+                - [ ] Learn about the
+                <a
+                  href="https://docs.civiform.us/governance-and-management/governance/communication"
+                  >CiviForm community's communication channels</a
+                >.<br />
+                - [ ] Join
+                <a href="https://civiform.slack.com/">CiviForm Slack</a> and
+                introduce yourself in the #introductions channel.<br />
+                - [ ] Join the
+                <a
+                  href="https://docs.civiform.us/governance-and-management/governance/communication"
+                  >mailing lists</a
+                >
+                as appropriate.<br />
+                - [ ] Create a <a href="https://github.com/">Github</a> account
+                so you can
+                <a href="https://github.com/civiform/civiform/issues"
+                  >file issues for bugs and/or feature requests</a
+                >.<br />
+                - [ ] Join the CiviForm community meetings:<br />
+                - [ ] Every other week join the CiviForm Product Design
+                Committee to learn about new features or ask questions of fellow
+                governments using CiviForm.<br />
+                - [ ] Monthly join the CiviForm Governance group to learn about
+                best practices, new features and tools, as well as how other
+                civic entities are leveraging CiviForm.
+              </p>
+            </li>
+          </ul>
+          <h2>Preparation for Launch</h2>
+          <ul>
+            <li>
+              [ ] Review the
+              <a
+                href="https://docs.civiform.us/user-manual/civiform-admin-guide/working-with-programs/create-a-program"
+                >form building how-to-guide</a
+              >
+              to begin building your first program<br />
+              - [ ] User-centric design: Create forms that are easy to
+              understand and complete, using
+              <a href="http://plainlanguage.gov">plain language</a>.<br />
+              - [ ] Keep accessibility standards (e.g., WCAG) in mind when
+              creating your forms.<br />
+              - [ ] Consider which languages Program questions and answers will
+              be translated to and which languages
+              <a
+                href="https://docs.civiform.us/user-manual/civiform-admin-guide/manage-translations-for-programs-and-questions"
+                >CiviForm supports natively</a
+              >.<br />
+              - [ ] Find translation resources and add time for translations to
+              your project timeline.<br />
+              - [ ] Data validation: Implement program checks (such as phone
+              number formats and hints to users “select only two choices” to
+              prevent errors and ensure data accuracy.<br />
+              - [ ] Work with your IT team to select an identity and
+              authentication provider (i.e. Login.gov).
+            </li>
+            <li>
+              [ ] Identify the list of relevant Key Performance Indicators
+              (KPIs) and metrics to identify what a successful launch would look
+              like for each program launch. Example metrics:<br />
+              - [ ] Reduction in time to complete an application.<br />
+              - [ ] Increase in residents’ access to annual savings / benefits
+              (dollars).<br />
+              - [ ] Increase in number of programs online / added to CiviForm.
+            </li>
+            <li>
+              [ ] Identify key stakeholders throughout the community (eg. CBOs)
+              and local governments who might be able to connect target user
+              groups with the program to ensure a successful launch.
+            </li>
+            <li>
+              [ ] If resident applications are managed or reviewed in an
+              external case management system, work with your technical team to
+              ensure necessary data pipelines are set up and tested.
+            </li>
+            <li>
+              [ ] Develop a plan for thorough testing: Conduct comprehensive
+              testing to identify and fix issues before launch.
+            </li>
+            <li>
+              [ ] Train program administrators how to use CiviForm and how to
+              route questions / issues they have.
+            </li>
+            <li>
+              [ ] Perform user experience studies.<br />
+              - [ ] Ensure that at least 10 real end users have tested the new
+              program.<br />
+              - [ ] Work with specific programs to test the end-to-end process
+              for application submission and processing and make adjustments as
+              needed.
+            </li>
+            <li>
+              [ ] Pilot program: Plan a pilot launch to gather feedback and make
+              improvements.
+            </li>
+            <li>
+              [ ] Decide on launch announcement plans to ensure that residents
+              can find and apply for the new streamlined programs.<br />
+              - [ ] Identify target audience/user group, communication channels
+              (eg. press release, website announcement, social media posts, a
+              newsletter) to share the news with residents.<br />
+              - [ ] Develop a communication plan: Inform citizens and
+              stakeholders about the new system and its benefits and consider
+              how you may drive awareness about the program.<br />
+              - [ ] Consider relevant metrics to measure if you are reaching
+              your residents.
+            </li>
+            <li>
+              [ ] Generate excitement by recording demos and sharing any initial
+              findings, positive data outcomes, or testimonials resulting from
+              use of CiviForm to connect users to the program.
+            </li>
+            <li>[ ] <strong>Announce CiviForm to your community</strong></li>
+            <li>
+              [ ] Put ample opportunities for feedback in place during and after
+              the launch so that users can flag any questions or bugs.
+            </li>
+            <li>
+              [ ] If programs will be rolled out in phases, provide users with a
+              timeline of future planned launches for additional programs.
+            </li>
+          </ul>
+          <h2>Next steps - Ongoing Evaluation and Improvement</h2>
+          <ul>
+            <li>
+              [ ] Performance metrics: Track key performance indicators (KPIs)
+              to measure the impact of CiviForm.
+            </li>
+            <li>
+              [ ] User feedback: Gather feedback from citizens and staff to
+              identify areas for improvement.
+            </li>
+            <li>
+              [ ] Iterative development: Continuously update and refine forms
+              based on user needs and data analysis.
+            </li>
+            <li>
+              [ ] Continue to grow CiviForm, adding new programs over time.
+            </li>
+          </ul>
+          <h2>Check out these links to read more about CiviForm</h2>
+          <ul>
+            <li>CiviForm home page (To Be Linked)</li>
+            <li>CiviForm “Learn More” (To Be Linked)</li>
+            <li>
+              <a href="https://docs.civiform.us/overview/what-is-civiform"
+                >What is CiviForm</a
+              >
+            </li>
+            <li>
+              <a href="https://docs.civiform.us/overview/how-does-civiform-work"
+                >How CiviForm works</a
+              >
+            </li>
+            <li>
+              <a href="https://docs.civiform.us/user-manual/onboarding-guide"
+                >CiviForm Onboarding guide</a
+              >
+            </li>
+            <li>Technical deployment checklist for CiviForm (To Be Linked)</li>
+          </ul>
+        </main>
+      </div>
+    </div>
+
+    <section aria-label="Site footer" class="site-footer">
+      <div class="container">
+        <div class="footer-secondary-links">
+          <a href="/contact-new">Contact</a>
+        </div>
+        <div class="footer-social-links">
+          <a href="https://github.com/civiform/civiform">
+            <span class="sr-only">GitHub</span>
+            <svg aria-hidden="true" width="25" height="25" viewBox="0 0 25 25">
+              <path
+                d="M12.686 0.909302C6.05604 0.909302 0.686035 6.2823 0.686035 12.9093C0.686035 18.2123 4.12403 22.7093 8.89104 24.2943C9.49104 24.4073 9.71103 24.0363 9.71103 23.7173C9.71103 23.4323 9.70104 22.6773 9.69604 21.6773C6.35804 22.4013 5.65404 20.0673 5.65404 20.0673C5.10804 18.6823 4.31904 18.3123 4.31904 18.3123C3.23204 17.5683 4.40304 17.5833 4.40304 17.5833C5.60804 17.6673 6.24103 18.8193 6.24103 18.8193C7.31104 20.6543 9.05004 20.1243 9.73604 19.8173C9.84404 19.0413 10.153 18.5123 10.496 18.2123C7.83104 17.9123 5.03004 16.8803 5.03004 12.2823C5.03004 10.9723 5.49504 9.9023 6.26504 9.0623C6.13003 8.7593 5.72504 7.5393 6.37004 5.8863C6.37004 5.8863 7.37504 5.5643 9.67004 7.1163C10.63 6.8493 11.65 6.7173 12.67 6.7113C13.69 6.7173 14.71 6.8493 15.67 7.1163C17.95 5.5643 18.955 5.8863 18.955 5.8863C19.6 7.5393 19.195 8.7593 19.075 9.0623C19.84 9.9023 20.305 10.9723 20.305 12.2823C20.305 16.8923 17.5 17.9073 14.83 18.2023C15.25 18.5623 15.64 19.2983 15.64 20.4223C15.64 22.0283 15.625 23.3183 15.625 23.7083C15.625 24.0233 15.835 24.3983 16.45 24.2783C21.251 22.7043 24.686 18.2043 24.686 12.9093C24.686 6.2823 19.313 0.909302 12.686 0.909302Z"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:info@civiform.us?subject=I%20want%20to%20learn%20more%20about%20CiviForm"
+          >
+            <span class="sr-only">Email</span>
+            <svg
+              aria-hidden="true"
+              width="24px"
+              height="24px"
+              viewbox="0 0 24 24"
+            >
+              <path
+                d="M22.9,6.4c-0.1-1-0.8-1.8-1.8-1.8c0,0-0.1,0-0.1,0v0l-18,0c0,0-0.1,0-0.1,0C1.9,4.6,1.1,5.4,1,6.4c0,0,0,0.1,0,0.1 s0,0.1,0,0.1v12.8h21.9V6.6c0,0,0-0.1,0-0.1C22.9,6.4,22.9,6.4,22.9,6.4L22.9,6.4z M19.3,6.5L12,12.7L4.6,6.5 C4.6,6.5,19.3,6.5,19.3,6.5z M3,8.4C3,8.4,3,8.5,3,8.4l0-0.8l4.8,4.1L3,16.3C3,16.3,3,8.4,3,8.4z M4,17.4l4.9-4.8l3.1,2.7l3.2-2.8 l4.8,4.9L4,17.4L4,17.4z M21,16.3l-4.8-4.6L21,7.6v0.8c0,0,0,0,0,0L21,16.3L21,16.3z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

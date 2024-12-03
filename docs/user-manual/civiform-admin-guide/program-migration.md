@@ -4,26 +4,24 @@
 
 Program migration is a feature to allow programs and their associated questions to be moved between CiviForm environments.
 
-## Feature Flags
+## Handling question collisions
 
-There are two feature flags to be aware of for Program Migration:
+If a program you are migrating shares questions with an existing program in your import environment, you can decide whether you want to create a new duplicate question or use the existing question. Here are our recommendations for when to choose which flow:
 
-1. PROGRAM_MIGRATION_ENABLED
-   - You must enable this feature flag to use either version of program migration
-   - Use this flag when you want to import a program into an environment that already has existing programs. Programs imported using this flag will not affect any programs in the import environment.
-   - Using this flag will create duplicate questions if there are questions in the import environment that match questions being imported (match is determined by the question admin name). We suggest you replace the duplicate questions with existing ones after importing your program, so your applicants benefit from CiviForm’s shared question model.
-   - You can find questions that were duplicated, since their admin names will have -1 or another number attached to it. Once you replace duplicate questions in new imported programs, you can archive the duplicate questions that were created.
+1. Default flow
+   - Use this when you want to import a program into an environment that already has existing programs. Programs imported using the default flow will not affect any programs in the import environment.
+   - Using the default flow will create duplicate questions if there are questions in the import environment that match questions being imported (match is determined by the question admin name). We suggest you replace the duplicate questions with existing ones after importing your program, so your applicants benefit from CiviForm’s shared question model.
+   - You can find questions that were duplicated, since their admin names will have `-a` or another letter attached to it. Once you replace duplicate questions in new imported programs, you can archive the duplicate questions that were created.
 
-2. NO_DUPLICATE_QUESTIONS_FOR_MIGRATION_ENABLED
-   - The PROGRAM_MIGRATION_ENABLED feature flag must also be enabled for this to work.
+2. Turn on the `NO_DUPLICATE_QUESTIONS_FOR_MIGRATION_ENABLED` feature flag
    - Use this flag when you want to import many programs with overlapping questions into a fresh environment.
    - If there are existing programs or questions in the import environment, they must be published before importing a new program.
    - Importing a program with this flag enabled will put all programs into draft mode.
-   - Importing a program with this flag enabled will update any questions that already exist in the import environment, which means updating any programs that contain those questions. This is why we do not recommend using this flag if there are already programs in the import environment, especially if you are importing into a production environment.
+   - Importing a program with this flag enabled will update any questions that already exist in the import environment, which means updating any programs that contain those questions. This is why we do not recommend using this flow if there are already programs in the import environment, especially if you are importing into a production environment.
   
 ## Exporting a Program
 
-1. Once the PROGRAM_MIGRATION_ENABLED flag is enabled, you will see a new menu item for each program on the program dashboard page that says “Export program”.
+1. Each program on the program dashboard page has a menu item that says “Export program”.
    <img width="496" alt="Export program image" src="https://github.com/user-attachments/assets/9a415c91-8ceb-4395-ad0a-6e69100e0e1d">
 2. Click this to be taken to the program export page for that program.
 3. From there you will have the option to download or copy a json representation of the program.
@@ -31,7 +29,7 @@ There are two feature flags to be aware of for Program Migration:
 
 ## Importing a program
 
-1. Once the PROGRAM_MIGRATION_ENABLED flag is enabled, you will see a new link on the program dashboard page that says “Import existing program”.
+1. Look for the “Import existing program” link on the program dashboard page.
    <img width="498" alt="Import program image" src="https://github.com/user-attachments/assets/9554f809-cc4a-4743-a545-83727ad126c7">
 2. Click this link to be taken to the program import page and follow the instructions there to import a program.
 

@@ -7,7 +7,7 @@ Please explain the changes you made here.
 #### General
 
 - [ ] Ensure any links to pages aren't referenced in code (if there are changes to links)
-- [ ] Changes to the website have been verified via steps [here](https://github.com/civiform/docs/blob/main/README.md#1-run-the-website-locally)
+- [ ] Changes to the website have been verified via steps [here](https://github.com/civiform/docs/tree/main/website#1-run-the-website-locally)
 
 ### Issue(s) this completes
 

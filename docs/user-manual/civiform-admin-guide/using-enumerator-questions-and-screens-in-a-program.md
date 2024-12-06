@@ -147,7 +147,7 @@ Now, create the repeated questions for each piece of information you want to col
    - **Question enumerator**: `household_members`
 3. Click **Create**.
 
-   Tip:  By asking for the date of birth and not age directly,  we can calculate the age, and the benefit is  that the value of age is only valid at a specific point of time and becomes stale as time goes on, whereas a person's date of birth stays valid.  a slightly shorter application for the applicants. 
+   Tip:  By asking for the date of birth and not age directly,  we can calculate the age, and the benefit is  that the value of age is only valid at a specific point of time and becomes stale as time goes on, whereas a person's date of birth stays valid. This also makes for a slightly shorter application for the applicants as opposed to asking both questions. 
 
 **Relationship**:
 1. Create a new question of type **"Dropdown"**.
@@ -176,7 +176,7 @@ Now, create the repeated questions for each piece of information you want to col
    - A screen can only have an enumerator question if it is the only question on the screen.
 4. Add the enumerator question (`List all members of your household`) to this screen from the question bank.
 5. Click **Create repeated screen** to create a repeated screen associated with the enumerator screen.
-   - **Screen name**: `household_member_details`
+   - **Screen name**: `Household member details`
    - **Screen description**: "Please add each household member's name, birth date, relationship, and employment status."
 6. Click "Add question" to the repeated questions for name, age, relationship, and employment status to the repeated screen.
 

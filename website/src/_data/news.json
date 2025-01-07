@@ -1,6 +1,16 @@
 {
     "newsItems": [
         {
+            "URL": "https:\/\/docs.google.com\/presentation\/d\/1PVgyyjkH_hdHvB-5lm05kINLiO1M9YqzKD7nw5tYJos\/edit#slide=id.p",
+            "Government": "General",
+            "Title": "CiviForm announces new features for Q4, including multiple-file uploading, category filtering, and automatic application updates",
+            "Publisher": "CiviForm",
+            "Date": "2024-09-30",
+            "Image": "q4_multifileupload.png",
+            "ImageDescription": "CiviForm multiple-file uploading example",
+            "Featured": true
+        },
+        {
             "URL": "https:\/\/innovation-hub.seattle.gov\/2024\/07\/31\/seattle-celebrates-progress-towards-making-benefits-and-discounts-more-accessible-for-all-residents\/",
             "Government": "Seattle",
             "Title": "Total available savings through programs on CiviForm at the City of Seattle has increased $2,200 to $25,200 per year",
@@ -10,6 +20,16 @@
             "ImageDescription": "Seattle Mayor Bruce Harrell signing the exectuive order for CiviForm usage in Seattle.",
             "Featured": true
         },
+        {
+            "URL": "https:\/\/docs.google.com\/presentation\/d\/1BlKBtKdZWg5MKDq0fuOHz3djvvaSMfPr2uH877tQPZE\/edit#slide=id.g319813c56f7_0_0",
+            "Government": "General",
+            "Title": "CiviForm announces new features for Q2, such as program images, submission form upgrades, and standardized questions",
+            "Publisher": "CiviForm",
+            "Date": "2024-02-28",
+            "Image": "q2_programimages.png",
+            "ImageDescription": "CiviForm Program Images example",
+            "Featured": true
+        }, 
         {
             "URL": "https:\/\/www.idc.com\/getdoc.jsp?containerId=prUS51902824",
             "Government": "Bloomington",
@@ -28,8 +48,7 @@
             "Publisher": "Anthem Awards",
             "Date": "2024-01-30",
             "Image": "anthem-awards.png",
-            "ImageDescription": "Anthem Awards logo.",
-            "Featured": true
+            "ImageDescription": "Anthem Awards logo."
         },
         {
             "URL": "https:\/\/www.govtech.com\/gov-experience\/how-digitization-can-make-government-more-equitable",

@@ -1,5 +1,7 @@
 # Manage API keys
 
+CiviForm supports integration with external systems via its HTTP JSON API. The API authenticates requests using API keys managed by the CiviForm admin. For more details on how API keys are used and list of APIs supported, refer to [API Integration](https://docs.civiform.us/it-manual/api).
+
 ## API key security
 
 ### API key expiration

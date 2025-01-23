@@ -53,3 +53,4 @@ To get started learning how to deploy CiviForm in your organization, <br>use thi
   </div>
 </div>
 <a href="/implementation-guide" class="btn-action-primary m-t-1"><span class="btn-action-title">Implementation Guide</span><span class="btn-action-text">For more details, see our Implementation Guide</span></a>
+<a href="/techguide" class="btn-action-primary m-t-1"><span class="btn-action-title">Tech Guide</span><span class="btn-action-text">Check out our Tech Guide for deployment tips</span></a>

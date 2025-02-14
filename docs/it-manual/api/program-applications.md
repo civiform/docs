@@ -89,6 +89,7 @@ For example, one of these objects might look like this:
   "program_version_id": 3,
   "revision_state": "CURRENT",
   "status": "custom status",
+  "application_note": "sample note text",
   "submit_time": "2023-05-26T13:46:15-07:00",
   "submitter_type": "TRUSTED_INTERMEDIARY",
   "ti_email": "alice@trustedintermediary.org",
@@ -150,6 +151,12 @@ _Note_: More values may be added to this enum in the future. Ensure client code 
 - **JSON Type**: `string` or `null`
 - **Value**: All characters
 - **Description**: The admin-defined status of this application, as selected by a Program Admin. See [Add statuses to a program](/docs/user-manual/civiform-admin-guide/add-statuses.md) and [Review completed applications](/docs/user-manual/program-admin-guide/review-completed-applications.md#change-the-status-of-an-application) for more.
+
+#### `application_note`
+- **Property**: `status`
+- **JSON Type**: `string` or `null`
+- **Value**: All characters
+- **Description**: Admin notes about an application
 
 #### `submit_time`
 - **Property**: `submit_time`

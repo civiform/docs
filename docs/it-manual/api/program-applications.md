@@ -89,6 +89,7 @@ For example, one of these objects might look like this:
   "program_version_id": 3,
   "revision_state": "CURRENT",
   "status": "custom status",
+  "status_last_modified_time": "2023-05-26T13:46:15-07:00",
   "application_note": "sample note text",
   "submit_time": "2023-05-26T13:46:15-07:00",
   "submitter_type": "TRUSTED_INTERMEDIARY",
@@ -151,6 +152,13 @@ _Note_: More values may be added to this enum in the future. Ensure client code 
 - **JSON Type**: `string` or `null`
 - **Value**: All characters
 - **Description**: The admin-defined status of this application, as selected by a Program Admin. See [Add statuses to a program](/docs/user-manual/civiform-admin-guide/add-statuses.md) and [Review completed applications](/docs/user-manual/program-admin-guide/review-completed-applications.md#change-the-status-of-an-application) for more.
+
+#### `status_last_modified_time`
+- **Property**: `status_last_modified_time`
+- **JSON Type**: `string` or `null`
+- **Value**: A datetime formatted in the ISO 8601 extended offset format. For example, `2023-10-26T15:01:56-07:00`.\
+_Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) for format pattern specifics. This is the ISO_OFFSET_DATE_TIME format.
+- **Description**: The time the status of the application was set or changed last, in the timezone of the CiviForm instance.
 
 #### `application_note`
 - **Property**: `status`

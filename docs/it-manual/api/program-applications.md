@@ -89,6 +89,7 @@ For example, one of these objects might look like this:
   "program_version_id": 3,
   "revision_state": "CURRENT",
   "status": "custom status",
+  "status_last_modified_time": "2023-05-26T13:46:15-07:00",
   "application_note": "sample note text",
   "submit_time": "2023-05-26T13:46:15-07:00",
   "submitter_type": "TRUSTED_INTERMEDIARY",

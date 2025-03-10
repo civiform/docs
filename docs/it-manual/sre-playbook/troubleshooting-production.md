@@ -54,6 +54,14 @@ If you have deployed recently, consider reverting your CiviForm version number t
 
 Investigate the server logs. Report any errors you find along with complete stack traces to the CiviForm maintainers. To view the server logs in the AWS console go to CloudWatch > Logs > Log groups, select the log group for your production deployment and view the combined log stream.
 
+**Symptoms**
+
+Server returns 504 Gateway Timeout error, especially when doing admin actions such as application exports.
+
+**Resolution**
+
+If the CiviForm server takes too long to respond to a request, the load balancer will time out. This can be configured by setting `export LB_IDLE_TIMEOUT=<integer>` to a value larger than the default 120 seconds in your config file and redeploying.
+
 ## Authentication errors
 
 **Symptoms**

@@ -150,6 +150,7 @@
       * [v2.31.0](it-manual/sre-playbook/server-environment-variables/v2.31.0.md)
       * [v2.32.0](it-manual/sre-playbook/server-environment-variables/v2.32.0.md)
       * [v2.33.0](it-manual/sre-playbook/server-environment-variables/v2.33.0.md)
+      * [v2.34.0](it-manual/sre-playbook/server-environment-variables/v2.34.0.md)
       * [v2.4.0](it-manual/sre-playbook/server-environment-variables/v2.4.0.md)
       * [v2.4.1](it-manual/sre-playbook/server-environment-variables/v2.4.1.md)
       * [v2.4.2](it-manual/sre-playbook/server-environment-variables/v2.4.2.md)

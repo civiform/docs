@@ -11,7 +11,7 @@ Watch the video or follow the step-by-step guide below.
 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click **Intermediaries** on the navigation bar.
-3. Enter information for the group.
+3. Enter information for the group (**Note**: The group name should be unique).
 4. Click **Create**.\
    The new group appears in the list of groups.
 

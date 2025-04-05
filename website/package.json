@@ -8,7 +8,7 @@
     "build": "npx @11ty/eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "@cagov/ds-accordion": "^2.0.4",
     "@cagov/ds-base-css": "^1.0.20",
     "@cagov/ds-feature-card": "^2.0.1",

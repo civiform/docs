@@ -98,7 +98,7 @@
       document.querySelector(".cagov-nav.menu-trigger").classList.remove("is-fixed");
       document.querySelector(".cagov-nav.menu-trigger").setAttribute("aria-expanded", "false");
       const menLabel = document.querySelector(".cagov-nav.menu-trigger-label");
-      menLabel.innerHTML = menLabel.getAttribute("data-openlabel");
+      menLabel.textContent = menLabel.getAttribute("data-openlabel");
     }
     escapeMainMenu(event) {
       if (event.keyCode === 27) {

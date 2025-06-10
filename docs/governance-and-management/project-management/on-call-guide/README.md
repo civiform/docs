@@ -52,7 +52,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
    * If there is something that looks critical, post in #eng-prod-incidents or post in #eng-general if you aren't sure.
 5. Monitor staging deployments in the [#ci](https://app.slack.com/client/T01Q6PJQAES/C03UXPUEXU4) Slack channel. Investigate failed deployments and re-run if appropriate. (Note: our browser tests can be flakey and case deployments to fail. If this is the case, re-running the deployment will often fix the issue.)
 6. Check for dependency updates (once per shift)
-   Do your best to resolve any problematic dependency updates that break tests during your shift. If you start work on a dependency but are unable to fully resolve it during your oncall shift, hand it off to the next person. For any broken updates that require larger changes, add the "needs-triage" label so Exygy can prioritize fixing these issues.
+   Do your best to resolve any problematic dependency updates that break tests during your shift. If you start work on a dependency but are unable to fully resolve it during your oncall shift, hand it off to the next person. For any broken updates that require very, very large changes, please create a new GitHub issue and add the "needs-triage" label so that Exygy can prioritize fixing these issues. Also, mark the Renovate PR as "draft" and add a comment on the PR with the link to the new issue.
    * Renovate PRs for [civiform/civiform](https://github.com/civiform/civiform/pulls/app%2Frenovate)
    * Renovate PRs for [civiform/civiform-staging-deploy](https://github.com/civiform/civiform-staging-deploy/pulls/app%2Frenovate)
    * Renovate PRs for [civiform/cloud-deploy-infra](https://github.com/civiform/cloud-deploy-infra/pulls/app%2Frenovate)

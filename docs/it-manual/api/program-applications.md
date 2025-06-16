@@ -29,6 +29,11 @@ All query parameters are optional, but case-sensitive.
 - **Format**: An ISO-8601 formatted date-time with zone id (i.e. YYYY-MM-DDTThh:mm:ssZ).
 - **Description**: Limits results to applications submitted before the provided date. Uses the CiviForm instance's local timezone when no timezone is provided, and the beginning of the day when no time is provided.
 
+#### `revisionState`
+- **Parameter**: `revisionState`
+- **Format**: A string representing the `RevisionState` [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/RevisionState.java), currently coinsisting of one of `OBSOLETE` or `CURRENT`.
+- **Description**: The revision state of applications to include in results. `CURRENT` indicates this is the most recent version of the application. `OBSOLETE` indicates this application has been superseded by a newer submission. When omitted, applications of all revision states are returned.
+
 #### `pageSize`
 - **Parameter**: `pageSize`
 - **Format**: A positive integer.

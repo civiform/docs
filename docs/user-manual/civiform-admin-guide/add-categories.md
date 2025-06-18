@@ -21,6 +21,12 @@ CiviForm admins can label a program with one or more categories.  These categori
 
 {% embed url="https://drive.google.com/file/d/1edAU1ySN7evy5lsbf3W5eZZx5-C09SuK/view?usp=drive_link" %} {% endembed %}
 
+## How categories will appear to applicants
+After categories have been added to the programs, the selected categories will show as options to filter programs on the home page.  Also, program cards will be labeled with the categories the program belongs to.
+
+![image](https://github.com/user-attachments/assets/6ff21be5-9a38-4e23-8c4e-60fa9f029a5e)
+
+
 ## Additional information 
 - Pre-screener forms cannot be labeled with categories since there is only one pre-screener, making a search filter unnecessary.
 - Categories have been pre-translated.

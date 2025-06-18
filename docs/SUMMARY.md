@@ -23,6 +23,7 @@
     * [How to publish programs](user-manual/civiform-admin-guide/publish-a-program.md)
     * [Set a pre-screener](user-manual/civiform-admin-guide/set-pre-screener.md)
     * [Set an external program](user-manual/civiform-admin-guide/set-external-program.md)
+    * [Tag a program with categories](user-manual/civiform-admin-guide/add-categories.md)
   * Working with questions
     * [Manage questions](user-manual/civiform-admin-guide/manage-questions.md)
     * [Question export settings](user-manual/civiform-admin-guide/question-export-settings.md)

@@ -96,6 +96,8 @@ Java can be installed with `sudo yum install java` and terraform can be installe
 Follow [official documentation](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html).
 After your certificate is ready and validated, copy the ARN from your console and put it into the `SSL_CERTIFICATE_ARN` variable in your `civiform_config.sh`
 
+NOTE: make sure the correct region (the `AWS_REGION` value in `civiform_config.sh`) is selected in the top right drop down, before proceeding to request the certificate.
+
 ARN has format of arn:aws:acm:<region>:<user_id>:certificate/\<identifier>
   
 ![Screen Shot 2022-08-10 at 3 50 39 PM](https://user-images.githubusercontent.com/1741747/184037024-c7ed7537-cfc6-41e9-9b32-40f1b4d03341.png)

@@ -85,7 +85,7 @@ CiviForm's dependencies are mostly listed in the [`build.sbt` file](https://gith
 CiviForm relies on [renovate bot](https://github.com/renovatebot/renovate) to automatically detect new versions of dependencies and create pull requests to update them. It is the on-call engineer's responsibility to review and merge these pull requests.
 
 ##### Best practices for dependency updates
-- **Do not simply approve and merge every pull request renovate bot creates.** While in most cases passing CI checks indicates the change is acceptable, that not always the case and more diligence is required ([here's an example](https://github.com/civiform/civiform/pull/2130#discussion\_r834714183)).
+- **Do not simply approve and merge every pull request renovate bot creates.** While in most cases passing CI checks indicates the change is acceptable, that is not always the case and more diligence is required ([here's an example](https://github.com/civiform/civiform/pull/2130#discussion\_r834714183)).
 - Be sure you understand what is being updated before approving. Scan the release notes and pay close attention to deprecated things or breaking changes. If need be, get in touch with the broader engineering team to help evaluate a given PR.
 - Merge dependencies in chunks of 3-5 to avoid flooding the github actions and blocking humans merging their changes.
 - Try not to approve multiple things that are editing the same config (e.g. server/package.json) as it is likely to become not mergeable when other changes go in and will need renovate to refresh it.

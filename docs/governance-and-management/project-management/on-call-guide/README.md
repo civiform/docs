@@ -82,9 +82,22 @@ CiviForm relies on versioned dependencies managed by an open source dependency m
 
 CiviForm's dependencies are mostly listed in the [`build.sbt` file](https://github.com/civiform/civiform/blob/main/server/build.sbt). Dependencies in here are retrieved by [sbt](https://www.scala-sbt.org) (CiviForm's build tool) from the [Maven Central Repository](https://search.maven.org), which is where you can check to see if new versions are availabe. Additionally, there are some dependencies managed as [sbt plugins here](https://github.com/civiform/civiform/blob/main/server/project/plugins.sbt). These dependencies must be checked at their individual project pages for updates.
 
-CiviForm relies on [renovate bot](https://github.com/renovatebot/renovate) to automatically detect new versions of dependencies and create pull requests to update them. It is the on-call engineer's responsibility to review and merge these pull requests as they come in. **Do not simply approve and merge every pull request renovate bot creates.** While in most cases passing CI checks indicates the change is acceptable, that not always the case and more diligence is required ([here's an example](https://github.com/civiform/civiform/pull/2130#discussion\_r834714183)). Be sure you understand what is being updated before approving. If need be, get in touch with the broader engineering team to help evaluate a given PR. For PRs that break tests, do your best to resolve them during your shift. If you start work on a dependency but are unable to fully resolve it during your oncall shift, hand it off to the next person. For any broken updates that require very, very large changes, please create a new GitHub issue and add the "needs-triage" label so that Exygy can prioritize fixing these issues. Also, mark the Renovate PR as "draft" and add a comment on the PR with the link to the new issue.
+CiviForm relies on [renovate bot](https://github.com/renovatebot/renovate) to automatically detect new versions of dependencies and create pull requests to update them. It is the on-call engineer's responsibility to review and merge these pull requests.
 
-**Do not merge terraform-related dependency updates without first manually exercising the code, we do not have automated tests for terraform/deployment configuration.** Feel free to close related PRs and file issues for performing the upgrade.
+##### Best practices for dependency updates
+- **Do not simply approve and merge every pull request renovate bot creates.** While in most cases passing CI checks indicates the change is acceptable, that not always the case and more diligence is required ([here's an example](https://github.com/civiform/civiform/pull/2130#discussion\_r834714183)).
+- Be sure you understand what is being updated before approving. Scan the release notes and pay close attention to deprecated things or breaking changes. If need be, get in touch with the broader engineering team to help evaluate a given PR.
+- Merge dependencies in chunks of 3-5 to avoid flooding the github actions and blocking humans merging their changes.
+- Try not to approve multiple things that are editing the same config (e.g. server/package.json) as it is likely to become not mergeable when other changes go in and will need renovate to refresh it.
+- Broken dependency updates:
+  - Failures often happen because the docker/package manager limits are hit so try re-running the failed jobs first.
+  - If dependency updates are still failing, pick at least one to look into during your oncall shift (feel free to look at more than one if you have time/interest).
+  - Look at the logs for the job and/or run `bin/dev-show-trace-file` on the branch to see what is up.
+  - If it's a small fix (will take you <1 day) or Playwright update where images changed for no actual reason, push a fix to the branch, and ask for an additional approval.
+  - For larger fixes, create a new GitHub issue for the dependency update and document your findings. Ping Nick so the issue gets added to our roadmap, mark the Renovate PR as "draft", and add a comment on the PR with the link to the new issue.
+
+> [!NOTE]
+> **Do not merge terraform-related dependency updates without first manually exercising the code, we do not have automated tests for terraform/deployment configuration.** Feel free to close related PRs and file issues for performing the upgrade.
 
 #### Upgrading demo sites
 

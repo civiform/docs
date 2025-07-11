@@ -60,4 +60,3 @@ Situations in which you might get an error include:
   - Please try to make sure environments are on the same CiviForm version before migrating programs between them. If they are on different versions, you might see an error about an expected field or translation missing.
 - Attempting to import a program with program visibility set to “Visible to selected trusted intermediaries only” (shows up as “SELECT_TI” in the program json)
   - Since we don’t migrate ti groups with the program, you must select a different visibility for the program before migrating.
-- Programs are in draft mode.

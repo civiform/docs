@@ -1,24 +1,27 @@
-# Migrating programs between environments
+# Migrating and importing programs
 
 ## Overview
 
-Program migration is a feature to allow programs and their associated questions to be moved between CiviForm environments.
+Program import is a feature to allow programs and their associated questions to be imported into a CiviForm environment. Imported programs may be migrated from one CiviForm environment to another or imported from another source.
 
 ## Handling question collisions
 
-If a program you are migrating shares questions with an existing program in your import environment, you can decide whether you want to create a new duplicate question or use the existing question. Here are our recommendations for when to choose which flow:
+If a program you are importing shares questions with an existing program in your import environment, you can decide whether you want to create a new duplicate question, use the existing question, or overwrite the existing defintion in your question bank. "Shared questions" are determined by the question admin name. Here are our recommendations for when to choose which option:
 
-1. Create a duplicate question (Default flow)
-   - Use this when you want to import a program into an environment that already has existing programs. Programs imported using the default flow will not affect any programs in the import environment.
-   - Using the default flow will create duplicate questions if there are questions in the import environment that match questions being imported (match is determined by the question admin name). We suggest you replace the duplicate questions with existing ones after importing your program, so your applicants benefit from CiviForm’s shared question model.
-   - You can find questions that were duplicated, since their admin names will have `-a` or another letter attached to it. Once you replace duplicate questions in new imported programs, you can archive the duplicate questions that were created.
+1. Reuse the existing question (Default)
+   - Use this option when you want to import a program into an environment that already has existing programs and you want to reuse the questions in the import environment.
+   - Use this option when you want to import many programs with overlapping questions into a fresh environment.
+   - The newly imported program will benefit from CiviForm's shared question model.
+   - If there are existing programs or questions in the import environment, they must be published before importing with this option.
 
-2. Use the existing question
-   - To use this flow, turn on the `NO_DUPLICATE_QUESTIONS_FOR_MIGRATION_ENABLED` feature flag
-   - Use this flow when you want to import many programs with overlapping questions into a fresh environment.
-   - If there are existing programs or questions in the import environment, they must be published before importing a new program.
-   - Importing a program with this flag enabled will put all programs into draft mode.
-   - Importing a program with this flag enabled will update any questions that already exist in the import environment, which means updating any programs that contain those questions. This is why we do not recommend using this flow if there are already programs in the import environment, especially if you are importing into a production environment.
+2. Create a duplicate question
+   - Use this when you are confident the imported question should not be the same as the existing question. Questions imported using this option will not affect any questions in the import environment.
+   - You can find questions that were duplicated, since their admin names will have `-_- a` or another letter attached to it.
+
+3. Overwrite the existing question
+   - Use this option when you want to update an existing question in the import environment with the definition of the question from the program you are importing.
+   - Importing a question with this option will update the question that already exists in the import environment, which means updating any programs that contain that question. We do not recommend using this option in a production environment.
+   - If there are existing programs or questions in the import environment, they must be published before importing with this option.
   
 ## Exporting a Program
 
@@ -58,4 +61,3 @@ Situations in which you might get an error include:
 - Attempting to import a program with program visibility set to “Visible to selected trusted intermediaries only” (shows up as “SELECT_TI” in the program json)
   - Since we don’t migrate ti groups with the program, you must select a different visibility for the program before migrating.
 - Programs are in draft mode.
-  - With the NO_DUPLICATE_QUESTIONS_FOR_MIGRATION_ENABLED flag enabled, you must make sure all programs and questions are published before attempting to import a new program.

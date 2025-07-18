@@ -38,5 +38,7 @@ Notes:
 When applicants view available programs, external programs are displayed alongside regular CiviForm programs.
 When an applicant clicks on an external program card, a modal dialog appears that informs the user that the program will be opened outside of CiviForm. The applicant must accept this modal to proceed, which then opens the external program's website in a new window or tab.
 
+External programs are only visible to applicants when North Star is enabled.
+
 https://github.com/user-attachments/assets/229bc9b7-bf20-4924-be33-4299931a576c
 

@@ -43,7 +43,7 @@ Check if there are any current urgent bugs. If there are, make sure you know wha
 ### On-call responsibilities
 
 1. [Generate a release](https://github.com/civiform/civiform/wiki/Releasing) on Tuesday by 12pm Pacific Time
-2. Upgrade the version in the demo sites config files by running [this action](https://github.com/civiform/civiform-staging-deploy/actions/workflows/update_demo_versions.yaml) then merging the generated PR
+2. Upgrade the version in the demo sites config files by running [this action](https://github.com/civiform/civiform-staging-deploy/actions/workflows/update_demo_versions.yaml) then merging the [generated PR](https://github.com/civiform/civiform-staging-deploy/pulls)
 3. Check security lists daily
    * [Play Framework security announcement group](https://groups.google.com/g/play-framework-security)
    * [Codecov](https://about.codecov.io/security-update)

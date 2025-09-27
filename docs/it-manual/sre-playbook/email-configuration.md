@@ -92,3 +92,11 @@ integration works correctly. Here is the list of things to try:
 4. As a Program Admin, view the application and set the status.
 5. The applicant (and TI if present) should receive the email.
 
+
+## Troubleshooting SES email issues
+
+1. Go to Simple Email Service in the AWS console
+    - On the "Get Set Up" page, ensure production mode is enabled. Without production mode enabled, emails can only be sent from verified domains and there is a limit to the number of emails that can be sent
+    - On the "Identities" page, ensure the identities are verified. You can use a specific email identity or a domain.
+2. Check the ECS logs
+    - If the ECS logs have a `Email address is not verified.` error, please go through the steps above.

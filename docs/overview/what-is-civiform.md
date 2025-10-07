@@ -16,7 +16,7 @@ In times of crisis, these problems can be particularly acute (e.g. during a publ
 
 CiviForm supports a more human-centered approach to public benefits applications. When someone applies to a program, their data is stored in a centralized program database so that they see questions and programs that are most relevant to their needs. Applicants can then choose to re-use that data for other applications as they see fit.&#x20;
 
-![Example of the CiviForm landing page where residents can find public benefits programs in one place.](<../.gitbook/assets/what_is_civiform_1.png>)
+![Example of the CiviForm landing page where residents can find public benefits programs in one place.](<../.gitbook/assets/landing_page_20251007.png>)
 
 For applicants and their trusted intermediaries, this means that once you enter personal information for one program, you won’t need to re-enter it for future assistance. For government program administrators and local staff, this means less time collecting and sorting through redundant data across programs.
 
@@ -24,8 +24,4 @@ For applicants and their trusted intermediaries, this means that once you enter 
 
 All data is managed by the civic entity and thus their own security and privacy policies apply. Neither Google nor Exygy have access to applicant data in CiviForm. It was built as a low-code solution for government employees to respond to the needs of their community without needing technical expertise.
 
-CiviForm is written in Java using the [Play Framework](https://www.playframework.com) backed by a [PostgreSQL](https://www.postgresql.org) database. The application is containerized for development and deployment using [Docker](https://www.docker.com/), and deployed using container management systems that work with all major cloud providers. For authentication, CiviForm uses OIDC and SAML to integrate with existing single-sign-on services such as Microsoft ADFS, Oracle IDCS, and LoginRadius, allowing program administrators and residents alike to authenticate with existing accounts.
-
-### A note on data management and security
-
-All data is managed by the civic entity and thus their own security and privacy policies apply. For security, CiviForm is built to defend against cross-site scripting (XSS), SQL injection, cross-site request forgery (CSRF), and other common hacking tactics.
+CiviForm is written in Java using the [Play Framework](https://www.playframework.com) backed by a [PostgreSQL](https://www.postgresql.org) database. The application is containerized for development and deployment using [Docker](https://www.docker.com/), and deployed using container management systems that work with all major cloud providers. For authentication, CiviForm uses OIDC and SAML to integrate with existing single-sign-on services such as Microsoft ADFS, Oracle IDCS, and LoginRadius, allowing program administrators and residents alike to authenticate with existing accounts. For security, CiviForm is built to defend against cross-site scripting (XSS), SQL injection, cross-site request forgery (CSRF), and other common hacking tactics.

@@ -128,7 +128,7 @@ When a CiviForm Admin creates conditions to show or hide information based on pr
 
 In the future, there will be functionality that will show related benefits programs for which an applicant may be eligible.
 
-![](<../.gitbook/assets/program_review_20251007.png>)
+![](<../.gitbook/assets/edit_visibility_conditions_20251007.png>)
 
 _Click to enlarge image._
 

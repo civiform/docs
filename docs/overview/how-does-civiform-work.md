@@ -15,10 +15,6 @@ Through the Google.org Fellowship, user researchers identified 4 key users of Ci
 
 Read on to learn about the features for each user type. 
 
-#### A note on data management & security:
-
-All data is managed by the civic entity and thus their own security and privacy policies apply. For security, CiviForm is built to defend against cross-site scripting (XSS), SQL injection, cross-site request forgery (CSRF), and other common hacking tactics.
-
 ## Applicant Experience
 
 Expand each heading below to learn more about features for applicants.
@@ -29,7 +25,7 @@ Expand each heading below to learn more about features for applicants.
 
 Rather than clicking through disparate pages to find public benefits programs, residents can explore all programs for which they may be eligible in one, centralized location.&#x20;
 
-![](<../.gitbook/assets/Landing page of programs (1).png>)
+![](<../.gitbook/assets/landing_page_20251007.png>)
 
 _Click to enlarge image._
 
@@ -40,7 +36,7 @@ _Click to enlarge image._
 <summary>Apply online &#x26; in your language</summary>
 
 Applying for public assistance often requires residents to go in-person to an office, download and reupload PDF files, or call an agency. CiviForm brings applications online. Applications are written in plain language and available in several languages. The status bar at the top also helps applicants track their progress, with the option to save their progress and finish the application later.\
-![](<../.gitbook/assets/Filling out a field on an application.png>)
+![](<../.gitbook/assets/program_edit_20251007.png>)
 
 _Click to enlarge image._
 
@@ -48,13 +44,13 @@ _Click to enlarge image._
 
 <details>
 
-<summary>Never re-enter the same information on applications</summary>
+<summary>Application information can be reused on multiple applications</summary>
 
-Applications for public benefits programs often require applicants to re-enter the same basic information such as address, income, or social security number.&#x20;
+Applications for public benefits programs often require applicants to re-enter the same basic information multiple times, such as address, income, or social security number.&#x20;
 
-With CiviForm’s centralized database, once an applicant enters their information once, they do not need to re-enter it ever again. When applying for a new program, previously entered information will appear as pre-filled. Previously uploaded documents will also be available for reuse. If an applicant does want to change a data point, they can do so by editing it directly on the form.
+With CiviForm’s centralized database, once an applicant enters their information once, they do not need to re-enter it ever again. When applying for a new program, previously entered information will be automatically filled in, and the applicant will only have to fill in information not yet provided. Previously uploaded documents will also be available for reuse. If an applicant does want to change a data point, they can do so by editing it directly on the form. They can also easily view all information already provided in the application via the Review page.
 
-![](<../.gitbook/assets/Starting a new application with prefilled info.png>)
+![](<../.gitbook/assets/program_review_20251007.png>)
 
 _Click to enlarge image._
 
@@ -70,11 +66,11 @@ Expand each heading below to learn more about features for trusted intermediarie
 
 <summary>Apply on behalf of a residents</summary>
 
-From their own accounts, trusted intermediaries can create, update, and manage applications on behalf of their clients. Applicant personally identifiable information (PII) created this way is stored on our secure cloud servers. Trusted intermediaries can only view the data their staff have entered.
+From their own accounts, trusted intermediaries can create, update, and manage applications on behalf of their clients. Applicant personally identifiable information (PII) created this way is stored on secure cloud servers. Trusted intermediaries can only view the data their staff have entered.
 
 The accounts of trusted intermediaries are added and managed by government employees.
 
-![](<../.gitbook/assets/Adding a new trusted intermediary.png>)
+![](<../.gitbook/assets/trusted_intermediary_20251007.png>)
 
 _Click to enlarge image._
 
@@ -104,7 +100,7 @@ CiviForm Admin can also use ‘question types’ to validate that information is
 
 When an application needs to be updated, a new version will be created with all past versions stored in the tool for future reference.
 
-![](<../.gitbook/assets/Unified Application builder (1).png>)
+![](<../.gitbook/assets/program_dashboard_20251007.png>)
 
 _Click to enlarge image._
 
@@ -114,9 +110,9 @@ _Click to enlarge image._
 
 <summary><strong>Reuse questions from a shared question bank</strong></summary>
 
-When a CiviForm Admin creates a new question for an application, it is saved in a global, shared question bank. This shared repository removes the need to recreate questions for applications such as date of birth or social security number.
+When a CiviForm Admin creates a new question for an application, it is saved in a shared question bank. This shared repository removes the need to recreate questions for applications such as date of birth or social security number.
 
-![](<../.gitbook/assets/Question bank (1).png>)
+![](<../.gitbook/assets/question_dashboard_20251007.png>)
 
 _Click to enlarge image._
 
@@ -130,9 +126,9 @@ Many times, a form will need to ask or show people different information based o
 
 When a CiviForm Admin creates conditions to show or hide information based on previous answers, applicants will see questions that are most relevant to their situation. For example, CiviForm can determine if additional information is needed or if the applicant can skip part of the application.&#x20;
 
-Our team is also working on features that will show related benefits programs for which an applicant may be eligible.
+In the future, there will be functionality that will show related benefits programs for which an applicant may be eligible.
 
-![](<../.gitbook/assets/Show or hide a question.png>)
+![](<../.gitbook/assets/edit_visibility_conditions_20251007.png>)
 
 _Click to enlarge image._
 
@@ -148,9 +144,9 @@ Expand the heading below to learn more about features for Program Admin.
 
 <summary><strong>Export and disaggregate data</strong></summary>
 
-With CiviForm, Program Admins can review applications directly in the tool. They can also export data into a CSV file if preferred. CiviForm features allow for disaggregation of data to identify trends within applications and resident needs. Our team is currently working on several features for Program Admins to filter, make non-applicant facing notes, and integrate CiviForm into existing systems using an API.
+With CiviForm, Program Admins can review applications directly in the tool. They can also export data into a CSV file if preferred. CiviForm features allow for disaggregation of data to identify trends within applications and resident needs. In the future, there will be functionality for Program Admins to filter, make non-applicant facing notes, and integrate CiviForm into existing systems using an API.
 
-![](<../.gitbook/assets/Viewing all applications with option to download csv (1).png>)
+![](<../.gitbook/assets/review_applications_20251007.png>)
 
 _Click to enlarge image._
 

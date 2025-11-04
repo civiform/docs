@@ -1,6 +1,6 @@
 # Map questions
 
-Map questions allow applicants to interact with a geographic interface to select locations relevant to their application. This section covers the detailed setup and configuration options for map questions.
+Map questions allow applicants to view and select service locations on an interactive map. This section covers the detailed setup and configuration options for map questions.
 
 ## Setup requirements
 

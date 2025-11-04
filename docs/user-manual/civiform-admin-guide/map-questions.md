@@ -25,7 +25,7 @@ When creating a map question, admins must configure:
    - **Address key**: Specify which property contains the location's address (e.g., "street_address", "location")
    - **View more details URL key**: Specify which property contains the URL for more details (e.g., "more_info_link", "website")
 
-![Map question settings](https://drive.google.com/file/d/1Fj2vGqkUkzX5cSRLfXgpwWAGQknCILe2/view?usp=sharing)
+![Map question settings](../../.gitbook/assets/map-question-admin-question-settings.png)
 
 Admins can also configure:
 
@@ -68,13 +68,13 @@ To add a filter:
 2. Select the **Key** that contains the filter values (e.g., "wheelchair_accessible", "service_type", "language_support")
 3. Enter a **Display name** for the filter
 
-![Map question filter setting](https://drive.google.com/file/d/1L2jUng359-ebwO8bdGu_-OVJohJC1xmb/view?usp=sharing)
+![Map question filter setting](../../.gitbook/assets/map-question-admin-add-filter.png)
 
 **How filters work for applicants:**
 - CiviForm automatically detects all unique values for the specified property across all locations in the GeoJSON data
 - Applicants see these values as filter options in the interface
 
-![Map question filters](https://drive.google.com/file/d/1SVrd6HnFPAlpOVptvmek7ACCKK8VvSBo/view?usp=sharing)
+![Map question filters](../../.gitbook/assets/map-question-applicant-example-filters.png)
 
 **Best practices:**
 - Use property keys with a limited number of distinct values (e.g., boolean values, categories)
@@ -93,16 +93,16 @@ To add a tag:
 4. Enter a **Display name** that displays as the tag on a location
 4. Optionally, write an **alert message** that will be displayed to applicants that select those locations
 
-![Map question tag setting](https://drive.google.com/file/d/1zg-dYtwgKXnWfErKhQvUmxB9i5pNonv5/view?usp=sharing)
+![Map question tag setting](../../.gitbook/assets/map-question-admin-add-tag.png)
 
 **How tags work for applicants:**
 - When an applicant selects a location on the map, CiviForm checks if the tag condition is met
 - If the selected location has a property that matches the configured key-value pair, the alert message is displayed
 - The tag is informational and does not prevent applicants from selecting the location
 
-![Map question tag](https://drive.google.com/file/d/10vTuttSNqtqjJPEjMhp7I0QJjAokyt67/view?usp=sharing)
+![Map question tag](../../.gitbook/assets/map-question-applicant-example-tag.png)
 
-![Map question alert](https://drive.google.com/file/d/1M7Q0wCuCl1Np73cYM5iKdqGfrwiRrXNp/view?usp=sharing)
+![Map question alert](../../.gitbook/assets/map-question-applicant-example-alert.png)
 
 **Best practices:**
 - Keep alert messages clear and concise

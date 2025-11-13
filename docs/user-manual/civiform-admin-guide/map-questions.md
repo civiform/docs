@@ -1,19 +1,51 @@
 # Map questions
 
-Map questions allow applicants to view and select service locations on an interactive map. This section covers the detailed setup and configuration options for map questions.
+Map questions allow applicants to view and select locations on an interactive map. This section covers the detailed setup and configuration options for map questions.
 
 ## Setup requirements
 
-1. A GeoJSON endpoint that provides location data
+1. A publicly accessible HTTP endpoint that provides location data in the GeoJson format
 2. Valid [GeoJSON](https://datatracker.ietf.org/doc/html/rfc7946) data containing Features with:
-   - Unique identifiers
+   - Unique identifiers (the Feature ID)
    - Point geometry only (longitude and latitude coordinates)
    - Properties must include fields for:
      - Display name of the location
      - Physical address of the location
      - URL linking to more information about the location
    
-   When configuring the map question, admins specify which GeoJSON property fields contain this information.
+   When setting up the GeoJSON, you may use any name for the individual fields. Later, when configuring the map question, CiviForm Admins will be able to specify which GeoJSON property fields contain the required information.
+
+#### Sample GeoJSON
+```json
+{
+  "type": "FeatureCollection",
+  "features":
+    [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-122.4194, 37.7749]
+        },
+        "properties": {
+          "facility_name": "Main Community Center",
+          "location": "123 Main St, San Francisco, CA",
+          "more_info_link": "https://example.com/center",
+          "wheelchair_accessible": true,
+          "capacity": "limited"
+        },
+        "id": "main-community-center" # Feature ID
+      },
+      {
+        ...
+      },
+      {
+        ...
+      }
+    ]
+}
+
+```
 
 ## Configuration options
 
@@ -33,23 +65,7 @@ Admins can also configure:
 - **Filters**: [Add filters](#adding-a-filter) based on specific GeoJSON property keys to help applicants find relevant locations
 - **Tag**: [Configure a tag](#adding-a-tag) that displays on locations with specific property values
 
-For example, if your GeoJSON data looks like:
-```json
-{
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [-122.4194, 37.7749]
-  },
-  "properties": {
-    "facility_name": "Main Community Center",
-    "location": "123 Main St, San Francisco, CA",
-    "more_info_link": "https://example.com/center",
-    "wheelchair_accessible": true,
-    "capacity": "limited"
-  }
-}
-```
+For example, if you were using the [sample GeoJSON feature](#sample-geojson)
 
 You would:
 1. Select `facility_name` as the name key field
@@ -71,7 +87,7 @@ To add a filter:
 ![Map question filter setting](../../.gitbook/assets/map-question-admin-add-filter.png)
 
 **How filters work for applicants:**
-- CiviForm automatically detects all unique values for the specified property across all locations in the GeoJSON data
+- CiviForm automatically detects all possible values for the specified property across all locations in the GeoJSON data
 - Applicants see these values as filter options in the interface
 
 ![Map question filters](../../.gitbook/assets/map-question-applicant-example-filters.png)
@@ -83,7 +99,7 @@ To add a filter:
 
 ## Adding a tag
 
-An tag displays on locations with a specific property. Optionally, an alert for that tag displays to applicants when they select a location with that specific property value. This is useful for notifying applicants about special conditions, requirements, or limitations.
+A tag displays on locations with a specific property value. Optionally, an alert for that tag displays to applicants when they select a location with that specific property value. This is useful for notifying applicants about special conditions, requirements, or limitations.
 
 To add a tag:
 
@@ -111,16 +127,16 @@ To add a tag:
 
 ## Data storage and refresh settings
 
-The map question stores the complete GeoJSON response from the endpoint. When an applicant makes a selection, CiviForm returns:
-- The Feature ID of the selected location
+CiviForm stores all the data provided by the GeoJSON endpoint (see [sample GeoJSON](#sample-geojson)). When an applicant makes a selection, CiviForm stores:
+- The unique identifier of the selected location provided as the Feature ID in the GeoJSON data
 - The value of the configured name field at the time of selection
 
 Note: It is the admin's responsibility to maintain a record of which location corresponds to each Feature ID, as CiviForm only returns these two pieces of information.
 
-By default, the stored GeoJSON response won't be automatically updated. To enable automatic data refresh:
+By default, the stored data won't be automatically updated. To enable automatic data refresh:
 
 1. Set `durable_jobs.map_refresh=true` in your application configuration
-2. Once enabled, CiviForm will ping the GeoJSON endpoint every 10 minutes to refresh the location data
+2. Once enabled, CiviForm will ping the GeoJSON endpoint every 10 minutes to refresh the data. If the endpoint fails at any point, the data will not be updated and CiviForm will continue to use data from a previous successful call until it is able to successfully refresh the data.
 
 This automatic refresh is useful for locations with frequently changing properties (e.g., availability, capacity, or service hours).
 
@@ -134,3 +150,4 @@ The map question supports:
 
 To ensure map questions are accessible to all users:
 - Ensure location names are clear
+- Include several filters so that applicants can narrow down the list of locations

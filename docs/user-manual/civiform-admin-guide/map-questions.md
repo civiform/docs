@@ -151,3 +151,56 @@ The map question supports:
 To ensure map questions are accessible to all users:
 - Ensure location names are clear
 - Include several filters so that applicants can narrow down the list of locations
+
+## Troubleshooting
+
+### GeoJSON endpoint failing
+
+**Problem**: CiviForm cannot fetch data from the GeoJSON endpoint.
+
+**Possible causes and solutions**:
+- **Invalid GeoJSON format**: Verify your GeoJSON data is valid using a validator like [geojsonlint.com](https://geojsonlint.com)
+- **Missing Feature IDs**: Ensure every Feature in your GeoJSON has a unique `id` field
+- **Incorrect geometry type**: Map questions only support Point geometry. LineString, Polygon, and other geometry types will not display
+- **Endpoint not accessible**: Verify the GeoJSON endpoint URL is publicly accessible and returns a valid response
+
+### Key mapping not working
+
+**Problem**: Location names, addresses, or URLs not displaying correctly.
+
+**Possible causes and solutions**:
+- **Incorrect key selection**: Verify you've selected the correct property keys during map question configuration
+- **Missing properties**: Ensure all Features in your GeoJSON have the name, address, and URL properties
+- **Null or empty values**: Check that the properties contain actual values, not null or empty strings
+
+### Filters not showing expected options
+
+**Problem**: Filter dropdowns are empty or missing expected values.
+
+**Possible causes and solutions**:
+- **Incorrect key selection**: Verify you've selected the correct property keys during map question configuration
+- **Inconsistent property names**: Ensure the property exists across locations in your GeoJSON data
+- **Data refresh needed**: If you recently updated your GeoJSON, wait for the next refresh cycle (every 10 minutes if automatic refresh is enabled)
+
+### Tags not appearing on locations
+
+**Problem**: Configured tags don't display on locations.
+
+**Possible causes and solutions**:
+- **Value mismatch**: Verify the tag value exactly matches the property value in your GeoJSON (case-sensitive)
+
+### Data not refreshing
+
+**Problem**: Updates to GeoJSON data don't appear in CiviForm.
+
+**Possible causes and solutions**:
+- **Automatic refresh disabled**: Verify `durable_jobs.map_refresh=true` is set in your application configuration
+- **Endpoint failures**: Check your endpoint logs for any errors during CiviForm's refresh attempts
+
+### Selection data missing in exports
+
+**Problem**: Application exports don't show expected map question data.
+
+**Explanation**: CiviForm only stores the Feature ID and the name field value at the time of selection. To get complete location information, you'll need to:
+- Maintain a separate mapping of Feature IDs to full location details
+- Cross-reference the Feature IDs from exports with your GeoJSON data source

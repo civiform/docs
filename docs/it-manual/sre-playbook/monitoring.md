@@ -57,7 +57,7 @@ To import this pre-built dashboard:
 2. Change the Name value to PROMETHEUS_DATA
 3. Hover over the "+" icon in the left nav
 4. Click the "Import" option 
-5. Paste [the JSON here](https://gist.githubusercontent.com/dkatzz/a7048a6db9a2cbb14ef96f744f5fd964/raw/f65295421e47782cc55eecdbf70653d676121070/grafana_json) into the "Import via panel JSON" 
+5. Paste [the JSON here](https://github.com/civiform/civiform/blob/main/monitoring/grafana/dashboards/civiform-dashboard.json) into the "Import via panel JSON" 
 7. Click "Load"
 8. Fill in the details for the imported dashboard, selecting your CiviForm prometheus instance for the data source
 

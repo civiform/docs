@@ -115,8 +115,6 @@
 
 ## Governance & Management
 
-* [Project Management](governance-and-management/project-management/README.md)
-  * [On Call Guide](governance-and-management/project-management/on-call-guide/README.md)
 * [Governance](governance-and-management/governance/README.md)
   * [Roles, Committees, & Responsibilities](governance-and-management/governance/roles-committees-and-responsibilities.md)
   * [Governance Processes](governance-and-management/governance/governance-processes.md)

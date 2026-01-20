@@ -8,6 +8,8 @@ To create a Yes/No question, click "Create new question" and then select "Yes/No
 
 Under "Question settings" you'll see four pre-set answer options: "Yes", "No", "Not sure", and "Maybe". "Yes" and "No" are required options and cannot be removed. You can unselect "Not sure" and/or "Maybe" to remove them from the answer options the applicant will see.
 
+The Admin ID will be used to represent the question option in the API and in program import/export. The Option Text is the text that the applicant will see.
+
 ![Yes/No answer options](../../.gitbook/assets/yes-no-question-options.png)
 
 ## Translations

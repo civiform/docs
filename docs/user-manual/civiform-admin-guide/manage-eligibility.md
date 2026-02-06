@@ -1,4 +1,6 @@
-# Manage program eligibility
+# Manage program eligibility (legacy)
+
+*Note: Documentation for the revamped version of program eligibility and visibility is available at [Manage program eligibility and visibility](manage-predicates.md)*
 
 There are programs that may have strict criteria for eligibility. For example, if an Applicant’s date of birth is earlier than the qualifying year, they are ineligible for the program.
 

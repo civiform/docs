@@ -83,7 +83,7 @@ Clicking the "Save and Exit" button at the bottom of the edit page brings you ba
 
 The program view will now display the conditions that you set:
 
-![The program view, showing "Applicant is eligible if sample date question date age is older than 18"](../../.gitbook/assets/program-view-eligibility-condition-display.png)
+![The program view, showing "Applicant is eligible if any conditions are true: (1) Sample Currency Question" currency is not equal to $1.00 AND "Sample Date Question" date age is between 18 and 35 (2) Sample checkbox question contains any of toaster"](../../.gitbook/assets/program-view-eligibility-condition-display.png)
 
 Clicking the "Edit eligibility conditions" button will return you to the edit view.
 

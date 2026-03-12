@@ -73,4 +73,4 @@ software.amazon.awssdk.services.ses.model.MessageRejectedException: Email addres
 
 You report this issue to the CiviForm support team and send along the logs and instructions for what they were doing that they expected to send an email (in this case, updating a status).
 
-The CiviForm team responds that this is likely due to a configuration error where the the domain is not yet verified in SES. You need to request the verification on AWS, which will take about a day for AWS to approve!
+The CiviForm team responds that this is likely due to a configuration error where the the domain is not yet verified in SES. You need to follow the steps described in [Email Configuration](../../it-manual/sre-playbook/email-configuration.md)

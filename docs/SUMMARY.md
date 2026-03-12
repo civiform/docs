@@ -126,3 +126,5 @@
   * [Governance Processes](governance-and-management/governance/governance-processes.md)
   * [Development Principles](governance-and-management/governance/development-principles.md)
   * [Communication](governance-and-management/governance/communication.md)
+* [Technical Support]
+  * [AWS Debugging Guide](governance-and-management/tech-support/aws-debugging-guide.md)

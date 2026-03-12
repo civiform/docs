@@ -19,7 +19,7 @@ You will see a paginated log stream from all running containers. The columns are
 - **Timestamp** — when the log line was emitted (shown in UTC-5:00 by default)
 - **Message** — the raw log output
 - **Task** — the ECS task ID that generated the log
-- **Container** — which container within the task (e.g., `exygy-metrics-scraper`, `civiform`)
+- **Container** — which container within the task (e.g., `prod-metrics-scraper`, `civiform`)
 
 {% hint style="info" %}
 If you see the banner "Response size limits prevent displaying some newer logs," reduce your time range or toggle **Continue fetching** on.

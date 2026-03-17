@@ -51,7 +51,7 @@ Click **Filter by a date and time range** to scope logs to a specific incident w
 
 ## Notifying the CiviForm team
 
-To get support from the CiviForm team, notify the government support team by tagging @support in the #government-support channel on the CiviForm Slack or emailing civiform-government-support@exygy.com.
+To get support from the CiviForm team, notify the government support team by tagging @support in the #gov-support channel on the CiviForm Slack or emailing civiform-government-support@exygy.com.
 
 Include in your message:
 

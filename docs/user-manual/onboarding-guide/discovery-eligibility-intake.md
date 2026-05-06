@@ -1,4 +1,4 @@
-# Discovery, Eligiblity Screening, and Intake
+# Discovery, Eligibility Screening, and Intake
 
 CiviForm can be a helpful tool even in cases where a program does not require applications, or does not want to use CiviForm to accept applications. As you map the needs of various programs, consider whether CiviForm could play a role in **program discovery**, **eligibility screening**, or **intake** across programs.
 

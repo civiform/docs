@@ -8,5 +8,8 @@ At the top of the screen, there is a navigation bar. You can navigate to:
 * **Programs**: View, create, edit and publish programs. This is the page you see when you log in.
 * **Questions**: View all the questions you can add to your programs and create new questions.
 * **Intermediaries**: Create or view Trusted Intermediaries.
-* **API keys**: Manage API keys, which enable accessing CiviForm programmatically from other software products.
+* **API**: A dropdown containing:
+  * **API keys**: Manage API keys, which enable accessing CiviForm programmatically from other software products.
+  * **Documentation**: View the API documentation.
 * **Reporting**: The data dashboard where you can view core program metrics.
+* **Settings** (gear icon): Configure CiviForm settings and feature flags.

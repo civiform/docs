@@ -136,7 +136,7 @@ Note: It is the admin's responsibility to maintain a record of which location co
 By default, the stored data won't be automatically updated. To enable automatic data refresh:
 
 1. Set `durable_jobs.map_refresh=true` in your application configuration
-2. Once enabled, CiviForm will ping the GeoJSON endpoint every 10 minutes to refresh the data. If the endpoint fails at any point, the data will not be updated and CiviForm will continue to use data from a previous successful call until it is able to successfully refresh the data.
+2. Once enabled, CiviForm will ping the GeoJSON endpoint every 30 minutes to refresh the data. If the endpoint fails at any point, the data will not be updated and CiviForm will continue to use data from a previous successful call until it is able to successfully refresh the data.
 
 This automatic refresh is useful for locations with frequently changing properties (e.g., availability, capacity, or service hours).
 
@@ -180,7 +180,7 @@ To ensure map questions are accessible to all users:
 **Possible causes and solutions**:
 - **Incorrect key selection**: Verify you've selected the correct property keys during map question configuration
 - **Inconsistent property names**: Ensure the property exists across locations in your GeoJSON data
-- **Data refresh needed**: If you recently updated your GeoJSON, wait for the next refresh cycle (every 10 minutes if automatic refresh is enabled)
+- **Data refresh needed**: If you recently updated your GeoJSON, wait for the next refresh cycle (every 30 minutes if automatic refresh is enabled)
 
 ### Tags not appearing on locations
 

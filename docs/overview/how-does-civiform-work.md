@@ -2,161 +2,104 @@
 description: Overview of CiviForm users and how the product serves them.
 ---
 
-# How does CiviForm work?
+# What CiviForm does
+CiviForm is a platform for governments to build and manage benefit and service program applications — without writing code. The sections below describe what each user type can do, but the underlying model is the same throughout: questions are shared, applicant data carries across programs, and everything is configurable without custom development.
 
-## The 4 users of CiviForm
+When a CiviForm Admin builds an application, they can pull questions from this library rather than creating them from scratch. Because questions are shared, when a resident answers "what is your address?" for one program, that answer is stored and pre-filled the next time that question appears in another application. On the resident side, this creates a single portal where they can find all available programs and apply to multiple without re-entering information. Community organizations can do all of this on behalf of the residents they serve.
 
-Through the Google.org Fellowship, user researchers identified 4 key users of CiviForm:
+CiviForm also supports more sophisticated configurations. Forms can be set up to show or hide questions based on previous answers, so applicants only see what is relevant to their situation. Governments can configure eligibility rules so residents can screen themselves before completing a full application. Applications are available in multiple languages, with translations managed directly by program staff.
 
-* [Applicants](how-does-civiform-work.md#applicant-experience) are residents seeking public services.
-* [Trusted Intermediaries](how-does-civiform-work.md#trusted-intermediary-experience) are third parties who help residents navigate the application process and access public services (for example, community-based organizations)
-* [CiviForm Admins](how-does-civiform-work.md#civiform-admin-experience) are government employees who create and manage forms for programs.
-* [Program Admins](how-does-civiform-work.md#program-admin-experience) are government employees who review and make decisions about applications.
 
-Read on to learn about the features for each user type. 
+## Users of CiviForm
 
-## Applicant Experience
+### Residents
 
-Expand each heading below to learn more about features for applicants.
+Residents use CiviForm to find and apply for public benefit and service programs through a single portal.
 
-<details>
+**Find programs in one place**
 
-<summary><strong>Find all benefits programs in one place</strong></summary>
+Residents can browse all programs available through their government in one centralized location and see which ones they may be eligible for.
 
-Rather than clicking through disparate pages to find public benefits programs, residents can explore all programs for which they may be eligible in one, centralized location.&#x20;
+[![](/docs/.gitbook/assets/landing_page_20251007.png)](/docs/.gitbook/assets/landing_page_20251007.png)
 
-![](<../.gitbook/assets/landing_page_20251007.png>)
+**Apply online in your language**
 
-_Click to enlarge image._
+CiviForm brings applications online, written in plain language and available in multiple languages. Applicants can track their progress, save their work, and return to finish later.
 
-</details>
+[![](/docs/.gitbook/assets/program_edit_20251007.png)](/docs/.gitbook/assets/program_edit_20251007.png)
 
-<details>
+**Enter information once, reuse it everywhere**
 
-<summary>Apply online &#x26; in your language</summary>
+Once a resident enters their information for one program, that data is stored and pre-filled on future applications. Residents can review and update pre-filled information at any time.
 
-Applying for public assistance often requires residents to go in-person to an office, download and reupload PDF files, or call an agency. CiviForm brings applications online. Applications are written in plain language and available in several languages. The status bar at the top also helps applicants track their progress, with the option to save their progress and finish the application later.\
-![](<../.gitbook/assets/program_edit_20251007.png>)
+**Get screened for eligibility before applying**
 
-_Click to enlarge image._
+CiviForm supports a common intake screener that helps residents understand which programs they may qualify for before they begin a full application, saving time for both residents and program staff.
 
-</details>
 
-<details>
+### Trusted Intermediaries
 
-<summary>Application information can be reused on multiple applications</summary>
+Trusted Intermediaries are staff at community-based organizations and other third parties who help residents navigate and apply for public benefits. CiviForm gives them dedicated tools to manage their caseload efficiently.
 
-Applications for public benefits programs often require applicants to re-enter the same basic information multiple times, such as address, income, or social security number.&#x20;
+**Apply on behalf of residents**
 
-With CiviForm’s centralized database, once an applicant enters their information once, they do not need to re-enter it ever again. When applying for a new program, previously entered information will be automatically filled in, and the applicant will only have to fill in information not yet provided. Previously uploaded documents will also be available for reuse. If an applicant does want to change a data point, they can do so by editing it directly on the form. They can also easily view all information already provided in the application via the Review page.
+From their own accounts, Trusted Intermediaries can create, update, and manage applications on behalf of their clients. Applicant personally identifiable information (PII) is stored securely and is only visible to authorized staff. Trusted Intermediary accounts are added and managed by government employees.
 
-![](<../.gitbook/assets/program_review_20251007.png>)
 
-_Click to enlarge image._
+**Manage caseload from a central dashboard**
 
-</details>
+From a single dashboard, Trusted Intermediaries can filter clients by program, track application statuses, and manage their workload across multiple programs and residents at once.
 
-## Trusted Intermediary Experience
 
-Residents often turn to local community-based organizations (CBOs) or other third parties to help navigate public benefits programs. These trusted intermediaries are juggling various databases, managing hundreds of applications, and working with several families per day. With CiviForm’s one-stop-shop for your community’s benefits applications, trusted intermediaries have their own accounts to manage their workload from a simple interface.
+### CiviForm Admins
 
-Expand each heading below to learn more about features for trusted intermediaries.
+CiviForm Admins are government staff responsible for building, publishing, and maintaining program application forms. They can launch and update forms without waiting on IT or outside vendors.
 
-<details>
+**Build and publish forms without writing code**
 
-<summary>Apply on behalf of a resident</summary>
+CiviForm Admins can create, edit, and publish application forms directly in the platform. Changes can be made and deployed without technical support. When a form is updated, a new version is created with all past versions stored for reference.
 
-From their own accounts, trusted intermediaries can create, update, and manage applications on behalf of their clients. Applicant personally identifiable information (PII) created this way is stored on secure cloud servers. Trusted intermediaries can only view the data their staff have entered.
+[![](/docs/.gitbook/assets/program_dashboard_20251007.png)](/docs/.gitbook/assets/program_dashboard_20251007.png)
 
-The accounts of trusted intermediaries are added and managed by government employees.
+**Reuse questions from a shared question bank**
 
-![](<../.gitbook/assets/trusted_intermediary_20251007.png>)
+Questions are saved to a shared bank available across all programs. When building a new application, admins can draw from existing questions rather than recreating them from scratch.
 
-_Click to enlarge image._
+[![](/docs/.gitbook/assets/question_dashboard_20251007.png)](/docs/.gitbook/assets/question_dashboard_20251007.png)
 
-</details>
+**Show or hide questions based on applicant answers**
 
-<details>
+Forms can be configured to show or hide questions dynamically based on previous answers, keeping applications focused and relevant for each applicant's situation.
 
-<summary>Manage workload from the Trusted Intermediary Dashboard</summary>
+[![](/docs/.gitbook/assets/edit_visibility_conditions_20251007.png)](/docs/.gitbook/assets/edit_visibility_conditions_20251007.png)
 
-From filtering applicants by programs to tracking application status, trusted intermediaries can visualize and manage their dynamic workload from their own dashboard. Applicant information is viewable by authorized users only.
+**Manage eligibility criteria**
 
-</details>
+CiviForm Admins can configure eligibility rules for programs, allowing applicants to screen themselves before completing a full application.
 
-## CiviForm Admin Experience
+**Manage translations**
 
-CiviForm Admins are the government employees who create and update applications. These users manage CiviForm for their civic entity, build custom applications, and can maintain the tool without ever needing to go into the code. They may be provisioned access to aggregated and anonymized data for analytics purposes.
+Admins can manage translations for programs and questions directly in the platform, making applications accessible to residents in their preferred language.
 
-&#x20;Expand each heading below to learn more about features for CiviForm admin.
 
-<details>
+### Program Admins
 
-<summary><strong>Create, update, and publish program applications in one place</strong></summary>
+Program Admins are government staff who review submitted applications and manage program workflows.
 
-CiviForm Admins can use the platform’s unified application builder to create and publish applications for public benefits programs. For each program created, these users can create and define the requirements for an application.&#x20;
+**Review applications in the platform**
 
-CiviForm Admin can also use ‘question types’ to validate that information is entered correctly. For example, if a CiviForm Admin wants addresses to be inputted in a consistent format, they can select the ‘address question type’ that CiviForm will validate for accuracy. The meaning of that address field however will be determined by the CiviForm Admin (e.g. is it the applicant’s address? an employer address? a spouse?).
+Program Admins can review submitted applications directly in CiviForm, with all applicant information organized and readable — no more processing unstructured data from paper or PDF forms.
 
-When an application needs to be updated, a new version will be created with all past versions stored in the tool for future reference.
+[![](/docs/.gitbook/assets/review_applications_20251007.png)](/docs/.gitbook/assets/review_applications_20251007.png)
 
-![](<../.gitbook/assets/program_dashboard_20251007.png>)
+**Manage application statuses**
 
-_Click to enlarge image._
+Program Admins can create custom statuses to track where each application is in the review process and can notify applicants of status changes directly from the platform.
 
-</details>
+**Export structured data**
 
-<details>
+Application data can be exported to CSV or via API for use in existing reporting tools, case management systems, or other downstream workflows.
 
-<summary><strong>Reuse questions from a shared question bank</strong></summary>
+**Control access by program**
 
-When a CiviForm Admin creates a new question for an application, it is saved in a shared question bank. This shared repository removes the need to recreate questions for applications such as date of birth or social security number.
-
-![](<../.gitbook/assets/question_dashboard_20251007.png>)
-
-_Click to enlarge image._
-
-</details>
-
-<details>
-
-<summary>Show/hide relevant information to applicants</summary>
-
-Many times, a form will need to ask or show people different information based on their answers. For example, an applicant with dependents below the age of 12 should see questions related to school benefits. Alternatively, an applicant below the age of 65 should not be shown benefits for seniors. CiviForm supports these scenarios through visibility conditions.&#x20;
-
-When a CiviForm Admin creates conditions to show or hide information based on previous answers, applicants will see questions that are most relevant to their situation. For example, CiviForm can determine if additional information is needed or if the applicant can skip part of the application.&#x20;
-
-In the future, there will be functionality that will show related benefits programs for which an applicant may be eligible.
-
-![](<../.gitbook/assets/edit_visibility_conditions_20251007.png>)
-
-_Click to enlarge image._
-
-</details>
-
-## Program Admin Experience
-
-Program Admins are government employees who review and make determinations about applications for public benefits. Using CiviForm, they can improve existing workflows and gain insights about utilization of programs.
-
-Expand the heading below to learn more about features for Program Admin.
-
-<details>
-
-<summary><strong>Export and disaggregate data</strong></summary>
-
-With CiviForm, Program Admins can review applications directly in the tool. They can also export data into a CSV file if preferred. CiviForm features allow for disaggregation of data to identify trends within applications and resident needs. In the future, there will be functionality for Program Admins to filter, make non-applicant facing notes, and integrate CiviForm into existing systems using an API.
-
-![](<../.gitbook/assets/review_applications_20251007.png>)
-
-_Click to enlarge image._
-
-</details>
-
-<details>
-
-<summary>Assign applications to the right Program Admin</summary>
-
-The only people who can review submitted applications for a given program, including any personally identifiable information (PII), are the Program Admins assigned to manage the program.&#x20;
-
-</details>
-
+Only Program Admins assigned to a given program can view submitted applications and applicant personally identifiable information for that program, ensuring appropriate data access controls.

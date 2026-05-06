@@ -3,9 +3,6 @@ description: Overview of CiviForm users and how the product serves them.
 ---
 
 # What CiviForm does
-
-## How CiviForm works
-
 CiviForm is a platform for governments to build and manage benefit and service program applications — without writing code. The sections below describe what each user type can do, but the underlying model is the same throughout: questions are shared, applicant data carries across programs, and everything is configurable without custom development.
 
 When a CiviForm Admin builds an application, they can pull questions from this library rather than creating them from scratch. Because questions are shared, when a resident answers "what is your address?" for one program, that answer is stored and pre-filled the next time that question appears in another application. On the resident side, this creates a single portal where they can find all available programs and apply to multiple without re-entering information. Community organizations can do all of this on behalf of the residents they serve.

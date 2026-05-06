@@ -35,10 +35,17 @@ CiviForm is a good fit if your government or team
 - Wants applicants to be able to find and apply to multiple programs in one place
 
 ## Security and data ownership
-All applicant data is owned and managed by the deploying government. CiviForm integrates with existing government single sign-on systems via OIDC and SAML, and is built to defend against common security threats including cross-site scripting, SQL injection, and cross-site request forgery. For full technical and infrastructure details, see the [IT Manual].
+All applicant data is owned and managed by the deploying government. CiviForm integrates with existing government single sign-on systems via OIDC and SAML, and is built to defend against common security threats including cross-site scripting, SQL injection, and cross-site request forgery. 
 
 ## Getting started with CiviForm
+  
+The base CiviForm software is free to use. Governments can deploy and manage their own instance, and the full codebase is available on [GitHub](https://github.com/civiform/civiform).
  
-The base CiviForm software is free to use. Governments can deploy and manage their own instance, and the full codebase is available on [GitHub](https://github.com/civiform/civiform). For governments ready to get started, the [Onboarding Guide] walks through planning and program assessment through launch.
+For governments ready to get started:
+- The [Onboarding Guide](/user-manual/onboarding-guide.md) walks through the full process from planning and program assessment through launch and growth.
+- The [Deployment Guide](/it-manual/sre-playbook/initial-deployment.md) covers the technical steps for standing up a CiviForm instance.
+
+The core CiviForm team can provide support with questions, deployment, managed hosting, and feature development. [Get in touch](https://civiform.us/contact) to learn more.
+ 
 
 [Exygy](https://www.exygy.com), a certified B Corp, can provide support with deployment, managed hosting, and feature development. [Get in touch](https://civiform.us/contact) to learn more.

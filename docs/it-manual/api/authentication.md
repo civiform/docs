@@ -52,4 +52,4 @@ curl https://staging.myciviform.gov/api/v1/checkAuth -vH "Authorization: Basic <
 ```
 {% endcode %}
 
-If you recieve a `200 OK` then your key is set up correctly to access CiviForm.
+If you receive a `200 OK` then your key is set up correctly to access CiviForm.

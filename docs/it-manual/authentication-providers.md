@@ -6,7 +6,7 @@ CiviForm supports two different flows for authentication:
   - Examples providers include: Login.gov, Oracle IDCS, LoginRadius, Generic OIDC (i.e. Auth0 or Google Identity)
 - Admin authentication - how CiviForm administrators and program administrators log into CiviForm
   - Accessed by the "Are you an administrator? Admin login" prompt at the bottom of the home page
-  - Example providers include: Okta and Azure AD
+  - Example providers include: Okta and Microsoft Entra ID (formerly Azure AD)
 
 Choosing an authentication provider involves various considerations, including price, existing login providers used by other sites managed by the city, and ease of use for both the city staff and the people logging in.
 

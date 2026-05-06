@@ -38,4 +38,4 @@ WARNING: The pgadmin tool has the ability to save queries. Do NOT save files wit
 We cache program and question data on the server for active and obsolete versions, so if you're making changes to this data, you may not see updates reflected until you:
 
 - Dev / staging instance: clear the cache by going to Dev Tools -> Additional tools -> Clear cache
-- Prod instance (in which data shouldn't be maniputlated or should be done with extreme caution): re-start the the application containers to clear the cache
+- Prod instance (in which data shouldn't be manipulated or should be done with extreme caution): re-start the application containers to clear the cache

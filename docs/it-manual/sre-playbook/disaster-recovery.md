@@ -9,12 +9,12 @@ We do not recommend trying to restore over an existing environment for two reaso
 The second is that by building out a brand new environment there is no chance of introducing incorrect settings with system components that may be in an unknown working state.
 
 {% hint style="danger" %}
-This disaster recover process is currently only tested and supported for AWS installations. Do NOT use on Azure.
+This disaster recovery process is currently only tested and supported for AWS installations.
 {% endhint %}
 
 ## Prerequisites
 
-This guide assumes there has already been an initial setup of the system as outlined in the [setup guide](https://docs.civiform.us/it-manual/sre-playbook/initial-deployment/terraform-deploy-system).
+This guide assumes there has already been an initial setup of the system as outlined in the [setup guide](https://docs.civiform.us/it-manual/sre-playbook/terraform-deploy-system).
 
 {% hint style="info" %}
 Steps outlined in this guide assume they are being run from the root folder of your fork of the [civiform-deploy](https://github.com/civiform/civiform-deploy) repository.
@@ -62,7 +62,7 @@ The `CIVIFORM_VERSION` MUST be the same version that was in use with the selecte
 
 ## Initialize the deployment
 
-Verify that deployment tool is correctly setup by running `run bin/doctor --config=NEWCONFIGFILE`
+Verify that deployment tool is correctly setup by running `bin/doctor --config=NEWCONFIGFILE`
 
 ## Restore into new environment
 
@@ -111,7 +111,7 @@ While it is often instantaneous, it may take a few minutes for the DNS update to
 ## Testing
 
 - Verify you can log in as an admin and an applicant
-- Check Cloudwatch for errors
+- Check CloudWatch for errors
 
 {% hint style="success" %}
 The newly restored environment is now up and running.

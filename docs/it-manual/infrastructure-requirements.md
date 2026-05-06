@@ -16,7 +16,7 @@ Note that there usually is not direct traffic between the CiviForm server and id
 
 Software-defined load balancer to route incoming client traffic to an array of backends; required to ensure the software scales up gracefully with increased load. 
 
-If running in a cloud-service, an example would be AWS ELB or Azure Load Balancer.
+If running in a cloud service, an example would be AWS ELB.
 
 If running on-prem, examples would be SeeSaw, nginx, HA Proxy, Kubernetes load balancer, etc.
 
@@ -39,13 +39,13 @@ File storage needs are for applicant-uploaded files and depend entirely upon the
 
 **Email Sending Service**
 
-For a cloud deployment, examples would be AWS SNS or Azure SendGrid.
+For a cloud deployment, an example would be AWS SES.
 
 For a local deployment, one would need to interface with the government's own email systems.
 
 **Authentication Systems**
 
-Two systems are needed: one which is configured to authenticate applicants, and one configured to authenticate administrators. Both systems must be OIDC compliant, and the adminstrator-systems must have configurable claims.
+Two systems are needed: one which is configured to authenticate applicants, and one configured to authenticate administrators. Both systems must be OIDC compliant, and the administrator-systems must have configurable claims.
 
 ## Why Cloud Deployment is Preferred
 
@@ -91,7 +91,7 @@ _Cons_
 
 ## What Cloud deployment looks like
 
-In general, a **cloud provider** refers to a business like AWS, Azure, or GCP.
+In general, a **cloud provider** refers to a business like AWS.
 
 Similarly, a **cloud service** refers to a service within the provider (such as file storage or container orchestration.)
 
@@ -100,10 +100,10 @@ From the IT department's point of view:
 * The CiviForm system is comprised of a set of resources (e.g. application servers, PostgreSQL database, file storage) will be running in a virtual private cloud (VPC).
   * A virtual private cloud ensures the different components of the CiviForm systems are only accessible by the entities that should have access. E.g. the database is only accessible from the application servers, the application servers are only accessible from the load balancer, etc
 * For CiviForm, we have designed the system's resources and deployment to be controlled in a set of text files – these are [Terraform](https://www.terraform.io) configuration files. IT staff has the freedom to modify these files and change how cloud resources deploy, how much disk/ram/cpu to give each, etc.
-* Terraform then deploys the resources to a commercial cloud provider – whether it be AWS, GCP, or Azure.
+* Terraform then deploys the resources to AWS.
 * CiviForm's Java application servers run in a tool called Docker, all cloud providers understand (natively) how to run a Docker container in groups, using container orchestration services.
-  * AWS has a container service called ECS; Azure has a container service called ACI. These services run the server code in a Docker container, but are using the native cloud app-services systems under the hood.
-  * Under development, a local Docker instance contains a private PostgreSQL database within the same container as the app servers. In production, multiple Docker containers are deployed to the cloud, which then access a shared SQL database (e.g. RDS on AWS, or AzureSQL on Azure).
+  * AWS has a container service called ECS. This service runs the server code in a Docker container, using the native cloud app-services systems under the hood.
+  * Under development, a local Docker instance contains a private PostgreSQL database within the same container as the app servers. In production, multiple Docker containers are deployed to the cloud, which then access a shared SQL database (e.g. RDS on AWS).
 
 Cloud providers also have:
 

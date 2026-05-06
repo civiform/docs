@@ -1,6 +1,6 @@
 # Set a program as the pre-screener
 
-You can mark one program as the pre-screener (aka intake form). The pre-screener is pinned to the top of the programs page for applicants in a special **Find services** section. After the applicant submits the pre-screener, programs they may be eligible for are displayed to them based on their answers. For that reason, you may want to use the pre-screener feature in combination with specifying eligibility conditions on non-pre-screener programs.
+You can mark one program as the pre-screener (aka intake form). The pre-screener is pinned to the top of the programs page for applicants in a special **Get Started** section. After the applicant submits the pre-screener, programs they may be eligible for are displayed to them based on their answers. For that reason, you may want to use the pre-screener feature in combination with specifying eligibility conditions on non-pre-screener programs.
 
 ![](../../.gitbook/assets/find-benefits.png)
 
@@ -37,7 +37,7 @@ Note that eligibility conditions cannot be set for the pre-screener, so if you h
 ## Setting a redirect URL for when no eligible programs are found
 If the applicant fills out the pre-screener and no programs they may be eligible for are found, we display a message to them that contains a link to the civic entity's website where they can find more benefit programs. The message says:
 
-***The pre-screener could not find programs you may qualify for at this time. However, you may apply for benefits at any time, by clicking 'Apply to programs'. Or to view additional benefit programs you can visit `CIVIC_ENTITY_WEBSITE`***
+***The pre-screener could not find programs you may qualify for at this time. However, you may apply for programs at any time, by clicking 'Apply to programs'. Or to view additional programs you can visit `CIVIC_ENTITY_WEBSITE`***
 
 To set the text and URL that are used for `CIVIC_ENTITY_WEBSITE`, you need to set the following [environment variables](https://docs.civiform.us/it-manual/sre-playbook/server-environment-variables) in your deployment script:
 * ```COMMON_INTAKE_MORE_RESOURCES_LINK_TEXT```

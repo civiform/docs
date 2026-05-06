@@ -70,7 +70,7 @@ To ensure a successful CiviForm implementation, read through the brief guide bel
 
 ## Preparation for Launch 
 
-- [ ] Review the [form building how-to-guide](https://docs.civiform.us/user-manual/civiform-admin-guide/working-with-programs/create-a-program) to begin building your first program  
+- [ ] Review the [form building how-to-guide](https://docs.civiform.us/user-manual/civiform-admin-guide/create-a-program) to begin building your first program  
       - [ ] User-centric design: Create forms that are easy to understand and complete, using [plain language](http://plainlanguage.gov).  
       - [ ] Keep  accessibility standards (e.g., WCAG) in mind when creating your forms.  
       - [ ] Consider which languages Program questions and answers will be translated to and which languages [CiviForm supports natively](https://docs.civiform.us/user-manual/civiform-admin-guide/manage-translations-for-programs-and-questions).  

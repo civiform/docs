@@ -28,7 +28,7 @@ CiviForm programs are made up of one or more questions housed in screens. Each p
 
 A program can hold multiple screens and each screen should contain a logically themed set of questions (for example, all employment-related questions). Each screen equates to a new page when applying to a program.
 
-You edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions](manage-versions-for-programs-and-questions.md).
+You can edit both unpublished and published programs. To edit published programs, you need a new version. For more details on versioning, go to [Manage versions for programs & questions](manage-versions-for-programs-and-questions.md).
 
 {% embed url="https://drive.google.com/file/d/1sdXQ3qaKwOOPF4XdlRvRnWw8e_9FgbIZ/view?usp=sharing" %} {% endembed %}
 

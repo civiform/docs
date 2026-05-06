@@ -9,9 +9,9 @@ description: Overview of CiviForm users and how the product serves them.
 Through the Google.org Fellowship, user researchers identified 4 key users of CiviForm:
 
 * [Applicants](how-does-civiform-work.md#applicant-experience) are residents seeking public services.
-* [Trusted Intermediaries](how-does-civiform-work.md#trusted-intermediary-experience) are third-parties who help residents navigate the application process and access public services (for example, community-based organizations)
-* [CiviForm Admin](how-does-civiform-work.md#civiform-admin-experience) are government employees who create and manage forms for programs.
-* [Program Admin](how-does-civiform-work.md#undefined) are government employees who review and make decisions about applications.
+* [Trusted Intermediaries](how-does-civiform-work.md#trusted-intermediary-experience) are third parties who help residents navigate the application process and access public services (for example, community-based organizations)
+* [CiviForm Admins](how-does-civiform-work.md#civiform-admin-experience) are government employees who create and manage forms for programs.
+* [Program Admins](how-does-civiform-work.md#program-admin-experience) are government employees who review and make decisions about applications.
 
 Read on to learn about the features for each user type. 
 
@@ -64,7 +64,7 @@ Expand each heading below to learn more about features for trusted intermediarie
 
 <details>
 
-<summary>Apply on behalf of a residents</summary>
+<summary>Apply on behalf of a resident</summary>
 
 From their own accounts, trusted intermediaries can create, update, and manage applications on behalf of their clients. Applicant personally identifiable information (PII) created this way is stored on secure cloud servers. Trusted intermediaries can only view the data their staff have entered.
 
@@ -86,7 +86,7 @@ From filtering applicants by programs to tracking application status, trusted in
 
 ## CiviForm Admin Experience
 
-CiviForm Admin are the government employees who create and update applications. These users manage CiviForm for their civic entity, build custom applications, and can maintain the tool without ever needing to go into the code. They may be provisioned access to aggregated and anonymized data for analytics purposes.
+CiviForm Admins are the government employees who create and update applications. These users manage CiviForm for their civic entity, build custom applications, and can maintain the tool without ever needing to go into the code. They may be provisioned access to aggregated and anonymized data for analytics purposes.
 
 &#x20;Expand each heading below to learn more about features for CiviForm admin.
 
@@ -136,7 +136,7 @@ _Click to enlarge image._
 
 ## Program Admin Experience
 
-Program Admin are government employees who review and make determinations about applications for public benefits. Using CiviForm, they can improve existing workflows and gain insights about utilization of programs.
+Program Admins are government employees who review and make determinations about applications for public benefits. Using CiviForm, they can improve existing workflows and gain insights about utilization of programs.
 
 Expand the heading below to learn more about features for Program Admin.
 

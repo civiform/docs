@@ -4,13 +4,13 @@ This is a quick-reference guide for governments troubleshooting a CiviForm deplo
 
 ## Finding Logs
 
-CiviForms runs as a containerized service on Amazon ECS (Elastic Container Service). All container output is streamed to CloudWatch Logs and is also accessible directly from the ECS console.
+CiviForm runs as a containerized service on Amazon ECS (Elastic Container Service). All container output is streamed to CloudWatch Logs and is also accessible directly from the ECS console.
 
 ### Navigating to the Logs Tab
 
 1. Sign in to the [AWS Console](https://console.aws.amazon.com/) and select the correct account and region (e.g., **US East (N. Virginia)**) from the top-right dropdown.
 2. Go to **Amazon Elastic Container Service** → **Clusters**.
-3. Click your CiviForms cluster (e.g., `prod-civiform`).
+3. Click your CiviForm cluster (e.g., `prod-civiform`).
 4. Under the **Services** tab, click `prod-civiform-service`.
 5. Select the **Logs** tab.
 
@@ -61,7 +61,7 @@ Include in your message:
 
 ## Example: Emails not sending from CiviForm on status updates
 
-A program admin is reporting that they not receiving email updates CiviForm. They try logging in at 4pm on March 12th, 2026. You can search the logs during this time period, filter to "ERROR", and find the following logs:
+A program admin is reporting that they are not receiving email updates from CiviForm. They try logging in at 4pm on March 12th, 2026. You can search the logs during this time period, filter to "ERROR", and find the following logs:
 
 ```
 [1;31mERROR[0;39m s.e.a.SimpleEmail - software.amazon.awssdk.services.ses.model.MessageRejectedException: Email address is not verified. The following identities failed the check in region US-EAST-1: email@website.com (Service: Ses, Status Code: 400, Request ID: d2541cde-c320-41cf-9931-73c450e10224) (SDK Attempt Count: 1)
@@ -73,4 +73,4 @@ software.amazon.awssdk.services.ses.model.MessageRejectedException: Email addres
 
 You report this issue to the CiviForm support team and send along the logs and instructions for what they were doing that they expected to send an email (in this case, updating a status).
 
-The CiviForm team responds that this is likely due to a configuration error where the the domain is not yet verified in SES. You need to follow the steps described in [Email Configuration](../../it-manual/sre-playbook/email-configuration.md)
+The CiviForm team responds that this is likely due to a configuration error where the domain is not yet verified in SES. You need to follow the steps described in [Email Configuration](../../it-manual/sre-playbook/email-configuration.md)

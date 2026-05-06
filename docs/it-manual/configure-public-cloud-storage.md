@@ -11,14 +11,12 @@ viewable so that anyone visiting your CiviForm homepage can see them. This docs
 page has directions for setting up public storage on your cloud storage provider
 for these program images. 
 
-These directions are currently only for AWS, because only AWS is supported at
-the moment. When support for other cloud storage providers is added, we'll
-update this page.
+These directions are for AWS, which is the only cloud provider currently supported for CiviForm deployments.
 
 ## Option 1: Use existing Terraform scripts
 
-Our [terraform deploy system](https://docs.civiform.us/it-manual/sre-playbook/initial-deployment/terraform-deploy-system)
-will automatically create a bucket called `{your-civiform-prefix}-public-files-s3`
+Our [terraform deploy system](https://docs.civiform.us/it-manual/sre-playbook/terraform-deploy-system)
+will automatically create a bucket called `{your-civiform-prefix}-civiform-public-files-s3`
 and configure the bucket so that program images are publicly viewable. You still
 need to be authenticated to *add* images to the bucket, but any images already
 in the bucket are publicly visible.
@@ -34,7 +32,7 @@ public bucket in AWS and configure it so that program images are publicly
 viewable by anyone.
 
 1. Create a bucket in S3. You could use the
-`{your-civiform-prefix}-public-files-s3` name or a different name of your
+`{your-civiform-prefix}-civiform-public-files-s3` name or a different name of your
 choosing.
 
 2. Set the `AWS_S3_PUBLIC_BUCKET_NAME` configuration variable to be the name of
@@ -62,7 +60,7 @@ account" in the left menu, and set it to "Off":
            {
                "Effect": "Allow",
                "Principal": {
-                   "AWS": "arn:aws:iam::305584670637:role/{your-civiform-prefix}-ecs-task-execution-role"
+                   "AWS": "arn:aws:iam::{your-aws-account-id}:role/{your-civiform-prefix}-ecs-task-execution-role"
                },
                "Action": "s3:*",
                "Resource": [

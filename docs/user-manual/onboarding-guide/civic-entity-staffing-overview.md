@@ -22,7 +22,7 @@ _Note: this estimate is for a CiviForm deployment to a major public cloud provid
 
 We recommend at least two part-time technical staff for supporting CiviForm at a minimum viable level of service. Two is the minimum level of redundancy necessary to ensure incident response availability. The equivalent of one FTE is the anticipated minimum for maintenance and operations efforts.
 
-At this level of staffing we expect the CiviForm deployment to stay up to date with the latest security and feature patches from the mainline project. At this level of IT staffing incident response involves contacting the mainline open source team and waiting for their availbility for resolution.
+At this level of staffing we expect the CiviForm deployment to stay up to date with the latest security and feature patches from the mainline project. At this level of IT staffing incident response involves contacting the mainline open source team and waiting for their availability for resolution.
 
 Skills needed:
 

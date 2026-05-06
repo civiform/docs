@@ -17,5 +17,5 @@ Here are excellent resources on service design to read and reference as you work
 * [Civilla Practica](https://civilla.org/practica)
    * [Foundations](https://civilla.org/practica/foundations)
    * [Design Principles](https://civilla.org/practica/design-principles)
-   * [Qualitiative User Research](https://civilla.org/practica/user-research)
+   * [Qualitative User Research](https://civilla.org/practica/user-research)
    * [Applications](https://civilla.org/practica/applications)

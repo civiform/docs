@@ -20,4 +20,4 @@ description: Common terms used across CiviForm.
 * **Trusted Intermediary Group**—Community-Based Organization (CBOs) who help _applicants_ apply for benefit programs.
 * **Trusted Intermediary**—Staff members of CBOs who interact with _applicants_.
 
-_Last updated: June 2021_
+_Last updated: May 2026_

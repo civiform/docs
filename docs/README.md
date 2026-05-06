@@ -1,29 +1,6 @@
 # CiviForm Docs
+CiviForm is free, open-source software that helps governments bring benefit and service program applications online, making it easier for residents to find and apply for services, and easier for government staff to build and manage them.
 
-This is CiviForm's documentation. **[Visit the main website here](https://civiform.us).**
+Because CiviForm is open source, there are no fees to use the base software. Governments own their deployment and their data, with no dependency on a single vendor. The core CiviForm team at [Exygy](https://www.exygy.com), a certified B Corp, serves as product steward and can provide support with questions, deployment, managed hosting, and custom feature development.
 
-CiviForm is a free, open source tool that makes it easier to access and administer public assistance programs. Residents and community organizations can find and apply to multiple programs in one place, and governments can streamline services and reach communities in need.
-
-In the docs, you will find:
-
-* [Overview of CiviForm](overview/what-is-civiform.md) with a high-level summary on how the tool works for different users
-* [Onboarding Guide](user-manual/onboarding-guide) to understand how CiviForm can support your organization's service delivery
-* [User Manual](user-manual/civiform-admin-guide/README.md) to set up and manage your programs and applications
-* [IT Manual](it-manual/sre-playbook/README.md) to deploy CiviForm on your technical infrastructure
-* [Governance & Management Documentation](governance-and-management/governance/) with information on how CiviForm is being collaboratively managed and developed
-
-### Getting Started
-
-Below are good docs to start learning about CiviForm:
-
-{% content-ref url="overview/what-is-civiform.md" %}
-[What is CiviForm?](overview/what-is-civiform.md)
-{% endcontent-ref %}
-
-{% content-ref url="user-manual/onboarding-guide/README.md" %}
-[Onboarding Guide](user-manual/onboarding-guide/README.md)
-{% endcontent-ref %}
-
-{% hint style="info" %}
-Join the conversation in the [CiviForm Slack workspace](https://civiform.slack.com).
-{% endhint %}
+If you're new here, start with [What is CiviForm?](/overview/what-is-civiform.md). Government staff building and managing forms should head to the [User Manual](/user-manual/civiform-admin-guide.md). IT and infrastructure teams should start with the [IT Manual](/it-manual/sre-playbook.md). Governments planning to set up programs using CiviForm should start with the [Onboarding Guide](/user-manual/onboarding-guide.md).

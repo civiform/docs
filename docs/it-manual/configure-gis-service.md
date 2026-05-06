@@ -74,14 +74,14 @@ Civiform expects a response with the following fields:
 ```
 
 Notes on parsing:
-- If there the response does not include a value in `SubAddr`, CiviForm keeps the value the user entered.
+- If the response does not include a value in `SubAddr`, CiviForm keeps the value the user entered.
 - If the value in `RegionAbbr` is not two characters, CiviForm checks the `Region` field for the two character state code. If it's also not two characters, CiviForm keeps the state code the user provided.
 
 ### Overriding the default wellKnownId
 
 The Esri API has the ability to return spatial reference data using different coordinate systems via a wellKnownId (a.k.a wkid). Details of that along with links to the long list of possible coordinate systems can be found on the [arcgis developer site](https://developers.arcgis.com/rest/services-reference/enterprise/using-spatial-references.htm).
 
-The default wellKnownId is `4326 - GPS` which are traditional latitude and longitude value most often thought around of around coordinate systems. Custom hosted installations may set a different value as their default. For example, Seattle defaults to using wellKnownId `2926 - NAD_1983_HARN_StatePlane_Washington_North_FIPS_4601_Feet` [link](https://developers.arcgis.com/rest/services-reference/enterprise/pdf/pcs_PDF_11.2.pdf).
+The default wellKnownId is `4326 - GPS` which are traditional latitude and longitude values most often associated with coordinate systems. Custom hosted installations may set a different value as their default. For example, Seattle defaults to using wellKnownId `2926 - NAD_1983_HARN_StatePlane_Washington_North_FIPS_4601_Feet` [link](https://developers.arcgis.com/rest/services-reference/enterprise/pdf/pcs_PDF_11.2.pdf).
 
 This works fine as long as calls to correct an address and calls to mapping layers for service area validation are all defaulting to the same wellKnownId. Such as calling both endpoints on the same hosted instance.
 

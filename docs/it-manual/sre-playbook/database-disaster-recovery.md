@@ -1,6 +1,6 @@
 # Database Disaster Recovery
 
-CiviForm's production database is backed up daily, with snapshot names prefixed with the value set by `POSTGRES_RESTORE_SNAPSHOT_IDENTIFIER`. By default they are retained for 7 days, which can be configured by`POSTGRES_BACKUP_RETENTION_DAYS`.
+CiviForm's production database is backed up daily using automated cloud provider snapshots (e.g., AWS RDS automated backups). By default they are retained for 7 days, which can be configured by `POSTGRES_BACKUP_RETENTION_DAYS`.
 
 ## Making a full backup and restore of the database
 

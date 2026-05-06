@@ -34,7 +34,7 @@ If your organization already contains a tech support email address, use it.
 Otherwise, you can create something like CiviForm@yourorganization.gov. For
 simplicity, you can use the same email as sender. That way, admins and applicants
 can reply to the email if they are having difficulties or questions about the
-notification they received. Remember that that someone needs to regularly check
+notification they received. Remember that someone needs to regularly check
 the inbox for the email addresses used in CiviForm. 
 
 ## AWS SES

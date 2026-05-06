@@ -8,26 +8,37 @@ More detailed information on our deploy system can be found in our [developer do
 
 ### Outside configuration
 
-You will need some values that are configured outside of CiviForm before you start the setup. Some of the steps are optional, meaning that you can bring up a staging environment and get the app working without them, but they will need to be completed for production setup.
-* (Optional) Admin auth client_id, client_secret, and discovery_uri. See [setting up Azure AD for an example](#setting-up-azure-a-d)
-* (Optional) Applicant auth client_id, client_secret, and discovery_uri. See setting up the [Authentication Providers](https://github.com/civiform/civiform/wiki/Authentication-Providers)
+You will need some values that are configured outside of CiviForm before you start the setup. Some of the steps are optional, meaning that you can bring up a staging environment and get the app working without them, but they will need to be completed for a production setup.
+* (Optional) Admin auth client_id, client_secret, and discovery_uri. See [Authentication Providers](https://github.com/civiform/civiform/wiki/Authentication-Providers) for more details on your type of provider.
+* (Optional) Applicant auth client_id, client_secret, and discovery_uri. See [Authentication Providers](https://github.com/civiform/civiform/wiki/Authentication-Providers) for more details on your type of provider.
 * Domain name for your deployment. For example `civiform.mycity.gov`
-* (AWS) ARN of an SSL certificate for load balancer. See [requesting AWS certificate](#requesting-aws-certificate)
-* (AWS) Decision around where deployments will live. See [AWS deployment setup options](#aws-deployment-setup-options)
+* ARN of an SSL certificate for load balancer. See [requesting AWS certificate](#requesting-aws-certificate)
+* Decision on how to organize your different CiviForm prod/staging/test instances. See [AWS deployment setup options](#aws-deployment-setup-options)
 
 ### Steps to run
 
 1. Fork the [civiform-deploy](https://github.com/civiform/civiform-deploy) repo to your organization via the GitHub webpage.
-1. Clone the repo onto the machine you are deploying from. Ideally, this would be a shared instance that multiple people can log onto.
+1. Clone the repo onto the machine you are deploying from.
 1. Find the version that you want to deploy on [Github](https://github.com/civiform/civiform/releases).
-1. Copy the [`civiform_config.example.sh`](https://github.com/civiform/civiform-deploy/blob/main/civiform_config.example.sh) into `civiform_config.sh` and fill out the missing values. You can get a sense of required values depending on your cloud provider by looking at [staging-aws](https://github.com/civiform/civiform-staging-deploy/blob/main/aws_staging_civiform_config.sh) configs.
+1. Copy the [`civiform_config.example.sh`](https://github.com/civiform/civiform-deploy/blob/main/civiform_config.example.sh) into `civiform_config.sh` and fill out the missing values. You should set all of the values appropriately for your environment, but the most important values are:
+  * `CIVIFORM_MODE`: Set to `staging` for all instances except for your production instance which should be `prod`.
+  * `CIVIFORM_VERSION`: Set this to the version string of the release you would like to deploy from [Github](https://github.com/civiform/civiform/releases), e.g. `v3.28.0`. Do not use `latest`, as this will be the latest development version and may be unstable.
+  * `CIVIFORM_CLOUD_DEPLOYMENT_VERSION`: This is the version of the `cloud-deploy-infra` repo to check out to perform the deployment. This repo is tagged with the same version as CiviForm releases so that you can be sure you are using the version of the deployment system that was fully validated working with that version. This should always be set to `CIVIFORM_CLOUD_DEPLOYMENT_VERSION="${CIVIFORM_VERSION}"` unless directed otherwise by CiviForm staff to deploy a particular fix outside of a release.
+  * `CIVIFORM_APPLICANT_AUTH_PROTOCOL`: Set to `oidc` or `saml` depending on your auth provider.
+  * `CIVIC_ENTITY_LOGO_WITH_NAME_URL`, `CIVIC_ENTITY_SMALL_LOGO_URL`, and `FAVICON_URL` should point to publicly accessible files used to brand your instance.
+  * `BASE_URL`: The URL of your civiform instance.
+  * `AWS_REGION`: Set this to the region closest to your jurisdiction for best performance.
+  * `APP_PREFIX`: If deploying multiple instances into the same AWS account (i.e. not separate accounts within an AWS Organization), they will each need to have a different app prefix so their resources do not conflict.
+  * `SSL_CERTIFICATE_ARN`: This should be copied from the information for the SSL certificate created in AWS that is verified with your DNS provider.
+  * The values in the `generic-oidc` and/or `ADFS and Azure AD configuration` sections according to your auth provider.
 1. Run `bin/doctor` and install the dependencies.
 1. Run `bin/setup`. What to expect:
     * Takes up to 20 minutes to run. Make sure you have time to allow the script to run to completion to avoid errors.
     * Terraform brings up resources in the cloud (database, network, server, etc).
     * Asks confirmation a few times before creating resources, listing everything that will be created. 
     * Safe to re-run the script if it fails (re-runs will take longer because resources must be destroyed before being re-created).
-    * The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our on-call engineer to resolve the issue. Our on-call engineer [responds to new issues in the CiviForm issue tracker](../../governance-and-management/project-management/on-call-guide#on-call-responsibilities).
+
+The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our on-call engineer to resolve the issue. Our on-call engineer responds to new issues in the CiviForm issue tracker (see the on-call guide for details).
 
 Note: If you are running `bin/doctor` or another command for a config file other than `civiform_config.sh`, you can specify that with the config flag (i.e. `bin/doctor --config=civiform_staging_config.sh`)
 
@@ -39,13 +50,13 @@ Note: If you are running `bin/doctor` or another command for a config file other
 
 ## Rotating the application secret
 
-The Play Framework used by CiviForm utilizes an [application secret key](https://www.playframework.com/documentation/2.9.x/ApplicationSecret). This key is used for signing session cookies and CSRF tokens, among other things. While this secret is secured storely by the deployment system, it's a good idea to rotate it periodically in order to mitigate the risk of a leaked secret.
+The Play Framework used by CiviForm utilizes an [application secret key](https://www.playframework.com/documentation/3.0.x/ApplicationSecret). This key is used for signing session cookies and CSRF tokens, among other things. While this secret is stored securely by the deployment system, it's a good idea to rotate it periodically in order to mitigate the risk of a leaked secret.
 
 IMPORTANT: When the secret is rotated, all user sessions will be invalidated. This means that any guest users in the middle of an application that have not submitted it yet will lose that application, and any logged in users or admins will get logged out. It is recommended that this rotation happen at a low traffic time of day. You may also want to give users a warning before it happens.
 
 To rotate the secret, run `bin/run`, and enter the `rotate_app_secret` command. This will redeploy CiviForm, changing the secret key to a new, random value.
 
-Additionally, you should add `export RANDOM_PASSWORD_LENGTH=64` to your `civiform_config.sh` file. The secret length was originally only 16 characters, and when CiviForm moves to using version 2.9 or later of the Play Framework, 32 will be the minimum.
+Additionally, you should add `export RANDOM_PASSWORD_LENGTH=64` to your `civiform_config.sh` file. The secret length was originally only 16 characters. CiviForm uses Play Framework 3.x, which requires a minimum length of 32 characters.
 
 ## Troubleshooting
 
@@ -66,7 +77,7 @@ If you see error like "no such file or directory"
 ./db-connection: line 2: cloud/aws/bin/lib.sh: No such file or directory
 ./db-connection: line 21: out::error: command not found
 ```
-The scripts expect you to be in specific directories. You probably need to `cd` into the checkout directory or the top level directory. If you are running `setup`/`deploy`/`revert`, you will need to be in the top level directory. If you are running a script like `db-connection`, you need to be in the checkout directory.
+The scripts expect you to be in specific directories. You probably need to `cd` into the checkout directory or the top level directory. If you are running `setup`/`deploy`, you will need to be in the top level directory. If you are running a script like `db-connection`, you need to be in the checkout directory.
 
 #### Terraform fails with `Error acquiring the state lock`
 
@@ -84,7 +95,7 @@ terraform -chdir=checkout/cloud/aws/templates/aws_oidc force-unlock $LOCK_ID
 
 #### (AWS) Notes on using CloudShell for deployment
 
-It is an option to use CloudShell for doing deployments, but you should be aware that installations aren't persisted (see (FAQs)[https://aws.amazon.com/cloudshell/faqs/]), so it may be easier to use the AWS CLI.
+It is an option to use CloudShell for doing deployments, but you should be aware that installations aren't persisted (see [FAQs](https://aws.amazon.com/cloudshell/faqs/)), so it may be easier to use the AWS CLI.
 
 If you do choose to use CloudShell, you likely will need to install Java and Terraform.
 
@@ -111,21 +122,6 @@ Some benefits of using AWS environments are:
 - It is easier to see cost breakdowns by deployment
 
 A drawback to be aware of is that you'll have to create profiles in the AWS CLI and switch between the different profiles when doing deployments or, if using CloudShell, you'll have to do this in separate CloudShell for each environment.
-
-### Setting up Azure AD
-
-The setup script prompts you to set up Azure AD. There are a few additional steps.
- 
-In Azure Portal:
-  * Go to Azure Active Directory -> App registrations
-  * Click the tab for "All applications"
-  * Find your app (staging-dynamic-heron for CiviForm Azure Staging)
-  <img width="905" alt="image" src="https://user-images.githubusercontent.com/1741747/191576453-45b0e029-7c39-4510-8e3a-a532c76d3a6d.png">
-
- Use the menu on the left:
-  * Authentication: setup the Redirect URI to be what the app expects: https://\<custom\_hostname>/callback/AdClient.
-  * You will also need an admin group which creates CiviForm admins
-  * Token configuration: To allow for CiviForm admins, you need to have Azure AD return the groups claim. Add the security groups claim (you can verify the groups claim is being returned by decoding the base64 token from the token you get back from Azure AD on the website-- if you preserve the log in the Chrome Dev Tool window it should be from https://\<custom\_hostname>/callback/AdClient)
 
 ### Access the database for emergency repair
 

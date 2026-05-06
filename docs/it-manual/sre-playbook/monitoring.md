@@ -55,11 +55,10 @@ To import this pre-built dashboard:
 
 1. Click on the "Data Sources" tab and select the Prometheus data source
 2. Change the Name value to PROMETHEUS_DATA
-3. Hover over the "+" icon in the left nav
-4. Click the "Import" option 
-5. Paste [the JSON here](https://github.com/civiform/civiform/blob/main/monitoring/grafana/dashboards/civiform-dashboard.json) into the "Import via panel JSON" 
-7. Click "Load"
-8. Fill in the details for the imported dashboard, selecting your CiviForm prometheus instance for the data source
+3. In the left nav, click "Dashboards", then click the "New" button and select "Import"
+4. Paste [the JSON here](https://github.com/civiform/civiform/blob/main/monitoring/grafana/dashboards/civiform-dashboard.json) into the "Import via panel JSON" field
+5. Click "Load"
+6. Fill in the details for the imported dashboard, selecting your CiviForm prometheus instance for the data source
 
 ## Additional AWS monitoring
 
@@ -90,11 +89,11 @@ Some alarms are configured by default through the CiviForm deployment system, in
   - Low disk space alarm 
     - Related variables: `RDS_CREATE_LOW_DISK_SPACE_ALARM`, `RDS_DISK_FREE_STORAGE_LOW_THRESHOLD`
   - Low freeable memory alarm 
-    - Related variables: `RDS_CREATE_LOW_MEMORY_ALARM`, `RDS_LOW_MEMORY_THRESHOLD`
+    - Related Terraform variables: `RDS_CREATE_LOW_MEMORY_ALARM` (default `true`) and `RDS_LOW_MEMORY_THRESHOLD`. These are Terraform variables with defaults rather than user-settable values in `civiform_config.sh`.
 
 When the ECS alarms get triggered, an autoscaling policy is set up for a task to be added or removed.
 
-For the RDS alarms, the field `RDS_ALARM_EMAIL` can be set for an email to be sent to the specified email when an alert gets triggered.
+For the RDS alarms, the field `CIVIFORM_ALARM_EMAIL` can be set for an email to be sent to the specified email when an alert gets triggered.
 
 There are also the following alarms that can be enabled for RDS, but aren't created by default:
 - Low CPU credit alarm

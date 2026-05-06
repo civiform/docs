@@ -70,13 +70,13 @@ Users are unable to log in.
 
 **Resolution**
 
-Check with maintainers of the admin and applicant auth systems if there have been recent changes. Check the [release notes](https://github.com/civiform/civiform/releases/) for your CiviForm version to see if it mentions auth changes. If errors are occuring after the user successfully authenticates with the identity backend and redirects back to CiviForm there is likely a server error involved. Check server logs for errors.
+Check with maintainers of the admin and applicant auth systems if there have been recent changes. Check the [release notes](https://github.com/civiform/civiform/releases/) for your CiviForm version to see if it mentions auth changes. If errors are occurring after the user successfully authenticates with the identity backend and redirects back to CiviForm there is likely a server error involved. Check server logs for errors.
 
 Contact CiviForm maintainers with details of the investigation.
 
 ### Errors related to Authority ID
 
-If a user has created an account as an applicant and then is added as an admin with the same email, they may see an error when logging in. When checking the logs, it'll show `Profile already contains an authority ID: Optional[iss:xxx] - which is different from the new authority ID: Optional[iss:yyy]`. To fix this error, the account admin will need to [access the database](https://docs.civiform.us/it-manual/sre-playbook/production-database-access#access-the-database-for-emergency-repair) and update the particular account to use the new authority ID. First, you can find the existing account by runnning `SELECT * FROM accounts where authority_id = 'iss:xxx'` (with the original authority_id). Once you confirm there is one account listed and it is the correct account (see note below), you then can run `UPDATE accounts SET authority_id = 'iss:yyy' WHERE authority_id = 'iss:xxx';`
+If a user has created an account as an applicant and then is added as an admin with the same email, they may see an error when logging in. When checking the logs, it'll show `Profile already contains an authority ID: Optional[iss:xxx] - which is different from the new authority ID: Optional[iss:yyy]`. To fix this error, the account admin will need to [access the database](https://docs.civiform.us/it-manual/sre-playbook/production-database-access#access-the-database-for-emergency-repair) and update the particular account to use the new authority ID. First, you can find the existing account by running `SELECT * FROM accounts where authority_id = 'iss:xxx'` (with the original authority_id). Once you confirm there is one account listed and it is the correct account (see note below), you then can run `UPDATE accounts SET authority_id = 'iss:yyy' WHERE authority_id = 'iss:xxx';`
 
 NOTE: It should be strongly verified that the user/account is correct. Changing this without care is a security issue as now the "new" account has access to the system.
 

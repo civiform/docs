@@ -6,7 +6,7 @@ Program import is a feature to allow programs and their associated questions to 
 
 ## Handling question collisions
 
-If a program you are importing shares questions with an existing program in your import environment, you can decide whether you want to create a new duplicate question, use the existing question, or overwrite the existing defintion in your question bank. "Shared questions" are determined by the question admin name. Here are our recommendations for when to choose which option:
+If a program you are importing shares questions with an existing program in your import environment, you can decide whether you want to create a new duplicate question, use the existing question, or overwrite the existing definition in your question bank. "Shared questions" are determined by the question admin name. Here are our recommendations for when to choose which option:
 
 1. Reuse the existing question (Default)
    - Use this option when you want to import a program into an environment that already has existing programs and you want to reuse the questions in the import environment.

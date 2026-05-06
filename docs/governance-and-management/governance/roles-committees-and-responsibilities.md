@@ -1,6 +1,6 @@
 # CiviForm Project Roles, Committees, & Responsibilities
 
-## Roles & Responsiblities
+## Roles & Responsibilities
 
 ### Individuals
 #### User

@@ -58,7 +58,7 @@ To ensure a successful CiviForm implementation, read through the guide below and
   * Agree on the criteria that must be met before an application is publicly launched (e.g. code testing, Quality Assurance (QA), User Research, etc.)  
   * Ensure you have a plan for updating to new release versions and are comfortable doing so.  
   * Become familiar with how to turn on and off feature flags (and other settings) via the Admin Settings Panel or your deployment configuration.  
-  * Plan and test a database recovery process for your deployed instance. For example, [restoring the db to a previous snapshot for AW](https://docs.civiform.us/it-manual/sre-playbook/database-disaster-recovery)S.   
+  * Plan and test a database recovery process for your deployed instance. For example, [restoring the db to a previous snapshot for AWS](https://docs.civiform.us/it-manual/sre-playbook/database-disaster-recovery).   
   * Ensure you can access the production database for emergency repairs, eg. via [pgadmin](https://docs.civiform.us/it-manual/sre-playbook/production-database-access).  
   * Review the logs for your cloud provider as you test to catch any warnings or errors.  
   * Test rolling back to an older version of CiviForm.

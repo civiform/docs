@@ -25,7 +25,7 @@ Connected services
 
 Supporting Infrastructure:
 * S3 bucket for Terraform backend state
-* Cloudwatch export for logs
+* CloudWatch export for logs
 
 ## Code and examples (AWS)
 The code that manages deployment can be found [here](https://github.com/civiform/cloud-deploy-infra/tree/main/cloud/aws).
@@ -38,7 +38,7 @@ Config for the staging environment is [here](https://github.com/civiform/civifor
 
 After running the `setup` or `deploy` script, you can login to the [AWS ECS console](https://console.aws.amazon.com/ecs/v2/clusters) to check the status of CiviForm. Make sure to select correct region in the top right corner.
 
-You should see Cluster with app_preffix-civiform name. Click on it and go to Tasks tab. If everything is going well you should see a task in the Running state.
+You should see Cluster with app_prefix-civiform name. Click on it and go to Tasks tab. If everything is going well you should see a task in the Running state.
 
 <img width="1240" alt="Screen Shot 2022-08-15 at 5 18 55 PM" src="https://user-images.githubusercontent.com/1741747/184758808-c1081316-7baf-45dc-9c76-a64594a9de5e.png">
 
@@ -57,6 +57,6 @@ You can see the logs on the task page by clicking into the specific task and sel
 
 
 
-Logs are also available in Cloudwatch. Search for app_prefix-civiformlogs group.
+Logs are also available in CloudWatch. Search for app_prefix-civiformlogs group.
 
 <img width="952" alt="Screen Shot 2022-08-15 at 5 26 42 PM" src="https://user-images.githubusercontent.com/1741747/184758880-f92b064b-658c-401e-ad71-175f64fde305.png">

@@ -6,9 +6,6 @@ For statuses with associated email content, a status change will trigger an emai
 
 Additionally, you can choose one of the statuses to be a default status. All new applications will automatically be set to this status, and the associated email for that status will be sent to the applicant.
 
-Note: in order to use status tracking, your IT Admin must have enabled the feature. To enable the feature, have your IT Admin set the CIVIFORM_APPLICATION_STATUS_TRACKING_ENABLED environment variable to true.
-
-
 ## To Create a Status 
 1. Sign in to CiviForm as a CiviForm Admin.
 2. Click Programs on the navigation bar and select the program for which you would like to add statuses. 

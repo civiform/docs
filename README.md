@@ -7,7 +7,7 @@ To edit the [civiform.us](https://civiform.us) website, see the [`website`](http
 ### Updating a page
 * Updates should be made directly in the markdown files in [`docs`](https://github.com/civiform/docs/tree/main/docs) directory of the [`civiform/docs` GitHub repository](https://github.com/civiform/docs). 
 * Anyone can click ‘Edit on GitHub’ for any page within the docs site, which will take you directly to the markdown file for that page on GitHub. 
-* For example, if you want to update the [Glossary](https://docs.civiform.us/overview/glossary) page, you should make edits to [this markdown file](https://github.com/civiform/docs/blob/remove-contributor-guide/docs/overview/glossary.md) on GitHub.
+* For example, if you want to update the [Glossary](https://docs.civiform.us/overview/glossary) page, you should make edits to [this markdown file](https://github.com/civiform/docs/blob/main/docs/overview/glossary.md) on GitHub.
 * Updates must be made via pull request.
 
 ### Creating a new page

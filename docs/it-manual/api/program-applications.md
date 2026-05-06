@@ -31,7 +31,7 @@ All query parameters are optional, but case-sensitive.
 
 #### `revisionState`
 - **Parameter**: `revisionState`
-- **Format**: A string representing the `RevisionState` [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/RevisionState.java), currently coinsisting of one of `OBSOLETE` or `CURRENT`.
+- **Format**: A string representing the `RevisionState` [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/RevisionState.java), currently consisting of one of `OBSOLETE` or `CURRENT`.
 - **Description**: The revision state of applications to include in results. `CURRENT` indicates this is the most recent version of the application. `OBSOLETE` indicates this application has been superseded by a newer submission. When omitted, applications of all revision states are returned.
 
 #### `pageSize`
@@ -166,7 +166,7 @@ _Note_: See the [DateTimeFormatter javadoc](https://docs.oracle.com/javase/8/doc
 - **Description**: The time the status of the application was set or changed last, in the timezone of the CiviForm instance.
 
 #### `application_note`
-- **Property**: `status`
+- **Property**: `application_note`
 - **JSON Type**: `string` or `null`
 - **Value**: All characters
 - **Description**: Admin notes about an application
@@ -310,7 +310,7 @@ All question objects have a `question_type` field.
 
 - **Property**: `question_type`
 - **JSON Type**: `string`
-- **Format**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/QuestionTypeExternal.java) currently consisting of one of [`ADDRESS`, `MULTI_SELECT`, `CURRENCY`, `DATE`, `SINGLE_SELECT`, `EMAIL`, `ENUMERATOR`, `FILE_UPLOAD`, `ID`, `NAME`, `NUMBER`, `TEXT`, `PHONE`].\
+- **Format**: An [enum](https://github.com/civiform/civiform/blob/main/server/app/services/export/enums/QuestionTypeExternal.java) currently consisting of one of [`ADDRESS`, `MULTI_SELECT`, `CURRENCY`, `DATE`, `SINGLE_SELECT`, `EMAIL`, `ENUMERATOR`, `FILE_UPLOAD`, `ID`, `MAP`, `NAME`, `NUMBER`, `TEXT`, `PHONE`].\
 _Note_: More values may be added to this enum in the future. Ensure client code can handle additional "unknown" values.
 - **Description**: Specifies the type of question this object represents.
 
@@ -549,7 +549,7 @@ In addition to the metadata field, file upload questions have the following prop
 - **JSON Type**: `string` or `null`
 - **Format**: A URL, `null` if unanswered.
 - **Description**: A link to the file the applicant uploaded.\
-_Note_: This property is deprecated and soon to be replaced by `file_urls`. It is not included if the MULTIPLE_FILE_UPLOAD_ENABLED flag is turned on.
+_Note_: This property is deprecated in favor of `file_urls`.
 
 #### `file_urls`
 - **Property**: `file_urls`
@@ -701,9 +701,9 @@ In addition to the metadata field, single-select questions have the following pr
 - **JSON Type**: `string` or `null`
 - **Format**: A Unicode `string` containing the admin ID of the selected option. `null` if unanswered. With the exception of questions created before March 2024, admin IDs can only contain lowercase letters, numbers, underscores, and dashes.\
 _Note_: Any option admin ID that has ever been available for applicants to select may be returned. A list of all possible option admin IDs is available in the [program-specific API docs](#generated-program-specific-docs) in your CiviForm instance.
-- **Description**: A list of the question options selected by the applicant.
+- **Description**: The question option selected by the applicant.
 
-A multi-select question looks like
+A single-select question looks like
 
 {% code %}
 ```json
@@ -750,7 +750,7 @@ In addition to the metadata field, phone number questions have the following pro
 - **JSON Type**: `string` or `null`
 - **Format**: A Unicode `string` consisting of a phone number prefixed with the country-code, in [E164](https://www.javadoc.io/doc/com.googlecode.libphonenumber/libphonenumber/latest/com/google/i18n/phonenumbers/PhoneNumberUtil.PhoneNumberFormat.html) format. For example, `+15556667777`. `null` if unanswered.\
 _Note_: Phone numbers are validated to be in a valid pattern, but are not confirmed to be dialable.
-- **Description**: The applicant's answer to the number question.
+- **Description**: The applicant's answer to the phone number question.
 
 A phone number question looks like
 
@@ -766,10 +766,10 @@ A phone number question looks like
 ## Example endpoint response
 
 ### Generated program-specific docs
-For an example response for one of your programs, go to "API docs" in the admin console, or visit `<my civiform url>/api/docs/v1/`. You can see the example response for both your active and draft programs.
+For an example response for one of your programs, go to "API" > "Documentation" in the admin console, or visit `<my civiform url>/docs/api/programs`. You can see the example response for both your active and draft programs.
 
 {% hint style="info" %}
-**Tip** For an example response for one of your programs, go to "API docs" in the admin console, or visit `<my civiform url>/api/docs/v1/`.
+**Tip** For an example response for one of your programs, go to "API" > "Documentation" in the admin console, or visit `<my civiform url>/docs/api/programs`.
 {% endhint %}
 
 ### Generic program example

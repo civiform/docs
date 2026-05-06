@@ -20,5 +20,5 @@ CiviForm also allows Trusted Intermediaries to manage multiple clients through t
 3. When you find your client, click **View applications** to start an application for them.  It should now say "You are applying for _client name_” on the **Programs and services** page.
 4. Find the program you want to apply to and click **View and apply**.  This will take you to a page with information about the program.
 5. Click **Start an application**.
-8. Enter information on each page of the application.  Click **Continue** to advance through the program.
-9. Click **Submit Application** when finished.
+6. Enter information on each page of the application.  Click **Continue** to advance through the program.
+7. Click **Submit Application** when finished.

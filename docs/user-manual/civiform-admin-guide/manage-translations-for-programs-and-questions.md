@@ -21,7 +21,7 @@ Watch the video or follow the step-by-step instructions below.
   ![image](https://user-images.githubusercontent.com/98119305/156823969-78ccb796-d08e-422c-9753-b508380e0848.png)
 
 3. Find a **draft** (unpublished) program.
-   * To add or edit translations for a published program, [edit the program](https://docs.civiform.us/user-manual/civiform-admin-guide/working-with-programs/edit-a-program) and save a version of the program in the draft (unpublished) state.
+   * To add or edit translations for a published program, [edit the program](https://docs.civiform.us/user-manual/civiform-admin-guide/edit-a-program) and save a version of the program in the draft (unpublished) state.
   
 4. Click the **three dots button** on the right-hand side.
 

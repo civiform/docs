@@ -25,7 +25,7 @@ Admins may retire API keys using the admin UI. Retiring is a distinct concept fr
 The CiviForm admin creates API keys in the admin UI. To create a new key:
 
 1. Login as a CiviForm admin
-1. Click 'API keys' in the top nav
+1. Click 'API' in the top nav, then 'API keys' in the dropdown
 1. Click 'New API key'
 1. Follow the on-page instructions for creating a key
 1. Click 'Create'

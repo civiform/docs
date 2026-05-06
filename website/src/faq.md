@@ -74,7 +74,7 @@ title: CiviForm | FAQ
   <details open>
     <summary>Are open source tools like CiviForm secure?</summary>
     <div class="accordion-body">
-    <p>Yes. Open source software is widely used across critical web infrastructure, including by secure government services such as <a href="https://github.com/18F/identity-idp">Login.gov</a>. CiviForm’s maintainers regularly update software dependencies and publish a new release each week. CiviForm’s approach to open source software development is inspired by best practices from technical government organizations such as <a href="https://18f.gsa.gov/open-source-policy/">18F</a>.</p>
+    <p>Yes. Open source software is widely used across critical web infrastructure, including by secure government services such as <a href="https://github.com/18F/identity-idp">Login.gov</a>. CiviForm’s maintainers regularly update software dependencies and publish new releases regularly. CiviForm’s approach to open source software development is inspired by best practices from technical government organizations such as <a href="https://18f.gsa.gov/open-source-policy/">18F</a>.</p>
     </div>
   </details>
 </cagov-accordion>

@@ -1,6 +1,6 @@
 # Program Admin Guide
 
-Program Admin are the government employees who handle applications for programs. With CiviForm, they can integrate the tool into or improve existing worklows.
+Program Admins are the government employees who handle applications for programs. With CiviForm, they can integrate the tool into or improve existing workflows.
 
 In this Guide, you will find how-to:
 

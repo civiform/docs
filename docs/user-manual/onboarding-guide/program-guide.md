@@ -66,12 +66,12 @@ To ensure a successful CiviForm implementation, read through the brief guide bel
 
 ## Preparation for Launch 
 
-- [ ] Review the [form building how-to-guide](https://docs.civiform.us/user-manual/civiform-admin-guide/working-with-programs/create-a-program) to begin building your first program  
+- [ ] Review the [form building how-to-guide](https://docs.civiform.us/user-manual/civiform-admin-guide/create-a-program) to begin building your first program  
       - [ ] User-centric design: Create forms that are easy to understand and complete, using [plain language](http://plainlanguage.gov).  
       - [ ] Keep  accessibility standards (e.g., WCAG) in mind when creating your forms.  
       - [ ] Consider which languages Program questions and answers will be translated to and which languages [CiviForm supports natively](https://docs.civiform.us/user-manual/civiform-admin-guide/manage-translations-for-programs-and-questions).  
             - [ ] Find translation resources and add time for translations to your project timeline.  
-      - [ ] Data validation: Implement program checks (such as phone number formats and hints to users “select only two choices” to prevent errors and ensure data accuracy.  
+      - [ ] Data validation: Implement program checks (such as phone number formats and hints to users “select only two choices”) to prevent errors and ensure data accuracy.  
       - [ ] Work with your IT team to select an identity and authentication provider (i.e. Login.gov).  
 - [ ] Identify the list of relevant Key Performance Indicators (KPIs) and metrics to identify what a successful launch would look like for each program launch. Example metrics:  
       - [ ] Reduction in time to complete an application.  
@@ -103,10 +103,7 @@ To ensure a successful CiviForm implementation, read through the brief guide bel
 
 ## Check out these links to read more about CiviForm
 
-* CiviForm home page (To Be Linked)  
-* CiviForm “Learn More” (To Be Linked)  
 * [What is CiviForm](https://docs.civiform.us/overview/what-is-civiform)  
 * [How CiviForm works](https://docs.civiform.us/overview/how-does-civiform-work)  
-* [CiviForm Onboarding guide](https://docs.civiform.us/user-manual/onboarding-guide)  
-* Technical deployment checklist for CiviForm (To Be Linked)
+* [CiviForm Onboarding guide](https://docs.civiform.us/user-manual/onboarding-guide)
 

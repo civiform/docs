@@ -37,7 +37,7 @@ Project-wide planning and prioritization is managed by the Product Design Commit
 The design of major product features must be developed publicly and collaboratively across the project. The following process describes how new features should be designed, reviewed, and approved:
 
 1. **Product Requirements Documents** (PRDs) are developed and authored by members of the Product Design Committee. Initial authorship is informed by research among Users and Member Organizations.
-2. **PRDs are reviewed** for a period of up to X weeks by the Governance and Technical Design Committees.
+2. **PRDs are reviewed** for a defined review period by the Governance and Technical Design Committees.
 3. **PRDs are finalized** after incorporating feedback from reviewers. Finalized PRDs are saved in the Public Drive and added as links in the [public product roadmap](https://github.com/orgs/civiform/projects/1/views/11).
 4. **PRDs are approved** by simple majority vote from Member Organizations in the Governance Committee.
 
@@ -90,7 +90,7 @@ Stewarding Organization members who are not also approvers and any available and
 2. Using the template, create a technical design document. Please remove any sections that aren't relevant and add any that may be missing.
 3. When your draft is ready for review:
     1. Update the status to **IN REVIEW**
-    2. Notifiy the approvers and reviewers that the doc is ready for review.
+    2. Notify the approvers and reviewers that the doc is ready for review.
 4. Approvers and reviewers will add comments and questions to start discussion
 5. Iterate on the design until you have approval
 

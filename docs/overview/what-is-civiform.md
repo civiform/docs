@@ -47,5 +47,3 @@ For governments ready to get started:
 
 The core CiviForm team can provide support with questions, deployment, managed hosting, and feature development. [Get in touch](https://civiform.us/contact) to learn more.
  
-
-[Exygy](https://www.exygy.com), a certified B Corp, can provide support with deployment, managed hosting, and feature development. [Get in touch](https://civiform.us/contact) to learn more.

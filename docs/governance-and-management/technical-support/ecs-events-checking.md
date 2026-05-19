@@ -8,7 +8,7 @@ When applicants report 500 errors or you notice them in ECS logs, you may see er
 SQLTransientConnectionException: HikariPool-default - Connection is not available, request timed out after 30000ms.
 ```
 
-This usually means the application could not obtain a database connection in time, requests to the database are timing out, or that the connection pool (HikariPool) is exhausted.
+This usually means a thread timed out while trying to reach the database.
 
 When this happens, ECS may mark the container unhealthy because it can no longer reach the database, then replace the task.
 

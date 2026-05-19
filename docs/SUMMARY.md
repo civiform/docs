@@ -132,4 +132,5 @@
   * [Development Principles](governance-and-management/governance/development-principles.md)
   * [Communication](governance-and-management/governance/communication.md)
 * Technical Support
-  * [AWS Debugging Guide](governance-and-management/technical-support/aws-debugging-guide.md)
+  * [Finding and Filtering AWS ECS Logs](governance-and-management/technical-support/finding-and-filtering-ecs-logs.md)
+  * [Checking AWS ECS Events for 500 Errors](governance-and-management/technical-support/ecs-events-checking.md)

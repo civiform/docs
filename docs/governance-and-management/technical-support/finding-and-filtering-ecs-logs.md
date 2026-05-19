@@ -1,6 +1,8 @@
-# AWS Debugging Guide
+# Finding and Filtering AWS ECS Logs
 
-This is a quick-reference guide for governments troubleshooting a CiviForm deployment on AWS. It covers how to find logs, filter them for relevant events, and notify the CiviForm government support team.
+This is a quick-reference guide for governments troubleshooting a CiviForm deployment on AWS. It covers how to find application logs in the ECS console, filter them for relevant events, and notify the CiviForm government support team.
+
+If applicants are seeing transient 500 errors and logs mention `HikariPool-default - Connection is not available`, see [Checking ECS Events for 500 Errors / HikariPool Connection Issues](ecs-events-checking.md) to determine whether unhealthy container restarts are the cause.
 
 ## Finding Logs
 

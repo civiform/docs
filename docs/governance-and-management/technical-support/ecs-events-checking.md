@@ -2,13 +2,19 @@
 
 ## Background
 
-When applicants report 500 errors or you notice them in ECS logs, the root cause may be ECS (Elastic Container Service) containers being marked unhealthy and restarted. This causes brief windows where the database connection pool (HikariPool) is exhausted, resulting in errors like:
+When applicants report 500 errors or you notice them in ECS logs, you may see errors like:
 
 ```
 SQLTransientConnectionException: HikariPool-default - Connection is not available, request timed out after 30000ms.
 ```
 
-This guide walks through how to check whether that's happening. For how to find and filter application logs in ECS, see [Finding and Filtering ECS Logs](finding-and-filtering-ecs-logs.md).
+This usually means the application could not obtain a database connection in time, requests to the database are timing out, or that the connection pool (HikariPool) is exhausted.
+
+When this happens, ECS may mark the container unhealthy because it can no longer reach the database, then replace the task. This is good because it means that the system is properly recovering from this unhealthy state.
+
+Possible causes include a heavy database query (for example, during a large application export), problems with the RDS instance, networking issues within the VPC, or other factors that are still being investigated by the CiviForm team. The exact cause is not always clear from ECS events alone.
+
+This guide walks through how to check ECS Events for task replacements that coincide with these errors. For how to find and filter application logs in ECS, see [Finding and Filtering ECS Logs](finding-and-filtering-ecs-logs.md).
 
 ## How to Check ECS Events
 
@@ -25,9 +31,9 @@ If you've landed in the right place, you should see the **Events** tab for your 
 
 ## What to Look For
 
-Look for a line like `Amazon ECS replaced 1 tasks due to an unhealthy status`. That means ECS swapped out a container that was failing health checks, which can cause brief 500 errors or HikariPool timeouts around that time. This is expected behavior and not a cause for concern if it happens occasionally.
+Look for a line like `Amazon ECS replaced 1 tasks due to an unhealthy status`. This means ECS replaced a container that could no longer pass health checks, typically because it had stopped connecting to the database.
 
-If you see that unhealthy message **multiple times in a short window**, or deregistered → stopped → started → registered cycling over and over without a `deployment completed` line, it may indicate an underlying issue. Contact the CiviForm support team at civiform-government-support@exygy.com or in the #gov-support Slack channel (tag @support in your message).
+Contact the CiviForm support team at civiform-government-support@exygy.com or in the #gov-support Slack channel (tag @support in your message), especially if you see that unhealthy message **multiple times in a short window**, or deregistered → stopped → started → registered cycling over and over without a `deployment completed` line.
 
 During a planned deployment, you will see tasks start and stop, targets deregister, connections drain, etc, which is normal behavior.
 
@@ -39,7 +45,7 @@ This is an example of what the events will look like during a normal deployment.
 
 | Situation | Action |
 | --- | --- |
-| Containers restart due to unhealthy status **infrequently** | Monitor and keep an eye on it. AWS restarts the task automatically, so user impact should be brief. |
-| Containers restart **repeatedly or frequently** | Flag it to the CiviForm support team and share a screenshot of the ECS Events tab showing the pattern, plus any log lines containing `HikariPool-default - Connection is not available`. |
+| You see `replaced ... due to an unhealthy status` | Contact the CiviForm support team. Share a screenshot of the ECS Events tab and any log lines containing `HikariPool-default - Connection is not available`. This is good information for the CiviForm team to track, but will not require immediate action. |
+| The unhealthy message appears repeatedly, or tasks cycle without a `deployment completed` line | Same as above, but note that the pattern looks repeated or ongoing, which indicates that the situation that needs to be more immediately addressed. |
 
-AWS restarting the task automatically means errors should be short-lived, but repeated restarts may point to an underlying bug worth investigating. To notify the CiviForm team, follow the steps in [Notifying the CiviForm team](finding-and-filtering-ecs-logs.md#notifying-the-civiform-team).
+AWS will replace the unhealthy task automatically and your application should continue to function properly, but you should report the incident so the underlying cause can be investigated. To notify the CiviForm team, follow the steps in [Notifying the CiviForm team](finding-and-filtering-ecs-logs.md#notifying-the-civiform-team).

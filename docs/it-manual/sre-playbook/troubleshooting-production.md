@@ -54,6 +54,8 @@ If you have deployed recently, consider reverting your CiviForm version number t
 
 Investigate the server logs. Report any errors you find along with complete stack traces to the CiviForm maintainers. To view the server logs in the AWS console go to CloudWatch > Logs > Log groups, select the log group for your production deployment and view the combined log stream.
 
+If logs mention `HikariPool-default - Connection is not available` or errors seem transient and browser-specific, check whether ECS is repeatedly replacing unhealthy tasks — see [Checking ECS Events for 500 Errors / HikariPool Connection Issues](../../governance-and-management/technical-support/ecs-events-checking.md).
+
 **Symptoms**
 
 Server returns 504 Gateway Timeout error, especially when doing admin actions such as application exports.

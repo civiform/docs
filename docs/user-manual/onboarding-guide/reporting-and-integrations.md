@@ -15,7 +15,7 @@ Here are key sources for accessing reporting information in CiviForm.
 CiviForm has a built-in dashboard that administrators can use to see core program metrics such as the number of applications and the distribution of application completion time. More metrics are being added over time to provide administrators with insights into their programs out-of-the-box.
 
 ### Application analytics
-CiviForm supports integration with common web analytics tools. Such tools can provide page-level analytics on how applicants are progressing through applications, which can indicate which questions may need to be removed, adjusted, or improved to simplify the application process.
+CiviForm supports integration with common web analytics tools. Such tools can provide page-level analytics on how applicants are progressing through applications, which can indicate which questions may need to be removed, adjusted, or improved to simplify the application process. The easiest way to get this tracking set up is via Google Analytics. For instructions on how to set up Google Analytics on your site, go to the [Google Analytics Help Center](https://support.google.com/analytics/answer/9304153?hl=en).
 
 ## Exports for external reporting
 Information in CiviForm can be exported to integrate with existing reporting tools, analyses, or workflows. This is helpful for combining information from CiviForm with other sources to give an even broader view of the applicant experience. It can also help make insights about programs available to broader stakeholders (for example, program administrators, policymakers, or the public) through publications or other reporting channels.

@@ -112,6 +112,7 @@
       * [v3.29.0](it-manual/sre-playbook/server-environment-variables/v3.29.0.md)
       * [v3.30.0](it-manual/sre-playbook/server-environment-variables/v3.30.0.md)
       * [v3.31.0](it-manual/sre-playbook/server-environment-variables/v3.31.0.md)
+      * [v3.32.0](it-manual/sre-playbook/server-environment-variables/v3.32.0.md)
   * [Monitoring](it-manual/sre-playbook/monitoring.md)
   * [Troubleshooting Production](it-manual/sre-playbook/troubleshooting-production.md)
   * [Disaster Recovery](it-manual/sre-playbook/disaster-recovery.md)

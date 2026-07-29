@@ -2,13 +2,6 @@
 
 CiviForm admins can add programs hosted outside of CiviForm to reduce the burden on residents of navigating multiple websites to search for relevant programs and information. External programs will be presented to applicants along with other programs, but with a clear indicator that the program opens in a link outside of CiviForm.
 
-## Enable external programs feature
-External programs are currently under a feature flag. The feature must be turned on to allow external programs be added by admins and be visible to applicants.
-To enable external programs feature:
-1. Sign in to CiviForm as a CiviForm admin.
-2. Select **Settings** on the navigation bar.
-3. Enable **EXTERNAL_PROGRAM_CARDS_ENABLED**.
-
 ## Create an external program
 1. Sign in to CiviForm as a CiviForm admin.
 2. Click **Programs** on the navigation bar.
@@ -38,7 +31,4 @@ Notes:
 When applicants view available programs, external programs are displayed alongside regular CiviForm programs.
 When an applicant clicks on an external program card, a modal dialog appears that informs the user that the program will be opened outside of CiviForm. The applicant must accept this modal to proceed, which then opens the external program's website in a new window or tab.
 
-External programs are only visible to applicants when North Star is enabled.
-
-https://github.com/user-attachments/assets/229bc9b7-bf20-4924-be33-4299931a576c
-
+{% embed url="https://github.com/user-attachments/assets/229bc9b7-bf20-4924-be33-4299931a576c" %} {% endembed %}

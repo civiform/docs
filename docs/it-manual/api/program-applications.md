@@ -30,12 +30,12 @@ All query parameters are optional, but case-sensitive.
 
 #### `fromDate`
 - **Parameter**: `fromDate`
-- **Format**: An ISO-8601 formatted date-time with zone id (i.e. YYYY-MM-DDTThh:mm:ssZ).
+- **Format**: An ISO-8601 date-time with zone (`YYYY-MM-DDThh:mm:ssZ`), a local date-time without zone (`YYYY-MM-DDThh:mm:ss`), or a date (`YYYY-MM-DD`).
 - **Description**: Limits results to applications submitted on or after the provided date. Uses the CiviForm instance's local timezone when no timezone is provided, and the beginning of the day when no time is provided.
 
 #### `toDate`
 - **Parameter**: `toDate`
-- **Format**: An ISO-8601 formatted date-time with zone id (i.e. YYYY-MM-DDTThh:mm:ssZ).
+- **Format**: An ISO-8601 date-time with zone (`YYYY-MM-DDThh:mm:ssZ`), a local date-time without zone (`YYYY-MM-DDThh:mm:ss`), or a date (`YYYY-MM-DD`).
 - **Description**: Limits results to applications submitted before the provided date. Uses the CiviForm instance's local timezone when no timezone is provided, and the beginning of the day when no time is provided.
 
 #### `revisionState`

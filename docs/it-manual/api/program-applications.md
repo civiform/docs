@@ -46,7 +46,7 @@ All query parameters are optional, but case-sensitive.
 #### `pageSize`
 - **Parameter**: `pageSize`
 - **Format**: A positive integer.
-- **Description**: Limits the number of results per page. When omitted, CiviForm's configured maximum is used; the default maximum is 1,000 and is configurable. Larger values are not reduced to the maximum, so stay at or below 1,000. Zero and negative values are not accepted.
+- **Description**: Limits the number of results per page. When omitted, CiviForm's configured maximum is used; the default maximum is 1,000 and is configurable. Larger values are not reduced to the maximum, so stay at or below 1,000. Zero and negative values are not supported.
 
 #### `nextPageToken`
 - **Parameter**: `nextPageToken`
@@ -551,14 +551,7 @@ An enumerator question, with two entities and a repeated `household_member_phone
 The API doesn't currently support exporting files programatically. It only provides a link a Program Admin can use to retrieve the file. See [GitHub Issue #5025](https://github.com/civiform/civiform/issues/5025) for progress on supporting programmatically retrieving files.
 {% endhint %}
 
-In addition to the metadata field, file upload questions have the following property:
-
-#### `file_key`
-- **Property**: `file_key`
-- **JSON Type**: `string` or `null`
-- **Format**: A URL, `null` if unanswered.
-- **Description**: A link to the file the applicant uploaded.\
-_Note_: This property is deprecated in favor of `file_urls`.
+In addition to the metadata field, file upload questions have the following property. (An earlier `file_key` property is no longer emitted; use `file_urls`.)
 
 #### `file_urls`
 - **Property**: `file_urls`
@@ -573,8 +566,7 @@ An file upload question looks like
 ```json
 "proof_of_income" : {
   "question_type" : "FILE_UPLOAD",
-  "file_key" : "https://my.civiform.gov/file_key.pdf",
-  "file_urls" : [ "https://my.civiform.gov/file_key.pdf" ]
+  "file_urls" : [ "https://my.civiform.gov/admin/applicant-files/file_key.pdf" ]
 },
 ```
 {% endcode %}

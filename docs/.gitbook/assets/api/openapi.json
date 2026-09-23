@@ -270,7 +270,7 @@
           "create_time": {
             "type": "string",
             "format": "date-time",
-            "description": "When the application was started, ISO-8601 with millisecond precision and the deployment's UTC offset.",
+            "description": "When the application was started, ISO-8601 extended offset format in the deployment's time zone (fractional seconds included when present).",
             "example": "2026-09-14T09:12:33.284-04:00"
           },
           "submitter_type": {
@@ -294,9 +294,8 @@
           "submit_time": {
             "type": "string",
             "format": "date-time",
-            "nullable": true,
-            "description": "When the application was submitted, ISO-8601 with offset. Filters apply to this field.",
-            "example": "2026-09-14T09:31:02-04:00"
+            "description": "When the application was submitted, ISO-8601 extended offset format (fractional seconds included when present). Filters apply to this field.",
+            "example": "2026-09-14T09:31:02.284-04:00"
           },
           "revision_state": {
             "$ref": "#/components/schemas/RevisionState"

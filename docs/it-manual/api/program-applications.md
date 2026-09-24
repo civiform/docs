@@ -6,6 +6,15 @@
 
 Exports applications to a specific program as JSON.
 
+{% openapi src="../../.gitbook/assets/api/openapi.yaml" path="/api/v1/admin/programs/{programSlug}/applications" method="get" %}
+[openapi.yaml](../../.gitbook/assets/api/openapi.yaml)
+{% endopenapi %}
+
+The OpenAPI document above describes what is the same on every CiviForm deployment. The answer
+schema for one program depends on that program's questions; signed-in admins can download it from
+`/docs/api/schemas/<programSlug>` on their own deployment. The sections below describe every field
+in prose.
+
 ## Parameters
 
 ### Path parameters
@@ -21,12 +30,12 @@ All query parameters are optional, but case-sensitive.
 
 #### `fromDate`
 - **Parameter**: `fromDate`
-- **Format**: An ISO-8601 formatted date-time with zone id (i.e. YYYY-MM-DDTThh:mm:ssZ).
+- **Format**: An ISO-8601 date-time with zone (`YYYY-MM-DDThh:mm:ssZ`), a local date-time without zone (`YYYY-MM-DDThh:mm:ss`), or a date (`YYYY-MM-DD`).
 - **Description**: Limits results to applications submitted on or after the provided date. Uses the CiviForm instance's local timezone when no timezone is provided, and the beginning of the day when no time is provided.
 
 #### `toDate`
 - **Parameter**: `toDate`
-- **Format**: An ISO-8601 formatted date-time with zone id (i.e. YYYY-MM-DDTThh:mm:ssZ).
+- **Format**: An ISO-8601 date-time with zone (`YYYY-MM-DDThh:mm:ssZ`), a local date-time without zone (`YYYY-MM-DDThh:mm:ss`), or a date (`YYYY-MM-DD`).
 - **Description**: Limits results to applications submitted before the provided date. Uses the CiviForm instance's local timezone when no timezone is provided, and the beginning of the day when no time is provided.
 
 #### `revisionState`
@@ -37,7 +46,7 @@ All query parameters are optional, but case-sensitive.
 #### `pageSize`
 - **Parameter**: `pageSize`
 - **Format**: A positive integer.
-- **Description**: Limits the number of results per page. If pageSize is larger than CiviForm's maximum page size then the maximum will be used. The default maximum is 1,000 and is configurable.
+- **Description**: Limits the number of results per page. When omitted, CiviForm's configured maximum is used; the default maximum is 1,000 and is configurable. Larger values are not reduced to the maximum, so stay at or below 1,000. Zero and negative values are not supported.
 
 #### `nextPageToken`
 - **Parameter**: `nextPageToken`
@@ -48,11 +57,11 @@ All query parameters are optional, but case-sensitive.
 
 ### **400: Bad Request**
 
-Returned if any request parameters fail validation.
+Returned if any request parameters fail validation. The body is a plain-text message, for example `Malformed query param: fromDate` or `Request parameters must match pagination token: pageSize`.
 
 ### **401: Unauthorized**
 
-Returned if the API key is invalid or does not have access to the program. Check the server logs for the specific reason.
+Returned if the API key is invalid or does not have access to the program, including when the program slug does not exist, since no key can hold a grant for it. The body is empty; check the server logs for the specific reason.
 
 ### **200: OK**
 
@@ -71,7 +80,7 @@ For valid requests, CiviForm returns a status code 200 with a JSON body of the s
 
 If there are more results for the request, `nextPageToken` will be a string. If there are no more results to fetch it will be `null`. API consumers should request more pages using the `nextPageToken` query paramater until it returns `null` to ensure they have received a complete result set.
 
-If `nextPageToken` is present the other query parameters are optional. If the other parameters are included, they must match the values provided on the initial request or CiviForm will reject the request as invalid.
+If `nextPageToken` is present, `fromDate`, `toDate` and `pageSize` may be omitted; they are carried inside the token. `revisionState` must be repeated with the same value if it was set on the initial request, because an omitted `revisionState` means "all revision states" and CiviForm compares that with the token. Any parameter that is repeated must match the value on the initial request or CiviForm will reject the request as invalid. A filter the token does not carry may be added and applies from that page on.
 
 ## Payload
 
@@ -542,14 +551,7 @@ An enumerator question, with two entities and a repeated `household_member_phone
 The API doesn't currently support exporting files programatically. It only provides a link a Program Admin can use to retrieve the file. See [GitHub Issue #5025](https://github.com/civiform/civiform/issues/5025) for progress on supporting programmatically retrieving files.
 {% endhint %}
 
-In addition to the metadata field, file upload questions have the following property:
-
-#### `file_key`
-- **Property**: `file_key`
-- **JSON Type**: `string` or `null`
-- **Format**: A URL, `null` if unanswered.
-- **Description**: A link to the file the applicant uploaded.\
-_Note_: This property is deprecated in favor of `file_urls`.
+In addition to the metadata field, file upload questions have the following property. (An earlier `file_key` property is no longer emitted; use `file_urls`.)
 
 #### `file_urls`
 - **Property**: `file_urls`
@@ -564,8 +566,7 @@ An file upload question looks like
 ```json
 "proof_of_income" : {
   "question_type" : "FILE_UPLOAD",
-  "file_key" : "https://my.civiform.gov/file_key.pdf",
-  "file_urls" : [ "https://my.civiform.gov/file_key.pdf" ]
+  "file_urls" : [ "https://my.civiform.gov/admin/applicant-files/file_key.pdf" ]
 },
 ```
 {% endcode %}

@@ -44,6 +44,10 @@ The CiviForm admin creates API keys using the admin UI. See [managing API keys](
 
 To test your API credentials, submit a `GET` request to `/api/v1/checkAuth` with your credentials.
 
+{% openapi src="../../.gitbook/assets/api/openapi.yaml" path="/api/v1/checkAuth" method="get" %}
+[openapi.yaml](../../.gitbook/assets/api/openapi.yaml)
+{% endopenapi %}
+
 With `curl`, that might look like this:
 
 {% code %}

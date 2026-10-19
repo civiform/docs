@@ -29,6 +29,7 @@
     * [Manage questions](user-manual/civiform-admin-guide/manage-questions.md)
     * [Map questions](user-manual/civiform-admin-guide/map-questions.md)
     * [Yes/No questions](user-manual/civiform-admin-guide/yes-no-questions.md)
+    * [Score answer options](user-manual/civiform-admin-guide/score-answer-options.md)
     * [Question export settings](user-manual/civiform-admin-guide/question-export-settings.md)
     * [Universal and Primary Applicant Information questions](user-manual/civiform-admin-guide/universal-and-pai.md)
     * [Using enumerator questions & screens in a program](user-manual/civiform-admin-guide/using-enumerator-questions-and-screens-in-a-program.md)

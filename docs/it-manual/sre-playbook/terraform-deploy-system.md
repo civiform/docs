@@ -38,7 +38,7 @@ You will need some values that are configured outside of CiviForm before you sta
     * Asks confirmation a few times before creating resources, listing everything that will be created. 
     * Safe to re-run the script if it fails (re-runs will take longer because resources must be destroyed before being re-created).
 
-The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our on-call engineer to resolve the issue. Our on-call engineer responds to new issues in the CiviForm issue tracker (see the on-call guide for details).
+The configuration values in `civiform_config.sh` represent the desired state of your CiviForm deployment. The `bin/setup` and `bin/deploy` commands work to make your cloud environment match the desired state. If a command fails, your cloud environment may not match the desired state. These commands are safe to retry if they fail. If a command is persistently failing, you can work with our on-call engineer to resolve the issue. Our on-call engineer responds to new issues in the CiviForm issue tracker (see the [on-call guide](https://github.com/civiform/civiform/wiki/On-Call-Guide) for details).
 
 Note: If you are running `bin/doctor` or another command for a config file other than `civiform_config.sh`, you can specify that with the config flag (i.e. `bin/doctor --config=civiform_staging_config.sh`)
 
